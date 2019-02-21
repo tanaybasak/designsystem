@@ -1,0 +1,19 @@
+ul,
+ol {
+  &.noStyle {
+    list-style: none;
+  }
+  li {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+dd,
+dt,
+dl {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

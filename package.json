@@ -1,0 +1,19 @@
+{
+  "name": "patron-react-playground",
+  "version": "1.0.0",
+  "description": "Patron CSS Framework",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "HCL Products & Platforms",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^1.11.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.17.0"
+  }
+}

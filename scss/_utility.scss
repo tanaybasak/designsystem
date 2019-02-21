@@ -1,0 +1,36 @@
+.margin {
+  margin: $base-margin;
+}
+// Margin and padding
+@for $i from 0 to 10 {
+  .mt-#{$i} {
+    margin-top: $i * 4px;
+  }
+  .mb-#{$i} {
+    margin-bottom: $i * 4px;
+  }
+  .ml-#{$i} {
+    margin-left: $i * 4px;
+  }
+  .mr-#{$i} {
+    margin-right: $i * 4px;
+  }
+  .margin-around-#{$i} {
+    margin: $i * 4px;
+  }
+  .pt-#{$i} {
+    margin-top: $i * 4px;
+  }
+  .pb-#{$i} {
+    margin-bottom: $i * 4px;
+  }
+  .pl-#{$i} {
+    margin-left: $i * 4px;
+  }
+  .pr-#{$i} {
+    margin-right: $i * 4px;
+  }
+  .padding-around-#{$i} {
+    margin: $i * 4px;
+  }
+}

@@ -1,0 +1,96 @@
+$baseKey: "background";
+$theme: "primary";
+
+$themes: (
+  "default",
+  "primary",
+  "secondary",
+  "outline",
+  "outline-primary",
+  "outline-secondary"
+);
+
+$colorMap: (
+  "default": (
+    "background": var(--blue),
+    "hoverbg": var(--dark-secondary),
+    "borderColor": transparent,
+    "hoverborderColor": transparent,
+    "fontColor": var(--white)
+  ),
+  "primary": (
+    "background": var(--black),
+    "hoverbg": var(--black-secondary),
+    "borderColor": transparent,
+    "hoverborderColor": transparent,
+    "fontColor": var(--white)
+  ),
+  "secondary": (
+    "background": var(--orange),
+    "hoverbg": var(--orange-secondary),
+    "borderColor": transparent,
+    "hoverborderColor": transparent,
+    "fontColor": var(--white)
+  ),
+  "outline": (
+    "background": transparent,
+    "hoverbg": transparent,
+    "borderColor": var(--blue),
+    "hoverborderColor": var(--dark-secondary),
+    "fontColor": var(--blue)
+  ),
+  "outline-primary": (
+    "background": transparent,
+    "hoverbg": transparent,
+    "borderColor": var(--black),
+    "hoverborderColor": var(--black-secondary),
+    "fontColor": var(--black)
+  ),
+  "outline-secondary": (
+    "background": transparent,
+    "hoverbg": transparent,
+    "borderColor": var(--orange),
+    "hoverborderColor": var(--orange-secondary),
+    "fontColor": var(--orange)
+  )
+);
+
+button,
+.btn {
+  text-align: center;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+  line-height: 1.75;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  color: var(--white);
+  background: var(--blue);
+}
+
+@function getColor($name: "default", $BKey: $baseKey) {
+  $color: null;
+  $colorList: map-get($colorMap, $name);
+
+  @if $colorList {
+    $color: map-get($colorList, $BKey);
+  }
+  @return $color;
+}
+
+@each $theme in $themes {
+  button,
+  .btn {
+    &.btn--#{$theme} {
+      background: getColor($theme);
+      border-color: getColor($theme, "borderColor");
+      color: getColor($theme, "fontColor");
+      &:hover {
+        background: getColor($theme, "hoverbg");
+        border-color: getColor($theme, "hoverborderColor");
+      }
+    }
+    &:hover {
+      background: getColor("default", "hoverbg");
+    }
+  }
+}
