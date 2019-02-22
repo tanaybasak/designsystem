@@ -59,42 +59,30 @@ $tertiary: $orange !default;
 
 $link-hover-color : var(--dark-secondary);
 
-//theme color
-$theme-colors: () !default;
-$theme-colors: map-merge( 
-    ( 
-        "primary" : $primary,
-        "secondary": $secondary,
-        "tertiary": $tertiary,
-     ), 
-     $theme-colors
-    );
-
-
-@function theme-color($key: "primary") {
-    @return map-get($theme-colors, $key);
-}
-
-
-
-
-
-
-
-
 
 // Forms
-/*
+
 $label-margin-bottom :.5rem !default;
 
-$input-padding-y: $input-btn-padding-y !default;
-$input-padding-x: $input-btn-padding-x !default;
+$input-padding-y: 0.625rem;
+$input-padding-x: 0.625rem;
 $input-border-color:#D0D0D0 !default;
 $input-font-size:0.9rem;
 // $input-width:25rem !default;
 // $input-height:3.13rem !default;
 $input-height:2rem !default;
-$input-font-family: Helvetica !default;*/
+$input-font-family: var(--base-font-family);
+$input-border-color-disabled:#D0D0D0;
+$input-background-color-disabled:#F6F6F6;
+$input-border-color-focus:#0066B3;
+
+//Errors
+
+$input-border-error: #EB1946;
+$input-border-success: #7EB338;
+
+
+//checkbox, radio
 
 
 
