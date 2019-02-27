@@ -1,6 +1,6 @@
-:root{
+:root {
     --base-font-family: 'Roboto', sans-serif;
-    --base-font-size:1rem;
+    --base-font-size: 1rem;
     --base-line-height: 1.5;
     --base-margin: 0.5rem;
     --base-padding: 0.2rem;
@@ -8,31 +8,31 @@
     --underline: underline;
     --hide: hide;
     --block: block;
-    --black:#000;
-    --grey:#707070;
-    --white:#fff;
-    --blue:#0066B3;
-    --dark-secondary :#003D6B ;
+    --black: #000;
+    --grey: #707070;
+    --white: #fff;
+    --blue: #0066B3;
+    --dark-secondary: #003D6B;
     --orange: #D01B2E;
-    --orange-secondary:#A31221 ;
-    --black-secondary:#555;
-    --text-center : center;
-    --text-left : left; 
+    --orange-secondary: #A31221;
+    --black-secondary: #555;
+    --text-center: center;
+    --text-left: left;
     --text-right: right;
-    --text-justify : justify;
-    --text-uppercase : uppercase;
-    --text-lowercase : lowercase;
-    --text-capitalize : capitalize;
-    --none : none;
-    --strong-800 : 800;
-    --strong-600 : 600;
-    --regular-400 :400;
-    --underline : underline;
-    --uppercase : uppercase;
+    --text-justify: justify;
+    --text-uppercase: uppercase;
+    --text-lowercase: lowercase;
+    --text-capitalize: capitalize;
+    --none: none;
+    --strong-800: 800;
+    --strong-600: 600;
+    --regular-400: 400;
+    --underline: underline;
+    --uppercase: uppercase;
     --error-background-color: red;
-    --error-font-color : red;
+    --error-font-color: red;
     --success-background-color: green;
-    --success-font-color : green;
+    --success-font-color: green;
 }
 
 // we need to use sass varaible only when we need dynamic classes. 
@@ -45,8 +45,6 @@ $underline: var(--underline);
 $regular: var(--regular);
 $hide: var(--hide);
 $show: var(--block);
-
-
 // Color system
 $black: var(--black);
 $white: var(--white);
@@ -56,33 +54,27 @@ $grey: var(--grey);
 $primary: $blue !default;
 $secondary: $black !default;
 $tertiary: $orange !default;
-
-$link-hover-color : var(--dark-secondary);
-
-
+$link-hover-color: var(--dark-secondary);
 // Forms
-
 $label-margin-bottom :.5rem !default;
-
 $input-padding-y: 0.625rem;
 $input-padding-x: 0.625rem;
 $input-border-color:#D0D0D0 !default;
 $input-font-size:0.9rem;
 // $input-width:25rem !default;
 // $input-height:3.13rem !default;
-$input-height:2rem !default;
+$input-height:2.5rem !default;
+$input-width: ( 400rem / 16);
+$textarea-height:(200rem / 16);
 $input-font-family: var(--base-font-family);
 $input-border-color-disabled:#D0D0D0;
 $input-background-color-disabled:#F6F6F6;
 $input-border-color-focus:#0066B3;
-
 //Errors
-
 $input-border-error: #EB1946;
 $input-border-success: #7EB338;
-
-
 //checkbox, radio
 
-
-
+//Range
+$range-width:(300rem / 16);
+$range-height:(4rem / 16);

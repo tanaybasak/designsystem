@@ -18,10 +18,12 @@ label {
 input[type="text"], textarea, .input-control{
     color:$grey;
     display:block;
+    box-sizing: border-box;
     background-color:$white;
-    border-width:2px;
+    border-width:1px;
     border-color:$input-border-color;
     font-size:$input-font-size;
+    width:$input-width;
     height:$input-height;
     padding: 0.625rem;
     &:focus{
@@ -41,6 +43,10 @@ input[type="text"], textarea, .input-control{
     }
 }
 
+textarea.input-control{
+    height:$textarea-height;
+}
+
 
 //checkbox and radiobox
 
@@ -48,6 +54,7 @@ input[type="text"], textarea, .input-control{
     display: inline-block;
     position: relative;
     user-select: none;
+    margin-right:30px;
     & .form-item__checkbox, input[type="checkbox"].form-item__checkbox, input[type="checkbox"]{
         opacity:0;
     }
@@ -68,14 +75,13 @@ input[type="text"], textarea, .input-control{
     }
     & .form-item__radio + label.form-item__text{
         display:inline-block;
-        padding-left:calc(30% + 0.2rem);
+        padding-left:calc(2em);
         position: relative;
         color: $black;
         min-height: 1rem;
         margin-top: 0;
         cursor: pointer;
         line-height: 1rem;
-        margin-right:30px;
     }
     & .form-item__radio + label.form-item__text:before{
         position: absolute;
@@ -187,6 +193,8 @@ input[type="range"]{
     appearance: none;
     outline:none;
     border:0px;
+    width:$range-width;
+    height:$range-height;
     &::-webkit-slider-runnable-track{
         width: 200px;
         height: 5px;
@@ -229,21 +237,116 @@ input[type="range"]{
 .number-spinner{
     display:flex;
     max-width:150px;
-    width:150px;
+    width:149px;
     height:40px;
-    border:1px solid grey;
+    border:1px solid #D0D0D0;
+    box-sizing: border-box;
     & .number-spinner__iconwrapper{
         flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: table;
+        height: 38px;
+        width: 50px;
+        min-width: 50px;
+        
+        & a.number-spinner__icon-plus, & a.number-spinner__icon-minus{
+            display: table-cell;
+            cursor:pointer;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 25px;
+            &:active{
+                background:#0063B3;
+                color:$white;
+            }
+            &.disabled {
+                background-color:#D0D0D0;
+                color:$black;
+                cursor: not-allowed;
+            }
+        }
     }
-    & input{
+    & input, & input[type="text"]{
         width:30px;
         height:20px;
-        border-width:1px;
-        border:0 1px 0 1px;
-        margin:-1px;
-        padding:0.625rem;
+        border-width:0px;
+        margin:0px;
+        padding:0.5625rem;
+        &:disabled{
+            background-color:#D0D0D0;
+        }
+    }
+}
+
+.number-picker{
+    display:flex;
+    max-height:50px;
+    height:35px;
+    max-width:120px;
+    margin:auto;
+    border:1px solid #D0D0D0;
+    .number-picker__btn, .number-picker__input{
+        flex:1;
+        height:35px;
+        margin:0px;
+        width:40px;
+        box-sizing: border-box;
+        background-color: $white;
+        color:#000000;
+    }
+    & .number-picker__input{
+       border:none;
+    }
+    & .number-picker__btn:active{
+        background-color:$blue;
+        outline:none;
+    }
+
+}
+
+    // Toggle Component
+.toggle{
+    display:flex;
+    position:relative;
+    box-sizing: border-box;
+    width:326px;
+    height:50px;
+    border:0px;
+    & .toggle__item{
+        border: 1px solid #3d70b2;
+        background-color: transparent;
+        display:flex;
+        flex:1;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        position:relative;
+        & .toggle__item-check-input, input[type="radio"]{
+            display:none;
+            width:100%;
+            height:100%;
+            margin:0;
+        }
+        & label{
+            flex:1;
+            padding: 15px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            cursor:pointer;
+        }
+        & .toggle__item-check-input:checked + label{
+            background:$blue;
+            color:$white;
+        }
+    }
+    & .toggle__item:not(:first-of-type){
+        border-left: 1px solid #3d70b2;
+    }
+    & .toggle__item:not(:last-of-type){
+        border-right:none;
     }
 }
