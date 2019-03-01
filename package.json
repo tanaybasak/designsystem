@@ -4,7 +4,7 @@
   "description": "Patron CSS Framework",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
+    "dev": "parcel --no-cache form_elements.html",
     "build": "parcel build index.html"
   },
   "author": "HCL Products & Platforms",
@@ -15,5 +15,10 @@
   "devDependencies": {
     "parcel-bundler": "^1.11.0",
     "sass": "^1.17.0"
-  }
+  },
+  "browserslist": [
+    "last 1 edge versions",
+    "> 1%",
+    "IE 10"
+  ]
 }

@@ -1,3 +1,27 @@
+* , *:before, *:after{
+    box-sizing: border-box;
+}
+
+//TODO:
+// 18 x 18 - checkbox & Radio
+// Number Picker - Put on hold for Icon Confirmation.
+//ARIA for forms
+
+//Changes Done
+/*
+1) Checkbox - 15px * 15px to 18px * 18px
+2) Radio - 15px * 15px to 18px * 18px
+3) All elements now supports box-sizing:
+4) Addressed issue for FF.
+5) Number Picker Disabled CSS
+6) Icons for Number Picker - Made with HTML entities.
+
+6 Comments
+==========
+Cleared - 5 Done
+Doubtful - Styling Names, Number Picker, ARIA
+
+*/
 input,
 textarea,
 input[type="radio"],
@@ -71,7 +95,7 @@ textarea.input-control{
     & .form-item__radio, input[type="radio"].form-item__radio, input[type="radio"]{
         position:absolute;
         opacity:0;
-        margin:0px;
+        margin:0;
     }
     & .form-item__radio + label.form-item__text{
         display:inline-block;
@@ -89,8 +113,8 @@ textarea.input-control{
         left: 0;
         content: '';
         display: inline-block;
-        height: .866667rem;
-        width: .866667rem;
+        height: 1.125rem;
+        width: 1.125rem;
         border: 1px solid #9a9a9a;
         border-radius: 50%;
     }
@@ -106,11 +130,11 @@ textarea.input-control{
     & .form-item__checkbox + label.form-item__text:before{
         content:"";
         position:absolute;
-        left:0px;
+        left:0;
         top:5px;
         display: inline-block;
-        width:15px;
-        height:15px;
+        width:18px;
+        height:18px;
         border:1px solid $blue;
     }
     & .form-item__checkbox + label.form-item__text:after{
@@ -120,8 +144,8 @@ textarea.input-control{
         left:4px;
         top:9px;
         display: inline-block;
-        width:8px;
-        height:5px;
+        width:10px;
+        height:7px;
         border-left:1px solid $white;
         border-bottom:1px solid $white;
         transform:rotate(-45deg);
@@ -155,6 +179,7 @@ label.input-switch{
     margin:0.5rem 0;
     & .input-switch__check, input[type="checkbox"], input[type="checkbox"].input-switch__check{
         opacity:0;
+        display:none;
     }
     & .input-switch__tracker{
         cursor:pointer;
@@ -169,10 +194,10 @@ label.input-switch{
     & .input-switch__tracker:before{
         content:"";
         position:absolute;
-        top: 0.0625rem;
-        left: 0.0625rem;
-        width:1.2rem;
-        height:1.2rem;
+        top: 0;
+        left: 0.0375rem;
+        width:0.9rem;
+        height:0.9rem;
         border-radius:50%;
         background-color: $white;
     }
@@ -180,7 +205,7 @@ label.input-switch{
         background-color: $blue;
     } 
     & .input-switch__check:checked + .input-switch__tracker:before, input[type="checkbox"]:checked + .input-switch__tracker:before{
-        transform: translateX(22px);
+        transform: translateX(20px);
         background-color: $white;
     }
 }
@@ -188,22 +213,26 @@ label.input-switch{
 
 
 input[type="range"]{
+    box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     outline:none;
-    border:0px;
+    border:0;
+    margin:0;
+    padding:0;
     width:$range-width;
     height:$range-height;
+    background-color:#DDDDDD;
     &::-webkit-slider-runnable-track{
-        width: 200px;
+        width: 300px;
         height: 5px;
         background: #DDDDDD;
         border: none;
         border-radius: 5px;
     }
     &::-moz-range-track{
-        width: 200px;
+        width: 300px;
         height: 5px;
         background: #DDDDDD;
         border: none;
@@ -220,7 +249,7 @@ input[type="range"]{
         cursor:pointer;
     }
     &::-moz-range-thumb{
-        -webkit-appearance: none;
+        -moz-appearance: none;
         border: none;
         height: 1rem;
         width: 1rem;
@@ -229,78 +258,83 @@ input[type="range"]{
         margin-top: -5px;
         cursor:pointer;
     }
-    :disabled::-webkit-slider-thumb{
+    &::-ms-track{
+        width: 300px;
+        height: 5px;
+        background: #DDDDDD;
+        border: none;
+        border-radius: 5px;
+    }
+    &::-ms-thumb {
+        border: none;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        background: goldenrod;
+        cursor:pointer;
+    }
+    &:disabled::-webkit-slider-thumb{
         cursor: not-allowed;
     }
 }
 
-.number-spinner{
-    display:flex;
-    max-width:150px;
-    width:149px;
-    height:40px;
-    border:1px solid #D0D0D0;
-    box-sizing: border-box;
-    & .number-spinner__iconwrapper{
-        flex: 1;
-        display: table;
-        height: 38px;
-        width: 50px;
-        min-width: 50px;
-        
-        & a.number-spinner__icon-plus, & a.number-spinner__icon-minus{
-            display: table-cell;
-            cursor:pointer;
-            vertical-align: middle;
-            text-align: center;
-            font-size: 25px;
-            &:active{
-                background:#0063B3;
-                color:$white;
-            }
-            &.disabled {
-                background-color:#D0D0D0;
-                color:$black;
-                cursor: not-allowed;
-            }
-        }
-    }
-    & input, & input[type="text"]{
-        width:30px;
-        height:20px;
-        border-width:0px;
-        margin:0px;
-        padding:0.5625rem;
-        &:disabled{
-            background-color:#D0D0D0;
-        }
+@supports (-ms-ime-align: auto) {
+    input[type="range"] {
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline:none;
+        border:0;
+        margin:0;
+        padding:0;
+        width:$range-width;
+        height:$range-height;
+        background-color:#DDDDDD;
     }
 }
 
 .number-picker{
     display:flex;
     max-height:50px;
-    height:35px;
-    max-width:120px;
-    margin:auto;
+    height:50px;
+    max-width:162px;
+    margin:0;
     border:1px solid #D0D0D0;
     .number-picker__btn, .number-picker__input{
         flex:1;
-        height:35px;
-        margin:0px;
-        width:40px;
-        box-sizing: border-box;
+        height:3rem;
+        margin:0;
+        width:3.375rem;
+        border:0;
+        max-width:3.375rem;
         background-color: $white;
         color:#000000;
     }
+    & .number-picker__btn .number-picker__icon-plus::before{
+        content:"\254B";
+        font-style: normal;
+    }
+    & .number-picker__btn .number-picker__icon-minus::before{
+        content:"\2501";
+        font-style: normal;
+    }
     & .number-picker__input{
        border:none;
+
     }
     & .number-picker__btn:active{
         background-color:$blue;
+        color:$white;
         outline:none;
     }
-
+    &.disabled{
+        cursor:not-allowed;
+        & input, .number-picker__btn{
+            pointer-events: none;
+            background: #F6F6F6;
+        }
+    }
 }
 
     // Toggle Component
@@ -310,7 +344,7 @@ input[type="range"]{
     box-sizing: border-box;
     width:326px;
     height:50px;
-    border:0px;
+    border:0;
     & .toggle__item{
         border: 1px solid #3d70b2;
         background-color: transparent;

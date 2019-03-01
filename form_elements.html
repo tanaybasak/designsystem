@@ -26,90 +26,70 @@
                 <label for="feedback">Feedback</label>
                 <textarea class="input-control" id="feedback" rows="5"></textarea>
             </form>
+            <div class="margin-around-5"></div>
 
             <!-- Checkbox Components -->
-            <div class="form-item">
+            <div class="form-item" aria-disabled="false">
                 <input class="form-item__checkbox" id="check1" type="checkbox" />
                 <label class="form-item__text" for="check1">Voilet</label>
             </div>
-            <div class="form-item">
+            <div class="form-item" aria-disabled="false">
                 <input class="form-item__checkbox" id="check2" type="checkbox" checked />
                 <label class="form-item__text" for="check2">Green</label>
             </div>
-            <div class="form-item">
+            <div class="form-item" aria-disabled="true">
                 <input class="form-item__checkbox" id="check3" type="checkbox" disabled />
                 <label class="form-item__text" for="check3">Burlywood</label>
             </div>
-            </br>
-            </br>
-            </br>
+            <div class="margin-around-5"></div>
+
             <!-- Radio Components -->
-            <div class="form-item">
+            <div class="form-item" aria-disabled="false">
                 <input class="form-item__radio" id="radio1" type="radio" value="Option1" name="planets" />
                 <label class="form-item__text" for="radio1">Earth</label>
             </div>
 
-            <div class="form-item">
+            <div class="form-item" aria-disabled="false">
                 <input class="form-item__radio" id="radio2" type="radio" value="Option2" name="planets" checked />
                 <label class="form-item__text" for="radio2">Jupiter</label>
             </div>
-            <div class="form-item">
+            <div class="form-item" aria-disabled="true">
                 <input class="form-item__radio" id="radio3" type="radio" value="Option3" name="planets" disabled />
                 <label class="form-item__text" for="radio3">Saturn</label>
             </div>
-            </br>
-            </br>
-            </br>
+            <div class="margin-around-5"></div>
+
             <!-- Toggle Button Components -->
             <label class="input-switch">
                 <input class="input-switch__check" type="checkbox" />
                 <span class="input-switch__tracker"></span>
             </label>
-
+            <div class="margin-around-5"></div>
             <label class="input-switch">
                 <input class="input-switch__check" type="checkbox" checked />
                 <span class="input-switch__tracker"></span>
             </label>
-            </br>
-            </br>
-            </br>
+            <div class="margin-around-5"></div>
+
             <!-- Range Component -->
+            <input type="range" min="1" max="100" step="1.0" id="age-range" name="age-range" aria-label="age-range" value="53" />
+            <!--aria-label is used when <label> tag is not used-->
+            <div class="margin-around-5"></div>
 
-            <input type="range" min="1" max="100" step="1.0" id="ranger" value="53" />
+            <!-- Number Picker Component -->
+            <div class="number-picker disabled" aria-disabled="true">
+                <button class="number-picker__btn" aria-label="Increment"><i class="number-picker__icon-minus"></i></button>
+                <input type="text" class="number-picker__input" aria-label="Input Number Picker"/>
+                <button class="number-picker__btn" aria-label="Decrement"><i class="number-picker__icon-plus"></i></button>
+            </div>
+            <div class="margin-around-5"></div>
+            <div class="number-picker" aria-disabled="false">
+                <button class="number-picker__btn" aria-label="Increment"><i class="number-picker__icon-minus"></i></button>
+                <input type="text" class="number-picker__input" aria-label="Input Number Picker"/>
+                <button class="number-picker__btn" aria-label="Decrement"><i class="number-picker__icon-plus"></i></button>
+            </div>
+            <div class="margin-around-5"></div>
 
-            <!-- Number Spinner Component -->
-            <!-- <div class="number-spinner">
-            <div class="number-spinner__iconwrapper">
-                <a class="number-spinner__icon-minus" role="button">-</a>
-            </div>
-            <input type="text" />
-            <div class="number-spinner__iconwrapper">
-                <a class="number-spinner__icon-plus" role="button">+</a>
-            </div>
-        </div>
-        </br>
-        </br>
-        </br>
-        <div class="number-spinner">
-                <div class="number-spinner__iconwrapper">
-                    <a class="number-spinner__icon-minus disabled" role="button">-</a>
-                </div>
-                <input type="text" disabled value="5"/>
-                <div class="number-spinner__iconwrapper">
-                    <a class="number-spinner__icon-plus disabled" role="button">+</a>
-                </div>
-        </div> -->
-            </br>
-            </br>
-            </br>
-            <div class="number-picker">
-                <button class="number-picker__btn">-</button>
-                <input type="text" class="number-picker__input" />
-                <button class="number-picker__btn">+</button>
-            </div>
-            </br>
-            </br>
-            </br>
             <!-- Toggle -->
             <div class="toggle">
                 <div class="toggle__item">
@@ -125,9 +105,7 @@
                     <label for="toggle_3" class="toggle__item-text">Option 3</label>
             </div> -->
             </div>
-            </br>
-            </br>
-            </br>
+            <div class="margin-around-5"></div>
         </section>
     </main>
 </body>
