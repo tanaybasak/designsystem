@@ -5,12 +5,12 @@ body{
     font : {
         color: var(--black);
         size: 1rem;
-        family: 'Roboto', sans-serif;
+        family: var(--base-font-family);
     }
 }
 
 textarea, button, input{
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--base-font-family);
 }
 
 h1,
