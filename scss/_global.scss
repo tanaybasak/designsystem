@@ -1,25 +1,25 @@
 /* Global styling of the framework */
 
-body{
-    $body-color: var(--black) !default;
-    font : {
-        color: var(--black);
-        size: $base-font-size;
-        family: var(--base-font-family);
-    }
+body {
+  $body-color: var(--black) !default;
+  font : {
+    color: var(--black);
+    size: $base-font-size;
+    family: var(--ff-roboto);
+  }
 }
 
-textarea, button, input, textarea{
-    font-family: var(--base-font-family);
+textarea,
+button,
+input,
+textarea {
+  font-family: var(--ff-roboto);
 }
-
 
 .nomargin {
-    margin: 0;
-  }
-  
-  .nopadding {
-    padding: 0;
-  }
-  
-  
+  margin: 0;
+}
+
+.nopadding {
+  padding: 0;
+}
