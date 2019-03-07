@@ -57,7 +57,10 @@ Patron is a CSS framework. It follows the HCL guideliens and priniciples. If you
 - Follow the modular based development approach : create the SCSS file for the modules rather than writing whole code in 1 file. 
 Such as : button(s) style should be the part of button.scss , typography in one file, if listing as different style 
 then we can move the list styling from Typography.scss and create new file list.scss. 
-- Mixins should be in one file : mixin.scss
+- Mixins should be in one file : mixin.scss.
+- One should follow the camelNameCase.
+- If you are using map mention'-map' after the name of the map.
+
 
 
 

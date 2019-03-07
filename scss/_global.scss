@@ -1,25 +1,26 @@
 /* Global styling of the framework */
 
-body {
+body{
   $body-color: var(--black) !default;
   font : {
-    color: var(--black);
-    size: $base-font-size;
-    family: var(--ff-roboto);
+      color: var(--black);
+      size: 1rem;
+      family: 'Roboto', sans-serif;
   }
 }
 
-textarea,
-button,
-input,
-textarea {
-  font-family: var(--ff-roboto);
+textarea, button, input{
+  font-family: 'Roboto', sans-serif;
 }
 
-.nomargin {
-  margin: 0;
-}
-
-.nopadding {
-  padding: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+color: inherit;
+margin: 0;
+padding:0;
+line-height: var(--base-line-height);
 }
