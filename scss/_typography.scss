@@ -1,51 +1,99 @@
-body {
-  font-family: var(--base-font-family) !important;
-  font-size: $base-font-size;
-  color: var(--black);
+/* HCL Design System 
+    - Headings
+    - a link
+    - p 
+    - text transform
+    - text-alignment
+    - font style
+    - Font-family and sizes
+*/
+
+@import "mixins";
+
+.pd-right {
+  @include getTextAlignment("right");
 }
 
-input, button, textarea{
-  font-family: var(--base-font-family) !important;
+.pd-left {
+  @include getTextAlignment("left");
 }
 
-h1 {
-  font-size: calc(#{$base-font-size} * 2.5);
+.pd-center {
+  @include getTextAlignment("center");
 }
 
-h2 {
-  font-size: calc(#{$base-font-size} * 2);
+.pd-justify {
+  @include getTextAlignment("justify");
 }
 
-h3 {
-  font-size: calc(#{$base-font-size} * 1.75);
+.pd-bold {
+  @include getFontWeight("bold");
 }
 
-h4 {
-  font-size: calc(#{$base-font-size} * 1.5);
+.pd-light {
+  @include getFontWeight("light");
 }
 
-h5 {
-  font-size: calc(#{$base-font-size} * 1.25);
+.pd-regular {
+  @include getFontWeight("regular");
 }
 
-h6 {
-  font-size: calc(#{$base-font-size} * 1);
+.pd-semibold {
+  @include getFontWeight("semibold");
 }
 
+.pd-justify {
+  @include getTextAlignment("justify");
+}
 
+h1,
+.h1 {
+  @include getFontSize("h1");
+  @include lineHeight("heading");
+}
+
+h2,
+.h2 {
+  @include getFontSize("h2");
+  @include lineHeight("heading");
+}
+
+h3,
+.h3 {
+  @include getFontSize("h3");
+  @include lineHeight("heading");
+}
+
+h4,
+.h4 {
+  @include getFontSize("h4");
+  @include lineHeight("heading");
+}
+
+h5,
+.h5 {
+  @include getFontSize("h5");
+  @include lineHeight("heading");
+}
+
+h6,
+.h6 {
+  @include getFontSize("h6");
+  @include lineHeight("heading");
+}
 
 a {
-    color: theme-color("primary");
-    font-size: $base-font-size;
+  color: theme-color("primary");
+  @include getFontSize("14");
+  text-decoration: var(--none);
+  &:hover {
+    color: $link-hover-color;
     text-decoration: var(--none);
-    &:hover{
-        color: $link-hover-color;
-        text-decoration:  var(--none);
-    }
+  }
 }
 
 p {
-  font-size: $base-font-size;
+  @include getFontSize("16");
   color: inherit;
   line-height: var(--base-line-height);
 }
