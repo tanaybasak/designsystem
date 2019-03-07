@@ -39,7 +39,7 @@ $colorMap: (
     "borderColor": var(--blue),
     "hoverborderColor": var(--dark-secondary),
     "fontColor": var(--blue),
-    "color" :var(--white)
+    "color": var(--white)
   ),
   "outline-primary": (
     "background": transparent,
@@ -47,7 +47,7 @@ $colorMap: (
     "borderColor": var(--black),
     "hoverborderColor": var(--black-secondary),
     "fontColor": var(--black),
-    "color" : var(--white)
+    "color": var(--white)
   ),
   "outline-secondary": (
     "background": transparent,
@@ -55,7 +55,7 @@ $colorMap: (
     "borderColor": var(--orange),
     "hoverborderColor": var(--orange-secondary),
     "fontColor": var(--orange),
-    "color" : var(--white)
+    "color": var(--white)
   ),
   "outline-default": (
     "background": transparent,
@@ -63,7 +63,7 @@ $colorMap: (
     "borderColor": var(--black-secondary),
     "hoverborderColor": var(--black),
     "fontColor": var(--black),
-    "color" : var(--white)
+    "color": var(--white)
   )
 );
 
@@ -78,8 +78,8 @@ button,
   color: var(--white);
   background: var(--blue);
   &:hover {
-      background: getColor("default", "hoverbg");
-    }
+    background: getColor("default", "hoverbg");
+  }
 }
 
 @function getColor($name: "default", $BKey: $baseKey) {
@@ -102,14 +102,13 @@ button,
       &:hover {
         background: getColor($theme, "hoverbg");
         border-color: getColor($theme, "hoverborderColor");
-        color: getColor($theme, "color" )
+        color: getColor($theme, "color");
       }
       &:focus {
         background: getColor($theme, "hoverbg");
         border-color: getColor($theme, "hoverborderColor");
-        color: getColor($theme, "color" )
+        color: getColor($theme, "color");
       }
     }
-    
   }
 }
