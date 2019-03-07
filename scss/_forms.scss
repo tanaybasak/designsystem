@@ -1,27 +1,8 @@
-* , *:before, *:after{
+
+* , *::before, *::after{
     box-sizing: border-box;
 }
 
-//TODO:
-// 18 x 18 - checkbox & Radio
-// Number Picker - Put on hold for Icon Confirmation.
-//ARIA for forms
-
-//Changes Done
-/*
-1) Checkbox - 15px * 15px to 18px * 18px
-2) Radio - 15px * 15px to 18px * 18px
-3) All elements now supports box-sizing:
-4) Addressed issue for FF.
-5) Number Picker Disabled CSS
-6) Icons for Number Picker - Made with HTML entities.
-
-6 Comments
-==========
-Cleared - 5 Done
-Doubtful - Styling Names, Number Picker, ARIA
-
-*/
 input,
 textarea,
 input[type="radio"],
@@ -79,95 +60,113 @@ textarea.input-control{
     position: relative;
     user-select: none;
     margin-right:30px;
-    & .form-item__checkbox, input[type="checkbox"].form-item__checkbox, input[type="checkbox"]{
-        opacity:0;
-    }
-    & .form-item__checkbox + .form-item__text, input[type="checkbox"].form-item__checkbox + .form-item__text{
-        cursor:pointer;
-    }
-    & .form-item__checkbox:disabled + .form-item__text, input[type="checkbox"].form-item__checkbox:disabled + .form-item__text{
-        cursor:not-allowed;
-    }
-    & input[type="checkbox"] + label.form-item__text{
-        padding-left:10px;
+    .form-item__checkbox, input[type="checkbox"] {
+        position:absolute;
+        padding:0;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        border:0;
+        visibility: visible;
+        white-space: nowrap;
+        clip:rect(0px, 0px, 0px, 0px);
+        + .form-item__text{
+            padding:0;
+            padding-left:26px;
+            line-height:1.5rem;
+            cursor:pointer;
+            position:relative;
+            display:flex;
+            user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            &::before{
+                background-color: white;
+                border-color: $blue;
+                border-width:1px;
+            }
+        }
+        &:disabled {
+            + .form-item__text{
+            cursor:not-allowed;
+            color: $grey;
+            }
+            + label.form-item__text::before, + .form-item__text::before{
+                background: #F6F6F6;
+                border-color: #D0D0D0;
+            }
+        }
+        &:checked{
+            + label.form-item__text::after{
+                -webkit-transform: scale(1) rotate(-45deg);
+                transform: scale(1) rotate(-45deg);
+            }
+            + .form-item__text::before{
+                background-color: $blue;
+                border-width:1px;
+                border-color:$blue;
+            }
+        }
+        + label.form-item__text::before, + .form-item__text::before{
+            content:"";
+            position:absolute;
+            left:0;
+            top:0rem;
+            display: inline-block;
+            width:1.125rem;
+            height:1.125rem;
+            margin:0.125rem;
+            border:1px solid $blue;
+            
+        }
+        + label.form-item__text::after, + .form-item__text::after{
+            content:"";
+            color:#FFFFFF;
+            position:absolute;
+            left:6px;
+            top:6px;
+            display: inline-block;
+            width:10px;
+            height:7px;
+            border-left:1px solid $white;
+            border-bottom:1px solid $white;
+            transform:rotate(-45deg);
+        }
     }
     //radio
-    & .form-item__radio, input[type="radio"].form-item__radio, input[type="radio"]{
+    .form-item__radio, input[type="radio"].form-item__radio, input[type="radio"]{
         position:absolute;
         opacity:0;
         margin:0;
-    }
-    & .form-item__radio + label.form-item__text{
-        display:inline-block;
-        padding-left:calc(2em);
-        position: relative;
-        color: $black;
-        min-height: 1rem;
-        margin-top: 0;
-        cursor: pointer;
-        line-height: 1rem;
-    }
-    & .form-item__radio + label.form-item__text:before{
-        position: absolute;
-        top: .1666665rem;
-        left: 0;
-        content: '';
-        display: inline-block;
-        height: 1.125rem;
-        width: 1.125rem;
-        border: 1px solid #9a9a9a;
-        border-radius: 50%;
-    }
-    & .form-item__radio:checked + label.form-item__text:before{
-        box-shadow: inset 0 0 0 0.11rem $white;
-        border: 1px solid #D0D0D0;
-        background: $blue;
-    }
-    & input[type="radio"]:disabled + label.form-item__text{
-        color: $grey;
-    }
-    //checkbox
-    & .form-item__checkbox + label.form-item__text:before{
-        content:"";
-        position:absolute;
-        left:0;
-        top:5px;
-        display: inline-block;
-        width:18px;
-        height:18px;
-        border:1px solid $blue;
-    }
-    & .form-item__checkbox + label.form-item__text:after{
-        content:"";
-        color:#FFFFFF;
-        position:absolute;
-        left:4px;
-        top:9px;
-        display: inline-block;
-        width:10px;
-        height:7px;
-        border-left:1px solid $white;
-        border-bottom:1px solid $white;
-        transform:rotate(-45deg);
-    }
-    & input[type="checkbox"] + label.form-item__text:after{
-        content:none;
-    }
-    & input[type="checkbox"]:checked + label.form-item__text:after{
-        content:"";
-    }
-    & input[type="checkbox"]:checked + label.form-item__text:before{
-        background: $blue;
-    }
-    & input[type="checkbox"]:disabled + label.form-item__text:before{
-        background: #F6F6F6;
-        border-color: #D0D0D0;
-    }
-    & input[type="checkbox"]:disabled + label.form-item__text{
-        color: $grey;
-    }
-    & input[type="checkbox"]:focus + label::before {
-        outline: rgb(59, 153, 252) auto 5px;
+        + label.form-item__text, + .form-item__text{
+            display:inline-block;
+            padding-left:1.625rem;
+            position: relative;
+            color: $black;
+            min-height: 1rem;
+            margin-top: 0;
+            cursor: pointer;
+        }
+        + label.form-item__text:before{
+            position: absolute;
+            top: .1666665rem;
+            left: 0;
+            content: '';
+            display: inline-block;
+            height: 1.125rem;
+            width: 1.125rem;
+            border: 1px solid #9a9a9a;
+            border-radius: 50%;
+        }
+        &:checked + label.form-item__text:before{
+            box-shadow: inset 0 0 0 0.11rem $white;
+            border: 1px solid #D0D0D0;
+            background: $blue;
+        }
+        &:disabled + label.form-item__text{
+            color: $grey;
+        }
     }
 }
 
@@ -177,11 +176,20 @@ label.input-switch{
     width:2.25rem;
     height:0.875rem;
     margin:0.5rem 0;
-    & .input-switch__check, input[type="checkbox"], input[type="checkbox"].input-switch__check{
+    .input-switch__check, input[type="checkbox"], input[type="checkbox"].input-switch__check{
         opacity:0;
         display:none;
+        &:checked{
+            + .input-switch__tracker{
+                background-color: $blue;
+            }
+            + .input-switch__tracker::before{
+                transform: translateX(20px);
+                background-color: $white;
+            }
+        }
     }
-    & .input-switch__tracker{
+    .input-switch__tracker{
         cursor:pointer;
         position:absolute;
         top:0;
@@ -190,23 +198,16 @@ label.input-switch{
         right:0;
         background-color:#D0D0D0;
         border-radius:2.125rem;
-    }
-    & .input-switch__tracker:before{
-        content:"";
-        position:absolute;
-        top: 0;
-        left: 0.0375rem;
-        width:0.9rem;
-        height:0.9rem;
-        border-radius:50%;
-        background-color: $white;
-    }
-    & .input-switch__check:checked + .input-switch__tracker{
-        background-color: $blue;
-    } 
-    & .input-switch__check:checked + .input-switch__tracker:before, input[type="checkbox"]:checked + .input-switch__tracker:before{
-        transform: translateX(20px);
-        background-color: $white;
+        &::before{
+            content:"";
+            position:absolute;
+            top: 0;
+            left: 0.0375rem;
+            width:0.9rem;
+            height:0.9rem;
+            border-radius:50%;
+            background-color: $white;
+        }
     }
 }
 
@@ -311,26 +312,26 @@ input[type="range"]{
         background-color: $white;
         color:#000000;
     }
-    & .number-picker__btn .number-picker__icon-plus::before{
+    .number-picker__btn .number-picker__icon-plus::before{
         content:"\254B";
         font-style: normal;
     }
-    & .number-picker__btn .number-picker__icon-minus::before{
+    .number-picker__btn .number-picker__icon-minus::before{
         content:"\2501";
         font-style: normal;
     }
-    & .number-picker__input{
+    .number-picker__input{
        border:none;
 
     }
-    & .number-picker__btn:active{
+    .number-picker__btn:active{
         background-color:$blue;
         color:$white;
         outline:none;
     }
     &.disabled{
         cursor:not-allowed;
-        & input, .number-picker__btn{
+        input, .number-picker__btn{
             pointer-events: none;
             background: #F6F6F6;
         }
