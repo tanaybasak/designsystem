@@ -32,58 +32,6 @@ h6 {
   font-size: calc(#{$base-font-size} * 1);
 }
 
-.center {
-  text-align: var(--text-center);
-}
-
-.left-align {
-  text-align: var(--text-left);
-}
-
-.right-align {
-  text-align: var(--text-right);
-}
-
-.justify-align {
-  text-align: var(--text-justify);
-}
-
-.lowercase {
-  text-align:  var(--lowercase);
-}
-
-.uppercase {
-  text-align:  var(--uppercase);
-}
-
-.capitalize {
-  text-align:  var(--text-capitalize);
-}
-
-.strong {
-  font-weight:  var(--strong-800);
-}
-
-.regular {
-  font-weight:  var(--regular-400);
-}
-
-.italic {
-  font-style:  var(--italic);
-}
-
-.underline {
-  font-style:  var(--underline);
-}
-
-.nomargin {
-  margin: 0;
-}
-
-.nopadding {
-  padding: 0;
-}
-
 
 
 a {
@@ -98,7 +46,6 @@ a {
 
 p {
   font-size: $base-font-size;
-  margin: $base-margin 0;
   color: inherit;
   line-height: var(--base-line-height);
 }
