@@ -8,92 +8,85 @@
     - Font-family and sizes
 */
 
-@import "mixins";
-
-.pd-right {
-  @include getTextAlignment("right");
+h4 {
+  font-size: calc(#{$base-font-size} * 1.5);
 }
 
-.pd-left {
-  @include getTextAlignment("left");
+h5 {
+  font-size: calc(#{$base-font-size} * 1.25);
 }
 
-.pd-center {
-  @include getTextAlignment("center");
+h6 {
+  font-size: calc(#{$base-font-size} * 1);
 }
 
-.pd-justify {
-  @include getTextAlignment("justify");
+.center {
+  text-align: var(--text-center);
 }
 
-.pd-bold {
-  @include getFontWeight("bold");
+.left-align {
+  text-align: var(--text-left);
 }
 
-.pd-light {
-  @include getFontWeight("light");
+.right-align {
+  text-align: var(--text-right);
 }
 
-.pd-regular {
-  @include getFontWeight("regular");
+.justify-align {
+  text-align: var(--text-justify);
 }
 
-.pd-semibold {
-  @include getFontWeight("semibold");
+.lowercase {
+  text-align:  var(--lowercase);
 }
 
-.pd-justify {
-  @include getTextAlignment("justify");
+.uppercase {
+  text-align:  var(--uppercase);
 }
 
-h1,
-.h1 {
-  @include getFontSize("h1");
-  @include lineHeight("heading");
+.capitalize {
+  text-align:  var(--text-capitalize);
 }
 
-h2,
-.h2 {
-  @include getFontSize("h2");
-  @include lineHeight("heading");
+.strong {
+  font-weight:  var(--strong-800);
 }
 
-h3,
-.h3 {
-  @include getFontSize("h3");
-  @include lineHeight("heading");
+.regular {
+  font-weight:  var(--regular-400);
 }
 
-h4,
-.h4 {
-  @include getFontSize("h4");
-  @include lineHeight("heading");
+.italic {
+  font-style:  var(--italic);
 }
 
-h5,
-.h5 {
-  @include getFontSize("h5");
-  @include lineHeight("heading");
+.underline {
+  font-style:  var(--underline);
 }
 
-h6,
-.h6 {
-  @include getFontSize("h6");
-  @include lineHeight("heading");
+.nomargin {
+  margin: 0;
 }
+
+.nopadding {
+  padding: 0;
+}
+
+
 
 a {
-  color: theme-color("primary");
-  @include getFontSize("14");
-  text-decoration: var(--none);
-  &:hover {
-    color: $link-hover-color;
+    color: theme-color("primary");
+    font-size: $base-font-size;
     text-decoration: var(--none);
-  }
+    &:hover{
+        color: $link-hover-color;
+        text-decoration:  var(--none);
+    }
 }
 
 p {
-  @include getFontSize("16");
+  font-size: $base-font-size;
+  margin: $base-margin 0;
   color: inherit;
   line-height: var(--base-line-height);
 }
