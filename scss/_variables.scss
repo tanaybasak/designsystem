@@ -51,16 +51,3 @@
   @function theme-color($key: "primary") {
     @return map-get($theme-colors, $key);
   }
-  
-  // Forms
-  /*
-  $label-margin-bottom :.5rem !default;
-  
-  $input-padding-y: $input-btn-padding-y !default;
-  $input-padding-x: $input-btn-padding-x !default;
-  $input-border-color:#D0D0D0 !default;
-  $input-font-size:0.9rem;
-  // $input-width:25rem !default;
-  // $input-height:3.13rem !default;
-  $input-height:2rem !default;
-  $input-font-family: Helvetica !default;*/
