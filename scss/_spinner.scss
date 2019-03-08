@@ -1,0 +1,32 @@
+.spinner{
+    display:flex;
+    justify-content: center;
+
+    &-svg{
+        height:100px;
+        width: 100px;
+        animation-name: infinite-spinning;
+        animation-duration: 0.7s;
+        animation-timing-function: linear; 
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+
+        &-circle{
+            stroke: #6eedd8 ; 
+            stroke-width: 7;
+            fill: transparent;
+            stroke-linecap: butt;
+            stroke-dasharray: 220;
+           }
+      }
+      
+  }
+  
+  @keyframes infinite-spinning {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
