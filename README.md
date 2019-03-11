@@ -1,6 +1,6 @@
 # Patron
 
-Patron is a CSS framework. It follows the HCL guideliens and priniciples. If you are working on HCL products, we recommend you to follow Patron.
+Patron is a CSS framework. It follows the HCL guidelines and priniciples. If you are working on HCL products, we recommend you to follow Patron.
 
   - Responsive - flexbox based
   - CSS3
@@ -18,7 +18,7 @@ We are following feature-based development. Developer will get JIRA story assign
 create the tasks for the stories. The branch name should be the JIRA ID. Eg:
 
 ```sh
-feature/UICoE-<ID>
+feature/UICoE-[ID]
 ```
 
 # PR Process
@@ -40,6 +40,7 @@ defect/UICoE-[ID]
 # styleguide
 
   http://10.115.87.64:8080/
+  Carbon Design System
 
 # Tech
   - SCSS
