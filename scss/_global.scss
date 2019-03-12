@@ -1,16 +1,16 @@
 /* Global styling of the framework */
 
 body{
-    $body-color: var(--black) !default;
-    font : {
-        color: var(--black);
-        size: 1rem;
-        family: 'Roboto', sans-serif;
-    }
+  $body-color: var(--black) !default;
+  font : {
+      color: var(--black);
+      size: 1rem;
+      family: 'Roboto', sans-serif;
+  }
 }
 
 textarea, button, input{
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1,
@@ -19,8 +19,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: inherit;
-  margin: 0;
-  padding:0;
-  line-height: var(--base-line-height);
+color: inherit;
+margin: 0;
+padding:0;
+line-height: var(--base-line-height);
 }
