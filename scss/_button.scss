@@ -1,4 +1,4 @@
-$baseKey: "background";
+$baseKey: "bg";
 $theme: "primary";
 
 $themes: (
@@ -7,90 +7,150 @@ $themes: (
   "secondary",
   "outline",
   "outline-primary",
-  "outline-secondary"
+  "outline-secondary",
+  "gh",
+  "gh-primary",
+  "gh-secondary"
 );
 
 $colorMap: (
   "default": (
-    "background": var(--blue),
+    "bg": var(--blue),
     "hoverbg": var(--dark-secondary),
-    "borderColor": transparent,
-    "hoverborderColor": transparent,
-    "fontColor": var(--white)
+    "bc": transparent,
+    "hoverbc": transparent,
+    "fc": var(--white)
   ),
   "primary": (
-    "background": var(--black),
+    "bg": var(--black),
     "hoverbg": var(--black-secondary),
-    "borderColor": transparent,
-    "hoverborderColor": transparent,
-    "fontColor": var(--white)
+    "bc": transparent,
+    "hoverbc": transparent,
+    "fc": var(--white)
   ),
   "secondary": (
-    "background": var(--orange),
+    "bg": var(--orange),
     "hoverbg": var(--orange-secondary),
-    "borderColor": transparent,
-    "hoverborderColor": transparent,
-    "fontColor": var(--white)
+    "bc": transparent,
+    "hoverbc": transparent,
+    "fc": var(--white)
   ),
   "outline": (
-    "background": transparent,
+    "bg": transparent,
     "hoverbg": transparent,
-    "borderColor": var(--blue),
-    "hoverborderColor": var(--dark-secondary),
-    "fontColor": var(--blue)
+    "bc": var(--blue),
+    "hoverbc": var(--dark-secondary),
+    "fc": var(--blue),
+    "hoverfc": var(--dark-secondary)
   ),
   "outline-primary": (
-    "background": transparent,
+    "bg": transparent,
     "hoverbg": transparent,
-    "borderColor": var(--black),
-    "hoverborderColor": var(--black-secondary),
-    "fontColor": var(--black)
+    "bc": var(--black),
+    "hoverbc": var(--black-secondary),
+    "fc": var(--black),
+    "hoverfc": var(--black-secondary)
   ),
   "outline-secondary": (
-    "background": transparent,
+    "bg": transparent,
     "hoverbg": transparent,
-    "borderColor": var(--orange),
-    "hoverborderColor": var(--orange-secondary),
-    "fontColor": var(--orange)
+    "bc": var(--orange),
+    "hoverbc": var(--orange-secondary),
+    "fc": var(--orange),
+    "hoverfc": var(--orange-secondary)
+  ),
+  "gh": (
+    "bg": transparent,
+    "hoverbg": var(--dark-secondary),
+    "bc": transparent,
+    "hoverbc": var(--white),
+    "fc": var(--black)
+  ),
+  "gh-primary": (
+    "bg": transparent,
+    "hoverbg": var(--black-secondary),
+    "bc": transparent,
+    "hoverbc": var(--black-secondary),
+    "hoverfc": var(--white),
+    "fc": var(--black)
+  ),
+  "gh-secondary": (
+    "bg": transparent,
+    "hoverbg": var(--orange-secondary),
+    "bc": transparent,
+    "hoverbc": var(--orange-secondary),
+    "hoverfc": var(--white),
+    "fc": var(--black)
   )
 );
 
-button,
-.btn {
+%button {
   text-align: center;
-  padding: 0.25rem 1rem;
   cursor: pointer;
-  line-height: 1.75;
+  line-height: 1rem;
   font-size: 0.875rem;
   border: 1px solid transparent;
   color: var(--white);
   background: var(--blue);
+  margin:.5rem;
 }
 
-@function getColor($name: "default", $BKey: $baseKey) {
+button,
+.btn,
+.sm-btn,
+.gh-btn,
+.sm-gh-btn {
+  @extend %button;
+  padding: 0 1rem;
+  height: 2.5rem;
+}
+.sm-btn {
+  padding: 0 0.5rem;
+  height: 2rem;
+}
+.gh-btn {
+  background: none;
+  border: none;
+  color: $black;
+}
+.sm-gh-btn {
+  padding: 0 0.5rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  color: $black;
+}
+
+@function getColor($name: "default", $bkey: $baseKey) {
   $color: null;
   $colorList: map-get($colorMap, $name);
 
   @if $colorList {
-    $color: map-get($colorList, $BKey);
+    $color: map-get($colorList, $bkey);
   }
   @return $color;
 }
 
 @each $theme in $themes {
   button,
-  .btn {
-    &.btn--#{$theme} {
+  .btn,
+  .sm-btn,
+  .sm-gh-btn {
+    &.btn--#{$theme},
+    &.sm-btn--#{$theme},
+    &.sm-gh-btn--#{$theme} {
       background: getColor($theme);
-      border-color: getColor($theme, "borderColor");
-      color: getColor($theme, "fontColor");
+      border-color: getColor($theme, "bc");
+      color: getColor($theme, "fc");
       &:hover {
         background: getColor($theme, "hoverbg");
-        border-color: getColor($theme, "hoverborderColor");
+        border-color: getColor($theme, "hoverbc");
+        color: getColor($theme, "hoverfc");
       }
     }
     &:hover {
       background: getColor("default", "hoverbg");
+      color: getColor($theme, "hoverfc");
     }
   }
 }
