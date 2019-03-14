@@ -39,6 +39,28 @@
   $tertiary: $orange !default;
   
   $link-hover-color: var(--dark-secondary);
+
+  // Forms
+$label-margin-bottom :.5rem !default;
+$input-padding-y: 0.625rem;
+$input-padding-x: 0.625rem;
+$input-border-color:#D0D0D0 !default;
+$input-font-size:0.9rem;
+$input-height:2.5rem !default;
+$input-width: ( 400rem / 16);
+$textarea-height:(200rem / 16);
+$input-border-color-disabled:#D0D0D0;
+$input-background-color-disabled:#F6F6F6;
+$input-border-color-focus:#0066B3;
+
+//Errors
+$input-border-error:var(--error-input-border);
+$input-border-success:var(--success-input-border);
+//checkbox, radio
+
+//Range
+$range-width:(300rem / 16);
+$range-height:(4rem / 16);
   
   //theme color
   $theme-colors: () !default;
