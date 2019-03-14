@@ -20,48 +20,36 @@
     --success-font-color: green;
     --error-input-border: #EB1946;
     --success-input-border: #7EB338;
-}
-
-// we need to use sass varaible only when we need dynamic classes. 
-$base-font-size: var(--base-font-size); //16px
-$base-margin: var(--base-margin); //need to check
-$base-padding: var(--base-padding); //need to check
-$bold: var(--bold);
-$italic: var(--italic);
-$underline: var(--underline);
-$regular: var(--regular);
-$hide: var(--hide);
-$show: var(--block);
-
-// Color system
-$black: var(--black);
-$white: var(--white);
-$blue: var(--blue);
-$orange: var(--orange);
-$grey: var(--grey);
-$primary: $blue !default;
-$secondary: $black !default;
-$tertiary: $orange !default;
-$link-hover-color: var(--dark-secondary);
-
-// Forms
-$label-margin-bottom :.5rem !default;
-$input-padding-y: 0.625rem;
-$input-padding-x: 0.625rem;
-$input-border-color:#D0D0D0 !default;
-$input-font-size:0.9rem;
-$input-height:2.5rem !default;
-$input-width: ( 400rem / 16);
-$textarea-height:(200rem / 16);
-$input-border-color-disabled:#D0D0D0;
-$input-background-color-disabled:#F6F6F6;
-$input-border-color-focus:#0066B3;
-
-//Errors
-$input-border-error:var(--error-input-border);
-$input-border-success:var(--success-input-border);
-//checkbox, radio
-
-//Range
-$range-width:(300rem / 16);
-$range-height:(4rem / 16);
+  }
+  
+  // we need to use sass varaible only when we need dynamic classes.
+  $base-font-size: var(--ff-roboto) !default; //16px
+  $small-font-size: 12px;
+  $base-margin: var(--base-margin); //need to check
+  $base-padding: var(--base-padding); //need to check
+  
+  // Color system
+  $black: var(--black);
+  $white: var(--white);
+  $blue: var(--blue);
+  $orange: var(--orange);
+  $grey: var(--grey);
+  $primary: $blue !default;
+  $secondary: $black !default;
+  $tertiary: $orange !default;
+  
+  $link-hover-color: var(--dark-secondary);
+  
+  //theme color
+  $theme-colors: () !default;
+  $theme-colors: map-merge(
+    (
+      "primary": $primary,
+      "secondary": $secondary,
+      "tertiary": $tertiary
+    ),
+    $theme-colors
+  );
+  @function theme-color($key: "primary") {
+    @return map-get($theme-colors, $key);
+  }
