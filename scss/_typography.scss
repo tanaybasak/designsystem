@@ -1,4 +1,4 @@
-/* HCL Design System implementation
+/* HCL Design System 
     - Headings
     - a link
     - p 
@@ -8,85 +8,92 @@
     - Font-family and sizes
 */
 
-h4 {
-  font-size: calc(#{$base-font-size} * 1.5);
+@import "mixins";
+
+.pd-right {
+  @include getTextAlignment("right");
 }
 
-h5 {
-  font-size: calc(#{$base-font-size} * 1.25);
+.pd-left {
+  @include getTextAlignment("left");
 }
 
-h6 {
-  font-size: calc(#{$base-font-size} * 1);
+.pd-center {
+  @include getTextAlignment("center");
 }
 
-.center {
-  text-align: var(--text-center);
+.pd-justify {
+  @include getTextAlignment("justify");
 }
 
-.left-align {
-  text-align: var(--text-left);
+.pd-bold {
+  @include getFontWeight("bold");
 }
 
-.right-align {
-  text-align: var(--text-right);
+.pd-light {
+  @include getFontWeight("light");
 }
 
-.justify-align {
-  text-align: var(--text-justify);
+.pd-regular {
+  @include getFontWeight("regular");
 }
 
-.lowercase {
-  text-align:  var(--lowercase);
+.pd-semibold {
+  @include getFontWeight("semibold");
 }
 
-.uppercase {
-  text-align:  var(--uppercase);
+.pd-justify {
+  @include getTextAlignment("justify");
 }
 
-.capitalize {
-  text-align:  var(--text-capitalize);
+h1,
+.h1 {
+  @include getFontSize("h1");
+  @include lineHeight("heading");
 }
 
-.strong {
-  font-weight:  var(--strong-800);
+h2,
+.h2 {
+  @include getFontSize("h2");
+  @include lineHeight("heading");
 }
 
-.regular {
-  font-weight:  var(--regular-400);
+h3,
+.h3 {
+  @include getFontSize("h3");
+  @include lineHeight("heading");
 }
 
-.italic {
-  font-style:  var(--italic);
+h4,
+.h4 {
+  @include getFontSize("h4");
+  @include lineHeight("heading");
 }
 
-.underline {
-  font-style:  var(--underline);
+h5,
+.h5 {
+  @include getFontSize("h5");
+  @include lineHeight("heading");
 }
 
-.nomargin {
-  margin: 0;
+h6,
+.h6 {
+  @include getFontSize("h6");
+  @include lineHeight("heading");
 }
-
-.nopadding {
-  padding: 0;
-}
-
-
 
 a {
-    color: theme-color("primary");
-    font-size: $base-font-size;
+  color: theme-color("primary");
+  @include getFontSize("14");
+  text-decoration: var(--none);
+  &:hover {
+    color: $link-hover-color;
     text-decoration: var(--none);
-    &:hover{
-        color: $link-hover-color;
-        text-decoration:  var(--none);
-    }
+  }
 }
 
 p {
-  font-size: $base-font-size;
-  margin: $base-margin 0;
+  @include getFontSize("16");
   color: inherit;
   line-height: var(--base-line-height);
 }
