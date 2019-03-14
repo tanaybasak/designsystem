@@ -1,6 +1,6 @@
 $full-width: 100%;
-$gutter: 10px;
-$halfGutter: 5px;
+$gutter: 0.625rem;
+$halfGutter: 0.3125rem;
 $columns: 12;
 
 .patron-container {
@@ -18,9 +18,9 @@ $columns: 12;
                 width: calc(100% - #{$gutter});
             }
             margin: #{$halfGutter} #{$halfGutter};
-            @include tablet{
+            @include tablet {
                 width: calc(#{($i * 100 / $columns) + '%'} - #{$gutter});
-            }@include desktop{
+            }@include desktop {
                 width: calc(#{($i * 100 / $columns) + '%'} - #{$gutter});
             }
         }
@@ -34,9 +34,9 @@ $columns: 12;
     flex-wrap: wrap;
     margin: #{$halfGutter};
     @include col-x;
-    @include tablet{
+    @include tablet {
         flex-direction: row;
-    }@include desktop{
+    }@include desktop {
         flex-direction: row;
     }
 }
