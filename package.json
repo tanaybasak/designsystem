@@ -1,5 +1,5 @@
 {
-  "name": "patron-react-playground",
+  "name": "patron-css",
   "version": "1.0.0",
   "description": "Patron CSS Framework",
   "main": "index.js",
@@ -13,8 +13,10 @@
     "parcel": "^1.11.0"
   },
   "devDependencies": {
+    "autoprefixer": "^9.4.10",
     "parcel-bundler": "^1.11.0",
-    "sass": "^1.17.0"
+    "sass": "^1.17.0",
+    "postcss-cli": "^6.1.2"
   },
   "browserslist": [
     "last 1 edge versions",

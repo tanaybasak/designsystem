@@ -1,34 +1,19 @@
 :root {
-    --base-font-family: 'Roboto', sans-serif;
-    --base-font-size: 1rem;
-    --base-line-height: 1.5;
+    --ff-roboto: "Roboto", sans-serif;
+    --base-font-size: 1rem; //16px
+    --body-font-size: 0.875rem; //14px
+    --small-font-size: 10.75rem; //12px
+    --base-line-height: 1.15;
     --base-margin: 0.5rem;
     --base-padding: 0.2rem;
-    --italic: italic;
-    --underline: underline;
-    --hide: hide;
-    --block: block;
     --black: #000;
     --grey: #707070;
     --white: #fff;
-    --blue: #0066B3;
-    --dark-secondary: #003D6B;
-    --orange: #D01B2E;
-    --orange-secondary: #A31221;
+    --blue: #0066b3;
+    --dark-secondary: #003d6b;
+    --orange: #d01b2e;
+    --orange-secondary: #a31221;
     --black-secondary: #555;
-    --text-center: center;
-    --text-left: left;
-    --text-right: right;
-    --text-justify: justify;
-    --text-uppercase: uppercase;
-    --text-lowercase: lowercase;
-    --text-capitalize: capitalize;
-    --none: none;
-    --strong-800: 800;
-    --strong-600: 600;
-    --regular-400: 400;
-    --underline: underline;
-    --uppercase: uppercase;
     --error-background-color: red;
     --error-font-color: red;
     --success-background-color: green;
