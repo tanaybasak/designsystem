@@ -3,6 +3,12 @@
     box-sizing: border-box;
 }
 
+@mixin prefix-adder($property, $value){
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    #{$property}: $value;
+}
+
 input,
 textarea,
 input[type="radio"],
@@ -59,7 +65,47 @@ textarea.input-control{
     display: inline-block;
     position: relative;
     user-select: none;
-    margin-right:30px;
+    &.cr--wrapper{
+        margin-right:30px;
+    }
+    .select__wrapper{
+        display: flex;
+        flex-direction: column;
+        label{
+            order:1
+        }
+        select{
+            font-family: Helvetica Neue, Arial, sans-serif;
+            font-size: 0.875rem;
+            height: 2.5rem;
+            @include prefix-adder('appearance', none);;
+            display: block;
+            width: 100%;
+            padding: 0 2.5rem 0 1rem;
+            color: #152935;
+            background-color: #f4f7fb;
+            border: none;
+            box-shadow: 0 1px 0 0 #5a6872;
+            -ms-flex-order: 2;
+            order: 2;
+            border-radius: 0;
+            cursor: pointer;
+            border-bottom: 1px solid transparent;
+            background-color: white;
+            &:focus{
+                outline:none;
+            }
+        }
+        svg{
+            fill: #3d70b2;
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            width: 0.625rem;
+            height: 0.3125rem;
+            pointer-events: none;
+        }
+    }
     .form-item__checkbox, input[type="checkbox"] {
         position:absolute;
         padding:0;
@@ -213,159 +259,159 @@ label.input-switch{
 
 
 
-input[type="range"]{
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline:none;
-    border:0;
-    margin:0;
-    padding:0;
-    width:$range-width;
-    height:$range-height;
-    background-color:#DDDDDD;
-    &::-webkit-slider-runnable-track{
-        width: 300px;
-        height: 5px;
-        background: #DDDDDD;
-        border: none;
-        border-radius: 5px;
-    }
-    &::-moz-range-track{
-        width: 300px;
-        height: 5px;
-        background: #DDDDDD;
-        border: none;
-        border-radius: 5px;
-    }
-    &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        border: none;
-        height: 1rem;
-        width: 1rem;
-        border-radius: 50%;
-        background-color: $blue;
-        margin-top: -5px;
-        cursor:pointer;
-    }
-    &::-moz-range-thumb{
-        -moz-appearance: none;
-        border: none;
-        height: 1rem;
-        width: 1rem;
-        border-radius: 50%;
-        background-color: $blue;
-        margin-top: -5px;
-        cursor:pointer;
-    }
-    &::-ms-track{
-        width: 300px;
-        height: 5px;
-        background: #DDDDDD;
-        border: none;
-        border-radius: 5px;
-    }
-    &::-ms-thumb {
-        border: none;
-        height: 1rem;
-        width: 1rem;
-        border-radius: 50%;
-        background: goldenrod;
-        cursor:pointer;
-    }
-    &:disabled::-webkit-slider-thumb{
-        cursor: not-allowed;
-    }
-}
+// input[type="range"]{
+//     box-sizing: border-box;
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     appearance: none;
+//     outline:none;
+//     border:0;
+//     margin:0;
+//     padding:0;
+//     width:$range-width;
+//     height:$range-height;
+//     background-color:#DDDDDD;
+//     &::-webkit-slider-runnable-track{
+//         width: 300px;
+//         height: 5px;
+//         background: #DDDDDD;
+//         border: none;
+//         border-radius: 5px;
+//     }
+//     &::-moz-range-track{
+//         width: 300px;
+//         height: 5px;
+//         background: #DDDDDD;
+//         border: none;
+//         border-radius: 5px;
+//     }
+//     &::-webkit-slider-thumb {
+//         -webkit-appearance: none;
+//         border: none;
+//         height: 1rem;
+//         width: 1rem;
+//         border-radius: 50%;
+//         background-color: $blue;
+//         margin-top: -5px;
+//         cursor:pointer;
+//     }
+//     &::-moz-range-thumb{
+//         -moz-appearance: none;
+//         border: none;
+//         height: 1rem;
+//         width: 1rem;
+//         border-radius: 50%;
+//         background-color: $blue;
+//         margin-top: -5px;
+//         cursor:pointer;
+//     }
+//     &::-ms-track{
+//         width: 300px;
+//         height: 5px;
+//         background: #DDDDDD;
+//         border: none;
+//         border-radius: 5px;
+//     }
+//     &::-ms-thumb {
+//         border: none;
+//         height: 1rem;
+//         width: 1rem;
+//         border-radius: 50%;
+//         background: goldenrod;
+//         cursor:pointer;
+//     }
+//     &:disabled::-webkit-slider-thumb{
+//         cursor: not-allowed;
+//     }
+// }
 
-.number-picker{
-    display:flex;
-    max-height:50px;
-    height:50px;
-    max-width:162px;
-    margin:0;
-    border:1px solid #D0D0D0;
-    .number-picker__btn, .number-picker__input{
-        flex:1;
-        height:3rem;
-        margin:0;
-        width:3.375rem;
-        border:0;
-        max-width:3.375rem;
-        background-color: $white;
-        color:#000000;
-    }
-    .number-picker__btn .number-picker__icon-plus::before{
-        content:"\254B";
-        font-style: normal;
-    }
-    .number-picker__btn .number-picker__icon-minus::before{
-        content:"\2501";
-        font-style: normal;
-    }
-    .number-picker__input{
-       border:none;
+// .number-picker{
+//     display:flex;
+//     max-height:50px;
+//     height:50px;
+//     max-width:162px;
+//     margin:0;
+//     border:1px solid #D0D0D0;
+//     .number-picker__btn, .number-picker__input{
+//         flex:1;
+//         height:3rem;
+//         margin:0;
+//         width:3.375rem;
+//         border:0;
+//         max-width:3.375rem;
+//         background-color: $white;
+//         color:#000000;
+//     }
+//     .number-picker__btn .number-picker__icon-plus::before{
+//         content:"\254B";
+//         font-style: normal;
+//     }
+//     .number-picker__btn .number-picker__icon-minus::before{
+//         content:"\2501";
+//         font-style: normal;
+//     }
+//     .number-picker__input{
+//        border:none;
 
-    }
-    .number-picker__btn:active{
-        background-color:$blue;
-        color:$white;
-        outline:none;
-    }
-    &.disabled{
-        cursor:not-allowed;
-        input, .number-picker__btn{
-            pointer-events: none;
-            background: #F6F6F6;
-        }
-    }
-}
+//     }
+//     .number-picker__btn:active{
+//         background-color:$blue;
+//         color:$white;
+//         outline:none;
+//     }
+//     &.disabled{
+//         cursor:not-allowed;
+//         input, .number-picker__btn{
+//             pointer-events: none;
+//             background: #F6F6F6;
+//         }
+//     }
+// }
 
-    // Toggle Component
-.toggle{
-    display:flex;
-    position:relative;
-    box-sizing: border-box;
-    width:326px;
-    height:50px;
-    border:0;
-    & .toggle__item{
-        border: 1px solid #3d70b2;
-        background-color: transparent;
-        display:flex;
-        flex:1;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-        position:relative;
-        & .toggle__item-check-input, input[type="radio"]{
-            display:none;
-            width:100%;
-            height:100%;
-            margin:0;
-        }
-        & label{
-            flex:1;
-            padding: 15px;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            cursor:pointer;
-        }
-        & .toggle__item-check-input:checked + label{
-            background:$blue;
-            color:$white;
-        }
-    }
-    & .toggle__item:not(:first-of-type){
-        border-left: 1px solid #3d70b2;
-    }
-    & .toggle__item:not(:last-of-type){
-        border-right:none;
-    }
-}
+//     // Toggle Component
+// .toggle{
+//     display:flex;
+//     position:relative;
+//     box-sizing: border-box;
+//     width:326px;
+//     height:50px;
+//     border:0;
+//     & .toggle__item{
+//         border: 1px solid #3d70b2;
+//         background-color: transparent;
+//         display:flex;
+//         flex:1;
+//         align-items: center;
+//         justify-content: center;
+//         padding: 0;
+//         margin: 0;
+//         position:relative;
+//         & .toggle__item-check-input, input[type="radio"]{
+//             display:none;
+//             width:100%;
+//             height:100%;
+//             margin:0;
+//         }
+//         & label{
+//             flex:1;
+//             padding: 15px;
+//             position: absolute;
+//             top: 0;
+//             bottom: 0;
+//             left: 0;
+//             right: 0;
+//             text-align: center;
+//             cursor:pointer;
+//         }
+//         & .toggle__item-check-input:checked + label{
+//             background:$blue;
+//             color:$white;
+//         }
+//     }
+//     & .toggle__item:not(:first-of-type){
+//         border-left: 1px solid #3d70b2;
+//     }
+//     & .toggle__item:not(:last-of-type){
+//         border-right:none;
+//     }
+// }
