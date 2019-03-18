@@ -1,8 +1,12 @@
-@import "_mediaQueries";
-@import "_variables";
-@import "_reset";
-@import "_utility";
-@import "_global";
-@import "_typography";
-@import "_grids";
-@import "_button";
+@import "utils/mediaQueries";
+@import "base/variables";
+@import "base/reset";
+@import "utils/utility";
+@import "base/global";
+@import "components/typography/typography";
+@import "layout/grids";
+@import "components/button/button";
+
+
+
+
