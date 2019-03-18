@@ -4,7 +4,7 @@
   "description": "Patron CSS Framework",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel --no-cache form_elements.html",
+    "dev": "parcel --no-cache index.html",
     "build": "parcel build index.html"
   },
   "author": "HCL Products & Platforms",
