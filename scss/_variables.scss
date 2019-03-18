@@ -8,7 +8,7 @@
     --base-padding: 0.2rem;
     --black: #000;
     --grey: #707070;
-    --white: #fff;
+    --white: #FFFFFF;
     --blue: #0066b3;
     --dark-secondary: #003d6b;
     --orange: #d01b2e;
@@ -47,7 +47,7 @@ $input-padding-x: 0.625rem;
 $input-border-color:#D0D0D0 !default;
 $input-font-size:0.9rem;
 $input-height:2.5rem !default;
-$input-width: ( 400rem / 16);
+$input-width: calc( 400rem / 16);
 $textarea-height:(200rem / 16);
 $input-border-color-disabled:#D0D0D0;
 $input-background-color-disabled:#F6F6F6;
