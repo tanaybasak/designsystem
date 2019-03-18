@@ -1,16 +1,46 @@
 # Patron-CSS 
 
-Patron is a CSS framework. It follows the HCL guideliens and priniciples. If you are working on HCL products, we recommend you to follow Patron.
+Patron is a CSS framework. It follows the HCL guidelines and priniciples. If you are working on HCL products, we recommend you to follow Patron.
 
   - Responsive - flexbox based
   - CSS3
   - SCSS
   - HCL themes
   - Supported in all modern browsers
+  - rem unit
+  - line-height : headings: 1.15 and body 1.125
+  - TypeSize from 12px
+  - Base TypeSize is 16px
+
+# Development process 
+
+We are following feature-based development. Developer will get JIRA story assigned. Developer can 
+create the tasks for the stories. The branch name should be the JIRA ID. Eg:
+
+```sh
+feature/UICoE-[ID]
+```
+
+# PR Process
+No code should be merged without the peer review. It is mandatory to raise the PR for every code
+developer or anyone is committing with proper description. 
+* Don't push long code in PR.
+* Do write descriptive PR comments.
+* Do add atleast 3 developers for review.
+* Do not close the PR unless the reviews are resolved.
+* Do write 'WIP' for the PR if you want to have pre review.
+
+# Defect fixing process
+We are following defect-ID-based defect fixing development. Developer will get JIRA issue assigned. The branch name should be the JIRA ID. Eg:
+
+```sh
+defect/UICoE-[ID]
+```
 
 # styleguide
 
   http://10.115.87.64:8080/
+  Carbon Design System
 
 # Tech
   - SCSS
@@ -18,18 +48,37 @@ Patron is a CSS framework. It follows the HCL guideliens and priniciples. If you
 
 # What is in V1.0!
 
-  ### Typography 
-  -   Roboto font-family 
-  -   rem based
-  -   HCL theme based
-  -   Headings, body text, list, anchore link
+  ## Typography 
+  | PROPS | VALUE |
+  | ------ | ------ |
+  | font-family | Roboto |
+  | Typesize unit | rem  |
+  | Base font-size | 16px = 1rem |
+  | Line-height | XX |
+  | Headings | h1-h6 and classes .h1-.h6 |
+  | font-weight | 300, 400, 800 |
+  | font-style | italic, underline |
+  | text-transform | uppercase, lowercase, capitalize |
+  | text-align | left, right, center, justify |
   
-  ### Grids
-  -  12 col based
-  -   row/col approach
-  
-  ### Buttons
-  -  2 types of buttons
+  ## Grids
+  | PROPS | VALUE |
+  | ------ | ------ |
+  | columns | 12 |
+  | row/col | both |
+  | CSS | Flexbox |
+  | default padding | XX |
+  | default margin | XX | 
+   
+  ## Buttons
+  | PROPS | VALUE |
+  | ------ | ------ |
+  | buttons style | XX |
+
+  ## Forms 
+  | PROPS | VALUE |
+  | ------ | ------ |
+  | Forms | XX | 
   
  # How to use? 
   1) Install parceljs 
@@ -61,10 +110,6 @@ then we can move the list styling from Typography.scss and create new file list.
 - One should follow the camelNameCase.
 - If you are using map mention'-map' after the name of the map.
 
+# License
 
-
-
-
-
-
-   
+HCL Technologies 2019-2020
