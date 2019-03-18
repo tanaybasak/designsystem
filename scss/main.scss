@@ -1,0 +1,47 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+/*
+    @import ORDER TO BE FOLLOWED STRICTLY AS FOLLOWS
+    ------------------------------------------------
+    utils
+      |
+      V
+    (vendors) - if used in app
+      |
+      V
+    base
+      |
+      V
+    layout
+      |
+      V
+    components
+      |
+      V
+    (pages) - if used in app
+      |
+      V
+    themes
+*/
+
+// UTILITIES PARTIALS
+@import "utils/variables";
+@import "utils/functions";
+// @import 'utils/mixins'; // TODO: Subject to be added
+// @import 'utils/placeholders'; // TODO: Subject to be added
+@import "utils/mediaQueries";
+@import "utils/utility";
+// BASE PARTIALS
+@import "base/reset";
+@import "base/global";
+// LAYOUT PARTIALS
+@import "layout/grids";
+// COMPONENTS PARTIALS
+@import "components/typography/typography";
+@import "components/button/button";

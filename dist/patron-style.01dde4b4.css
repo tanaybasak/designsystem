@@ -1,3 +1,40 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/*
+    @import ORDER TO BE FOLLOWED STRICTLY AS FOLLOWS
+    ------------------------------------------------
+    utils
+      |
+      V
+    (vendors) - if used in app
+      |
+      V
+    base
+      |
+      V
+    layout
+      |
+      V
+    components
+      |
+      V
+    (pages) - if used in app
+      |
+      V
+    themes
+*/
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 :root {
   --ff-roboto: "Roboto", sans-serif;
   --base-font-size: 1rem;
@@ -20,23 +57,28 @@
   --success-font-color: green;
 }
 
-/* HCL */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-  line-height: var(--base-line-height);
-}
-
+/* we need to use sass varaible only when we need dynamic classes. */
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 .margin {
   margin: var(--base-margin);
 }
@@ -441,15 +483,22 @@ h6 {
   margin: 36px !important;
 }
 
-/* Global styling of the HCL */
-body {
-  font-color: var(--black);
-  font-size: 1rem;
-  font-family: "Roboto", sans-serif;
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+* {
+  margin: 0;
+  padding: 0;
 }
 
-textarea, button, input {
-  font-family: "Roboto", sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 h1,
@@ -458,21 +507,301 @@ h3,
 h4,
 h5,
 h6 {
+  line-height: inherit;
   color: inherit;
-  margin: 0;
-  padding: 0;
+}
+
+textarea,
+input,
+button {
+  font-family: inherit;
+}
+
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--black);
   line-height: var(--base-line-height);
 }
 
-/* HCL Design System 
-    - Headings
-    - a link
-    - p 
-    - text transform
-    - text-alignment
-    - font style
-    - Font-family and sizes
-*/
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+.patron-container {
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0.5%;
+}
+
+.bgColor {
+  background: #eee;
+}
+
+.col-1 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-1 {
+    -ms-flex-preferred-size: 6.9583333333%;
+        flex-basis: 6.9583333333%;
+    max-width: 6.9583333333%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-1 {
+    -ms-flex-preferred-size: 6.9583333333%;
+        flex-basis: 6.9583333333%;
+    max-width: 6.9583333333%;
+  }
+}
+
+.col-2 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-2 {
+    -ms-flex-preferred-size: 14.4166666667%;
+        flex-basis: 14.4166666667%;
+    max-width: 14.4166666667%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-2 {
+    -ms-flex-preferred-size: 14.4166666667%;
+        flex-basis: 14.4166666667%;
+    max-width: 14.4166666667%;
+  }
+}
+
+.col-3 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-3 {
+    -ms-flex-preferred-size: 22.875%;
+        flex-basis: 22.875%;
+    max-width: 22.875%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-3 {
+    -ms-flex-preferred-size: colums-widthh(3);
+        flex-basis: colums-widthh(3);
+    max-width: 22.875%;
+  }
+}
+
+.col-4 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-4 {
+    -ms-flex-preferred-size: 31.3333333333%;
+        flex-basis: 31.3333333333%;
+    max-width: 31.3333333333%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-4 {
+    -ms-flex-preferred-size: 31.3333333333%;
+        flex-basis: 31.3333333333%;
+    max-width: 31.3333333333%;
+  }
+}
+
+.col-5 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-5 {
+    -ms-flex-preferred-size: 39.7916666667%;
+        flex-basis: 39.7916666667%;
+    max-width: 39.7916666667%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-5 {
+    -ms-flex-preferred-size: 39.7916666667%;
+        flex-basis: 39.7916666667%;
+    max-width: 39.7916666667%;
+  }
+}
+
+.col-6 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-6 {
+    -ms-flex-preferred-size: 48.25%;
+        flex-basis: 48.25%;
+    max-width: 48.25%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-6 {
+    -ms-flex-preferred-size: 48.25%;
+        flex-basis: 48.25%;
+    max-width: 48.25%;
+  }
+}
+
+.col-7 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-7 {
+    -ms-flex-preferred-size: 56.7083333333%;
+        flex-basis: 56.7083333333%;
+    max-width: 56.7083333333%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-7 {
+    -ms-flex-preferred-size: 56.7083333333%;
+        flex-basis: 56.7083333333%;
+    max-width: 56.7083333333%;
+  }
+}
+
+.col-8 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-8 {
+    -ms-flex-preferred-size: 65.1666666667%;
+        flex-basis: 65.1666666667%;
+    max-width: 65.1666666667%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-8 {
+    -ms-flex-preferred-size: 65.1666666667%;
+        flex-basis: 65.1666666667%;
+    max-width: 65.1666666667%;
+  }
+}
+
+.col-9 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-9 {
+    -ms-flex-preferred-size: 73.625%;
+        flex-basis: 73.625%;
+    max-width: 73.625%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-9 {
+    -ms-flex-preferred-size: 73.625%;
+        flex-basis: 73.625%;
+    max-width: 73.625%;
+  }
+}
+
+.col-10 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-10 {
+    -ms-flex-preferred-size: 82.0833333333%;
+        flex-basis: 82.0833333333%;
+    max-width: 82.0833333333%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-10 {
+    -ms-flex-preferred-size: 82.0833333333%;
+        flex-basis: 82.0833333333%;
+    max-width: 82.0833333333%;
+  }
+}
+
+.col-11 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 0.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-11 {
+    -ms-flex-preferred-size: 90.5416666667%;
+        flex-basis: 90.5416666667%;
+    max-width: 90.5416666667%;
+  }
+}
+@media (min-width: 1024px) {
+  .col-11 {
+    -ms-flex-preferred-size: 90.5416666667%;
+        flex-basis: 90.5416666667%;
+    max-width: 90.5416666667%;
+  }
+}
+
+.col-12 {
+  padding: 0 0.5%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/* MIXINS SPECIFIC TO TYPOGRAPHY */
 .underline {
   font-style: underline;
 }
@@ -525,10 +854,6 @@ h6 {
   font-weight: 600;
 }
 
-.pd-justify {
-  text-align: justify;
-}
-
 h1,
 .h1 {
   font-size: 4.75rem;
@@ -568,13 +893,11 @@ h6,
 a {
   color: var(--blue);
   font-size: 0.875rem;
-  -webkit-text-decoration: var(--none);
-          text-decoration: var(--none);
+  text-decoration: var(--none);
 }
 a:hover {
   color: var(--dark-secondary);
-  -webkit-text-decoration: var(--none);
-          text-decoration: var(--none);
+  text-decoration: var(--none);
 }
 
 p {
@@ -583,214 +906,13 @@ p {
   line-height: var(--base-line-height);
 }
 
-.patron-container {
-  width: 100%;
-}
-
-.row {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0.5%;
-}
-
-.bgColor {
-  background: #eee;
-}
-
-.col-1 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-1 {
-    flex-basis: 6.9583333333%;
-    max-width: 6.9583333333%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-1 {
-    flex-basis: 6.9583333333%;
-    max-width: 6.9583333333%;
-  }
-}
-
-.col-2 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-2 {
-    flex-basis: 14.4166666667%;
-    max-width: 14.4166666667%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-2 {
-    flex-basis: 14.4166666667%;
-    max-width: 14.4166666667%;
-  }
-}
-
-.col-3 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-3 {
-    flex-basis: 22.875%;
-    max-width: 22.875%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-3 {
-    flex-basis: colums-widthh(3);
-    max-width: 22.875%;
-  }
-}
-
-.col-4 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-4 {
-    flex-basis: 31.3333333333%;
-    max-width: 31.3333333333%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-4 {
-    flex-basis: 31.3333333333%;
-    max-width: 31.3333333333%;
-  }
-}
-
-.col-5 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-5 {
-    flex-basis: 39.7916666667%;
-    max-width: 39.7916666667%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-5 {
-    flex-basis: 39.7916666667%;
-    max-width: 39.7916666667%;
-  }
-}
-
-.col-6 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-6 {
-    flex-basis: 48.25%;
-    max-width: 48.25%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-6 {
-    flex-basis: 48.25%;
-    max-width: 48.25%;
-  }
-}
-
-.col-7 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-7 {
-    flex-basis: 56.7083333333%;
-    max-width: 56.7083333333%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-7 {
-    flex-basis: 56.7083333333%;
-    max-width: 56.7083333333%;
-  }
-}
-
-.col-8 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-8 {
-    flex-basis: 65.1666666667%;
-    max-width: 65.1666666667%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-8 {
-    flex-basis: 65.1666666667%;
-    max-width: 65.1666666667%;
-  }
-}
-
-.col-9 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-9 {
-    flex-basis: 73.625%;
-    max-width: 73.625%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-9 {
-    flex-basis: 73.625%;
-    max-width: 73.625%;
-  }
-}
-
-.col-10 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-10 {
-    flex-basis: 82.0833333333%;
-    max-width: 82.0833333333%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-10 {
-    flex-basis: 82.0833333333%;
-    max-width: 82.0833333333%;
-  }
-}
-
-.col-11 {
-  flex-basis: 100%;
-  padding: 0 0.5%;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .col-11 {
-    flex-basis: 90.5416666667%;
-    max-width: 90.5416666667%;
-  }
-}
-@media (min-width: 1024px) {
-  .col-11 {
-    flex-basis: 90.5416666667%;
-    max-width: 90.5416666667%;
-  }
-}
-
-.col-12 {
-  padding: 0 0.5%;
-  flex-basis: 100%;
-}
-
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 button,
 .btn {
   text-align: center;
@@ -804,7 +926,7 @@ button,
 }
 button:hover,
 .btn:hover {
-  background: getColor("default", "hoverbg");
+  background: var(--dark-secondary);
 }
 
 button.btn--default,
@@ -933,5 +1055,3 @@ button.btn--outline-default:focus,
   border-color: var(--black);
   color: var(--white);
 }
-
-/*# sourceMappingURL=/patron-style.01dde4b4.css.map */

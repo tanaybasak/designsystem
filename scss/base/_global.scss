@@ -1,26 +1,22 @@
-/* Global styling of the HCL */
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 
-body{
-  $body-color: var(--black) !default;
-  font : {
-      color: var(--black);
-      size: 1rem;
-      family: 'Roboto', sans-serif;
-  }
+// GLOBAL STYLING
+html {
+    box-sizing: border-box;
+    font-size: 100%; // 1rem = 16px, 16px/16px = 100%
 }
 
-textarea, button, input{
-  font-family: 'Roboto', sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-color: inherit;
-margin: 0;
-padding:0;
-line-height: var(--base-line-height);
+body {
+    // $body-color: var(--black) !default; // TODO: Not seen being used anywhere, so commented out
+    font: {
+        family: 'Roboto', sans-serif;
+    }
+    color: var(--black);
+    line-height: var(--base-line-height);
 }
