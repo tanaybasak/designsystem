@@ -59,47 +59,6 @@ textarea.input-control{
     display: inline-block;
     position: relative;
     user-select: none;
-    &.cr--wrapper{
-        margin-right:30px;
-    }
-    .select__wrapper{
-        display: flex;
-        flex-direction: column;
-        label{
-            order:1
-        }
-        select{
-            font-family: Helvetica Neue, Arial, sans-serif;
-            font-size: 0.875rem;
-            height: 2.5rem;
-            appearance: none;
-            display: block;
-            width: 100%;
-            padding: 0 2.5rem 0 1rem;
-            color: #152935;
-            background-color: #f4f7fb;
-            border: none;
-            box-shadow: 0 1px 0 0 #5a6872;
-            -ms-flex-order: 2;
-            order: 2;
-            border-radius: 0;
-            cursor: pointer;
-            border-bottom: 1px solid transparent;
-            background-color: white;
-            &:focus{
-                outline:none;
-            }
-        }
-        svg{
-            fill: #3d70b2;
-            position: absolute;
-            right: 1rem;
-            bottom: 1rem;
-            width: 0.625rem;
-            height: 0.3125rem;
-            pointer-events: none;
-        }
-    }
     .form-item__checkbox, input[type="checkbox"] {
         position:absolute;
         padding:0;
@@ -206,47 +165,6 @@ textarea.input-control{
         }
         &:disabled + label.form-item__text{
             color: $grey;
-        }
-    }
-}
-
-label.input-switch{
-    position:relative;
-    display:inline-block;
-    width:2.25rem;
-    height:0.875rem;
-    margin:0.5rem 0;
-    .input-switch__check, input[type="checkbox"], input[type="checkbox"].input-switch__check{
-        opacity:0;
-        display:none;
-        &:checked{
-            + .input-switch__tracker{
-                background-color: $blue;
-            }
-            + .input-switch__tracker::before{
-                transform: translateX(20px);
-                background-color: $white;
-            }
-        }
-    }
-    .input-switch__tracker{
-        cursor:pointer;
-        position:absolute;
-        top:0;
-        bottom:0;
-        left:0;
-        right:0;
-        background-color:#D0D0D0;
-        border-radius:2.125rem;
-        &::before{
-            content:"";
-            position:absolute;
-            top: 0;
-            left: 0.0375rem;
-            width:0.9rem;
-            height:0.9rem;
-            border-radius:50%;
-            background-color: $white;
         }
     }
 }
