@@ -1,46 +1,55 @@
 $full-width: 100%;
-$gutter: 0.625rem;
-$halfGutter: 0.3125rem;
+$gutter: 0.9375rem;
 $columns: 12;
 
+// GRID CONTAINER
 .patron-container {
     width: #{$full-width};
+    margin: 0 auto;
+    padding: 0 #{$gutter};
+    box-sizing: border-box;
+
+    .row {
+        margin: 0 #{-1 * $gutter};
+    }
 }
 
-@mixin col-x {
-    @for $i from 1 through $columns {
-        .col-#{$i} {
-            @if $i == 3 {
-                width: calc(33.33% - #{$gutter});
-            } @else if $i == 6 {
-                width: calc(50% - #{$gutter});
-            } @else {
-                width: calc(100% - #{$gutter});
-            }
-            margin: #{$halfGutter} #{$halfGutter};
-            @include tablet {
-                width: calc(#{($i * 100 / $columns) + '%'} - #{$gutter});
-            }@include desktop {
-                width: calc(#{($i * 100 / $columns) + '%'} - #{$gutter});
-            }
+// COLUMNS WIDTH CALCULATIONS
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        box-sizing: border-box;
+        padding: 0 #{$gutter};
+
+        @if $i==6 {
+            width: calc(50%);
+        }
+
+        @else {
+            width: calc(100%);
+        }
+
+        @include tablet {
+            width: calc(#{($i * 100 / $columns) + '%'});
+        }
+
+        @include desktop {
+            width: calc(#{($i * 100 / $columns) + '%'});
         }
     }
 }
 
+
+// ROW 
 .row {
-    width: calc(#{100+'%'} - #{$gutter} - #{$gutter});
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    margin: #{$halfGutter};
-    @include col-x;
-    @include tablet {
-        flex-direction: row;
-    }@include desktop {
-        flex-direction: row;
-    }
 }
 
+// *ONLY FOR TESTING PURPOSE
 .bgColor {
     background-color: #eee;
+}
+
+.colBorder {
+    border: 1px solid #999;
 }
