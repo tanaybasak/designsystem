@@ -8,7 +8,7 @@
   --base-padding: 0.2rem;
   --black: #000;
   --grey: #707070;
-  --white: #fff;
+  --white: #FFFFFF;
   --blue: #0066b3;
   --dark-secondary: #003d6b;
   --orange: #d01b2e;
@@ -18,8 +18,8 @@
   --error-font-color: red;
   --success-background-color: green;
   --success-font-color: green;
-  --error-input-border: #EB1946;
-  --success-input-border: #7EB338;
+  --input-border-error: #EB1946;
+  --input-border-success: #7EB338;
 }
 
 /* HCL */
@@ -540,7 +540,7 @@ h6 {
 }
 
 a {
-  color: var(--blue);
+  color: theme-color("primary");
   font-size: var(--ff-roboto);
   text-decoration: var(--none);
 }
@@ -584,7 +584,7 @@ input[type=text], textarea, .input-control {
   border-width: 1px;
   border-color: #D0D0D0;
   font-size: 0.9rem;
-  width: 25rem;
+  width: calc( 400rem / 16);
   height: 2.5rem;
   padding: 0.625rem;
 }
@@ -598,10 +598,10 @@ input[type=text]:disabled, textarea:disabled, .input-control:disabled {
   cursor: not-allowed;
 }
 input[type=text].error, textarea.error, .input-control.error {
-  border-color: var(--error-input-border);
+  border-color: var(--input-border-error);
 }
 input[type=text].success, textarea.success, .input-control.success {
-  border-color: var(--success-input-border);
+  border-color: var(--input-border-success);
 }
 
 textarea.input-control {
@@ -687,7 +687,7 @@ textarea.input-control {
   -webkit-user-select: none;
 }
 .form-item .form-item__checkbox + .form-item__text::before, .form-item input[type=checkbox] + .form-item__text::before {
-  background-color: white;
+  background-color: var(--white);
   border-color: var(--blue);
   border-width: 1px;
 }
@@ -1191,5 +1191,3 @@ button.btn--outline-default:focus,
   border-color: var(--black);
   color: var(--white);
 }
-
-/*# sourceMappingURL=/patron-style.01dde4b4.css.map */

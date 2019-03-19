@@ -11,10 +11,10 @@
 
 <body>
     <main>
-        <section class="patron-container">
+        <section class="patron-container pt-3">
 
             <!-- Input Components -->
-            <form>
+            <form class="margin-around-5">
                 <label for="firstname">First Name</label>
                 <input type="text" class="input-control" id="firstname" value="First Name">
                 <label for="lastname">Last Name</label>
@@ -26,41 +26,42 @@
                 <label for="feedback">Feedback</label>
                 <textarea class="input-control" id="feedback" rows="5"></textarea>
             </form>
-            <div class="margin-around-5"></div>
 
             <!-- Checkbox Components -->
-            <div class="form-item cr--wrapper" aria-disabled="false">
-                <input class="form-item__checkbox" id="check1" type="checkbox">
-                <label class="form-item__text" for="check1">Voilet</label>
-            </div>
-            <div class="form-item cr--wrapper" aria-disabled="false">
-                <input class="form-item__checkbox" id="check2" type="checkbox" checked="">
-                <label class="form-item__text" for="check2">Green</label>
-            </div>
-            <div class="form-item cr--wrapper" aria-disabled="true">
-                <input class="form-item__checkbox" id="check3" type="checkbox" disabled="">
-                <label class="form-item__text" for="check3">Burlywood</label>
-            </div>
-            <div class="margin-around-5"></div>
+            <article class="margin-around-5">
+                <div class="form-item cr--wrapper" aria-disabled="false">
+                    <input class="form-item__checkbox" id="check1" type="checkbox">
+                    <label class="form-item__text" for="check1">Voilet</label>
+                </div>
+                <div class="form-item cr--wrapper" aria-disabled="false">
+                    <input class="form-item__checkbox" id="check2" type="checkbox" checked="">
+                    <label class="form-item__text" for="check2">Green</label>
+                </div>
+                <div class="form-item cr--wrapper" aria-disabled="true">
+                    <input class="form-item__checkbox" id="check3" type="checkbox" disabled="">
+                    <label class="form-item__text" for="check3">Burlywood</label>
+                </div>
+            </article>
 
             <!-- Radio Components -->
-            <div class="form-item cr--wrapper" aria-disabled="false">
-                <input class="form-item__radio" id="radio1" type="radio" value="Option1" name="planets">
-                <label class="form-item__text" for="radio1">Earth</label>
-            </div>
+            <article class="margin-around-5">
+                <div class="form-item cr--wrapper" aria-disabled="false">
+                    <input class="form-item__radio" id="radio1" type="radio" value="Option1" name="planets">
+                    <label class="form-item__text" for="radio1">Earth</label>
+                </div>
 
-            <div class="form-item cr--wrapper" aria-disabled="false">
-                <input class="form-item__radio" id="radio2" type="radio" value="Option2" name="planets" checked="">
-                <label class="form-item__text" for="radio2">Jupiter</label>
-            </div>
-            <div class="form-item cr--wrapper" aria-disabled="true">
-                <input class="form-item__radio" id="radio3" type="radio" value="Option3" name="planets" disabled="">
-                <label class="form-item__text" for="radio3">Saturn</label>
-            </div>
-            <div class="margin-around-5"></div>
+                <div class="form-item cr--wrapper" aria-disabled="false">
+                    <input class="form-item__radio" id="radio2" type="radio" value="Option2" name="planets" checked="">
+                    <label class="form-item__text" for="radio2">Jupiter</label>
+                </div>
+                <div class="form-item cr--wrapper" aria-disabled="true">
+                    <input class="form-item__radio" id="radio3" type="radio" value="Option3" name="planets" disabled="">
+                    <label class="form-item__text" for="radio3">Saturn</label>
+                </div>
+            </article>
 
             <!-- Select Component -->
-            <div class="form-item">
+            <div class="form-item margin-around-5">
                 <div class="select__wrapper">
                     <label for="lungs" class="select__label">What is the VO2Max ?</label>
                     <select id="lungs" class="select__input">
@@ -69,55 +70,25 @@
                         <option>Option 2</option>
                         <option>Option 3</option>
                     </select>
-                    <svg class="bx--select__arrow" width="10" height="5" viewBox="0 0 10 5" fill-rule="evenodd">
-                            <path d="M10 0L5 5 0 0z"></path>
+                    <svg class="select__arrow" width="10" height="5" viewBox="0 0 10 5" fill-rule="evenodd">
+                        <path d="M10 0L5 5 0 0z"></path>
                     </svg>
                 </div>
             </div>
-            <div class="margin-around-5"></div>
 
             <!-- Toggle Button Components -->
-            <label class="input-switch">
-                <input class="input-switch__check" type="checkbox">
-                <span class="input-switch__tracker"></span>
-            </label>
-            <div class="margin-around-5"></div>
-            <label class="input-switch">
-                <input class="input-switch__check" type="checkbox" checked="">
-                <span class="input-switch__tracker"></span>
-            </label>
-            <div class="margin-around-5"></div>
+            <article class="margin-around-5">
+                <label class="input-switch">
+                    <input class="input-switch__check" type="checkbox">
+                    <span class="input-switch__tracker"></span>
+                </label>
+                <div class="margin-around-5"></div>
+                <label class="input-switch">
+                    <input class="input-switch__check" type="checkbox" checked="">
+                    <span class="input-switch__tracker"></span>
+                </label>
+            </article>
 
-            <!-- Range Component -->
-            <!-- <input type="range" min="1" max="100" step="1.0" id="age-range" name="age-range" aria-label="age-range" value="53" /> -->
-            <!--aria-label is used when <label> tag is not used-->
-
-            <!-- Number Picker Component -->
-            <!-- <div class="number-picker disabled" aria-disabled="true">
-                <button class="number-picker__btn" aria-label="Increment"><i class="number-picker__icon-minus"></i></button>
-                <input type="text" class="number-picker__input" aria-label="Input Number Picker"/>
-                <button class="number-picker__btn" aria-label="Decrement"><i class="number-picker__icon-plus"></i></button>
-            </div>
-            <div class="margin-around-5"></div>
-            <div class="number-picker" aria-disabled="false">
-                <button class="number-picker__btn" aria-label="Increment"><i class="number-picker__icon-minus"></i></button>
-                <input type="text" class="number-picker__input" aria-label="Input Number Picker"/>
-                <button class="number-picker__btn" aria-label="Decrement"><i class="number-picker__icon-plus"></i></button>
-            </div>
-            <div class="margin-around-5"></div> -->
-
-            <!-- Toggle -->
-            <!-- <div class="toggle">
-                <div class="toggle__item">
-                    <input type="radio" class="toggle__item-check-input" id="toggle_1" name="options" value="option1" />
-                    <label for="toggle_1" class="toggle__item-text">Option 1</label>
-                </div>
-                <div class="toggle__item">
-                    <input type="radio" class="toggle__item-check-input" id="toggle_2" name="options" value="option2" />
-                    <label for="toggle_2" class="toggle__item-text">Option 2</label>
-                </div>
-            </div> -->
-            <div class="margin-around-5"></div>
         </section>
     </main>
 </body>
