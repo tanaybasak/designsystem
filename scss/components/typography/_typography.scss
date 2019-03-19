@@ -1,0 +1,97 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+@import "mixins";
+// Alignment
+.pd-right {
+    @include getTextAlignment("right");
+}
+
+.pd-left {
+    @include getTextAlignment("left");
+}
+
+.pd-center {
+    @include getTextAlignment("center");
+}
+
+.pd-justify {
+    @include getTextAlignment("justify");
+}
+
+// Font style
+.pd-bold {
+    @include getFontWeight("bold");
+}
+
+.pd-light {
+    @include getFontWeight("light");
+}
+
+.pd-regular {
+    @include getFontWeight("regular");
+}
+
+.pd-semibold {
+    @include getFontWeight("semibold");
+}
+
+// Headings
+h1,
+.h1 {
+    @include getFontSize("h1");
+    @include lineHeight("heading");
+}
+
+h2,
+.h2 {
+    @include getFontSize("h2");
+    @include lineHeight("heading");
+}
+
+h3,
+.h3 {
+    @include getFontSize("h3");
+    @include lineHeight("heading");
+}
+
+h4,
+.h4 {
+    @include getFontSize("h4");
+    @include lineHeight("heading");
+}
+
+h5,
+.h5 {
+    @include getFontSize("h5");
+    @include lineHeight("heading");
+}
+
+h6,
+.h6 {
+    @include getFontSize("h6");
+    @include lineHeight("heading");
+}
+
+// Link
+a {
+    color: theme-color("primary");
+    @include getFontSize("14");
+    text-decoration: var(--none);
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: var(--none);
+    }
+}
+
+// Paragraph
+p {
+    @include getFontSize("16");
+    color: inherit;
+    line-height: var(--base-line-height);
+}

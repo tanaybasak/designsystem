@@ -1,0 +1,21 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+// Global styling for Patron CSS framework
+html {
+    box-sizing: border-box;
+}
+
+body {
+    // $body-color: var(--black) !default; // TODO: Not seen being used anywhere, so commented out
+    font: {
+        family: 'Roboto', sans-serif;
+    }
+    color: var(--black);
+    line-height: var(--base-line-height);
+}
