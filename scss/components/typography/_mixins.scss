@@ -8,7 +8,7 @@
 
 /* MIXINS SPECIFIC TO TYPOGRAPHY */
 
-// FONT WEIGHT
+// Font weight
 $fontWeights-map: ( light: 300, regular: 400, semibold: 600, bold: 800);
 @mixin getFontWeight($fontWeight) {
     @if map-has-key($fontWeights-map, $fontWeight) {
@@ -19,7 +19,7 @@ $fontWeights-map: ( light: 300, regular: 400, semibold: 600, bold: 800);
     }
 }
 
-// FONT STYLE
+// Font style
 $fontStyles-map: (underline, italic);
 @each $fontStyle in $fontStyles-map {
     .#{$fontStyle} {
@@ -44,7 +44,7 @@ $textAlignments-map: ( "center": center, "left": left, "right": right, "justify"
     }
 }
 
-// SIZES
+// Font sizes
 $typeSizes-map: ( "h1": 4.75rem, "h2": 3.375rem, "h3": 2.25rem, "h4": 1.75rem, "h5": 1.25rem, "h6": 1.125rem, "16": 1rem, "11": 0.6875rem, "12": 0.75rem, "14": 0.875rem);
 @mixin getFontSize($size) {
     @if map-has-key($typeSizes-map, $size) {

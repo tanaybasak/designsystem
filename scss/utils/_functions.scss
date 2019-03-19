@@ -6,12 +6,12 @@
  *******************************************************************
  */
 
-// THEMES
+// Themes
 @function theme-color($key: "primary") {
     @return map-get($theme-colors, $key);
 }
 
-// GRIDS
+// Grids
 @function grid-width($n) {
     @return (100- ($gutter * (12 - $n))) / 12;
 }
@@ -20,7 +20,7 @@
     @return ((grid-width(1) * $n) + ($gutter * ($n - 1)) - 2 * $halfGutter);
 }
 
-// UTILITIES
+// Utilities
 @function rem($px) {
     @return ($px / $base-font-size) * 1rem;
 }
@@ -29,7 +29,7 @@
     @return ($px / $base-font-size) * 1em;
 }
 
-// COLORS
+// Colors
 @function getColor($name: "default", $BKey: $baseKey) {
     $color: null;
     $colorList: map-get($colorMap, $name);

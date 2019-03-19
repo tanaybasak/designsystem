@@ -7,7 +7,7 @@
  */
 
 @import "mixins";
-// ALIGNMENT
+// Alignment
 .pd-right {
     @include getTextAlignment("right");
 }
@@ -24,7 +24,7 @@
     @include getTextAlignment("justify");
 }
 
-// FONT STYLE
+// Font style
 .pd-bold {
     @include getFontWeight("bold");
 }
@@ -41,7 +41,7 @@
     @include getFontWeight("semibold");
 }
 
-// HEADINGS
+// Headings
 h1,
 .h1 {
     @include getFontSize("h1");
@@ -78,7 +78,7 @@ h6,
     @include lineHeight("heading");
 }
 
-// LINK
+// Link
 a {
     color: theme-color("primary");
     @include getFontSize("14");
@@ -89,7 +89,7 @@ a {
     }
 }
 
-// PARAGRAPH
+// Paragraph
 p {
     @include getFontSize("16");
     color: inherit;

@@ -30,18 +30,18 @@
     themes
 */
 
-// UTILITIES PARTIALS
+// Utilities partials
 @import "utils/variables";
 @import "utils/functions";
 // @import 'utils/mixins'; // TODO: Subject to be added
 // @import 'utils/placeholders'; // TODO: Subject to be added
 @import "utils/mediaQueries";
 @import "utils/utility";
-// BASE PARTIALS
+// Base partials
 @import "base/reset";
 @import "base/global";
-// LAYOUT PARTIALS
+// Layout partials
 @import "layout/grids";
-// COMPONENTS PARTIALS
+// Components partials
 @import "components/typography/typography";
 @import "components/button/button";

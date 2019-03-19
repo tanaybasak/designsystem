@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-// GLOBAL VARIABLES
+// Global variables
 :root {
     --ff-roboto: "Roboto", sans-serif;
     --base-font-size: 1rem; // 16px
@@ -29,13 +29,12 @@
     --success-font-color: green;
 }
 
-/* we need to use sass varaible only when we need dynamic classes. */
-
+// We need to use sass varaible only when we need dynamic classes.
 $base-font-size: var(--base-font-size) !default; // 16px
 $small-font-size: 12px;
 $base-margin: var(--base-margin); // need to check
 $base-padding: var(--base-padding); // need to check
-// COLOR SYSTEM
+// Color system
 $black: var(--black);
 $white: var(--white);
 $blue: var(--blue);
@@ -45,6 +44,6 @@ $primary: $blue !default;
 $secondary: $black !default;
 $tertiary: $orange !default;
 $link-hover-color: var(--dark-secondary);
-// THEMES
+// Themes
 $theme-colors: () !default;
 $theme-colors: map-merge(( "primary": $primary, "secondary": $secondary, "tertiary": $tertiary), $theme-colors);

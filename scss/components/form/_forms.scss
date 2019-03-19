@@ -50,7 +50,7 @@ textarea,
     }
 }
 
-// CHECKBOX AND RADIO BUTTONS
+// Checkbox and radio button
 .form-item {
     display: inline-block;
     position: relative;
@@ -71,7 +71,7 @@ textarea,
     & input[type="checkbox"]+label.form-item__text {
         padding-left: 10px;
     }
-    /* RADIO */
+    /* Radio button */
     & .form-item__radio,
     input[type="radio"].form-item__radio,
     input[type="radio"] {
@@ -109,7 +109,7 @@ textarea,
     & input[type="radio"]:disabled+label.form-item__text {
         color: $grey;
     }
-    /* CHECKBOX */
+    /* Checkbox */
     & .form-item__checkbox+label.form-item__text:before {
         content: "";
         position: absolute;

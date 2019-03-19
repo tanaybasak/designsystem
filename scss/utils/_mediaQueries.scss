@@ -6,12 +6,12 @@
  *******************************************************************
  */
 
-// BREAKPOINTS
+// Breakpoints
 // TODO: Subject to be changed once the breakpoints are finalized
 $tablet-mobile: 640px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
-// MIXINS
+// Mixins
 @mixin mobile {
     @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
         @content;
