@@ -4,7 +4,7 @@
   "description": "Patron CSS Framework",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel --no-cache index.html",
+    "dev": "parcel --no-cache watch form.html",
     "build": "parcel build index.html"
   },
   "author": "HCL Products & Platforms",
@@ -19,8 +19,8 @@
     "postcss-cli": "^6.1.2"
   },
   "browserslist": [
-    "last 1 edge versions",
     "> 1%",
-    "IE 10"
+    "last 3 versions",
+    "not IE <= 12"
   ]
 }
