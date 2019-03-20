@@ -29,10 +29,19 @@ $fontWeights-map: ( light: 300, regular: 400, semibold: 600, bold: 800);
 }
 
 // TEXT STYLE
-$fontStyles-map: (underline, italic);
+$fontStyles-map: ("underline" : underline, "italic" : italic);
 @each $fontStyle in $fontStyles-map {
-    .#{$fontStyle} {
+    .#{$prefix}-#{$fontStyle} {
         font-style: $fontStyle;
+    }
+}
+
+@mixin getFontStyle($fontStyle) {
+    @if map-has-key($fontStyles-map, $fontStyle) {
+        font-style: map-get($fontStyles-map, $fontStyle);
+    }
+    @else {
+        @warn 'This is not define in the HCL design System!';
     }
 }
 

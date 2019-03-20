@@ -43,40 +43,83 @@
 
 // HEADINGS
 h1,
-.#{$prefix}-h1 {
+.#{$prefix}-h1,
+.#{prefix}-giga {
     @include getFontSize("h1");
     @include lineHeight("heading");
+    @include getFontWeight("light");
 }
 
 h2,
-.#{$prefix}-h2 {
+.#{$prefix}-h2,
+.#{mega}-giga {
     @include getFontSize("h2");
     @include lineHeight("heading");
+    @include getFontWeight("light");
 }
 
 h3,
-.#{$prefix}-h3 {
+.#{$prefix}-h3,
+.#{prefix}-alpha {
     @include getFontSize("h3");
     @include lineHeight("heading");
+    @include getFontWeight("light");
 }
 
 h4,
-.#{$prefix}-h4 {
+.#{$prefix}-h4,
+.#{prefix}-beta {
     @include getFontSize("h4");
     @include lineHeight("heading");
+    @include getFontWeight("light");
 }
 
 h5,
-.#{$prefix}-h5 {
+.#{$prefix}-h5 ,
+.#{prefix}-gamma{
     @include getFontSize("h5");
     @include lineHeight("heading");
+    @include getFontWeight("light");
 }
 
 h6,
-.#{$prefix}-h6 {
+.#{$prefix}-h6 ,
+.#{prefix}-type-delta{
     @include getFontSize("h6");
     @include lineHeight("heading");
+    @include getFontWeight("semibold");
 }
+
+.#{prefix}-type-epsilon{
+    @include getFontSize("16");
+    line-height: var(--base-line-height);
+    @include getFontWeight("semibold");
+}
+
+.#{prefix}-type-zeta{
+    @include getFontSize("14");
+    line-height: var(--base-line-height);
+    @include getFontWeight("semibold");
+}
+
+.#{prefix}-type-omega{
+    @include getFontSize("12");
+    line-height: var(--base-line-height);
+    @include getFontWeight("semibold");
+}
+
+.#{prefix}-type-legal{
+    @include getFontSize("11");
+    line-height: var(--base-line-height);
+    @include getFontWeight("regular");
+}
+
+.#{prefix}-type-caption{
+    @include getFontSize("12");
+    line-height: var(--base-line-height);
+    @include getFontWeight("regular");
+}
+
 
 // LINK
 a {
@@ -91,8 +134,14 @@ a {
 
 // PARAGRAPH
 p,
-.#{$prefix}-p {
+.#{$prefix}-p,
+.#{prefix}-16 {
     @include getFontSize("16");
     color: inherit;
     line-height: var(--base-line-height);
+    @include getFontWeight("regular");
+}
+
+em {
+    @include getFontStyle("italic");
 }
