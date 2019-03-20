@@ -30,6 +30,7 @@
 }
 
 // We need to use sass varaible only when we need dynamic classes.
+$prefix : "hcl";
 $base-font-size: var(--base-font-size) !default; // 16px
 $small-font-size: 12px;
 $base-margin: var(--base-margin); // need to check

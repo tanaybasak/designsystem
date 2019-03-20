@@ -6,29 +6,28 @@
  *******************************************************************
  */
 
-$full-width: 100%;
 $gutter: 0.9375rem;
 $columns: 12;
 $minHeight: 0.0625rem;
 // Grid Container
-.patron-container {
-    width: #{$full-width};
+.#{$prefix}-container {
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: #{$gutter};
-    padding-right: #{$gutter};
+    padding-left: $gutter;
+    padding-right: $gutter;
     .row {
-        margin-left: #{-1 * $gutter};
-        margin-right: #{-1 * $gutter};
+        margin-left: -$gutter;
+        margin-right: -$gutter;
     }
 }
 
 // Columns width calculations
 @for $i from 1 through $columns {
     .col-#{$i} {
-        padding-left: #{$gutter};
-        padding-right: #{$gutter};
-        min-height: #{$minHeight};
+        padding-left: $gutter;
+        padding-right: $gutter;
+        min-height: $minHeight;
         @if $i==6 {
             flex-basis: 50%;
         }
@@ -36,10 +35,10 @@ $minHeight: 0.0625rem;
             flex-basis: 100%;
         }
         @include tablet {
-            flex-basis: #{percentage($i / $columns)};
+            flex-basis: percentage($i / $columns);
         }
         @include desktop {
-            flex-basis: #{percentage($i / $columns)};
+            flex-basis: percentage($i / $columns);
         }
     }
 }
