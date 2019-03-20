@@ -7,90 +7,91 @@
  */
 
 @import "mixins";
-// Alignment
-.pd-right {
+// TEXT ALIGNMENT
+.#{$prefix}-text-right {
     @include getTextAlignment("right");
 }
 
-.pd-left {
+.#{$prefix}-text-left {
     @include getTextAlignment("left");
 }
 
-.pd-center {
+.#{$prefix}-text-center {
     @include getTextAlignment("center");
 }
 
-.pd-justify {
+.#{$prefix}-text-justify {
     @include getTextAlignment("justify");
 }
 
-// Font style
-.pd-bold {
+// TEXT STYLE
+.#{$prefix}-text-bold {
     @include getFontWeight("bold");
 }
 
-.pd-light {
+.#{$prefix}-text-light {
     @include getFontWeight("light");
 }
 
-.pd-regular {
+.#{$prefix}-text-regular {
     @include getFontWeight("regular");
 }
 
-.pd-semibold {
+.#{$prefix}-text-semibold {
     @include getFontWeight("semibold");
 }
 
-// Headings
+// HEADINGS
 h1,
-.h1 {
+.#{$prefix}-h1 {
     @include getFontSize("h1");
     @include lineHeight("heading");
 }
 
 h2,
-.h2 {
+.#{$prefix}-h2 {
     @include getFontSize("h2");
     @include lineHeight("heading");
 }
 
 h3,
-.h3 {
+.#{$prefix}-h3 {
     @include getFontSize("h3");
     @include lineHeight("heading");
 }
 
 h4,
-.h4 {
+.#{$prefix}-h4 {
     @include getFontSize("h4");
     @include lineHeight("heading");
 }
 
 h5,
-.h5 {
+.#{$prefix}-h5 {
     @include getFontSize("h5");
     @include lineHeight("heading");
 }
 
 h6,
-.h6 {
+.#{$prefix}-h6 {
     @include getFontSize("h6");
     @include lineHeight("heading");
 }
 
-// Link
+// LINK
 a {
     color: theme-color("primary");
     @include getFontSize("14");
-    text-decoration: var(--none);
+    text-decoration: none;
     &:hover {
         color: $link-hover-color;
-        text-decoration: var(--none);
+        text-decoration: underline;
     }
 }
 
-// Paragraph
-p {
+// PARAGRAPH
+p,
+.#{$prefix}-p {
     @include getFontSize("16");
     color: inherit;
     line-height: var(--base-line-height);
