@@ -1092,57 +1092,109 @@ button.btn--outline-default:focus,
  *
  *******************************************************************
  */
-input,
-textarea,
-input[type=radio],
-input[type=checkbox] {
-  padding: var(--base-padding);
-  color: inherit;
-  line-height: inherit;
-  border: 1px solid #eee;
-  margin: var(--base-margin) 0;
+.hcl-form-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex: 1;
+      flex: 1;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.hcl-form-group input[data-invalid] ~ .hcl-input-error, .hcl-form-group textarea[data-invalid] ~ .hcl-input-error {
+  max-height: 12.5rem;
+  display: inline-block;
+}
+
+.hcl-helper-text {
+  font-size: 0.75rem;
+  opacity: 1;
+  color: #5a6872;
+  -ms-flex-order: 1;
+      order: 1;
+  line-height: 1.5;
+  max-height: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 label {
-  font-size: var(--base-font-size);
-  padding: var(--base-padding);
+  color: #152935;
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-bottom: 0.5rem;
 }
 
-input[type=text],
-textarea,
-.input-control {
-  color: #707070;
+.hcl-form-control {
+  font-size: 0.875rem;
   display: block;
-  background-color: var(--white);
-  border-color: #D0D0D0;
-  font-size: 0.9rem;
-  min-width: calc( 300rem / 16);
   width: 100%;
   height: 2.5rem;
-  padding: 5px 15px;
+  min-width: calc( 300rem / 16);
+  padding: 0 1rem;
+  color: #152935;
+  background-color: #f4f7fb;
+  border: none;
+  box-shadow: 0 1px 0 0 #5a6872;
+  -ms-flex-order: 2;
+      order: 2;
+  border-bottom: 1px solid transparent;
 }
-input[type=text]:focus,
-textarea:focus,
-.input-control:focus {
-  border-color: #1792E5;
+.hcl-form-control:focus {
+  outline: none;
+  box-shadow: 0 2px 0 0 #3d70b2;
 }
-input[type=text]:disabled,
-textarea:disabled,
-.input-control:disabled {
-  background-color: #F6F6F6;
-  border-color: #D0D0D0;
-  opacity: 0.4;
+.hcl-form-control[disabled] {
+  opacity: 0.5;
   cursor: not-allowed;
 }
-input[type=text].error,
-textarea.error,
-.input-control.error {
-  border-color: var(--input-border-error);
+.hcl-form-control ~ .hcl-input-error {
+  -ms-flex-order: 3;
+      order: 3;
+  color: #e0182d;
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  line-height: 1.5;
 }
-input[type=text].success,
-textarea.success,
-.input-control.success {
-  border-color: var(--input-border-success);
+
+.hcl-text-area {
+  font-size: 0.875rem;
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  min-width: calc( 300rem / 16);
+  padding: 0 1rem;
+  color: #152935;
+  background-color: #f4f7fb;
+  border: none;
+  box-shadow: 0 1px 0 0 #5a6872;
+  -ms-flex-order: 2;
+      order: 2;
+  border-bottom: 1px solid transparent;
+  min-width: 10rem;
+  resize: vertical;
+  padding: 1rem;
+  height: auto;
+}
+.hcl-text-area:focus {
+  outline: none;
+  box-shadow: 0 2px 0 0 #3d70b2;
+}
+.hcl-text-area[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.hcl-text-area ~ .hcl-input-error {
+  -ms-flex-order: 3;
+      order: 3;
+  color: #e0182d;
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  line-height: 1.5;
 }
 
 .form-item {

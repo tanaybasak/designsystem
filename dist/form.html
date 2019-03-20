@@ -16,50 +16,68 @@
 
             <!-- Input Components -->
             <form class="margin-around-5">
-                <label for="firstname">First Name</label>
-                <input type="text" class="input-control" id="firstname" value="First Name">
-                <label for="lastname">Last Name</label>
-                <input type="text" class="input-control success" id="lastname" value="Success">
-                <label for="middlename">Middle Name</label>
-                <input type="text" class="input-control success" id="middlename" disabled="" placeholder="Disabled">
-                <label for="error">Address</label>
-                <input type="text" class="input-control error" id="error" value="Error">
-                <label for="feedback">Feedback</label>
-                <textarea class="input-control" id="feedback" rows="5"></textarea>
+                <div class="hcl-form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="hcl-form-control" id="firstname" placeholder="Enter First Name">
+                </div>
+                <div class="hcl-form-group">
+                    <label for="lastname">Last Name</label>
+                    <small class="hcl-helper-text">Optional Helper text goes here</small>
+                    <input type="text" class="hcl-form-control success" id="lastname" placeholder="Enter Last Name">
+                </div>
+                <div class="hcl-form-group">
+                    <label for="middlename">Middle Name</label>
+                    <input data-invalid="" type="text" class="hcl-form-control success" id="middlename" placeholder="Disabled">
+                    <div class="hcl-input-error">Validation message here</div>
+                </div>
+                <div class="hcl-form-group">
+                    <label for="error">Address</label>
+                    <input type="text" class="hcl-form-control error" id="error" placeholder="Enter Address Details" disabled="">
+                </div>
+                <div class="hcl-form-group">
+                    <label for="feedback1">Feedback Form</label>
+                    <textarea class="hcl-text-area" id="feedback1" rows="4" cols="50"></textarea>
+                </div>
+                <div class="hcl-form-group">
+                        <label for="feedback2">Review Summary</label>
+                        <small class="hcl-helper-text">Optional Helper text goes here</small>
+                        <textarea data-invalid="" disabled="" class="hcl-text-area" id="feedback2" rows="4" cols="50"></textarea>
+                        <div class="hcl-input-error">Validation message here</div>
+                    </div>
             </form>
 
             <!-- Checkbox Components -->
-            <article class="margin-around-5">
+            <!-- <article class="margin-around-5">
                 <div class="form-item cr--wrapper" aria-disabled="false">
-                    <input class="form-item__checkbox" id="check1" type="checkbox">
+                    <input class="form-item__checkbox" id="check1" type="checkbox" />
                     <label class="form-item__text" for="check1">Voilet</label>
                 </div>
                 <div class="form-item cr--wrapper" aria-disabled="false">
-                    <input class="form-item__checkbox" id="check2" type="checkbox" checked="">
+                    <input class="form-item__checkbox" id="check2" type="checkbox" checked />
                     <label class="form-item__text" for="check2">Green</label>
                 </div>
                 <div class="form-item cr--wrapper" aria-disabled="true">
-                    <input class="form-item__checkbox" id="check3" type="checkbox" disabled="">
+                    <input class="form-item__checkbox" id="check3" type="checkbox" disabled />
                     <label class="form-item__text" for="check3">Burlywood</label>
                 </div>
-            </article>
+            </article> -->
 
             <!-- Radio Components -->
-            <article class="margin-around-5">
+            <!-- <article class="margin-around-5">
                 <div class="form-item cr--wrapper" aria-disabled="false">
-                    <input class="form-item__radio" id="radio1" type="radio" value="Option1" name="planets">
+                    <input class="form-item__radio" id="radio1" type="radio" value="Option1" name="planets" />
                     <label class="form-item__text" for="radio1">Earth</label>
                 </div>
 
                 <div class="form-item cr--wrapper" aria-disabled="false">
-                    <input class="form-item__radio" id="radio2" type="radio" value="Option2" name="planets" checked="">
+                    <input class="form-item__radio" id="radio2" type="radio" value="Option2" name="planets" checked />
                     <label class="form-item__text" for="radio2">Jupiter</label>
                 </div>
                 <div class="form-item cr--wrapper" aria-disabled="true">
-                    <input class="form-item__radio" id="radio3" type="radio" value="Option3" name="planets" disabled="">
+                    <input class="form-item__radio" id="radio3" type="radio" value="Option3" name="planets" disabled />
                     <label class="form-item__text" for="radio3">Saturn</label>
                 </div>
-            </article>
+            </article> -->
 
         </section>
     </main>

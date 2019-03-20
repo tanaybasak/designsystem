@@ -51,17 +51,12 @@ $theme-colors: () !default;
 $theme-colors: map-merge(( "primary": $primary, "secondary": $secondary, "tertiary": $tertiary), $theme-colors);
 
   // Forms
-  $label-margin-bottom :.5rem !default;
-  $input-padding-y: 0.625rem;
-  $input-padding-x: 0.625rem;
-  $input-border-color:#D0D0D0 !default;
-  $input-font-size:0.9rem;
-  $input-height:2.5rem !default;
+  $label-margin-bottom: .5rem;
+  $input-padding-y: 0;
+  $input-padding-x: 1rem;
+  $input-height: 2.5rem !default;
   $input-min-width: calc( 300rem / 16);
-  $textarea-height:(200rem / 16);
-  $input-border-color-disabled:#D0D0D0;
-  $input-background-color-disabled:#F6F6F6;
-  $input-border-color-focus:#0066B3;
+  $input-label-weight: 600;
 
   //Errors
   $input-border-error:var(--input-border-error);
