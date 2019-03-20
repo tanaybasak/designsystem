@@ -7,41 +7,24 @@
  */
 
 @import "mixins";
-// TEXT ALIGNMENT
-.#{$prefix}-text-right {
-    @include getTextAlignment("right");
-}
-
-.#{$prefix}-text-left {
-    @include getTextAlignment("left");
-}
-
-.#{$prefix}-text-center {
-    @include getTextAlignment("center");
-}
-
-.#{$prefix}-text-justify {
-    @include getTextAlignment("justify");
-}
-
-// TEXT STYLE
-.#{$prefix}-text-bold {
+// Font style
+.#{$prefix}-fontweight-bold {
     @include getFontWeight("bold");
 }
 
-.#{$prefix}-text-light {
+.#{$prefix}-fontweight-light {
     @include getFontWeight("light");
 }
 
-.#{$prefix}-text-regular {
+.#{$prefix}-fontweight-regular {
     @include getFontWeight("regular");
 }
 
-.#{$prefix}-text-semibold {
+.#{$prefix}-fontweight-semibold {
     @include getFontWeight("semibold");
 }
 
-// HEADINGS
+// Headings
 h1,
 .#{$prefix}-h1,
 .#{prefix}-giga {
@@ -121,7 +104,7 @@ h6,
 }
 
 
-// LINK
+// Anchor link
 a {
     color: theme-color("primary");
     @include getFontSize("14");
@@ -132,7 +115,7 @@ a {
     }
 }
 
-// PARAGRAPH
+// Paragraph
 p,
 .#{$prefix}-p,
 .#{prefix}-16 {
@@ -142,6 +125,3 @@ p,
     @include getFontWeight("regular");
 }
 
-em {
-    @include getFontStyle("italic");
-}
