@@ -1,0 +1,63 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+ $full-width: 100%;
+ $gutter: 0.9375rem;
+ $columns: 12;
+ 
+ // GRID CONTAINER
+ .patron-container {
+     width: #{$full-width};
+     margin: 0 auto;
+     padding: 0 #{$gutter};
+     box-sizing: border-box;
+ 
+     .row {
+         margin: 0 #{-1 * $gutter};
+     }
+ }
+ 
+ // COLUMNS WIDTH CALCULATIONS
+ @for $i from 1 through $columns {
+     .col-#{$i} {
+         box-sizing: border-box;
+         padding: 0 #{$gutter};
+ 
+         @if $i==6 {
+             width: calc(50%);
+         }
+ 
+         @else {
+             width: calc(100%);
+         }
+ 
+         @include tablet {
+             width: calc(#{($i * 100 / $columns) + '%'});
+         }
+ 
+         @include desktop {
+             width: calc(#{($i * 100 / $columns) + '%'});
+         }
+     }
+ }
+ 
+ 
+ // ROW 
+ .row {
+     display: flex;
+     flex-wrap: wrap;
+ }
+ 
+ // *ONLY FOR TESTING PURPOSE
+ .bgColor {
+     background-color: #eee;
+ }
+ 
+ .colBorder {
+     border: 1px solid #999;
+ }

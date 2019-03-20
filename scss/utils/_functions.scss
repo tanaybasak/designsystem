@@ -1,0 +1,40 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+// Themes
+@function theme-color($key: "primary") {
+    @return map-get($theme-colors, $key);
+}
+
+// Grids
+@function grid-width($n) {
+    @return (100- ($gutter * (12 - $n))) / 12;
+}
+
+@function colums-width($n) {
+    @return ((grid-width(1) * $n) + ($gutter * ($n - 1)) - 2 * $halfGutter);
+}
+
+// Utilities
+@function rem($px) {
+    @return ($px / $base-font-size) * 1rem;
+}
+
+@function em($px) {
+    @return ($px / $base-font-size) * 1em;
+}
+
+// Colors
+@function getColor($name: "default", $BKey: $baseKey) {
+    $color: null;
+    $colorList: map-get($colorMap, $name);
+    @if $colorList {
+        $color: map-get($colorList, $BKey);
+    }
+    @return $color;
+}

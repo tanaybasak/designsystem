@@ -1,0 +1,49 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+// Global variables
+:root {
+    --ff-roboto: "Roboto", sans-serif;
+    --base-font-size: 1rem; // 16px
+    --body-font-size: 0.875rem; // 14px
+    --small-font-size: 10.75rem; // 12px
+    --base-line-height: 1.15;
+    --base-margin: 0.5rem;
+    --base-padding: 0.2rem;
+    --black: #000;
+    --grey: #707070;
+    --white: #fff;
+    --blue: #0066b3;
+    --dark-secondary: #003d6b;
+    --orange: #d01b2e;
+    --orange-secondary: #a31221;
+    --black-secondary: #555;
+    --error-background-color: red;
+    --error-font-color: red;
+    --success-background-color: green;
+    --success-font-color: green;
+}
+
+// We need to use sass varaible only when we need dynamic classes.
+$base-font-size: var(--base-font-size) !default; // 16px
+$small-font-size: 12px;
+$base-margin: var(--base-margin); // need to check
+$base-padding: var(--base-padding); // need to check
+// Color system
+$black: var(--black);
+$white: var(--white);
+$blue: var(--blue);
+$orange: var(--orange);
+$grey: var(--grey);
+$primary: $blue !default;
+$secondary: $black !default;
+$tertiary: $orange !default;
+$link-hover-color: var(--dark-secondary);
+// Themes
+$theme-colors: () !default;
+$theme-colors: map-merge(( "primary": $primary, "secondary": $secondary, "tertiary": $tertiary), $theme-colors);
