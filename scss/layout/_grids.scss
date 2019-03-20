@@ -9,6 +9,7 @@
  $full-width: 100%;
  $gutter: 0.9375rem;
  $columns: 12;
+ $minHeight: 0.0625rem;
  
  // GRID CONTAINER
  .patron-container {
@@ -27,6 +28,7 @@
      .col-#{$i} {
          padding-left: #{$gutter};
          padding-right: #{$gutter};
+         min-height: #{$minHeight};
  
          @if $i==6 {
              width: 50%;
