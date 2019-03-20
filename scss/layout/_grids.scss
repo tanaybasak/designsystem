@@ -6,60 +6,55 @@
  *******************************************************************
  */
 
- $full-width: 100%;
- $gutter: 0.9375rem;
- $columns: 12;
- $minHeight: 0.0625rem;
- 
- // GRID CONTAINER
- .patron-container {
-     width: #{$full-width};
-     margin: 0 auto;
-     padding-left: #{$gutter};
-     padding-right: #{$gutter};
- 
-     .row {
-         margin: 0 #{-1 * $gutter};
-     }
- }
- 
- // COLUMNS WIDTH CALCULATIONS
- @for $i from 1 through $columns {
-     .col-#{$i} {
-         padding-left: #{$gutter};
-         padding-right: #{$gutter};
-         min-height: #{$minHeight};
- 
-         @if $i==6 {
-             width: 50%;
-         }
- 
-         @else {
-             width: 100%;
-         }
- 
-         @include tablet {
-             width: calc(#{($i * 100 / $columns) + '%'});
-         }
- 
-         @include desktop {
-             width: calc(#{($i * 100 / $columns) + '%'});
-         }
-     }
- }
- 
- 
- // ROW 
- .row {
-     display: flex;
-     flex-wrap: wrap;
- }
- 
- // *ONLY FOR TESTING PURPOSE
- .bgColor {
-     background-color: #eee;
- }
- 
- .colBorder {
-     border: 1px solid #999;
- }
+$full-width: 100%;
+$gutter: 0.9375rem;
+$columns: 12;
+$minHeight: 0.0625rem;
+// Grid Container
+.patron-container {
+    width: #{$full-width};
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: #{$gutter};
+    padding-right: #{$gutter};
+    .row {
+        margin-left: #{-1 * $gutter};
+        margin-right: #{-1 * $gutter};
+    }
+}
+
+// Columns width calculations
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        padding-left: #{$gutter};
+        padding-right: #{$gutter};
+        min-height: #{$minHeight};
+        @if $i==6 {
+            flex-basis: 50%;
+        }
+        @else {
+            flex-basis: 100%;
+        }
+        @include tablet {
+            flex-basis: #{percentage($i / $columns)};
+        }
+        @include desktop {
+            flex-basis: #{percentage($i / $columns)};
+        }
+    }
+}
+
+// Row
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// TODO: Subject to be removed
+.bgColor {
+    background-color: #eee;
+}
+
+.colBorder {
+    border: 1px solid #999;
+}
