@@ -6,176 +6,54 @@
  *******************************************************************
  */
 
-$full-width: 100%;
-$gutter: 1.5%;
-$halfGutter: 0.5%;
-// Lastly: use the scw to calculate the rest of the column widths using the following formula:
-// cw = (scw * cs) + (m * (cs – 1))
-// Where:
-//   cw = column width
-//   scw = single column width (6.86666666667%)
-//   cs = column span (1-12)
-//   m = margin (1.6%)
-.patron-container {
+$gutter: 0.9375rem;
+$columns: 12;
+$minHeight: 0.0625rem;
+// Grid Container
+.#{$prefix}-container {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    .row {
+        margin-left: -$gutter;
+        margin-right: -$gutter;
+    }
 }
 
+// Columns width calculations
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        padding-left: $gutter;
+        padding-right: $gutter;
+        min-height: $minHeight;
+        @if $i==6 {
+            flex-basis: 50%;
+        }
+        @else {
+            flex-basis: 100%;
+        }
+        @include tablet {
+            flex-basis: percentage($i / $columns);
+        }
+        @include desktop {
+            flex-basis: percentage($i / $columns);
+        }
+    }
+}
+
+// Row
 .row {
-    width: 100%;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    margin: $halfGutter;
 }
 
+// TODO: Subject to be removed
 .bgColor {
-    background: #eee;
+    background-color: #eee;
 }
 
-.col-1 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: grid-width(1);
-        max-width: grid-width(1);
-    }
-    @include desktop {
-        flex-basis: grid-width(1);
-        max-width: grid-width(1);
-    }
-}
-
-.col-2 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(2);
-        max-width: colums-width(2);
-    }
-    @include desktop {
-        flex-basis: colums-width(2);
-        max-width: colums-width(2);
-    }
-}
-
-.col-3 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(3);
-        max-width: colums-width(3);
-    }
-    @include desktop {
-        flex-basis: colums-widthh(3);
-        max-width: colums-width(3);
-    }
-}
-
-.col-4 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(4);
-        max-width: colums-width(4);
-    }
-    @include desktop {
-        flex-basis: colums-width(4);
-        max-width: colums-width(4);
-    }
-}
-
-.col-5 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(5);
-        max-width: colums-width(5);
-    }
-    @include desktop {
-        flex-basis: colums-width(5);
-        max-width: colums-width(5);
-    }
-}
-
-.col-6 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(6);
-        max-width: colums-width(6);
-    }
-    @include desktop {
-        flex-basis: colums-width(6);
-        max-width: colums-width(6);
-    }
-}
-
-.col-7 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(7);
-        max-width: colums-width(7);
-    }
-    @include desktop {
-        flex-basis: colums-width(7);
-        max-width: colums-width(7);
-    }
-}
-
-.col-8 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(8);
-        max-width: colums-width(8);
-    }
-    @include desktop {
-        flex-basis: colums-width(8);
-        max-width: colums-width(8);
-    }
-}
-
-.col-9 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(9);
-        max-width: colums-width(9);
-    }
-    @include desktop {
-        flex-basis: colums-width(9);
-        max-width: colums-width(9);
-    }
-}
-
-.col-10 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(10);
-        max-width: colums-width(10);
-    }
-    @include desktop {
-        flex-basis: colums-width(10);
-        max-width: colums-width(10);
-    }
-}
-
-.col-11 {
-    flex-basis: $full-width;
-    padding: 0 $halfGutter;
-    @include tablet {
-        flex-basis: colums-width(11);
-        max-width: colums-width(11);
-    }
-    @include desktop {
-        flex-basis: colums-width(11);
-        max-width: colums-width(11);
-    }
-}
-
-.col-12 {
-    padding: 0 $halfGutter;
-    flex-basis: 100%;
+.colBorder {
+    border: 1px solid #999;
 }
