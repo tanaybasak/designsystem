@@ -14,8 +14,8 @@
  .patron-container {
      width: #{$full-width};
      margin: 0 auto;
-     padding: 0 #{$gutter};
-     box-sizing: border-box;
+     padding-left: #{$gutter};
+     padding-right: #{$gutter};
  
      .row {
          margin: 0 #{-1 * $gutter};
@@ -25,15 +25,15 @@
  // COLUMNS WIDTH CALCULATIONS
  @for $i from 1 through $columns {
      .col-#{$i} {
-         box-sizing: border-box;
-         padding: 0 #{$gutter};
+         padding-left: #{$gutter};
+         padding-right: #{$gutter};
  
          @if $i==6 {
-             width: calc(50%);
+             width: 50%;
          }
  
          @else {
-             width: calc(100%);
+             width: 100%;
          }
  
          @include tablet {
