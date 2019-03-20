@@ -1,3 +1,40 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/*
+    @import ORDER TO BE FOLLOWED STRICTLY AS FOLLOWS
+    ------------------------------------------------
+    utils
+      |
+      V
+    (vendors) - if used in app
+      |
+      V
+    base
+      |
+      V
+    layout
+      |
+      V
+    components
+      |
+      V
+    (pages) - if used in app
+      |
+      V
+    themes
+*/
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 :root {
   --ff-roboto: "Roboto", sans-serif;
   --base-font-size: 1rem;
@@ -8,7 +45,7 @@
   --base-padding: 0.2rem;
   --black: #000;
   --grey: #707070;
-  --white: #FFFFFF;
+  --white: #fff;
   --blue: #0066b3;
   --dark-secondary: #003d6b;
   --orange: #d01b2e;
@@ -22,23 +59,27 @@
   --input-border-success: #7EB338;
 }
 
-/* HCL */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-  line-height: var(--base-line-height);
-}
-
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 .margin {
   margin: var(--base-margin);
 }
@@ -443,367 +484,93 @@ h6 {
   margin: 36px !important;
 }
 
-/* Global styling of the HCL */
-body {
-  font-color: var(--black);
-  font-size: 1rem;
-  font-family: "Roboto", sans-serif;
-}
-
-textarea, button, input {
-  font-family: "Roboto", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: inherit;
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+* {
   margin: 0;
   padding: 0;
-  line-height: var(--base-line-height);
-}
-
-/* HCL Design System implementation
-    - Headings
-    - a link
-    - p 
-    - text transform
-    - text-alignment
-    - font style
-    - Font-family and sizes
-*/
-h4 {
-  font-size: calc(var(--ff-roboto) * 1.5);
-}
-
-h5 {
-  font-size: calc(var(--ff-roboto) * 1.25);
-}
-
-h6 {
-  font-size: calc(var(--ff-roboto) * 1);
-}
-
-.center {
-  text-align: var(--text-center);
-}
-
-.left-align {
-  text-align: var(--text-left);
-}
-
-.right-align {
-  text-align: var(--text-right);
-}
-
-.justify-align {
-  text-align: var(--text-justify);
-}
-
-.lowercase {
-  text-align: var(--lowercase);
-}
-
-.uppercase {
-  text-align: var(--uppercase);
-}
-
-.capitalize {
-  text-align: var(--text-capitalize);
-}
-
-.strong {
-  font-weight: var(--strong-800);
-}
-
-.regular {
-  font-weight: var(--regular-400);
-}
-
-.italic {
-  font-style: var(--italic);
-}
-
-.underline {
-  font-style: var(--underline);
-}
-
-.nomargin {
-  margin: 0;
-}
-
-.nopadding {
-  padding: 0;
-}
-
-a {
-  color: theme-color("primary");
-  font-size: var(--ff-roboto);
-  text-decoration: var(--none);
-}
-a:hover {
-  color: var(--dark-secondary);
-  text-decoration: var(--none);
-}
-
-p {
-  font-size: var(--ff-roboto);
-  margin: var(--base-margin) 0;
-  color: inherit;
-  line-height: var(--base-line-height);
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-input,
-textarea,
-input[type=radio],
-input[type=checkbox] {
-  padding: var(--base-padding);
-  color: inherit;
-  line-height: inherit;
-  border: 1px solid #eee;
-  margin: var(--base-margin) 0;
-}
-
-label {
-  font-size: var(--base-font-size);
-  padding: var(--base-padding);
-}
-
-input[type=text], textarea, .input-control {
-  color: var(--grey);
-  display: block;
-  box-sizing: border-box;
-  background-color: var(--white);
-  border-width: 1px;
-  border-color: #D0D0D0;
-  font-size: 0.9rem;
-  width: calc( 400rem / 16);
-  height: 2.5rem;
-  padding: 0.625rem;
-}
-input[type=text]:focus, textarea:focus, .input-control:focus {
-  border-color: #0066B3;
-}
-input[type=text]:disabled, textarea:disabled, .input-control:disabled {
-  background-color: #F6F6F6;
-  border-color: #D0D0D0;
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-input[type=text].error, textarea.error, .input-control.error {
-  border-color: var(--input-border-error);
-}
-input[type=text].success, textarea.success, .input-control.success {
-  border-color: var(--input-border-success);
-}
-
-textarea.input-control {
-  height: 12.5rem;
-}
-
-.form-item {
-  display: inline-block;
-  position: relative;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.form-item.cr--wrapper {
-  margin-right: 30px;
-}
-.form-item .select__wrapper {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-}
-.form-item .select__wrapper label {
-  -ms-flex-order: 1;
-      order: 1;
-}
-.form-item .select__wrapper select {
-  font-family: Helvetica Neue, Arial, sans-serif;
-  font-size: 0.875rem;
-  height: 2.5rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  display: block;
-  width: 100%;
-  padding: 0 2.5rem 0 1rem;
-  color: #152935;
-  background-color: #f4f7fb;
-  border: none;
-  box-shadow: 0 1px 0 0 #5a6872;
-  -ms-flex-order: 2;
-  order: 2;
-  border-radius: 0;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-  background-color: white;
-}
-.form-item .select__wrapper select:focus {
-  outline: none;
-}
-.form-item .select__wrapper svg {
-  fill: #3d70b2;
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  width: 0.625rem;
-  height: 0.3125rem;
-  pointer-events: none;
-}
-.form-item .form-item__checkbox, .form-item input[type=checkbox] {
-  position: absolute;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
   border: 0;
-  visibility: visible;
-  white-space: nowrap;
-  clip: rect(0px, 0px, 0px, 0px);
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-.form-item .form-item__checkbox + .form-item__text, .form-item input[type=checkbox] + .form-item__text {
-  padding: 0;
-  padding-left: 26px;
-  line-height: 1.5rem;
-  cursor: pointer;
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
-.form-item .form-item__checkbox + .form-item__text::before, .form-item input[type=checkbox] + .form-item__text::before {
-  background-color: var(--white);
-  border-color: var(--blue);
-  border-width: 1px;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
-.form-item .form-item__checkbox:disabled + .form-item__text, .form-item input[type=checkbox]:disabled + .form-item__text {
-  cursor: not-allowed;
-  color: var(--grey);
+
+body {
+  line-height: 1;
 }
-.form-item .form-item__checkbox:disabled + label.form-item__text::before, .form-item .form-item__checkbox:disabled + .form-item__text::before, .form-item input[type=checkbox]:disabled + label.form-item__text::before, .form-item input[type=checkbox]:disabled + .form-item__text::before {
-  background: #F6F6F6;
-  border-color: #D0D0D0;
+
+ol,
+ul {
+  list-style: none;
 }
-.form-item .form-item__checkbox:checked + label.form-item__text::after, .form-item input[type=checkbox]:checked + label.form-item__text::after {
-  transform: scale(1) rotate(-45deg);
+
+blockquote,
+q {
+  quotes: none;
 }
-.form-item .form-item__checkbox:checked + .form-item__text::before, .form-item input[type=checkbox]:checked + .form-item__text::before {
-  background-color: var(--blue);
-  border-width: 1px;
-  border-color: var(--blue);
-}
-.form-item .form-item__checkbox + label.form-item__text::before, .form-item .form-item__checkbox + .form-item__text::before, .form-item input[type=checkbox] + label.form-item__text::before, .form-item input[type=checkbox] + .form-item__text::before {
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: "";
-  position: absolute;
-  left: 0;
-  top: 0rem;
-  display: inline-block;
-  width: 1.125rem;
-  height: 1.125rem;
-  margin: 0.125rem;
-  border: 1px solid var(--blue);
+  content: none;
 }
-.form-item .form-item__checkbox + label.form-item__text::after, .form-item .form-item__checkbox + .form-item__text::after, .form-item input[type=checkbox] + label.form-item__text::after, .form-item input[type=checkbox] + .form-item__text::after {
-  content: "";
-  color: #FFFFFF;
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  display: inline-block;
-  width: 10px;
-  height: 7px;
-  border-left: 1px solid var(--white);
-  border-bottom: 1px solid var(--white);
-  transform: rotate(-45deg);
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-.form-item .form-item__radio, .form-item input[type=radio].form-item__radio, .form-item input[type=radio] {
-  position: absolute;
-  opacity: 0;
-  margin: 0;
+
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+html {
+  box-sizing: border-box;
 }
-.form-item .form-item__radio + label.form-item__text, .form-item .form-item__radio + .form-item__text, .form-item input[type=radio].form-item__radio + label.form-item__text, .form-item input[type=radio].form-item__radio + .form-item__text, .form-item input[type=radio] + label.form-item__text, .form-item input[type=radio] + .form-item__text {
-  display: inline-block;
-  padding-left: 1.625rem;
-  position: relative;
+
+body {
+  font-family: "Roboto", sans-serif;
   color: var(--black);
-  min-height: 1rem;
-  margin-top: 0;
-  cursor: pointer;
-}
-.form-item .form-item__radio + label.form-item__text:before, .form-item input[type=radio].form-item__radio + label.form-item__text:before, .form-item input[type=radio] + label.form-item__text:before {
-  position: absolute;
-  top: 0.1666665rem;
-  left: 0;
-  content: "";
-  display: inline-block;
-  height: 1.125rem;
-  width: 1.125rem;
-  border: 1px solid #9a9a9a;
-  border-radius: 50%;
-}
-.form-item .form-item__radio:checked + label.form-item__text:before, .form-item input[type=radio].form-item__radio:checked + label.form-item__text:before, .form-item input[type=radio]:checked + label.form-item__text:before {
-  box-shadow: inset 0 0 0 0.11rem var(--white);
-  border: 1px solid #D0D0D0;
-  background: var(--blue);
-}
-.form-item .form-item__radio:disabled + label.form-item__text, .form-item input[type=radio].form-item__radio:disabled + label.form-item__text, .form-item input[type=radio]:disabled + label.form-item__text {
-  color: var(--grey);
+  line-height: var(--base-line-height);
 }
 
-label.input-switch {
-  position: relative;
-  display: inline-block;
-  width: 2.25rem;
-  height: 0.875rem;
-  margin: 0.5rem 0;
-}
-label.input-switch .input-switch__check, label.input-switch input[type=checkbox], label.input-switch input[type=checkbox].input-switch__check {
-  opacity: 0;
-  display: none;
-}
-label.input-switch .input-switch__check:checked + .input-switch__tracker, label.input-switch input[type=checkbox]:checked + .input-switch__tracker, label.input-switch input[type=checkbox].input-switch__check:checked + .input-switch__tracker {
-  background-color: var(--blue);
-}
-label.input-switch .input-switch__check:checked + .input-switch__tracker::before, label.input-switch input[type=checkbox]:checked + .input-switch__tracker::before, label.input-switch input[type=checkbox].input-switch__check:checked + .input-switch__tracker::before {
-  transform: translateX(20px);
-  background-color: var(--white);
-}
-label.input-switch .input-switch__tracker {
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #D0D0D0;
-  border-radius: 2.125rem;
-}
-label.input-switch .input-switch__tracker::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0.0375rem;
-  width: 0.9rem;
-  height: 0.9rem;
-  border-radius: 50%;
-  background-color: var(--white);
-}
-
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 .patron-container {
   width: 100%;
 }
@@ -1049,6 +816,132 @@ label.input-switch .input-switch__tracker::before {
       flex-basis: 100%;
 }
 
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+/* MIXINS SPECIFIC TO TYPOGRAPHY */
+.underline {
+  font-style: underline;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.pd-right {
+  text-align: right;
+}
+
+.pd-left {
+  text-align: left;
+}
+
+.pd-center {
+  text-align: center;
+}
+
+.pd-justify {
+  text-align: justify;
+}
+
+.pd-bold {
+  font-weight: 800;
+}
+
+.pd-light {
+  font-weight: 300;
+}
+
+.pd-regular {
+  font-weight: 400;
+}
+
+.pd-semibold {
+  font-weight: 600;
+}
+
+h1,
+.h1 {
+  font-size: 4.75rem;
+  line-height: 1.125;
+}
+
+h2,
+.h2 {
+  font-size: 3.375rem;
+  line-height: 1.125;
+}
+
+h3,
+.h3 {
+  font-size: 2.25rem;
+  line-height: 1.125;
+}
+
+h4,
+.h4 {
+  font-size: 1.75rem;
+  line-height: 1.125;
+}
+
+h5,
+.h5 {
+  font-size: 1.25rem;
+  line-height: 1.125;
+}
+
+h6,
+.h6 {
+  font-size: 1.125rem;
+  line-height: 1.125;
+}
+
+a {
+  color: var(--blue);
+  font-size: 0.875rem;
+  text-decoration: var(--none);
+}
+a:hover {
+  color: var(--dark-secondary);
+  text-decoration: var(--none);
+}
+
+p {
+  font-size: 1rem;
+  color: inherit;
+  line-height: var(--base-line-height);
+}
+
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 button,
 .btn {
   text-align: center;
@@ -1062,7 +955,7 @@ button,
 }
 button:hover,
 .btn:hover {
-  background: getColor("default", "hoverbg");
+  background: var(--dark-secondary);
 }
 
 button.btn--default,
@@ -1190,4 +1083,175 @@ button.btn--outline-default:focus,
   background: var(--black);
   border-color: var(--black);
   color: var(--white);
+}
+
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+input,
+textarea,
+input[type=radio],
+input[type=checkbox] {
+  padding: var(--base-padding);
+  color: inherit;
+  line-height: inherit;
+  border: 1px solid #eee;
+  margin: var(--base-margin) 0;
+}
+
+label {
+  font-size: var(--base-font-size);
+  padding: var(--base-padding);
+}
+
+input[type=text],
+textarea,
+.input-control {
+  color: #707070;
+  display: block;
+  background-color: var(--white);
+  border-color: #D0D0D0;
+  font-size: 0.9rem;
+  min-width: calc( 300rem / 16);
+  width: 100%;
+  height: 2.5rem;
+  padding: 5px 15px;
+}
+input[type=text]:focus,
+textarea:focus,
+.input-control:focus {
+  border-color: #1792E5;
+}
+input[type=text]:disabled,
+textarea:disabled,
+.input-control:disabled {
+  background-color: #F6F6F6;
+  border-color: #D0D0D0;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+input[type=text].error,
+textarea.error,
+.input-control.error {
+  border-color: var(--input-border-error);
+}
+input[type=text].success,
+textarea.success,
+.input-control.success {
+  border-color: var(--input-border-success);
+}
+
+.form-item {
+  display: inline-block;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.form-item .form-item__checkbox, .form-item input[type=checkbox] {
+  position: absolute;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  visibility: visible;
+  white-space: nowrap;
+  clip: rect(0px, 0px, 0px, 0px);
+}
+.form-item .form-item__checkbox + .form-item__text, .form-item input[type=checkbox] + .form-item__text {
+  padding: 0;
+  padding-left: 26px;
+  line-height: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.form-item .form-item__checkbox + .form-item__text::before, .form-item input[type=checkbox] + .form-item__text::before {
+  background-color: var(--white);
+  border-color: var(--blue);
+  border-width: 1px;
+}
+.form-item .form-item__checkbox:disabled + .form-item__text, .form-item input[type=checkbox]:disabled + .form-item__text {
+  cursor: not-allowed;
+  color: var(--grey);
+}
+.form-item .form-item__checkbox:disabled + label.form-item__text::before, .form-item .form-item__checkbox:disabled + .form-item__text::before, .form-item input[type=checkbox]:disabled + label.form-item__text::before, .form-item input[type=checkbox]:disabled + .form-item__text::before {
+  background: #F6F6F6;
+  border-color: #D0D0D0;
+}
+.form-item .form-item__checkbox:checked + label.form-item__text::after, .form-item input[type=checkbox]:checked + label.form-item__text::after {
+  transform: scale(1) rotate(-45deg);
+}
+.form-item .form-item__checkbox:checked + .form-item__text::before, .form-item input[type=checkbox]:checked + .form-item__text::before {
+  background-color: var(--blue);
+  border-width: 1px;
+  border-color: var(--blue);
+}
+.form-item .form-item__checkbox + label.form-item__text::before, .form-item .form-item__checkbox + .form-item__text::before, .form-item input[type=checkbox] + label.form-item__text::before, .form-item input[type=checkbox] + .form-item__text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0rem;
+  display: inline-block;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0.125rem;
+  border: 1px solid var(--blue);
+}
+.form-item .form-item__checkbox + label.form-item__text::after, .form-item .form-item__checkbox + .form-item__text::after, .form-item input[type=checkbox] + label.form-item__text::after, .form-item input[type=checkbox] + .form-item__text::after {
+  content: "";
+  color: #FFFFFF;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  display: inline-block;
+  width: 10px;
+  height: 7px;
+  border-left: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+  transform: rotate(-45deg);
+}
+.form-item .form-item__radio, .form-item input[type=radio].form-item__radio, .form-item input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  margin: 0;
+}
+.form-item .form-item__radio + label.form-item__text, .form-item .form-item__radio + .form-item__text, .form-item input[type=radio].form-item__radio + label.form-item__text, .form-item input[type=radio].form-item__radio + .form-item__text, .form-item input[type=radio] + label.form-item__text, .form-item input[type=radio] + .form-item__text {
+  display: inline-block;
+  padding-left: 1.625rem;
+  position: relative;
+  color: var(--black);
+  min-height: 1rem;
+  margin-top: 0;
+  cursor: pointer;
+}
+.form-item .form-item__radio + label.form-item__text:before, .form-item input[type=radio].form-item__radio + label.form-item__text:before, .form-item input[type=radio] + label.form-item__text:before {
+  position: absolute;
+  top: 0.1666665rem;
+  left: 0;
+  content: "";
+  display: inline-block;
+  height: 1.125rem;
+  width: 1.125rem;
+  border: 1px solid #9a9a9a;
+  border-radius: 50%;
+}
+.form-item .form-item__radio:checked + label.form-item__text:before, .form-item input[type=radio].form-item__radio:checked + label.form-item__text:before, .form-item input[type=radio]:checked + label.form-item__text:before {
+  box-shadow: inset 0 0 0 0.11rem var(--white);
+  border: 1px solid #D0D0D0;
+  background: var(--blue);
+}
+.form-item .form-item__radio:disabled + label.form-item__text, .form-item input[type=radio].form-item__radio:disabled + label.form-item__text, .form-item input[type=radio]:disabled + label.form-item__text {
+  color: var(--grey);
 }

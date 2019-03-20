@@ -4,8 +4,8 @@
   "description": "Patron CSS Framework",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel --no-cache watch form.html",
-    "build": "parcel build index.html"
+    "dev": "parcel --no-cache watch index.html",
+    "build": "parcel build index.html -d dist"
   },
   "author": "HCL Products & Platforms",
   "license": "ISC",
@@ -14,8 +14,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.4.10",
+    "sass": "^1.17.3",
     "parcel-bundler": "^1.11.0",
-    "sass": "^1.17.0",
     "postcss-cli": "^6.1.2"
   },
   "browserslist": [

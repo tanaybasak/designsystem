@@ -1,4 +1,4 @@
-# Patron
+# Patron-CSS 
 
 Patron is a CSS framework. It follows the HCL guidelines and priniciples. If you are working on HCL products, we recommend you to follow Patron.
 
@@ -18,7 +18,7 @@ We are following feature-based development. Developer will get JIRA story assign
 create the tasks for the stories. The branch name should be the JIRA ID. Eg:
 
 ```sh
-feature/UICoE-[ID]
+feature-UICoE-[ID]
 ```
 
 # PR Process
@@ -31,18 +31,18 @@ developer or anyone is committing with proper description.
 * Do write 'WIP' for the PR if you want to have pre review.
 
 # Defect fixing process
-We are following defect-ID-based defect fixing development. Developer will get JIRA issue assigned. The branch name should be the JIRA ID. Eg:
+We are following bug-ID-based defect fixing development. Developer will get JIRA issue assigned. The branch name should be the JIRA ID. Eg:
 
 ```sh
-defect/UICoE-[ID]
+bug-UICoE-[ID]
 ```
 
-# styleguide
+# Styleguide
 
   http://10.115.87.64:8080/
   Carbon Design System
 
-# Tech
+# Tech Stack
   - SCSS
   - Parceljs 
 
@@ -109,6 +109,10 @@ then we can move the list styling from Typography.scss and create new file list.
 - Mixins should be in one file : mixin.scss.
 - One should follow the camelNameCase.
 - If you are using map mention'-map' after the name of the map.
+
+# Coding standard and guidelines
+- Follow the mail sent for linting/indentation process
+- ...rest will be updated soon!
 
 # License
 
