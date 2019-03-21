@@ -104,6 +104,7 @@ h6,
 }
 
 // Anchor link
+// TODO: change the colot as per theme
 a {
     color: theme-color("primary");
     @include getFontSize("14");

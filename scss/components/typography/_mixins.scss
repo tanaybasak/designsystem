@@ -55,11 +55,16 @@ $textDecorationStyle-map: (solid, double, dotted, dashed, through);
 }
 
 //Text decoration line
-$textDecorationLine-map: (overline, underline, through);
+$textDecorationLine-map: (overline, underline, through, overunder);
 @each $textDecorationLine in $textDecorationLine-map {
     @if($textDecorationLine==through) {
         .#{$prefix}-textdecorline-#{$textDecorationLine} {
             text-decoration-line: line-through;
+        }
+    }
+    @if($textDecorationLine==overunder) {
+        .#{$prefix}-textdecorline-#{$textDecorationLine} {
+            text-decoration-line: overline underline;
         }
     }
     @else {
