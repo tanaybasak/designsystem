@@ -57,6 +57,13 @@ $theme-colors: map-merge(( "primary": $primary, "secondary": $secondary, "tertia
   $input-height: 2.5rem !default;
   $input-min-width: calc( 300rem / 16);
   $input-label-weight: 600;
+  //checkbox
+  $checkbox-border-width: 2px;
+  $checkbox-border-color: #5a6872;
+  $checkbox-background-color: $white;
+  $checkbox-border-color-checked: #3d70b2; 
+  $checkbox-background-color-checked: #3d70b2; 
+  $checkbox-focus-color: #7cc7ff;
 
   //Errors
   $input-border-error:var(--input-border-error);

@@ -1092,6 +1092,44 @@ button.btn--outline-default:focus,
  *
  *******************************************************************
  */
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+:root {
+  --ff-roboto: "Roboto", sans-serif;
+  --base-font-size: 1rem;
+  --body-font-size: 0.875rem;
+  --small-font-size: 10.75rem;
+  --base-line-height: 1.15;
+  --base-margin: 0.5rem;
+  --base-padding: 0.2rem;
+  --black: #000;
+  --grey: #707070;
+  --white: #fff;
+  --blue: #0066b3;
+  --dark-secondary: #003d6b;
+  --orange: #d01b2e;
+  --orange-secondary: #a31221;
+  --black-secondary: #555;
+  --error-background-color: red;
+  --error-font-color: red;
+  --success-background-color: green;
+  --success-font-color: green;
+  --input-border-error: #EB1946;
+  --input-border-success: #7EB338;
+}
+
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 .hcl-form-group {
   display: -ms-flexbox;
   display: flex;
@@ -1197,113 +1235,99 @@ label {
   line-height: 1.5;
 }
 
-.form-item {
-  display: inline-block;
+.hcl-form-group.hcl-checkbox-wrapper {
+  margin-bottom: 1rem;
+}
+.hcl-form-group.hcl-checkbox-wrapper:first-of-type {
+  margin-top: 0.5rem;
+}
+.hcl-form-group.hcl-checkbox-wrapper:last-of-type {
+  margin-bottom: 0;
+}
+
+.hcl-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  visibility: visible;
+  white-space: nowrap;
+}
+.hcl-checkbox[disabled] ~ .hcl-checkbox-label {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.hcl-checkbox:checked + .hcl-checkbox-label::before {
+  background-color: #3d70b2;
+  border-color: #3d70b2;
+}
+.hcl-checkbox:checked + .hcl-checkbox-label::after {
+  opacity: 1;
+  transform: scale(1) rotate(-45deg);
+}
+.hcl-checkbox:focus + .hcl-checkbox-label::before {
+  outline: 1px solid transparent;
+  box-shadow: 0 0 0 3px #7cc7ff;
+}
+
+.hcl-checkbox-label {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  cursor: pointer;
   position: relative;
+  padding-left: 1.5rem;
+  min-height: 1rem;
+  margin-bottom: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-.form-item .form-item__checkbox, .form-item input[type=checkbox] {
-  position: absolute;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  visibility: visible;
-  white-space: nowrap;
-  clip: rect(0px, 0px, 0px, 0px);
-}
-.form-item .form-item__checkbox + .form-item__text, .form-item input[type=checkbox] + .form-item__text {
-  padding: 0;
-  padding-left: 26px;
-  line-height: 1.5rem;
-  cursor: pointer;
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-}
-.form-item .form-item__checkbox + .form-item__text::before, .form-item input[type=checkbox] + .form-item__text::before {
-  background-color: var(--white);
-  border-color: var(--blue);
-  border-width: 1px;
-}
-.form-item .form-item__checkbox:disabled + .form-item__text, .form-item input[type=checkbox]:disabled + .form-item__text {
-  cursor: not-allowed;
-  color: var(--grey);
-}
-.form-item .form-item__checkbox:disabled + label.form-item__text::before, .form-item .form-item__checkbox:disabled + .form-item__text::before, .form-item input[type=checkbox]:disabled + label.form-item__text::before, .form-item input[type=checkbox]:disabled + .form-item__text::before {
-  background: #F6F6F6;
-  border-color: #D0D0D0;
-}
-.form-item .form-item__checkbox:checked + label.form-item__text::after, .form-item input[type=checkbox]:checked + label.form-item__text::after {
-  transform: scale(1) rotate(-45deg);
-}
-.form-item .form-item__checkbox:checked + .form-item__text::before, .form-item input[type=checkbox]:checked + .form-item__text::before {
-  background-color: var(--blue);
-  border-width: 1px;
-  border-color: var(--blue);
-}
-.form-item .form-item__checkbox + label.form-item__text::before, .form-item .form-item__checkbox + .form-item__text::before, .form-item input[type=checkbox] + label.form-item__text::before, .form-item input[type=checkbox] + .form-item__text::before {
+.hcl-checkbox-label::before {
+  box-sizing: border-box;
   content: "";
   position: absolute;
   left: 0;
-  top: 0rem;
-  display: inline-block;
-  width: 1.125rem;
-  height: 1.125rem;
-  margin: 0.125rem;
-  border: 1px solid var(--blue);
+  top: calc(50% - 9px);
+  height: 18px;
+  width: 18px;
+  border: 2px solid #5a6872;
+  background-color: var(--white);
 }
-.form-item .form-item__checkbox + label.form-item__text::after, .form-item .form-item__checkbox + .form-item__text::after, .form-item input[type=checkbox] + label.form-item__text::after, .form-item input[type=checkbox] + .form-item__text::after {
+.hcl-checkbox-label::after {
+  box-sizing: border-box;
   content: "";
-  color: #FFFFFF;
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  display: inline-block;
-  width: 10px;
-  height: 7px;
+  width: 9px;
+  height: 5px;
+  background: none;
   border-left: 1px solid var(--white);
   border-bottom: 1px solid var(--white);
-  transform: rotate(-45deg);
-}
-.form-item .form-item__radio, .form-item input[type=radio].form-item__radio, .form-item input[type=radio] {
+  transform: scale(0) rotate(-45deg);
   position: absolute;
-  opacity: 0;
-  margin: 0;
+  left: 0.3125rem;
+  top: 50%;
+  margin-top: -0.1875rem;
 }
-.form-item .form-item__radio + label.form-item__text, .form-item .form-item__radio + .form-item__text, .form-item input[type=radio].form-item__radio + label.form-item__text, .form-item input[type=radio].form-item__radio + .form-item__text, .form-item input[type=radio] + label.form-item__text, .form-item input[type=radio] + .form-item__text {
+
+.hcl-fieldset {
+  margin-bottom: 2rem;
+}
+
+.hcl-legend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #152935;
+  vertical-align: baseline;
   display: inline-block;
-  padding-left: 1.625rem;
-  position: relative;
-  color: var(--black);
-  min-height: 1rem;
-  margin-top: 0;
-  cursor: pointer;
-}
-.form-item .form-item__radio + label.form-item__text:before, .form-item input[type=radio].form-item__radio + label.form-item__text:before, .form-item input[type=radio] + label.form-item__text:before {
-  position: absolute;
-  top: 0.1666665rem;
-  left: 0;
-  content: "";
-  display: inline-block;
-  height: 1.125rem;
-  width: 1.125rem;
-  border: 1px solid #9a9a9a;
-  border-radius: 50%;
-}
-.form-item .form-item__radio:checked + label.form-item__text:before, .form-item input[type=radio].form-item__radio:checked + label.form-item__text:before, .form-item input[type=radio]:checked + label.form-item__text:before {
-  box-shadow: inset 0 0 0 0.11rem var(--white);
-  border: 1px solid #D0D0D0;
-  background: var(--blue);
-}
-.form-item .form-item__radio:disabled + label.form-item__text, .form-item input[type=radio].form-item__radio:disabled + label.form-item__text, .form-item input[type=radio]:disabled + label.form-item__text {
-  color: var(--grey);
+  margin-bottom: 0.5rem;
 }
