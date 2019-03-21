@@ -1,6 +1,6 @@
 
 //Input Fields Color Maps
-$inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "color-4": #e0182d);
+$inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "color-4": #e0182d, "color-5": #3d70b2);
 @mixin getInputColor($color, $property) {
     @if map-has-key($inputColor-map, $color) {
         #{$property}: map-get($inputColor-map, $color);

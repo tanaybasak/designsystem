@@ -34,7 +34,7 @@
                 <div class="hcl-form-group">
                     <label for="error">Address</label>
                     <input type="text" class="hcl-form-control error" id="error" placeholder="Enter Address Details"
-                        disabled />
+                        disabled aria-disabled="true" />
                 </div>
                 <div class="hcl-form-group">
                     <label for="feedback1">Feedback Form</label>
@@ -43,7 +43,8 @@
                 <div class="hcl-form-group">
                     <label for="feedback2">Review Summary</label>
                     <small class="hcl-helper-text">Optional Helper text goes here</small>
-                    <textarea data-invalid disabled class="hcl-text-area" id="feedback2" rows="4" cols="50"></textarea>
+                    <textarea data-invalid disabled aria-disabled="true" class="hcl-text-area" id="feedback2" rows="4"
+                        cols="50"></textarea>
                     <div class="hcl-input-error">Validation message here</div>
                 </div>
             </form>
@@ -69,19 +70,32 @@
 
             <!-- Radio Components -->
             <article class="margin-around-5">
-                <div class="form-item cr--wrapper" aria-disabled="false">
-                    <input class="form-item__radio" id="radio1" type="radio" value="Option1" name="planets" />
-                    <label class="form-item__text" for="radio1">Earth</label>
-                </div>
-<!-- 
-                <div class="form-item cr--wrapper" aria-disabled="false">
-                    <input class="form-item__radio" id="radio2" type="radio" value="Option2" name="planets" checked />
-                    <label class="form-item__text" for="radio2">Jupiter</label>
-                </div>
-                <div class="form-item cr--wrapper" aria-disabled="true">
-                    <input class="form-item__radio" id="radio3" type="radio" value="Option3" name="planets" disabled />
-                    <label class="form-item__text" for="radio3">Saturn</label>
-                </div> -->
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Planets - Horizontally arranged (default)</legend>
+                    <div class="hcl-form-group" aria-disabled="false">
+                        <div class="hcl-radio-group">
+                            <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" checked />
+                            <label class="hcl-radio-label" for="radio1">Earth</label>
+                            <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" />
+                            <label class="hcl-radio-label" for="radio2">Mars</label>
+                            <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
+                            <label class="hcl-radio-label" for="radio3">Jupiter</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Planets - Vertically arranged</legend>
+                    <div class="hcl-form-group" aria-disabled="false">
+                        <div class="hcl-radio-group-vertical">
+                            <input class="hcl-radio" id="radio4" type="radio" value="Option1" name="planets" checked />
+                            <label class="hcl-radio-label" for="radio4">Neptune</label>
+                            <input disabled class="hcl-radio" id="radio5" type="radio" value="Option2" name="planets" />
+                            <label class="hcl-radio-label" for="radio5">Uranus</label>
+                            <input class="hcl-radio" id="radio6" type="radio" value="Option3" name="planets" />
+                            <label class="hcl-radio-label" for="radio6">Saturn</label>
+                        </div>
+                    </div>
+                </fieldset>
             </article>
 
         </section>
