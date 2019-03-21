@@ -1373,6 +1373,9 @@ label {
   border-radius: 50%;
   background-color: #3d70b2;
 }
+.hcl-radio:checked + .hcl-radio-label::before {
+  border-color: #3d70b2;
+}
 
 .hcl-radio-label {
   -webkit-font-smoothing: antialiased;
