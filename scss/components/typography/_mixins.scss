@@ -8,13 +8,9 @@
 
 /* MIXINS SPECIFIC TO TYPOGRAPHY */
 
-@mixin fontSmoothing {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-@mixin letterSpacing {
-    letter-spacing: 0;
+//px to rem
+@mixin pxtorem($value) {
+    font-size: ($value /16) + rem;
 }
 
 // Font weight
@@ -28,18 +24,55 @@ $fontWeights-map: ( light: 300, regular: 400, semibold: 600, bold: 800);
     }
 }
 
+@each $textWeightkey,
+$textWeightvalue in $fontWeights-map {
+    .#{$prefix}-textweight-#{$textWeightkey} {
+        font-weight: $textWeightkey;
+    }
+}
+
 // Font style
-$fontStyles-map: ("underline": underline, "italic": italic);
-@each $fontStyle in $fontStyles-map {
-    .#{$prefix}-#{$fontStyle} {
-        font-style: $fontStyle;
+$textStyles-map: (underline, italic, strike-through, overline, line-through);
+@each $textStyle in $textStyles-map {
+    .#{$prefix}-textstyle-#{$textStyle} {
+        font-style: $textStyle;
+    }
+}
+
+//Text decoration style
+$textDecorationStyle-map: (solid, double, dotted, dashed, through);
+@each $textDecorationStyle in $textDecorationStyle-map {
+    @if( $textDecorationStyle==through) {
+        .#{$prefix}-textdecorstyle-#{$textDecorationStyle} {
+            text-decoration-style: line-through;
+        }
+    }
+    @else {
+        .#{$prefix}-textdecorstyle-#{$textDecorationStyle} {
+            text-decoration-style: $textDecorationStyle;
+        }
+    }
+}
+
+//Text decoration line
+$textDecorationLine-map: (overline, underline, through);
+@each $textDecorationLine in $textDecorationLine-map {
+    @if($textDecorationLine==through) {
+        .#{$prefix}-textdecorline-#{$textDecorationLine} {
+            text-decoration-line: line-through;
+        }
+    }
+    @else {
+        .#{$prefix}-textdecorline-#{$textDecorationLine} {
+            text-decoration-line: $textDecorationLine;
+        }
     }
 }
 
 // Text transforms
 $textTransforms-map: (uppercase, lowercase, capitalize);
 @each $textTransform in $textTransforms-map {
-    .#{$prefix}-#{$textTransform} {
+    .#{$prefix}-texttransform-#{$textTransform} {
         text-transform: $textTransform;
     }
 }
@@ -47,7 +80,7 @@ $textTransforms-map: (uppercase, lowercase, capitalize);
 // Text alignment
 $textAlignment-map: (center, left, right, justify);
 @each $textAlignment in $textAlignment-map {
-    .#{$prefix}-text-align-#{$textAlignment} {
+    .#{$prefix}-textalign-#{$textAlignment} {
         text-align: $textAlignment;
     }
 }
@@ -61,6 +94,34 @@ $typeSizes-map: ( "h1": 4.75rem, "h2": 3.375rem, "h3": 2.25rem, "h4": 1.75rem, "
     @else {
         @warn 'This is not define in the HCL design System!';
     }
+}
+
+// White Space
+$whiteSpaces-map: (nowrap, normal, pre);
+@each $whiteSpaces in $whiteSpaces-map {
+    .#{$prefix}-whitespace-#{whiteSpaces} {
+        white-space: $whiteSpaces;
+    }
+}
+
+// Writing Mode
+$writingMode-map: (htb, vrl);
+@each $writingMode in $writingMode-map {
+    @if( $writingMode==htb) {
+        .#{$prefix}-writingmode-#{$writingMode} {
+            writing-mode: horizontal-tb;
+        }
+    }
+    @else {
+        .#{$prefix}-writingmode-#{$writingMode} {
+            writing-mode: vertical-rl;
+        }
+    }
+}
+
+// Text overflow
+.#{$prefix}-textoverflow-ellipsis {
+    text-overflow: ellipsis;
 }
 
 // LINE HEIGHT

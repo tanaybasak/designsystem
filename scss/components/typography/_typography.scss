@@ -8,19 +8,19 @@
 
 @import "mixins";
 // Font style
-.#{$prefix}-fontweight-bold {
+.#{$prefix}-textweight-bold {
     @include getFontWeight("bold");
 }
 
-.#{$prefix}-fontweight-light {
+.#{$prefix}-textweight-light {
     @include getFontWeight("light");
 }
 
-.#{$prefix}-fontweight-regular {
+.#{$prefix}-textweight-regular {
     @include getFontWeight("regular");
 }
 
-.#{$prefix}-fontweight-semibold {
+.#{$prefix}-textweight-semibold {
     @include getFontWeight("semibold");
 }
 
@@ -58,51 +58,50 @@ h4,
 }
 
 h5,
-.#{$prefix}-h5 ,
-.#{prefix}-gamma{
+.#{$prefix}-h5,
+.#{prefix}-gamma {
     @include getFontSize("h5");
     @include lineHeight("heading");
     @include getFontWeight("light");
 }
 
 h6,
-.#{$prefix}-h6 ,
-.#{prefix}-type-delta{
+.#{$prefix}-h6,
+.#{prefix}-type-delta {
     @include getFontSize("h6");
     @include lineHeight("heading");
     @include getFontWeight("semibold");
 }
 
-.#{prefix}-type-epsilon{
+.#{prefix}-type-epsilon {
     @include getFontSize("16");
     line-height: var(--base-line-height);
     @include getFontWeight("semibold");
 }
 
-.#{prefix}-type-zeta{
+.#{prefix}-type-zeta {
     @include getFontSize("14");
     line-height: var(--base-line-height);
     @include getFontWeight("semibold");
 }
 
-.#{prefix}-type-omega{
+.#{prefix}-type-omega {
     @include getFontSize("12");
     line-height: var(--base-line-height);
     @include getFontWeight("semibold");
 }
 
-.#{prefix}-type-legal{
+.#{prefix}-type-legal {
     @include getFontSize("11");
     line-height: var(--base-line-height);
     @include getFontWeight("regular");
 }
 
-.#{prefix}-type-caption{
+.#{prefix}-type-caption {
     @include getFontSize("12");
     line-height: var(--base-line-height);
     @include getFontWeight("regular");
 }
-
 
 // Anchor link
 a {
@@ -124,4 +123,3 @@ p,
     line-height: var(--base-line-height);
     @include getFontWeight("regular");
 }
-
