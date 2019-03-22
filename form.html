@@ -13,7 +13,6 @@
 <body>
     <main>
         <section class="patron-container pt-3">
-
             <!-- Input Components -->
             <form class="margin-around-5">
                 <div class="hcl-form-group">
@@ -22,7 +21,7 @@
                 </div>
                 <div class="hcl-form-group">
                     <label for="lastname">Last Name</label>
-                    <small class="hcl-helper-text">Optional Helper text goes here</small>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
                     <input type="text" class="hcl-form-control success" id="lastname" placeholder="Enter Last Name" />
                 </div>
                 <div class="hcl-form-group">
@@ -42,13 +41,13 @@
                 </div>
                 <div class="hcl-form-group">
                     <label for="feedback2">Review Summary</label>
-                    <small class="hcl-helper-text">Optional Helper text goes here</small>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
                     <textarea disabled aria-disabled="true" class="hcl-text-area" id="feedback2" rows="4"
                         cols="50"></textarea>
                 </div>
                 <div class="hcl-form-group">
                         <label for="feedback3">Remarks</label>
-                        <small class="hcl-helper-text">Optional Helper text goes here</small>
+                        <div class="hcl-helper-text">Optional Helper text goes here</div>
                         <textarea data-invalid aria-disabled="false" class="hcl-text-area" id="feedback2" rows="4"
                             cols="50"></textarea>
                         <div class="hcl-input-error">Validation message here</div>
@@ -81,24 +80,24 @@
                     <div class="hcl-form-group" aria-disabled="false">
                         <div class="hcl-radio-group">
                             <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" checked />
-                            <label class="hcl-radio-label" for="radio1">Earth</label>
+                            <label class="hcl-radio-label" for="radio1"><span>Earth</span></label>
                             <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" />
-                            <label class="hcl-radio-label" for="radio2">Mars</label>
+                            <label class="hcl-radio-label" for="radio2"><span>Mars</span></label>
                             <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
-                            <label class="hcl-radio-label" for="radio3">Jupiter</label>
+                            <label class="hcl-radio-label" for="radio3"><span>Jupiter</span></label>
                         </div>
                     </div>
                 </fieldset>
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Planets - Vertically arranged</legend>
                     <div class="hcl-form-group" aria-disabled="false">
-                        <div class="hcl-radio-group-vertical">
+                        <div class="hcl-radio-group hcl-stack-vertical">
                             <input class="hcl-radio" id="radio4" type="radio" value="Option1" name="planets" checked />
-                            <label class="hcl-radio-label" for="radio4">Neptune</label>
+                            <label class="hcl-radio-label" for="radio4"><span></span>Neptune</span></label>
                             <input disabled class="hcl-radio" id="radio5" type="radio" value="Option2" name="planets" />
-                            <label class="hcl-radio-label" for="radio5">Uranus</label>
+                            <label class="hcl-radio-label" for="radio5"><span>Uranus</span></label>
                             <input class="hcl-radio" id="radio6" type="radio" value="Option3" name="planets" />
-                            <label class="hcl-radio-label" for="radio6">Saturn</label>
+                            <label class="hcl-radio-label" for="radio6"><span>Saturn</span></label>
                         </div>
                     </div>
                 </fieldset>

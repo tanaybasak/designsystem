@@ -1,6 +1,6 @@
 
 //Input Fields Color Maps
-$inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "color-4": #e0182d, "color-5": #3d70b2);
+$inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "color-5": #3d70b2);
 @mixin getInputColor($color, $property) {
     @if map-has-key($inputColor-map, $color) {
         #{$property}: map-get($inputColor-map, $color);
@@ -13,7 +13,7 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "
 @mixin getFormControl($which) {
     @if ($which == "inputcontrol") {
         @include getFontSize("14");
-        display: block;
+       // display: block;
         width: 100%;
         height: $input-height;
         min-width: $input-min-width;
@@ -22,7 +22,6 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "
         @include getInputColor('color-3', "background-color");    
         border: none;
         box-shadow: 0 1px 0 0 #5a6872;
-        order: 2;
         border-bottom: 1px solid transparent;
         &:focus{
             outline:none;
@@ -41,7 +40,6 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "
 @mixin getErrorMarkup($which) {
     @if ($which == "inputcontrol") {
         ~.#{$prefix}-input-error{
-            order:3;
             @include getInputColor('color-4', "color");
             @include getFontWeight("regular");
             @include getFontSize("12");

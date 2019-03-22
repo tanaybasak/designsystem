@@ -45,18 +45,14 @@
   --base-padding: 0.2rem;
   --black: #000;
   --grey: #707070;
-  --white: #fff;
+  --white: #ffffff;
   --blue: #0066b3;
   --dark-secondary: #003d6b;
   --orange: #d01b2e;
   --orange-secondary: #a31221;
   --black-secondary: #555;
-  --error-background-color: red;
-  --error-font-color: red;
-  --success-background-color: green;
-  --success-font-color: green;
-  --input-border-error: #EB1946;
-  --input-border-success: #7EB338;
+  --error: #E0182D ;
+  --success: ##589D25;
 }
 
 /******************************************************************
@@ -1109,52 +1105,29 @@ button.btn--outline-default:focus,
   --base-padding: 0.2rem;
   --black: #000;
   --grey: #707070;
-  --white: #fff;
+  --white: #ffffff;
   --blue: #0066b3;
   --dark-secondary: #003d6b;
   --orange: #d01b2e;
   --orange-secondary: #a31221;
   --black-secondary: #555;
-  --error-background-color: red;
-  --error-font-color: red;
-  --success-background-color: green;
-  --success-font-color: green;
-  --input-border-error: #EB1946;
-  --input-border-success: #7EB338;
+  --error: #E0182D ;
+  --success: ##589D25;
 }
 
-/******************************************************************
- * HCL Confidential
- *
- * Copyright HCL Technologies Ltd. 2019 All rights reserved.
- *
- *******************************************************************
- */
 .hcl-form-group {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex: 1;
-      flex: 1;
-  -ms-flex-align: start;
-      align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 .hcl-form-group > input[data-invalid], .hcl-form-group input[data-invalid]:focus, .hcl-form-group textarea[data-invalid], .hcl-form-group textarea[data-invalid]:focus {
-  box-shadow: 0 2px 0 0 #e0182d;
+  box-shadow: 0 2px 0 0 var(--error);
 }
 .hcl-form-group input[data-invalid] ~ .hcl-input-error, .hcl-form-group textarea[data-invalid] ~ .hcl-input-error {
   max-height: 12.5rem;
-  display: inline-block;
 }
 
 .hcl-helper-text {
   font-size: 0.75rem;
-  opacity: 1;
   color: #5a6872;
-  -ms-flex-order: 1;
-      order: 1;
   line-height: 1.5;
   max-height: 3rem;
   margin-bottom: 0.5rem;
@@ -1170,7 +1143,6 @@ label {
 
 .hcl-form-control {
   font-size: 0.875rem;
-  display: block;
   width: 100%;
   height: 2.5rem;
   min-width: calc( 300rem / 16);
@@ -1179,8 +1151,6 @@ label {
   background-color: #f4f7fb;
   border: none;
   box-shadow: 0 1px 0 0 #5a6872;
-  -ms-flex-order: 2;
-      order: 2;
   border-bottom: 1px solid transparent;
 }
 .hcl-form-control:focus {
@@ -1192,9 +1162,6 @@ label {
   cursor: not-allowed;
 }
 .hcl-form-control ~ .hcl-input-error {
-  -ms-flex-order: 3;
-      order: 3;
-  color: #e0182d;
   font-weight: 400;
   font-size: 0.75rem;
   margin-top: 0.25rem;
@@ -1203,7 +1170,6 @@ label {
 
 .hcl-text-area {
   font-size: 0.875rem;
-  display: block;
   width: 100%;
   height: 2.5rem;
   min-width: calc( 300rem / 16);
@@ -1212,8 +1178,6 @@ label {
   background-color: #f4f7fb;
   border: none;
   box-shadow: 0 1px 0 0 #5a6872;
-  -ms-flex-order: 2;
-      order: 2;
   border-bottom: 1px solid transparent;
   min-width: 10rem;
   resize: vertical;
@@ -1229,9 +1193,7 @@ label {
   cursor: not-allowed;
 }
 .hcl-text-area[data-invalid] ~ .hcl-input-error {
-  -ms-flex-order: 3;
-      order: 3;
-  color: #e0182d;
+  color: var(--error);
   font-weight: 400;
   font-size: 0.75rem;
   margin-top: 0.25rem;
@@ -1278,14 +1240,8 @@ label {
 }
 
 .hcl-checkbox-label {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-size: 0.875rem;
   font-weight: 400;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
   cursor: pointer;
   position: relative;
   padding-left: 1.5rem;
@@ -1323,26 +1279,22 @@ label {
 }
 
 .hcl-radio-group {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
   margin-top: 0.5rem;
 }
 
-.hcl-radio-group-vertical {
+.hcl-stack-vertical {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
 }
-.hcl-radio-group-vertical label {
+.hcl-stack-vertical label {
   margin-bottom: 0.5rem;
 }
-.hcl-radio-group-vertical label:first-of-type {
+.hcl-stack-vertical label:first-of-type {
   margin-top: 0.5rem;
 }
-.hcl-radio-group-vertical label:last-of-type {
+.hcl-stack-vertical label:last-of-type {
   margin-bottom: 0;
 }
 
@@ -1370,6 +1322,7 @@ label {
   content: "";
   display: inline-block;
   position: absolute;
+  top: 5px;
   left: 5px;
   width: 0.5rem;
   height: 0.5rem;
@@ -1381,29 +1334,27 @@ label {
 }
 
 .hcl-radio-label {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   font-size: 0.875rem;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
+  display: inline-block;
   cursor: pointer;
   margin-bottom: 0;
   margin-right: 1rem;
   position: relative;
 }
+.hcl-radio-label span {
+  display: inline-block;
+  margin-left: 25px;
+}
 .hcl-radio-label::before {
   content: "";
-  background-color: #fff;
+  display: inline-block;
+  position: absolute;
+  background-color: var(--white);
   border-radius: 50%;
   border: 2px solid #5a6872;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
   height: 1.125rem;
   width: 1.125rem;
-  margin-right: 0.5rem;
 }
 
 .hcl-fieldset {

@@ -17,18 +17,14 @@
     --base-padding: 0.2rem;
     --black: #000;
     --grey: #707070;
-    --white: #fff;
+    --white: #ffffff;
     --blue: #0066b3;
     --dark-secondary: #003d6b;
     --orange: #d01b2e;
     --orange-secondary: #a31221;
     --black-secondary: #555;
-    --error-background-color: red;
-    --error-font-color: red;
-    --success-background-color: green;
-    --success-font-color: green;
-    --input-border-error: #EB1946;
-    --input-border-success: #7EB338;
+    --error: #E0182D ;
+    --success: ##589D25;
 }
 
 // We need to use sass varaible only when we need dynamic classes.
@@ -66,5 +62,5 @@ $theme-colors: map-merge(( "primary": $primary, "secondary": $secondary, "tertia
   $checkbox-focus-color: #7cc7ff;
 
   //Errors
-  $input-border-error:var(--input-border-error);
-  $input-border-success:var(--input-border-success);
+  $error:var(--error);
+  $success:var(--success);
