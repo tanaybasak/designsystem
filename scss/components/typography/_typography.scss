@@ -104,14 +104,12 @@ h6,
 }
 
 // Anchor link
-// TODO: change the colot as per theme
+// TODO: change the color as per the theme
 a {
     color: theme-color("primary");
     @include getFontSize("14");
-    text-decoration: none;
     &:hover {
         color: $link-hover-color;
-        text-decoration: underline;
     }
 }
 

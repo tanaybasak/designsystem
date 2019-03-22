@@ -8,9 +8,9 @@
 
 /* MIXINS SPECIFIC TO TYPOGRAPHY */
 
-//px to rem
+// px to rem
 @mixin pxtorem($value) {
-    font-size: ($value /16) + rem;
+    font-size: ($value/$base-font-size-px) + rem;
 }
 
 // Font weight
@@ -39,7 +39,7 @@ $textStyles-map: (underline, italic, strike-through, overline, line-through);
     }
 }
 
-//Text decoration style
+// Text decoration style
 $textDecorationStyle-map: (solid, double, dotted, dashed, through);
 @each $textDecorationStyle in $textDecorationStyle-map {
     @if( $textDecorationStyle==through) {
@@ -54,7 +54,7 @@ $textDecorationStyle-map: (solid, double, dotted, dashed, through);
     }
 }
 
-//Text decoration line
+// Text decoration line
 $textDecorationLine-map: (overline, underline, through, overunder);
 @each $textDecorationLine in $textDecorationLine-map {
     @if($textDecorationLine==through) {
@@ -62,7 +62,7 @@ $textDecorationLine-map: (overline, underline, through, overunder);
             text-decoration-line: line-through;
         }
     }
-    @if($textDecorationLine==overunder) {
+    @else if($textDecorationLine==overunder) {
         .#{$prefix}-textdecorline-#{$textDecorationLine} {
             text-decoration-line: overline underline;
         }
@@ -129,7 +129,7 @@ $writingMode-map: (htb, vrl);
     text-overflow: ellipsis;
 }
 
-// LINE HEIGHT
+// Line height
 @mixin lineHeight($type) {
     @if ($type=="heading") {
         line-height: 1.125;

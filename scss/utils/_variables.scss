@@ -10,6 +10,7 @@
 :root {
     --ff-roboto: "Roboto", sans-serif;
     --base-font-size: 1rem;
+    --base-font-size-px: 16;
     --body-font-size: 0.875rem;
     --small-font-size: 0.75rem;
     --base-line-height: 1.15;
@@ -32,6 +33,7 @@
 // SASS VARIABLES
 $prefix: "hcl";
 $base-font-size: var(--base-font-size) !default;
+$base-font-size-px: var(--base-font-size-px);
 $small-font-size: var(--small-font-size);
 $base-margin: var(--base-margin);
 $base-padding: var(--base-padding);
