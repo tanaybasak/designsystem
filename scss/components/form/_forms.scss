@@ -18,6 +18,9 @@ $prefix: 'hcl';
     flex: 1;
     align-items: flex-start;
     margin-bottom:1.5rem;
+    > input[data-invalid], input[data-invalid]:focus, textarea[data-invalid], textarea[data-invalid]:focus {
+        box-shadow: 0 2px 0 0 #e0182d;
+    }
     input[data-invalid]~.#{$prefix}-input-error, textarea[data-invalid]~.#{$prefix}-input-error{
         max-height:12.5rem;
         display:inline-block;
@@ -53,7 +56,14 @@ label{
     resize: vertical;
     padding: 1rem;
     height: auto;
-    @include getErrorMarkup("inputcontrol");
+    &[data-invalid]~.#{$prefix}-input-error{
+        order:3;
+        @include getInputColor('color-4', "color");
+        @include getFontWeight("regular");
+        @include getFontSize("12");
+        margin-top: .25rem;
+        line-height:1.5;
+    }
 }
 
 //Checkbox

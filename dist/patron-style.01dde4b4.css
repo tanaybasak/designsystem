@@ -1141,6 +1141,9 @@ button.btn--outline-default:focus,
       align-items: flex-start;
   margin-bottom: 1.5rem;
 }
+.hcl-form-group > input[data-invalid], .hcl-form-group input[data-invalid]:focus, .hcl-form-group textarea[data-invalid], .hcl-form-group textarea[data-invalid]:focus {
+  box-shadow: 0 2px 0 0 #e0182d;
+}
 .hcl-form-group input[data-invalid] ~ .hcl-input-error, .hcl-form-group textarea[data-invalid] ~ .hcl-input-error {
   max-height: 12.5rem;
   display: inline-block;
@@ -1225,7 +1228,7 @@ label {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.hcl-text-area ~ .hcl-input-error {
+.hcl-text-area[data-invalid] ~ .hcl-input-error {
   -ms-flex-order: 3;
       order: 3;
   color: #e0182d;
