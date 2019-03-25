@@ -26,10 +26,18 @@ fs.readFile(path.join(__dirname, './package.json'), (err, fileData) => {
         const index = ['major', 'minor', 'patch'].indexOf(RELEASES_TYPE);
         version[index] = Number(version[index]);
         version[index] += 1;
+
+        if (index === 0) {
+            version[1] = 0;
+            version[2] = 0;
+        } else if (index === 1) {
+            version[2] = 0;
+        }
+
         packageJsonData.version = version.join('.');
 
         // writing back updated package.json data
-        fs.writeFile('package.json', JSON.stringify(packageJsonData, null, 4), error => {
+        fs.writeFile('package.json', JSON.stringify(packageJsonData, null, 2), error => {
             if (error) throw error;
         });
     }
