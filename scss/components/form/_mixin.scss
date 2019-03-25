@@ -8,7 +8,7 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "
         #{$property}: map-get($inputColor-map, $color);
     }
     @else {
-        @warn 'This is not define in the HCL design System!';
+        @warn 'This is not define in the HCL design System - `#{$color} #{$property}`';
     }
 }
 
@@ -44,7 +44,6 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "
 @mixin getErrorMarkup($which) {
     @if ($which == "inputcontrol") {
         ~.#{$prefix}-input-error-msg{
-            @include getInputColor('color-4', "color");
             @include getFontWeight("regular");
             @include getFontSize("12");
             color: $error;
@@ -53,6 +52,6 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "
         }
     }
     @else {
-        @warn 'This is not define in the HCL design System!';
+        @warn 'This is not define in the HCL design System! - `#{$which}`';
     }
 }

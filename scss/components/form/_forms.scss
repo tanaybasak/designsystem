@@ -34,7 +34,6 @@ label {
     @include getInputColor('color-1', "color");
     font-weight: $input-label-weight;
     display: block;
-    vertical-align: baseline;
     margin-bottom: $label-margin-bottom;
 }
 
