@@ -8,91 +8,82 @@
 
 @import "../../utils/variables";
 @import "mixin";
-
 $prefix: 'hcl';
-
-.#{$prefix}-form-group{
-    margin-bottom:1.5rem;
-    > input[data-invalid], input[data-invalid]:focus, textarea[data-invalid], textarea[data-invalid]:focus {
+.#{$prefix}-form-group {
+    margin-bottom: 1.5rem;
+    >input[data-invalid],
+    input[data-invalid]:focus,
+    textarea[data-invalid],
+    textarea[data-invalid]:focus {
         box-shadow: 0 2px 0 0 $error;
     }
-    input[data-invalid]~.#{$prefix}-input-error, textarea[data-invalid]~.#{$prefix}-input-error{
-        max-height:12.5rem;
+    input[data-invalid]~.#{$prefix}-input-error-msg,
+    textarea[data-invalid]~.#{$prefix}-input-error-msg {
+        max-height: 12.5rem;
     }
 }
 
-.#{$prefix}-helper-text{
-    @include getFontSize("12");
-    // opacity:1;
+.#{$prefix}-helper-text {
+    @include getFontSize("12"); // opacity:1;
     @include getInputColor('color-2', "color");
     line-height: 1.5;
-    max-height: 3rem;
     margin-bottom: .5rem;
 }
 
-label{
+label {
     @include getInputColor('color-1', "color");
     font-weight: $input-label-weight;
-    display: inline-block;
+    display: block;
     vertical-align: baseline;
     margin-bottom: $label-margin-bottom;
 }
 
-.#{$prefix}-form-control{
+.#{$prefix}-form-control {
     @include getFormControl("inputcontrol");
     @include getErrorMarkup("inputcontrol");
 }
 
-.#{$prefix}-text-area{
+.#{$prefix}-text-area {
     @include getFormControl("inputcontrol");
     min-width: 10rem;
     resize: vertical;
     padding: 1rem;
     height: auto;
-    &[data-invalid]~.#{$prefix}-input-error{
-        color : $error;
+    &[data-invalid]~.#{$prefix}-input-error-msg {
+        color: $error;
         @include getFontWeight("regular");
         @include getFontSize("12");
         margin-top: .25rem;
-        line-height:1.5;
+        line-height: 1.5;
     }
 }
 
 //Checkbox
-.#{$prefix}-form-group.#{$prefix}-checkbox-wrapper{
+.#{$prefix}-checkbox-wrapper {
     margin-bottom: 1rem;
-    &:first-of-type{
+    &:first-of-type {
         margin-top: 0.5rem;
     }
-    &:last-of-type{
+    &:last-of-type {
         margin-bottom: 0;
     }
 }
 
 .#{$prefix}-checkbox {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-    visibility: visible;
-    white-space: nowrap;
-    &[disabled]~.#{$prefix}-checkbox-label{
-        opacity:0.5;
-        cursor:not-allowed;
+    display: none;
+    &[disabled]~.#{$prefix}-checkbox-label {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
-    &:checked + .#{$prefix}-checkbox-label::before {
-        background-color:$checkbox-border-color-checked;
+    &:checked+.#{$prefix}-checkbox-label::before {
+        background-color: $checkbox-border-color-checked;
         border-color: $checkbox-border-color-checked;
     }
-    &:checked + .#{$prefix}-checkbox-label::after {
+    &:checked+.#{$prefix}-checkbox-label::after {
         opacity: 1;
         transform: scale(1) rotate(-45deg);
     }
-    &:focus + .#{$prefix}-checkbox-label::before {
+    &:focus+.#{$prefix}-checkbox-label::before {
         outline: 1px solid transparent;
         box-shadow: 0 0 0 3px $checkbox-focus-color;
     }
@@ -101,12 +92,12 @@ label{
 .#{$prefix}-checkbox-label {
     @include getFontSize("14");
     @include getFontWeight("regular");
+    display: inline-block;
     cursor: pointer;
     position: relative;
     padding-left: 1.5rem;
     min-height: 1rem;
     margin-bottom: 0;
-    user-select: none;
     &::before {
         box-sizing: border-box;
         content: '';
@@ -140,63 +131,60 @@ label{
     // align-items: center;
     margin-top: .5rem;
 }
+
+.#{$prefix}-radio-item {
+    display: inline-block;
+}
+
 .#{$prefix}-stack-vertical {
     display: flex;
     flex-direction: column;
-    label{
+    .#{$prefix}-radio-item {
         margin-bottom: 0.5rem;
     }
-    label:first-of-type{
+    .#{$prefix}-radio-item:first-of-type {
         margin-top: 0.5rem;
     }
-    label:last-of-type{
+    .#{$prefix}-radio-item:last-of-type {
         margin-bottom: 0;
     }
 }
+
 .#{$prefix}-radio {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-    visibility: visible;
-    white-space: nowrap;
-    &:focus + .#{$prefix}-radio-label::before {
+    display: none;
+    &:focus+.#{$prefix}-radio-label::before {
         outline: 1px solid transparent;
         box-shadow: 0 0 0 3px $checkbox-focus-color;
     }
-    &:disabled + .#{$prefix}-radio-label {
-        opacity:0.5;
-        cursor:not-allowed;
+    &:disabled+.#{$prefix}-radio-label {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
-    &:checked + .#{$prefix}-radio-label::after {
+    &:checked+.#{$prefix}-radio-label::after {
         content: '';
         display: inline-block;
         position: absolute;
-        top: 5px;
+        top: 4px;
         left: 5px;
         width: 0.5rem;
         height: 0.5rem;
         border-radius: 50%;
         @include getInputColor("color-5", "background-color");
     }
-    &:checked + .#{$prefix}-radio-label::before {
+    &:checked+.#{$prefix}-radio-label::before {
         @include getInputColor("color-5", "border-color");
     }
-
 }
+
 .#{$prefix}-radio-label {
     @include getFontWeight("regular");
     @include getFontSize("14");
-    display: inline-block; 
+    display: inline-block;
     cursor: pointer;
     margin-bottom: 0;
     margin-right: 1rem;
     position: relative;
-    span{
+    span {
         display: inline-block;
         margin-left: 25px;
     }
@@ -204,6 +192,7 @@ label{
         content: '';
         display: inline-block;
         position: absolute;
+        top: -1px;
         background-color: $white;
         border-radius: 50%;
         border: 2px solid #5a6872;
@@ -213,7 +202,7 @@ label{
 }
 
 // fieldset
-.#{$prefix}-fieldset{
+.#{$prefix}-fieldset {
     margin-bottom: 2rem;
 }
 

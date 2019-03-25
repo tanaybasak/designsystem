@@ -45,7 +45,7 @@
   --base-padding: 0.2rem;
   --black: #000;
   --grey: #707070;
-  --white: #ffffff;
+  --white: #fff;
   --blue: #0066b3;
   --dark-secondary: #003d6b;
   --orange: #d01b2e;
@@ -1105,7 +1105,7 @@ button.btn--outline-default:focus,
   --base-padding: 0.2rem;
   --black: #000;
   --grey: #707070;
-  --white: #ffffff;
+  --white: #fff;
   --blue: #0066b3;
   --dark-secondary: #003d6b;
   --orange: #d01b2e;
@@ -1118,10 +1118,14 @@ button.btn--outline-default:focus,
 .hcl-form-group {
   margin-bottom: 1.5rem;
 }
-.hcl-form-group > input[data-invalid], .hcl-form-group input[data-invalid]:focus, .hcl-form-group textarea[data-invalid], .hcl-form-group textarea[data-invalid]:focus {
+.hcl-form-group > input[data-invalid],
+.hcl-form-group input[data-invalid]:focus,
+.hcl-form-group textarea[data-invalid],
+.hcl-form-group textarea[data-invalid]:focus {
   box-shadow: 0 2px 0 0 var(--error);
 }
-.hcl-form-group input[data-invalid] ~ .hcl-input-error, .hcl-form-group textarea[data-invalid] ~ .hcl-input-error {
+.hcl-form-group input[data-invalid] ~ .hcl-input-error-msg,
+.hcl-form-group textarea[data-invalid] ~ .hcl-input-error-msg {
   max-height: 12.5rem;
 }
 
@@ -1129,14 +1133,13 @@ button.btn--outline-default:focus,
   font-size: 0.75rem;
   color: #5a6872;
   line-height: 1.5;
-  max-height: 3rem;
   margin-bottom: 0.5rem;
 }
 
 label {
   color: #152935;
   font-weight: 600;
-  display: inline-block;
+  display: block;
   vertical-align: baseline;
   margin-bottom: 0.5rem;
 }
@@ -1161,9 +1164,10 @@ label {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.hcl-form-control ~ .hcl-input-error {
+.hcl-form-control ~ .hcl-input-error-msg {
   font-weight: 400;
   font-size: 0.75rem;
+  color: var(--error);
   margin-top: 0.25rem;
   line-height: 1.5;
 }
@@ -1192,7 +1196,7 @@ label {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.hcl-text-area[data-invalid] ~ .hcl-input-error {
+.hcl-text-area[data-invalid] ~ .hcl-input-error-msg {
   color: var(--error);
   font-weight: 400;
   font-size: 0.75rem;
@@ -1200,27 +1204,18 @@ label {
   line-height: 1.5;
 }
 
-.hcl-form-group.hcl-checkbox-wrapper {
+.hcl-checkbox-wrapper {
   margin-bottom: 1rem;
 }
-.hcl-form-group.hcl-checkbox-wrapper:first-of-type {
+.hcl-checkbox-wrapper:first-of-type {
   margin-top: 0.5rem;
 }
-.hcl-form-group.hcl-checkbox-wrapper:last-of-type {
+.hcl-checkbox-wrapper:last-of-type {
   margin-bottom: 0;
 }
 
 .hcl-checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-  visibility: visible;
-  white-space: nowrap;
+  display: none;
 }
 .hcl-checkbox[disabled] ~ .hcl-checkbox-label {
   opacity: 0.5;
@@ -1242,15 +1237,12 @@ label {
 .hcl-checkbox-label {
   font-size: 0.875rem;
   font-weight: 400;
+  display: inline-block;
   cursor: pointer;
   position: relative;
   padding-left: 1.5rem;
   min-height: 1rem;
   margin-bottom: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 .hcl-checkbox-label::before {
   box-sizing: border-box;
@@ -1282,33 +1274,28 @@ label {
   margin-top: 0.5rem;
 }
 
+.hcl-radio-item {
+  display: inline-block;
+}
+
 .hcl-stack-vertical {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
 }
-.hcl-stack-vertical label {
+.hcl-stack-vertical .hcl-radio-item {
   margin-bottom: 0.5rem;
 }
-.hcl-stack-vertical label:first-of-type {
+.hcl-stack-vertical .hcl-radio-item:first-of-type {
   margin-top: 0.5rem;
 }
-.hcl-stack-vertical label:last-of-type {
+.hcl-stack-vertical .hcl-radio-item:last-of-type {
   margin-bottom: 0;
 }
 
 .hcl-radio {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-  visibility: visible;
-  white-space: nowrap;
+  display: none;
 }
 .hcl-radio:focus + .hcl-radio-label::before {
   outline: 1px solid transparent;
@@ -1322,7 +1309,7 @@ label {
   content: "";
   display: inline-block;
   position: absolute;
-  top: 5px;
+  top: 4px;
   left: 5px;
   width: 0.5rem;
   height: 0.5rem;
@@ -1350,6 +1337,7 @@ label {
   content: "";
   display: inline-block;
   position: absolute;
+  top: -1px;
   background-color: var(--white);
   border-radius: 50%;
   border: 2px solid #5a6872;
