@@ -1,4 +1,6 @@
-.spinner {
+$stroke-color: #55c9d3;
+
+.hcl-spinner {
     display: flex;
     justify-content: center;
 
@@ -12,7 +14,7 @@
         animation-iteration-count: infinite;
 
         &-circle {
-            stroke: #55c9d3;
+            stroke: $stroke-color;
             stroke-width: 7;
             fill: transparent;
             stroke-linecap: butt;
@@ -26,7 +28,6 @@
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(360deg);
     }
