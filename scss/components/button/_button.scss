@@ -5,43 +5,171 @@
  *
  *******************************************************************
  */
+ 
 
+ // remove the black theme ; blue will be default + primary
 $baseKey: "background";
 $theme: "primary";
-$themes: ("default", "primary", "secondary", "outline", "outline-primary", "outline-secondary", "outline-default");
-$colorMap: ("default": ("background": var(--blue), "hoverbg": var(--dark-secondary), "borderColor": transparent, "hoverborderColor": transparent, "fontColor": var(--white)), "primary": ( "background": var(--black-secondary), "hoverbg": var(--black), "borderColor": transparent, "hoverborderColor": transparent, "fontColor": var(--white)), "secondary": ( "background": var(--orange), "hoverbg": var(--orange-secondary), "borderColor": transparent, "hoverborderColor": transparent, "fontColor": var(--white)), "outline": ( "background": transparent, "hoverbg": var(--dark-secondary), "borderColor": var(--blue), "hoverborderColor": var(--dark-secondary), "fontColor": var(--blue), "color": var(--white)), "outline-primary": ( "background": transparent, "hoverbg": var(--black-secondary), "borderColor": var(--black), "hoverborderColor": var(--black-secondary), "fontColor": var(--black), "color": var(--white)), "outline-secondary": ( "background": transparent, "hoverbg": var(--orange-secondary), "borderColor": var(--orange), "hoverborderColor": var(--orange-secondary), "fontColor": var(--orange), "color": var(--white)), "outline-default": ( "background": transparent, "hoverbg": var(--black), "borderColor": var(--black-secondary), "hoverborderColor": var(--black), "fontColor": var(--black), "color": var(--white)));
+
+$themes: (
+  "primary",
+  "secondary",
+  "outline",
+  "outline-primary",
+  "outline-secondary",
+  "ghost",
+  "ghost-primary",
+  "ghost-secondary"
+);
+
+$colorMap: (
+  "primary": (
+    "background": var(--blue),
+    "background-hover": var(--dark-secondary),
+    "background-focus": var(--primary-background-focus),
+    "background-disabled": var(--primary-background-disabled),
+    "border-color": transparent,
+    "bordercolor-hover": transparent,
+    "font-color": var(--white)
+  ),
+  "secondary": (
+    "background": var(--orange),
+    "background-hover": var(--orange-secondary),
+    "background-focus": var(--orange-background-focus),
+    "background-disabled": var(--orange-background-disabled),
+    "border-color": transparent,
+    "bordercolor-hover": transparent,
+    "font-color": var(--white)
+  ),
+  "outline": (
+    "background": transparent,
+    "background-hover": transparent,
+    "border-color": var(--blue),
+    "bordercolor-hover": var(--dark-secondary),
+    "font-color": var(--blue),
+    "fontcolor-hover": var(--dark-secondary)
+  ),
+  "outline-primary": (
+    "background": transparent,
+    "background-hover": transparent,
+    "border-color": var(--black),
+    "bordercolor-hover": var(--black-secondary),
+    "font-color": var(--black),
+    "fontcolor-hover": var(--black-secondary)
+  ),
+  "outline-secondary": (
+    "background": transparent,
+    "background-hover": transparent,
+    "border-color": var(--orange),
+    "bordercolor-hover": var(--orange-secondary),
+    "font-color": var(--orange),
+    "fontcolor-hover": var(--orange-secondary)
+  ),
+  "ghost": (
+    "background": transparent,
+    "background-hover": var(--dark-secondary),
+    "border-color": transparent,
+    "bordercolor-hover": var(--white),
+    "font-color": var(--black)
+  ),
+  "ghost-primary": (
+    "background": transparent,
+    "background-hover": var(--black-secondary),
+    "border-color": transparent,
+    "bordercolor-hover": var(--black-secondary),
+    "font-color": var(--black),
+    "fontcolor-hover": var(--white)
+  ),
+  "ghost-secondary": (
+    "background": transparent,
+    "background-hover": var(--orange-secondary),
+    "border-color": transparent,
+    "bordercolor-hover": var(--orange-secondary),
+    "font-color": var(--black),
+    "fontcolor-hover": var(--white)
+  )
+);
+
+%button {
+  text-align: center;
+  cursor: pointer;
+  line-height: 1rem;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  color: var(--white);
+  background: var(--blue);
+  margin:.5rem; //Need to ask
+}
+// make small class as seprate; remove classes btn-ghostsmall, -btn-small
 button,
-.btn {
-    text-align: center;
-    padding: 0.25rem 1rem;
-    cursor: pointer;
-    line-height: 1.75;
-    font-size: 0.875rem;
-    border: 1px solid transparent;
-    color: var(--white);
-    background: var(--blue);
-    &:hover {
-        background: getColor("default", "hoverbg");
-    }
+.#{$prefix}-btn,
+.#{$prefix}-btn-small,
+.#{$prefix}-btn-ghost,
+.#{$prefix}-btn-ghostsmall {
+  @extend %button;
+  padding: 0.625rem 1rem;
+  height: 2.5rem;
+}
+.#{$prefix}-btn-small {
+  padding: 0.4375rem 1rem;
+  height: 2rem;
+}
+.#{$prefix}-btn-ghost{
+  background: none;
+  border: none;
+  color: $black;
+}
+.#{$prefix}-btn-ghostsmall {
+  padding: 0 0.5rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  color: $black;
+}
+
+@function getColor($name: "primary", $bkey: $baseKey) {
+  $color: null;
+  $colorList: map-get($colorMap, $name);
+
+  @if $colorList {
+    $color: map-get($colorList, $bkey);
+  }
+  @return $color;
 }
 
 @each $theme in $themes {
-    button,
-    .btn {
-        &.btn--#{$theme} {
-            background: getColor($theme);
-            border-color: getColor($theme, "borderColor");
-            color: getColor($theme, "fontColor");
-            &:hover {
-                background: getColor($theme, "hoverbg");
-                border-color: getColor($theme, "hoverborderColor");
-                color: getColor($theme, "color");
-            }
-            &:focus {
-                background: getColor($theme, "hoverbg");
-                border-color: getColor($theme, "hoverborderColor");
-                color: getColor($theme, "color");
-            }
-        }
+  button,
+  .#{$prefix}-btn,
+  .#{$prefix}-btn-small,
+  .#{$prefix}-btn-ghost,
+  .#{$prefix}-btn-ghostsmall {
+    &.btn--#{$theme},
+    &.sm-btn--#{$theme},
+    &.sm-gh-btn--#{$theme} {
+      background: getColor($theme);
+      border-color: getColor($theme, "border-color");
+      color: getColor($theme, "font-color");
+      &:hover {
+        background: getColor($theme, "background-hover");
+        border-color: getColor($theme, "bordercolor-hover");
+        color: getColor($theme, "hover-fontcolor");
+      }
+      &:focus {
+        background: getColor($theme, "background-focus");
+      }
+      &:disabled {
+        background: getColor($theme, "background-disabled");
+      }
     }
+    &:hover {
+      background: getColor("default", "background-hover");
+      color: getColor($theme, "hover-fontcolor");
+    }
+    &:focus {
+      background: getColor("default", "background-focus");
+    }
+    &:disabled {
+        background: getColor("default", "background-disabled");
+    }
+  }
 }
