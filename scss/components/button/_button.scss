@@ -1,0 +1,47 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+$baseKey: "background";
+$theme: "primary";
+$themes: ("default", "primary", "secondary", "outline", "outline-primary", "outline-secondary", "outline-default");
+$colorMap: ("default": ("background": var(--blue), "hoverbg": var(--dark-secondary), "borderColor": transparent, "hoverborderColor": transparent, "fontColor": var(--white)), "primary": ( "background": var(--black-secondary), "hoverbg": var(--black), "borderColor": transparent, "hoverborderColor": transparent, "fontColor": var(--white)), "secondary": ( "background": var(--orange), "hoverbg": var(--orange-secondary), "borderColor": transparent, "hoverborderColor": transparent, "fontColor": var(--white)), "outline": ( "background": transparent, "hoverbg": var(--dark-secondary), "borderColor": var(--blue), "hoverborderColor": var(--dark-secondary), "fontColor": var(--blue), "color": var(--white)), "outline-primary": ( "background": transparent, "hoverbg": var(--black-secondary), "borderColor": var(--black), "hoverborderColor": var(--black-secondary), "fontColor": var(--black), "color": var(--white)), "outline-secondary": ( "background": transparent, "hoverbg": var(--orange-secondary), "borderColor": var(--orange), "hoverborderColor": var(--orange-secondary), "fontColor": var(--orange), "color": var(--white)), "outline-default": ( "background": transparent, "hoverbg": var(--black), "borderColor": var(--black-secondary), "hoverborderColor": var(--black), "fontColor": var(--black), "color": var(--white)));
+button,
+.btn {
+    text-align: center;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    line-height: 1.75;
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+    color: var(--white);
+    background: var(--blue);
+    &:hover {
+        background: getColor("default", "hoverbg");
+    }
+}
+
+@each $theme in $themes {
+    button,
+    .btn {
+        &.btn--#{$theme} {
+            background: getColor($theme);
+            border-color: getColor($theme, "borderColor");
+            color: getColor($theme, "fontColor");
+            &:hover {
+                background: getColor($theme, "hoverbg");
+                border-color: getColor($theme, "hoverborderColor");
+                color: getColor($theme, "color");
+            }
+            &:focus {
+                background: getColor($theme, "hoverbg");
+                border-color: getColor($theme, "hoverborderColor");
+                color: getColor($theme, "color");
+            }
+        }
+    }
+}
