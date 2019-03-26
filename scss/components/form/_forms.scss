@@ -24,7 +24,7 @@ $prefix: 'hcl';
 }
 
 .#{$prefix}-helper-text {
-    @include getFontSize("12"); // opacity:1;
+    @include getFontSize("12");
     @include getInputColor('color-2', "color");
     @include lineHeight("helpertext");
     margin-bottom: .5rem;
@@ -57,7 +57,7 @@ label {
     }
 }
 
-//Checkbox
+// Checkbox
 .#{$prefix}-checkbox-wrapper {
     margin-bottom: 1rem;
     &:first-of-type {
@@ -126,8 +126,6 @@ label {
 
 // Radio
 .#{$prefix}-radio-group {
-    // display: flex;
-    // align-items: center;
     margin-top: .5rem;
 }
 
@@ -200,12 +198,12 @@ label {
     }
 }
 
-// fieldset
+// Fieldset
 .#{$prefix}-fieldset {
     margin-bottom: 2rem;
 }
 
-//legend
+// Legend
 .#{$prefix}-legend {
     @include getFontSize("14");
     @include getFontWeight("semibold");
