@@ -43,7 +43,7 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "
 // getErrorMarkup(<control>)
 @mixin getErrorMarkup($which) {
     @if ($which == "inputcontrol") {
-        ~.#{$prefix}-input-error-msg{
+        ~.#{$prefix}-error-msg{
             @include getFontWeight("regular");
             @include getFontSize("12");
             color: $error;

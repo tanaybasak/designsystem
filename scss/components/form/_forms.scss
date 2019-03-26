@@ -17,8 +17,8 @@ $prefix: 'hcl';
     textarea[data-invalid]:focus {
         box-shadow: 0 2px 0 0 $error;
     }
-    input[data-invalid]~.#{$prefix}-input-error-msg,
-    textarea[data-invalid]~.#{$prefix}-input-error-msg {
+    input[data-invalid]~.#{$prefix}-error-msg,
+    textarea[data-invalid]~.#{$prefix}-error-msg {
         max-height: 12.5rem;
     }
 }
@@ -26,7 +26,7 @@ $prefix: 'hcl';
 .#{$prefix}-helper-text {
     @include getFontSize("12"); // opacity:1;
     @include getInputColor('color-2', "color");
-    line-height: 1.5;
+    @include lineHeight("helpertext");
     margin-bottom: .5rem;
 }
 
@@ -48,12 +48,12 @@ label {
     resize: vertical;
     padding: 1rem;
     height: auto;
-    &[data-invalid]~.#{$prefix}-input-error-msg {
+    &[data-invalid]~.#{$prefix}-error-msg {
         color: $error;
         @include getFontWeight("regular");
         @include getFontSize("12");
         margin-top: .25rem;
-        line-height: 1.5;
+        @include lineHeight("error");
     }
 }
 
