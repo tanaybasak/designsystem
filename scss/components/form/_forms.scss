@@ -1,0 +1,214 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+@import "../../utils/variables";
+@import "mixin";
+$prefix: 'hcl';
+.#{$prefix}-form-group {
+    margin-bottom: 1.5rem;
+    >input[data-invalid],
+    input[data-invalid]:focus,
+    textarea[data-invalid],
+    textarea[data-invalid]:focus {
+        box-shadow: 0 2px 0 0 $error;
+    }
+    input[data-invalid]~.#{$prefix}-error-msg,
+    textarea[data-invalid]~.#{$prefix}-error-msg {
+        max-height: 12.5rem;
+    }
+}
+
+.#{$prefix}-helper-text {
+    @include getFontSize("12");
+    @include getInputColor('color-2', "color");
+    @include lineHeight("helpertext");
+    margin-bottom: .5rem;
+}
+
+label {
+    @include getInputColor('color-1', "color");
+    font-weight: $input-label-weight;
+    display: block;
+    margin-bottom: $label-margin-bottom;
+}
+
+.#{$prefix}-form-control {
+    @include getFormControl("inputcontrol");
+    @include getErrorMarkup("inputcontrol");
+}
+
+.#{$prefix}-text-area {
+    @include getFormControl("inputcontrol");
+    min-width: 10rem;
+    resize: vertical;
+    padding: 1rem;
+    height: auto;
+    &[data-invalid]~.#{$prefix}-error-msg {
+        color: $error;
+        @include getFontWeight("regular");
+        @include getFontSize("12");
+        margin-top: .25rem;
+        @include lineHeight("error");
+    }
+}
+
+// Checkbox
+.#{$prefix}-checkbox-wrapper {
+    margin-bottom: 1rem;
+    &:first-of-type {
+        margin-top: 0.5rem;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.#{$prefix}-checkbox {
+    display: none;
+    &[disabled]~.#{$prefix}-checkbox-label {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    &:checked+.#{$prefix}-checkbox-label::before {
+        background-color: $checkbox-border-color-checked;
+        border-color: $checkbox-border-color-checked;
+    }
+    &:checked+.#{$prefix}-checkbox-label::after {
+        opacity: 1;
+        transform: scale(1) rotate(-45deg);
+    }
+    &:focus+.#{$prefix}-checkbox-label::before {
+        outline: 1px solid transparent;
+        box-shadow: 0 0 0 3px $checkbox-focus-color;
+    }
+}
+
+.#{$prefix}-checkbox-label {
+    @include getFontSize("14");
+    @include getFontWeight("regular");
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 1.5rem;
+    min-height: 1rem;
+    margin-bottom: 0;
+    &::before {
+        box-sizing: border-box;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: calc(50% - 9px);
+        height: 18px;
+        width: 18px;
+        border: $checkbox-border-width solid $checkbox-border-color;
+        background-color: $checkbox-background-color;
+    }
+    &::after {
+        box-sizing: border-box;
+        content: '';
+        width: 9px;
+        height: 5px;
+        background: none;
+        border-left: 1px solid $white;
+        border-bottom: 1px solid $white;
+        transform: scale(0) rotate(-45deg);
+        position: absolute;
+        left: 0.3125rem;
+        top: 50%;
+        margin-top: -0.1875rem;
+    }
+}
+
+// Radio
+.#{$prefix}-radio-group {
+    margin-top: .5rem;
+}
+
+.#{$prefix}-radio-item {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.#{$prefix}-stack-vertical {
+    display: flex;
+    flex-direction: column;
+    .#{$prefix}-radio-item {
+        margin-bottom: 0.5rem;
+        &:first-of-type {
+            margin-top: 0.5rem;
+        }
+        &:last-of-type {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.#{$prefix}-radio {
+    display: none;
+    &:focus+.#{$prefix}-radio-label::before {
+        outline: 1px solid transparent;
+        box-shadow: 0 0 0 3px $checkbox-focus-color;
+    }
+    &:disabled+.#{$prefix}-radio-label {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    &:checked+.#{$prefix}-radio-label::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 4px;
+        left: 5px;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        @include getInputColor("color-5", "background-color");
+    }
+    &:checked+.#{$prefix}-radio-label::before {
+        @include getInputColor("color-5", "border-color");
+    }
+}
+
+.#{$prefix}-radio-label {
+    @include getFontWeight("regular");
+    @include getFontSize("14");
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 0;
+    position: relative;
+    span {
+        display: inline-block;
+        margin-left: 25px;
+    }
+    &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: -1px;
+        background-color: $white;
+        border-radius: 50%;
+        border: 2px solid #5a6872;
+        height: 1.125rem;
+        width: 1.125rem;
+    }
+}
+
+// Fieldset
+.#{$prefix}-fieldset {
+    margin-bottom: 2rem;
+}
+
+// Legend
+.#{$prefix}-legend {
+    @include getFontSize("14");
+    @include getFontWeight("semibold");
+    @include getInputColor("color-1", "color");
+    vertical-align: baseline;
+    display: inline-block;
+    margin-bottom: .5rem;
+}

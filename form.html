@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Patron CSS Framework Responsive</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <script src="./patron-style.js"></script>
+</head>
+
+<body>
+    <main>
+        <section class="patron-container pt-3">
+            <!-- Input Components -->
+            <form class="margin-around-5">
+                <div class="hcl-form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="hcl-form-control" id="firstname" placeholder="Enter First Name" />
+                </div>
+                <div class="hcl-form-group">
+                    <label for="lastname">Last Name</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <input type="text" class="hcl-form-control" id="lastname" placeholder="Enter Last Name" />
+                </div>
+                <div class="hcl-form-group">
+                    <label for="middlename">Middle Name</label>
+                    <input data-invalid type="text" class="hcl-form-control" id="middlename" placeholder="Disabled">
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+                <div class="hcl-form-group">
+                    <label for="error">Address</label>
+                    <input type="text" class="hcl-form-control" id="error" placeholder="Enter Address Details" disabled
+                        aria-disabled="true" />
+                </div>
+                <div class="hcl-form-group">
+                    <label for="feedback1">Feedback Form</label>
+                    <textarea class="hcl-text-area" id="feedback1" rows="4" cols="50"
+                        placeholder="Please Feedback here"></textarea>
+                </div>
+                <div class="hcl-form-group">
+                    <label for="feedback2">Review Summary</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <textarea disabled aria-disabled="true" class="hcl-text-area" id="feedback2" rows="4"
+                        cols="50"></textarea>
+                </div>
+                <div class="hcl-form-group">
+                    <label for="feedback3">Remarks</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <textarea data-invalid aria-disabled="false" class="hcl-text-area" id="feedback2" rows="4"
+                        cols="50"></textarea>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+            </form>
+
+            <!-- Checkbox Components -->
+            <article class="margin-around-5">
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Favourite Colors</legend>
+                    <div class="hcl-checkbox-wrapper" aria-disabled="false">
+                        <input class="hcl-checkbox" id="check1" type="checkbox" />
+                        <label class="hcl-checkbox-label" for="check1">Sandy Brown</label>
+                    </div>
+                    <div class="hcl-checkbox-wrapper" aria-disabled="false">
+                        <input class="hcl-checkbox" id="check2" type="checkbox" checked />
+                        <label class="hcl-checkbox-label" for="check2">Thistle</label>
+                    </div>
+                    <div class="hcl-checkbox-wrapper" aria-disabled="true">
+                        <input class="hcl-checkbox" id="check3" type="checkbox" disabled />
+                        <label class="hcl-checkbox-label" for="check3">Burlywood</label>
+                    </div>
+                </fieldset>
+            </article>
+
+            <!-- Radio Components -->
+            <article class="margin-around-5">
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Planets - Horizontally arranged (default)</legend>
+                    <div class="hcl-radio-group">
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" checked />
+                            <label class="hcl-radio-label" for="radio1"><span>Earth</span></label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" />
+                            <label class="hcl-radio-label" for="radio2"><span>Mars</span></label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
+                            <label class="hcl-radio-label" for="radio3"><span>Jupiter</span></label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Planets - Vertically arranged</legend>
+                    <div class="hcl-radio-group hcl-stack-vertical">
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio4" type="radio" value="Option1" name="animals" checked />
+                            <label class="hcl-radio-label" for="radio4"><span></span>Cat</span></label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input disabled class="hcl-radio" id="radio5" type="radio" value="Option2" name="animals" />
+                            <label class="hcl-radio-label" for="radio5"><span>Giraffe</span></label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio6" type="radio" value="Option3" name="animals" />
+                            <label class="hcl-radio-label" for="radio6"><span>Dinosaur</span></label>
+                        </div>
+                    </div>
+                </fieldset>
+            </article>
+
+        </section>
+    </main>
+</body>
+
+</html>

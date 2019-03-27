@@ -1,11 +1,11 @@
 {
-  "name": "patron-react-playground",
-  "version": "1.0.0",
+  "name": "patron-css",
+  "version": "1.0.1",
   "description": "Patron CSS Framework",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel --no-cache index.html",
-    "build": "parcel build index.html"
+    "dev": "parcel form.html -d output",
+    "build": "parcel build index.html -d dist && node defaultBundleName.js"
   },
   "author": "HCL Products & Platforms",
   "license": "ISC",
@@ -13,12 +13,13 @@
     "parcel": "^1.11.0"
   },
   "devDependencies": {
+    "autoprefixer": "^9.4.10",
+    "sass": "^1.17.3",
     "parcel-bundler": "^1.11.0",
-    "sass": "^1.17.0"
+    "postcss-cli": "^6.1.2"
   },
   "browserslist": [
-    "last 1 edge versions",
-    "> 1%",
-    "IE 10"
+    "> .1%",
+    "not IE <= 12"
   ]
 }
