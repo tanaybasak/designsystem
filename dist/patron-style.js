@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"LYsQ":[function(require,module,exports) {
 "use strict";require("./scss/main.scss");
 },{"./scss/main.scss":"fx60"}]},{},["LYsQ"], null)
-//# sourceMappingURL=/patron-style.03a99c6a.js.map
+//# sourceMappingURL=/patron-style.8700c26d.js.map
