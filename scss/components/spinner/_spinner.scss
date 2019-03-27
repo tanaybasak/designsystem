@@ -1,6 +1,7 @@
-$stroke-color: #55c9d3;
+.#{$prefix}-spinner {
+    --spinner-color: #55c9d3;
+    --spinner-stroke-width: 7;
 
-.hcl-spinner {
     display: flex;
     justify-content: center;
 
@@ -14,14 +15,13 @@ $stroke-color: #55c9d3;
         animation-iteration-count: infinite;
 
         &-circle {
-            stroke: $stroke-color;
-            stroke-width: 7;
+            stroke: var(--spinner-color);
+            stroke-width: var(--spinner-stroke-width);
             fill: transparent;
             stroke-linecap: butt;
             stroke-dasharray: 220;
         }
     }
-
 }
 
 @keyframes infinite-spinning {
