@@ -1,0 +1,42 @@
+.#{$prefix}-breadcrumb {
+    display: inline;
+
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-item {
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child):after {
+            content: "/";
+            margin-left: 1rem;
+        }
+
+        .#{$prefix}-link {
+            white-space: nowrap;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: .25s;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:visited {
+                color: #3d70b2;
+            }
+        }
+    }
+    &-item-active {
+        font-weight: bold;
+    }
+}
