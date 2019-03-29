@@ -1,6 +1,6 @@
 
 // Input Fields Color Maps
-$inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "color-5": #3d70b2);
+$inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "color-5": #3d70b2);
 
 // getInputColor(<requiredColor>, <propertyNametoApply>)
 @mixin getInputColor($color, $property) {
@@ -32,6 +32,7 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #f4f7fb, "
         &[disabled]{
             opacity:0.5;
             cursor:not-allowed;
+            background-color: $background-disabled;
         }
     }
     @else {
