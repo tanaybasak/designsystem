@@ -57,3 +57,13 @@ $minHeight: 0.0625rem;
 .colBorder {
     border: 1px solid #999;
 }
+
+.bigCol {
+    min-height: 5rem;
+    padding: 0.9375rem;
+}
+
+.darkBox {
+    background-color: #555;
+    color: #BBB;
+}
