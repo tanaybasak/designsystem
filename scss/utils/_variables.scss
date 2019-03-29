@@ -20,9 +20,13 @@
     --grey: #707070;
     --white: #fff;
     --blue: #0066b3;
-    --dark-secondary: #003d6b;
-    --orange: #d01b2e;
-    --orange-secondary: #a31221;
+    --dark-secondary: #4696D2;
+    --primary-background-focus: #00578F;
+    --primary-background-disabled: #B9E6FA;
+    --orange: #EB1946;
+    --orange-secondary: #C3143A;
+    --orange-background-focus: #C3143A;
+    --orange-background-disabled: #F8B2C1;
     --black-secondary: #555;
     --error: #E0182D;
     --success: #589D25;
@@ -54,7 +58,8 @@ $input-padding-y: 0;
 $input-padding-x: 1rem;
 $input-height: 2.5rem !default;
 $input-min-width: calc( 300rem / 16);
-$input-label-weight: 600; 
+$input-label-weight: 600;
+$background-disabled: rgba(70,150,210,0.05);
 // Checkbox
 $checkbox-border-width: 2px;
 $checkbox-border-color: #5a6872;
