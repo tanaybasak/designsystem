@@ -1,6 +1,6 @@
 {
   "name": "patron-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Patron CSS Framework",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,9 @@
     "sass": "^1.17.3",
     "parcel-bundler": "^1.11.0",
     "postcss-cli": "^6.1.2"
-  }
+  },
+  "browserslist": [
+    "> .1%",
+    "not IE <= 12"
+  ]
 }
