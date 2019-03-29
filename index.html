@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Patron CSS Framework Responsive</title>
+    <title>Patron CSS Framework</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <script src="./patron-style.js"></script>
     <script src="./datePicker.js"></script>
 </head>
@@ -46,12 +46,19 @@
             </div>
             <div class="row col-12 mt-4 mb-4"><a href="#">This is a link</a></div>
             <div class="row col-12">
-                <button class="btn btn--primary mr-1">BUTTON TEXT</button>
-                <button class="btn btn--secondary mr-1 ">BUTTON TEXT</button>
-                <button class="btn btn--default mr-1 ">BUTTON TEXT</button>
-                <button class="mr-1">BUTTON TEXT</button>
-                <button class="btn btn--outline mr-1">BUTTON TEXT</button>
-                <button class="btn btn--outline-secondary">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-primary">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-primary sm">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-primary outline">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-primary ghost">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-primary outline sm">BUTTON TEXT</button>
+                <button class="btn hcl-btn-primary ghost sm">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-secondary">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-secondary sm">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-secondary outline">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-secondary ghost">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-secondary outline sm">BUTTON TEXT</button>
+                <button class="hcl-btn hcl-btn-secondary ghost sm">BUTTON TEXT</button>
+                <button class="btn">BUTTON TEXT</button>
             </div>
         </section>
         <section class="hcl-container">
@@ -101,28 +108,48 @@
                 <div class="col-12 colBorder bgColor">12</div>
             </div>
         </section>
-
-        <section class="patron-container">
-            <div class="wrapper" style="background: white;">
-                <!-- Basic with calendar -->
-                <div class="bx--form-item">
-                    <div data-date-picker data-date-picker-type="single" class="bx--date-picker bx--date-picker--single">
-                        <div class="bx--date-picker-container">
-                            <label for="date-picker-3" class="bx--label">Label</label>
-                            <svg data-date-picker-icon class="bx--date-picker__icon" width="14" height="16" viewBox="0 0 14 16">
-                                <path d="M0 5h14v1H0V5zm3-5h1v4H3V0zm7 0h1v4h-1V0zM0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 0 14.5v-12zm1 0v12a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5z"
-                                    fill-rule="nonzero" />
-                            </svg>
-                            <input type="text" id="date-picker-3" class="bx--date-picker__input" pattern="\d{1,2}/\d{1,2}/\d{4}"
-                                placeholder="mm/dd/yyyy" data-date-picker-input />
-                            <div class="bx--form-requirement">
-                                Invalid date format.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section class="hcl-container pt-5">
+            <div class="row">
+                <div class="col-3 colBorder bgColor bigCol darkBox">Left Box</div>
+                <div class="col-9 colBorder bgColor bigCol">Right Box</div>
             </div>
+        </section>
 
+        <section class="hcl-container pt-5">
+            <div class="row">
+                <div class="col-4 colBorder bgColor bigCol darkBox">Left Box</div>
+                <div class="col-4 colBorder bgColor bigCol darkBox">Center Box</div>
+                <div class="col-4 colBorder bgColor bigCol darkBox">Right Box</div>
+            </div>
+            <div class="row">
+                <div class="col-6 colBorder bgColor bigCol">Left Box</div>
+                <div class="col-6 colBorder bgColor bigCol">Right Box</div>
+            </div>
+            <div class="row">
+                <div class="col-4 colBorder bgColor bigCol darkBox">Left Box</div>
+                <div class="col-4 colBorder bgColor bigCol darkBox">Center Box</div>
+                <div class="col-4 colBorder bgColor bigCol darkBox">Right Box</div>
+            </div>
+        </section>
+
+        <section class="hcl-container pt-5">
+            <div class="row">
+                <div class="col-2 colBorder bgColor bigCol darkBox"></div>
+                <div class="col-10 colBorder bgColor bigCol darkBox">Data</div>
+            </div>
+            <div class="row">
+                <div class="col-2 colBorder bgColor bigCol darkBox">Values</div>
+                <div class="col-2 colBorder bgColor bigCol">Value One</div>
+                <div class="col-2 colBorder bgColor bigCol">Value Two</div>
+                <div class="col-2 colBorder bgColor bigCol">Value Three</div>
+                <div class="col-2 colBorder bgColor bigCol">Value Four</div>
+                <div class="col-2 colBorder bgColor bigCol">Value Five</div>
+            </div>
+        </section>
+        <section class="hcl-spinner" title="loading">
+            <svg class="hcl-spinner-svg">
+                <circle class="hcl-spinner-svg-circle" cx="50" cy="50" r="40" />
+            </svg>
         </section>
     </main>
 </body>
