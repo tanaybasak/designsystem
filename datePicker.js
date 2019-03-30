@@ -3,52 +3,60 @@
 // DatePicker Controller
 let datePickerController = (function () {
 
-    let selectedMonthYear = {
-        'month': '',
-        'year': '',
-    };
+    let currDateObj = {};
 
     return {
         getCurrentMonthDetails: function () {
-            let date = String(new Date());
-            let currDateObj = {
-                'day': date.substring(0, 3),
-                'month': date.substring(4, 7),
-                'date': date.substring(8, 10),
-                'year': date.substring(11, 15),
+            let date = new Date();
+            currDateObj = {
+                'day': date.getDay(),
+                'month': date.getMonth(),
+                'date': date.getDate(),
+                'year': date.getFullYear(),
             };
-            selectedMonthYear.month = currDateObj.month;
-            selectedMonthYear.year = currDateObj.year;
             return currDateObj;
-            // return {
-            //     'day': 'Thu',
-            //     'month': 'Mar',
-            //     'date':'28',
-            //     'year': '2019',
-            // };
         },
         getPrevMonthDetails: function () {
-            let date = String(new Date());
-            let currDateObj = {
-                'day': date.substring(0, 3),
-                'month': date.substring(4, 7),
-                'date': date.substring(8, 10),
-                'year': date.substring(11, 15),
+            let date = new Date(currDateObj.month === 0 ? currDateObj.year - 1 : currDateObj.year, currDateObj.month === 0 ? 11 : currDateObj.month - 1, 15);
+            currDateObj = {
+                'day': date.getDay(),
+                'month': date.getMonth(),
+                'date': date.getDate(),
+                'year': date.getFullYear(),
             };
             return currDateObj;
         },
 
         getNextMonthDetails: function () {
-            let date = String(new Date());
-            let currDateObj = {
-                'day': date.substring(0, 3),
-                'month': date.substring(4, 7),
-                'date': date.substring(8, 10),
-                'year': date.substring(11, 15),
+            let date = new Date(currDateObj.month === 11 ? currDateObj.year + 1 : currDateObj.year, currDateObj.month === 11 ? 0 : currDateObj.month + 1, 15);
+            currDateObj = {
+                'day': date.getDay(),
+                'month': date.getMonth(),
+                'date': date.getDate(),
+                'year': date.getFullYear(),
             };
             return currDateObj;
         },
-
+        getYearIncreaseMonthDetails: function () {
+            let date = new Date(currDateObj.year + 1, currDateObj.month, 15);
+            currDateObj = {
+                'day': date.getDay(),
+                'month': date.getMonth(),
+                'date': date.getDate(),
+                'year': date.getFullYear(),
+            };
+            return currDateObj;
+        },
+        getYearDecreaseMonthDetails: function () {
+            let date = new Date(currDateObj.year - 1, currDateObj.month, 15);
+            currDateObj = {
+                'day': date.getDay(),
+                'month': date.getMonth(),
+                'date': date.getDate(),
+                'year': date.getFullYear(),
+            };
+            return currDateObj;
+        },
     };
 
 })();
@@ -57,16 +65,17 @@ let datePickerController = (function () {
 // UI Controller
 let UIController = (function () {
     let weekDays = ['S', 'M', 'T', 'W', 'Th', 'F', 'S'];
-    let weekDaysCalc = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Oct', 'Nov', 'Dec'];
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     let DOMstrings = {
-        weekPanel: '.hcl-datePicker-panel-week',
-        daysPanel: '.hcl-datePicker-panel-days',
+        weekDaysPanel: '.hcl-datePicker-panel-week',
+        DatePanel: '.hcl-datePicker-panel-days',
         prevMonth: '.hcl-datePicker-panel-month-prev',
         nextMonth: '.hcl-datePicker-panel-month-next',
         yearIncrease: '.hcl-datePicker-panel-month-selection-inputWrapper-arrows-up',
         yearDecrease: '.hcl-datePicker-panel-month-selection-inputWrapper-arrows-down',
+        yearInput: '.hcl-datePicker-panel-month-selection-inputWrapper-input',
+        monthInput: '.hcl-datePicker-panel-month-selection-curMonth'
     };
 
     let getDaysInMonth = function (month, year) {
@@ -74,29 +83,29 @@ let UIController = (function () {
     };
 
 
-    let initWeekPanel = function () {
+    let initweekDaysPanel = function () {
 
         let html = '<span class="">%weekDay%</span>';
-        let element = DOMstrings.weekPanel;
+        let element = DOMstrings.weekDaysPanel;
         weekDays.forEach((weekDay) => {
             let weekDayHTML = html.replace('%weekDay%', weekDay);
             document.querySelector(element).insertAdjacentHTML('beforeend', weekDayHTML);
         });
     };
 
-    let initDaysPanel = function (curMonthObj) {
+    let initDatePanel = function (curMonthObj) {
 
-        let numOfDaysInMonth = getDaysInMonth(months.indexOf(curMonthObj.month) + 1, Number(curMonthObj.year));
+        let numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
         let html = '<span id="hcl-datePicker-%day%">%day%</span>';
-        let element = DOMstrings.daysPanel;
+        let element = DOMstrings.DatePanel;
 
         //days from previous month
 
-        let numOfDaysFromPrevMonth = weekDaysCalc.indexOf(curMonthObj.day) - Number(curMonthObj.date) % 7;  // Need to be shown in datePicker
+        let numOfDaysFromPrevMonth = curMonthObj.day - curMonthObj.date % 7;  // Need to be shown in datePicker
         numOfDaysFromPrevMonth = numOfDaysFromPrevMonth < 0 ? 7 + numOfDaysFromPrevMonth : numOfDaysFromPrevMonth;
-        let numOfDaysInPrevMonth = getDaysInMonth(months.indexOf(curMonthObj.month), months.indexOf(curMonthObj.month) === 0 ? Number(curMonthObj.year) - 1 : Number(curMonthObj.year));
+        let numOfDaysInPrevMonth = getDaysInMonth(curMonthObj.month === 0 ? 12 : curMonthObj.month, curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
 
-        for (let i = numOfDaysInPrevMonth - numOfDaysFromPrevMonth; i <= numOfDaysInPrevMonth; i++) {
+        for (let i = numOfDaysInPrevMonth - numOfDaysFromPrevMonth; i <= numOfDaysInPrevMonth && numOfDaysFromPrevMonth !== 6; i++) {
             let dayHTML = html.replaceAll('%day%', String(i));
             document.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
         }
@@ -119,20 +128,36 @@ let UIController = (function () {
         return target.split(search).join(replacement);
     };
 
-    let initMonthYearPanel = function () {
-
+    let initMonthYearPanel = function (curMonthObj) {
+        let monthElm = DOMstrings.monthInput;
+        let yearElm = DOMstrings.yearInput;
+        document.querySelector(monthElm).innerHTML = months[curMonthObj.month];
+        document.querySelector(yearElm).value = String(curMonthObj.year);
     };
 
     return {
         initDatePicker: function (curMonthObj) {
-            initWeekPanel();
-            initDaysPanel(curMonthObj);
+            initweekDaysPanel();
+            initDatePanel(curMonthObj);
             initMonthYearPanel(curMonthObj);
         },
+
+        initMonthYearPanel: function (curMonthObj) {
+            initMonthYearPanel(curMonthObj);
+        },
+
+        initDatePanel: function (curMonthObj) {
+            initDatePanel(curMonthObj);
+        },
+
         getDOMstrings: function () {
             return DOMstrings;
         },
 
+        removeExistingDates: function () {
+            let element = DOMstrings.DatePanel;
+            document.querySelector(element).innerHTML = "";
+        },
 
     };
 
@@ -149,24 +174,40 @@ let controller = (function (dateCtrl, UICtrl) {
         document.querySelector(DOM.yearIncrease).addEventListener('click', yearIncrease);
         document.querySelector(DOM.yearDecrease).addEventListener('click', yearDecrease);
     };
-   
-    let prevMonth = function (){
+
+    let prevMonth = function () {
         console.log('prevMonth Clicked !!');
+        let prevMonthObj = dateCtrl.getPrevMonthDetails();
+        UICtrl.removeExistingDates();
+        UICtrl.initMonthYearPanel(prevMonthObj);
+        UICtrl.initDatePanel(prevMonthObj);
     };
 
-    let nextMonth = function (){
+    let nextMonth = function () {
         console.log('nextMonth Clicked !!');
+        let nextMonObj = dateCtrl.getNextMonthDetails();
+        UICtrl.removeExistingDates();
+        UICtrl.initMonthYearPanel(nextMonObj);
+        UICtrl.initDatePanel(nextMonObj);
     };
 
-    let yearIncrease = function (){
+    let yearIncrease = function () {
         console.log('yearIncrease Clicked !!');
+        let incYearMonObj = dateCtrl.getYearIncreaseMonthDetails();
+        UICtrl.removeExistingDates();
+        UICtrl.initMonthYearPanel(incYearMonObj);
+        UICtrl.initDatePanel(incYearMonObj);
     };
 
-    let yearDecrease = function (){
+    let yearDecrease = function () {
         console.log('yearDecrease Clicked !!');
+        let decYearMonObj = dateCtrl.getYearDecreaseMonthDetails();
+        UICtrl.removeExistingDates();
+        UICtrl.initMonthYearPanel(decYearMonObj);
+        UICtrl.initDatePanel(decYearMonObj);
     };
-  
-  
+
+
     return {
         init: function () {
             console.log('Application has started.');
