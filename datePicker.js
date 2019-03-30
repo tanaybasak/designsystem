@@ -68,8 +68,8 @@ let UIController = (function () {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     let DOMstrings = {
-        weekDaysPanel: '.hcl-datePicker-panel-week',
-        DatePanel: '.hcl-datePicker-panel-days',
+        weekDaysPanel: '.hcl-datePicker-panel-weekDays',
+        DatePanel: '.hcl-datePicker-panel-dates',
         prevMonth: '.hcl-datePicker-panel-month-prev',
         nextMonth: '.hcl-datePicker-panel-month-next',
         yearIncrease: '.hcl-datePicker-panel-month-selection-inputWrapper-arrows-up',
@@ -85,7 +85,7 @@ let UIController = (function () {
 
     let initweekDaysPanel = function () {
 
-        let html = '<span class="">%weekDay%</span>';
+        let html = '<span class="hcl-datePicker-panel-weekDays-day">%weekDay%</span>';
         let element = DOMstrings.weekDaysPanel;
         weekDays.forEach((weekDay) => {
             let weekDayHTML = html.replace('%weekDay%', weekDay);
