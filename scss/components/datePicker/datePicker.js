@@ -49,14 +49,14 @@ let UIController = (function () {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     let DOMstrings = {
-        weekDaysPanel: '.hcl-datePicker-panel-weekDays',
-        DatePanel: '.hcl-datePicker-panel-dates',
-        prevMonth: '.hcl-datePicker-panel-month-prev',
-        nextMonth: '.hcl-datePicker-panel-month-next',
-        yearIncrease: '.hcl-datePicker-panel-month-selection-inputWrapper-arrows-up',
-        yearDecrease: '.hcl-datePicker-panel-month-selection-inputWrapper-arrows-down',
-        yearInput: '.hcl-datePicker-panel-month-selection-inputWrapper-input',
-        monthInput: '.hcl-datePicker-panel-month-selection-curMonth'
+        weekDaysPanel: '.hcl-datePicker-container-panel-weekDays',
+        DatePanel: '.hcl-datePicker-container-panel-dates',
+        prevMonth: '.hcl-datePicker-container-panel-month-prev',
+        nextMonth: '.hcl-datePicker-container-panel-month-next',
+        yearIncrease: '.hcl-datePicker-container-panel-month-selection-inputWrapper-arrows-up',
+        yearDecrease: '.hcl-datePicker-container-panel-month-selection-inputWrapper-arrows-down',
+        yearInput: '.hcl-datePicker-container-panel-month-selection-inputWrapper-input',
+        monthInput: '.hcl-datePicker-container-panel-month-selection-curMonth'
     };
 
     let getDaysInMonth = function (month, year) {
@@ -66,7 +66,7 @@ let UIController = (function () {
 
     let initweekDaysPanel = function () {
 
-        let html = '<span class="hcl-datePicker-panel-weekDays-day">%weekDay%</span>';
+        let html = '<span class="hcl-datePicker-container-panel-weekDays-day">%weekDay%</span>';
         let element = DOMstrings.weekDaysPanel;
         weekDays.forEach((weekDay) => {
             let weekDayHTML = html.replace('%weekDay%', weekDay);
@@ -158,6 +158,8 @@ let controller = (function (dateCtrl, UICtrl) {
 
     let prevMonth = function () {
         console.log('prevMonth Clicked !!');
+        event.stopPropagation();
+        event.preventDefault();
         let prevMonthObj = dateCtrl.getPrevMonthDetails();
         UICtrl.removeExistingDates();
         UICtrl.initMonthYearPanel(prevMonthObj);
@@ -165,6 +167,8 @@ let controller = (function (dateCtrl, UICtrl) {
     };
 
     let nextMonth = function () {
+        event.stopPropagation();
+        event.preventDefault();
         console.log('nextMonth Clicked !!');
         let nextMonObj = dateCtrl.getNextMonthDetails();
         UICtrl.removeExistingDates();
@@ -173,6 +177,8 @@ let controller = (function (dateCtrl, UICtrl) {
     };
 
     let yearIncrease = function () {
+        event.stopPropagation();
+        event.preventDefault();
         console.log('yearIncrease Clicked !!');
         let incYearMonObj = dateCtrl.getYearIncreaseMonthDetails();
         UICtrl.removeExistingDates();
@@ -181,6 +187,8 @@ let controller = (function (dateCtrl, UICtrl) {
     };
 
     let yearDecrease = function () {
+        event.stopPropagation();
+        event.preventDefault(); 
         console.log('yearDecrease Clicked !!');
         let decYearMonObj = dateCtrl.getYearDecreaseMonthDetails();
         UICtrl.removeExistingDates();

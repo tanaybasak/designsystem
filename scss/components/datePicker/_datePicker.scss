@@ -7,12 +7,12 @@ $prefix: 'hcl';
         background-color: none;
     }
 
-    &-inputContainer {
+    &-container {
         position: relative;
         display: flex;
         flex-direction: column;
 
-        svg {
+        &-svg {
             position: absolute;
             top: 0.75rem;
             right: 1rem;
@@ -23,9 +23,13 @@ $prefix: 'hcl';
             &:hover {
                 fill: #0062ff;
             }
+
+            // &:focus+.hcl-datePicker-panel {
+            //     display: block !important;
+            // }
         }
 
-        input {
+        >input {
             padding-left: 1rem;
             border: none;
             width: 100%;
@@ -35,129 +39,138 @@ $prefix: 'hcl';
             background-color: #f3f3f3;
             padding-right: 3rem;
             box-sizing: border-box;
+            // &:focus .hcl-datePicker-panel {
+            //     display: block !important;
+            // }
+            // &:checked~.hcl-datePicker-container-panel {
+            //     display: block;
+            // }
         }
-        // &:focus+.hcl-datePicker-panel {
-        //     display: block !important;
-        // }
-    
-    }
 
-   
-    &-panel {
-        background-color: #f3f3f3;
-        display: block;
-        z-index: 9;
+        &:focus>.hcl-datePicker-container-panel {
+            display: block !important;
+        }
 
-        &-month {
-            height: 2.5rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            font-weight: 600;
+        &-panel {
+            background-color: #f3f3f3;
+            display: none;
+            z-index: 9;
 
-            >span {
+            &-month {
                 height: 2.5rem;
-                width: 2.5rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-            }
-
-            &-selection {
                 display: flex;
                 flex-direction: row;
+                align-items: center;
                 justify-content: space-between;
+                font-weight: 600;
 
-                &-curMonth {
-                    padding-right: 0.5rem;
+                >span {
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
                 }
 
-                &-inputWrapper {
-                    position: relative;
+                &-selection {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
 
-                    input {
-                        width: 3rem;
-                        background-color: #f3f3f3;
-                        // &:hover+.hcl-datePicker-panel-month-selection-inputWrapper-arrows {
-                        //     display: block;
-                        // }
+                    &-curMonth {
+                        padding-right: 0.5rem;
                     }
 
-                    &-arrows {
-                        height: 1.25rem;
-                        width: 0rem;
-                        display: flex;
-                        flex-direction: column;
-                        position: absolute;
-                        top: 0rem;
-                        left: 2.5rem;
-                        justify-content: space-evenly;
-                        // display: none;
+                    &-inputWrapper {
+                        position: relative;
 
-                        &-up {
-                            cursor: pointer;
-                            box-sizing: border-box;
-                            border-left: 4px solid transparent;
-                            border-right: 4px solid transparent;
-                            border-bottom: 4px solid #0062ff;
-
+                        >input {
+                            width: 3rem;
+                            background-color: #f3f3f3;
+                            // &:hover+.hcl-datePicker-panel-month-selection-inputWrapper-arrows {
+                            //     display: block;
+                            // }
                         }
 
-                        &-down {
-                            cursor: pointer;
-                            box-sizing: border-box;
-                            border-left: 4px solid transparent;
-                            border-right: 4px solid transparent;
-                            border-top: 4px solid #0062ff;
+                        &-arrows {
+                            height: 1.25rem;
+                            width: 0rem;
+                            display: flex;
+                            flex-direction: column;
+                            position: absolute;
+                            top: 0rem;
+                            left: 2.5rem;
+                            justify-content: space-evenly;
+                            // display: none;
 
+                            &-up {
+                                cursor: pointer;
+                                box-sizing: border-box;
+                                border-left: 4px solid transparent;
+                                border-right: 4px solid transparent;
+                                border-bottom: 4px solid #0062ff;
+
+                            }
+
+                            &-down {
+                                cursor: pointer;
+                                box-sizing: border-box;
+                                border-left: 4px solid transparent;
+                                border-right: 4px solid transparent;
+                                border-top: 4px solid #0062ff;
+
+                            }
                         }
                     }
                 }
+
             }
 
-        }
-
-        &-weekDays {
-            height: 2.5rem;
-            display: flex;
-            flex-direction: row;
-
-            span {
+            &-weekDays {
                 height: 2.5rem;
-                width: 2.5rem;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #171717;
-                border-radius: 0;
-                border: none;
+                flex-direction: row;
+
+                span {
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #171717;
+                    border-radius: 0;
+                    border: none;
+                }
             }
-        }
 
-        &-dates {
-            height: 15.375rem;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-
-            span {
-                cursor: pointer;
-                font-size: .875rem;
-                height: 2.5rem;
-                width: 2.5rem;
+            &-dates {
+                height: 15.375rem;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #171717;
-                border-radius: 0;
-                border: none;
+                flex-direction: row;
+                flex-wrap: wrap;
 
-                &:hover {
-                    background-color: #E5E5E5;
+                span {
+                    cursor: pointer;
+                    font-size: .875rem;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #171717;
+                    border-radius: 0;
+                    border: none;
+
+                    &:hover {
+                        background-color: #E5E5E5;
+                    }
                 }
             }
         }
+
     }
+
+
+
 }
