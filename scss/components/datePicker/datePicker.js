@@ -5,57 +5,38 @@ let datePickerController = (function () {
 
     let currDateObj = {};
 
+    let createDateObject = function (date) {
+        currDateObj = {
+            'day': date.getDay(),
+            'month': date.getMonth(),
+            'date': date.getDate(),
+            'year': date.getFullYear(),
+        };
+        return currDateObj;
+    };
+
     return {
+
         getCurrentMonthDetails: function () {
             let date = new Date();
-            currDateObj = {
-                'day': date.getDay(),
-                'month': date.getMonth(),
-                'date': date.getDate(),
-                'year': date.getFullYear(),
-            };
-            return currDateObj;
+            return createDateObject(date);
         },
         getPrevMonthDetails: function () {
             let date = new Date(currDateObj.month === 0 ? currDateObj.year - 1 : currDateObj.year, currDateObj.month === 0 ? 11 : currDateObj.month - 1, 15);
-            currDateObj = {
-                'day': date.getDay(),
-                'month': date.getMonth(),
-                'date': date.getDate(),
-                'year': date.getFullYear(),
-            };
-            return currDateObj;
+            return createDateObject(date);
         },
 
         getNextMonthDetails: function () {
             let date = new Date(currDateObj.month === 11 ? currDateObj.year + 1 : currDateObj.year, currDateObj.month === 11 ? 0 : currDateObj.month + 1, 15);
-            currDateObj = {
-                'day': date.getDay(),
-                'month': date.getMonth(),
-                'date': date.getDate(),
-                'year': date.getFullYear(),
-            };
-            return currDateObj;
+            return createDateObject(date);
         },
         getYearIncreaseMonthDetails: function () {
             let date = new Date(currDateObj.year + 1, currDateObj.month, 15);
-            currDateObj = {
-                'day': date.getDay(),
-                'month': date.getMonth(),
-                'date': date.getDate(),
-                'year': date.getFullYear(),
-            };
-            return currDateObj;
+            return createDateObject(date);
         },
         getYearDecreaseMonthDetails: function () {
             let date = new Date(currDateObj.year - 1, currDateObj.month, 15);
-            currDateObj = {
-                'day': date.getDay(),
-                'month': date.getMonth(),
-                'date': date.getDate(),
-                'year': date.getFullYear(),
-            };
-            return currDateObj;
+            return createDateObject(date);
         },
     };
 
@@ -164,7 +145,7 @@ let UIController = (function () {
 })();
 
 
-// Global controller
+// Main controller
 let controller = (function (dateCtrl, UICtrl) {
 
     let setupEventListeners = function () {
@@ -217,6 +198,5 @@ let controller = (function (dateCtrl, UICtrl) {
     };
 
 })(datePickerController, UIController);
-
 
 controller.init();
