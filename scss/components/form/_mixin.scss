@@ -46,9 +46,9 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "
         ~.#{$prefix}-error-msg{
             @include getFontWeight("regular");
             @include getFontSize("12");
-            color: $error;
             margin-top: .25rem;
             line-height:1.5;
+            max-height: 12.5rem;
         }
     }
     @else {
