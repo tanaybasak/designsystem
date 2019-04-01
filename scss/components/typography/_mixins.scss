@@ -32,7 +32,7 @@ $textWeightvalue in $fontWeights-map {
 }
 
 // Font style
-$textStyles-map: (underline, italic, strike-through, overline, line-through);
+$textStyles-map: (none, underline, italic, strike-through, overline, line-through);
 @each $textStyle in $textStyles-map {
     .#{$prefix}-textstyle-#{$textStyle} {
         font-style: $textStyle;
@@ -40,7 +40,7 @@ $textStyles-map: (underline, italic, strike-through, overline, line-through);
 }
 
 // Text decoration style
-$textDecorationStyle-map: (solid, double, dotted, dashed, through);
+$textDecorationStyle-map: (none, solid, double, dotted, dashed, through);
 @each $textDecorationStyle in $textDecorationStyle-map {
     @if( $textDecorationStyle==through) {
         .#{$prefix}-textdecorstyle-#{$textDecorationStyle} {
