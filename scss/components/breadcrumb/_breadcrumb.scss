@@ -1,3 +1,5 @@
+$breadcrumb-margin: 1rem;
+
 .#{$prefix}-breadcrumb {
     display: inline;
 
@@ -12,23 +14,23 @@
     }
 
     &-item {
-        margin-right: 1rem;
+        margin-right: $breadcrumb-margin;
         display: flex;
         align-items: center;
 
         &:not(:last-child):after {
             content: "/";
-            margin-left: 1rem;
+            margin-left: $breadcrumb-margin;
         }
 
         .#{$prefix}-link {
             white-space: nowrap;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
+            @include getTextDecorationLine("none");
+            border-bottom: 0.0625rem solid transparent;
             transition: .25s;
 
             &:hover {
-                text-decoration: underline;
+                @include getTextDecorationLine("underline");
             }
 
             &:visited {
@@ -36,7 +38,8 @@
             }
         }
     }
+
     &-item-active {
-        font-weight: bold;
+        @include getFontWeight("semibold");
     }
 }
