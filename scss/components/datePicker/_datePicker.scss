@@ -47,14 +47,22 @@ $prefix: 'hcl';
             // }
         }
 
-        &:focus>.hcl-datePicker-container-panel {
-            display: block !important;
-        }
+        // &:focus>.hcl-datePicker-container-panel {
+        //     display: block !important;
+        // }
 
         &-panel {
             background-color: #f3f3f3;
             display: none;
             z-index: 9;
+
+            &-show {
+                display: block;
+            }
+
+            &-hide {
+                display: none;
+            }
 
             &-month {
                 height: 2.5rem;
@@ -150,6 +158,10 @@ $prefix: 'hcl';
                 flex-direction: row;
                 flex-wrap: wrap;
 
+                &-selected {
+                    background-color: #0062ff;
+                }
+
                 span {
                     cursor: pointer;
                     font-size: .875rem;
@@ -161,9 +173,22 @@ $prefix: 'hcl';
                     color: #171717;
                     border-radius: 0;
                     border: none;
-
+                    position: relative;
+                    
                     &:hover {
                         background-color: #E5E5E5;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        bottom: 0.4375rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 0.25rem;
+                        width: 0.25rem;
+                        background: rgb(0, 98, 255);
                     }
                 }
             }
