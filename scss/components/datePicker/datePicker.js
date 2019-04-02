@@ -72,7 +72,12 @@ let UIController = (function () {
         inputCalSVG: '.hcl-datePicker-container-svg',
         dateContainer: '.hcl-datePicker-container-panel',
         showDateContainer: 'hcl-datePicker-container-panel-show',
-        dateSelected: 'hcl-datePicker-container-panel-dates-selected'
+        dateSelected: 'hcl-datePicker-container-panel-dates-selected',
+        todayHighlight: 'hcl-datePicker-container-panel-dates-today',
+        dateUnSelected: 'hcl-datePicker-container-panel-dates-unSelected',
+        overlayShow: 'hcl-datePicker-container-overlay-show',
+        overlayLabel: ".hcl-datePicker-container-overlay"
+
     };
 
     let getDaysInMonth = function (month, year) {
@@ -93,7 +98,7 @@ let UIController = (function () {
     let initDatePanel = function (curMonthObj) {
 
         let numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
-        let html = '<span id="%month%/%day%/%year%">%day%</span>';
+        let html = `<span class="${DOMstrings.dateUnSelected}" id="%month%/%day%/%year%">%day% </span>`;
         let element = DOMstrings.datePanel;
 
         //days from previous month
@@ -126,10 +131,13 @@ let UIController = (function () {
         }
 
         // hightlight today's Date
-        
+
         let todayDate = new Date(); //('0' + (todayDate.getMonth()+1)).slice(-2)
-        todayDate = `${('0' + (todayDate.getMonth()+1)).slice(-2)}/${todayDate.getDate()}/${todayDate.getFullYear()}`;
-        document.getElementById(todayDate)
+        todayDate = `${('0' + (todayDate.getMonth() + 1)).slice(-2)}/${('0' + todayDate.getDate()).slice(-2)}/${todayDate.getFullYear()}`;
+
+        if (document.getElementById(todayDate)) {
+            document.getElementById(todayDate).classList.add(DOMstrings.todayHighlight);
+        }
     };
 
     String.prototype.replaceAll = function (search, replacement) {
@@ -143,6 +151,14 @@ let UIController = (function () {
         document.querySelector(monthElm).innerHTML = months[curMonthObj.month];
         document.querySelector(yearElm).value = String(curMonthObj.year);
     };
+
+    let hightlightSelectedDate = function (id) {
+        if (document.getElementById(document.querySelector(DOMstrings.inputDate).value)) {
+            document.getElementById(document.querySelector(DOMstrings.inputDate).value).classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected);
+        }
+        document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
+
+    }
 
     return {
         initDatePicker: function (curMonthObj) {
@@ -168,35 +184,26 @@ let UIController = (function () {
             document.querySelector(element).innerHTML = "";
         },
         showDateContainer: function () {
-            let element = DOMstrings.dateContainer;
-            document.querySelector(element).classList.add(DOMstrings.showDateContainer)
+            document.querySelector(DOMstrings.dateContainer).classList.add(DOMstrings.showDateContainer);
+            document.querySelector(DOMstrings.overlayLabel).classList.add(DOMstrings.overlayShow);
+
+
         },
         selectDate: function (event) {
             console.log('selectDate!!!' + event.target.id);
-            // remove highlight class if date is selected
-            // add highlist class to newly selected date 
-            document.getElementById(event.target.id).classList.add(DOMstrings.dateSelected);
-            // set value to input date field 
+            hightlightSelectedDate(event.target.id)
             document.querySelector(DOMstrings.inputDate).value = event.target.id;
-
-
+        },
+        hightlightSelectedDate: function (id) {
+            hightlightSelectedDate(id);
         },
 
-        // validateDate: function (event) {
-        //     console.log('event --->>', event);
-        //     let regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
-        //     let validDate = regex.test(event.target.value);
-        //     if (validDate) {
-        //         console.log('Valid Date')
-        //         // call select data and bring month date year into view
-        //     } else {
-        //         console.log('Invalid Date')
-        //         // show warning label
-        //     }
-        // }
-
+        hideDateContainer: function (){
+            let element = DOMstrings.dateContainer;
+            document.querySelector(DOMstrings.overlayLabel).classList.remove(DOMstrings.overlayShow);
+            document.querySelector(element).classList.remove(DOMstrings.showDateContainer);
+        }
     };
-
 })();
 
 
@@ -213,27 +220,19 @@ let controller = (function (dateCtrl, UICtrl) {
         document.querySelector(DOM.inputDate).addEventListener('change', dateChangeHandler);
         document.querySelector(DOM.inputCalSVG).addEventListener('click', UICtrl.showDateContainer);
         document.querySelector(DOM.yearInput).addEventListener('change', yearChangeHandler);
+        document.querySelector(DOM.overlayLabel).addEventListener('click', UICtrl.hideDateContainer);
+
         let dateElement = document.querySelector(DOM.datePanel).children;
 
         for (let i = 0; i < dateElement.length; i++) {
             dateElement[i].addEventListener('click', UICtrl.selectDate);
         }
-
-        // document.getElementsByClassName(DOM.datePanel).children.forEach((node,index) =>{
-
-        //   if(index !== 0){
-        //       console.log('index',index)
-        //     node.addEventListener('click', UICtrl.selectDate(node.id));
-        //   }   
-        // });;
-
-
     };
 
     let yearChangeHandler = function (event) {
         let regex = /^[0-9]{4}$/g;
         let validYear = regex.test(event.target.value);
-        
+
         if (validYear) {
             // set current Date;
             let currDateObj = dateCtrl.getDateObject();
@@ -263,10 +262,9 @@ let controller = (function (dateCtrl, UICtrl) {
             UICtrl.removeExistingDates();
             UICtrl.initDatePanel(currDateObj);
             UICtrl.initMonthYearPanel(currDateObj);
+            UICtrl.hightlightSelectedDate(event.target.value)
 
 
-            //  UICtrl.initDatePicker(dateCtrl.getCurrentMonthDetails()); // set and get current Date Obj 
-            // call select data and bring month date year into view
         } else {
             console.log('Invalid Date')
             // show warning label

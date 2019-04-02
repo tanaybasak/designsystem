@@ -158,8 +158,20 @@ $prefix: 'hcl';
                 flex-direction: row;
                 flex-wrap: wrap;
 
-                &-selected {
-                    background-color: #0062ff;
+
+
+                &-today {
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        bottom: 0.4375rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 0.25rem;
+                        width: 0.25rem;
+                        background: #0062ff;
+                    }
                 }
 
                 span {
@@ -170,30 +182,48 @@ $prefix: 'hcl';
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: #171717;
                     border-radius: 0;
                     border: none;
                     position: relative;
-                    
+
+                }
+
+                &-selected {
+                    background-color: #0062ff;
+                    color: #fff;
+
                     &:hover {
-                        background-color: #E5E5E5;
+                        color: #171717;
                     }
 
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        display: block;
-                        bottom: 0.4375rem;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        height: 0.25rem;
-                        width: 0.25rem;
-                        background: rgb(0, 98, 255);
+                }
+
+                &-unSelected {
+                    color: #171717;
+
+                    &:hover {
+                        background-color: #E5E5E5;
                     }
                 }
             }
         }
 
+        &-overlay {
+
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 8;
+
+            &-show {
+                display: block;
+            }
+
+            display: none;
+
+        }
     }
 
 
