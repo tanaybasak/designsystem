@@ -36,7 +36,7 @@ h1,
 
 h2,
 .#{$prefix}-h2,
-.#{$prefix}-giga {
+.#{$prefix}-mega {
     @include getFontSize("h2");
     @include lineHeight("heading");
     @include getFontWeight("light");
