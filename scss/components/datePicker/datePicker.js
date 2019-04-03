@@ -49,6 +49,8 @@ let datePickerController = (function () {
             return currDateObj;
         },
 
+
+
     };
 
 })();
@@ -76,7 +78,10 @@ let UIController = (function () {
         todayHighlight: 'hcl-datePicker-container-panel-dates-today',
         dateUnSelected: 'hcl-datePicker-container-panel-dates-unSelected',
         overlayShow: 'hcl-datePicker-container-overlay-show',
-        overlayLabel: ".hcl-datePicker-container-overlay"
+        overlayLabel: ".hcl-datePicker-container-overlay",
+        errorDiv: 'hcl-datePicker-error',
+        showErrorDiv: 'hcl-datePicker-error-show',
+        addErrorBorder: 'hcl-datePicker-container-hightlightError'
 
     };
 
@@ -191,6 +196,8 @@ let UIController = (function () {
         },
         selectDate: function (event) {
             console.log('selectDate!!!' + event.target.id);
+            document.querySelector(DOMstrings.inputDate).classList.remove(DOMstrings.addErrorBorder);
+            document.getElementById(DOMstrings.errorDiv).classList.remove(DOMstrings.showErrorDiv);
             hightlightSelectedDate(event.target.id)
             document.querySelector(DOMstrings.inputDate).value = event.target.id;
         },
@@ -198,10 +205,20 @@ let UIController = (function () {
             hightlightSelectedDate(id);
         },
 
-        hideDateContainer: function (){
+        hideDateContainer: function () {
             let element = DOMstrings.dateContainer;
             document.querySelector(DOMstrings.overlayLabel).classList.remove(DOMstrings.overlayShow);
             document.querySelector(element).classList.remove(DOMstrings.showDateContainer);
+        },
+        showErrorInvalidDate: function () {
+            document.getElementById(DOMstrings.errorDiv).classList.add(DOMstrings.showErrorDiv);
+            document.querySelector(DOMstrings.inputDate).classList.add(DOMstrings.addErrorBorder);
+
+        },
+        hideErrorInvalidDate: function () {
+            document.querySelector(DOMstrings.inputDate).classList.remove(DOMstrings.addErrorBorder);
+            document.getElementById(DOMstrings.errorDiv).classList.remove(DOMstrings.showErrorDiv);
+
         }
     };
 })();
@@ -240,13 +257,11 @@ let controller = (function (dateCtrl, UICtrl) {
             UICtrl.removeExistingDates();
             UICtrl.initDatePanel(currDateObj);
             UICtrl.initMonthYearPanel(currDateObj);
+            UICtrl.hideErrorInvalidDate();
 
-
-            //  UICtrl.initDatePicker(dateCtrl.getCurrentMonthDetails()); // set and get current Date Obj 
-            // call select data and bring month date year into view
         } else {
             console.log('Invalid Date')
-            // show warning label
+            UICtrl.showErrorInvalidDate();
         }
 
 
@@ -258,16 +273,17 @@ let controller = (function (dateCtrl, UICtrl) {
         if (validDate) {
             console.log('Valid Date');
             // set current Date;
-            let currDateObj = dateCtrl.setDateObject(event.target.value)
+            let currDateObj = dateCtrl.setDateObject(event.target.value);
             UICtrl.removeExistingDates();
             UICtrl.initDatePanel(currDateObj);
             UICtrl.initMonthYearPanel(currDateObj);
-            UICtrl.hightlightSelectedDate(event.target.value)
-
+            UICtrl.hightlightSelectedDate(event.target.value);
+            UICtrl.hideErrorInvalidDate();
 
         } else {
             console.log('Invalid Date')
             // show warning label
+            UICtrl.showErrorInvalidDate();
         }
 
 

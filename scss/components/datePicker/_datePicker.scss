@@ -24,9 +24,11 @@ $prefix: 'hcl';
                 fill: #0062ff;
             }
 
-            // &:focus+.hcl-datePicker-panel {
-            //     display: block !important;
-            // }
+          
+        }
+
+        &-hightlightError {
+            border: 1px solid #da1e28 !important;
         }
 
         >input {
@@ -39,17 +41,9 @@ $prefix: 'hcl';
             background-color: #f3f3f3;
             padding-right: 3rem;
             box-sizing: border-box;
-            // &:focus .hcl-datePicker-panel {
-            //     display: block !important;
-            // }
-            // &:checked~.hcl-datePicker-container-panel {
-            //     display: block;
-            // }
+           
         }
 
-        // &:focus>.hcl-datePicker-container-panel {
-        //     display: block !important;
-        // }
 
         &-panel {
             background-color: #f3f3f3;
@@ -96,9 +90,7 @@ $prefix: 'hcl';
                         >input {
                             width: 3rem;
                             background-color: #f3f3f3;
-                            // &:hover+.hcl-datePicker-panel-month-selection-inputWrapper-arrows {
-                            //     display: block;
-                            // }
+                          
                         }
 
                         &-arrows {
@@ -226,6 +218,15 @@ $prefix: 'hcl';
         }
     }
 
-
+    &-error {
+        display:none;
+        color: #da1e28;
+        font-weight: 400;
+        margin-top: .25rem;
+        overflow: visible;
+        &-show{
+            display: block;
+        }
+    }
 
 }
