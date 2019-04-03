@@ -112,8 +112,8 @@ let UIController = (function () {
 
         for (let i = numOfDaysInPrevMonth - numOfDaysFromPrevMonth; i <= numOfDaysInPrevMonth && numOfDaysFromPrevMonth !== 6; i++) {
             let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
-            dayHTML = dayHTML.replaceAll('%month%', ('0' + curMonthObj.month).slice(-2));
-            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.year); // need to handle Jan start edge cases
+            dayHTML = dayHTML.replaceAll('%month%', ('0' + (curMonthObj.month === 0 ? 12 : curMonthObj.month)).slice(-2));
+            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year); // need to handle Jan start edge cases
             document.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
         }
 
@@ -126,11 +126,11 @@ let UIController = (function () {
         }
 
         // days from next month  
-        let numOfDaysFromNextMonth = numOfDaysFromPrevMonth === 6 ? 42 - numOfDaysInMonth +1 : 42 - numOfDaysInMonth - numOfDaysFromPrevMonth ; 
+        let numOfDaysFromNextMonth = numOfDaysFromPrevMonth === 6 ? 42 - numOfDaysInMonth + 1 : 42 - numOfDaysInMonth - numOfDaysFromPrevMonth;
         for (let i = 1; i < numOfDaysFromNextMonth; i++) {
             let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
-            dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month) + 2)).slice(-2));
-            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.year); // need to handle Dec last edge cases
+            dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month === 11 ? -1 : curMonthObj.month) + 2)).slice(-2));
+            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 11 ? curMonthObj.year + 1 : curMonthObj.year); // need to handle Dec last edge cases
             document.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
         }
 
