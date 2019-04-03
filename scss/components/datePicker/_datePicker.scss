@@ -2,11 +2,9 @@ $prefix: 'hcl';
 
 .#{$prefix}-datePicker {
     width: 18rem !important;
-
     &-label {
         background-color: none;
     }
-
     &-container {
         position: relative;
         display: flex;
@@ -23,14 +21,10 @@ $prefix: 'hcl';
             &:hover {
                 fill: #0062ff;
             }
-
-          
         }
-
         &-hightlightError {
             border: 1px solid #da1e28 !important;
         }
-
         >input {
             padding-left: 1rem;
             border: none;
@@ -41,23 +35,17 @@ $prefix: 'hcl';
             background-color: #f3f3f3;
             padding-right: 3rem;
             box-sizing: border-box;
-           
         }
-
-
         &-panel {
             background-color: #f3f3f3;
             display: none;
             z-index: 9;
-
             &-show {
                 display: block;
             }
-
             &-hide {
                 display: none;
             }
-
             &-month {
                 height: 2.5rem;
                 display: flex;
@@ -65,7 +53,6 @@ $prefix: 'hcl';
                 align-items: center;
                 justify-content: space-between;
                 font-weight: 600;
-
                 >span {
                     height: 2.5rem;
                     width: 2.5rem;
@@ -74,7 +61,6 @@ $prefix: 'hcl';
                     justify-content: center;
                     cursor: pointer;
                 }
-
                 &-selection {
                     display: flex;
                     flex-direction: row;
@@ -83,7 +69,6 @@ $prefix: 'hcl';
                     &-curMonth {
                         padding-right: 0.5rem;
                     }
-
                     &-inputWrapper {
                         position: relative;
 
@@ -92,7 +77,6 @@ $prefix: 'hcl';
                             background-color: #f3f3f3;
                           
                         }
-
                         &-arrows {
                             height: 1.25rem;
                             width: 0rem;
@@ -102,36 +86,28 @@ $prefix: 'hcl';
                             top: 0rem;
                             left: 2.5rem;
                             justify-content: space-evenly;
-                            // display: none;
-
                             &-up {
                                 cursor: pointer;
                                 box-sizing: border-box;
                                 border-left: 4px solid transparent;
                                 border-right: 4px solid transparent;
                                 border-bottom: 4px solid #0062ff;
-
                             }
-
                             &-down {
                                 cursor: pointer;
                                 box-sizing: border-box;
                                 border-left: 4px solid transparent;
                                 border-right: 4px solid transparent;
                                 border-top: 4px solid #0062ff;
-
                             }
                         }
                     }
                 }
-
             }
-
             &-weekDays {
                 height: 2.5rem;
                 display: flex;
                 flex-direction: row;
-
                 span {
                     height: 2.5rem;
                     width: 2.5rem;
@@ -143,15 +119,11 @@ $prefix: 'hcl';
                     border: none;
                 }
             }
-
             &-dates {
                 height: 15.375rem;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-
-
-
                 &-today {
                     &:after {
                         content: "";
@@ -165,7 +137,6 @@ $prefix: 'hcl';
                         background: #0062ff;
                     }
                 }
-
                 span {
                     cursor: pointer;
                     font-size: .875rem;
@@ -177,9 +148,7 @@ $prefix: 'hcl';
                     border-radius: 0;
                     border: none;
                     position: relative;
-
                 }
-
                 &-selected {
                     background-color: #0062ff;
                     color: #fff;
@@ -187,9 +156,7 @@ $prefix: 'hcl';
                     &:hover {
                         color: #171717;
                     }
-
                 }
-
                 &-unSelected {
                     color: #171717;
 
@@ -199,25 +166,19 @@ $prefix: 'hcl';
                 }
             }
         }
-
         &-overlay {
-
             position: fixed;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
             z-index: 8;
-
             &-show {
                 display: block;
             }
-
             display: none;
-
         }
     }
-
     &-error {
         display:none;
         color: #da1e28;
@@ -228,5 +189,4 @@ $prefix: 'hcl';
             display: block;
         }
     }
-
 }

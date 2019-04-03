@@ -106,14 +106,14 @@ let UIController = (function () {
 
         //days from previous month
 
-        let numOfDaysFromPrevMonth = curMonthObj.day - curMonthObj.date % 7;  // Need to be shown in datePicker
+        let numOfDaysFromPrevMonth = curMonthObj.day - curMonthObj.date % 7;  
         numOfDaysFromPrevMonth = numOfDaysFromPrevMonth < 0 ? 7 + numOfDaysFromPrevMonth : numOfDaysFromPrevMonth;
         let numOfDaysInPrevMonth = getDaysInMonth(curMonthObj.month === 0 ? 12 : curMonthObj.month, curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
 
         for (let i = numOfDaysInPrevMonth - numOfDaysFromPrevMonth; i <= numOfDaysInPrevMonth && numOfDaysFromPrevMonth !== 6; i++) {
             let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
             dayHTML = dayHTML.replaceAll('%month%', ('0' + (curMonthObj.month === 0 ? 12 : curMonthObj.month)).slice(-2));
-            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year); // need to handle Jan start edge cases
+            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year); 
             document.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
         }
 
@@ -130,13 +130,12 @@ let UIController = (function () {
         for (let i = 1; i < numOfDaysFromNextMonth; i++) {
             let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
             dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month === 11 ? -1 : curMonthObj.month) + 2)).slice(-2));
-            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 11 ? curMonthObj.year + 1 : curMonthObj.year); // need to handle Dec last edge cases
+            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 11 ? curMonthObj.year + 1 : curMonthObj.year); 
             document.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
         }
 
         // hightlight today's Date
-
-        let todayDate = new Date(); //('0' + (todayDate.getMonth()+1)).slice(-2)
+        let todayDate = new Date(); 
         todayDate = `${('0' + (todayDate.getMonth() + 1)).slice(-2)}/${('0' + todayDate.getDate()).slice(-2)}/${todayDate.getFullYear()}`;
 
         if (document.getElementById(todayDate)) {
@@ -270,8 +269,6 @@ let controller = (function (dateCtrl, UICtrl) {
         let regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
         let validDate = regex.test(event.target.value);
         if (validDate) {
-            console.log('Valid Date');
-            // set current Date;
             let currDateObj = dateCtrl.setDateObject(event.target.value);
             UICtrl.removeExistingDates();
             UICtrl.initDatePanel(currDateObj);
@@ -280,17 +277,12 @@ let controller = (function (dateCtrl, UICtrl) {
             UICtrl.hideErrorInvalidDate();
 
         } else {
-            console.log('Invalid Date')
-            // show warning label
             UICtrl.showErrorInvalidDate();
         }
-
-
     };
 
 
     let prevMonth = function () {
-        console.log('prevMonth Clicked !!');
         event.stopPropagation();
         event.preventDefault();
         let prevMonthObj = dateCtrl.getPrevMonthDetails();
@@ -303,7 +295,6 @@ let controller = (function (dateCtrl, UICtrl) {
     let nextMonth = function () {
         event.stopPropagation();
         event.preventDefault();
-        console.log('nextMonth Clicked !!');
         let nextMonObj = dateCtrl.getNextMonthDetails();
         UICtrl.removeExistingDates();
         UICtrl.initMonthYearPanel(nextMonObj);
@@ -314,7 +305,6 @@ let controller = (function (dateCtrl, UICtrl) {
     let yearIncrease = function () {
         event.stopPropagation();
         event.preventDefault();
-        console.log('yearIncrease Clicked !!');
         let incYearMonObj = dateCtrl.getYearIncreaseMonthDetails();
         UICtrl.removeExistingDates();
         UICtrl.initMonthYearPanel(incYearMonObj);
@@ -325,7 +315,6 @@ let controller = (function (dateCtrl, UICtrl) {
     let yearDecrease = function () {
         event.stopPropagation();
         event.preventDefault();
-        console.log('yearDecrease Clicked !!');
         let decYearMonObj = dateCtrl.getYearDecreaseMonthDetails();
         UICtrl.removeExistingDates();
         UICtrl.initMonthYearPanel(decYearMonObj);
@@ -336,7 +325,6 @@ let controller = (function (dateCtrl, UICtrl) {
 
     return {
         init: function () {
-            console.log('Application has started.');
             UICtrl.initDatePicker(dateCtrl.getCurrentMonthDetails());
             setupEventListeners();
         }
