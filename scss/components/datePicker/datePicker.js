@@ -49,8 +49,6 @@ let datePickerController = (function () {
             return currDateObj;
         },
 
-
-
     };
 
 })();
@@ -128,7 +126,8 @@ let UIController = (function () {
         }
 
         // days from next month  
-        for (let i = 1; i < 42 - numOfDaysInMonth - numOfDaysFromPrevMonth; i++) {
+        let numOfDaysFromNextMonth = numOfDaysFromPrevMonth === 6 ? 42 - numOfDaysInMonth +1 : 42 - numOfDaysInMonth - numOfDaysFromPrevMonth ; 
+        for (let i = 1; i < numOfDaysFromNextMonth; i++) {
             let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
             dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month) + 2)).slice(-2));
             dayHTML = dayHTML.replaceAll('%year%', curMonthObj.year); // need to handle Dec last edge cases
