@@ -1,72 +1,40 @@
-.#{$prefix}-inline-notification {
+$colorMap: ("info": #4696D2, "danger": #E0182D, "success": #589D25, "warning": #FAC43B);
+
+.#{$prefix}-notification {
     display: inline-flex;
     max-width: 52rem;
     margin: 1rem 0;
+    background-color: #eee;
 
-    &-info {
-        // border-left: 3px solid #054ada;
-        // background: #edf4ff;
-        border: 1px solid #4696D2;
-        border-left: 5px solid #4696D2;
-
-        .#{$prefix}-inline-notification-icon {
-            fill: #30588C;
+    @each $key,
+    $value in $colorMap {
+        &.#{$key} {
+            border: 1px solid $value;
+            border-left: 5px solid $value;
+            background-color: #fff;
+            // .#{$prefix}-inline-notification-icon {
+            //     fill: #E0182D;
+            // }
         }
     }
 
-    &-danger {
-        // border-left: 3px solid #da1e28;
-        // background: #fff0f1;
-        border: 1px solid #BF1010;
-        border-left: 5px solid #BF1010;
-
-        .#{$prefix}-inline-notification-icon {
-            fill: #E0182D;
-        }
-    }
-
-    &-success {
-        // border-left: 3px solid #24a148;
-        // background: #dafbe4;
-        border: 1px solid #589D25;
-        border-left: 5px solid #589D25;
-
-        .#{$prefix}-inline-notification-icon {
-            fill: #5AA700;
-        }
-    }
-
-    &-warning {
-        // border-left: 3px solid #fdd13a;
-        // background: rgba(253,209,58,.15);
-        border: 1px solid #FAC43B;
-        border-left: 5px solid #FAC43B;
-
-        .#{$prefix}-inline-notification-icon {
-            fill: #EFC100;
-        }
-    }
-
-    &-details {
+    .#{$prefix}-notification-body {
         display: flex;
         margin: 0 1rem;
 
-        .#{$prefix}-inline-notification-icon {
+        .#{$prefix}-notification-icon {
             flex-shrink: 0;
             margin-right: 1rem;
             margin-top: .625rem;
         }
 
-        .#{$prefix}-inline-notification-text-wrapper {
-            display: -webkit-flex;
+        .#{$prefix}-notification-text-wrapper {
             display: flex;
-            -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
-            -webkit-align-items: center;
             align-items: center;
             padding: 0.625rem 0;
 
-            .#{$prefix}-inline-notification-title {
+            .#{$prefix}-notification-title {
                 font-size: .875rem;
                 line-height: 1.125rem;
                 letter-spacing: 0;
@@ -74,13 +42,12 @@
                 margin-right: 0.5rem;
             }
 
-            .#{$prefix}-inline-notification-subtitle {
+            .#{$prefix}-notification-subtitle {
                 font-weight: 400;
                 font-size: .875rem;
                 word-break: break-word;
                 color: #aaa;
                 line-height: 1.125rem;
-                letter-spacing: 0;
             }
         }
     }
@@ -94,8 +61,12 @@
         padding: 0;
         height: 1.5rem;
         width: 1.5rem;
-        width: 1.5rem;
         transition: outline .11s cubic-bezier(.2, 0, .38, .9), background-color .11s cubic-bezier(.2, 0, .38, .9);
         vertical-align: middle;
+
+        &::after {
+            content: '\2715';
+            color: #000;
+        }
     }
 }

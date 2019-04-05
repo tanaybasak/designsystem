@@ -6,9 +6,7 @@
  *******************************************************************
  */
 
-@import "../../utils/variables";
 @import "mixin";
-$prefix: 'hcl';
 .#{$prefix}-form-group {
     margin-bottom: 1.5rem;
     >input[data-invalid],
