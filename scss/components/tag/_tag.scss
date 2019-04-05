@@ -1,0 +1,28 @@
+.#{$prefix}-tag {
+    display: inline-block;
+    padding: 5px 1rem;
+    border-radius: 16px;
+    font-size: 12px;
+    cursor: pointer;
+
+    &-primary {
+        background-color: #00518F;
+        color: #fff;
+    }
+
+    &.outline {
+        background: transparent;
+        color: #0066B3;
+        border: 1px solid #0066B3;
+
+        &:hover,
+        &:focus {
+            background: #e7eff7;
+            color: #0066B3;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+}
