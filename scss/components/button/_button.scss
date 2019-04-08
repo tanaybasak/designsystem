@@ -5,13 +5,14 @@
  *
  *******************************************************************
  */
- 
+
 
 // remove the black theme ; blue will be default + primary
 $baseKey: "background";
 $theme: "primary";
-$themes: ( "primary", "secondary", );
-$colorMap: ( "primary": ( "background": var(--blue), "background-hover": var(--dark-secondary), "background-disabled": var(--primary-background-disabled), "font-color": var(--white)), "secondary": ( "background": var(--orange), "background-hover": var(--orange-secondary), "background-disabled": var(--orange-background-disabled), "font-color": var(--white)));
+$themes: ("primary", "secondary", );
+$colorMap: ("primary": ("background": var(--blue), "background-hover": var(--dark-secondary), "background-disabled": var(--primary-background-disabled), "font-color": var(--white)), "secondary": ("background": var(--orange), "background-hover": var(--orange-secondary), "background-disabled": var(--orange-background-disabled), "font-color": var(--white)));
+
 %button {
     text-align: center;
     cursor: pointer;
@@ -21,7 +22,9 @@ $colorMap: ( "primary": ( "background": var(--blue), "background-hover": var(--d
     color: var(--white);
     background: var(--blue);
     margin: .5rem;
-} // Buttons
+}
+
+// Buttons
 button,
 .#{$prefix}-btn,
 .#{$prefix}-btn-primary,
@@ -34,9 +37,11 @@ button,
 @function getColor($name: "primary", $bkey: $baseKey) {
     $color: null;
     $colorList: map-get($colorMap, $name);
+
     @if $colorList {
         $color: map-get($colorList, $bkey);
     }
+
     @return $color;
 }
 
@@ -45,44 +50,55 @@ button,
         background: getColor($theme);
         border-color: currentColor;
         color: getColor($theme, "font-color");
+
         &:hover {
             background: getColor($theme, "background-hover");
             color: getColor($theme, "hover-fontcolor");
         }
+
         &:focus {
             background: getColor($theme, "background-hover");
         }
+
         &:disabled {
             background: getColor($theme, "background-disabled");
         }
+
         &.ghost {
             background: transparent;
             color: getColor($theme);
             border: 0;
+
             &:hover {
                 background: getColor($theme, "background-hover");
                 color: var(--white);
             }
+
             &:focus {
                 background: getColor($theme, "background-hover");
                 color: var(--white);
             }
+
             &:disabled {
                 color: #8CD7FA;
             }
         }
+
         &.outline {
             background: transparent;
             color: getColor($theme);
             border: 2px solid currentColor;
+
             &:hover {
                 background: getColor($theme, "background-hover");
                 color: var(--white);
             }
+
             &:focus {
                 background: getColor($theme, "background-hover");
                 color: var(--white);
             }
+
             &:disabled {
                 color: #8CD7FA;
                 border: 2px solid currentColor;
