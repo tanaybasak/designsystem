@@ -12,13 +12,10 @@ $colorMap: ("info": #4696D2, "danger": #E0182D, "success": #589D25, "warning": #
             border: 1px solid $value;
             border-left: 5px solid $value;
             background-color: #fff;
-            // .#{$prefix}-inline-notification-icon {
-            //     fill: #E0182D;
-            // }
         }
     }
 
-    .#{$prefix}-notification-body {
+    &-body {
         display: flex;
         margin: 0 1rem;
 
@@ -35,7 +32,7 @@ $colorMap: ("info": #4696D2, "danger": #E0182D, "success": #589D25, "warning": #
             padding: 0.625rem 0;
 
             .#{$prefix}-notification-title {
-                font-size: .875rem;
+                @include getFontSize("14");
                 line-height: 1.125rem;
                 letter-spacing: 0;
                 color: #132730;
@@ -43,8 +40,8 @@ $colorMap: ("info": #4696D2, "danger": #E0182D, "success": #589D25, "warning": #
             }
 
             .#{$prefix}-notification-subtitle {
-                font-weight: 400;
-                font-size: .875rem;
+                @include getFontSize("14");
+                @include getFontWeight("regular");
                 word-break: break-word;
                 color: #aaa;
                 line-height: 1.125rem;
@@ -60,7 +57,9 @@ $colorMap: ("info": #4696D2, "danger": #E0182D, "success": #589D25, "warning": #
         cursor: pointer;
         padding: 0;
         height: 1.5rem;
-        width: 1.5rem;
+        width: 2rem;
+        min-width: 2rem;
+        max-width: 2rem;
         transition: outline .11s cubic-bezier(.2, 0, .38, .9), background-color .11s cubic-bezier(.2, 0, .38, .9);
         vertical-align: middle;
 

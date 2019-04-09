@@ -33,8 +33,10 @@
 @function getColor($name: "default", $BKey: $baseKey) {
     $color: null;
     $colorList: map-get($colorMap, $name);
+
     @if $colorList {
         $color: map-get($colorList, $BKey);
     }
+
     @return $color;
 }

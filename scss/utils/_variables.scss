@@ -51,22 +51,22 @@ $tertiary: $orange !default;
 $link-hover-color: var(--dark-secondary);
 // THEMES
 $theme-colors: () !default;
-$theme-colors: map-merge(( "primary": $primary, "secondary": $secondary, "tertiary": $tertiary), $theme-colors); 
+$theme-colors: map-merge(("primary": $primary, "secondary": $secondary, "tertiary": $tertiary), $theme-colors);
 // Forms
 $label-margin-bottom: .5rem;
 $input-padding-y: 0;
 $input-padding-x: 1rem;
 $input-height: 2.5rem !default;
-$input-min-width: calc( 300rem / 16);
+$input-min-width: calc(300rem / 16);
 $input-label-weight: 600;
-$background-disabled: rgba(70,150,210,0.05);
+$background-disabled: rgba(70, 150, 210, 0.05);
 // Checkbox
 $checkbox-border-width: 2px;
 $checkbox-border-color: #5a6872;
 $checkbox-background-color: $white;
 $checkbox-border-color-checked: #3d70b2;
 $checkbox-background-color-checked: #3d70b2;
-$checkbox-focus-color: #7cc7ff; 
+$checkbox-focus-color: #7cc7ff;
 // Errors
 $error:var(--error);
 $success:var(--success);

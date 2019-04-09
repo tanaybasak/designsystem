@@ -7,14 +7,17 @@
  */
 
 @import "mixin";
+
 .#{$prefix}-form-group {
     margin-bottom: 1.5rem;
+
     >input[data-invalid],
     input[data-invalid]:focus,
     textarea[data-invalid],
     textarea[data-invalid]:focus {
         box-shadow: 0 2px 0 0 $error;
     }
+
     input[data-invalid]~.#{$prefix}-error-msg,
     textarea[data-invalid]~.#{$prefix}-error-msg {
         max-height: 12.5rem;
@@ -46,6 +49,7 @@ label {
     resize: vertical;
     padding: 1rem;
     height: auto;
+
     &[data-invalid]~.#{$prefix}-error-msg {
         color: $error;
         @include getFontWeight("regular");
@@ -58,9 +62,11 @@ label {
 // Checkbox
 .#{$prefix}-checkbox-wrapper {
     margin-bottom: 1rem;
+
     &:first-of-type {
         margin-top: 0.5rem;
     }
+
     &:last-of-type {
         margin-bottom: 0;
     }
@@ -68,18 +74,22 @@ label {
 
 .#{$prefix}-checkbox {
     display: none;
+
     &[disabled]~.#{$prefix}-checkbox-label {
         opacity: 0.5;
         cursor: not-allowed;
     }
+
     &:checked+.#{$prefix}-checkbox-label::before {
         background-color: $checkbox-border-color-checked;
         border-color: $checkbox-border-color-checked;
     }
+
     &:checked+.#{$prefix}-checkbox-label::after {
         opacity: 1;
         transform: scale(1) rotate(-45deg);
     }
+
     &:focus+.#{$prefix}-checkbox-label::before {
         outline: 1px solid transparent;
         box-shadow: 0 0 0 3px $checkbox-focus-color;
@@ -95,6 +105,7 @@ label {
     padding-left: 1.5rem;
     min-height: 1rem;
     margin-bottom: 0;
+
     &::before {
         box-sizing: border-box;
         content: '';
@@ -106,6 +117,7 @@ label {
         border: $checkbox-border-width solid $checkbox-border-color;
         background-color: $checkbox-background-color;
     }
+
     &::after {
         box-sizing: border-box;
         content: '';
@@ -135,11 +147,14 @@ label {
 .#{$prefix}-stack-vertical {
     display: flex;
     flex-direction: column;
+
     .#{$prefix}-radio-item {
         margin-bottom: 0.5rem;
+
         &:first-of-type {
             margin-top: 0.5rem;
         }
+
         &:last-of-type {
             margin-bottom: 0.5rem;
         }
@@ -148,14 +163,17 @@ label {
 
 .#{$prefix}-radio {
     display: none;
+
     &:focus+.#{$prefix}-radio-label::before {
         outline: 1px solid transparent;
         box-shadow: 0 0 0 3px $checkbox-focus-color;
     }
+
     &:disabled+.#{$prefix}-radio-label {
         opacity: 0.5;
         cursor: not-allowed;
     }
+
     &:checked+.#{$prefix}-radio-label::after {
         content: '';
         display: inline-block;
@@ -167,6 +185,7 @@ label {
         border-radius: 50%;
         @include getInputColor("color-5", "background-color");
     }
+
     &:checked+.#{$prefix}-radio-label::before {
         @include getInputColor("color-5", "border-color");
     }
@@ -179,10 +198,12 @@ label {
     cursor: pointer;
     margin-bottom: 0;
     position: relative;
+
     span {
         display: inline-block;
         margin-left: 25px;
     }
+
     &::before {
         content: '';
         display: inline-block;
