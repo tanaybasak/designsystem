@@ -47,10 +47,10 @@
     }
 
     @include respond-to(tablet) {
-        flex-basis: percentage($i / $columns);
+        flex-basis: percentage($i / $cols);
     }
 
     @include respond-to(desktop) {
-        flex-basis: percentage($i / $columns);
+        flex-basis: percentage($i / $cols);
     }
 }
