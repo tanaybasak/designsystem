@@ -1,6 +1,6 @@
 {
   "name": "patron-css",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Patron CSS Framework",
   "main": "index.js",
   "scripts": {
