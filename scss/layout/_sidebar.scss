@@ -24,4 +24,62 @@
         color: var(--white);
         background-color: transparent;
     }
+
+    /* BELOW RULES ARE TEMPORARY; TODO: Subject to be changed */
+    &-list {
+        font-size: 1.4rem;
+        list-style: none;
+        margin-top: 3.5rem;
+        width: 100%;
+
+        &-item {
+            position: relative;
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: .5rem;
+            }
+
+            &:hover>a {
+                color: var(--black);
+            }
+        }
+
+        &-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            background-color: var(--white);
+            transform: scaleY(0);
+            transition: transform .2s, width .4s cubic-bezier(1, 0, 0, 1) .2s, background-color .1s;
+        }
+
+        &-item:hover::before,
+        &-item--active::before {
+            transform: scaleY(1);
+            width: 100%;
+
+        }
+
+        &-item:active::before {
+            background-color: var(--white);
+        }
+
+        &-link:link,
+        &-link:visited {
+            font-size: 1.125rem;
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            padding: 1.5rem 3rem;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+    }
 }
