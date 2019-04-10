@@ -79,14 +79,14 @@
             box-shadow: none;
         }
 
-        &:checked~span.#{$prefix}-toggle-label-on,
-        &:not(:checked)~span.#{$prefix}-toggle-label-off {
+        &:checked~span.#{$prefix}-toggle-on,
+        &:not(:checked)~span.#{$prefix}-toggle-off {
             display: inline-block;
         }
     }
 
-    .#{$prefix}-toggle-label-off,
-    .#{$prefix}-toggle-label-on {
+    &-off,
+    &-on {
         display: none;
         top: 0;
         left: 3.125rem;
