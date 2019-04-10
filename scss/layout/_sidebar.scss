@@ -17,11 +17,11 @@
     align-items: flex-start;
     position: relative;
 
-    &__icon {
+    .#{$prefix}-icon-2 {
         position: absolute;
         top: .5rem;
-        right: .5rem;
+        right: .9375rem;
         color: var(--white);
-        font-size: 2rem;
+        background-color: transparent;
     }
 }

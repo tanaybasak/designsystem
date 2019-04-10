@@ -96,10 +96,17 @@
  *********************************************************************
 */
 
-.#{$prefix}-icon-1 {
-    height: 1rem;
-    width: 1rem;
-    background-color: var(--white); // TODO: Subjecto to be changed
+$iconSizesMap: ("icon-1": 1rem, "icon-2": 2rem, "icon-3": 3rem);
+
+@each $key,
+$value in $iconSizesMap {
+    .#{$prefix}-#{$key} {
+        height: $value;
+        width: $value;
+        font-size: $value;
+        background-color: transparent;
+        background-color: var(--white); // TODO: Subjecto to be changed
+    }
 }
 
 // ACTIVE TAB/MENU UTILITY CLASS
