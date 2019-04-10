@@ -17,16 +17,17 @@
 
 // LOGO IS A COMPONENT AND SHOULD BE PLACED INSIDE components DIRECTORY // TODO: Subject to be changed
 .#{$prefix}-logo {
-    height: 2.5rem;
+    text-decoration: none;
+    color: var(--white);
+    height: 100%;
+    width: 5rem; // TODO: Subject to be changed
     margin-left: 1.75rem;
     margin-right: 1.75rem;
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: 800;
-    font-style: italic;
-    color: var(--white);
-    letter-spacing: .25rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    background-image: url(../logo.png); // Customizable as per the application demands
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 // TABS/MENUS ARE COMPONENTS AND SHOULD BE PLACED INSIDE components DIRECTORY // TODO: Subject to be changed
@@ -36,7 +37,7 @@
     display: flex;
     align-items: center;
 
-    &__item {
+    &-nav {
         position: relative;
         height: 100%;
         color: var(--white);
@@ -57,13 +58,10 @@
     &>*:hover {
         border-bottom: 2px solid var(--white);
     }
-
-    .active {
-        border-bottom: 2px solid var(--white);
-    }
 }
 
-.#{$prefix}-header-tools {
+// TOOLBAR IS A COMPONENT AND SHOULD BE PLACED INSIDE components DIRECTORY // TODO: Subject to be changed
+.#{$prefix}-toolbar {
     margin-left: auto;
     align-self: stretch;
     display: flex;
@@ -81,13 +79,30 @@
         background-color: var(--grey);
     }
 
-    &__icon-box {
+    &-icon {
         position: relative;
     }
+}
 
-    &__icon {
-        height: 1rem;
-        width: 1rem;
-        background-color: var(--white);
-    }
+/* 
+ * ICON UTILITY CLASSES
+ *
+ * ICON SIZES
+ *
+ * 1 -> 1rem = 16px
+ * 2 -> 2rem = 32px
+ * 3 -> 3rem = 48px
+ *
+ *********************************************************************
+*/
+
+.#{$prefix}-icon-1 {
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--white); // TODO: Subjecto to be changed
+}
+
+// ACTIVE TAB/MENU UTILITY CLASS
+.#{$prefix}-active {
+    border-bottom: 2px solid var(--white);
 }
