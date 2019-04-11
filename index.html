@@ -12,7 +12,7 @@
 
 <body>
     <main>
-        <section class="hcl-container">
+        <!-- <section class="hcl-container">
             <div class="row">
                 <div class="col-12">
                     <h1>This is the heading one</h1>
@@ -180,12 +180,83 @@
                     <span class="hcl-toggle-on">On</span>
                 </label>
             </fieldset>
-        </section>
+        </section> -->
         <section class="hcl-container pt-5">
             <label class="hcl-toggle">
                 <input type="checkbox" disabled />
                 <span class="hcl-slider"></span>
             </label>
+        </section>
+
+        <section class="hcl-pagination-wrapper">
+            <div class="hcl-pagination">
+                <div class="hcl-pagination-left">
+                    <label class="hcl-pagination__text">Items per page:</label>
+                    <div class="hcl-pagination-left__selectItemCount">
+                        <select class="hcl-pagination__selectInput" id="select-id-pagination-count"
+                            aria-label="Items per page" tabindex="0" data-items-per-page="">
+                            <option class="hcl-pagination-option" value="10">
+                                10
+                            </option>
+                            <option class="hcl-pagination-option" value="10">
+                                20
+                            </option>
+                        </select>
+                    </div>
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"></path>
+                    </svg>
+                    <span class="hcl-pagination__text">
+                        <span data-displayed-item-range="">1–10</span> of
+                        <span data-total-items="">
+                            40
+                        </span> items
+                    </span>
+                </div>
+                <div class="hcl-pagination-right">
+                    <div class="hcl-pagination-right-page">
+                        <select class="hcl-pagination__selectInput" id="select-id-pagination-page"
+                            aria-label="page number, of 5 pages" tabindex="0" data-page-number-input="">
+                            <option class="hcl-pagination-option" value="1">
+                                1
+                            </option>
+                            <option class="hcl-pagination-option" value="2">
+                                2
+                            </option>
+
+                        </select>
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"></path>
+                        </svg>
+                    </div>
+                    <label id="select-id-pagination-page-label" class="hcl-pagination__text">
+                        of 5 pages
+                    </label>
+
+                </div>
+                <div class="hcl-pagination-btnSection">
+                    <button class="hcl-pagination__button" tabindex="0" data-page-backward=""
+                        aria-label="previous page">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="bx--pagination__nav-arrow" width="20" height="20"
+                            viewBox="0 0 32 32" aria-hidden="true">
+                            <path d="M19 23l-8-7 8-7v14z"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-pagination__button" tabindex="0" data-page-forward="" aria-label="next page">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="bx--pagination__nav-arrow" width="20" height="20"
+                            viewBox="0 0 32 32" aria-hidden="true">
+                            <path d="M13 9l8 7-8 7V9z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
         </section>
     </main>
 </body>
