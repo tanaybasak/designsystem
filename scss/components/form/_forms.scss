@@ -10,17 +10,18 @@
 
 .#{$prefix}-form-group {
     margin-bottom: 1.5rem;
-
-    >input[data-invalid],
-    input[data-invalid]:focus,
-    textarea[data-invalid],
-    textarea[data-invalid]:focus {
+    >input[data-invalid=true],
+    input[data-invalid=true]:focus,
+    textarea[data-invalid=true],
+    textarea[data-invalid=true]:focus {
         box-shadow: 0 2px 0 0 $error;
     }
-
-    input[data-invalid]~.#{$prefix}-error-msg,
-    textarea[data-invalid]~.#{$prefix}-error-msg {
-        max-height: 12.5rem;
+    input[data-invalid=true]~.#{$prefix}-error-msg,
+    textarea[data-invalid=true]~.#{$prefix}-error-msg {
+        color: $error;
+    }
+    input[data-invalid=false]~.#{$prefix}-error-msg {
+        display: none;
     }
 }
 
@@ -49,13 +50,15 @@ label {
     resize: vertical;
     padding: 1rem;
     height: auto;
-
-    &[data-invalid]~.#{$prefix}-error-msg {
+    &[data-invalid=true]~.#{$prefix}-error-msg {
         color: $error;
         @include getFontWeight("regular");
         @include getFontSize("12");
         margin-top: .25rem;
         @include lineHeight("error");
+    }
+    &[data-invalid=false]~.#{$prefix}-error-msg {
+        display: none;
     }
 }
 

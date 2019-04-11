@@ -1,4 +1,4 @@
-$colorMap: ("info": #4696D2, "danger": #E0182D, "success": #589D25, "warning": #FAC43B);
+$colorMap: ("info": $info, "danger": $danger, "success": $success, "warning": $warning);
 
 .#{$prefix}-notification {
     display: inline-flex;
@@ -8,10 +8,10 @@ $colorMap: ("info": #4696D2, "danger": #E0182D, "success": #589D25, "warning": #
 
     @each $key,
     $value in $colorMap {
-        &.#{$key} {
+        &.hcl-#{$key} {
             border: 1px solid $value;
             border-left: 5px solid $value;
-            background-color: #fff;
+            background-color: $white;
         }
     }
 
@@ -49,7 +49,7 @@ $colorMap: ("info": #4696D2, "danger": #E0182D, "success": #589D25, "warning": #
         }
     }
 
-    &-close-button {
+    &-close {
         outline: 2px solid transparent;
         outline-offset: -2px;
         background: transparent;
@@ -65,7 +65,7 @@ $colorMap: ("info": #4696D2, "danger": #E0182D, "success": #589D25, "warning": #
 
         &::after {
             content: '\2715';
-            color: #000;
+            color: $black;
         }
     }
 }

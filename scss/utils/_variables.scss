@@ -20,6 +20,7 @@
     --grey: #707070;
     --white: #fff;
     --blue: #0066b3;
+    --dark-blue: #132730;
     --dark-secondary: #4696D2;
     --primary-background-focus: #00578F;
     --primary-background-disabled: #B9E6FA;
@@ -30,6 +31,8 @@
     --black-secondary: #555;
     --error: #E0182D;
     --success: #589D25;
+    --info: #4696D2;
+    --warning: #FAC43B;
 }
 
 // SASS VARIABLES
@@ -70,3 +73,6 @@ $checkbox-focus-color: #7cc7ff;
 // Errors
 $error:var(--error);
 $success:var(--success);
+$info: var(--info);
+$danger: var(--error);
+$warning: var(--warning);
