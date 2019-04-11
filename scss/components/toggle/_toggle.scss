@@ -1,102 +1,95 @@
-.#{$prefix}-fieldset {
-    margin-bottom: 2rem;
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 
-    .#{$prefix}-label {
-        font-size: .75rem;
-        letter-spacing: .02rem;
-        font-weight: 400;
-        line-height: 1rem;
-        color: #565656;
+.#{$prefix}-toggle-container {
+    .#{$prefix}-toggle {
+        position: relative;
         display: inline-block;
-        vertical-align: baseline;
-        margin-bottom: .5rem;
-    }
-}
+        width: 3rem;
+        height: 1.5rem;
+        top: 0.4375rem;
 
-.#{$prefix}-toggle {
-    position: relative;
-    display: inline-block;
-    width: 3rem;
-    height: 1.5rem;
-
-    .#{$prefix}-slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #8c8c8c;
-        -webkit-transition: .4s;
-        transition: .4s;
-        border-radius: 2.125rem;
-
-        &:before {
+        .#{$prefix}-slider {
             position: absolute;
-            content: "";
-            height: 1.125rem;
-            width: 1.125rem;
-            left: 0.1875rem;
-            bottom: 0.1875rem;
-            background-color: #dcdcdc;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0.625rem;
+            background-color: #717171; // TODO: Need to check with design team
             -webkit-transition: .4s;
             transition: .4s;
-            border-radius: 50%;
-        }
-    }
+            height: 0.25rem;
 
-    input[type="checkbox"] {
-        opacity: 0;
-        width: 0;
-        height: 0;
-
-        &:active~span.#{$prefix}-slider,
-        &:focus~span.#{$prefix}-slider {
-            box-shadow: 0 0 0 0.125rem #0062ff;
-        }
-
-        &:checked+.#{$prefix}-slider {
-            background-color: #25a147;
-        }
-
-        &:checked+.#{$prefix}-slider:before {
-            -webkit-transform: translateX(1.5rem);
-            -ms-transform: translateX(1.5rem);
-            transform: translateX(1.5rem);
-            background-color: #ffffff;
+            &:before {
+                position: absolute;
+                content: "";
+                height: 1.5rem;
+                width: 1.5rem;
+                left: 0;
+                bottom: -0.625rem;
+                background-color: #F5F5F5; // TODO: Need to check with design team
+                border: 0.125rem solid #717171; // TODO: Need to check with design team
+                -webkit-transition: .4s;
+                transition: .4s;
+                border-radius: 50%;
+            }
         }
 
-        &:disabled+.#{$prefix}-slider {
-            background-color: #f3f3f3;
-            cursor: not-allowed;
+        input[type="checkbox"] {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:focus~span.#{$prefix}-slider:before {
+                box-shadow: 0 0 0 0.125rem #5AAAFA; // TODO: Need to check with design team
+                border: 0.125rem solid #5A6872;
+            }
+
+            &:hover:enabled~span.#{$prefix}-slider:before {
+                border: 0.125rem solid #383838; // TODO: Need to check with design team
+            }
+
+            &:checked+.#{$prefix}-slider {
+                background-color: var(--blue);
+            }
+
+            &:checked+.#{$prefix}-slider:before {
+                -webkit-transform: translateX(1.5rem);
+                -ms-transform: translateX(1.5rem);
+                transform: translateX(1.5rem);
+                background-color: var(--blue);
+                border: none;
+            }
+
+            &:disabled+.#{$prefix}-slider {
+                background-color: #D2D2D2; // TODO: Need to check with design team
+                cursor: not-allowed;
+            }
+
+            &:disabled+.#{$prefix}-slider:before {
+                background-color: #F5F5F5; // TODO: Need to check with design team
+                border: 0.125rem solid #D2D2D2; // TODO: Need to check with design team
+            }
         }
 
-        &:disabled+.#{$prefix}-slider:before {
-            background-color: #bebebe;
-        }
-
-        &:disabled~span.#{$prefix}-slider {
-            box-shadow: none;
-        }
-
-        &:checked~span.#{$prefix}-toggle-on,
-        &:not(:checked)~span.#{$prefix}-toggle-off {
+        &-off,
+        &-on {
             display: inline-block;
+            font-size: .875rem;
+            font-weight: 400;
+            line-height: 1.125rem;
+            letter-spacing: .01rem;
+            color: #0F212E; // TODO: Need to check with design team
         }
     }
-
-    &-off,
-    &-on {
-        display: none;
-        top: 0;
-        left: 3.125rem;
-        right: 0;
-        bottom: 0;
-        font-size: .875rem;
-        font-weight: 400;
-        line-height: 1.125rem;
-        letter-spacing: .01rem;
-        position: relative;
-        margin-left: .5rem;
-    }
+}
+.#{$prefix}-toggle-disabled .#{$prefix}-toggle-off,
+.#{$prefix}-toggle-disabled .#{$prefix}-toggle-on {
+    color: #AAAAAA; // TODO: Need to check with design team
 }
