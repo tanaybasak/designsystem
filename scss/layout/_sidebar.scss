@@ -16,6 +16,7 @@
     min-height: calc(100vh - 3.125rem);
     align-items: flex-start;
     position: relative;
+    overflow: auto;
 
     .#{$prefix}-icon-2 {
         position: absolute;
