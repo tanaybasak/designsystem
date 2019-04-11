@@ -7,89 +7,115 @@
  */
 
 .#{$prefix}-toggle-container {
+    display: inline-block;
+
     .#{$prefix}-toggle {
         position: relative;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transform: translate3d(0, 0, 0);
         display: inline-block;
         width: 3rem;
         height: 1.5rem;
         top: 0.4375rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
 
-        .#{$prefix}-slider {
-            position: absolute;
-            cursor: pointer;
+        &:before {
+            content: "";
+            position: relative;
+            width: 3rem;
+            display: block;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0.625rem;
             background-color: #717171; // TODO: Need to check with design team
             -webkit-transition: .4s;
             transition: .4s;
             height: 0.25rem;
-
-            &:before {
-                position: absolute;
-                content: "";
-                height: 1.5rem;
-                width: 1.5rem;
-                left: 0;
-                bottom: -0.625rem;
-                background-color: #F5F5F5; // TODO: Need to check with design team
-                border: 0.125rem solid #717171; // TODO: Need to check with design team
-                -webkit-transition: .4s;
-                transition: .4s;
-                border-radius: 50%;
-            }
         }
 
-        input[type="checkbox"] {
-            opacity: 0;
-            width: 0;
-            height: 0;
+        .#{$prefix}-slider {
+            position: absolute;
+            left: 0;
+            display: block;
+            background: white;
+            height: 1.5rem;
+            width: 1.5rem;
+            bottom: 0.625rem;
+            background-color: #F5F5F5; // TODO: Need to check with design team
+            border: 0.125rem solid #717171; // TODO: Need to check with design team
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+    }
 
-            &:focus~span.#{$prefix}-slider:before {
-                box-shadow: 0 0 0 0.125rem #5AAAFA; // TODO: Need to check with design team
-                border: 0.125rem solid #5A6872;
-            }
+    input[type="checkbox"] {
+        opacity: 0;
+        width: 0;
+        height: 0;
 
-            &:hover:enabled~span.#{$prefix}-slider:before {
-                border: 0.125rem solid #383838; // TODO: Need to check with design team
-            }
-
-            &:checked+.#{$prefix}-slider {
+        &:checked+.#{$prefix}-toggle {
+            &:before {
                 background-color: var(--blue);
             }
 
-            &:checked+.#{$prefix}-slider:before {
+            .#{$prefix}-slider {
                 -webkit-transform: translateX(1.5rem);
                 -ms-transform: translateX(1.5rem);
                 transform: translateX(1.5rem);
                 background-color: var(--blue);
                 border: none;
             }
+        }
 
-            &:disabled+.#{$prefix}-slider {
+        &:focus+.#{$prefix}-toggle {
+            .#{$prefix}-slider {
+                box-shadow: 0 0 0 0.125rem #5AAAFA; // TODO: Need to check with design team
+                border: 0.125rem solid #5A6872;
+            }
+        }
+
+        &:hover+.#{$prefix}-toggle {
+            .#{$prefix}-slider {
+                border: 0.125rem solid #383838; // TODO: Need to check with design team
+            }
+        }
+
+        &:disabled+.#{$prefix}-toggle {
+            &:before {
                 background-color: #D2D2D2; // TODO: Need to check with design team
                 cursor: not-allowed;
             }
 
-            &:disabled+.#{$prefix}-slider:before {
+            .#{$prefix}-slider {
                 background-color: #F5F5F5; // TODO: Need to check with design team
                 border: 0.125rem solid #D2D2D2; // TODO: Need to check with design team
+                cursor: not-allowed;
             }
         }
 
-        &-off,
-        &-on {
-            display: inline-block;
-            font-size: .875rem;
-            font-weight: 400;
-            line-height: 1.125rem;
-            letter-spacing: .01rem;
-            color: #0F212E; // TODO: Need to check with design team
+        &:disabled~.#{$prefix}-toggle-off,
+        &:disabled~.#{$prefix}-toggle-on {
+            color: #AAAAAA; // TODO: Need to check with design team
         }
     }
-}
-.#{$prefix}-toggle-disabled .#{$prefix}-toggle-off,
-.#{$prefix}-toggle-disabled .#{$prefix}-toggle-on {
-    color: #AAAAAA; // TODO: Need to check with design team
+
+    .#{$prefix}-toggle-off,
+    .#{$prefix}-toggle-on {
+        display: inline;
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 1.125rem;
+        letter-spacing: .01rem;
+        color: #0F212E; // TODO: Need to check with design team
+    }
+
+    .#{$prefix}-toggle-off {
+        float: left;
+    }
+
+    .#{$prefix}-toggle-on {
+        float: right;
+    }
 }
