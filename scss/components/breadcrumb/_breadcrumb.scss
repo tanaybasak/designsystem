@@ -50,8 +50,7 @@ $breadcrumb-margin: 1rem;
         a {
             color: var(--dark-blue);
             @include getFontWeight("semibold");
+            @include getTextDecorationLine("underline");
         }
-
-        @include getTextDecorationLine("underline");
     }
 }
