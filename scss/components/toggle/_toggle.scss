@@ -12,8 +12,6 @@
     .#{$prefix}-toggle {
         position: relative;
         cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        transform: translate3d(0, 0, 0);
         display: inline-block;
         width: 3rem;
         height: 1.5rem;
