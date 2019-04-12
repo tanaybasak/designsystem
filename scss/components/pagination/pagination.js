@@ -16,7 +16,6 @@ const paginationController = (function () {
             paginationObj.itemsPerPage = obj.itemsPerPage;
             paginationObj.currenPage = obj.currenPage;
             paginationObj.numOfItems = obj.numOfItems;
-            // paginationObj.itemsRangeStart = 1;
             paginationObj.numberOfPages = obj.numOfItems % obj.itemsPerPage === 0 ? obj.numOfItems / obj.itemsPerPage : Math.floor(obj.numOfItems / obj.itemsPerPage) + 1;
 
         },
@@ -54,7 +53,6 @@ const paginationController = (function () {
 const UIController = (function () {
 
     const DOMstrings = {
-
         // css classes
         itemsPerPageSelect: '.hcl-pagination__selectInput',
         disbleButtonClass: 'hcl-pagination__button-disable',
@@ -121,7 +119,6 @@ const UIController = (function () {
         let prevPageElm = document.getElementById(DOMstrings.prevPage);
         let nextPageElm = document.getElementById(DOMstrings.nextPage);
 
-
         if (paginationObj.currenPage === paginationObj.numberOfPages) {
             //disable next button
             nextPageElm.classList.add(DOMstrings.disbleButtonClass);
@@ -166,11 +163,13 @@ const UIController = (function () {
             initOutOfPages(paginationObj);
             disableOrEnableNextOtPrevButton(paginationObj);
         },
+
         onClickPrevPage: function (paginationObj) {
             initSelItemsOftotalItems(paginationObj);
             setRightSelection(paginationObj);
             disableOrEnableNextOtPrevButton(paginationObj);
         },
+
         onClickNextPage: function (paginationObj) {
             initSelItemsOftotalItems(paginationObj);
             setRightSelection(paginationObj);
@@ -193,29 +192,24 @@ const controller = (function (pageCtrl, UICtrl) {
 
     const leftSelectOnChange = function (event) {
         pageCtrl.setItemsPerPage(Number(event.target.value));
-        console.log('onleftSelectOnChange==>', pageCtrl.getPaginationObj());
         UICtrl.onChangeLeftSelect(pageCtrl.getPaginationObj());
-        console.log('leftSelectOnChange triggered !!')
     };
 
     const rightSelectOnChange = function (event) {
-        console.log('rightSelectOnChange triggered !!')
         pageCtrl.setCurrentPage(Number(event.target.value));
-        console.log('onRightSelectChange ==>', pageCtrl.getPaginationObj());
         UICtrl.onChangeRightSelect(pageCtrl.getPaginationObj());
     };
 
     const prevPage = function (event) {
         pageCtrl.decreaseCurrentPage();
         UICtrl.onClickPrevPage(pageCtrl.getPaginationObj());
-        console.log('prevPage triggered !!')
     };
 
     const nextPage = function (event) {
-        console.log('nextPage triggered !!')
         pageCtrl.increaseCurrentPage();
         UICtrl.onClickNextPage(pageCtrl.getPaginationObj());
     };
+
     return {
         init: function () {
             // here we initilize paginationObj
@@ -225,8 +219,6 @@ const controller = (function (pageCtrl, UICtrl) {
                 numOfItems: 59,
 
             });
-            console.log('Init ==>', pageCtrl.getPaginationObj());
-
             UICtrl.initPagination(pageCtrl.getPaginationObj());
             setupEventListeners();
         }
