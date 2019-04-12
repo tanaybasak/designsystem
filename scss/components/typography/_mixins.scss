@@ -14,11 +14,13 @@
 }
 
 // Font weight
-$fontWeights-map: ( light: 300, regular: 400, semibold: 600, bold: 800);
+$fontWeights-map: (light: 300, regular: 400, semibold: 600, bold: 800);
+
 @mixin getFontWeight($fontWeight) {
     @if map-has-key($fontWeights-map, $fontWeight) {
         font-weight: map-get($fontWeights-map, $fontWeight);
     }
+
     @else {
         @warn 'This is not define in the HCL design System!';
     }
@@ -32,50 +34,71 @@ $textWeightvalue in $fontWeights-map {
 }
 
 // Font style
-$textStyles-map: (underline, italic, strike-through, overline, line-through);
-@each $textStyle in $textStyles-map {
+$textStyles-map: (none : none, underline : underline, italic : italic, strike : strike-through, overline : overline, line-through :line-through);
+
+@each $textStyle,
+$textStyleVal in $textStyles-map {
     .#{$prefix}-textstyle-#{$textStyle} {
-        font-style: $textStyle;
+        font-style: $textStyleVal;
+    }
+}
+
+@mixin getTextStyles($textTextStyle) {
+    @if map-has-key($textStyles-map, $textTextStyle) {
+        font-style: map-get($textStyles-map, $textTextStyle);
+    }
+
+    @else {
+        @warn 'This is not define in the HCL design System!';
     }
 }
 
 // Text decoration style
-$textDecorationStyle-map: (solid, double, dotted, dashed, through);
-@each $textDecorationStyle in $textDecorationStyle-map {
-    @if( $textDecorationStyle==through) {
-        .#{$prefix}-textdecorstyle-#{$textDecorationStyle} {
-            text-decoration-style: line-through;
-        }
+$textDecorationStyle-map: (none : none, solid :solid, double : double, dotted : dotted, dashed : dashed, through : through);
+
+@each $textDecorationStyle,
+$textDecorStyleVal in $textDecorationStyle-map {
+    .#{$prefix}-textdecorstyle-#{$textDecorationStyle} {
+        text-decoration-style: $textDecorStyleVal;
     }
+
+}
+
+@mixin getTextDecorationStyle($textDecorStyle) {
+    @if map-has-key($textDecorationStyle-map, $textDecorStyle) {
+        text-decoration-style: map-get($textDecorationStyle-map, $textDecorStyle);
+    }
+
     @else {
-        .#{$prefix}-textdecorstyle-#{$textDecorationStyle} {
-            text-decoration-style: $textDecorationStyle;
-        }
+        @warn 'This is not define in the HCL design System!';
     }
 }
 
 // Text decoration line
-$textDecorationLine-map: (overline, underline, through, overunder);
-@each $textDecorationLine in $textDecorationLine-map {
-    @if($textDecorationLine==through) {
-        .#{$prefix}-textdecorline-#{$textDecorationLine} {
-            text-decoration-line: line-through;
-        }
+$textDecorationLine-map: (none : none, overline : overline, underline : underline, through : line-through, overunder : overline underline);
+
+@each $textDecorationLine,
+$textDecorStyle in $textDecorationLine-map {
+
+    .#{$prefix}-textdecorline-#{$textDecorationLine} {
+        text-decoration-line: $textDecorStyle;
     }
-    @else if($textDecorationLine==overunder) {
-        .#{$prefix}-textdecorline-#{$textDecorationLine} {
-            text-decoration-line: overline underline;
-        }
+
+}
+
+@mixin getTextDecorationLine($textDecorLine) {
+    @if map-has-key($textDecorationLine-map, $textDecorLine) {
+        text-decoration-line: map-get($textDecorationLine-map, $textDecorLine);
     }
+
     @else {
-        .#{$prefix}-textdecorline-#{$textDecorationLine} {
-            text-decoration-line: $textDecorationLine;
-        }
+        @warn 'This is not define in the HCL design System!';
     }
 }
 
 // Text transforms
 $textTransforms-map: (uppercase, lowercase, capitalize);
+
 @each $textTransform in $textTransforms-map {
     .#{$prefix}-texttransform-#{$textTransform} {
         text-transform: $textTransform;
@@ -84,6 +107,7 @@ $textTransforms-map: (uppercase, lowercase, capitalize);
 
 // Text alignment
 $textAlignment-map: (center, left, right, justify);
+
 @each $textAlignment in $textAlignment-map {
     .#{$prefix}-textalign-#{$textAlignment} {
         text-align: $textAlignment;
@@ -91,11 +115,13 @@ $textAlignment-map: (center, left, right, justify);
 }
 
 // Font Sizes
-$typeSizes-map: ( "h1": 4.75rem, "h2": 3.375rem, "h3": 2.25rem, "h4": 1.75rem, "h5": 1.25rem, "h6": 1.125rem, "16": 1rem, "11": 0.6875rem, "12": 0.75rem, "14": 0.875rem);
+$typeSizes-map: ("h1": 4.75rem, "h2": 3.375rem, "h3": 2.25rem, "h4": 1.75rem, "h5": 1.25rem, "h6": 1.125rem, "16": 1rem, "11": 0.6875rem, "12": 0.75rem, "14": 0.875rem);
+
 @mixin getFontSize($size) {
     @if map-has-key($typeSizes-map, $size) {
         font-size: map-get($typeSizes-map, $size);
     }
+
     @else {
         @warn 'This is not define in the HCL design System!';
     }
@@ -103,6 +129,7 @@ $typeSizes-map: ( "h1": 4.75rem, "h2": 3.375rem, "h3": 2.25rem, "h4": 1.75rem, "
 
 // White Space
 $whiteSpaces-map: (nowrap, normal, pre);
+
 @each $whiteSpaces in $whiteSpaces-map {
     .#{$prefix}-whitespace-#{whiteSpaces} {
         white-space: $whiteSpaces;
@@ -111,12 +138,14 @@ $whiteSpaces-map: (nowrap, normal, pre);
 
 // Writing Mode
 $writingMode-map: (htb, vrl);
+
 @each $writingMode in $writingMode-map {
-    @if( $writingMode==htb) {
+    @if($writingMode==htb) {
         .#{$prefix}-writingmode-#{$writingMode} {
             writing-mode: horizontal-tb;
         }
     }
+
     @else {
         .#{$prefix}-writingmode-#{$writingMode} {
             writing-mode: vertical-rl;
@@ -134,6 +163,7 @@ $writingMode-map: (htb, vrl);
     @if ($type=="heading") {
         line-height: 1.125;
     }
+
     @else {
         line-height: 1.15;
     }

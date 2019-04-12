@@ -1,10 +1,12 @@
 // Input Fields Color Maps
-$inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "color-5": #3d70b2);
+$inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "color-5": #3d70b2);
+
 // getInputColor(<requiredColor>, <propertyNametoApply>)
 @mixin getInputColor($color, $property) {
     @if map-has-key($inputColor-map, $color) {
         #{$property}: map-get($inputColor-map, $color);
     }
+
     @else {
         @warn 'This is not define in the HCL design System - `#{$color} #{$property}`';
     }
@@ -27,12 +29,14 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "
             outline: none;
             box-shadow: 0 2px 0 0 #3d70b2;
         }
+
         &[disabled] {
             opacity: 0.5;
             cursor: not-allowed;
-            background: rgba(70, 150, 210, 0.05);
+            background-color: $background-disabled;
         }
     }
+
     @else {
         @warn 'This is not define in the HCL design System!';
     }
@@ -44,11 +48,12 @@ $inputColor-map: ( "color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "
         ~.#{$prefix}-error-msg {
             @include getFontWeight("regular");
             @include getFontSize("12");
-            color: $error;
             margin-top: .25rem;
             line-height: 1.5;
+            max-height: 12.5rem;
         }
     }
+
     @else {
         @warn 'This is not define in the HCL design System! - `#{$which}`';
     }

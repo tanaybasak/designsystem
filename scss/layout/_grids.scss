@@ -9,6 +9,7 @@
 $gutter: 0.9375rem;
 $columns: 12;
 $minHeight: 0.0625rem;
+
 // Grid Container
 .#{$prefix}-container {
     width: 100%;
@@ -16,6 +17,7 @@ $minHeight: 0.0625rem;
     margin-right: auto;
     padding-left: $gutter;
     padding-right: $gutter;
+
     .row {
         margin-left: -$gutter;
         margin-right: -$gutter;
@@ -28,15 +30,19 @@ $minHeight: 0.0625rem;
         padding-left: $gutter;
         padding-right: $gutter;
         min-height: $minHeight;
+
         @if $i==6 {
             flex-basis: 50%;
         }
+
         @else {
             flex-basis: 100%;
         }
+
         @include tablet {
             flex-basis: percentage($i / $columns);
         }
+
         @include desktop {
             flex-basis: percentage($i / $columns);
         }
@@ -56,4 +62,14 @@ $minHeight: 0.0625rem;
 
 .colBorder {
     border: 1px solid #999;
+}
+
+.bigCol {
+    min-height: 5rem;
+    padding: 0.9375rem;
+}
+
+.darkBox {
+    background-color: #555;
+    color: #BBB;
 }
