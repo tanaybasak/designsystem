@@ -1,0 +1,71 @@
+$colorMap: ("info": $info, "danger": $danger, "success": $success, "warning": $warning);
+
+.#{$prefix}-notification {
+    display: inline-flex;
+    max-width: 52rem;
+    margin: 1rem 0;
+    background-color: #eee;
+
+    @each $key,
+    $value in $colorMap {
+        &.hcl-#{$key} {
+            border: 1px solid $value;
+            border-left: 5px solid $value;
+            background-color: $white;
+        }
+    }
+
+    &-body {
+        display: flex;
+        margin: 0 1rem;
+
+        .#{$prefix}-notification-icon {
+            flex-shrink: 0;
+            margin-right: 1rem;
+            margin-top: .625rem;
+        }
+
+        .#{$prefix}-notification-text-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 0.625rem 0;
+
+            .#{$prefix}-notification-title {
+                @include getFontSize("14");
+                line-height: 1.125rem;
+                letter-spacing: 0;
+                color: #132730;
+                margin-right: 0.5rem;
+            }
+
+            .#{$prefix}-notification-subtitle {
+                @include getFontSize("14");
+                @include getFontWeight("regular");
+                word-break: break-word;
+                color: #aaa;
+                line-height: 1.125rem;
+            }
+        }
+    }
+
+    &-close {
+        outline: 2px solid transparent;
+        outline-offset: -2px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        height: 1.5rem;
+        width: 2rem;
+        min-width: 2rem;
+        max-width: 2rem;
+        transition: outline .11s cubic-bezier(.2, 0, .38, .9), background-color .11s cubic-bezier(.2, 0, .38, .9);
+        vertical-align: middle;
+
+        &::after {
+            content: '\2715';
+            color: $black;
+        }
+    }
+}

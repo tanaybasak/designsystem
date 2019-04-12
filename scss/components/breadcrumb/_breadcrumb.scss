@@ -47,11 +47,10 @@ $breadcrumb-margin: 1rem;
     }
 
     &-item-active {
-        a {
+        .hcl-link {
             color: var(--dark-blue);
             @include getFontWeight("semibold");
+            @include getTextDecorationLine("underline");
         }
-
-        @include getTextDecorationLine("underline");
     }
 }
