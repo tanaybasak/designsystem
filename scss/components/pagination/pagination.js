@@ -1,7 +1,7 @@
 "use strict";
 
 // pagination Controller
-let paginationController = (function () {
+const paginationController = (function () {
 
     let paginationObj = {
         itemsPerPage: null,
@@ -51,9 +51,9 @@ let paginationController = (function () {
 
 
 // UI Controller
-let UIController = (function () {
+const UIController = (function () {
 
-    let DOMstrings = {
+    const DOMstrings = {
 
         // css classes
         itemsPerPageSelect: '.hcl-pagination__selectInput',
@@ -181,9 +181,9 @@ let UIController = (function () {
 
 
 // Main controller
-let controller = (function (pageCtrl, UICtrl) {
+const controller = (function (pageCtrl, UICtrl) {
 
-    let setupEventListeners = function () {
+    const setupEventListeners = function () {
         let DOM = UICtrl.getDOMstrings();
         document.getElementById(DOM.leftSelect).addEventListener('change', leftSelectOnChange);
         document.getElementById(DOM.rightSelect).addEventListener('change', rightSelectOnChange);
