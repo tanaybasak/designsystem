@@ -67,7 +67,7 @@
                     padding-right: 2rem;
                 }
 
-                .no-border{
+                .no-border {
                     border: 0;
                 }
             }
@@ -137,6 +137,11 @@
 
             &:hover {
                 background-color: #E5E5E5;
+            }
+
+            &-disable {
+                fill: #bebebe;
+                cursor: not-allowed;
             }
         }
 
