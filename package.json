@@ -10,7 +10,8 @@
   "author": "HCL Products & Platforms",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^1.11.0"
+    "parcel": "^1.11.0",
+    "popper.js": "^1.15.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.10",
