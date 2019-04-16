@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-@import "mixins";
+@import "typographyMixins";
 
 // Font style
 .#{$prefix}-textweight-bold {
@@ -36,7 +36,7 @@ h1,
 
 h2,
 .#{$prefix}-h2,
-.#{$prefix}-giga {
+.#{$prefix}-mega {
     @include getFontSize("h2");
     @include lineHeight("heading");
     @include getFontWeight("light");
@@ -66,12 +66,17 @@ h5,
     @include getFontWeight("light");
 }
 
-h6,
-.#{$prefix}-h6,
+
 .#{prefix}-type-delta {
     @include getFontSize("h6");
     @include lineHeight("heading");
     @include getFontWeight("semibold");
+}
+
+h6,
+.#{$prefix}-h6 {
+    @include getFontSize("h6");
+    @include lineHeight("heading");
 }
 
 .#{prefix}-type-epsilon {
