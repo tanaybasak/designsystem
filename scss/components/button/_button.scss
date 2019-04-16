@@ -10,8 +10,53 @@
 // remove the black theme ; blue will be default + primary
 $baseKey: "background";
 $theme: "primary";
-$themes: ("primary", "secondary", );
-$colorMap: ("primary": ("background": var(--blue), "background-hover": var(--dark-secondary), "background-disabled": var(--primary-background-disabled), "font-color": var(--white)), "secondary": ("background": var(--orange), "background-hover": var(--orange-secondary), "background-disabled": var(--orange-background-disabled), "font-color": var(--white)));
+$themes: ("primary", "secondary", "primary-ghost", "secondary-ghost", "primary-outline", "secondary-outline");
+$colorMap: ("primary": ("background": var(--blue),
+"background-hover": var(--dark-secondary),
+"background-disabled": var(--primary-background-disabled),
+"font-color": var(--white),
+"border-color" : transparent,
+"hover-borderColor" : transparent),
+
+"secondary": ("background": var(--orange),
+"background-hover": var(--orange-secondary),
+"background-disabled": var(--orange-background-disabled),
+"font-color": var(--white),
+"border-color" : transparent,
+"hover-borderColor" : transparent),
+
+"primary-ghost": ("background": transparent,
+"background-hover": var(--blue),
+"background-disabled": var(--primary-background-disabled),
+"font-color":var(--blue),
+"hover-fontcolor": var(--white),
+"border-color" : transparent,
+"hover-borderColor" : var(--blue)),
+
+"secondary-ghost": ("background": transparent,
+"background-hover": var(--orange),
+"background-disabled": var(--orange-background-disabled),
+"font-color": var(--orange),
+"hover-fontcolor": var(--white),
+"border-color" : transparent,
+"hover-borderColor" : var(--orange)),
+
+"primary-outline": ("background": transparent,
+"background-hover": var(--blue),
+"background-disabled": var(--primary-background-disabled),
+"font-color": var(--blue),
+"hover-fontcolor" : var(--white),
+"border-color": var(--blue),
+"hover-borderColor" : var(--blue)),
+
+"secondary-outline": ("background": transparent,
+"background-hover": var(--orange),
+"background-disabled": var(--orange-background-disabled),
+"font-color": var(--orange),
+"hover-fontcolor" : var(--white),
+"border-color": var(--orange),
+"hover-borderColor" : var(--orange)));
+
 
 %button {
     text-align: center;
@@ -19,17 +64,14 @@ $colorMap: ("primary": ("background": var(--blue), "background-hover": var(--dar
     line-height: 1rem;
     font-size: 0.875rem;
     border: 1px solid transparent;
-    color: var(--white);
-    background: var(--blue);
     margin: .5rem;
 }
 
 // Buttons
-button,
-.#{$prefix}-btn,
-.#{$prefix}-btn-primary,
-.#{$prefix}-btn-secondary {
+.#{$prefix}-btn {
     @extend %button;
+    color: var(--white);
+    background: var(--blue);
     padding: 0.625rem 1rem;
     height: 2.5rem;
 }
@@ -45,69 +87,34 @@ button,
     @return $color;
 }
 
+
+
 @each $theme in $themes {
-    .#{$prefix}-btn-#{$theme} {
+    .#{$prefix}-#{$theme} {
         background: getColor($theme);
-        border-color: currentColor;
         color: getColor($theme, "font-color");
+        border-color: getColor($theme, "border-color");
 
         &:hover {
             background: getColor($theme, "background-hover");
             color: getColor($theme, "hover-fontcolor");
+            border-color: getColor($theme, "hover-borderColor");
         }
 
         &:focus {
             background: getColor($theme, "background-hover");
+            border-color: getColor($theme, "hover-borderColor");
         }
 
         &:disabled {
             background: getColor($theme, "background-disabled");
         }
 
-        &.ghost {
-            background: transparent;
-            color: getColor($theme);
-            border: 0;
 
-            &:hover {
-                background: getColor($theme, "background-hover");
-                color: var(--white);
-            }
-
-            &:focus {
-                background: getColor($theme, "background-hover");
-                color: var(--white);
-            }
-
-            &:disabled {
-                color: #8CD7FA;
-            }
-        }
-
-        &.outline {
-            background: transparent;
-            color: getColor($theme);
-            border: 2px solid currentColor;
-
-            &:hover {
-                background: getColor($theme, "background-hover");
-                color: var(--white);
-            }
-
-            &:focus {
-                background: getColor($theme, "background-hover");
-                color: var(--white);
-            }
-
-            &:disabled {
-                color: #8CD7FA;
-                border: 2px solid currentColor;
-            }
-        }
     }
 }
 
-.sm {
+.#{$prefix}-sm {
     padding: 0.4375rem 1rem;
     height: 2rem;
 }
