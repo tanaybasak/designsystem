@@ -11,12 +11,12 @@ $breadcrumb-margin: 1rem;
 .#{$prefix}-breadcrumb {
     display: inline;
 
-    @include tablet {
+    @include respond-to(tablet) {
         display: flex;
         flex-wrap: wrap;
     }
 
-    @include desktop {
+    @include respond-to(desktop) {
         display: flex;
         flex-wrap: wrap;
     }

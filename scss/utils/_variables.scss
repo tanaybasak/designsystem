@@ -76,3 +76,12 @@ $success:var(--success);
 $info: var(--info);
 $danger: var(--error);
 $warning: var(--warning);
+// GRIDS GUTTER
+$gutter: 0.9375rem;
+$columns: 12;
+$minHeight: 0.0625rem;
+// BREAKPOINTS
+// TODO: Subject to be changed once the breakpoints are finalized
+$tablet-mobile: 640px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
