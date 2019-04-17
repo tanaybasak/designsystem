@@ -23,7 +23,7 @@ $breadcrumb-margin: 1rem;
             margin-left: $breadcrumb-margin;
         }
 
-        a {
+        .#{$prefix}-link {
             white-space: nowrap;
             @include getTextDecorationLine("none");
             border-bottom: 0.0625rem solid transparent;
@@ -37,7 +37,7 @@ $breadcrumb-margin: 1rem;
     }
 
     &-item-active {
-        a {
+        .#{$prefix}-link {
             color: var(--dark-blue);
             @include getFontWeight("semibold");
             @include getTextDecorationLine("underline");
