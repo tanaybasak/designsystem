@@ -25,7 +25,6 @@ $inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "c
         border: none;
         box-shadow: 0 1px 0 0 #5a6872;
         border-bottom: 1px solid transparent;
-
         &:focus {
             outline: none;
             box-shadow: 0 2px 0 0 #3d70b2;
@@ -49,9 +48,9 @@ $inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "c
         ~.#{$prefix}-error-msg {
             @include getFontWeight("regular");
             @include getFontSize("12");
-            color: $error;
             margin-top: .25rem;
             line-height: 1.5;
+            max-height: 12.5rem;
         }
     }
 
