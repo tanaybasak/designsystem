@@ -11,10 +11,10 @@ $breadcrumb-margin: 1rem;
 .#{$prefix}-breadcrumb {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 
     &-item {
         margin-right: $breadcrumb-margin;
-        align-items: center;
         color: var(--blue);
         font-size: 0.875rem;
 
