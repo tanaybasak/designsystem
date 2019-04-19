@@ -54,8 +54,8 @@ const UIController = (function () {
 
     const DOMstrings = {
         // css classes
-        itemsPerPageSelect: '.hcl-pagination__selectInput',
-        disbleButtonClass: 'hcl-pagination__button-disable',
+        itemsPerPageSelect: '.hcl-pagination-selectInput',
+        disbleButtonClass: 'hcl-pagination-button-disable',
 
         // data-attributes
         itemRange: '[data-displayed-item-range]',
