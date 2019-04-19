@@ -1,5 +1,3 @@
-
-
 @mixin fontWeight($size) {
     font-weight: $size;
 }
@@ -7,6 +5,9 @@
 @mixin fontDetails {
     font-family: inherit;
     font-size: .875rem;
+    background-color: var(--grey-secondary);
+    line-height: 1.125rem;
+    letter-spacing: 0.01rem;
     // font-weight: 400;
     @include fontWeight(400);
 }
@@ -27,9 +28,9 @@
         display: flex;
         justify-content: space-between;
         line-height: 1.125rem;
-        letter-spacing: .16px;
+        letter-spacing: 0.01rem;
         width: 100%;
-        border-top: 1px solid #dcdcdc;
+        border-top: 0.0625rem solid #dcdcdc;
         height: 3rem;
         align-items: center;
 
@@ -51,7 +52,6 @@
                 bottom: auto;
                 pointer-events: none;
             }
-
         }
 
         &-right {
@@ -93,7 +93,7 @@
             display: block;
             white-space: pre;
             min-height: 1.2em;
-            padding: 0px 2px 1px;
+            padding: 0rem 0.125rem 0.0625rem;
         }
 
         &-text {
@@ -101,8 +101,8 @@
             margin-left: 1rem;
             // font-weight: 400;
             @include fontWeight(400);
-            font-size: 14px;
-            margin-bottom: 0px;
+            font-size: 0.875rem;
+            margin-bottom: 0;
         }
 
         &-selectInput {
@@ -112,12 +112,11 @@
             // font-weight: 400;
 
             @include fontDetails();
-            line-height: 1.125rem;
-            letter-spacing: .16px;
-            width: 58px;
+           
+            width: 3.625rem;
             min-width: auto;
             height: 100%;
-            background-color: #f3f3f3;
+            
             padding-right: 2rem;
             margin-right: -.65rem;
             -webkit-appearance: none;
@@ -136,7 +135,7 @@
             margin: 0;
             padding: 0 .875rem;
             border: none;
-            border-left: 1px solid #dcdcdc;
+            border-left: 0.0625rem solid #dcdcdc;
             fill: #171717;
             transition: outline .11s cubic-bezier(.2, 0, .38, .9);
             transition: background-color .11s cubic-bezier(.2, 0, .38, .9);
