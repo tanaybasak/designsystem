@@ -1,6 +1,9 @@
+
+
 @mixin fontWeight($size) {
     font-weight: $size;
 }
+
 @mixin fontDetails {
     font-family: inherit;
     font-size: .875rem;
@@ -11,6 +14,7 @@
 .#{$prefix}-pagination-wrapper {
     width: 38.25rem;
     height: 3.125rem;
+    --hover-background-color: #E5E5E5 ;   
 
     .#{$prefix}-pagination {
         @include fontDetails();
@@ -121,7 +125,7 @@
             border-right: 0.0625rem solid #dcdcdc;
 
             &:hover {
-                background-color: #E5E5E5;
+                background-color: var(--hover-background-color);
             }
         }
 
@@ -138,7 +142,7 @@
             transition: background-color .11s cubic-bezier(.2, 0, .38, .9);
 
             &:hover {
-                background-color: #E5E5E5;
+                background-color: var(--hover-background-color);
             }
 
             &-disable {
