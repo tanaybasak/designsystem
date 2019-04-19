@@ -1,7 +1,11 @@
+@mixin fontWeight($size) {
+    font-weight: $size;
+}
 @mixin fontDetails {
     font-family: inherit;
     font-size: .875rem;
-    font-weight: 400;
+    // font-weight: 400;
+    @include fontWeight(400);
 }
 
 .#{$prefix}-pagination-wrapper {
@@ -80,7 +84,8 @@
         }
 
         &-option {
-            font-weight: normal;
+            // font-weight: normal;
+            @include fontWeight(normal);
             display: block;
             white-space: pre;
             min-height: 1.2em;
@@ -90,7 +95,8 @@
         &-text {
             margin-right: .0625rem;
             margin-left: 1rem;
-            font-weight: 400;
+            // font-weight: 400;
+            @include fontWeight(400);
             font-size: 14px;
             margin-bottom: 0px;
         }
