@@ -1,4 +1,5 @@
 .#{$prefix}-modal {
+    // Below props will be required for component 
     // position: fixed;
     // top: 0;
     // right: 0;
@@ -11,7 +12,6 @@
     background-color: hsla(var(--grey-secondary), 0%, 9%, .5);
     visibility: hidden;
 
-    // transition: opacity .15s cubic-bezier(.4, .14, 1, 1), z-index 0s cubic-bezier(.4, .14, 1, 1) .15s, visibility 0s cubic-bezier(.4, .14, 1, 1) .15s; // how it works
     &-isVisible {
         z-index: 9000;
         opacity: 1;
@@ -19,34 +19,28 @@
         visibility: visible;
     }
 
-
     .#{$prefix}-modal-container {
 
         &-danger{
-            border-top: 4px solid #E0182D;  
+            border-top: 0.25rem solid #E0182D;  
         }
         position: relative;
         display: flex;
         flex-direction: column;
         background-color: #FFFFFF;
-        border-top: 4px solid #0066B3;
-        box-shadow: 0 12px 24px 0 rgba(0,0,0,0.10);
-
-        //media query
-        // height: 315px;
+        border-top: 0.25rem solid #0066B3;
+        box-shadow: 0 0.75rem 1.5rem 0 rgba(0,0,0,0.10);
         height: auto;
         width: 50%;
-        max-width: 768px;
+        max-width: 48rem;
         max-height: 90%;
     }
 
-
     &-header {
-        padding-top: 24px;
+        padding-top: 1.5rem;
         margin-bottom: 1rem;
         width: 75%;
         padding-left: 10%;
-        // height: 62px;
     }
 
     &-label {
@@ -57,16 +51,15 @@
         font-size: .75rem;
         font-weight: 400;
         line-height: 1rem;
-        letter-spacing: .32px;
+        letter-spacing: .0.02rem;
         margin-bottom: .25rem;
-        height: 16px;
+        height: 1rem;
     }
 
     &-heading {
         font-weight: 400;
-        height: 18.4px;
+        height: 1.15rem;
     }
-
 
     &-close {
         position: absolute;
@@ -75,7 +68,7 @@
         height: 3rem;
         width: 3rem;
         padding: .75rem;
-        border: 2px solid transparent;
+        border: 0.125rem solid transparent;
         overflow: hidden;
         cursor: pointer;
         background-color: transparent;
@@ -84,16 +77,15 @@
     &-content {
         font-size: .875rem;
         line-height: 1.25rem;
-        letter-spacing: .16px;
+        letter-spacing: 0.01rem;
         overflow-y: auto;
         margin-bottom: 3rem;
         font-weight: 400;
         width: 100%;
         padding-left: 10%;
         padding-right: 10%;
-        height: 123px;
+        height: 7.6875rem;
     }
-
 
     &-footer {
         display: flex;
@@ -102,7 +94,7 @@
         background-color: #E4F5FC;
         justify-content: flex-end;
         padding-right: 10%;
-        height: 62px;
+        height: 3.875rem;
 
         &-disable{
             display: none;
