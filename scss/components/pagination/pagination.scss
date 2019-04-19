@@ -1,12 +1,20 @@
+@mixin fontDetails {
+    font-family: inherit;
+    font-size: .875rem;
+    font-weight: 400;
+}
+
 .#{$prefix}-pagination-wrapper {
     width: 38.25rem;
     height: 3.125rem;
 
     .#{$prefix}-pagination {
-        font-family: inherit;
-        font-size: .875rem;
-        font-weight: 400;
-        background-color: #f3f3f3;
+        @include fontDetails();
+        // font-family: inherit;
+        // font-size: .875rem;
+        // font-weight: 400;
+        // background-color: #f3f3f3;
+        background-color: var(--grey-secondary);
         color: #171717;
         display: flex;
         justify-content: space-between;
@@ -91,9 +99,11 @@
 
         &-selectInput {
             padding: 0 1.5rem 0 .5rem;
-            font-family: IBM Plex Sans, Helvetica Neue, Arial, sans-serif;
-            font-size: .875rem;
-            font-weight: 400;
+            // font-family: IBM Plex Sans, Helvetica Neue, Arial, sans-serif;
+            // font-size: .875rem;
+            // font-weight: 400;
+
+            @include fontDetails();
             line-height: 1.125rem;
             letter-spacing: .16px;
             width: 58px;
