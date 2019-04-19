@@ -21,3 +21,24 @@ body {
     color: var(--black);
     line-height: var(--base-line-height);
 }
+
+ul,
+ol {
+    &.no-style {
+        list-style: none;
+    }
+
+    li {
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+
+dd,
+dt,
+dl {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
