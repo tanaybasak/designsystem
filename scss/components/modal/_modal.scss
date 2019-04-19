@@ -111,7 +111,15 @@
     }
 }
 
-@include respond-to(phone){
+@include respond-to(x-small){
+    .#{$prefix}-modal-container-sm {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+
+@include respond-to(small){
     .#{$prefix}-modal-container-sm {
         width: 100% !important;
         height: 100% !important;
