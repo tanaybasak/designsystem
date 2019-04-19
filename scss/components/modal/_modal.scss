@@ -1,19 +1,17 @@
 .#{$prefix}-modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
+    // position: fixed;
+    // top: 0;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-
-    background-color: hsla(0, 0%, 9%, .5); // how it work
-    transition: opacity .15s cubic-bezier(.4, .14, 1, 1), z-index 0s cubic-bezier(.4, .14, 1, 1) .15s, visibility 0s cubic-bezier(.4, .14, 1, 1) .15s; // how it works
+    background-color: hsla(var(--grey-secondary), 0%, 9%, .5);
     visibility: hidden;
 
+    // transition: opacity .15s cubic-bezier(.4, .14, 1, 1), z-index 0s cubic-bezier(.4, .14, 1, 1) .15s, visibility 0s cubic-bezier(.4, .14, 1, 1) .15s; // how it works
     &-isVisible {
         z-index: 9000;
         opacity: 1;
@@ -23,38 +21,50 @@
 
 
     .#{$prefix}-modal-container {
+
+        &-danger{
+            border-top: 4px solid #E0182D;  
+        }
         position: relative;
         display: flex;
         flex-direction: column;
-        background-color: var(--grey-secondary);
+        background-color: #FFFFFF;
+        border-top: 4px solid #0066B3;
+        box-shadow: 0 12px 24px 0 rgba(0,0,0,0.10);
 
         //media query
-        height: 50%;
+        // height: 315px;
+        height: auto;
         width: 50%;
         max-width: 768px;
         max-height: 90%;
-
-
     }
 
 
     &-header {
-        padding-top: 1rem;
+        padding-top: 24px;
         margin-bottom: 1rem;
         width: 75%;
-        padding-left: 1rem;
+        padding-left: 10%;
+        // height: 62px;
     }
 
     &-label {
+
+        &-disable{
+            display: none;
+        }
         font-size: .75rem;
         font-weight: 400;
         line-height: 1rem;
         letter-spacing: .32px;
         margin-bottom: .25rem;
+        height: 16px;
     }
 
     &-heading {
         font-weight: 400;
+        height: 18.4px;
     }
 
 
@@ -78,8 +88,10 @@
         overflow-y: auto;
         margin-bottom: 3rem;
         font-weight: 400;
-        width: 75%;
-        padding-left: 1rem;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+        height: 123px;
     }
 
 
@@ -87,27 +99,21 @@
         display: flex;
         margin-top: auto;
         height: 4rem;
-        background-color: #dcdcdc;
+        background-color: #E4F5FC;
+        justify-content: flex-end;
+        padding-right: 10%;
+        height: 62px;
+
+        &-disable{
+            display: none;
+        }
+
     }
+}
 
-    &-btn {
-        max-width: none;
-        width: 50%;
-        height: 4rem;
-        margin: 0;
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-
-        &-secondary {
-            background-color: #171717;
-            border: 1px solid transparent;
-            color: #fff;
-        }
-
-        &-primary {
-            background-color: #0062ff;
-            border: 1px solid transparent;
-            color: #fff;
-        }
+@include respond-to(phone){
+    .#{$prefix}-modal-container-sm {
+        width: 100% !important;
+        height: 100% !important;
     }
 }
