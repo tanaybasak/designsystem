@@ -24,7 +24,7 @@
         // font-weight: 400;
         // background-color: #f3f3f3;
         background-color: var(--grey-secondary);
-        color: #171717;
+        // color: #171717;
         display: flex;
         justify-content: space-between;
         line-height: 1.125rem;
@@ -136,7 +136,7 @@
             padding: 0 .875rem;
             border: none;
             border-left: 0.0625rem solid #dcdcdc;
-            fill: #171717;
+            // fill: #171717;
             transition: outline .11s cubic-bezier(.2, 0, .38, .9);
             transition: background-color .11s cubic-bezier(.2, 0, .38, .9);
 
