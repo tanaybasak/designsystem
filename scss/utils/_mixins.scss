@@ -10,6 +10,100 @@
  * This file contains all globally applicable @mixins
  */
 
+// GRID SYSTEMS
+@mixin generate-container($gutter: $total-gutter-width) {
+    width: 100%;
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin generate-row($gutter: $total-gutter-width) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -$gutter / 2;
+    margin-left: -$gutter / 2;
+}
+
+@mixin generate-col($size, $cols: $columns) {
+    flex: 0 0 percentage($size / $cols);
+    max-width: percentage($size / $cols); // Applies to IE10+ and Firefox.
+}
+
+@mixin generate-col-offset($size, $cols: $columns) {
+    $num: $size / $cols;
+    margin-left: if($num==0, 0, percentage($num));
+}
+
+// Framework grid generation
+//
+// Generate the correct number of grid classes given any value of `$columns`.
+@mixin generate-cols($cols: $columns, $gutter: $total-gutter-width, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint in map-keys($breakpoints) {
+        $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+        // Allow columns to stretch full width below their breakpoints
+        @for $i from 1 through $cols {
+            .#{$prefix}-col#{$infix}-#{$i} {
+                @extend %common-col-rules;
+            }
+        }
+
+        .#{$prefix}-col#{$infix},
+        .#{$prefix}-col#{$infix}-auto {
+            @extend %common-col-rules;
+        }
+
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+
+            // Provide basic `.#{$prefix}-col-{bp}` classes for equal-width flexbox columns
+            .#{$prefix}-col#{$infix} {
+                flex-basis: 0;
+                flex-grow: 1;
+                max-width: 100%;
+            }
+
+            .#{$prefix}-col#{$infix}-auto {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: 100%; // Reset earlier grid tiers
+            }
+
+            @for $i from 1 through $cols {
+                .#{$prefix}-col#{$infix}-#{$i} {
+                    @include generate-col($i, $cols);
+                }
+            }
+
+            .#{$prefix}-order#{$infix}-first {
+                order: -1;
+            }
+
+            .#{$prefix}-order#{$infix}-last {
+                order: $cols + 1;
+            }
+
+            @for $i from 0 through $cols {
+                .#{$prefix}-order#{$infix}-#{$i} {
+                    order: $i;
+                }
+            }
+
+            // `$cols - 1` because offsetting by the width of an entire row isn't possible
+            @for $i from 0 through ($cols - 1) {
+
+                // Avoid emitting useless .#{$prefix}-offset-0
+                @if not ($infix==""and $i==0) {
+                    .#{$prefix}-offset#{$infix}-#{$i} {
+                        @include generate-col-offset($i, $cols);
+                    }
+                }
+            }
+        }
+    }
+}
+
 // MEDIA QUERIES
 @mixin respond-to($breakpoint) {
     @if $breakpoint==phone {
@@ -28,29 +122,5 @@
         @media (min-width: #{$desktop-width}) {
             @content;
         }
-    }
-}
-
-// GRID SYSTEMS
-@mixin generate-row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@mixin generate-col($i, $cols: $columns) {
-    @if $i==6 {
-        flex-basis: 50%;
-    }
-
-    @else {
-        flex-basis: 100%;
-    }
-
-    @include respond-to(tablet) {
-        flex-basis: percentage($i / $cols);
-    }
-
-    @include respond-to(desktop) {
-        flex-basis: percentage($i / $cols);
     }
 }
