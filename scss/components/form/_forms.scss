@@ -10,16 +10,19 @@
 
 .#{$prefix}-form-group {
     margin-bottom: 1.5rem;
+
     >input[data-invalid=true],
     input[data-invalid=true]:focus,
     textarea[data-invalid=true],
     textarea[data-invalid=true]:focus {
         box-shadow: 0 2px 0 0 $error;
     }
+
     input[data-invalid=true]~.#{$prefix}-error-msg,
     textarea[data-invalid=true]~.#{$prefix}-error-msg {
         color: $error;
     }
+
     input[data-invalid=false]~.#{$prefix}-error-msg {
         display: none;
     }
@@ -50,6 +53,7 @@ label {
     resize: vertical;
     padding: 1rem;
     height: auto;
+
     &[data-invalid=true]~.#{$prefix}-error-msg {
         color: $error;
         @include getFontWeight("regular");
@@ -57,83 +61,147 @@ label {
         margin-top: .25rem;
         @include lineHeight("error");
     }
+
     &[data-invalid=false]~.#{$prefix}-error-msg {
         display: none;
     }
 }
 
 // Checkbox
-.#{$prefix}-checkbox-wrapper {
-    margin-bottom: 1rem;
+// .#{$prefix}-checkbox-wrapper {
+//     margin-bottom: 1rem;
 
-    &:first-of-type {
-        margin-top: 0.5rem;
-    }
+//     &:first-of-type {
+//         margin-top: 0.5rem;
+//     }
 
-    &:last-of-type {
-        margin-bottom: 0;
-    }
-}
+//     &:last-of-type {
+//         margin-bottom: 0;
+//     }
+// }
 
-.#{$prefix}-checkbox {
-    display: none;
+// .#{$prefix}-checkbox {
+//     display: none;
 
-    &[disabled]~.#{$prefix}-checkbox-label {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
+// &[disabled]~.#{$prefix}-checkbox-label {
+//     opacity: 0.5;
+//     cursor: not-allowed;
+// }
 
-    &:checked+.#{$prefix}-checkbox-label::before {
-        background-color: $checkbox-border-color-checked;
-        border-color: $checkbox-border-color-checked;
-    }
+//     &:checked+.#{$prefix}-checkbox-label::before {
+//         background-color: $checkbox-border-color-checked;
+//         border-color: $checkbox-border-color-checked;
+//     }
 
-    &:checked+.#{$prefix}-checkbox-label::after {
-        opacity: 1;
-        transform: scale(1) rotate(-45deg);
-    }
+//     &:checked+.#{$prefix}-checkbox-label::after {
+//         opacity: 1;
+//         transform: scale(1) rotate(-45deg);
+//     }
 
-    &:focus+.#{$prefix}-checkbox-label::before {
-        outline: 1px solid transparent;
-        box-shadow: 0 0 0 3px $checkbox-focus-color;
-    }
-}
+//     &:focus+.#{$prefix}-checkbox-label::before {
+//         outline: 1px solid transparent;
+//         box-shadow: 0 0 0 3px $checkbox-focus-color;
+//     }
+// }
+
+// .#{$prefix}-checkbox-label {
+//     @include getFontSize("14");
+//     @include getFontWeight("regular");
+//     display: inline-block;
+//     cursor: pointer;
+//     position: relative;
+//     padding-left: 1.5rem;
+//     min-height: 1rem;
+//     margin-bottom: 0;
+
+//     &::before {
+//         box-sizing: border-box;
+//         content: '';
+//         position: absolute;
+//         left: 0;
+//         top: calc(50% - 9px);
+//         height: 18px;
+//         width: 18px;
+//         border: $checkbox-border-width solid $checkbox-border-color;
+//         background-color: $checkbox-background-color;
+//     }
+
+//     &::after {
+//         box-sizing: border-box;
+//         content: '';
+//         width: 9px;
+//         height: 5px;
+//         background: none;
+//         border-left: 1px solid $white;
+//         border-bottom: 1px solid $white;
+//         transform: scale(0) rotate(-45deg);
+//         position: absolute;
+//         left: 0.3125rem;
+//         top: 50%;
+//         margin-top: -0.1875rem;
+//     }
+// }
+
+//Checkbox
 
 .#{$prefix}-checkbox-label {
-    @include getFontSize("14");
-    @include getFontWeight("regular");
-    display: inline-block;
-    cursor: pointer;
+    margin-bottom: 0.5rem;
     position: relative;
-    padding-left: 1.5rem;
-    min-height: 1rem;
-    margin-bottom: 0;
+    display: block;
+    cursor: pointer;
+    padding-left: 23px;
+    font-size: 0.875rem;
+    user-select: none;
 
-    &::before {
-        box-sizing: border-box;
+    input[type='checkbox'] {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+
+        &[disabled]~.#{$prefix}-checkbox {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        &:checked+.#{$prefix}-checkbox::after {
+            opacity: 1;
+            transform: scale(1) rotate(-45deg);
+        }
+
+        &:checked+.#{$prefix}-checkbox {
+            background-color: $checkbox-border-color-checked;
+            border-color: $checkbox-border-color-checked;
+        }
+
+        &:focus+.#{$prefix}-checkbox::before {
+            outline: 1px solid transparent;
+            box-shadow: 0 0 0 3px $checkbox-focus-color;
+        }
+    }
+
+    .#{$prefix}-checkbox {
         content: '';
         position: absolute;
         left: 0;
-        top: calc(50% - 9px);
+        top: 0;
         height: 18px;
         width: 18px;
         border: $checkbox-border-width solid $checkbox-border-color;
         background-color: $checkbox-background-color;
-    }
 
-    &::after {
-        box-sizing: border-box;
-        content: '';
-        width: 9px;
-        height: 5px;
-        background: none;
-        border-left: 1px solid $white;
-        border-bottom: 1px solid $white;
-        transform: scale(0) rotate(-45deg);
-        position: absolute;
-        left: 0.3125rem;
-        top: 50%;
-        margin-top: -0.1875rem;
+        &::after {
+            position: absolute;
+            content: '';
+            width: 9px;
+            height: 5px;
+            background: none;
+            border-left: 1px solid $white;
+            border-bottom: 1px solid $white;
+            transform: scale(0) rotate(-45deg);
+            left: 0.2rem;
+            top: 50%;
+            margin-top: -0.1875rem;
+        }
     }
 }
 

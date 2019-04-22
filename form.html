@@ -49,7 +49,7 @@
                 <div class="hcl-form-group">
                     <label for="feedback3">Remarks</label>
                     <div class="hcl-helper-text">Optional Helper text goes here</div>
-                    <textarea data-invalid="true" aria-disabled="false" class="hcl-text-area" id="feedback2" rows="4"
+                    <textarea data-invalid="true" aria-disabled="false" class="hcl-text-area" id="feedback3" rows="4"
                         cols="50"></textarea>
                     <div class="hcl-error-msg">Validation message here</div>
                 </div>
@@ -59,18 +59,21 @@
             <article class="margin-around-5">
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Favourite Colors</legend>
-                    <div class="hcl-checkbox-wrapper" aria-disabled="false">
-                        <input class="hcl-checkbox" id="check1" type="checkbox" />
-                        <label class="hcl-checkbox-label" for="check1">Sample text 1</label>
-                    </div>
-                    <div class="hcl-checkbox-wrapper" aria-disabled="false">
-                        <input class="hcl-checkbox" id="check2" type="checkbox" checked />
-                        <label class="hcl-checkbox-label" for="check2">Sample text 2</label>
-                    </div>
-                    <div class="hcl-checkbox-wrapper" aria-disabled="true">
-                        <input class="hcl-checkbox" id="check3" type="checkbox" disabled />
-                        <label class="hcl-checkbox-label" for="check3">Sample text 3</label>
-                    </div>
+                    <label class="hcl-checkbox-label" for="check1">
+                        Check 1
+                        <input type="checkbox" id="check1" />
+                        <span class="hcl-checkbox"></span>
+                    </label>
+                    <label class="hcl-checkbox-label" for="check2">
+                        Check 2
+                        <input type="checkbox" id="check2" aria-checked="true" checked />
+                        <span class="hcl-checkbox"></span>
+                    </label>
+                    <label class="hcl-checkbox-label" for="check3">
+                        Check 3
+                        <input type="checkbox" id="check3" aria-checked="true" checked disabled />
+                        <span class="hcl-checkbox"></span>
+                    </label>
                 </fieldset>
             </article>
 
