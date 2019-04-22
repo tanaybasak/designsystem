@@ -78,6 +78,11 @@
                         <span>Toggle</span>
                     </a>
                 </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#notification" class="hcl-sidebar-list-link">
+                        <span>Notification</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- MAIN CONTENT LAYOUT -->
@@ -228,29 +233,55 @@
                 </ul>
             </section>
             <section id="toggle" class="hcl-container pt-5">
-                <label class="hcl-toggle">
-                    <input type="checkbox" />
-                    <span class="hcl-slider"></span>
+                <span class="hcl-toggle-container">
+                    <input type="checkbox" id="toggle_1" />
+                    <label class="hcl-toggle" for="toggle_1">
+                        <span class="hcl-slider"></span>
+                    </label>
                     <span class="hcl-toggle-off">Off</span>
                     <span class="hcl-toggle-on">On</span>
-                </label>
-            </section>
-            <section class="hcl-container pt-5">
-                <fieldset class="hcl-fieldset">
-                    <legend class="hcl-label">Toggle w/ Label</legend>
-                    <label class="hcl-toggle">
-                        <input type="checkbox" />
+                </span>
+                <span class="hcl-toggle-container">
+                    <input type="checkbox" id="toggle_2" />
+                    <label class="hcl-toggle" for="toggle_2">
                         <span class="hcl-slider"></span>
-                        <span class="hcl-toggle-off">Off</span>
-                        <span class="hcl-toggle-on">On</span>
                     </label>
-                </fieldset>
+                    <span class="hcl-toggle-off">Off</span>
+                    <span class="hcl-toggle-on">On</span>
+                </span>
+                <span class="hcl-toggle-container">
+                    <input type="checkbox" id="toggle_3" disabled />
+                    <label class="hcl-toggle" for="toggle_3">
+                        <span class="hcl-slider"></span>
+                    </label>
+                    <span class="hcl-toggle-off">Off</span>
+                    <span class="hcl-toggle-on">On</span>
+                </span>
             </section>
-            <section class="hcl-container pt-5">
-                <label class="hcl-toggle">
-                    <input type="checkbox" disabled />
-                    <span class="hcl-slider"></span>
-                </label>
+            <section id="notification" class="row">
+                <div class="col-12">
+                    <div data-notification="" class="hcl-notification hcl-success" role="alert">
+                        <div class="hcl-notification-body">
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" class="hcl-notification-icon" width="20" height="20"
+                                viewBox="0 0 32 32" aria-hidden="true">
+                                <path
+                                    d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
+                                </path>
+                            </svg>
+                            <div class="hcl-notification-text-wrapper">
+                                <p class="hcl-notification-title">Notification title</p>
+                                <p class="hcl-notification-subtitle">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has been the industry's standard dummy text ever since the 1500s.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="hcl-notification-close" type="button" aria-label="close">
+                        </button>
+                    </div>
+                </div>
             </section>
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>

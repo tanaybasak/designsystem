@@ -124,3 +124,19 @@
         }
     }
 }
+
+// Line height
+@mixin lineHeight($type) {
+    @if ($type=="heading") {
+        line-height: 1.125;
+    }
+
+    @else {
+        line-height: 1.15;
+    }
+}
+
+// px to rem
+@mixin pxtorem($value) {
+    font-size: ($value/$base-font-size-px) + rem;
+}
