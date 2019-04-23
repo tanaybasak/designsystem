@@ -6,10 +6,10 @@
  *******************************************************************
  */
 
-.#{$prefix}-toggle-container {
+.#{$prefix}-toggle {
     display: inline-block;
 
-    .#{$prefix}-toggle {
+    .#{$prefix}-toggle-label {
         position: relative;
         cursor: pointer;
         display: inline-block;
@@ -55,7 +55,7 @@
         height: 0;
         position: absolute;
 
-        &:checked+.#{$prefix}-toggle {
+        &:checked+.#{$prefix}-toggle-label {
             &:before {
                 background-color: var(--blue);
             }
@@ -68,20 +68,20 @@
             }
         }
 
-        &:focus+.#{$prefix}-toggle {
+        &:focus+.#{$prefix}-toggle-label {
             .#{$prefix}-slider {
                 box-shadow: 0 0 0 0.125rem #5AAAFA; // TODO: Need to check with design team
                 border: 0.125rem solid #5A6872;
             }
         }
 
-        &:hover+.#{$prefix}-toggle {
+        &:hover+.#{$prefix}-toggle-label {
             .#{$prefix}-slider {
                 border: 0.125rem solid #383838; // TODO: Need to check with design team
             }
         }
 
-        &:disabled+.#{$prefix}-toggle {
+        &:disabled+.#{$prefix}-toggle-label {
             &:before {
                 background-color: #D2D2D2; // TODO: Need to check with design team
                 cursor: not-allowed;
