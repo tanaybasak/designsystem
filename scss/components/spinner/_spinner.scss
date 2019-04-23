@@ -1,27 +1,51 @@
-.#{$prefix}-spinner {
+@mixin spinner($size) {
     --spinner-color: #55c9d3;
-    --spinner-stroke-width: 7;
 
     display: flex;
     justify-content: center;
 
-    &-svg {
-        height: 6.25rem;
-        width: 6.25rem;
+    >svg {
+        @if($size=='normal') {
+            height: 10.5rem;
+            width: 10.5rem;
+        }
+
+        @else if ($size=='small') {
+            height: 2rem;
+            width: 2rem;
+        }
+
         animation-name: infinite-spinning;
         animation-duration: 0.7s;
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
 
-        &-circle {
+        >circle {
             stroke: var(--spinner-color);
-            stroke-width: var(--spinner-stroke-width);
+            stroke-dashoffset: 40;
+
+            @if($size=='normal') {
+                stroke-width: 8;
+                stroke-dasharray: 240;
+            }
+
+            @else if ($size=='small') {
+                stroke-width: 12;
+                stroke-dasharray: 240;
+            }
+
             fill: transparent;
-            stroke-linecap: butt;
-            stroke-dasharray: 220;
         }
     }
+}
+
+.#{$prefix}-spinner {
+    @include spinner('normal');
+}
+
+.#{$prefix}-spinner-small {
+    @include spinner('small');
 }
 
 @keyframes infinite-spinning {
