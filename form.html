@@ -58,22 +58,36 @@
             <!-- Checkbox Components -->
             <article class="margin-around-5">
                 <fieldset class="hcl-fieldset">
-                    <legend class="hcl-legend">Favourite Colors</legend>
-                    <label class="hcl-checkbox-label" for="check1">
-                        Check 1
-                        <input type="checkbox" id="check1" />
-                        <span class="hcl-checkbox"></span>
-                    </label>
-                    <label class="hcl-checkbox-label" for="check2">
-                        Check 2
-                        <input type="checkbox" id="check2" aria-checked="true" checked />
-                        <span class="hcl-checkbox"></span>
-                    </label>
-                    <label class="hcl-checkbox-label" for="check3">
-                        Check 3
-                        <input type="checkbox" id="check3" aria-checked="true" checked disabled />
-                        <span class="hcl-checkbox"></span>
-                    </label>
+                    <legend class="hcl-legend">Horizontally arranged (default)</legend>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
+                        <label class="hcl-checkbox-label" for="check1">Text 1</label>
+                    </div>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
+                        <label class="hcl-checkbox-label" for="check2">Text 1</label>
+                    </div>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
+                        <label class="hcl-checkbox-label" for="check3">Text 1</label>
+                    </div>
+                </fieldset>
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Vertically arranged</legend>
+                    <div class="hcl-checkbox-group hcl-stack-vertical">
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check4" type="checkbox" value="check4" />
+                            <label class="hcl-checkbox-label" for="check4">Text 1</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check5" type="checkbox" value="check5" checked />
+                            <label class="hcl-checkbox-label" for="check5">Text 1</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check6" type="checkbox" value="check6" disabled />
+                            <label class="hcl-checkbox-label" for="check6">Text 1</label>
+                        </div>
+                    </div>
                 </fieldset>
             </article>
 
@@ -81,35 +95,33 @@
             <article class="margin-around-5">
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Horizontally arranged (default)</legend>
-                    <div class="hcl-radio-group">
-                        <div class="hcl-radio-item">
-                            <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" checked />
-                            <label class="hcl-radio-label" for="radio1"><span>Sample text 1</span></label>
-                        </div>
-                        <div class="hcl-radio-item">
-                            <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" />
-                            <label class="hcl-radio-label" for="radio2"><span>Sample text 2</span></label>
-                        </div>
-                        <div class="hcl-radio-item">
-                            <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
-                            <label class="hcl-radio-label" for="radio3"><span>Sample text 3</span></label>
-                        </div>
+                    <div class="hcl-radio-item">
+                        <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" checked />
+                        <label class="hcl-radio-label" for="radio1">Sample text 1</label>
+                    </div>
+                    <div class="hcl-radio-item">
+                        <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" />
+                        <label class="hcl-radio-label" for="radio2">Sample text 2</label>
+                    </div>
+                    <div class="hcl-radio-item">
+                        <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
+                        <label class="hcl-radio-label" for="radio3">Sample text 3</label>
                     </div>
                 </fieldset>
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Vertically arranged</legend>
                     <div class="hcl-radio-group hcl-stack-vertical">
                         <div class="hcl-radio-item">
-                            <input class="hcl-radio" id="radio4" type="radio" value="Option1" name="animals" checked />
-                            <label class="hcl-radio-label" for="radio4"><span></span>Sample text 1</span></label>
+                            <input class="hcl-radio" id="radio4" type="radio" value="Option4" name="animals" checked />
+                            <label class="hcl-radio-label" for="radio4">Sample text 1</label>
                         </div>
                         <div class="hcl-radio-item">
-                            <input disabled class="hcl-radio" id="radio5" type="radio" value="Option2" name="animals" />
-                            <label class="hcl-radio-label" for="radio5"><span>Sample text 2</span></label>
+                            <input disabled class="hcl-radio" id="radio5" type="radio" value="Option5" name="animals" />
+                            <label class="hcl-radio-label" for="radio5">Sample text 2</label>
                         </div>
                         <div class="hcl-radio-item">
-                            <input class="hcl-radio" id="radio6" type="radio" value="Option3" name="animals" />
-                            <label class="hcl-radio-label" for="radio6"><span>Sample text 3</span></label>
+                            <input class="hcl-radio" id="radio6" type="radio" value="Option6" name="animals" />
+                            <label class="hcl-radio-label" for="radio6">Sample text 3</label>
                         </div>
                     </div>
                 </fieldset>
