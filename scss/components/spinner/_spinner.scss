@@ -5,12 +5,12 @@
     justify-content: center;
 
     >svg {
-        @if($size=='normal') {
+        @if($size==normal) {
             height: 10.5rem;
             width: 10.5rem;
         }
 
-        @else if ($size=='small') {
+        @else if ($size==small) {
             height: 2rem;
             width: 2rem;
         }
@@ -41,11 +41,11 @@
 }
 
 .#{$prefix}-spinner {
-    @include spinner('normal');
+    @include spinner(normal);
 }
 
 .#{$prefix}-spinner-small {
-    @include spinner('small');
+    @include spinner(small);
 }
 
 @keyframes infinite-spinning {
