@@ -28,25 +28,32 @@
       |
       V
     themes
+    ---------------------------------------------------------------------------------------
+    ** Please do not put comment messages in between one of the directories mentioned above
+    ** while importing your respective partials below rather put messages as a single comment
+    ** on the right side unless it is a label comment for the above mentioned directories
 */
 
 // Utilities partials
 @import "utils/variables";
 @import "utils/functions";
-// @import 'utils/mixins'; // TODO: Subject to be added
-// @import 'utils/placeholders'; // TODO: Subject to be added
-@import "utils/mediaQueries";
+@import "utils/mixins";
+@import 'utils/placeholders';
 @import "utils/utility";
 // Base partials
 @import "base/reset";
 @import "base/global";
+@import "base/typography/typography";
 // Layout partials
 @import "layout/grids";
+@import "layout/header";
+@import "layout/sidebar";
+@import "layout/content";
 // Components partials
-@import "components/typography/typography";
 @import "components/button/button";
+@import "components/breadcrumb/breadcrumb";
 @import "components/spinner/spinner";
 @import "components/tag/tag";
-// Form Components TODO: To Separate into different file after component list grows.
-@import "components/form/forms";
-@import "components/tag/tag";
+@import "components/toggle/toggle";
+@import "components/form/forms"; // TODO: To Separate into different file after component list grows.
+@import "components/notification/notification";

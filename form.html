@@ -14,7 +14,7 @@
     <main>
         <section class="patron-container pt-3">
             <!-- Input Components -->
-            <form class="margin-around-5">
+            <form class="m-5">
                 <div class="hcl-form-group">
                     <label for="firstname">First Name</label>
                     <input type="text" class="hcl-form-control" id="firstname" placeholder="Enter First Name" />
@@ -26,7 +26,8 @@
                 </div>
                 <div class="hcl-form-group">
                     <label for="middlename">Middle Name</label>
-                    <input data-invalid type="text" class="hcl-form-control" id="middlename" placeholder="Disabled">
+                    <input data-invalid="true" type="text" class="hcl-form-control" id="middlename"
+                        placeholder="Disabled" />
                     <div class="hcl-error-msg">Validation message here</div>
                 </div>
                 <div class="hcl-form-group">
@@ -48,14 +49,14 @@
                 <div class="hcl-form-group">
                     <label for="feedback3">Remarks</label>
                     <div class="hcl-helper-text">Optional Helper text goes here</div>
-                    <textarea data-invalid aria-disabled="false" class="hcl-text-area" id="feedback2" rows="4"
+                    <textarea data-invalid="true" aria-disabled="false" class="hcl-text-area" id="feedback2" rows="4"
                         cols="50"></textarea>
                     <div class="hcl-error-msg">Validation message here</div>
                 </div>
             </form>
 
             <!-- Checkbox Components -->
-            <article class="margin-around-5">
+            <article class="m-5">
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Favourite Colors</legend>
                     <div class="hcl-checkbox-wrapper" aria-disabled="false">
@@ -74,7 +75,7 @@
             </article>
 
             <!-- Radio Components -->
-            <article class="margin-around-5">
+            <article class="m-5">
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Horizontally arranged (default)</legend>
                     <div class="hcl-radio-group">

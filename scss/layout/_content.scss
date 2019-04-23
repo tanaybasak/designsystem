@@ -1,0 +1,19 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+.#{$prefix}-content {
+    display: flex;
+
+    &-main {
+        background-color: var(--white);
+        flex: 1;
+        height: calc(100vh - 3.125rem);
+        min-height: calc(100vh - 3.125rem);
+        overflow: auto;
+    }
+}

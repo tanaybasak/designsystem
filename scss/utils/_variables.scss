@@ -20,6 +20,7 @@
     --grey: #707070;
     --white: #fff;
     --blue: #0066b3;
+    --dark-blue: #132730;
     --dark-secondary: #4696D2;
     --primary-background-focus: #00578F;
     --primary-background-disabled: #B9E6FA;
@@ -30,6 +31,8 @@
     --black-secondary: #555;
     --error: #E0182D;
     --success: #589D25;
+    --info: #4696D2;
+    --warning: #FAC43B;
 }
 
 // SASS VARIABLES
@@ -70,3 +73,35 @@ $checkbox-focus-color: #7cc7ff;
 // Errors
 $error:var(--error);
 $success:var(--success);
+$info: var(--info);
+$danger: var(--error);
+$warning: var(--warning);
+// GRIDS GUTTER
+$gutter: 0.9375rem;
+$grid-columns: 12;
+$minHeight: 0.0625rem;
+// BREAKPOINTS
+// TODO: Subject to be changed once the breakpoints are finalized
+$tablet-mobile: 640px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (xs: 0,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px) !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (sm: 540px,
+md: 720px,
+lg: 960px,
+xl: 1140px) !default;
