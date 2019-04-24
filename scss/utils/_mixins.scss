@@ -18,13 +18,13 @@
         }
     }
 
-    @if $breakpoint==tablet {
+    @else if $breakpoint==tablet {
         @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
             @content;
         }
     }
 
-    @if $breakpoint==desktop {
+    @else if $breakpoint==desktop {
         @media (min-width: #{$desktop-width}) {
             @content;
         }
@@ -35,22 +35,62 @@
 @mixin generate-row {
     display: flex;
     flex-wrap: wrap;
+    margin-right: -$gutter;
+    margin-left: -$gutter;
 }
 
-@mixin generate-col($i, $cols: $columns) {
-    @if $i==6 {
-        flex-basis: 50%;
-    }
+@mixin generate-col($size, $columns: $grid-columns) {
+    // @if $size==6 {
+    //     flex-basis: 50%;
+    // }
 
-    @else {
-        flex-basis: 100%;
-    }
+    // @else {
+    //     flex-basis: 100%;
+    // }
 
     @include respond-to(tablet) {
-        flex-basis: percentage($i / $cols);
+        flex: 0 0 percentage($size / $columns);
+        max-width: percentage($size / $columns);
     }
 
     @include respond-to(desktop) {
-        flex-basis: percentage($i / $cols);
+        flex: 0 0 percentage($size / $columns);
+        max-width: percentage($size / $columns);
     }
+}
+
+@mixin generate-col-offset($size, $columns: $grid-columns) {
+    $num: $size / $columns;
+    margin-left: if($num==0, 0, percentage($num));
+}
+
+// Resize
+@mixin resizable($direction) {
+    overflow: auto;
+    resize: $direction;
+}
+
+// Clear fix
+@mixin clearfix() {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+// Line height
+@mixin lineHeight($type) {
+    @if ($type=="heading") {
+        line-height: 1.125;
+    }
+
+    @else {
+        line-height: 1.15;
+    }
+}
+
+// px to rem
+@mixin pxtorem($value) {
+    font-size: ($value/$base-font-size-px) + rem;
 }

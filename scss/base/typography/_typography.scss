@@ -8,21 +8,68 @@
 
 @import "typographyMixins";
 
+// Font weight
+@each $key,
+$value in $fontWeights-map {
+    .#{$prefix}-font-#{$key} {
+        @include getFontWeight($key);
+    }
+}
+
 // Font style
-.#{$prefix}-textweight-bold {
-    @include getFontWeight("bold");
+@each $key,
+$value in $textStyles-map {
+    .#{$prefix}-font-#{$key} {
+        @include getTextStyles($key);
+    }
 }
 
-.#{$prefix}-textweight-light {
-    @include getFontWeight("light");
+// Text decoration style
+@each $key,
+$value in $textDecorationStyle-map {
+    .#{$prefix}-font-#{$key} {
+        @include getTextDecorationStyle($key);
+    }
 }
 
-.#{$prefix}-textweight-regular {
-    @include getFontWeight("regular");
+// Text decoration line
+@each $key,
+$value in $textDecorationLine-map {
+    .#{$prefix}-font-#{$key} {
+        @include getTextDecorationLine($key);
+    }
 }
 
-.#{$prefix}-textweight-semibold {
-    @include getFontWeight("semibold");
+// Text transform
+@each $key,
+$value in $textTransforms-map {
+    .#{$prefix}-font-#{$key} {
+        @include getTextTransform($key);
+    }
+}
+
+// Text alignment
+@each $key,
+$value in $textAlignments-map {
+    .#{$prefix}-font-#{$key} {
+        @include getTextAlignment($key);
+    }
+}
+
+// White space
+@each $key,
+$value in $whiteSpaces-map {
+    .#{$prefix}-whitespace-#{key} {
+        @include getWhiteSpace($key);
+    }
+}
+
+// Writing Mode
+@each $key,
+$value in $writingModes-map {
+    .#{$prefix}-writing-#{key} {
+        @include getWritingMode($key);
+    }
 }
 
 // Headings
@@ -31,7 +78,7 @@ h1,
 .#{prefix}-giga {
     @include getFontSize("h1");
     @include lineHeight("heading");
-    @include getFontWeight("light");
+    @include getFontWeight(light);
 }
 
 h2,
@@ -39,7 +86,7 @@ h2,
 .#{$prefix}-mega {
     @include getFontSize("h2");
     @include lineHeight("heading");
-    @include getFontWeight("light");
+    @include getFontWeight(light);
 }
 
 h3,
@@ -47,7 +94,7 @@ h3,
 .#{prefix}-alpha {
     @include getFontSize("h3");
     @include lineHeight("heading");
-    @include getFontWeight("light");
+    @include getFontWeight(light);
 }
 
 h4,
@@ -55,7 +102,7 @@ h4,
 .#{prefix}-beta {
     @include getFontSize("h4");
     @include lineHeight("heading");
-    @include getFontWeight("light");
+    @include getFontWeight(light);
 }
 
 h5,
@@ -63,14 +110,14 @@ h5,
 .#{prefix}-gamma {
     @include getFontSize("h5");
     @include lineHeight("heading");
-    @include getFontWeight("light");
+    @include getFontWeight(light);
 }
 
 
 .#{prefix}-type-delta {
     @include getFontSize("h6");
     @include lineHeight("heading");
-    @include getFontWeight("semibold");
+    @include getFontWeight(semibold);
 }
 
 h6,
@@ -82,31 +129,31 @@ h6,
 .#{prefix}-type-epsilon {
     @include getFontSize("16");
     line-height: var(--base-line-height);
-    @include getFontWeight("semibold");
+    @include getFontWeight(semibold);
 }
 
 .#{prefix}-type-zeta {
     @include getFontSize("14");
     line-height: var(--base-line-height);
-    @include getFontWeight("semibold");
+    @include getFontWeight(semibold);
 }
 
 .#{prefix}-type-omega {
     @include getFontSize("12");
     line-height: var(--base-line-height);
-    @include getFontWeight("semibold");
+    @include getFontWeight(semibold);
 }
 
 .#{prefix}-type-legal {
     @include getFontSize("11");
     line-height: var(--base-line-height);
-    @include getFontWeight("regular");
+    @include getFontWeight(regular);
 }
 
 .#{prefix}-type-caption {
     @include getFontSize("12");
     line-height: var(--base-line-height);
-    @include getFontWeight("regular");
+    @include getFontWeight(regular);
 }
 
 // Anchor link
@@ -127,5 +174,12 @@ p,
     @include getFontSize("16");
     color: inherit;
     line-height: var(--base-line-height);
-    @include getFontWeight("regular");
+    @include getFontWeight(regular);
+}
+
+// Text overflow
+.#{$prefix}-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    @include getWhiteSpace(nowrap);
 }

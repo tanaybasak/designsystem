@@ -1,17 +1,16 @@
 {
   "name": "patron-css",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Patron CSS Framework",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel layout.html -d output",
-    "build": "parcel build layout.html -d dist && node defaultBundleName.js"
+    "dev": "parcel index.html -d output",
+    "build": "parcel build index.html -d dist && node defaultBundleName.js"
   },
   "author": "HCL Products & Platforms",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^1.11.0",
-    "popper.js": "^1.15.0"
+    "parcel": "^1.11.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.10",

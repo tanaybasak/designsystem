@@ -78,10 +78,30 @@ $danger: var(--error);
 $warning: var(--warning);
 // GRIDS GUTTER
 $gutter: 0.9375rem;
-$columns: 12;
+$grid-columns: 12;
 $minHeight: 0.0625rem;
 // BREAKPOINTS
 // TODO: Subject to be changed once the breakpoints are finalized
 $tablet-mobile: 640px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (xs: 0,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px) !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (sm: 540px,
+md: 720px,
+lg: 960px,
+xl: 1140px) !default;

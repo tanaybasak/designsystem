@@ -1,35 +1,61 @@
 .#{$prefix}-dropdown {
+    display: inline-block;
     position: relative;
+    min-width: 400px;
 
-    &-toggle {}
+    &-toggle {
+        background: #EFEFEF;
+        font-size: 14px;
+        color: #132730;
+        line-height: 18px;
+        outline: none;
+        width: 100%;
+        text-align: left;
+        margin: 0;
+        border-bottom: 1px solid #8c8c8c;
+        padding-right: 2.5rem;
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: .3em solid #0066B3;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+            position: absolute;
+            top: 50%;
+            right: .875rem;
+            transform: translate(-50%, -50%);
+        }
+    }
 
     &-container {
         position: absolute;
-        top: 100%;
+        top: 0;
         left: 0;
+        will-change: transform;
         z-index: 1000;
-        float: left;
         min-width: 10rem;
-        padding: .5rem 0;
-        margin: .125rem 0 0;
         font-size: 1rem;
         color: #212529;
         text-align: left;
         list-style: none;
-        background-color: #fff;
+        background-color: #FFFFFF;
         background-clip: padding-box;
-        border: 1px solid rgba(0, 0, 0, .15);
-        border-radius: .25rem;
-        transform: translate3d(0px, 38px, 0px);
-        top: 0px;
-        left: 0px;
-        will-change: transform;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+        border-bottom: 1px solid #8c8c8c;
+        display: none;
+        width: 100%;
+
+        &.show {
+            display: block;
+        }
     }
 
     &-item {
-        display: block;
         width: 100%;
-        padding: .25rem 1.5rem;
+        height: 40px;
         clear: both;
         font-weight: 400;
         color: #212529;
@@ -37,5 +63,26 @@
         white-space: nowrap;
         background-color: transparent;
         border: 0;
+        font-size: 14px;
+        color: #565656;
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 13px 16px;
+
+        &:hover {
+            background: rgba(70, 150, 210, 0.10);
+        }
     }
+
+    &-item-selected {
+        display: none;
+    }
+
+    &.#{$prefix}-droptop {
+        .#{$prefix}-dropdown-container {
+            border: transparent;
+            border-top: 1px solid #8c8c8c;
+        }
+    }
+
 }
