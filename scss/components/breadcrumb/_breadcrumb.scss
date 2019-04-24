@@ -9,22 +9,12 @@
 $breadcrumb-margin: 1rem;
 
 .#{$prefix}-breadcrumb {
-    display: inline;
-
-    @include tablet {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    @include desktop {
-        display: flex;
-        flex-wrap: wrap;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
     &-item {
         margin-right: $breadcrumb-margin;
-        display: flex;
-        align-items: center;
         color: var(--blue);
         font-size: 0.875rem;
 
@@ -47,7 +37,7 @@ $breadcrumb-margin: 1rem;
     }
 
     &-item-active {
-        .hcl-link {
+        .#{$prefix}-link {
             color: var(--dark-blue);
             @include getFontWeight("semibold");
             @include getTextDecorationLine("underline");

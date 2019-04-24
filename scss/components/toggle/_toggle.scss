@@ -1,46 +1,50 @@
-.#{$prefix}-fieldset {
-    margin-bottom: 2rem;
-
-    .#{$prefix}-label {
-        font-size: .75rem;
-        letter-spacing: .02rem;
-        font-weight: 400;
-        line-height: 1rem;
-        color: #565656;
-        display: inline-block;
-        vertical-align: baseline;
-        margin-bottom: .5rem;
-    }
-}
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 
 .#{$prefix}-toggle {
-    position: relative;
     display: inline-block;
-    width: 3rem;
-    height: 1.5rem;
 
-    .#{$prefix}-slider {
-        position: absolute;
+    .#{$prefix}-toggle-label {
+        position: relative;
         cursor: pointer;
+        display: inline-block;
+        width: 3rem;
+        height: 1.5rem;
         top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #8c8c8c;
-        -webkit-transition: .4s;
-        transition: .4s;
-        border-radius: 2.125rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0;
 
         &:before {
-            position: absolute;
             content: "";
-            height: 1.125rem;
-            width: 1.125rem;
-            left: 0.1875rem;
-            bottom: 0.1875rem;
-            background-color: #dcdcdc;
-            -webkit-transition: .4s;
+            position: relative;
+            width: 3rem;
+            display: block;
+            top: 50%;
+            left: 0;
+            background-color: #717171; // TODO: Need to check with design team
             transition: .4s;
+            transform: translate(0, -50%);
+            height: 0.25rem;
+        }
+
+        .#{$prefix}-slider {
+            position: absolute;
+            left: 0;
+            display: block;
+            background: white;
+            height: 1.5rem;
+            width: 1.5rem;
+            top: 50%;
+            background-color: #F5F5F5; // TODO: Need to check with design team
+            border: 0.125rem solid #717171; // TODO: Need to check with design team
+            transition: .4s;
+            transform: translate(0, -50%);
             border-radius: 50%;
         }
     }
@@ -49,54 +53,73 @@
         opacity: 0;
         width: 0;
         height: 0;
+        position: absolute;
 
-        &:active~span.#{$prefix}-slider,
-        &:focus~span.#{$prefix}-slider {
-            box-shadow: 0 0 0 0.125rem #0062ff;
+        &:checked+.#{$prefix}-toggle-label {
+            &:before {
+                background-color: var(--blue);
+            }
+
+            .#{$prefix}-slider {
+                top: 50%;
+                transform: translate(1.5rem, -50%);
+                background-color: var(--blue);
+                border: none;
+            }
         }
 
-        &:checked+.#{$prefix}-slider {
-            background-color: #25a147;
+        &:focus+.#{$prefix}-toggle-label {
+            .#{$prefix}-slider {
+                box-shadow: 0 0 0 0.125rem #5AAAFA; // TODO: Need to check with design team
+                border: 0.125rem solid #5A6872;
+            }
         }
 
-        &:checked+.#{$prefix}-slider:before {
-            -webkit-transform: translateX(1.5rem);
-            -ms-transform: translateX(1.5rem);
-            transform: translateX(1.5rem);
-            background-color: #ffffff;
+        &:hover+.#{$prefix}-toggle-label {
+            .#{$prefix}-slider {
+                border: 0.125rem solid #383838; // TODO: Need to check with design team
+            }
         }
 
-        &:disabled+.#{$prefix}-slider {
-            background-color: #f3f3f3;
-            cursor: not-allowed;
+        &:disabled+.#{$prefix}-toggle-label {
+            &:before {
+                background-color: #D2D2D2; // TODO: Need to check with design team
+                cursor: not-allowed;
+            }
+
+            .#{$prefix}-slider {
+                background-color: #F5F5F5; // TODO: Need to check with design team
+                border: 0.125rem solid #D2D2D2; // TODO: Need to check with design team
+                cursor: not-allowed;
+            }
         }
 
-        &:disabled+.#{$prefix}-slider:before {
-            background-color: #bebebe;
-        }
-
-        &:disabled~span.#{$prefix}-slider {
-            box-shadow: none;
-        }
-
-        &:checked~span.#{$prefix}-toggle-on,
-        &:not(:checked)~span.#{$prefix}-toggle-off {
-            display: inline-block;
+        &:disabled~.#{$prefix}-toggle-off,
+        &:disabled~.#{$prefix}-toggle-on {
+            color: #AAAAAA; // TODO: Need to check with design team
         }
     }
 
-    &-off,
-    &-on {
-        display: none;
-        top: 0;
-        left: 3.125rem;
-        right: 0;
-        bottom: 0;
+    .#{$prefix}-toggle-off,
+    .#{$prefix}-toggle-on {
         font-size: .875rem;
         font-weight: 400;
-        line-height: 1.125rem;
+        line-height: 1.5rem;
         letter-spacing: .01rem;
-        position: relative;
-        margin-left: .5rem;
+        color: #0F212E; // TODO: Need to check with design team
+    }
+
+    .#{$prefix}-toggle-off {
+        float: left;
+    }
+
+    .#{$prefix}-toggle-on {
+        float: right;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
     }
 }
