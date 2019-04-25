@@ -1,6 +1,6 @@
 .#{$prefix}-tag {
     font-size: 0.75rem;
-    @include getFontWeight("regular");
+    @include getFontWeight(regular);
     line-height: 1rem;
     letter-spacing: .32px;
     display: inline-flex;
@@ -23,8 +23,8 @@
     }
 
     &-primary {
-        background-color: #0066B3;
-        color: #fff;
+        background-color: $blue;
+        color: $white;
 
         &:hover:not([disabled]) {
             background-color: #00518F;
@@ -36,16 +36,15 @@
             border-color: #003D6B;
         }
 
-        >.#{$prefix}-tag-close {
-            background-color: #fff;
-            color: #3D70B2;
+        >.#{$prefix}-close {
+            @include hcl-close-icon(18, $white, #3D70B2, true);
         }
     }
 
     &-secondary {
-        background-color: #fff;
-        border: 1px solid #0066B3;
-        color: #0066B3;
+        background-color: $white;
+        border: 1px solid $blue;
+        color: $blue;
 
         &:hover:not([disabled]) {
             background-color: #e5eff7;
@@ -57,16 +56,15 @@
             border-color: #003D6B;
         }
 
-        >.#{$prefix}-tag-close {
-            background-color: #0066B3;
-            color: #fff;
+        >.#{$prefix}-close {
+            @include hcl-close-icon(20, $blue, $white, true);
         }
     }
 
     &:disabled,
     &[disabled] {
         opacity: 0.5;
-        cursor: no-drop;
+        cursor: not-allowed;
     }
 
     &-thumbnail {
@@ -80,15 +78,5 @@
         +.hcl-tag-text {
             margin-left: 1.875rem;
         }
-    }
-
-    &-close {
-        width: 1.125rem;
-        height: 1.125rem;
-        border-radius: 50%;
-        @include getFontWeight("semibold");
-        font-size: 1rem;
-        line-height: 1.125;
-        margin-left: 0.5rem;
     }
 }
