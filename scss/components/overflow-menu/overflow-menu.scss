@@ -1,11 +1,11 @@
 @mixin option ($type) {
-    height: 32px;
+    height: 2rem;
     width: inherit;
-    padding-left: 18px;
-    padding-right: 10px;
-    font-size: 14px;
-    color: #132730;
-    line-height: 32px;
+    padding-left: 1.125rem;
+    padding-right: 0.625rem;
+    font-size: 0.875rem;
+    color: var(--dark-blue);
+    line-height: 2rem;
 
     &-disable {
         cursor: not-allowed;
@@ -21,17 +21,17 @@
     @else if ($type==danger) {
         &:hover {
             background-color: rgba(224, 24, 45, 1);
-            color: #FFFFFF;
+            color: var(--white);
         }
     }
 }
 
 @mixin options($type) {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
 
     @if ($type==danger) {
-        border-top: 1px solid #DFE3E6;
+        border-top: 0.0625rem solid var(--danger);
     }
 }
 
@@ -40,31 +40,31 @@
     position: relative;
 
     &-svg {
-        fill: #132730;
+        fill: var(--dark-blue);
     }
 
     &-triangle {
         position: absolute;
-        left: 2px;
-        top: 30px;
-        width: 10.5px;
-        height: 10.5px;
+        left: 0.125rem;
+        top: 1.875rem;
+        width: 0.65625rem;
+        height: 0.65625rem;
         transform: rotate(-45deg);
-        background: #FFFFFF;
-        border-top: 1px solid #DFE3E6;
-        border-right: 1px solid #DFE3E6;
+        background: var(--white);
+        border-top: 0.0625rem solid var(--danger);
+        border-right: 0.0625rem solid var(--danger);
         z-index: 5;
-        box-shadow: 8px 0 10px -6px rgba(0, 0, 0, 0.10);
+        box-shadow: 8px 0 0.625rem -0.375rem rgba(0, 0, 0, 0.10);
     }
 
     &-menu {
         position: absolute;
-        left: -129px;
-        top: 35px;
+        left: -8.0625rem;
+        top: 2.1875rem;
         height: auto;
-        width: 180px;
-        background-color: #FFFFFF;
-        border: 1px solid #DFE3E6;
+        width: 11.25rem;
+        background-color: var(--white);
+        border: 0.0625rem solid var(--danger);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
 
         &-options {
