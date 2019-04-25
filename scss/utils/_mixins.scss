@@ -26,20 +26,20 @@
     margin-left: -$gutter / 2;
 }
 
-@mixin generate-col($size, $cols: $columns) {
+@mixin generate-col($size, $cols: $grid-columns) {
     flex: 0 0 percentage($size / $cols);
     max-width: percentage($size / $cols); // Applies to IE10+ and Firefox.
 }
 
-@mixin generate-col-offset($size, $cols: $columns) {
+@mixin generate-col-offset($size, $cols: $grid-columns) {
     $num: $size / $cols;
     margin-left: if($num==0, 0, percentage($num));
 }
 
 // Framework grid generation
 //
-// Generate the correct number of grid classes given any value of `$columns`.
-@mixin generate-cols($cols: $columns, $gutter: $total-gutter-width, $breakpoints: $grid-breakpoints) {
+// Generate the correct number of grid classes given any value of `$grid-columns`.
+@mixin generate-cols($cols: $grid-columns, $gutter: $total-gutter-width, $breakpoints: $grid-breakpoints) {
     @each $breakpoint in map-keys($breakpoints) {
         $infix: breakpoint-infix($breakpoint, $breakpoints);
 
@@ -104,6 +104,21 @@
     }
 }
 
+// Resize
+@mixin resizable($direction) {
+    overflow: auto;
+    resize: $direction;
+}
+
+// Clearfix
+@mixin clearfix() {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
 // MEDIA QUERIES
 @mixin respond-to($breakpoint) {
     @if $breakpoint==phone {
@@ -112,13 +127,13 @@
         }
     }
 
-    @if $breakpoint==tablet {
+    @else if $breakpoint==tablet {
         @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
             @content;
         }
     }
 
-    @if $breakpoint==desktop {
+    @else if $breakpoint==desktop {
         @media (min-width: #{$desktop-width}) {
             @content;
         }
