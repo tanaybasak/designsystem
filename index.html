@@ -220,26 +220,33 @@
             </div>
         </section>
 
-        <section class="hcl-lightbox" >
-        </section>
+        <!-- <section class="hcl-lightbox">
+        </section> -->
         <section>
             <nav data-tabs role="navigation" class="tabs">
                 <ul role="tablist" class="tabs-nav">
-                    <li role="tab" class="tabs-nav-item">
-                        <a class="tabs-nav-link" href="javascript:void(0);">Tab 1</a>
+                    <li role="tab" class="tabs-nav-item" aria-controls="tab1">
+                        <a class="tabs-nav-link" href="#tab1">Tab 1</a>
                     </li>
-                    <li role="tab" class="tabs-nav-item tabs-nav-item--selected">
+                    <li role="tab" class="tabs-nav-item tabs-nav-item--selected" aria-controls="tab2" aria-selected="true">
                         <a class="tabs-nav-link" href="javascript:void(0);">Tab 2</a>
                     </li>
-                    <li role="tab" class="tabs-nav-item">
+                    <li role="tab" class="tabs-nav-item" aria-controls="tab3">
                         <a class="tabs-nav-link" href="javascript:void(0);">Tab 3</a>
                     </li>
                 </ul>
-                <div role="tabpanel">
+                <div role="tabpanel" aria-labelledby="tab1" id="tab1" class="tabs-panel" data-target="tab1" hidden="hidden">
+                    <p>Tabbable Content 1</p>
+                </div>
+                <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="tabs-panel" data-target="tab2" hidden="hidden">
+                    <p>Tabbable Content 2</p>
+                </div>
+                <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="tabs-panel" data-target="tab3" hidden="hidden    qaD">
+                    <p>Tabbable Content 3</p>
                 </div>
             </nav>
         </section>
     </main>
 </body>
-
+<script src="./scss/components/tab/_tabs.js"></script>
 </html>

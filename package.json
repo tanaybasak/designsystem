@@ -4,8 +4,8 @@
   "description": "Patron CSS Framework",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel layout.html -d output",
-    "build": "parcel build layout.html -d dist && node defaultBundleName.js"
+    "dev": "parcel index.html -d output",
+    "build": "parcel build index.html -d dist && node defaultBundleName.js"
   },
   "author": "HCL Products & Platforms",
   "license": "ISC",
