@@ -47,7 +47,7 @@ label {
     @include getErrorMarkup("inputcontrol");
 }
 
-.#{$prefix}-text-area {
+.#{$prefix}-textarea {
     @include getFormControl("inputcontrol");
     min-width: 10rem;
     resize: vertical;
