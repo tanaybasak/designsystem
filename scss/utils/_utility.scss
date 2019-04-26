@@ -28,7 +28,7 @@
         margin-right: $i * 4px !important;
     }
 
-    .margin-around-#{$i} {
+    .m-#{$i} {
         margin: $i * 4px !important;
     }
 
@@ -48,7 +48,12 @@
         margin-right: $i * 4px !important;
     }
 
-    .padding-around-#{$i} {
+    .p-#{$i} {
         margin: $i * 4px !important;
     }
+}
+
+// close icon class
+.#{$prefix}-close {
+    @include hcl-close-icon(24);
 }

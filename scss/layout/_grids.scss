@@ -8,38 +8,15 @@
 
 // Grid Container
 .#{$prefix}-container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: $gutter;
-    padding-right: $gutter;
-
-    .row {
-        margin-left: -$gutter;
-        margin-right: -$gutter;
-    }
-}
-
-.col {
-    flex: 1 1 0;
-}
-
-// Columns width calculations
-@for $i from 1 through $columns {
-    .col-#{$i} {
-        @include generate-col($i);
-    }
-
-    .col,
-    .col-#{$i} {
-        @extend %common-col-rules;
-    }
+    @include generate-container();
 }
 
 // Row
-.row {
-    @include generate-row;
+.#{$prefix}-row {
+    @include generate-row();
 }
+
+@include generate-cols();
 
 // TODO: Subject to be removed
 .bgColor {

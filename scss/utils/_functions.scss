@@ -21,12 +21,12 @@
 }
 
 // Utilities
-@function rem($px) {
-    @return ($px / $base-font-size) * 1rem;
+@function hcl-rem($px) {
+    @return ($px / $base-font-size-px) * 1rem;
 }
 
-@function em($px) {
-    @return ($px / $base-font-size) * 1em;
+@function hcl-em($px) {
+    @return ($px / $base-font-size-px) * 1em;
 }
 
 // Colors
