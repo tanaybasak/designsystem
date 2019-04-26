@@ -1,0 +1,82 @@
+.#{$prefix}-tag {
+    font-size: 0.75rem;
+    @include getFontWeight(regular);
+    line-height: 1rem;
+    letter-spacing: .32px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 .625rem;
+    height: 2rem;
+    margin: .25rem;
+    border-radius: 1rem;
+    justify-content: center;
+    min-width: 2.75rem;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+
+    &-text {
+        max-width: 5.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &-primary {
+        background-color: $blue;
+        color: $white;
+
+        &:hover:not([disabled]) {
+            background-color: #00518F;
+            border-color: #00518F;
+        }
+
+        &:active:not([disabled]) {
+            background-color: #003D6B;
+            border-color: #003D6B;
+        }
+
+        >.#{$prefix}-close {
+            @include hcl-close-icon(18, $white, #3D70B2, true);
+        }
+    }
+
+    &-secondary {
+        background-color: $white;
+        border: 1px solid $blue;
+        color: $blue;
+
+        &:hover:not([disabled]) {
+            background-color: #e5eff7;
+            border-color: #00518F;
+        }
+
+        &:active:not([disabled]) {
+            background: rgba(0, 102, 179, 0.18);
+            border-color: #003D6B;
+        }
+
+        >.#{$prefix}-close {
+            @include hcl-close-icon(20, $blue, $white, true);
+        }
+    }
+
+    &:disabled,
+    &[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &-thumbnail {
+        width: 1.375rem;
+        height: 1.375rem;
+        border-radius: 50%;
+        background-color: #efefef;
+        position: absolute;
+        left: 0.625rem;
+
+        +.hcl-tag-text {
+            margin-left: 1.875rem;
+        }
+    }
+}
