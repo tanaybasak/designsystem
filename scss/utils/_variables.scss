@@ -10,7 +10,7 @@
 :root {
     --ff-roboto: "Roboto", sans-serif;
     --base-font-size: 1rem;
-    --base-font-size-px: 16;
+    --base-font-size-px: 16px;
     --body-font-size: 0.875rem;
     --small-font-size: 0.75rem;
     --base-line-height: 1.15;
@@ -38,14 +38,14 @@
 // SASS VARIABLES
 $prefix: "hcl";
 $base-font-size: var(--base-font-size) !default;
-$base-font-size-px: var(--base-font-size-px);
+$base-font-size-px: 16px; // CSS variable value should not be used here else mathematical calculations like unit conversion will fail
 $small-font-size: var(--small-font-size);
 $base-margin: var(--base-margin);
 $base-padding: var(--base-padding);
 // COLOR GUIDE
-$black: var(--black);
-$white: var(--white);
-$blue: var(--blue);
+$black: #000;
+$white: #fff;
+$blue: #0066b3;
 $orange: var(--orange);
 $grey: var(--grey);
 $primary: $blue !default;
@@ -77,31 +77,13 @@ $info: var(--info);
 $danger: var(--error);
 $warning: var(--warning);
 // GRIDS GUTTER
+$total-gutter-width: 1.875rem !default;
 $gutter: 0.9375rem;
 $grid-columns: 12;
 $minHeight: 0.0625rem;
 // BREAKPOINTS
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px) !default;
 // TODO: Subject to be changed once the breakpoints are finalized
 $tablet-mobile: 640px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
-
-// Grid breakpoints
-//
-// Define the minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
-
-$grid-breakpoints: (xs: 0,
-sm: 576px,
-md: 768px,
-lg: 992px,
-xl: 1200px) !default;
-
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-
-$container-max-widths: (sm: 540px,
-md: 720px,
-lg: 960px,
-xl: 1140px) !default;

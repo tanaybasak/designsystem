@@ -7,52 +7,16 @@
  */
 
 // Grid Container
-.#{$prefix}-container,
-.#{$prefix}-container-fluid {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: $gutter;
-    padding-right: $gutter;
-}
-
-.#{$prefix}-col {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
+.#{$prefix}-container {
+    @include generate-container();
 }
 
 // Row
 .#{$prefix}-row {
-    @include generate-row;
+    @include generate-row();
 }
 
-// Columns width calculations
-@for $i from 1 through $grid-columns {
-    .#{$prefix}-col-#{$i} {
-        @include generate-col($i);
-    }
-
-    .#{$prefix}-col,
-    .#{$prefix}-col-#{$i} {
-        @extend %common-col-rules;
-    }
-}
-
-// Column order (0 to 11)
-@for $i from 0 through $grid-columns - 1 {
-    .#{$prefix}-order-#{$i} {
-        order: $i;
-    }
-}
-
-// Column offset (1 to 11)
-@for $i from 1 through ($grid-columns - 1) {
-    .#{$prefix}-offset-#{$i} {
-        @include generate-col-offset($i, $grid-columns);
-    }
-}
-
+@include generate-cols();
 
 // TODO: Subject to be removed
 .bgColor {
