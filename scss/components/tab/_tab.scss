@@ -8,12 +8,12 @@
         background: transparent;
         padding: 0.75rem 0;
 
-        &.--selected {
+        &.tabs-selected {
             display: block;
         }
 
-        &.--disabled {
-            pointer-events: none;
+        &.tabs-disabled {
+            opacity: 0.5;
         }
 
         &:hover {

@@ -1,10 +1,10 @@
 (function () {
     var Tabs = {
         selectors: {
-            tabs:'tabs-nav',
-            tabPanel:'tabs-panel',
-            disabledTabs: 'tabs-nav-item--disabled',
-            selectedTabs: 'tabs-nav-item--selected',
+            tabs: 'tabs-nav',
+            tabPanel: 'tabs-panel',
+            disabledTabPanel: 'tabs-disabled',
+            selectedTabPanel: 'tabs-selected',
             activeTab: 'active'
         },
         tablist: [],
@@ -35,7 +35,7 @@
                 tabID = target.parentElement.getAttribute('aria-controls');
             }
 
-            if (!element.classList.contains(Tabs.selectors.disabledTabs)) {
+            if (!element.classList.contains(Tabs.selectors.disabledTabPanel)) {
                 for (let j = 0; j < Tabs.tablist.length; j++) {
                     if (Tabs.tablist[j].contains(element)) {
                         parentIdx = j;
@@ -62,10 +62,10 @@
         },
         changeTab: function (tId, tchildren) {
             for (let p = 0; p < tchildren.length; p++) {
-                tchildren[p].classList.remove(Tabs.selectors.selectedTabs);
+                tchildren[p].classList.remove(Tabs.selectors.selectedTabPanel);
                 let href = tchildren[p].firstElementChild.getAttribute('href');
                 if (href.slice(1) === tId) {
-                    tchildren[p].classList.add(Tabs.selectors.selectedTabs);
+                    tchildren[p].classList.add(Tabs.selectors.selectedTabPanel);
                 }
             }
         },
