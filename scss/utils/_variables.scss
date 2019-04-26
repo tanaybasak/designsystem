@@ -24,10 +24,10 @@
     --dark-secondary: #4696D2;
     --primary-background-focus: #00578F;
     --primary-background-disabled: #B9E6FA;
-    --orange: #EB1946;
-    --orange-secondary: #C3143A;
-    --orange-background-focus: #C3143A;
-    --orange-background-disabled: #F8B2C1;
+    --red: #EB1946;
+    --red-secondary: #C3143A;
+    --red-background-focus: #C3143A;
+    --red-background-disabled: #F8B2C1;
     --black-secondary: #555;
     --error: #E0182D;
     --success: #589D25;
@@ -46,15 +46,15 @@ $base-padding: var(--base-padding);
 $black: var(--black);
 $white: var(--white);
 $blue: var(--blue);
-$orange: var(--orange);
+$red: var(--red);
 $grey: var(--grey);
 $primary: $blue !default;
 $secondary: $black !default;
-$tertiary: $orange !default;
+$tertiary: $red !default;
 $link-hover-color: var(--dark-secondary);
 // THEMES
 $theme-colors: () !default;
-$theme-colors: map-merge(("primary": $primary, "secondary": $secondary, "tertiary": $tertiary), $theme-colors);
+$theme-colors: map-merge(("primary": $primary, "danger": $red, "tertiary": $tertiary), $theme-colors);
 // Forms
 $label-margin-bottom: .5rem;
 $input-padding-y: 0;

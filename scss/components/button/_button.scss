@@ -6,115 +6,126 @@
  *******************************************************************
  */
 
+/* blue - primary ; danger - red ; success - green ; warning - yellow */
 
-// remove the black theme ; blue will be default + primary
+// TODO: To add other buttons once the UX will give the theme.
+
 $baseKey: "background";
 $theme: "primary";
-$themes: ("primary", "secondary", "primary-ghost", "secondary-ghost", "primary-outline", "secondary-outline");
-$colorMap: ("primary": ("background": var(--blue),
-"background-hover": var(--dark-secondary),
-"background-disabled": var(--primary-background-disabled),
-"font-color": var(--white),
-"border-color" : transparent,
-"hover-borderColor" : transparent),
-
-"secondary": ("background": var(--orange),
-"background-hover": var(--orange-secondary),
-"background-disabled": var(--orange-background-disabled),
-"font-color": var(--white),
-"border-color" : transparent,
-"hover-borderColor" : transparent),
-
-"primary-ghost": ("background": transparent,
-"background-hover": var(--blue),
-"background-disabled": var(--primary-background-disabled),
-"font-color":var(--blue),
-"hover-fontcolor": var(--white),
-"border-color" : transparent,
-"hover-borderColor" : var(--blue)),
-
-"secondary-ghost": ("background": transparent,
-"background-hover": var(--orange),
-"background-disabled": var(--orange-background-disabled),
-"font-color": var(--orange),
-"hover-fontcolor": var(--white),
-"border-color" : transparent,
-"hover-borderColor" : var(--orange)),
-
-"primary-outline": ("background": transparent,
-"background-hover": var(--blue),
-"background-disabled": var(--primary-background-disabled),
-"font-color": var(--blue),
-"hover-fontcolor" : var(--white),
-"border-color": var(--blue),
-"hover-borderColor" : var(--blue)),
-
-"secondary-outline": ("background": transparent,
-"background-hover": var(--orange),
-"background-disabled": var(--orange-background-disabled),
-"font-color": var(--orange),
-"hover-fontcolor" : var(--white),
-"border-color": var(--orange),
-"hover-borderColor" : var(--orange)));
-
+$themes: ("primary", "danger");
+$colorMap: (
+  "primary": (
+    "background": var(--blue),
+    "background-hover": var(--dark-secondary),
+    "background-disabled": var(--primary-background-disabled),
+    "font-color": var(--white),
+    "border-color": transparent,
+    "hover-borderColor": transparent
+  ),
+  "danger": (
+    "background": var(--red),
+    "background-hover": var(--red-secondary),
+    "background-disabled": var(--red-background-disabled),
+    "font-color": var(--white),
+    "border-color": transparent,
+    "hover-borderColor": transparent
+  )
+);
 
 %button {
-    text-align: center;
-    cursor: pointer;
-    line-height: 1rem;
-    font-size: 0.875rem;
-    border: 1px solid transparent;
-    margin: .5rem;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1rem;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  margin: 0.5rem;
+  background: transparent;
+  color: #000;
 }
 
 // Buttons
 .#{$prefix}-btn {
-    @extend %button;
-    color: var(--white);
-    background: var(--blue);
-    padding: 0.625rem 1rem;
-    height: 2.5rem;
+  @extend %button;
+  color: var(--white);
+  background: var(--blue);
+  padding: 0.625rem 1rem;
+  height: 2.5rem;
 }
 
 @function getColor($name: "primary", $bkey: $baseKey) {
-    $color: null;
-    $colorList: map-get($colorMap, $name);
+  $color: null;
+  $colorList: map-get($colorMap, $name);
 
-    @if $colorList {
-        $color: map-get($colorList, $bkey);
-    }
+  @if $colorList {
+    $color: map-get($colorList, $bkey);
+  }
 
-    @return $color;
+  @return $color;
 }
 
-
-
 @each $theme in $themes {
-    .#{$prefix}-#{$theme} {
-        background: getColor($theme);
-        color: getColor($theme, "font-color");
-        border-color: getColor($theme, "border-color");
+  .#{$prefix}-#{$theme} {
+    background: getColor($theme);
+    color: getColor($theme, "font-color");
+    border-color: getColor($theme, "border-color");
+
+    &:hover {
+      background: getColor($theme, "background-hover");
+      color: getColor($theme, "font-color");
+      border-color: getColor($theme, "hover-borderColor");
+    }
+
+    &:focus {
+      background: getColor($theme, "background-hover");
+      border-color: getColor($theme, "hover-borderColor");
+      color: getColor($theme, "font-color");
+    }
+
+    &:disabled {
+      background: getColor($theme, "background-disabled");
+    }
+
+    @at-root {
+      .#{$prefix}-#{$theme}-outline {
+        color: getColor($theme, "background");
+        background: transparent;
+        border-color: getColor($theme, "background");
 
         &:hover {
-            background: getColor($theme, "background-hover");
-            color: getColor($theme, "hover-fontcolor");
-            border-color: getColor($theme, "hover-borderColor");
+          background: getColor($theme, "background-hover");
+          color: getColor($theme, "font-color");
+          border-color: getColor($theme, "hover-borderColor");
         }
 
         &:focus {
-            background: getColor($theme, "background-hover");
-            border-color: getColor($theme, "hover-borderColor");
+          background: getColor($theme, "background-hover");
+          border-color: getColor($theme, "hover-borderColor");
+          color: getColor($theme, "font-color");
+        }
+      }
+
+      .#{$prefix}-#{$theme}-ghost {
+        color: getColor($theme, "background");
+        border-color: transparent;
+        background: transparent;
+
+        &:hover {
+          background: getColor($theme, "background-hover");
+          color: getColor($theme, "font-color");
+          border-color: getColor($theme, "hover-borderColor");
         }
 
-        &:disabled {
-            background: getColor($theme, "background-disabled");
+        &:focus {
+          background: getColor($theme, "background-hover");
+          border-color: getColor($theme, "hover-borderColor");
+          color: getColor($theme, "font-color");
         }
-
-
+      }
     }
+  }
 }
 
 .#{$prefix}-sm {
-    padding: 0.4375rem 1rem;
-    height: 2rem;
+  padding: 0.4375rem 1rem;
+  height: 2rem;
 }
