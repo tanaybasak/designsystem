@@ -33,23 +33,23 @@
     }
 
     .pt-#{$i} {
-        margin-top: $i * 4px !important;
+        padding-top: $i * 4px !important;
     }
 
     .pb-#{$i} {
-        margin-bottom: $i * 4px !important;
+        padding-bottom: $i * 4px !important;
     }
 
     .pl-#{$i} {
-        margin-left: $i * 4px !important;
+        padding-left: $i * 4px !important;
     }
 
     .pr-#{$i} {
-        margin-right: $i * 4px !important;
+        padding-right: $i * 4px !important;
     }
 
     .p-#{$i} {
-        margin: $i * 4px !important;
+        padding: $i * 4px !important;
     }
 }
 
