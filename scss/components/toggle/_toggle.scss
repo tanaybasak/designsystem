@@ -35,7 +35,7 @@
             transform: translate(0, -50%);
         }
 
-        .#{$prefix}-slider {
+        .#{$prefix}-switch {
             position: absolute;
             display: block;
             left: 0;
@@ -89,7 +89,7 @@
             background-color: var(--enabled-grey);
         }
 
-        .#{$prefix}-slider {
+        .#{$prefix}-switch {
             height: 1.5rem;
             width: 1.5rem;
             border: 0.0625rem solid var(--enabled-grey);
@@ -104,7 +104,7 @@
                 background-color: var(--blue);
             }
 
-            .#{$prefix}-slider {
+            .#{$prefix}-switch {
                 top: 50%;
                 transform: translate(1.5rem, -50%);
                 background-color: var(--blue);
@@ -117,7 +117,7 @@
                 background-color: var(--disabled-grey);
             }
 
-            .#{$prefix}-slider {
+            .#{$prefix}-switch {
                 border: 0.0625rem solid var(--disabled-grey);
             }
         }
@@ -128,7 +128,7 @@
                 background-color: var(--disabled-blue);
             }
 
-            .#{$prefix}-slider {
+            .#{$prefix}-switch {
                 background-color: var(--disabled-blue);
             }
         }
@@ -158,7 +158,7 @@
             border-radius: 6.25rem;
         }
 
-        .#{$prefix}-slider {
+        .#{$prefix}-switch {
             height: 0.625rem;
             width: 0.625rem;
             background-color: var(--enabled-grey);
@@ -174,7 +174,7 @@
                 border: none;
             }
 
-            .#{$prefix}-slider {
+            .#{$prefix}-switch {
                 top: 50%;
                 transform: translate(1.125rem, -50%);
                 background-color: var(--white);
@@ -200,7 +200,7 @@
                 border: 0.0625rem solid var(--disabled-grey);
             }
 
-            .#{$prefix}-slider {
+            .#{$prefix}-switch {
                 background-color: var(--disabled-grey);
             }
         }

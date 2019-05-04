@@ -243,7 +243,7 @@
                 <span class="hcl-toggle">
                     <input type="checkbox" id="simple-toggle" />
                     <label class="hcl-toggle-label" for="simple-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -251,7 +251,7 @@
                 <span class="hcl-toggle">
                     <input type="checkbox" id="disabled-checked-toggle" disabled checked />
                     <label class="hcl-toggle-label" for="disabled-checked-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -259,7 +259,7 @@
                 <span class="hcl-toggle">
                     <input type="checkbox" id="disabled-toggle" disabled />
                     <label class="hcl-toggle-label" for="disabled-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -269,7 +269,7 @@
                 <span class="hcl-toggle-small">
                     <input type="checkbox" id="simple-small-toggle" />
                     <label class="hcl-toggle-label" for="simple-small-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -277,7 +277,7 @@
                 <span class="hcl-toggle-small">
                     <input type="checkbox" id="disabled-checked-small-toggle" disabled checked />
                     <label class="hcl-toggle-label" for="disabled-checked-small-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -285,13 +285,13 @@
                 <span class="hcl-toggle-small">
                     <input type="checkbox" id="disabled-small-toggle" disabled />
                     <label class="hcl-toggle-label" for="disabled-small-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
                 </span>
             </section>
-            <section id="notification" class="hcl-row">
+            <section id="notification" class="hcl-row m-0">
                 <div class="hcl-col">
                     <div data-notification="" class="hcl-notification hcl-success" role="alert">
                         <div class="hcl-notification-body">
@@ -317,8 +317,8 @@
                 </div>
             </section>
             <!-- Tag -->
-            <section class="row">
-                <div class="col-12">
+            <section class="hcl-row m-0">
+                <div class="hcl-col">
                     <button class="hcl-tag hcl-tag-primary" title="primary" tabindex="0">
                         <span class="hcl-tag-text">
                             primary
@@ -379,6 +379,18 @@
             </section>
             <!-- <section class="hcl-lightbox" >    
             </section>-->
+            <!-- Slider -->
+            <section class="hcl-row m-0">
+                <div class="hcl-col">
+                    <label>Slider Label</label>
+                    <div class="hcl-slider">
+                        <span class="hcl-slider-bottom-range">0</span>
+                        <input class="hcl-slider-input" type="range" min="0" max="100">
+                        <span class="hcl-slider-top-range">100</span>
+                        <input class="hcl-slider-text-input" type="text">
+                    </div>
+                </div>
+            </section>
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
     </div>
