@@ -1,0 +1,35 @@
+.#{$prefix}-content-switcher {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: hcl-rem(40px);
+    &-btn {
+        background-color: transparent;
+        color: #3d70b2;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        height: hcl-rem(40px);
+        font-size: .875rem;
+        margin: 0;
+        padding: 0 2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        border: none;
+        position: relative;
+
+        &:focus {
+            box-shadow: inset 0 0 0 2px blue;
+            z-index: 3;
+          }
+    }
+    &-btn:first-of-type {
+        border-top-left-radius: hcl-rem(4px);
+        border-bottom-left-radius: hcl-rem(4px);
+    }
+
+    &-btn:last-of-type {
+        border-top-right-radius: hcl-rem(4px);
+        border-bottom-right-radius: hcl-rem(4px);
+      }
+}
