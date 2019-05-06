@@ -1,0 +1,103 @@
+.#{$prefix}-toast {
+    width: 16.875rem;
+    display: flex;
+    height: auto;
+    padding: 0.75rem 1.125rem;
+    margin: 2rem;
+    color: #171717;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
+    background: var(--white);
+
+    &-error {
+        border-left: 0.3125rem solid var(--error);
+        .#{$prefix}-toast-icon {
+            path {
+                fill:var(--error);
+                stroke:var(--error);
+            }
+        }
+    }
+
+    &-info {
+        border-left: 0.3125rem solid var(--info);
+        .#{$prefix}-toast-icon {
+            path {
+                fill:var(--info);
+                stroke:var(--info);
+            }
+        }
+    }
+
+    &-success {
+        border-left: 0.3125rem solid var(--success);
+        .#{$prefix}-toast-icon {
+            path {
+                fill:var(--success);
+                stroke:var(--success);
+            }
+        }
+    }
+
+    &-warning {
+        border-left: 0.3125rem solid var(--warning);
+        .#{$prefix}-toast-icon {
+            path {
+                fill:var(--warning);
+                stroke:var(--warning);
+            }
+        }
+    }
+
+    &-details {
+        margin: 0 1rem;
+    }
+
+    &-title {
+        font-size: .875rem;
+        line-height: 1.125rem;
+        font-weight: getFontWeight("semibold");
+        color: #132730;
+        letter-spacing: 0;
+    }
+
+    &-subtitle,
+    &-caption {
+        line-height: 1.125rem;
+        @include getFontWeight("regular");
+        font-size: 0.75rem;
+        color: #AAAAAA;
+        letter-spacing: 0;
+    }
+
+    &-caption {
+        margin-top: 0.875rem;
+    }
+
+    &-close-button {
+        outline: 0.125rem solid transparent;
+        outline-offset: -0.125rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-left: auto;
+        padding: 0;
+        height: 0.625rem;
+        width: 0.625rem;
+        min-height: 0.625rem;
+        min-width: 0.625rem;
+        transition: outline .11s, background-color .11s;
+
+        &-icon {
+            @include hcl-close-icon(16);
+            border-color: #5A6872;
+            margin-top: 1rem;
+            margin-right: 1rem;
+            top: 0;
+            right: 0;
+            position: absolute;
+        }
+    }
+}
