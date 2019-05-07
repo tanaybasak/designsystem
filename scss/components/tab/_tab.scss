@@ -1,0 +1,49 @@
+.tabs-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &-item {
+        background: transparent;
+        padding: 0.75rem 0;
+
+        &.tabs-selected {
+            border-bottom: 2px solid var(--blue-light);
+        }
+
+        &.tabs-disabled {
+            opacity: 0.5;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &-item+&-item {
+        margin-left: 3.125rem;
+    }
+
+    &-link {
+        text-decoration: none;
+        display: inline-block;
+        white-space: nowrap;
+        color: $black;
+
+        &:hover {
+            color: var(--blue-light);
+        }
+    }
+}
+
+.tabs {
+    .tabs-panel {
+        padding-top: 10px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
