@@ -155,3 +155,57 @@
 @mixin pxtorem($value) {
     font-size: ($value/$base-font-size-px) + rem;
 }
+
+// close icon
+@mixin hcl-close-icon($size: 18, $bg-color: transparent, $fg-color: $black, $rounded: false) {
+    width: #{$size}px;
+    height: #{$size}px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-color;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+        content: " ";
+        position: absolute;
+        width: 2px;
+        background-color: lighten($fg-color, 20%);
+    }
+
+    @if $rounded {
+        border-radius: 50%;
+
+        &:before,
+        &:after {
+            height: #{round($size - 10)}px;
+        }
+    }
+
+    @else {
+
+        &:before,
+        &:after {
+            height: #{$size}px;
+        }
+
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+
+    &:hover {
+
+        &:before,
+        &:after {
+            background-color: lighten($fg-color, 0);
+        }
+    }
+}

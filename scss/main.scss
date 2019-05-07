@@ -54,8 +54,9 @@
 @import "components/button/button";
 @import "components/breadcrumb/breadcrumb";
 @import "components/spinner/spinner";
+@import "components/tag/tag";
 @import "components/toggle/toggle";
 @import "components/form/forms"; // TODO: To Separate into different file after component list grows.
 @import "components/notification/notification";
 @import "components/lightbox/lightbox";
-@import "components/overflow-menu/overflow-menu.scss";
+@import "components/overflow-menu/overflow-menu";
