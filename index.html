@@ -127,19 +127,19 @@
                 <div class="row col-12">
                     <button class="hcl-btn hcl-primary">Primary Button</button>
                     <button class="hcl-btn hcl-danger">Danger Button</button>
-    
+
                     <button class="hcl-btn hcl-primary hcl-primary-outline">Primary Outline</button>
                     <button class="hcl-btn hcl-danger hcl-danger-outline">Danger Outline</button>
-    
+
                     <button class="hcl-btn hcl-primary hcl-primary-ghost">Primary Ghost</button>
                     <button class="hcl-btn hcl-danger hcl-danger-ghost">Danger Ghost</button>
-    
+
                     <button class="hcl-btn hcl-primary hcl-sm">Primary Small</button>
                     <button class="hcl-btn hcl-danger hcl-sm">Danger Small</button>
-    
+
                     <button class="hcl-btn hcl-primary hcl-primary-outline hcl-sm">Outline Small</button>
                     <button class="hcl-btn hcl-danger hcl-danger-outline hcl-sm">Outline Small</button>
-    
+
                     <button class="hcl-btn hcl-primary hcl-primary-ghost hcl-sm">Ghost Small</button>
                     <button class="hcl-btn hcl-danger hcl-danger-ghost hcl-sm">Ghost Small</button>
                     <button class="hcl-btn">Default</button>
@@ -390,20 +390,26 @@
             <!-- <section class="hcl-lightbox" >    
             </section>-->
             <!-- AVAILABLE COMPONENTS ENDS -->
-            <section id="content-switcher" class="hcl-container pt-5">
-                <div class="hcl-row">
-                    <div class="hcl-col-12">
-                        <div class="hcl-content-switcher">
-                            <button class="hcl-content-switcher-btn">
-                                <span>Hello</span>
-                            </button>
-                            <button class="hcl-content-switcher-btn">
-                            </button>
-                            <button class="hcl-content-switcher-btn">
-                            </button>
-                        </div>
-                    </div>
+            <section id="content-switcher" class="hcl-row p-5">
+                <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".option1">
+                        <span class="hcl-thumbnail"></span>
+                        <span class="hcl-text">First Section</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".option2">
+                        <span class="hcl-thumbnail"></span>
+                        <span>Second Section</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".option3">
+                        <span class="hcl-thumbnail"></span>
+                        <span>Third Section</span>
+                    </button>
                 </div>
+                <section>
+                    <div class="hello">Hello</div>
+                    <div class="awesome" hidden>Awesome</div>
+                    <div class="world" hidden>World</div>
+                </section>
             </section>
         </main>
     </div>
