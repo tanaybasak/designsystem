@@ -1,0 +1,78 @@
+.#{$prefix}-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .#{$prefix}-modal-container {
+
+        &-danger {
+            border-top: 0.25rem solid var(--error);
+        }
+
+        position: relative;
+        background-color: var(--white);
+        border-top: 0.25rem solid var(--blue);
+        box-shadow: 0 0.75rem 1.5rem 0 rgba(0, 0, 0, 0.10);
+        width: 100% !important;
+        height: 100% !important;
+
+        @include media-breakpoint-between(md, xxl) {
+            &.#{$prefix}-modal-container-lg {
+                width: 50%;
+                max-width: 48rem;
+                max-height: 90%;
+            }
+        }
+    }
+
+    &-header {
+        padding: 1rem 10% 1rem 10%;
+        margin-top: 1.25rem;
+    }
+
+    &-label {
+
+        &-disable {
+            display: none;
+        }
+
+        margin-bottom: .25rem;
+    }
+
+    &-close {
+        position: absolute !important;
+        right: 0.3125rem;
+        top: 0.3125rem;
+        // we are not using var for #5A6872 because of saas issue
+        @include hcl-close-icon(14, $white, #5A6872);
+    }
+
+    &-content {
+        overflow-y: scroll;
+        margin-bottom: 3rem;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+        max-height: 15rem;
+    }
+
+    &-footer {
+        display: flex;
+        margin-top: auto;
+        height: 4rem;
+        background-color: var(--sky-blue);
+        justify-content: flex-end;
+        padding: 2% 10% 2% 10%;
+        height: 3.875rem;
+
+        &-disable {
+            display: none;
+        }
+
+    }
+
+    .hcl-btn {
+        margin-top: 0 !important;
+        width: 5.625rem;
+    }
+}
