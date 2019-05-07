@@ -10,15 +10,19 @@
         }
 
         position: relative;
-        display: flex;
-        flex-direction: column;
         background-color: var(--white);
         border-top: 0.25rem solid var(--blue);
         box-shadow: 0 0.75rem 1.5rem 0 rgba(0, 0, 0, 0.10);
-        height: auto;
-        width: 50%;
-        max-width: 48rem;
-        max-height: 90%;
+        width: 100% !important;
+        height: 100% !important;
+
+        @include media-breakpoint-between(md, xxl) {
+            &.#{$prefix}-modal-container-lg {
+                width: 50%;
+                max-width: 48rem;
+                max-height: 90%;
+            }
+        }
     }
 
     &-header {
@@ -70,12 +74,5 @@
     .hcl-btn {
         margin-top: 0 !important;
         width: 5.625rem;
-    }
-}
-
-@include media-breakpoint-between(0,768) {
-    .#{$prefix}-modal-container-sm {
-        width: 100% !important;
-        height: 100% !important;
     }
 }
