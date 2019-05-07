@@ -1,7 +1,7 @@
 .#{$prefix}-list-ordered,
 .#{$prefix}-list-unordered {
     font-size: .875rem;
-    font-weight: 400;
+    @include getFontWeight(regular);
     line-height: 1.125rem;
     letter-spacing: .16px;
 
@@ -9,7 +9,7 @@
         padding: 0;
         width: 100%;
         display: block;
-        color: #132730;
+        color: var(--dark-blue);
         padding-left: .25rem;
     }
 
@@ -24,7 +24,6 @@
         }
     }
 }
-
 
 .#{$prefix}-list-ordered {
     counter-reset: listitem;
