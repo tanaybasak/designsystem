@@ -33,6 +33,7 @@
     --success: #589D25;
     --info: #4696D2;
     --warning: #FAC43B;
+    --blue-light: #3d70b2;
 }
 
 // SASS VARIABLES
@@ -68,8 +69,8 @@ $background-disabled: rgba(70, 150, 210, 0.05);
 $checkbox-border-width: 2px;
 $checkbox-border-color: #5a6872;
 $checkbox-background-color: $white;
-$checkbox-border-color-checked: #3d70b2;
-$checkbox-background-color-checked: #3d70b2;
+$checkbox-border-color-checked: var(--blue-light);
+$checkbox-background-color-checked: var(--blue-light);
 $checkbox-focus-color: #7cc7ff;
 // Errors
 $error:var(--error);
