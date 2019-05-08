@@ -603,7 +603,7 @@
                     </div>
                 </nav>
             </section>
-           
+
             <!-- List -->
             <section class="hcl-row m-0">
                 <!-- Ordered List -->
@@ -634,12 +634,10 @@
                 </div>
 
             </section>
-            <!-- AVAILABLE COMPONENTS ENDS -->
-<<<<<<< HEAD
             <!-- Content Switcher -->
             <section id="content-switcher" class="hcl-row p-5">
                 <div data-content-switcher class="hcl-content-switcher" role="tablist">
-                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".hello">
+                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".hello" disabled>
                         <span class="hcl-thumbnail"></span>
                         <span class="hcl-text">First Section</span>
                     </button>
@@ -647,7 +645,7 @@
                         <span class="hcl-thumbnail"></span>
                         <span>Second Section</span>
                     </button>
-                    <button class="hcl-content-switcher-btn" role="tab" data-target=".world">
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".world" disabled>
                         <span class="hcl-thumbnail"></span>
                         <span>Third Section</span>
                     </button>
@@ -658,15 +656,33 @@
                     <div class="world" hidden>World</div>
                 </section>
             </section>
+            <section id="content-switcher2" class="hcl-row p-5">
+                    <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                        <button class="hcl-content-switcher-btn active" role="tab" data-target=".vanilla">
+                            <span class="hcl-thumbnail"></span>
+                            <span class="hcl-text">First Section</span>
+                        </button>
+                        <button class="hcl-content-switcher-btn" role="tab" data-target=".react">
+                            <span class="hcl-thumbnail"></span>
+                            <span>Second Section</span>
+                        </button>
+                        <button class="hcl-content-switcher-btn" role="tab" data-target=".angular">
+                            <span class="hcl-thumbnail"></span>
+                            <span>Third Section</span>
+                        </button>
+                    </div>
+                    <section>
+                        <div class="vanilla">Vanilla</div>
+                        <div class="react" hidden>React</div>
+                        <div class="angular" hidden>Angular</div>
+                    </section>
+                </section>
             <!-- Content Switcher Ends-->
+            <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
     </div>
     <script src="./scss/components/content-switcher/_content-switcher.js"></script>
-=======
-
-        </main>
->>>>>>> a84582a5bb49a567e5a09b67d30f4cfb00867440
+    <script src="./scss/components/tab/_tabs.js"></script>
 </body>
-<script src="./scss/components/tab/_tabs.js"></script>
 
 </html>
