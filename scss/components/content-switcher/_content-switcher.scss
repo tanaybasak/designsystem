@@ -17,7 +17,7 @@
         position: relative;
 
         &.active {
-            background-color: #0066B3;
+            background-color: var(--blue);
             color: $white;
 
             .#{$prefix}-thumbnail {
@@ -52,18 +52,13 @@
                 color: rgba(255, 255, 255, 0.50);
             }
 
-            &:hover {
-                // .#{$prefix}-thumbnail {
-                //     background-color: rgba(255, 255, 255, 0.50);
-                // }
-            }
         }
 
         .#{$prefix}-thumbnail {
             border-radius: 50%;
             width: 1rem;
             height: 1rem;
-            background-color: #0066B3;
+            background-color: var(--blue);
             position: absolute;
             left: 8px;
         }
