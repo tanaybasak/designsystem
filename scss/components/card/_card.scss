@@ -99,12 +99,12 @@
         height: 1rem;
         width: 1rem;
         margin-right: 1rem;
+        cursor: pointer;
         overflow: hidden;
     }
 
     &-close {
         border: 0;
-        cursor: pointer;
 
         &:hover {
             color: lighten(#000000, 50%);
