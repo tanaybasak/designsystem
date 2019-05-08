@@ -383,8 +383,10 @@
                 </div>
             </section>
 
-            <section>
-                <div class="hcl-modal hcl-modal-isVisible row">
+            <!-- Modals -->
+            <section id="hcl-modal">
+                <button id="hcl-btn-modal-type1" data-modal-type="1" class="hcl-btn">Modal : type 1</button>
+                <div id="hcl-modal-type1" data-modal-type="1" class="hcl-modal hcl-modal-disable row">
                     <div class="hcl-modal-container hcl-modal-container-lg">
                         <div class="hcl-modal-header">
                             <small class="hcl-modal-label">Optional label</small>
@@ -396,14 +398,16 @@
                                 consequat augue vitae tellus tincidunt posuere. </p>
                         </div>
                         <div class="hcl-modal-footer hcl-modal-footer-disable">
-                            <button class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button id="hcl-modal-cancel-type1"
+                                class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
                             <button class="hcl-btn hcl-primary">Save</button>
                         </div>
-                        <button class="hcl-modal-close"></button>
+                        <button id="hcl-modal-close-type1" class="hcl-modal-close"></button>
                     </div>
                 </div>
 
-                <div class="hcl-modal hcl-modal-isVisible row">
+                <button id="hcl-btn-modal-type2" data-modal-type="2" class="hcl-btn">Modal : type 2</button>
+                <div id="hcl-modal-type2" data-modal-type="2" class="hcl-modal hcl-modal-disable row">
                     <div class="hcl-modal-container hcl-modal-container-lg">
                         <div class="hcl-modal-header">
                             <small class="hcl-modal-label hcl-modal-label-disable">Optional label</small>
@@ -415,14 +419,16 @@
                                 consequat augue vitae tellus tincidunt posuere. </p>
                         </div>
                         <div class="hcl-modal-footer hcl-modal-footer-disable">
-                            <button class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button id="hcl-modal-cancel-type2"
+                                class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
                             <button class="hcl-btn hcl-primary">Save</button>
                         </div>
-                        <button class="hcl-modal-close"></button>
+                        <button id="hcl-modal-close-type2" class="hcl-modal-close"></button>
                     </div>
                 </div>
-
-                <div class="hcl-modal hcl-modal-isVisible row">
+                
+                <button id="hcl-btn-modal-type3" data-modal-type="3" class="hcl-btn">Modal : type 3</button>
+                <div id="hcl-modal-type3" data-modal-type="3" class="hcl-modal hcl-modal-disable row">
                     <div class="hcl-modal-container hcl-modal-container-lg">
                         <div class="hcl-modal-header">
                             <small class="hcl-modal-label">Optional label</small>
@@ -434,15 +440,16 @@
                                 consequat augue vitae tellus tincidunt posuere. </p>
                         </div>
                         <div class="hcl-modal-footer ">
-                            <button class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button id="hcl-modal-cancel-type3" class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
                             <button class="hcl-btn hcl-primary">Save</button>
                         </div>
-                        <button class="hcl-modal-close"></button>
+                        <button id="hcl-modal-close-type3" class="hcl-modal-close"></button>
                     </div>
                 </div>
 
-                <div class="hcl-modal hcl-modal-isVisible row">
-                    <div class="hcl-modal-container hcl-modal-container-lg">
+                <button id="hcl-btn-modal-type4" data-modal-type="4" class="hcl-btn">Modal : type 4</button>
+                <div id="hcl-modal-type4" data-modal-type="4" class="hcl-modal hcl-modal-disable row">
+                    <div id="hcl-modal-type4" data-modal-type="4" class="hcl-modal-container hcl-modal-container-lg">
                         <div class="hcl-modal-header">
                             <small class="hcl-modal-label hcl-modal-label-disable">Optional label</small>
                             <h5 class="hcl-modal-heading">Modal heading </h5>
@@ -453,17 +460,17 @@
                                 consequat augue vitae tellus tincidunt posuere. </p>
                         </div>
                         <div class="hcl-modal-footer ">
-                            <button class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button id="hcl-modal-cancel-type4" class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
                             <button class="hcl-btn hcl-primary">Save</button>
                         </div>
-                        <button class="hcl-modal-close"></button>
+                        <button id="hcl-modal-close-type4" class="hcl-modal-close"></button>
                     </div>
                 </div>
 
                 <!-- danger Modals -->
-
-                <div class="hcl-modal hcl-modal-isVisible row">
-                    <div class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                <button id="hcl-btn-modal-type5" data-modal-type="5" class="hcl-btn">Modal : type 5</button>
+                <div id="hcl-modal-type5" data-modal-type="5" class="hcl-modal hcl-modal-disable row">
+                    <div id="hcl-modal-type5" data-modal-type="5" class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
                         <div class="hcl-modal-header">
                             <small class="hcl-modal-label hcl-modal-label-disable ">Optional label</small>
                             <h5 class="hcl-modal-heading">Modal heading </h5>
@@ -474,16 +481,16 @@
                                 consequat augue vitae tellus tincidunt posuere. </p>
                         </div>
                         <div class="hcl-modal-footer ">
-                            <button class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button id="hcl-modal-cancel-type5" class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
                             <button class="hcl-btn hcl-danger">Delete</button>
                         </div>
-                        <button class="hcl-modal-close"></button>
+                        <button id="hcl-modal-close-type5" class="hcl-modal-close"></button>
                     </div>
                 </div>
 
-
-                <div class="hcl-modal hcl-modal-isVisible row">
-                    <div class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                <button id="hcl-btn-modal-type6" data-modal-type="6" class="hcl-btn">Modal : type 6</button>
+                <div id="hcl-modal-type6" data-modal-type="6" class="hcl-modal hcl-modal-disable row">
+                    <div id="hcl-modal-type6" class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
                         <div class="hcl-modal-header">
                             <small class="hcl-modal-label hcl-modal-label-disable ">Optional label</small>
                             <h5 class="hcl-modal-heading">Modal heading </h5>
@@ -494,15 +501,16 @@
                                 consequat augue vitae tellus tincidunt posuere. </p>
                         </div>
                         <div class="hcl-modal-footer hcl-modal-footer-disable">
-                            <button class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button id="hcl-modal-cancel-type6" class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
                             <button class="hcl-btn hcl-danger ">Delete</button>
                         </div>
-                        <button class="hcl-modal-close"></button>
+                        <button id="hcl-modal-close-type6" class="hcl-modal-close"></button>
                     </div>
                 </div>
 
-                <div class="hcl-modal hcl-modal-isVisible row">
-                    <div class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                <button id="hcl-btn-modal-type7" data-modal-type="7" class="hcl-btn">Modal : type 7</button>
+                <div id="hcl-modal-type7" data-modal-type="7" class="hcl-modal hcl-modal-disable row">
+                    <div id="hcl-modal-type7" class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
                         <div class="hcl-modal-header">
                             <small class="hcl-modal-label">Optional label</small>
                             <h5 class="hcl-modal-heading">Modal heading </h5>
@@ -513,16 +521,16 @@
                                 consequat augue vitae tellus tincidunt posuere. </p>
                         </div>
                         <div class="hcl-modal-footer ">
-                            <button class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button id="hcl-modal-cancel-type7" class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
                             <button class="hcl-btn hcl-danger">Delete</button>
                         </div>
-                        <button class="hcl-modal-close"></button>
+                        <button id="hcl-modal-close-type7" class="hcl-modal-close"></button>
                     </div>
                 </div>
 
-
-                <div class="hcl-modal hcl-modal-isVisible row">
-                    <div class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                <button id="hcl-btn-modal-type8" data-modal-type="8" class="hcl-btn">Modal : type 8</button>
+                <div id="hcl-modal-type8" data-modal-type="8" class="hcl-modal hcl-modal-disable row">
+                    <div id="hcl-modal-type8" class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
                         <div class="hcl-modal-header">
                             <small class="hcl-modal-label hcl-modal-label-disable">Optional label</small>
                             <h5 class="hcl-modal-heading">Modal heading </h5>
@@ -533,18 +541,17 @@
                                 consequat augue vitae tellus tincidunt posuere. </p>
                         </div>
                         <div class="hcl-modal-footer ">
-                            <button class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button id="hcl-modal-cancel-type8" class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
                             <button class="hcl-btn hcl-danger   ">Delete</button>
                         </div>
-                        <button class="hcl-modal-close"></button>
+                        <button id="hcl-modal-close-type8" class="hcl-modal-close"></button>
                     </div>
-                </div>
-
-
-
+                </div> 
             </section>
-            <!-- <section class="hcl-lightbox">
-        </section> -->
+
+            <!-- <section class="hcl-lightbox" >
+            </section> -->
+
             <section>
                 <nav data-tabs role="navigation" class="tabs">
                     <ul role="tablist" class="tabs-nav">
@@ -598,7 +605,7 @@
                     </div>
                 </nav>
             </section>
-           
+
             <!-- List -->
             <section class="hcl-row m-0">
                 <!-- Ordered List -->
@@ -634,5 +641,6 @@
         </main>
 </body>
 <script src="./scss/components/tab/_tabs.js"></script>
+<script src="./scss/components/modal/modal.js"></script>
 
 </html>
