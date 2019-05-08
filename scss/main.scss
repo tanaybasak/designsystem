@@ -54,8 +54,13 @@
 @import "components/button/button";
 @import "components/breadcrumb/breadcrumb";
 @import "components/spinner/spinner";
+@import "components/tag/tag";
 @import "components/toggle/toggle";
-@import "components/dropdown/dropdown";
+@import "components/tab/tab";
 @import "components/form/forms"; // TODO: To Separate into different file after component list grows.
 @import "components/notification/notification";
+@import "components/modal/modal";
 @import "components/lightbox/lightbox";
+@import "components/toast/toast";
+@import "components/list/list";
+@import "components/dropdown/dropdown";

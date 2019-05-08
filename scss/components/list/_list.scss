@@ -1,0 +1,55 @@
+.#{$prefix}-list-ordered,
+.#{$prefix}-list-unordered {
+    font-size: .875rem;
+    @include getFontWeight(regular);
+    line-height: 1.125rem;
+    letter-spacing: .16px;
+
+    .#{$prefix}-list-item {
+        padding: 0;
+        width: 100%;
+        display: block;
+        color: var(--dark-blue);
+        padding-left: .25rem;
+    }
+
+    .#{$prefix}-list-nested {
+        margin-bottom: .25rem;
+        margin-left: 2rem;
+        font-size: .875rem;
+
+        .#{$prefix}-list-item:before {
+            content: "-";
+            padding-right: .25rem;
+        }
+    }
+}
+
+.#{$prefix}-list-ordered {
+    counter-reset: listitem;
+    list-style-type: decimal;
+
+    >.#{$prefix}-list-item {
+
+        &:before {
+            counter-increment: listitem;
+            content: counter(listitem) ".";
+            display: inline-block;
+            margin-right: 0.625rem;
+            margin-bottom: .25rem;
+        }
+    }
+}
+
+.#{$prefix}-list-unordered {
+    >.#{$prefix}-list-item {
+
+        &:before {
+            content: "\25CF";
+            display: inline-block;
+            margin-right: 0.625rem;
+            margin-bottom: .25rem;
+            vertical-align: middle;
+        }
+    }
+}
