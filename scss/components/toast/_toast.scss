@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-$toastThemes: 'error', 'info', 'success', 'warning';
+ $toastThemes: 'error', 'info', 'success', 'warning';
 
 @mixin getToastThemes() {
     @each $theme in $toastThemes {
@@ -53,7 +53,7 @@ $toastThemes: 'error', 'info', 'success', 'warning';
     &-caption {
         line-height: 1.125rem;
         font-size: 0.75rem;
-        color: #AAAAAA;
+        color: #aaa;
         letter-spacing: 0;
         @include getFontWeight("regular");
     }
@@ -78,7 +78,7 @@ $toastThemes: 'error', 'info', 'success', 'warning';
 
         &-icon {
             @include hcl-close-icon(16);
-            border-color: #5A6872;
+            border-color: var(--grey-2);
             margin-top: 1rem;
             margin-right: 1rem;
             top: 0;
