@@ -31,8 +31,11 @@
         }
 
         &:hover {
-            background-color: #00518F;
             cursor: pointer;
+        }
+
+        &:hover:not(:disabled) {
+            background-color: #00518F;
             color: #FFFFFF;
 
             .#{$prefix}-thumbnail {
@@ -41,12 +44,18 @@
         }
 
         &:disabled {
-            background-color: rgba(0, 102, 179, 0.50);
-            color: rgba(255, 255, 255, 0.50);
-            border-color: rgba(0, 102, 179, 0.50);
+            background-color: rgba(255, 255, 255, 0.50);
+            color: rgba(61, 112, 178, 0.50);
 
-            .#{$prefix}-thumbnail {
+            &.active {
                 background-color: rgba(0, 102, 179, 0.50);
+                color: rgba(255, 255, 255, 0.50);
+            }
+
+            &:hover {
+                // .#{$prefix}-thumbnail {
+                //     background-color: rgba(255, 255, 255, 0.50);
+                // }
             }
         }
 
