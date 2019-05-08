@@ -36,7 +36,7 @@
 
         &:hover:not(:disabled) {
             background-color: #00518F;
-            color: #FFFFFF;
+            color: $white;
 
             .#{$prefix}-thumbnail {
                 background-color: $white;
