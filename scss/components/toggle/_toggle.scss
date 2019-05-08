@@ -77,6 +77,7 @@
 }
 
 .#{$prefix}-toggle {
+    position: relative;
     @extend %basic-toggle;
 
     .#{$prefix}-toggle-label {
@@ -144,6 +145,7 @@
 }
 
 .#{$prefix}-toggle-small {
+    position: relative;
     @extend %basic-toggle;
 
     .#{$prefix}-toggle-label {
