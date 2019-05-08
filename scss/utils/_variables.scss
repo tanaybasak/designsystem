@@ -23,7 +23,7 @@
     --white: #fff;
     --blue: #0066b3;
     --sky-blue: #E4F5FC;
-    --dark-blue: #132730; // TODO: Remove
+    --dark-blue: #132730;
     --dark-secondary: #4696D2;
     --primary-background-focus: #00578F;
     --primary-background-disabled: #B9E6FA;
@@ -57,6 +57,7 @@ $primary: $blue !default;
 $secondary: $black !default;
 $tertiary: $red !default;
 $link-hover-color: var(--dark-secondary);
+$dark-blue: var(--dark-blue);
 // THEMES
 $theme-colors: () !default;
 $theme-colors: map-merge(("primary": $primary, "danger": $red, "tertiary": $tertiary), $theme-colors);
