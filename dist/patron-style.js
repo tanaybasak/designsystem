@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./../logo.png":[["logo.ed219fc1.png","G7h9"],"G7h9"]}],"LYsQ":[function(require,module,exports) {
 "use strict";require("./scss/main.scss");
 },{"./scss/main.scss":"fx60"}]},{},["LYsQ"], null)
-//# sourceMappingURL=/patron-style.20aabb76.js.map
+//# sourceMappingURL=/patron-style.b56e7349.js.map
