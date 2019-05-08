@@ -18,21 +18,25 @@
     --base-padding: 0.2rem;
     --black: #000;
     --grey: #707070;
+    --grey-secondary: #f3f3f3;
+    --grey-light: #5A6872;
     --white: #fff;
     --blue: #0066b3;
-    --dark-blue: #132730;
+    --sky-blue: #E4F5FC;
+    --dark-blue: #132730; // TODO: Remove
     --dark-secondary: #4696D2;
     --primary-background-focus: #00578F;
     --primary-background-disabled: #B9E6FA;
-    --orange: #EB1946;
-    --orange-secondary: #C3143A;
-    --orange-background-focus: #C3143A;
-    --orange-background-disabled: #F8B2C1;
+    --red: #EB1946;
+    --red-secondary: #C3143A;
+    --red-background-focus: #C3143A;
+    --red-background-disabled: #F8B2C1;
     --black-secondary: #555;
     --error: #E0182D;
     --success: #589D25;
     --info: #4696D2;
     --warning: #FAC43B;
+    --blue-light: #3d70b2;
 }
 
 // SASS VARIABLES
@@ -43,6 +47,7 @@ $small-font-size: var(--small-font-size);
 $base-margin: var(--base-margin);
 $base-padding: var(--base-padding);
 // COLOR GUIDE
+$red: var(--red);
 $black: #000;
 $white: #fff;
 $blue: #0066b3;
@@ -50,11 +55,11 @@ $orange: var(--orange);
 $grey: var(--grey);
 $primary: $blue !default;
 $secondary: $black !default;
-$tertiary: $orange !default;
+$tertiary: $red !default;
 $link-hover-color: var(--dark-secondary);
 // THEMES
 $theme-colors: () !default;
-$theme-colors: map-merge(("primary": $primary, "secondary": $secondary, "tertiary": $tertiary), $theme-colors);
+$theme-colors: map-merge(("primary": $primary, "danger": $red, "tertiary": $tertiary), $theme-colors);
 // Forms
 $label-margin-bottom: .5rem;
 $input-padding-y: 0;
@@ -67,8 +72,8 @@ $background-disabled: rgba(70, 150, 210, 0.05);
 $checkbox-border-width: 2px;
 $checkbox-border-color: #5a6872;
 $checkbox-background-color: $white;
-$checkbox-border-color-checked: #3d70b2;
-$checkbox-background-color-checked: #3d70b2;
+$checkbox-border-color-checked: var(--blue-light);
+$checkbox-background-color-checked: var(--blue-light);
 $checkbox-focus-color: #7cc7ff;
 // Errors
 $error:var(--error);
@@ -84,6 +89,6 @@ $minHeight: 0.0625rem;
 // BREAKPOINTS
 $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px) !default;
 // TODO: Subject to be changed once the breakpoints are finalized
-$tablet-mobile: 640px;
+$mobile-width: 640px;
 $tablet-width: 768px;
 $desktop-width: 1024px;

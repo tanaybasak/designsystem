@@ -1,17 +1,15 @@
 // excess height to improve interactive area / accessibility
-$height: 30px;
-$thumb-height: 24px;
-$track-height: 4px;
+$height: 1.875rem;
+$thumb-height: 1.5rem;
+$track-height: 0.25rem;
 
 // colours
-$upper-color: #AAAAAA;
-$lower-color: #0066B3;
-$thumb-color: #0066B3;
+$upper-color: #aaa;
 $thumb-hover-color: #55c2ff;
 $thumb-active-color: #7CC7FF;
 
 $upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
-$lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
+$lower-background: linear-gradient(to bottom, $blue, $blue) 100% 50% / 100% $track-height no-repeat transparent;
 
 // Webkit cannot style progress so we fake it with a long shadow on the thumb element
 @function webkit-slider-thumb-shadow($i: 1) {
@@ -31,6 +29,7 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 2rem;
 
     .#{$prefix}-slider-bottom-range,
     .#{$prefix}-slider-top-range {
@@ -47,8 +46,8 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
         outline: 2px solid transparent;
         outline-offset: -2px;
         background-color: #f3f3f3;
-        width: 40px;
-        height: 32px;
+        width: 2.5rem;
+        height: 2rem;
         padding: 0;
         color: #171717;
         border: none;
@@ -92,7 +91,7 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
         appearance: none;
         height: $thumb-height;
         width: $thumb-height;
-        background: $thumb-color;
+        background: $blue;
         border-radius: 100%;
         border: 0;
         top: 50%;
@@ -118,7 +117,7 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
         margin: 0;
         height: $thumb-height;
         width: $thumb-height;
-        background: $thumb-color;
+        background: $blue;
         border-radius: 100%;
         border: 0;
         transition: background-color 150ms;
@@ -146,7 +145,7 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
         appearance: none;
         height: $thumb-height;
         width: $thumb-height;
-        background: $thumb-color;
+        background: $blue;
         border-radius: 100%;
         border: 0;
         transition: background-color 150ms;
