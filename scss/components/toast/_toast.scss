@@ -62,7 +62,7 @@
         margin-top: 0.875rem;
     }
 
-    &-close-button {
+    &-close {
         outline: 0.125rem solid transparent;
         outline-offset: -0.125rem;
         background-color: transparent;
@@ -75,15 +75,6 @@
         min-height: 0.625rem;
         min-width: 0.625rem;
         transition: outline .11s, background-color .11s;
-
-        &-icon {
-            @include hcl-close-icon(16);
-            border-color: var(--grey-light);
-            margin-top: 1rem;
-            margin-right: 1rem;
-            top: 0;
-            right: 0;
-            position: absolute;
-        }
+        @include hcl-close-icon(16);
     }
 }
