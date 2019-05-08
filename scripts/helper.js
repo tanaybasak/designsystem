@@ -1,23 +1,26 @@
-// this is helper event for modals
+// this is only for deonstation purpose of maodal landing page
+// will not go in PROD 
 
 let helperModal = (function () {
 
-    DOMString = {
+    DOMStrings = {
+        modalContainer: 'hcl-modal-type',
+        modalButton: 'hcl-btn-modal-type'
 
     };
 
-    className = {
-
+    classNames = {
+       modalDisable: 'hcl-modal-disable',
     }
 
     showModal = function (event) {
         let type = event.target.getAttribute("data-modal-type");
-        document.getElementById(`hcl-modal-type${type}`).classList.remove('hcl-modal-disable');
+        document.getElementById(`${DOMStrings.modalContainer}${type}`).classList.remove(classNames.modalDisable);
     };
 
     hideModal = function (event) {
         let type = event.target.closest("div[data-modal-type]").getAttribute("data-modal-type");
-        document.getElementById(`hcl-modal-type${type}`).classList.add('hcl-modal-disable');
+        document.getElementById(`${DOMStrings.modalContainer}${type}`).classList.add(classNames.modalDisable);
     };
 
     let setupEventListeners = function () {
