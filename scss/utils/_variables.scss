@@ -58,6 +58,7 @@ $primary: $blue !default;
 $secondary: $black !default;
 $tertiary: $red !default;
 $link-hover-color: var(--dark-secondary);
+$lightGrey: #5A6872;
 // THEMES
 $theme-colors: () !default;
 $theme-colors: map-merge(("primary": $primary, "danger": $red, "tertiary": $tertiary), $theme-colors);
