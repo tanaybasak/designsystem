@@ -45,7 +45,7 @@
     }
 }
 
-@mixin triangle($type) {
+@mixin caret($type) {
     position: absolute;
     top: -0.3125rem;
     width: 0.65625rem;
@@ -68,12 +68,12 @@
 
 .#{$prefix}-overflow {
 
-    &-leftTriangle {
-        @include triangle(left);
-    }
+    &-caret {
+        @include caret(left);
 
-    &-rightTriangle {
-        @include triangle(right)
+        &-right {
+            @include caret(right)
+        }
     }
 
     &-ellipsis {
@@ -83,7 +83,7 @@
     &-container {
         position: relative;
 
-        >input:focus~.hcl-overflow-close {
+        >input:focus~.hcl-overflow-menu {
             display: block !important;
         }
     }
@@ -93,6 +93,7 @@
     }
 
     &-menu {
+        display: none;
         height: auto;
         width: 11.25rem;
         background-color: var(--white);
@@ -100,30 +101,31 @@
         box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
     }
 
-    &-wrapLeft {
+    &-left {
         @include wrap(left)
     }
 
-    &-wrapRight {
+    &-right {
         @include wrap(right)
     }
 
     &-default {
 
         @include options(default);
+    }
 
-        >li {
-            @include option(default);
-        }
+    &-option {
+        @include option(default);
     }
 
     &-danger {
 
         @include options(danger);
 
-        >li {
-            @include option(danger);
-        }
+    }
+
+    &-optiondanger {
+        @include option(danger);
     }
 
     &-disable {
