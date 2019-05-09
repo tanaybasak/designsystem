@@ -8,12 +8,18 @@
         background: transparent;
         padding: 0.75rem 0;
 
-        &.tabs-selected {
+        &.active {
             border-bottom: 2px solid var(--blue-light);
         }
 
         &.tabs-disabled {
             opacity: 0.5;
+
+            &:hover,
+            >a {
+                cursor: not-allowed;
+                color: $black;
+            }
         }
 
         &:hover {
@@ -31,19 +37,17 @@
         white-space: nowrap;
         color: $black;
 
-        &:hover {
+        :not(:disabled):hover {
             color: var(--blue-light);
         }
     }
 }
 
-.tabs {
-    .tabs-panel {
-        padding-top: 10px;
-        display: none;
+.tabs-panel {
+    padding-top: 10px;
+    display: none;
 
-        &.active {
-            display: block;
-        }
+    &.active {
+        display: block;
     }
 }

@@ -4,7 +4,7 @@
             tabs: 'tabs-nav',
             tabPanel: 'tabs-panel',
             disabledTabPanel: 'tabs-disabled',
-            selectedTabPanel: 'tabs-selected',
+            selectedTabPanel: 'active',
             activeTab: 'active'
         },
         tablist: [],
@@ -42,35 +42,41 @@
                         break;
                     }
                 }
-                Tabs.hideAllTabs(tabID, parentIdx);
+                Tabs.findTabs(tabID, parentIdx);
             }
 
         },
-        hideAllTabs: function (tabID, pIdx) {
+        findTabs: function (tabID, pIdx) {
             let me_ = this;
             let children = me_.tablist[pIdx].children, tabChildren;
-            for (let u = 0; u < children.length; u++) {
-                if (children[u].classList.contains(Tabs.selectors.tabPanel)) {
-                    children[u].classList.remove(Tabs.selectors.activeTab);
-                }
+            for (let u = 0; u < children.length; u++) { // All Tab Loop
                 if (children[u].classList.contains(Tabs.selectors.tabs)) {
                     tabChildren = children[u].children;
+                    break;
                 }
             }
-            me_.changeTab(tabID, tabChildren);
-            me_.selectTabArea(tabID);
+            me_.toggleTab(tabID, tabChildren);
+            me_.toggleTabPanel(me_.tablist[pIdx].nextElementSibling.children);
+            document.getElementById(`${tabID}`).classList.add(Tabs.selectors.activeTab);
         },
-        changeTab: function (tId, tchildren) {
-            for (let p = 0; p < tchildren.length; p++) {
-                tchildren[p].classList.remove(Tabs.selectors.selectedTabPanel);
-                let href = tchildren[p].firstElementChild.getAttribute('href');
-                if (href.slice(1) === tId) {
-                    tchildren[p].classList.add(Tabs.selectors.selectedTabPanel);
+        toggleTab: function (tId, tchildren) {
+            if (tchildren) {
+                for (let p = 0; p < tchildren.length; p++) {
+                    tchildren[p].classList.remove(Tabs.selectors.selectedTabPanel);
+                    let href = tchildren[p].getAttribute('aria-controls');
+                    if (href === tId) {
+                        tchildren[p].classList.add(Tabs.selectors.selectedTabPanel);
+                    }
                 }
             }
         },
-        selectTabArea: function (tId) {
-            document.getElementById(`${tId}`).classList.add(Tabs.selectors.activeTab);
+        toggleTabPanel: function (tabpanels) {
+            if (tabpanels) {
+                let len = tabpanels.length;
+                for (let i = 0; i < len; i++) {
+                    tabpanels[i].classList.remove('active');
+                }
+            }
         }
     };
     Tabs.init();
