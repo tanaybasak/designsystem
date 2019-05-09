@@ -36,6 +36,7 @@
     }
 
     &-link {
+        @include getFontWeight('semibold');
         text-decoration: none;
         display: inline-block;
         white-space: nowrap;
@@ -57,5 +58,5 @@
 }
 
 .#{$prefix}-tabcontent {
-    margin-top: hcl-rem(10px);
+    margin: hcl-rem(10px) 0 hcl-rem(10px);
 }
