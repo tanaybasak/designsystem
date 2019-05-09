@@ -57,3 +57,12 @@
 .#{$prefix}-close {
     @include hcl-close-icon(24);
 }
+
+// Border
+.b-0 {
+    border: 0;
+}
+
+.b-1 {
+    border: 1px solid $card-border-color;
+}
