@@ -25,9 +25,12 @@ const helperModal = (function () {
 
     const setupEventListeners = function () {
         for (let type = 1; type <= 8; type++) {
-            document.getElementById(`hcl-btn-modal-type${type}`).addEventListener('click', showModal);
-            document.getElementById(`hcl-modal-close-type${type}`).addEventListener('click', hideModal);
-            document.getElementById(`hcl-modal-cancel-type${type}`).addEventListener('click', hideModal);
+            let elm = document.getElementById(`hcl-btn-modal-type${type}`);
+            elm ? elm.addEventListener('click', showModal) : null;
+            elm = document.getElementById(`hcl-modal-close-type${type}`);
+            elm ? elm.addEventListener('click', hideModal) : null;
+            elm = document.getElementById(`hcl-modal-cancel-type${type}`);
+            elm ? elm.addEventListener('click', hideModal) : null;
         };
 
     };

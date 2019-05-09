@@ -40,13 +40,10 @@
         }
     }
 
-    &-header{
-        word-wrap: break-word;
-    }
-
     &-header {
         padding: 1rem 10% 1rem 10%;
         margin-top: 1.25rem;
+        word-wrap: break-word;
     }
 
     &-label {
