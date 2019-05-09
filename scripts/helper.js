@@ -1,17 +1,17 @@
-// this is only for deonstation purpose of maodal landing page
-// will not go in PROD 
+// This javascript function is for demonstation demonstration purpose of modal in landing page
+// This function will not be part package created for design system 
 
 let helperModal = (function () {
 
-    DOMStrings = {
+    let DOMStrings = {
         modalContainer: 'hcl-modal-type',
         modalButton: 'hcl-btn-modal-type'
 
     };
 
-    classNames = {
+    let classNames = {
        modalDisable: 'hcl-modal-disable',
-    }
+    };
 
     showModal = function (event) {
         let type = event.target.getAttribute("data-modal-type");

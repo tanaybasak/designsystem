@@ -1,7 +1,7 @@
 .#{$prefix}-modal {
 
-    &-disable{
-      display: none;
+    &-disable {
+        display: none;
     }
 
     position: fixed;
@@ -9,7 +9,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: hsla(0,0%,9%,.5);
+    background-color: hsla(0, 0%, 9%, .5);
     z-index: 2; // this is added because of tabs
     display: flex;
     align-items: center;
@@ -25,8 +25,10 @@
         background-color: var(--white);
         border-top: 0.25rem solid var(--blue);
         box-shadow: 0 0.75rem 1.5rem 0 rgba(0, 0, 0, 0.10);
-        width: 100% ;
-        height: 100% ;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
 
         @include media-breakpoint-between(md, xxl) {
             &.#{$prefix}-modal-container-lg {
@@ -54,10 +56,11 @@
 
     &-close {
         position: absolute !important;
-        right: 0.3125rem;
-        top: 0.3125rem;
+        right: 0;
+        top: 0;
+        margin: 1rem 1.25rem;
         // we are not using var for #5A6872 because of saas issue
-        @include hcl-close-icon(14, $white, #5A6872);
+        @include hcl-close-icon(14, $white, $lightGrey);
     }
 
     &-content {
@@ -85,7 +88,7 @@
     }
 
     .hcl-btn {
-        margin-top: 0 !important;
+        margin: 0 0.625rem !important;
         width: 5.625rem;
     }
 }
