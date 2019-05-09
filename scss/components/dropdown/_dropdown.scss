@@ -12,7 +12,7 @@
         width: 100%;
         text-align: left;
         margin: 0;
-        border-bottom: 1px solid #8c8c8c;
+        border-bottom: 1px solid $grey-2;
         padding-right: 2.5rem;
 
         &:after {
@@ -44,7 +44,7 @@
         background-color: $white;
         background-clip: padding-box;
         box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
-        border-bottom: 1px solid #8c8c8c;
+        border-bottom: 1px solid $grey-2;
         display: none;
         width: 100%;
 
@@ -54,19 +54,20 @@
     }
 
     &-item {
-        width: 100%;
         height: 2.5rem;
         @include getFontWeight("regular");
-        color: #212529;
-        text-align: inherit;
         white-space: nowrap;
         background-color: transparent;
         border: 0;
         font-size: 0.875rem;
-        color: #565656;
-        cursor: pointer;
+        color: $grey-3;
         border: 1px solid transparent;
         padding: 0.8125rem 1rem;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1;
 
         &:hover {
             background: rgba(70, 150, 210, 0.10);
@@ -80,7 +81,7 @@
     &.#{$prefix}-droptop {
         .#{$prefix}-dropdown-container {
             border: transparent;
-            border-top: 1px solid #8c8c8c;
+            border-top: 1px solid $grey-2;
         }
     }
 
