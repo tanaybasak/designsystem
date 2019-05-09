@@ -29,10 +29,10 @@
             let tabID, element, parentIdx;
             if (isLi) {
                 element = currentTarget;
-                tabID = currentTarget.getAttribute('aria-controls');
+                tabID = currentTarget.dataset.target;
             } else {
                 element = target.parentElement;
-                tabID = target.parentElement.getAttribute('aria-controls');
+                tabID = target.parentElement.dataset.target;
             }
             if (!element.classList.contains(Tabs.selectors.disabledTabPanel)) {
                 for (let j = 0; j < Tabs.tablist.length; j++) {
@@ -62,7 +62,7 @@
             if (tchildren) {
                 for (let p = 0; p < tchildren.length; p++) {
                     tchildren[p].classList.remove(Tabs.selectors.selectedTabPanel);
-                    let href = tchildren[p].getAttribute('aria-controls');
+                    let href = tchildren[p].dataset.target;
                     if (href === tId) {
                         tchildren[p].classList.add(Tabs.selectors.selectedTabPanel);
                     }
