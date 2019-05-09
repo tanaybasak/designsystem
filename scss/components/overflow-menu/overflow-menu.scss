@@ -8,7 +8,7 @@
     overflow: hidden;
     white-space: nowrap;
 
-    @if ($type==normal) {
+    @if ($type==default) {
         &:hover {
             background-color: rgba(70, 150, 210, 0.1);
         }
@@ -16,7 +16,7 @@
 
     @else if ($type==danger) {
         &:hover {
-            background-color: rgba(224, 24, 45, 1);
+            background-color: rgba(224, 24, 45, 1); //TODO
             color: var(--white);
         }
     }
@@ -36,7 +36,7 @@
     top: 1.625rem;
 
     @if ($type==left) {
-        left:7.8125rem;
+        left: 7.8125rem;
     }
 
     @else if ($type==right) {
@@ -68,11 +68,11 @@
 
 .#{$prefix}-overflow {
 
-    &-triangle-left {
+    &-leftTriangle {
         @include triangle(left);
     }
 
-    &-triangle-right {
+    &-rightTriangle {
         @include triangle(right)
     }
 
@@ -100,34 +100,32 @@
         box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
 
 
-        &-wrap-left {
+        &-wrapLeft {
             @include wrap(left)
         }
 
-        &-wrap-right {
+        &-wrapRight {
             @include wrap(right)
         }
 
-        &-normal {
 
-            >ul {
-                @include options(normal);
+    }
 
-                >li {
-                    @include option(normal);
-                }
-            }
+    &-default {
+
+        @include options(default);
+
+        >li {
+            @include option(default);
         }
+    }
 
-        &-danger {
+    &-danger {
 
-            >ul {
-                @include options(danger);
+        @include options(danger);
 
-                >li {
-                    @include option(danger);
-                }
-            }
+        >li {
+            @include option(danger);
         }
     }
 

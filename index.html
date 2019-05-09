@@ -608,12 +608,13 @@
             <!-- Overflow Menu -->
 
             <section class="hcl-row">
-                <div class="hcl-col-6 hcl-overflow ">
+                <section class="hcl-col-6 hcl-overflow ">
                     <!-- This paragragh tag is just for landing page, will not be part of design system -->
                     <p style="float: left;">Left Overflow Menu</p>
                     <div class="hcl-overflow-container">
                         <!-- This input tag is just for landing page, will not be part of design system -->
-                        <input style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 1rem;">
+                        <input
+                            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 1rem;">
                         <!-- This svg tag is just for landing page, will not be part of design system -->
                         <svg id="hcl-overflow-ellipsis-left" focusable="false" class="hcl-ellipsis" width="16"
                             height="16" viewBox="0 0 16 16">
@@ -622,72 +623,61 @@
                             <circle cx="8" cy="13" r="1.5"></circle>
                         </svg>
 
-                        <div class="hcl-overflow-menu-wrap-left hcl-overflow-close">
-                            <div class="hcl-overflow-menu">
-                                <div class="hcl-overflow-menu-normal">
-                                    <ul>
-                                        <li>
-                                            Option 1
-                                        </li>
-                                        <li>
-                                            Option 2
-                                        </li>
-                                        <li class="hcl-overflow-disable">
-                                            Option 3
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="hcl-overflow-menu-danger">
-                                    <ul>
-                                        <li>
-                                            Danger
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="hcl-overflow-triangle-left"></div>
+                        <div class="hcl-overflow-menu hcl-overflow-menu-wrapLeft hcl-overflow-close ">
+                            <ul class="hcl-overflow-default">
+                                <li>
+                                    Option 1
+                                </li>
+                                <li>
+                                    Option 2
+                                </li>
+                                <li class="hcl-overflow-disable">
+                                    Option 3
+                                </li>
+                            </ul>
+                            <ul class="hcl-overflow-danger">
+                                <li>
+                                    Danger
+                                </li>
+                            </ul>
+                            <div class="hcl-overflow-leftTriangle"></div>
                         </div>
                     </div>
-                </div>
-                <div class="hcl-col-6 hcl-overflow ">
+                </section>
+                <section class="hcl-col-6 hcl-overflow ">
                     <!-- This paragragh tag is just for landing page, will not be part of design system -->
                     <p style="float: left;">Right Overflow Menu</p>
                     <div class="hcl-overflow-container ">
-                         <!-- This input tag is just for landing page, will not be part of design system -->
-                        <input style="width:1rem; position:absolute; background:transparent; outline: none; padding: 0 1rem;">
-                         <!-- This svg tag is just for landing page, will not be part of design system -->
+                        <!-- This input tag is just for landing page, will not be part of design system -->
+                        <input
+                            style="width:1rem; position:absolute; background:transparent; outline: none; padding: 0 1rem;">
+                        <!-- This svg tag is just for landing page, will not be part of design system -->
                         <svg focusable="false" class="hcl-ellipsis" width="16" height="16" viewBox="0 0 16 16">
                             <circle cx="8" cy="3" r="1.5"></circle>
                             <circle cx="8" cy="8" r="1.5"></circle>
                             <circle cx="8" cy="13" r="1.5"></circle>
                         </svg>
-                        <div class="hcl-overflow-menu-wrap-right hcl-overflow-close">
-                            <div class="hcl-overflow-menu">
-                                <div class="hcl-overflow-menu-normal">
-                                    <ul>
-                                        <li>
-                                            Option 1
-                                        </li>
-                                        <li>
-                                            Option 2
-                                        </li>
-                                        <li class="hcl-overflow-disable">
-                                            Option 3
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="hcl-overflow-menu-danger">
-                                    <ul>
-                                        <li>
-                                            Danger
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="hcl-overflow-triangle-right"></div>
+                        <div class="hcl-overflow-menu hcl-overflow-menu-wrapRight hcl-overflow-close">
+                            <ul class="hcl-overflow-default">
+                                <li>
+                                    Option 1
+                                </li>
+                                <li>
+                                    Option 2
+                                </li>
+                                <li class="hcl-overflow-disable">
+                                    Option 3
+                                </li>
+                            </ul>
+                            <ul class="hcl-overflow-danger">
+                                <li>
+                                    Danger
+                                </li>
+                            </ul>
+                            <div class="hcl-overflow-rightTriangle"></div>
                         </div>
                     </div>
-                </div>
+                </section>
             </section>
 
             <!-- List -->
