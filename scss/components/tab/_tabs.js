@@ -34,7 +34,6 @@
                 element = target.parentElement;
                 tabID = target.parentElement.getAttribute('aria-controls');
             }
-            debugger;
             if (!element.classList.contains(Tabs.selectors.disabledTabPanel)) {
                 for (let j = 0; j < Tabs.tablist.length; j++) {
                     if (Tabs.tablist[j].contains(element)) {

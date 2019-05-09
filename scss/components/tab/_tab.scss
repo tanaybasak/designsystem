@@ -16,16 +16,6 @@
             border-bottom: 2px solid var(--blue-light);
         }
 
-        &.#{$prefix}-tabs-disabled {
-            opacity: 0.5;
-
-            &:hover,
-            >a {
-                cursor: not-allowed;
-                color: $black;
-            }
-        }
-
         &:hover {
             cursor: pointer;
         }
@@ -59,4 +49,14 @@
 
 .#{$prefix}-tabcontent {
     margin: hcl-rem(10px) 0 hcl-rem(10px);
+}
+
+.#{$prefix}-tabs-disabled {
+    opacity: 0.5;
+
+    &:hover,
+    >a {
+        cursor: not-allowed;
+        color: $black;
+    }
 }
