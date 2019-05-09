@@ -63,13 +63,10 @@
 
     @else if ($type==left) {
         left: 1rem;
-
     }
 }
 
 .#{$prefix}-overflow {
-
-
 
     &-triangle-left {
         @include triangle(left);
@@ -119,8 +116,6 @@
                 >li {
                     @include option(normal);
                 }
-
-
             }
         }
 
