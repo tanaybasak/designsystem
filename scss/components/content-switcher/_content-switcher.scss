@@ -85,3 +85,7 @@
         border-bottom-right-radius: hcl-rem(4px);
     }
 }
+
+.#{$prefix}-content-switcher-content {
+    margin: hcl-rem(15px) 0 hcl-rem(10px);
+}
