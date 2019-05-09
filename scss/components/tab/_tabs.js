@@ -1,9 +1,9 @@
 (function () {
     var Tabs = {
         selectors: {
-            tabs: 'tabs-nav',
-            tabPanel: 'tabs-panel',
-            disabledTabPanel: 'tabs-disabled',
+            tabs: 'hcl-tabs-nav',
+            tabPanel: 'hcl-tabs-panel',
+            disabledTabPanel: 'hcl-tabs-disabled',
             selectedTabPanel: 'active',
             activeTab: 'active'
         },
