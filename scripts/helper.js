@@ -13,7 +13,7 @@ let helperOverflowMenu = (function () {
     }
 
     showOverflowMenu = function(){
-        document.getElementById(`hcl-overflow-menu-wrap-left`ß).addEventListener('click', showOverflowMenu);
+        document.getElementById(`hcl-overflow-menu-wrap-left`).classList.remove(`hcl-overflow-close`);
     };
 
     let setupEventListeners = function () {
