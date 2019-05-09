@@ -98,17 +98,14 @@
         background-color: var(--white);
         border: 0.0625rem solid var(--danger);
         box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
+    }
 
+    &-wrapLeft {
+        @include wrap(left)
+    }
 
-        &-wrapLeft {
-            @include wrap(left)
-        }
-
-        &-wrapRight {
-            @include wrap(right)
-        }
-
-
+    &-wrapRight {
+        @include wrap(right)
     }
 
     &-default {
