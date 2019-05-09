@@ -10,7 +10,7 @@ let helperModal = (function () {
     };
 
     let classNames = {
-       modalDisable: 'hcl-modal-disable',
+       modalDisable: 'hcl-modal-hide',
     };
 
     showModal = function (event) {
