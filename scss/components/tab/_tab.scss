@@ -29,7 +29,6 @@
         @include getFontWeight('semibold');
         text-decoration: none;
         display: inline-block;
-        white-space: nowrap;
         color: $black;
 
         :not(:disabled):hover {
