@@ -638,83 +638,215 @@
             <section id="content-switcher" class="hcl-row p-4">
                 <h6 class="p-2">Content Switcher (default)</h6>
                 <div data-content-switcher class="hcl-content-switcher" role="tablist">
-                    <button class="hcl-content-switcher-btn" role="tab" data-target=".gate">
-                        <span class="hcl-text">First Section</span>
+                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".gate">
+                        <span class="hcl-text">All</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".window">
-                        <span>Second Section</span>
+                        <span>Cybernetics</span>
                     </button>
-                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".door">
-                        <span>Third Section</span>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".door">
+                        <span>Information & Communication</span>
                     </button>
                 </div>
                 <section class="hcl-content-switcher-content">
-                    <div class="gate">Hello</div>
-                    <div class="window" hidden>Awesome</div>
-                    <div class="door" hidden>World</div>
+                    <div class="gate">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="window" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="door" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
                 </section>
             </section>
             <section id="content-switcher2" class="hcl-row p-4">
-                    <h6 class="p-2">Content Switcher (disabled)</h6>
+                <h6 class="p-2">Content Switcher (disabled)</h6>
                 <div data-content-switcher class="hcl-content-switcher" role="tablist">
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".hello" disabled>
-                        <span class="hcl-text">First Section</span>
+                        <span class="hcl-text">All</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".awesome" disabled>
-                        <span>Second Section</span>
+                        <span>Cybernetics</span>
                     </button>
                     <button class="hcl-content-switcher-btn active" role="tab" data-target=".world" disabled>
-                        <span>Third Section</span>
+                        <span>Information & Communication</span>
                     </button>
                 </div>
                 <section class="hcl-content-switcher-content">
-                    <div class="hello">Hello</div>
-                    <div class="awesome" hidden>Awesome</div>
-                    <div class="world" hidden>World</div>
+                    <div class="hello" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="awesome" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="world">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
                 </section>
             </section>
             <section id="content-switcher3" class="hcl-row p-4">
-                    <h6 class="p-2">Content Switcher (with icons)</h6>
+                <h6 class="p-2">Content Switcher (with icons)</h6>
                 <div data-content-switcher class="hcl-content-switcher" role="tablist">
                     <button class="hcl-content-switcher-btn active" role="tab" data-target=".vanilla">
                         <span class="hcl-thumbnail"></span>
-                        <span class="hcl-text">First Section</span>
+                        <span class="hcl-text">All</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".react">
                         <span class="hcl-thumbnail"></span>
-                        <span>Second Section</span>
+                        <span>Cybernetics</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".angular">
                         <span class="hcl-thumbnail"></span>
-                        <span>Third Section</span>
+                        <span>Information & Communication</span>
                     </button>
                 </div>
                 <section class="hcl-content-switcher-content">
-                    <div class="vanilla">Vanilla</div>
-                    <div class="react" hidden>React</div>
-                    <div class="angular" hidden>Angular</div>
+                    <div class="vanilla">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="react" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="angular" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
                 </section>
             </section>
             <section id="content-switcher4" class="hcl-row p-4">
-                    <h6 class="p-2">Content Switcher - with icons (disabled)</h6>
+                <h6 class="p-2">Content Switcher - with icons (disabled)</h6>
                 <div data-content-switcher class="hcl-content-switcher" role="tablist">
                     <button class="hcl-content-switcher-btn active" role="tab" data-target=".target1" disabled>
                         <span class="hcl-thumbnail"></span>
-                        <span class="hcl-text">First Section</span>
+                        <span class="hcl-text">All</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".target2" disabled>
                         <span class="hcl-thumbnail"></span>
-                        <span>Second Section</span>
+                        <span>Cybernetics</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".target3" disabled>
                         <span class="hcl-thumbnail"></span>
-                        <span>Third Section</span>
+                        <span>Information & Communication</span>
                     </button>
                 </div>
                 <section class="hcl-content-switcher-content">
-                    <div class="target1">Vanilla</div>
-                    <div class="target2" hidden>React</div>
-                    <div class="target3" hidden>Angular</div>
+                    <div class="target1">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="target2" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="target3" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
                 </section>
             </section>
             <!-- Content Switcher Ends-->
