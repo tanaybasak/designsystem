@@ -172,20 +172,24 @@
             position: relative;
         }
 
-        &-selected {
+
+    }
+
+
+
+    &-date {
+        color: #171717;
+
+        &:hover {
+            background-color: #E5E5E5;
+        }
+
+        &-picked {
             background-color: #0062ff;
             color: #fff;
 
             &:hover {
                 color: #171717;
-            }
-        }
-
-        &-unSelected {
-            color: #171717;
-
-            &:hover {
-                background-color: #E5E5E5;
             }
         }
     }

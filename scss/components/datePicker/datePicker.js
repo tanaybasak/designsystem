@@ -70,9 +70,9 @@ let UIController = (function () {
         // inputCalSVG: '.hcl-datePicker-container-svg',
         dateContainer: '.hcl-datePicker-panel',
         showDateContainer: 'hcl-datePicker-panel-show',
-        dateSelected: 'hcl-datePicker-dates-selected',
+        dateSelected: 'hcl-datePicker-dates-selected', // need to work hcl-datePicker-dates
         todayHighlight: 'hcl-datePicker-dates-today',
-        dateUnSelected: 'hcl-datePicker-dates-unSelected',
+        dateUnSelected: 'hcl-datePicker-dates-unSelected', // need to work  hcl-datePicker-dates
         overlayShow: 'hcl-datePicker-container-overlay-show',
         overlayLabel: ".hcl-datePicker-container-overlay",
         errorDiv: 'hcl-datePicker-error',
@@ -164,10 +164,11 @@ let UIController = (function () {
     };
 
     let hightlightSelectedDate = function (id) {
-        if (document.getElementById(document.getElementById(DOMids.inputDate).value)) {
-            document.getElementById(document.getElementById(DOMids.inputDate).value).classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected);
-        }
-        document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
+        // need to check
+        // if (document.getElementById(document.getElementById(DOMids.inputDate).value)) {
+        //     document.getElementById(document.getElementById(DOMids.inputDate).value).classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected);
+        // }
+        // document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
 
     }
 
