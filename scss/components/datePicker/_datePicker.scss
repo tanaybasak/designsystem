@@ -5,12 +5,151 @@ $prefix: 'hcl';
     &-label {
         background-color: none;
     }
+    &-curMonth {
+        padding-right: 0.5rem;
+    }
+    &-up {
+        cursor: pointer;
+        box-sizing: border-box;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid #0062ff;
+    }
+    &-down {
+        cursor: pointer;
+        box-sizing: border-box;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #0062ff;
+    }
+    &-arrows {
+        height: 1.25rem;
+        width: 0rem;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0rem;
+        left: 2.5rem;
+        justify-content: space-evenly;
+    }
+    &-inputWrapper {
+        position: relative;
+
+        >input {
+            width: 3rem;
+            background-color: #f3f3f3;
+          
+        }
+        
+    }
+    &-selection {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+       
+       
+    }
+    &-month {
+        height: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
+        >span {
+            height: 2.5rem;
+            width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+    }
+
+    &-weekDays {
+        height: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        span {
+            height: 2.5rem;
+            width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #171717;
+            border-radius: 0;
+            border: none;
+        }
+    }
+
+         
+    &-dates {
+        height: 15.375rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &-today {
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: 0.4375rem;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 0.25rem;
+                width: 0.25rem;
+                background: #0062ff;
+            }
+        }
+        span {
+            cursor: pointer;
+            font-size: .875rem;
+            height: 2.5rem;
+            width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            border: none;
+            position: relative;
+        }
+        &-selected {
+            background-color: #0062ff;
+            color: #fff;
+
+            &:hover {
+                color: #171717;
+            }
+        }
+        &-unSelected {
+            color: #171717;
+
+            &:hover {
+                background-color: #E5E5E5;
+            }
+        }
+    }
+    &-panel {
+        background-color: #f3f3f3;
+        display: block;
+        z-index: 9;
+        &-show {
+            display: block;
+        }
+        &-hide {
+            display: none;
+        }
+       
+  
+    }
     &-container {
         position: relative;
         display: flex;
         flex-direction: column;
 
-        &-svg {
+        >svg {
             position: absolute;
             top: 0.75rem;
             right: 1rem;
@@ -36,136 +175,7 @@ $prefix: 'hcl';
             padding-right: 3rem;
             box-sizing: border-box;
         }
-        &-panel {
-            background-color: #f3f3f3;
-            display: none;
-            z-index: 9;
-            &-show {
-                display: block;
-            }
-            &-hide {
-                display: none;
-            }
-            &-month {
-                height: 2.5rem;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                font-weight: 600;
-                >span {
-                    height: 2.5rem;
-                    width: 2.5rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                }
-                &-selection {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-
-                    &-curMonth {
-                        padding-right: 0.5rem;
-                    }
-                    &-inputWrapper {
-                        position: relative;
-
-                        >input {
-                            width: 3rem;
-                            background-color: #f3f3f3;
-                          
-                        }
-                        &-arrows {
-                            height: 1.25rem;
-                            width: 0rem;
-                            display: flex;
-                            flex-direction: column;
-                            position: absolute;
-                            top: 0rem;
-                            left: 2.5rem;
-                            justify-content: space-evenly;
-                            &-up {
-                                cursor: pointer;
-                                box-sizing: border-box;
-                                border-left: 4px solid transparent;
-                                border-right: 4px solid transparent;
-                                border-bottom: 4px solid #0062ff;
-                            }
-                            &-down {
-                                cursor: pointer;
-                                box-sizing: border-box;
-                                border-left: 4px solid transparent;
-                                border-right: 4px solid transparent;
-                                border-top: 4px solid #0062ff;
-                            }
-                        }
-                    }
-                }
-            }
-            &-weekDays {
-                height: 2.5rem;
-                display: flex;
-                flex-direction: row;
-                span {
-                    height: 2.5rem;
-                    width: 2.5rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: #171717;
-                    border-radius: 0;
-                    border: none;
-                }
-            }
-            &-dates {
-                height: 15.375rem;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                &-today {
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        display: block;
-                        bottom: 0.4375rem;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        height: 0.25rem;
-                        width: 0.25rem;
-                        background: #0062ff;
-                    }
-                }
-                span {
-                    cursor: pointer;
-                    font-size: .875rem;
-                    height: 2.5rem;
-                    width: 2.5rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 0;
-                    border: none;
-                    position: relative;
-                }
-                &-selected {
-                    background-color: #0062ff;
-                    color: #fff;
-
-                    &:hover {
-                        color: #171717;
-                    }
-                }
-                &-unSelected {
-                    color: #171717;
-
-                    &:hover {
-                        background-color: #E5E5E5;
-                    }
-                }
-            }
-        }
+      
         &-overlay {
             position: fixed;
             top: 0;

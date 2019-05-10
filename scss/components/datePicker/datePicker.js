@@ -60,21 +60,21 @@ let UIController = (function () {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     let DOMstrings = {
-        weekDaysPanel: '.hcl-datePicker-container-panel-weekDays',
-        datePanel: '.hcl-datePicker-container-panel-dates',
-        prevMonth: '.hcl-datePicker-container-panel-month-prev',
-        nextMonth: '.hcl-datePicker-container-panel-month-next',
-        yearIncrease: '.hcl-datePicker-container-panel-month-selection-inputWrapper-arrows-up',
-        yearDecrease: '.hcl-datePicker-container-panel-month-selection-inputWrapper-arrows-down',
-        yearInput: '.hcl-datePicker-container-panel-month-selection-inputWrapper-input',
-        monthInput: '.hcl-datePicker-container-panel-month-selection-curMonth',
+        weekDaysPanel: '.hcl-datePicker-weekDays',
+        datePanel: '.hcl-datePicker-dates',
+        prevMonth: '.hcl-datePicker-month-prev',
+        nextMonth: '.hcl-datePicker-month-next',
+        yearIncrease: '.hcl-datePicker-up',
+        yearDecrease: '.hcl-datePicker-down',
+        yearInput: '.hcl-datePicker-inputWrapper-input',
+        monthInput: '.hcl-datePicker-curMonth',
         inputDate: '.hcl-datePicker-input',
         inputCalSVG: '.hcl-datePicker-container-svg',
-        dateContainer: '.hcl-datePicker-container-panel',
-        showDateContainer: 'hcl-datePicker-container-panel-show',
-        dateSelected: 'hcl-datePicker-container-panel-dates-selected',
-        todayHighlight: 'hcl-datePicker-container-panel-dates-today',
-        dateUnSelected: 'hcl-datePicker-container-panel-dates-unSelected',
+        dateContainer: '.hcl-datePicker-panel',
+        showDateContainer: 'hcl-datePicker-panel-show',
+        dateSelected: 'hcl-datePicker-dates-selected',
+        todayHighlight: 'hcl-datePicker-dates-today',
+        dateUnSelected: 'hcl-datePicker-dates-unSelected',
         overlayShow: 'hcl-datePicker-container-overlay-show',
         overlayLabel: ".hcl-datePicker-container-overlay",
         errorDiv: 'hcl-datePicker-error',
@@ -90,7 +90,7 @@ let UIController = (function () {
 
     let initweekDaysPanel = function () {
 
-        let html = '<span class="hcl-datePicker-container-panel-weekDays-day">%weekDay%</span>';
+        let html = '<span class="hcl-datePicker-weekDays-day">%weekDay%</span>';
         let element = DOMstrings.weekDaysPanel;
         weekDays.forEach((weekDay) => {
             let weekDayHTML = html.replace('%weekDay%', weekDay);
