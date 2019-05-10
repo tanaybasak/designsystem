@@ -62,14 +62,13 @@ let UIController = (function () {
     let DOMstrings = {
         weekDaysPanel: '.hcl-datePicker-weekDays',
         datePanel: '.hcl-datePicker-dates',
-        prevMonth: '.hcl-datePicker-month-prev',
-        nextMonth: '.hcl-datePicker-month-next',
+        // prevMonth: '.hcl-datePicker-month-prev',
+        // nextMonth: '.hcl-datePicker-month-next',
         yearIncrease: '.hcl-datePicker-up',
         yearDecrease: '.hcl-datePicker-down',
-        yearInput: '.hcl-datePicker-inputWrapper-input',
         monthInput: '.hcl-datePicker-curMonth',
         inputDate: '.hcl-datePicker-input',
-        inputCalSVG: '.hcl-datePicker-container-svg',
+        // inputCalSVG: '.hcl-datePicker-container-svg',
         dateContainer: '.hcl-datePicker-panel',
         showDateContainer: 'hcl-datePicker-panel-show',
         dateSelected: 'hcl-datePicker-dates-selected',
@@ -82,6 +81,14 @@ let UIController = (function () {
         addErrorBorder: 'hcl-datePicker-container-hightlightError'
 
     };
+
+    let DOMids = {
+        inputCalSVG: 'hcl-datePicker-container-svg',
+        prevMonth: 'hcl-datePicker-month-prev',
+        yearInput: 'hcl-datePicker-inputWrapper-input',
+        nextMonth: 'hcl-datePicker-month-next',
+
+    }
 
     let getDaysInMonth = function (month, year) {
         return new Date(year, month, 0).getDate();
@@ -149,10 +156,10 @@ let UIController = (function () {
     };
 
     let initMonthYearPanel = function (curMonthObj) {
-        let monthElm = DOMstrings.monthInput;
-        let yearElm = DOMstrings.yearInput;
-        document.querySelector(monthElm).innerHTML = months[curMonthObj.month];
-        document.querySelector(yearElm).value = String(curMonthObj.year);
+        // let monthElm = DOMstrings.monthInput;
+        // let yearElm = DOMids.yearInput;
+        document.querySelector(DOMstrings.monthInput).innerHTML = months[curMonthObj.month];
+        document.getElementById(DOMids.yearInput).value = String(curMonthObj.year);
     };
 
     let hightlightSelectedDate = function (id) {
@@ -180,6 +187,10 @@ let UIController = (function () {
 
         getDOMstrings: function () {
             return DOMstrings;
+        },
+
+        getDOMids: function () {
+            return DOMids;
         },
 
         removeExistingDates: function () {
@@ -227,14 +238,15 @@ let controller = (function (dateCtrl, UICtrl) {
 
     let setupEventListeners = function () {
         let DOM = UICtrl.getDOMstrings();
-        document.querySelector(DOM.prevMonth).addEventListener('click', prevMonth);
-        document.querySelector(DOM.nextMonth).addEventListener('click', nextMonth);
+        let DOMids = UICtrl.getDOMids();
+        document.getElementById(DOMids.prevMonth).addEventListener('click', prevMonth);
+        document.getElementById(DOMids.nextMonth).addEventListener('click', nextMonth);
         document.querySelector(DOM.yearIncrease).addEventListener('click', yearIncrease);
         document.querySelector(DOM.yearDecrease).addEventListener('click', yearDecrease);
         document.querySelector(DOM.inputDate).addEventListener('click', UICtrl.showDateContainer);
         document.querySelector(DOM.inputDate).addEventListener('change', dateChangeHandler);
-        document.querySelector(DOM.inputCalSVG).addEventListener('click', UICtrl.showDateContainer);
-        document.querySelector(DOM.yearInput).addEventListener('change', yearChangeHandler);
+        document.getElementById(DOMids.inputCalSVG).addEventListener('click', UICtrl.showDateContainer);
+        document.getElementById(DOMids.yearInput).addEventListener('change', yearChangeHandler);
         document.querySelector(DOM.overlayLabel).addEventListener('click', UICtrl.hideDateContainer);
 
         let dateElement = document.querySelector(DOM.datePanel).children;

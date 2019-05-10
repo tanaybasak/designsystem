@@ -976,7 +976,7 @@
                     </div>
                     <button class="hcl-toast-close" type="button" aria-label="close" />
                 </div>
-            </section> 
+            </section>
 
             <!-- Date Picker -->
             <section class="hcl-datePicker" title="date picker">
@@ -984,18 +984,14 @@
                 <div class="hcl-datePicker-container">
                     <input type="text" class="hcl-datePicker-input" placeholder="mm/dd/yyyy"
                         pattern="/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/" />
-
-                        <!-- class need to be changed to id -->
-                    <svg class="hcl-datePicker-container-svg" width="14" height="16" viewBox="0 0 14 16">
+                    <svg id="hcl-datePicker-container-svg" width="14" height="16" viewBox="0 0 14 16">
                         <path d=" M0 5h14v1H0V5zm3-5h1v4H3V0zm7 0h1v4h-1V0zM0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14
-                        2.5v12a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 0 14.5v-12zm1 0v12a.5.5 0 0 0 .5.5h11a.5.5 0 0 0
-                        .5-.5v-12a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5z" fill-rule="nonzero" />
+                                2.5v12a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 0 14.5v-12zm1 0v12a.5.5 0 0 0 .5.5h11a.5.5 0 0 0
+                                .5-.5v-12a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5z" fill-rule="nonzero" />
                     </svg>
-
                     <div class="hcl-datePicker-panel" id="hcl-datePicker-panel">
-                        <div class="hcl-datePicker-month"> 
-                            <!-- this class does not exist change to id -->
-                            <span class="hcl-datePicker-month-prev">
+                        <div class="hcl-datePicker-month">
+                            <span id="hcl-datePicker-month-prev">
                                 <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
                                     <path d="M7.5 10.6L2.8 6l4.7-4.6L6.1 0 0 6l6.1 6z"></path>
                                 </svg>
@@ -1003,21 +999,15 @@
                             <div class="hcl-datePicker-selection">
                                 <span class="hcl-datePicker-curMonth">March </span>
                                 <div class="hcl-datePicker-inputWrapper">
-
-                                         <!-- this class does not exist change to id -->
-                                    <input class="hcl-datePicker-inputWrapper-input"
-                                        type="text" tabindex="-1" aria-label="Year" value="2019">
+                                    <input id="hcl-datePicker-inputWrapper-input" type="text" tabindex="-1"
+                                        aria-label="Year" value="2019">
                                     <div class="hcl-datePicker-arrows">
-                                        <span
-                                            class="hcl-datePicker-up"></span>
-                                        <span
-                                            class="hcl-datePicker-down"></span>
+                                        <span class="hcl-datePicker-up"></span>
+                                        <span class="hcl-datePicker-down"></span>
                                     </div>
                                 </div>
                             </div>
-                                         <!-- this class does not exist change to id -->
-
-                            <span class="hcl-datePicker-month-next">
+                            <span id="hcl-datePicker-month-next">
                                 <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
                                     <path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
                                 </svg>
@@ -1028,12 +1018,10 @@
                         </div>
                     </div>
                     <!-- <label class="hcl-datePicker-container-overlay"> </label> -->
-
                 </div>
                 <div class="hcl-datePicker-error" id="hcl-datePicker-error">
                     Invalid date format.
                 </div>
-
             </section>
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
