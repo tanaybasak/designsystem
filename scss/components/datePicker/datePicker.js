@@ -60,14 +60,13 @@ let UIController = (function () {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     let DOMstrings = {
-        weekDaysPanel: '.hcl-datePicker-weekDays',
+        weekDaysPanel: '.hcl-datePicker-days',
         datePanel: '.hcl-datePicker-dates',
         // prevMonth: '.hcl-datePicker-month-prev',
         // nextMonth: '.hcl-datePicker-month-next',
         yearIncrease: '.hcl-datePicker-up',
         yearDecrease: '.hcl-datePicker-down',
         monthInput: '.hcl-datePicker-curMonth',
-        inputDate: '.hcl-datePicker-input',
         // inputCalSVG: '.hcl-datePicker-container-svg',
         dateContainer: '.hcl-datePicker-panel',
         showDateContainer: 'hcl-datePicker-panel-show',
@@ -78,15 +77,17 @@ let UIController = (function () {
         overlayLabel: ".hcl-datePicker-container-overlay",
         errorDiv: 'hcl-datePicker-error',
         showErrorDiv: 'hcl-datePicker-error-show',
-        addErrorBorder: 'hcl-datePicker-container-hightlightError'
+        addErrorBorder: 'hcl-datePicker-container-error'
 
     };
 
     let DOMids = {
         inputCalSVG: 'hcl-datePicker-container-svg',
         prevMonth: 'hcl-datePicker-month-prev',
-        yearInput: 'hcl-datePicker-inputWrapper-input',
+        yearInput: 'hcl-datePicker-year-input',
         nextMonth: 'hcl-datePicker-month-next',
+        inputDate: 'hcl-datePicker-input',
+
 
     }
 
@@ -97,7 +98,7 @@ let UIController = (function () {
 
     let initweekDaysPanel = function () {
 
-        let html = '<span class="hcl-datePicker-weekDays-day">%weekDay%</span>';
+        let html = '<span>%weekDay%</span>';
         let element = DOMstrings.weekDaysPanel;
         weekDays.forEach((weekDay) => {
             let weekDayHTML = html.replace('%weekDay%', weekDay);
@@ -113,14 +114,14 @@ let UIController = (function () {
 
         //days from previous month
 
-        let numOfDaysFromPrevMonth = curMonthObj.day - curMonthObj.date % 7;  
+        let numOfDaysFromPrevMonth = curMonthObj.day - curMonthObj.date % 7;
         numOfDaysFromPrevMonth = numOfDaysFromPrevMonth < 0 ? 7 + numOfDaysFromPrevMonth : numOfDaysFromPrevMonth;
         let numOfDaysInPrevMonth = getDaysInMonth(curMonthObj.month === 0 ? 12 : curMonthObj.month, curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
 
         for (let i = numOfDaysInPrevMonth - numOfDaysFromPrevMonth; i <= numOfDaysInPrevMonth && numOfDaysFromPrevMonth !== 6; i++) {
             let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
             dayHTML = dayHTML.replaceAll('%month%', ('0' + (curMonthObj.month === 0 ? 12 : curMonthObj.month)).slice(-2));
-            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year); 
+            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
             document.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
         }
 
@@ -137,12 +138,12 @@ let UIController = (function () {
         for (let i = 1; i < numOfDaysFromNextMonth; i++) {
             let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
             dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month === 11 ? -1 : curMonthObj.month) + 2)).slice(-2));
-            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 11 ? curMonthObj.year + 1 : curMonthObj.year); 
+            dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 11 ? curMonthObj.year + 1 : curMonthObj.year);
             document.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
         }
 
         // hightlight today's Date
-        let todayDate = new Date(); 
+        let todayDate = new Date();
         todayDate = `${('0' + (todayDate.getMonth() + 1)).slice(-2)}/${('0' + todayDate.getDate()).slice(-2)}/${todayDate.getFullYear()}`;
 
         if (document.getElementById(todayDate)) {
@@ -163,8 +164,8 @@ let UIController = (function () {
     };
 
     let hightlightSelectedDate = function (id) {
-        if (document.getElementById(document.querySelector(DOMstrings.inputDate).value)) {
-            document.getElementById(document.querySelector(DOMstrings.inputDate).value).classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected);
+        if (document.getElementById(document.getElementById(DOMids.inputDate).value)) {
+            document.getElementById(document.getElementById(DOMids.inputDate).value).classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected);
         }
         document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
 
@@ -205,10 +206,10 @@ let UIController = (function () {
         },
         selectDate: function (event) {
             console.log('selectDate!!!' + event.target.id);
-            document.querySelector(DOMstrings.inputDate).classList.remove(DOMstrings.addErrorBorder);
+            document.getElementById(DOMids.inputDate).classList.remove(DOMstrings.addErrorBorder);
             document.getElementById(DOMstrings.errorDiv).classList.remove(DOMstrings.showErrorDiv);
             hightlightSelectedDate(event.target.id)
-            document.querySelector(DOMstrings.inputDate).value = event.target.id;
+            document.getElementById(DOMids.inputDate).value = event.target.id;
         },
         hightlightSelectedDate: function (id) {
             hightlightSelectedDate(id);
@@ -221,11 +222,11 @@ let UIController = (function () {
         },
         showErrorInvalidDate: function () {
             document.getElementById(DOMstrings.errorDiv).classList.add(DOMstrings.showErrorDiv);
-            document.querySelector(DOMstrings.inputDate).classList.add(DOMstrings.addErrorBorder);
+            document.getElementById(DOMids.inputDate).classList.add(DOMstrings.addErrorBorder);
 
         },
         hideErrorInvalidDate: function () {
-            document.querySelector(DOMstrings.inputDate).classList.remove(DOMstrings.addErrorBorder);
+            document.getElementById(DOMids.inputDate).classList.remove(DOMstrings.addErrorBorder);
             document.getElementById(DOMstrings.errorDiv).classList.remove(DOMstrings.showErrorDiv);
 
         }
@@ -239,15 +240,47 @@ let controller = (function (dateCtrl, UICtrl) {
     let setupEventListeners = function () {
         let DOM = UICtrl.getDOMstrings();
         let DOMids = UICtrl.getDOMids();
-        document.getElementById(DOMids.prevMonth).addEventListener('click', prevMonth);
-        document.getElementById(DOMids.nextMonth).addEventListener('click', nextMonth);
-        document.querySelector(DOM.yearIncrease).addEventListener('click', yearIncrease);
-        document.querySelector(DOM.yearDecrease).addEventListener('click', yearDecrease);
-        document.querySelector(DOM.inputDate).addEventListener('click', UICtrl.showDateContainer);
-        document.querySelector(DOM.inputDate).addEventListener('change', dateChangeHandler);
-        document.getElementById(DOMids.inputCalSVG).addEventListener('click', UICtrl.showDateContainer);
-        document.getElementById(DOMids.yearInput).addEventListener('change', yearChangeHandler);
-        document.querySelector(DOM.overlayLabel).addEventListener('click', UICtrl.hideDateContainer);
+        if (document.getElementById(DOMids.prevMonth)) {
+            document.getElementById(DOMids.prevMonth).addEventListener('click', prevMonth);
+        } else {
+            console.log("Error");
+        }
+
+        if (document.getElementById(DOMids.nextMonth)) {
+            document.getElementById(DOMids.nextMonth).addEventListener('click', nextMonth);
+        } else {
+            console.log("Error");
+        }
+        if (document.querySelector(DOM.yearDecrease)) {
+            document.querySelector(DOM.yearDecrease).addEventListener('click', yearDecrease);
+        } else {
+            console.log("Error");
+        }
+        if (document.querySelector(DOM.inputDate)) {
+            document.querySelector(DOM.inputDate).addEventListener('click', UICtrl.showDateContainer);
+        } else {
+            console.log("Error");
+        }
+        if (document.querySelector(DOM.inputDate)) {
+            document.querySelector(DOM.inputDate).addEventListener('change', dateChangeHandler);
+        } else {
+            console.log("Error");
+        }
+        if (document.getElementById(DOMids.inputCalSVG)) {
+            document.getElementById(DOMids.inputCalSVG).addEventListener('click', UICtrl.showDateContainer);
+        } else {
+            console.log("Error");
+        }
+        if (document.getElementById(DOMids.yearInput)) {
+            document.getElementById(DOMids.yearInput).addEventListener('change', yearChangeHandler);
+        } else {
+            console.log("Error");
+        }
+        // if (document.querySelector(DOM.overlayLabel)) {
+        //     document.querySelector(DOM.overlayLabel).addEventListener('click', UICtrl.hideDateContainer);
+        // } else {
+        //     console.log("Error");
+        // }
 
         let dateElement = document.querySelector(DOM.datePanel).children;
 

@@ -982,7 +982,7 @@
             <section class="hcl-datePicker" title="date picker">
                 <label class="hcl-datePicker-label">Date picker label</label>
                 <div class="hcl-datePicker-container">
-                    <input type="text" class="hcl-datePicker-input" placeholder="mm/dd/yyyy"
+                    <input type="text" id="hcl-datePicker-input" placeholder="mm/dd/yyyy"
                         pattern="/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/" />
                     <svg id="hcl-datePicker-container-svg" width="14" height="16" viewBox="0 0 14 16">
                         <path d=" M0 5h14v1H0V5zm3-5h1v4H3V0zm7 0h1v4h-1V0zM0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14
@@ -996,10 +996,10 @@
                                     <path d="M7.5 10.6L2.8 6l4.7-4.6L6.1 0 0 6l6.1 6z"></path>
                                 </svg>
                             </span>
-                            <div class="hcl-datePicker-selection">
+                            <div class="hcl-datePicker-select">
                                 <span class="hcl-datePicker-curMonth">March </span>
-                                <div class="hcl-datePicker-inputWrapper">
-                                    <input id="hcl-datePicker-inputWrapper-input" type="text" tabindex="-1"
+                                <div class="hcl-datePicker-year">
+                                    <input id="hcl-datePicker-year-input" type="text" tabindex="-1"
                                         aria-label="Year" value="2019">
                                     <div class="hcl-datePicker-arrows">
                                         <span class="hcl-datePicker-up"></span>
@@ -1013,11 +1013,11 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="hcl-datePicker-weekDays"> </div>
+                        <div class="hcl-datePicker-days"> </div>
                         <div class="hcl-datePicker-dates">
                         </div>
                     </div>
-                    <!-- <label class="hcl-datePicker-container-overlay"> </label> -->
+                    <!-- <label class="hcl-datePicker-overlay"> </label> -->
                 </div>
                 <div class="hcl-datePicker-error" id="hcl-datePicker-error">
                     Invalid date format.
