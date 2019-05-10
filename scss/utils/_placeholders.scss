@@ -1,0 +1,18 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+/*
+ * This file contains all globally applicable %placeholders
+ */
+
+// GRID SYSTEMS COLUMN
+%common-col-rules {
+    min-height: $minHeight; // 0.0625rem = 1px; Prevent column collapsing when empty
+    padding-left: $gutter;
+    padding-right: $gutter;
+}

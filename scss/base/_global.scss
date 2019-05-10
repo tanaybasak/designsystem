@@ -12,10 +12,33 @@ html {
 }
 
 body {
+
     // $body-color: var(--black) !default; // TODO: Not seen being used anywhere, so commented out
     font: {
         family: 'Roboto', sans-serif;
     }
+
     color: var(--black);
     line-height: var(--base-line-height);
+}
+
+ul,
+ol {
+    &.no-style {
+        list-style: none;
+    }
+
+    li {
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+
+dd,
+dt,
+dl {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }

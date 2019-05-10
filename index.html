@@ -11,151 +11,985 @@
 </head>
 
 <body>
-    <main>
-        <section class="hcl-container">
-            <a href="form.html">Form</a>
-            <div class="row">
-                <div class="col-12">
-                    <h1>This is the heading one</h1>
-                    <h2>This is the heading two</h2>
-                    <h3>This is the heading three</h3>
-                    <h4>This is the heading four</h4>
-                    <h5>This is the heading five</h5>
-                    <h6>This is the heading six</h6>
+    <!-- HEADER LAYOUT -->
+    <header class="hcl-header">
+        <!-- BRAND LOGO -->
+        <a href="/" class="hcl-logo"></a>
+        <!-- HORIZONTAL NAVIGATION -->
+        <ul class="hcl-navbar">
+            <li class="hcl-navbar-nav hcl-active">Tab 1</li>
+            <li class="hcl-navbar-nav">Tab 2</li>
+            <li class="hcl-navbar-nav">Tab 3</li>
+            <li class="hcl-navbar-nav">Tab 4</li>
+            <li class="hcl-navbar-nav">Tab 5</li>
+        </ul>
+        <!-- HORIZONTAL TOOLBAR -->
+        <ul class="hcl-toolbar">
+            <li class="hcl-toolbar-icon">
+                <span class="hcl-icon-1"></span>
+            </li>
+            <li class="hcl-toolbar-icon">
+                <span class="hcl-icon-1"></span>
+            </li>
+            <li class="hcl-toolbar-icon">
+                <span class="hcl-icon-1"></span>
+            </li>
+            <li class="hcl-toolbar-icon">
+                <span class="hcl-icon-1"></span>
+            </li>
+            <li class="hcl-toolbar-icon">
+                <span class="hcl-icon-1"></span>
+            </li>
+        </ul>
+    </header>
+    <!-- CONTENT LAYOUT -->
+    <div class="hcl-content">
+        <!-- SIDEBAR LAYOUT -->
+        <nav class="hcl-sidebar">
+            <span class="hcl-icon-2">&larr;</span>
+            <ul class="hcl-sidebar-list">
+                <li class="hcl-sidebar-list-item">
+                    <a href="#typography" class="hcl-sidebar-list-link">
+                        <span>Typography</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#gridSystem" class="hcl-sidebar-list-link">
+                        <span>Grid System</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#boxExamples" class="hcl-sidebar-list-link">
+                        <span>Box Examples</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#spinner" class="hcl-sidebar-list-link">
+                        <span>Spinner</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#breadcrumb" class="hcl-sidebar-list-link">
+                        <span>Breadcrumb</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#toggle" class="hcl-sidebar-list-link">
+                        <span>Toggle</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#notification" class="hcl-sidebar-list-link">
+                        <span>Notification</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#content-switcher" class="hcl-sidebar-list-link">
+                        <span>Content Switcher</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- MAIN CONTENT LAYOUT -->
+        <main class="hcl-content-main">
+            <!-- AVAILABLE COMPONENTS STARTS -->
+            <section id="typography" class="hcl-container">
+                <div class="hcl-row">
+                    <div class="hcl-col-12">
+                        <h1>This is the heading one</h1>
+                        <h2>This is the heading two</h2>
+                        <h3>This is the heading three</h3>
+                        <h4>This is the heading four</h4>
+                        <h5>This is the heading five</h5>
+                        <h6>This is the heading six</h6>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row col-12 mt-4 mb-4">
-                <p>
-                    This is the dummy text for the paragraph.This is the dummy text for
-                    the paragraph.This is the dummy text for the paragraph. This is the
-                    dummy text for the paragraph.This is the dummy text for the
-                    paragraph. This is the dummy text for the paragraph.This is the
-                    dummy text for the paragraph.This is the dummy text for the
-                    paragraph. This is the dummy text for the paragraph.This is the
-                    dummy text for the paragraph. This is the dummy text for the
-                    paragraph.This is the dummy text for the paragraph.This is the dummy
-                    text for the paragraph. This is the dummy text for the
-                    paragraph.This is the dummy text for the paragraph. This is the
-                    dummy text for the paragraph.This is the dummy text for the
-                    paragraph.This is th e dummy text for the paragraph. This is the
-                    dummy text for the paragraph.This is the dummy text for the
-                    paragraph.
-                </p>
-            </div>
-            <div class="row col-12 mt-4 mb-4"><a href="#">This is a link</a></div>
-            <div class="row col-12">
-                <button class="hcl-btn hcl-btn-primary">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-primary sm">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-primary outline">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-primary ghost">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-primary outline sm">BUTTON TEXT</button>
-                <button class="btn hcl-btn-primary ghost sm">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-secondary">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-secondary sm">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-secondary outline">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-secondary ghost">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-secondary outline sm">BUTTON TEXT</button>
-                <button class="hcl-btn hcl-btn-secondary ghost sm">BUTTON TEXT</button>
-                <button class="btn">BUTTON TEXT</button>
-            </div>
-        </section>
-        <section class="hcl-container">
-            <div class="row">
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-11 colBorder  bgColor">11</div>
-            </div>
-            <div class="row">
-                <div class="col-2 colBorder bgColor">2</div>
-                <div class="col-10 colBorder bgColor">10</div>
-            </div>
-            <div class="row">
-                <div class="col-3 colBorder bgColor">3</div>
-                <div class="col-9 colBorder bgColor">9</div>
-            </div>
-            <div class="row">
-                <div class="col-4 colBorder bgColor">4</div>
-                <div class="col-8 colBorder bgColor">8</div>
-            </div>
-            <div class="row">
-                <div class="col-5 colBorder bgColor">5</div>
-                <div class="col-7 colBorder bgColor">7</div>
-            </div>
-            <div class="row">
-                <div class="col-6 colBorder bgColor">6</div>
-                <div class="col-6 colBorder bgColor">6</div>
-            </div>
-            <div class="row">
-                <div class="col-7 colBorder bgColor">7</div>
-                <div class="col-5 colBorder bgColor">5</div>
-            </div>
-            <div class="row">
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-                <div class="col-1 colBorder bgColor">1</div>
-            </div>
-            <div class="row">
-                <div class="col-12 colBorder bgColor">12</div>
-            </div>
-        </section>
-        <section class="hcl-container pt-5">
-            <div class="row">
-                <div class="col-3 colBorder bgColor bigCol darkBox">Left Box</div>
-                <div class="col-9 colBorder bgColor bigCol">Right Box</div>
-            </div>
-        </section>
+                <div class="hcl-row hcl-col-12 mt-4 mb-4">
+                    <p>
+                        This is the dummy text for the paragraph.This is the dummy text for
+                        the paragraph.This is the dummy text for the paragraph. This is the
+                        dummy text for the paragraph.This is the dummy text for the
+                        paragraph. This is the dummy text for the paragraph.This is the
+                        dummy text for the paragraph.This is the dummy text for the
+                        paragraph. This is the dummy text for the paragraph.This is the
+                        dummy text for the paragraph. This is the dummy text for the
+                        paragraph.This is the dummy text for the paragraph.This is the dummy
+                        text for the paragraph. This is the dummy text for the
+                        paragraph.This is the dummy text for the paragraph. This is the
+                        dummy text for the paragraph.This is the dummy text for the
+                        paragraph.This is th e dummy text for the paragraph. This is the
+                        dummy text for the paragraph.This is the dummy text for the
+                        paragraph.
+                    </p>
+                </div>
+                <div class="row col-12 mt-4 mb-4"><a href="#">This is a link</a></div>
+                <div class="row col-12">
+                    <button class="hcl-btn hcl-primary">Primary Button</button>
+                    <button class="hcl-btn hcl-danger">Danger Button</button>
 
-        <section class="hcl-container pt-5">
-            <div class="row">
-                <div class="col-4 colBorder bgColor bigCol darkBox">Left Box</div>
-                <div class="col-4 colBorder bgColor bigCol darkBox">Center Box</div>
-                <div class="col-4 colBorder bgColor bigCol darkBox">Right Box</div>
-            </div>
-            <div class="row">
-                <div class="col-6 colBorder bgColor bigCol">Left Box</div>
-                <div class="col-6 colBorder bgColor bigCol">Right Box</div>
-            </div>
-            <div class="row">
-                <div class="col-4 colBorder bgColor bigCol darkBox">Left Box</div>
-                <div class="col-4 colBorder bgColor bigCol darkBox">Center Box</div>
-                <div class="col-4 colBorder bgColor bigCol darkBox">Right Box</div>
-            </div>
-        </section>
+                    <button class="hcl-btn hcl-primary hcl-primary-outline">Primary Outline</button>
+                    <button class="hcl-btn hcl-danger hcl-danger-outline">Danger Outline</button>
 
-        <section class="hcl-container pt-5">
-            <div class="row">
-                <div class="col-2 colBorder bgColor bigCol darkBox"></div>
-                <div class="col-10 colBorder bgColor bigCol darkBox">Data</div>
-            </div>
-            <div class="row">
-                <div class="col-2 colBorder bgColor bigCol darkBox">Values</div>
-                <div class="col-2 colBorder bgColor bigCol">Value One</div>
-                <div class="col-2 colBorder bgColor bigCol">Value Two</div>
-                <div class="col-2 colBorder bgColor bigCol">Value Three</div>
-                <div class="col-2 colBorder bgColor bigCol">Value Four</div>
-                <div class="col-2 colBorder bgColor bigCol">Value Five</div>
-            </div>
-        </section>
-            <section class="hcl-spinner" title="loading">
-                <svg class="hcl-spinner-svg">
-                    <circle class="hcl-spinner-svg-circle" cx="50" cy="50" r="40" />
-                </svg>
+                    <button class="hcl-btn hcl-primary hcl-primary-ghost">Primary Ghost</button>
+                    <button class="hcl-btn hcl-danger hcl-danger-ghost">Danger Ghost</button>
+
+                    <button class="hcl-btn hcl-primary hcl-sm">Primary Small</button>
+                    <button class="hcl-btn hcl-danger hcl-sm">Danger Small</button>
+
+                    <button class="hcl-btn hcl-primary hcl-primary-outline hcl-sm">Outline Small</button>
+                    <button class="hcl-btn hcl-danger hcl-danger-outline hcl-sm">Outline Small</button>
+
+                    <button class="hcl-btn hcl-primary hcl-primary-ghost hcl-sm">Ghost Small</button>
+                    <button class="hcl-btn hcl-danger hcl-danger-ghost hcl-sm">Ghost Small</button>
+                    <button class="hcl-btn">Default</button>
+                </div>
+            </section>
+            <section id="gridSystem" class="hcl-container">
+                <div class="hcl-row">
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-11 colBorder  bgColor">11</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-2 colBorder bgColor">2</div>
+                    <div class="hcl-col-10 colBorder bgColor">10</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-3 colBorder bgColor">3</div>
+                    <div class="hcl-col-9 colBorder bgColor">9</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-4 colBorder bgColor">4</div>
+                    <div class="hcl-col-8 colBorder bgColor">8</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-5 colBorder bgColor">5</div>
+                    <div class="hcl-col-7 colBorder bgColor">7</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-6 colBorder bgColor">6</div>
+                    <div class="hcl-col-6 colBorder bgColor">6</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-7 colBorder bgColor">7</div>
+                    <div class="hcl-col-5 colBorder bgColor">5</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-12 colBorder bgColor">12</div>
+                </div>
+            </section>
+            <section id="boxExamples" class="hcl-container pt-5 m-0">
+                <div class="hcl-row">
+                    <div class="hcl-col-3 colBorder bgColor bigCol darkBox">Left Box</div>
+                    <div class="hcl-col-9 colBorder bgColor bigCol">Right Box</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Left Box</div>
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Center Box</div>
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Right Box</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-6 colBorder bgColor bigCol">Left Box</div>
+                    <div class="hcl-col-6 colBorder bgColor bigCol">Right Box</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Left Box</div>
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Center Box</div>
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Right Box</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-2 colBorder bgColor bigCol darkBox"></div>
+                    <div class="hcl-col-10 colBorder bgColor bigCol darkBox">Data</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-2 colBorder bgColor bigCol darkBox">Values</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value One</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Two</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Three</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Four</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Five</div>
+                </div>
+            </section>
+            <section>
+                <div class="hcl-spinner" title="loading">
+                    <svg viewBox="-75 -75 150 150">
+                        <circle cx="0" cy="0" r="37.5" />
+                    </svg>
+                </div>
+                <div class="hcl-spinner-small" title="loading">
+                    <svg viewBox="-75 -75 150 150 ">
+                        <circle cx="0" cy="0" r="37.5" />
+                    </svg>
+                </div>
+            </section>
+            <section id="breadcrumb" class="hcl-container pt-5 mb-5">
+                <ul class="hcl-breadcrumb" aria-label="breadcrumb">
+                    <li class="hcl-breadcrumb-item">
+                        <a href="#" class="hcl-link">Breadcrumb 1</a>
+                    </li>
+                    <li class="hcl-breadcrumb-item hcl-breadcrumb-item-active">
+                        <a href="#" class="hcl-link">Breadcrumb 2</a>
+                    </li>
+                    <li class="hcl-breadcrumb-item">
+                        <a href="#" class="hcl-link">Breadcrumb 3</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="hcl-container pt-5">
+                <span class="hcl-toggle">
+                    <input type="checkbox" id="simple-toggle" />
+                    <label class="hcl-toggle-label" for="simple-toggle">
+                        <span class="hcl-slider"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+                <span class="hcl-toggle">
+                    <input type="checkbox" id="disabled-checked-toggle" disabled checked />
+                    <label class="hcl-toggle-label" for="disabled-checked-toggle">
+                        <span class="hcl-slider"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+                <span class="hcl-toggle">
+                    <input type="checkbox" id="disabled-toggle" disabled />
+                    <label class="hcl-toggle-label" for="disabled-toggle">
+                        <span class="hcl-slider"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+            </section>
+            <section class="hcl-container pt-5">
+                <span class="hcl-toggle-small">
+                    <input type="checkbox" id="simple-small-toggle" />
+                    <label class="hcl-toggle-label" for="simple-small-toggle">
+                        <span class="hcl-slider"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+                <span class="hcl-toggle-small">
+                    <input type="checkbox" id="disabled-checked-small-toggle" disabled checked />
+                    <label class="hcl-toggle-label" for="disabled-checked-small-toggle">
+                        <span class="hcl-slider"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+                <span class="hcl-toggle-small">
+                    <input type="checkbox" id="disabled-small-toggle" disabled />
+                    <label class="hcl-toggle-label" for="disabled-small-toggle">
+                        <span class="hcl-slider"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+            </section>
+            <section id="notification" class="hcl-row m-0">
+                <div class="hcl-col">
+                    <div data-notification="" class="hcl-notification hcl-success" role="alert">
+                        <div class="hcl-notification-body">
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" class="hcl-notification-icon" width="20" height="20"
+                                viewBox="0 0 32 32" aria-hidden="true">
+                                <path
+                                    d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
+                                </path>
+                            </svg>
+                            <div class="hcl-notification-text-wrapper">
+                                <p class="hcl-notification-title">Notification title</p>
+                                <p class="hcl-notification-subtitle">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has been the industry's standard dummy text ever since the 1500s.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="hcl-notification-close" type="button" aria-label="close">
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- Tag -->
+            <section class="row">
+                <div class="col-12">
+                    <button class="hcl-tag hcl-tag-primary" title="primary" tabindex="0">
+                        <span class="hcl-tag-text">
+                            primary
+                        </span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary" tabindex="0">
+                        <span class="hcl-tag-text">
+                            secondary
+                        </span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-primary" title="secondary" tabindex="0" disabled>
+                        <span class="hcl-tag-text">
+                            primary-disabled
+                        </span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary" tabindex="0" disabled>
+                        <span class="hcl-tag-text">
+                            secondary-disabled
+                        </span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0"
+                        disabled>
+                        <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
+                        <span class="hcl-tag-text">
+                            secondary-thumbnail-closeable-disabled
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                    <br />
+                    <button class="hcl-tag hcl-tag-primary" title="primary-closeable" tabindex="0">
+                        <span class="hcl-tag-text">
+                            primary-closeable
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary-closeable" tabindex="0">
+                        <span class="hcl-tag-text">
+                            secondary-closeable
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                    <br />
+                    <button class="hcl-tag hcl-tag-primary" title="primary-thumbnail-closeable" tabindex="0">
+                        <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
+                        <span class="hcl-tag-text">
+                            primary-thumbnail-closeable
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0">
+                        <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
+                        <span class="hcl-tag-text">
+                            secondary-thumbnail-closeable
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                </div>
             </section>
 
+            <!-- Modals -->
+            <section id="hcl-modal">
+                <!-- This button is just for landing page, will not be part of design system -->
+                <button id="hcl-btn-modal-type1" data-modal-type="1" class="hcl-btn">Modal : type 1</button>
+                <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                <section id="hcl-modal-type1" data-modal-type="1" class="hcl-modal hcl-modal-hide row">
+                    <div class="hcl-modal-container hcl-modal-container-lg">
+                        <header class="hcl-modal-header">
+                            <small class="hcl-modal-label">Optional label</small>
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type1" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type2" data-modal-type="2" class="hcl-btn">Modal : type 2</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type2" data-modal-type="2" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div class="hcl-modal-container hcl-modal-container-lg">
+                        <header class="hcl-modal-header">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type2" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type3" data-modal-type="3" class="hcl-btn">Modal : type 3</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type3" data-modal-type="3" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div class="hcl-modal-container hcl-modal-container-lg">
+                        <header class="hcl-modal-header">
+                            <small class="hcl-modal-label">Optional label</small>
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type3"
+                                class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button class="hcl-btn hcl-primary">Save</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type3" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type4" data-modal-type="4" class="hcl-btn">Modal : type 4</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type4" data-modal-type="4" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type4" data-modal-type="4" class="hcl-modal-container hcl-modal-container-lg">
+                        <header class="hcl-modal-header">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type4"
+                                class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button class="hcl-btn hcl-primary">Save</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type4" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <!-- danger Modals -->
+                <button id="hcl-btn-modal-type5" data-modal-type="5" class="hcl-btn">Modal : type 5</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type5" data-modal-type="5" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type5" data-modal-type="5"
+                        class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                        <header class="hcl-modal-header">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type5"
+                                class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button class="hcl-btn hcl-danger">Delete</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type5" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type6" data-modal-type="6" class="hcl-btn">Modal : type 6</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type6" data-modal-type="6" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type6"
+                        class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                        <header class="hcl-modal-header">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type6" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type7" data-modal-type="7" class="hcl-btn">Modal : type 7</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type7" data-modal-type="7" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type7"
+                        class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                        <header class="hcl-modal-header">
+                            <small class="hcl-modal-label">Optional label</small>
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type7"
+                                class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button class="hcl-btn hcl-danger">Delete</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type7" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type8" data-modal-type="8" class="hcl-btn">Modal : type 8</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type8" data-modal-type="8" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type8"
+                        class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                        <header class="hcl-modal-header">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type8"
+                                class="hcl-btn hcl-primary hcl-primary-outline">Cancel</button>
+                            <button class="hcl-btn hcl-danger   ">Delete</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type8" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+            </section>
+
+            <!-- <section class="hcl-lightbox" >
+            </section> -->
+
+            <section class="colBorder m-5 p-5">
+                <section class="hcl-tab">
+                    <nav data-tabs role="navigation">
+                        <ul role="tablist" class="hcl-tabs-nav">
+                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab1" data-target="tab1">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 1</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab2" aria-selected="true"
+                                data-target="tab2">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 2</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab3"
+                                data-target="tab3">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 3</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="hcl-tabcontent">
+                        <div role="tabpanel" aria-labelledby="tab1" id="tab1" class="hcl-tabs-panel active">
+                            <p>Tabbable Content 1</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel">
+                            <p>Tabbable Content 2</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="hcl-tabs-panel">
+                            <p>Tabbable Content 3</p>
+                        </div>
+                    </section>
+                </section>
+
+                <section class="hcl-tab">
+                    <nav data-tabs role="navigation">
+                        <ul role="tablist" class="hcl-tabs-nav">
+                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab4" data-target="tab4">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 4</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab5" aria-selected="true"
+                                data-target="tab5">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 5</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab6"
+                                data-target="tab6">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 6</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="hcl-tabcontent">
+                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel active">
+                            <p>Tabbable Content 4</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab5" id="tab5" class="hcl-tabs-panel">
+                            <p>Tabbable Content 5</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab6" id="tab6" class="hcl-tabs-panel">
+                            <p>Tabbable Content 6</p>
+                        </div>
+                    </section>
+                </section>
+
+            </section>
+
+
+
+            <!-- <section class="hcl-lightbox" >    
+            </section>-->
+
+
+            <!-- Overflow Menu -->
+
+            <section class="hcl-row">
+                <section class="hcl-col-6 hcl-overflow ">
+                    <!-- This paragragh tag is just for landing page, will not be part of design system -->
+                    <p style="float: left;">Left Overflow Menu</p>
+                    <div class="hcl-overflow-container">
+                        <!-- This input tag is just for landing page, will not be part of design system -->
+                        <input
+                            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem;">
+                        <!-- This svg tag is just for landing page, will not be part of design system -->
+                        <svg id="hcl-overflow-ellipsis-left" focusable="false" class="hcl-ellipsis" width="16"
+                            height="16" viewBox="0 0 16 16">
+                            <circle cx="8" cy="3" r="1.5"></circle>
+                            <circle cx="8" cy="8" r="1.5"></circle>
+                            <circle cx="8" cy="13" r="1.5"></circle>
+                        </svg>
+
+                        <div class="hcl-overflow-menu hcl-overflow-left">
+                            <ul class="hcl-overflow-default">
+                                <li class="hcl-overflow-option">
+                                    Option 1
+                                </li>
+                                <li class="hcl-overflow-option">
+                                    Option 2
+                                </li>
+                                <li class="hcl-overflow-option hcl-overflow-disable">
+                                    Option 3
+                                </li>
+                            </ul>
+                            <ul class="hcl-overflow-danger">
+                                <li class="hcl-overflow-optiondanger">
+                                    Danger
+                                </li>
+                            </ul>
+                            <div class="hcl-overflow-caret"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="hcl-col-6 hcl-overflow ">
+                    <!-- This paragragh tag is just for landing page, will not be part of design system -->
+                    <p style="float: left;">Right Overflow Menu</p>
+                    <div class="hcl-overflow-container ">
+                        <!-- This input tag is just for landing page, will not be part of design system -->
+                        <input
+                            style="width:1rem; position:absolute; background:transparent; outline: none; padding: 0 0.5rem;">
+                        <!-- This svg tag is just for landing page, will not be part of design system -->
+                        <svg focusable="false" class="hcl-ellipsis" width="16" height="16" viewBox="0 0 16 16">
+                            <circle cx="8" cy="3" r="1.5"></circle>
+                            <circle cx="8" cy="8" r="1.5"></circle>
+                            <circle cx="8" cy="13" r="1.5"></circle>
+                        </svg>
+                        <div class="hcl-overflow-menu hcl-overflow-right">
+                            <ul class="hcl-overflow-default">
+                                <li class="hcl-overflow-option">
+                                    Option 1
+                                </li>
+                                <li class="hcl-overflow-option">
+                                    Option 2
+                                </li>
+                                <li class="hcl-overflow-option hcl-overflow-disable">
+                                    Option 3
+                                </li>
+                            </ul>
+                            <ul class="hcl-overflow-danger">
+                                <li class="hcl-overflow-optiondanger">
+                                    Danger
+                                </li>
+                            </ul>
+                            <div class="hcl-overflow-caret-right"></div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- List -->
+            <section class="hcl-row m-0">
+                <!-- Ordered List -->
+                <div class="hcl-col-12 mb-4">
+                    <ol class="hcl-list-ordered">
+                        <li class="hcl-list-item">Ordered List level 1
+                            <ol class="hcl-list-nested">
+                                <li class="hcl-list-item">Ordered List level 2</li>
+                                <li class="hcl-list-item">Ordered List level 2</li>
+                            </ol>
+                        </li>
+                        <li class="hcl-list-item">Ordered List level 1</li>
+                        <li class="hcl-list-item">Ordered List level 1</li>
+                    </ol>
+                </div>
+                <!-- Unordered List -->
+                <div class="hcl-col-12 mb-4">
+                    <ul class="hcl-list-unordered">
+                        <li class="hcl-list-item">Unordered List level 1
+                            <ul class="hcl-list-nested">
+                                <li class="hcl-list-item">Unordered List level 2</li>
+                                <li class="hcl-list-item">Unordered List level 2</li>
+                            </ul>
+                        </li>
+                        <li class="hcl-list-item">Unordered List level 1</li>
+                        <li class="hcl-list-item">Unordered List level 1</li>
+                    </ul>
+                </div>
+
+            </section>
+            <!-- Content Switcher -->
+            <section id="content-switcher" class="hcl-row m-4 p-4 colBorder">
+                <h6 class="p-2">Content Switcher (default)</h6>
+                <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".gate">
+                        <span>All</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".window">
+                        <span>Cybernetics</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".door">
+                        <span>Information & Communication</span>
+                    </button>
+                </div>
+                <section class="hcl-content-switcher-content">
+                    <div class="gate">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="window" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="door" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <section id="content-switcher2" class="hcl-row m-4 p-4 colBorder">
+                <h6 class="p-2">Content Switcher (disabled)</h6>
+                <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".hello" disabled>
+                        <span>All</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".awesome" disabled>
+                        <span>Cybernetics</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".world" disabled>
+                        <span>Information & Communication</span>
+                    </button>
+                </div>
+                <section class="hcl-content-switcher-content">
+                    <div class="hello" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="awesome" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="world">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <section id="content-switcher3" class="hcl-row m-4 p-4 colBorder">
+                <h6 class="p-2">Content Switcher (with icons)</h6>
+                <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".vanilla">
+                        <span class="hcl-thumbnail"></span>
+                        <span>All</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".react">
+                        <span class="hcl-thumbnail"></span>
+                        <span>Cybernetics</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".angular">
+                        <span class="hcl-thumbnail"></span>
+                        <span>Information & Communication</span>
+                    </button>
+                </div>
+                <section class="hcl-content-switcher-content">
+                    <div class="vanilla">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="react" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="angular" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <section id="content-switcher4" class="hcl-row m-4 p-4 colBorder">
+                <h6 class="p-2">Content Switcher - with icons (disabled)</h6>
+                <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".target1" disabled>
+                        <span class="hcl-thumbnail"></span>
+                        <span>All</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target2" disabled>
+                        <span class="hcl-thumbnail"></span>
+                        <span>Cybernetics</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target3" disabled>
+                        <span class="hcl-thumbnail"></span>
+                        <span>Information & Communication</span>
+                    </button>
+                </div>
+                <section class="hcl-content-switcher-content">
+                    <div class="target1">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="target2" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="target3" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <!-- Content Switcher Ends-->
+
+            <!-- Toast -->
+            <section class="hcl-row">
+                <div class="hcl-toast hcl-toast-success" role="alert">
+                    <svg class="hcl-toast-icon" focusable="false" preserveAspectRatio="xMidYMid meet"
+                        style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 32 32" aria-hidden="true">
+                        <path
+                            d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
+                        </path>
+                    </svg>
+                    <div class="hcl-toast-details">
+                        <h3 class="hcl-toast-title">Notification title</h3>
+                        <p class="hcl-toast-subtitle">Subtitle text goes here.</p>
+                        <p class="hcl-toast-caption">Time stamp [00:00:00]</p>
+                    </div>
+                    <button class="hcl-toast-close" type="button" aria-label="close" />
+                </div>
+            </section>
+
+            <!-- Date Picker -->
             <section class="hcl-datePicker" title="date picker">
                 <label class="hcl-datePicker-label">Date picker label</label>
                 <div class="hcl-datePicker-container">
-
-                    <input type="text" class="hcl-datePicker-input" placeholder="mm/dd/yyyy" pattern="/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/">
+                    <input type="text" class="hcl-datePicker-input" placeholder="mm/dd/yyyy"
+                        pattern="/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/" />
 
                     <svg class="hcl-datePicker-container-svg" width="14" height="16" viewBox="0 0 14 16">
                         <path d=" M0 5h14v1H0V5zm3-5h1v4H3V0zm7 0h1v4h-1V0zM0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14
@@ -190,19 +1024,25 @@
                             </span>
                         </div>
                         <div class="hcl-datePicker-container-panel-weekDays"> </div>
-                        <div class="hcl-datePicker-container-panel-dates"> 
+                        <div class="hcl-datePicker-container-panel-dates">
                         </div>
                     </div>
-                    <label class="hcl-datePicker-container-overlay"> </label>
-               
+                    <!-- <label class="hcl-datePicker-container-overlay"> </label> -->
+
                 </div>
                 <div class="hcl-datePicker-error" id="hcl-datePicker-error">
                     Invalid date format.
-                  </div>
+                </div>
 
             </section>
-            <script src="./scss/components/datePicker/datePicker.js"></script>
-    </main>
+            <!-- AVAILABLE COMPONENTS ENDS -->
+        </main>
+    </div>
+    <script src="./scss/components/content-switcher/_content-switcher.js"></script>
+    <script src="./scss/components/tab/_tabs.js"></script>
+    <script src="./scripts/helper.js"></script>
+    <script src="./scss/components/datePicker/datePicker.js"></script>
+
 </body>
 
 </html>

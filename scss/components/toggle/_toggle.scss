@@ -1,0 +1,224 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+// TODO: Will move to _variables.scss once confirmed from designers
+:root {
+    --disabled-grey: rgba(75, 75, 75, 0.50);
+    --enabled-grey: rgb(75, 75, 75);
+    --disabled-blue: rgba(0, 102, 179, 0.50);
+}
+
+%basic-toggle {
+    display: inline-block;
+
+    .#{$prefix}-toggle-label {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        top: 0;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+
+        &:before {
+            content: "";
+            position: relative;
+            display: block;
+            top: 50%;
+            left: 0;
+            transition: 0.4s;
+            transform: translate(0, -50%);
+        }
+
+        .#{$prefix}-slider {
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 50%;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+    }
+
+    input[type="checkbox"] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+
+        &:disabled+.#{$prefix}-toggle-label {
+            cursor: not-allowed;
+        }
+
+        &:disabled~.#{$prefix}-toggle-off,
+        &:disabled~.#{$prefix}-toggle-on {
+            color: var(--disabled-grey);
+        }
+    }
+
+    .#{$prefix}-toggle-off {
+        float: left;
+    }
+
+    .#{$prefix}-toggle-on {
+        float: right;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+.#{$prefix}-toggle {
+    position: relative;
+    @extend %basic-toggle;
+
+    .#{$prefix}-toggle-label {
+        height: 1.5rem;
+        width: 3rem;
+
+        &:before {
+            height: 0.375rem;
+            width: 3rem;
+            background-color: var(--enabled-grey);
+        }
+
+        .#{$prefix}-slider {
+            height: 1.5rem;
+            width: 1.5rem;
+            border: 0.0625rem solid var(--enabled-grey);
+            background-color: var(--white);
+            transform: translate(0, -50%);
+        }
+    }
+
+    input[type="checkbox"] {
+        &:checked+.#{$prefix}-toggle-label {
+            &:before {
+                background-color: var(--blue);
+            }
+
+            .#{$prefix}-slider {
+                top: 50%;
+                transform: translate(1.5rem, -50%);
+                background-color: var(--blue);
+                border: none;
+            }
+        }
+
+        &:not(:checked):disabled~.#{$prefix}-toggle-label {
+            &:before {
+                background-color: var(--disabled-grey);
+            }
+
+            .#{$prefix}-slider {
+                border: 0.0625rem solid var(--disabled-grey);
+            }
+        }
+
+        &:checked:disabled~.#{$prefix}-toggle-label {
+            &:before {
+                width: 1.5rem;
+                background-color: var(--disabled-blue);
+            }
+
+            .#{$prefix}-slider {
+                background-color: var(--disabled-blue);
+            }
+        }
+    }
+
+    .#{$prefix}-toggle-off,
+    .#{$prefix}-toggle-on {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.01rem;
+        color: var(--enabled-grey);
+    }
+}
+
+.#{$prefix}-toggle-small {
+    position: relative;
+    @extend %basic-toggle;
+
+    .#{$prefix}-toggle-label {
+        height: 1rem;
+        width: 2rem;
+
+        &:before {
+            height: 1rem;
+            width: 2rem;
+            background-color: var(--white);
+            border: 0.0625rem solid var(--enabled-grey);
+            border-radius: 6.25rem;
+        }
+
+        .#{$prefix}-slider {
+            height: 0.625rem;
+            width: 0.625rem;
+            background-color: var(--enabled-grey);
+            border: none;
+            transform: translate(0.1875rem, -50%);
+        }
+    }
+
+    input[type="checkbox"] {
+        &:checked+.#{$prefix}-toggle-label {
+            &:before {
+                background-color: var(--blue);
+                border: none;
+            }
+
+            .#{$prefix}-slider {
+                top: 50%;
+                transform: translate(1.125rem, -50%);
+                background-color: var(--white);
+                border: none;
+
+                &:after {
+                    transform: scale(1) rotate(-45deg);
+                    content: "";
+                    width: 5.8px;
+                    height: 3.7px;
+                    border-left: 1px solid var(--blue);
+                    border-bottom: 1px solid var(--blue);
+                    position: absolute;
+                    left: 0.125rem;
+                    top: 50%;
+                    margin-top: -0.1875rem;
+                }
+            }
+        }
+
+        &:not(:checked):disabled~.#{$prefix}-toggle-label {
+            &:before {
+                border: 0.0625rem solid var(--disabled-grey);
+            }
+
+            .#{$prefix}-slider {
+                background-color: var(--disabled-grey);
+            }
+        }
+
+        &:checked:disabled~.#{$prefix}-toggle-label {
+            &:before {
+                background-color: var(--disabled-blue);
+            }
+        }
+    }
+
+    .#{$prefix}-toggle-off,
+    .#{$prefix}-toggle-on {
+        font-size: 0.875rem;
+        line-height: 1rem;
+        letter-spacing: 0.01rem;
+        color: var(--enabled-grey);
+    }
+}
