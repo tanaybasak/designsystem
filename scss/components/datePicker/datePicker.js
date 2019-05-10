@@ -60,25 +60,13 @@ let UIController = (function () {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     let DOMstrings = {
-        // weekDaysPanel: '.hcl-datePicker-days', 
-        // datePanel: '.hcl-datePicker-dates',
-        // prevMonth: '.hcl-datePicker-month-prev',
-        // nextMonth: '.hcl-datePicker-month-next',
-        // yearIncrease: '.hcl-datePicker-up',
-        // yearDecrease: '.hcl-datePicker-down',
-        // monthInput: '.hcl-datePicker-curMonth',
-        // inputCalSVG: '.hcl-datePicker-container-svg',
-        // dateContainer: '.hcl-datePicker-panel',
         showDateContainer: 'hcl-datePicker-panel-show',
         dateSelected: 'hcl-datePicker-dates-selected', // need to work hcl-datePicker-dates
         todayHighlight: 'hcl-datePicker-dates-today',
         dateUnSelected: 'hcl-datePicker-dates-unSelected', // need to work  hcl-datePicker-dates
         overlayShow: 'hcl-datePicker-container-overlay-show',
-        // overlayLabel: ".hcl-datePicker-container-overlay",
-        // errorDiv: 'hcl-datePicker-error',
         showErrorDiv: 'hcl-datePicker-error-show',
         addErrorBorder: 'hcl-datePicker-container-error'
-
     };
 
     let DOMids = {
@@ -93,13 +81,8 @@ let UIController = (function () {
         yearDecrease: 'hcl-datePicker-down',
         monthInput: 'hcl-datePicker-curMonth',
         dateContainer: 'hcl-datePicker-panel',
-        // showDateContainer: 'hcl-datePicker-panel-show',
         overlayLabel: "hcl-datePicker-container-overlay",
         errorDiv: 'hcl-datePicker-error',
-
-
-
-
     }
 
     let getDaysInMonth = function (month, year) {
