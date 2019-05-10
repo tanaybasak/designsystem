@@ -1,0 +1,92 @@
+.#{$prefix}-content-switcher {
+    display: flex;
+    width: 100%;
+    height: hcl-rem(40px);
+    position: relative;
+
+    &-btn {
+        background-color: transparent;
+        color: var(--blue-light);
+        display: flex;
+        align-items: center;
+        height: hcl-rem(40px);
+        font-size: .875rem;
+        margin: 0;
+        padding: 0 2rem;
+        border: 1px solid var(--blue-light);
+        position: relative;
+
+        &.active {
+            background-color: var(--blue);
+            color: $white;
+
+            .#{$prefix}-thumbnail {
+                background-color: $white;
+            }
+        }
+
+        &:focus {
+            outline: 1px solid transparent;
+            border-color: var(--blue-light);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:hover:not(:disabled) {
+            background-color: #00518F;
+            color: $white;
+
+            .#{$prefix}-thumbnail {
+                background-color: $white;
+            }
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: rgba(255, 255, 255, 0.50);
+            color: rgba(61, 112, 178, 0.50);
+
+            &.active {
+                background-color: rgba(0, 102, 179, 0.50);
+                color: rgba(255, 255, 255, 0.50);
+            }
+            .#{$prefix}-thumbnail {
+                background-color: rgba(0, 102, 179, 0.50);
+            }
+        }
+
+        .#{$prefix}-thumbnail {
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--blue);
+            position: absolute;
+            left: 8px;
+        }
+    }
+
+    &-btn:first-of-type {
+        border-top-left-radius: hcl-rem(4px);
+        border-bottom-left-radius: hcl-rem(4px);
+    }
+
+    &-btn:not(:first-of-type) {
+        border-left: 1px solid var(--blue-light);
+    }
+
+    &-btn:not(:last-of-type) {
+        border-right: none;
+    }
+
+    &-btn:last-of-type {
+        border-top-right-radius: hcl-rem(4px);
+        border-bottom-right-radius: hcl-rem(4px);
+    }
+}
+
+.#{$prefix}-content-switcher-content {
+    margin: hcl-rem(15px) 0 hcl-rem(10px);
+    width: 100%;
+}
