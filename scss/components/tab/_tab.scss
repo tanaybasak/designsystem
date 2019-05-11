@@ -1,4 +1,8 @@
-.tabs-nav {
+.#{$prefix}-tab {
+    margin-top: hcl-rem(5px);
+}
+
+.#{$prefix}-tabs-nav {
     display: flex;
     list-style: none;
     padding: 0;
@@ -8,12 +12,8 @@
         background: transparent;
         padding: 0.75rem 0;
 
-        &.tabs-selected {
+        &.active {
             border-bottom: 2px solid var(--blue-light);
-        }
-
-        &.tabs-disabled {
-            opacity: 0.5;
         }
 
         &:hover {
@@ -26,24 +26,36 @@
     }
 
     &-link {
+        @include getFontWeight('semibold');
         text-decoration: none;
         display: inline-block;
-        white-space: nowrap;
         color: $black;
 
-        &:hover {
+        :not(:disabled):hover {
             color: var(--blue-light);
         }
     }
 }
 
-.tabs {
-    .tabs-panel {
-        padding-top: 10px;
-        display: none;
+.#{$prefix}-tabs-panel {
+    padding-top: 10px;
+    display: none;
 
-        &.active {
-            display: block;
-        }
+    &.active {
+        display: block;
+    }
+}
+
+.#{$prefix}-tabcontent {
+    margin: hcl-rem(10px) 0 hcl-rem(10px);
+}
+
+.#{$prefix}-tabs-disabled {
+    opacity: 0.5;
+
+    &:hover,
+    >a {
+        cursor: not-allowed;
+        color: $black;
     }
 }
