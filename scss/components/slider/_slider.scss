@@ -11,7 +11,7 @@ $thumb-active-color: #7CC7FF;
 $upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
 $lower-background: linear-gradient(to bottom, $blue, $blue) 100% 50% / 100% $track-height no-repeat transparent;
 
-// Webkit cannot style progress so we fake it with a long shadow on the thumb element
+// Webkit Bug : Webkit cannot style progress. To fix it added a long shadow on the thumb element to create fake the style.
 @function webkit-slider-thumb-shadow($i: 1) {
     $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
 
@@ -37,19 +37,18 @@ $lower-background: linear-gradient(to bottom, $blue, $blue) 100% 50% / 100% $tra
         margin: 0 0.5rem;
     }
 
-    // Input Box
     >input.#{$prefix}-slider-text-input {
         font-size: .875rem;
-        font-weight: 400;
+        @include getFontWeight(regular);
         line-height: 1.125rem;
         letter-spacing: .16px;
         outline: 2px solid transparent;
         outline-offset: -2px;
-        background-color: #f3f3f3;
+        background-color: $grey-secondary;
         width: 2.5rem;
         height: 2rem;
         padding: 0;
-        color: #171717;
+        color: $black;
         border: none;
         border-bottom: 1px solid #8c8c8c;
         transition: all .11s;
@@ -114,12 +113,12 @@ $lower-background: linear-gradient(to bottom, $blue, $blue) 100% 50% / 100% $tra
 
     .#{$prefix}-slider-input::-moz-range-thumb {
         appearance: none;
-        margin: 0;
         height: $thumb-height;
         width: $thumb-height;
         background: $blue;
         border-radius: 100%;
         border: 0;
+        margin: 0;
         transition: background-color 150ms;
     }
 
