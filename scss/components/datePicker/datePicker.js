@@ -90,10 +90,10 @@ const UIController = (function () {
 
     const initWeekDaysPanel = function () {
 
-        let html = '<span>%weekDay%</span>';
+        let tempHtml = '<span>%weekDay%</span>';
         let element = DOMids.weekDaysPanel;
         weekDays.forEach((weekDay) => {
-            let weekDayHTML = html.replace('%weekDay%', weekDay);
+            let weekDayHTML = tempHtml.replace('%weekDay%', weekDay);
             document.getElementById(element).insertAdjacentHTML('beforeend', weekDayHTML);
         });
     };
@@ -101,7 +101,7 @@ const UIController = (function () {
     const initDatePanel = function (curMonthObj) {
 
         let numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
-        let html = `<span class="${DOMstrings.dateUnSelected}" id="%month%/%day%/%year%">%day% </span>`;
+        let tempHtml = `<span class="${DOMstrings.dateUnSelected}" id="%month%/%day%/%year%">%day% </span>`;
         let element = DOMids.datePanel;
 
         //days from previous month
@@ -111,7 +111,7 @@ const UIController = (function () {
         let numOfDaysInPrevMonth = getDaysInMonth(curMonthObj.month === 0 ? 12 : curMonthObj.month, curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
 
         for (let i = numOfDaysInPrevMonth - numOfDaysFromPrevMonth; i <= numOfDaysInPrevMonth && numOfDaysFromPrevMonth !== 6; i++) {
-            let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
+            let dayHTML = tempHtml.replaceAll('%day%', ('0' + String(i)).slice(-2));
             dayHTML = dayHTML.replaceAll('%month%', ('0' + (curMonthObj.month === 0 ? 12 : curMonthObj.month)).slice(-2));
             dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
             document.getElementById(element).insertAdjacentHTML('beforeend', dayHTML);
@@ -119,7 +119,7 @@ const UIController = (function () {
 
         // days from current month
         for (let i = 1; i <= numOfDaysInMonth; i++) {
-            let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
+            let dayHTML = tempHtml.replaceAll('%day%', ('0' + String(i)).slice(-2));
             dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month) + 1)).slice(-2));
             dayHTML = dayHTML.replaceAll('%year%', curMonthObj.year);
             document.getElementById(element).insertAdjacentHTML('beforeend', dayHTML);
@@ -128,7 +128,7 @@ const UIController = (function () {
         // days from next month  
         let numOfDaysFromNextMonth = numOfDaysFromPrevMonth === 6 ? 42 - numOfDaysInMonth + 1 : 42 - numOfDaysInMonth - numOfDaysFromPrevMonth;
         for (let i = 1; i < numOfDaysFromNextMonth; i++) {
-            let dayHTML = html.replaceAll('%day%', ('0' + String(i)).slice(-2));
+            let dayHTML = tempHtml.replaceAll('%day%', ('0' + String(i)).slice(-2));
             dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month === 11 ? -1 : curMonthObj.month) + 2)).slice(-2));
             dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 11 ? curMonthObj.year + 1 : curMonthObj.year);
             document.getElementById(element).insertAdjacentHTML('beforeend', dayHTML);
@@ -365,3 +365,5 @@ const controller = (function (dateCtrl, UICtrl) {
 })(datePickerController, UIController);
 
 controller.init();
+
+
