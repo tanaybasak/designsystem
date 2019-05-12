@@ -149,18 +149,14 @@ let UIController = (function () {
     };
 
     let initMonthYearPanel = function (curMonthObj) {
-        // let monthElm = DOMstrings.monthInput;
-        // let yearElm = DOMids.yearInput;
         document.getElementById(DOMids.monthInput).innerHTML = months[curMonthObj.month];
         document.getElementById(DOMids.yearInput).value = String(curMonthObj.year);
     };
 
     let hightlightSelectedDate = function (id) {
-        if (document.getElementById(document.getElementById(DOMids.inputDate).value)) {
-            document.getElementById(document.getElementById(DOMids.inputDate).value).classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected);
-        }
+        let elm = document.getElementById(document.getElementById(DOMids.inputDate).value);
+        elm ? elm.classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected) : null;
         document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
-
     }
 
     return {
@@ -191,9 +187,7 @@ let UIController = (function () {
             document.getElementById(element).innerHTML = "";
         },
         showDateContainer: function () {
-            document.getElementById(DOMids.dateContainer).classList.toggle(DOMstrings.showDateContainer);
-
-
+            document.getElementById(DOMids.dateContainer).classList.add(DOMstrings.showDateContainer);
         },
         selectDate: function (event) {
             console.log('selectDate!!!' + event.target.id);
@@ -253,13 +247,13 @@ let controller = (function (dateCtrl, UICtrl) {
         } else {
             console.log("Error");
         }
-        if (document.querySelector(DOM.inputDate)) {
-            document.querySelector(DOM.inputDate).addEventListener('click', UICtrl.showDateContainer);
+        if (document.getElementById(DOMids.inputDate)) {
+            document.getElementById(DOMids.inputDate).addEventListener('click', UICtrl.showDateContainer);
         } else {
             console.log("Error");
         }
-        if (document.querySelector(DOM.inputDate)) {
-            document.querySelector(DOM.inputDate).addEventListener('change', dateChangeHandler);
+        if (document.getElementById(DOMids.inputDate)) {
+            document.getElementById(DOMids.inputDate).addEventListener('change', dateChangeHandler);
         } else {
             console.log("Error");
         }
@@ -298,7 +292,6 @@ let controller = (function (dateCtrl, UICtrl) {
             console.log('Invalid Date')
             UICtrl.showErrorInvalidDate();
         }
-
 
     };
 
