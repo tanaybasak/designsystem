@@ -61,10 +61,9 @@ let UIController = (function () {
 
     let DOMstrings = {
         showDateContainer: 'hcl-datePicker-panel-show',
-        dateSelected: 'hcl-datePicker-dates-selected', // need to work hcl-datePicker-dates
+        dateSelected: 'hcl-datePicker-date-picked', // need to work hcl-datePicker-dates
         todayHighlight: 'hcl-datePicker-dates-today',
-        dateUnSelected: 'hcl-datePicker-dates-unSelected', // need to work  hcl-datePicker-dates
-        overlayShow: 'hcl-datePicker-container-overlay-show',
+        dateUnSelected: 'hcl-datePicker-date', // need to work  hcl-datePicker-dates
         showErrorDiv: 'hcl-datePicker-error-show',
         addErrorBorder: 'hcl-datePicker-container-error'
     };
@@ -81,7 +80,6 @@ let UIController = (function () {
         yearDecrease: 'hcl-datePicker-down',
         monthInput: 'hcl-datePicker-curMonth',
         dateContainer: 'hcl-datePicker-panel',
-        overlayLabel: "hcl-datePicker-container-overlay",
         errorDiv: 'hcl-datePicker-error',
     }
 
@@ -158,11 +156,10 @@ let UIController = (function () {
     };
 
     let hightlightSelectedDate = function (id) {
-        // need to check
-        // if (document.getElementById(document.getElementById(DOMids.inputDate).value)) {
-        //     document.getElementById(document.getElementById(DOMids.inputDate).value).classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected);
-        // }
-        // document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
+        if (document.getElementById(document.getElementById(DOMids.inputDate).value)) {
+            document.getElementById(document.getElementById(DOMids.inputDate).value).classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected);
+        }
+        document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
 
     }
 
@@ -194,16 +191,16 @@ let UIController = (function () {
             document.getElementById(element).innerHTML = "";
         },
         showDateContainer: function () {
-            document.getElementById(DOMids.dateContainer).classList.add(DOMstrings.showDateContainer);
-            document.getElementById(DOMids.overlayLabel).classList.add(DOMstrings.overlayShow);
+            document.getElementById(DOMids.dateContainer).classList.toggle(DOMstrings.showDateContainer);
 
 
         },
         selectDate: function (event) {
             console.log('selectDate!!!' + event.target.id);
+            console.log(event.targetß);
             document.getElementById(DOMids.inputDate).classList.remove(DOMstrings.addErrorBorder);
             document.getElementById(DOMids.errorDiv).classList.remove(DOMstrings.showErrorDiv);
-            hightlightSelectedDate(event.target.id)
+            hightlightSelectedDate(event.target.id);
             document.getElementById(DOMids.inputDate).value = event.target.id;
         },
         hightlightSelectedDate: function (id) {
@@ -212,10 +209,10 @@ let UIController = (function () {
 
         hideDateContainer: function () {
             let element = DOMids.dateContainer;
-            document.getElementById(DOMids.overlayLabel).classList.remove(DOMstrings.overlayShow);
             document.getElementById(element).classList.remove(DOMstrings.showDateContainer);
         },
         showErrorInvalidDate: function () {
+            console.log('showErrorInvalidDate');
             document.getElementById(DOMids.errorDiv).classList.add(DOMstrings.showErrorDiv);
             document.getElementById(DOMids.inputDate).classList.add(DOMstrings.addErrorBorder);
 
@@ -276,11 +273,6 @@ let controller = (function (dateCtrl, UICtrl) {
         } else {
             console.log("Error");
         }
-        // if (document.getElementById(DOMids.overlayLabel)) {
-        //     document.getElementById(DOMids.overlayLabel).addEventListener('click', UICtrl.hideDateContainer);
-        // } else {
-        //     console.log("Error");
-        // }
 
         let dateElement = document.getElementById(DOMids.datePanel).children;
 
