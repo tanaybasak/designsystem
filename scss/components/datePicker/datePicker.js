@@ -172,6 +172,8 @@ let UIController = (function () {
 
         initDatePanel: function (curMonthObj) {
             initDatePanel(curMonthObj);
+            let elm = document.getElementById(document.getElementById(DOMids.inputDate).value);
+            elm ? elm.classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected) : null;
         },
 
         getDOMstrings: function () {
