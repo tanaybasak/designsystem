@@ -57,3 +57,8 @@
 .#{$prefix}-close {
     @include hcl-close-icon(24);
 }
+
+// ellipsis icon
+.#{$prefix}-ellipsis {
+    @include hcl-ellipsis();
+}
