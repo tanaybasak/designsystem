@@ -108,7 +108,6 @@
             justify-content: center;
             cursor: pointer;
         }
-
     }
 
     &-days {
@@ -127,7 +126,6 @@
             border: none;
         }
     }
-
 
     &-dates {
         height: 15.375rem;
@@ -161,15 +159,13 @@
             border: none;
             position: relative;
         }
-
-
     }
 
     &-date {
         color: var(--black);
 
         &:hover {
-            background-color: var(--grey3);
+            background-color: var(--grey-3);
         }
 
         &-picked {

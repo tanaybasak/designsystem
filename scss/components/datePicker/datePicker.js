@@ -1,5 +1,4 @@
 "use strict";
-
 // DatePicker Controller
 const datePickerController = (function () {
 
@@ -228,47 +227,15 @@ const controller = (function (dateCtrl, UICtrl) {
     const setupEventListeners = function () {
         let DOM = UICtrl.getDOMstrings();
         let DOMids = UICtrl.getDOMids();
-        if (document.getElementById(DOMids.prevMonth)) {
-            document.getElementById(DOMids.prevMonth).addEventListener('click', prevMonth);
-        } else {
-            console.log("Error");
-        }
 
-        if (document.getElementById(DOMids.nextMonth)) {
-            document.getElementById(DOMids.nextMonth).addEventListener('click', nextMonth);
-        } else {
-            console.log("Error");
-        }
-        if (document.getElementById(DOMids.yearDecrease)) {
-            document.getElementById(DOMids.yearDecrease).addEventListener('click', yearDecrease);
-        } else {
-            console.log("Error");
-        }
-        if (document.getElementById(DOMids.yearIncrease)) {
-            document.getElementById(DOMids.yearIncrease).addEventListener('click', yearIncrease);
-        } else {
-            console.log("Error");
-        }
-        if (document.getElementById(DOMids.inputDate)) {
-            document.getElementById(DOMids.inputDate).addEventListener('click', UICtrl.showDateContainer);
-        } else {
-            console.log("Error");
-        }
-        if (document.getElementById(DOMids.inputDate)) {
-            document.getElementById(DOMids.inputDate).addEventListener('change', dateChangeHandler);
-        } else {
-            console.log("Error");
-        }
-        if (document.getElementById(DOMids.inputCalSVG)) {
-            document.getElementById(DOMids.inputCalSVG).addEventListener('click', UICtrl.showDateContainer);
-        } else {
-            console.log("Error");
-        }
-        if (document.getElementById(DOMids.yearInput)) {
-            document.getElementById(DOMids.yearInput).addEventListener('change', yearChangeHandler);
-        } else {
-            console.log("Error");
-        }
+        document.getElementById(DOMids.prevMonth).addEventListener('click', prevMonth);
+        document.getElementById(DOMids.nextMonth).addEventListener('click', nextMonth);
+        document.getElementById(DOMids.yearDecrease).addEventListener('click', yearDecrease);
+        document.getElementById(DOMids.yearIncrease).addEventListener('click', yearIncrease);
+        document.getElementById(DOMids.inputDate).addEventListener('click', UICtrl.showDateContainer);
+        document.getElementById(DOMids.inputDate).addEventListener('change', dateChangeHandler);
+        document.getElementById(DOMids.inputCalSVG).addEventListener('click', UICtrl.showDateContainer);
+        document.getElementById(DOMids.yearInput).addEventListener('change', yearChangeHandler);
 
         let dateElement = document.getElementById(DOMids.datePanel).children;
 
@@ -294,7 +261,6 @@ const controller = (function (dateCtrl, UICtrl) {
             console.log('Invalid Date')
             UICtrl.showErrorInvalidDate();
         }
-
     };
 
     const dateChangeHandler = function (event) {
@@ -307,7 +273,6 @@ const controller = (function (dateCtrl, UICtrl) {
             UICtrl.initMonthYearPanel(currDateObj);
             UICtrl.hightlightSelectedDate(event.target.value);
             UICtrl.hideErrorInvalidDate();
-
         } else {
             UICtrl.showErrorInvalidDate();
         }
@@ -353,7 +318,6 @@ const controller = (function (dateCtrl, UICtrl) {
         UICtrl.initDatePanel(decYearMonObj);
         setupEventListeners();
     };
-
 
     return {
         init: function () {
