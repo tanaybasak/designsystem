@@ -1,11 +1,11 @@
 "use strict";
 
 // DatePicker Controller
-let datePickerController = (function () {
+const datePickerController = (function () {
 
     let currDateObj = {};
 
-    let createDateObject = function (date) {
+    const createDateObject = function (date) {
         currDateObj = {
             'day': date.getDay(),
             'month': date.getMonth(),
@@ -55,11 +55,11 @@ let datePickerController = (function () {
 
 
 // UI Controller
-let UIController = (function () {
-    let weekDays = ['S', 'M', 'T', 'W', 'Th', 'F', 'S'];
-    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const UIController = (function () {
+    const weekDays = ['S', 'M', 'T', 'W', 'Th', 'F', 'S'];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    let DOMstrings = {
+    const DOMstrings = {
         showDateContainer: 'hcl-datePicker-panel-show',
         dateSelected: 'hcl-datePicker-date-picked', // need to work hcl-datePicker-dates
         todayHighlight: 'hcl-datePicker-dates-today',
@@ -68,7 +68,7 @@ let UIController = (function () {
         addErrorBorder: 'hcl-datePicker-container-error'
     };
 
-    let DOMids = {
+    const DOMids = {
         inputCalSVG: 'hcl-datePicker-container-svg',
         prevMonth: 'hcl-datePicker-month-prev',
         yearInput: 'hcl-datePicker-year-input',
@@ -83,12 +83,12 @@ let UIController = (function () {
         errorDiv: 'hcl-datePicker-error',
     }
 
-    let getDaysInMonth = function (month, year) {
+    const getDaysInMonth = function (month, year) {
         return new Date(year, month, 0).getDate();
     };
 
 
-    let initWeekDaysPanel = function () {
+    const initWeekDaysPanel = function () {
 
         let html = '<span>%weekDay%</span>';
         let element = DOMids.weekDaysPanel;
@@ -98,7 +98,7 @@ let UIController = (function () {
         });
     };
 
-    let initDatePanel = function (curMonthObj) {
+    const initDatePanel = function (curMonthObj) {
 
         let numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
         let html = `<span class="${DOMstrings.dateUnSelected}" id="%month%/%day%/%year%">%day% </span>`;
@@ -148,12 +148,12 @@ let UIController = (function () {
         return target.split(search).join(replacement);
     };
 
-    let initMonthYearPanel = function (curMonthObj) {
+    const initMonthYearPanel = function (curMonthObj) {
         document.getElementById(DOMids.monthInput).innerHTML = months[curMonthObj.month];
         document.getElementById(DOMids.yearInput).value = String(curMonthObj.year);
     };
 
-    let hightlightSelectedDate = function (id) {
+    const hightlightSelectedDate = function (id) {
         let elm = document.getElementById(document.getElementById(DOMids.inputDate).value);
         elm ? elm.classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected) : null;
         document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
@@ -223,9 +223,9 @@ let UIController = (function () {
 
 
 // Main controller
-let controller = (function (dateCtrl, UICtrl) {
+const controller = (function (dateCtrl, UICtrl) {
 
-    let setupEventListeners = function () {
+    const setupEventListeners = function () {
         let DOM = UICtrl.getDOMstrings();
         let DOMids = UICtrl.getDOMids();
         if (document.getElementById(DOMids.prevMonth)) {
@@ -277,7 +277,7 @@ let controller = (function (dateCtrl, UICtrl) {
         }
     };
 
-    let yearChangeHandler = function (event) {
+    const yearChangeHandler = function (event) {
         let regex = /^[0-9]{4}$/g;
         let validYear = regex.test(event.target.value);
 
@@ -297,7 +297,7 @@ let controller = (function (dateCtrl, UICtrl) {
 
     };
 
-    let dateChangeHandler = function (event) {
+    const dateChangeHandler = function (event) {
         let regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
         let validDate = regex.test(event.target.value);
         if (validDate) {
@@ -314,7 +314,7 @@ let controller = (function (dateCtrl, UICtrl) {
     };
 
 
-    let prevMonth = function () {
+    const prevMonth = function () {
         event.stopPropagation();
         event.preventDefault();
         let prevMonthObj = dateCtrl.getPrevMonthDetails();
@@ -324,7 +324,7 @@ let controller = (function (dateCtrl, UICtrl) {
         setupEventListeners();
     };
 
-    let nextMonth = function () {
+    const nextMonth = function () {
         event.stopPropagation();
         event.preventDefault();
         let nextMonObj = dateCtrl.getNextMonthDetails();
@@ -334,7 +334,7 @@ let controller = (function (dateCtrl, UICtrl) {
         setupEventListeners();
     };
 
-    let yearIncrease = function () {
+    const yearIncrease = function () {
         event.stopPropagation();
         event.preventDefault();
         let incYearMonObj = dateCtrl.getYearIncreaseMonthDetails();
@@ -344,7 +344,7 @@ let controller = (function (dateCtrl, UICtrl) {
         setupEventListeners();
     };
 
-    let yearDecrease = function () {
+    const yearDecrease = function () {
         event.stopPropagation();
         event.preventDefault();
         let decYearMonObj = dateCtrl.getYearDecreaseMonthDetails();
