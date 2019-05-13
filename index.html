@@ -634,7 +634,7 @@
                     </section>
                 </section>
             </section>
-            
+
             <!-- <section class="hcl-lightbox" >    
             </section>-->
 
@@ -649,8 +649,8 @@
                         <input
                             style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem;">
                         <!-- This svg tag is just for landing page, will not be part of design system -->
-                        <svg id="hcl-overflow-ellipsis-left" focusable="false" class="hcl-svg" width="16"
-                            height="16" viewBox="0 0 16 16">
+                        <svg id="hcl-overflow-ellipsis-left" focusable="false" class="hcl-svg" width="16" height="16"
+                            viewBox="0 0 16 16">
                             <circle cx="8" cy="3" r="1.5"></circle>
                             <circle cx="8" cy="8" r="1.5"></circle>
                             <circle cx="8" cy="13" r="1.5"></circle>
@@ -962,7 +962,7 @@
             <!-- Content Switcher Ends-->
 
             <!-- Toast -->
-            <section class="hcl-row">
+            <section class="hcl-row m-3">
                 <div class="hcl-toast hcl-toast-success" role="alert">
                     <svg class="hcl-toast-icon" focusable="false" preserveAspectRatio="xMidYMid meet"
                         style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -980,7 +980,7 @@
                 </div>
             </section>
             <!-- Slider -->
-            <section class="hcl-row m-0">
+            <section class="hcl-row m-3">
                 <div class="hcl-col">
                     <label>Slider Label</label>
                     <div class="hcl-slider">
@@ -991,7 +991,7 @@
                     </div>
             </section>
             <!-- Dropdown -->
-            <section class="hcl-row m-0">
+            <section class="hcl-row m-3">
                 <div class="hcl-col">
                     <section class="hcl-dropdown hcl-droptop">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
@@ -1015,6 +1015,26 @@
                             <li class="hcl-dropdown-item">C</li>
                         </ul>
                     </section>
+                </div>
+            </section>
+            <!-- File Uploader -->
+            <section class="hcl-row m-3">
+                <div class="hcl-col">
+                    <div class="hcl-form-item">
+                        <strong class="hcl-label">
+                            Account photo
+                        </strong>
+                        <p class="hcl-label-description">only .jpg and .png files. 500kb max file size.</p>
+                        <div class="hcl-file">
+                            <label for="file-uploader"
+                                class="hcl-file-btn hcl-btn hcl-primary hcl-primary-outline hcl-sm" role="button"
+                                tabindex="0">
+                                Add file
+                                <span class="hcl-file-btn-icon"></span>
+                            </label>
+                            <input type="file" class="hcl-file-input" id="file-uploader" multiple />
+                        </div>
+                    </div>
                 </div>
             </section>
             <!-- AVAILABLE COMPONENTS ENDS -->
