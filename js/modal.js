@@ -1,7 +1,7 @@
 // This javascript function is for demonstation demonstration purpose of modal in landing page
 // This function will not be part package created for design system 
 
-const helperModal = (function () {
+const modal = (function () {
 
     const DOMStrings = {
         modalContainer: 'hcl-modal-type',
@@ -43,4 +43,4 @@ const helperModal = (function () {
 
 })();
 
-helperModal.setUpHeplerEvent();
+modal.setUpHeplerEvent();

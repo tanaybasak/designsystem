@@ -23,7 +23,7 @@
     --white: #fff;
     --blue: #0066b3;
     --sky-blue: #E4F5FC;
-    --dark-blue: #132730; // TODO: Remove
+    --dark-blue: #132730;
     --dark-secondary: #4696D2;
     --primary-background-focus: #00578F;
     --primary-background-disabled: #B9E6FA;
@@ -33,6 +33,7 @@
     --red-background-disabled: #F8B2C1;
     --black-secondary: #555;
     --error: #E0182D;
+    --danger: #DFE3E6;
     --success: #589D25;
     --info: #4696D2;
     --warning: #FAC43B;
@@ -57,7 +58,11 @@ $primary: $blue !default;
 $secondary: $black !default;
 $tertiary: $red !default;
 $link-hover-color: var(--dark-secondary);
+$dark-blue: var(--dark-blue);
+$grey-2: #8c8c8c;
+$grey-3: #565656;
 $lightGrey: #5A6872;
+$grey-secondary: var(--grey-secondary);
 // THEMES
 $theme-colors: () !default;
 $theme-colors: map-merge(("primary": $primary, "danger": $red, "tertiary": $tertiary), $theme-colors);
