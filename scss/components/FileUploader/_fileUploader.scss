@@ -1,15 +1,15 @@
 .#{$prefix}-form-item {
     .#{$prefix}-label {
-        font-size: 14px;
+        font-size: 0.875rem;
         @include getInputColor('color-1', "color");
         letter-spacing: 0;
-        line-height: 18px;
+        line-height: 1.125rem;
     }
 
     .#{$prefix}-label-description {
-        font-size: 14px;
+        font-size: 0.875rem;
         color: #aaa;
-        line-height: 21px;
+        line-height: 1.313rem;
     }
 
     .#{$prefix}-file {
