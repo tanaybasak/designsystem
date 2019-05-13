@@ -220,7 +220,7 @@
     font-size: $font-size;
 
     &:after {
-        content: "...";
+        content: "\2022 \2022 \2022";
         transform: rotate(90deg);
         padding: 0 0.5rem;
     }
