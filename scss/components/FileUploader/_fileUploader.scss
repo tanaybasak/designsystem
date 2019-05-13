@@ -1,0 +1,31 @@
+.#{$prefix}-form-item {
+    .#{$prefix}-label {
+        font-size: 14px;
+        @include getInputColor('color-1', "color");
+        letter-spacing: 0;
+        line-height: 18px;
+    }
+
+    .#{$prefix}-label-description {
+        font-size: 14px;
+        color: #aaa;
+        line-height: 21px;
+    }
+
+    .#{$prefix}-file {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+
+        &-btn {
+            display: inline-flex;
+            margin-left: 0;
+        }
+
+        &-input {
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+    }
+}
