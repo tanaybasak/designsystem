@@ -16,7 +16,7 @@ $lower-background: linear-gradient(to bottom, $blue, $blue) 100% 50% / 100% $tra
     $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
 
     @if $i==1 {
-        @for $k from 2 through 1000 {
+        @for $k from 2 through 3000 {
             $val: #{$val},
             webkit-slider-thumb-shadow($k);
         }
