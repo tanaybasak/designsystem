@@ -18,6 +18,21 @@
         display: inline-block;
         margin: 0.5rem;
 
+        &-input {
+            display: none;
+
+            &:disabled+.#{$prefix}-file-btn {
+                background: var(--primary-background-disabled);
+                cursor: not-allowed;
+
+                &:hover {
+                    background-color: var(--dark-secondary);
+                    color: var(--white);
+                    border-color: transparent;
+                }
+            }
+        }
+
         &-btn {
             display: inline-flex;
             margin: 0;
@@ -48,6 +63,7 @@
                 }
             }
 
+            &:focus .#{$prefix}-file-btn-icon,
             &:hover .#{$prefix}-file-btn-icon {
                 background-color: var(--white);
 
@@ -56,10 +72,6 @@
                     @include getInputColor('color-5', "background-color");
                 }
             }
-        }
-
-        &-input {
-            display: none;
         }
     }
 }
