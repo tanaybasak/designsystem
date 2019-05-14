@@ -92,3 +92,39 @@ $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 160
 $mobile-width: 640px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
+// MISC
+$font-size-base: 1rem !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * .875 !default;
+$line-height-base: 1.5 !default;
+$nav-link-padding-y: .5rem !default;
+$spacer: 1rem !default;
+$border-width: 1px !default;
+$border-radius: .25rem !default;
+// Navbar
+$navbar-padding-y: $spacer / 2 !default;
+$navbar-padding-x: $spacer !default;
+$navbar-nav-link-padding-x: .5rem !default;
+$navbar-brand-font-size: $font-size-lg !default;
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+$nav-link-height: $font-size-base * $line-height-base+$nav-link-padding-y * 2 !default;
+$navbar-brand-height: $navbar-brand-font-size * $line-height-base !default;
+$navbar-brand-padding-y: ($nav-link-height - $navbar-brand-height) / 2 !default;
+$navbar-hamburger-padding-y: .25rem !default;
+$navbar-hamburger-padding-x: .75rem !default;
+$navbar-hamburger-font-size: $font-size-lg !default;
+$navbar-hamburger-border-radius: $border-radius !default;
+$navbar-dark-color: rgba($white, .5) !default;
+$navbar-dark-hover-color: rgba($white, .75) !default;
+$navbar-dark-active-color: $white !default;
+$navbar-dark-disabled-color: rgba($white, .25) !default;
+$navbar-dark-hamburger-border-color: rgba($white, .1) !default;
+$navbar-light-color: $blue !default;
+$navbar-light-hover-color: $white !default;
+$navbar-light-active-color: $white !default;
+$navbar-light-disabled-color: rgba($white, .3) !default;
+$navbar-light-hamburger-border-color: $white !default;
+$navbar-light-brand-color: $navbar-light-active-color !default;
+$navbar-light-brand-hover-color: $navbar-light-active-color !default;
+$navbar-dark-brand-color: $navbar-dark-active-color !default;
+$navbar-dark-brand-hover-color: $navbar-dark-active-color !default;

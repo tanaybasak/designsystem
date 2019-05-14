@@ -47,8 +47,6 @@
 @import "base/typography/typography";
 // Layout partials
 @import "layout/grids";
-@import "layout/header";
-@import "layout/sidebar";
 @import "layout/content";
 // Components partials
 @import "components/button/button";
@@ -63,3 +61,5 @@
 @import "components/lightbox/lightbox";
 @import "components/toast/toast";
 @import "components/list/list";
+@import "components/navbar/navbar";
+@import "components/sidebar/sidebar";

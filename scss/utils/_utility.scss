@@ -6,8 +6,13 @@
  *******************************************************************
  */
 
+// MARGIN
 .margin {
     margin: $base-margin;
+}
+
+.mr-auto {
+    margin-right: auto;
 }
 
 // Margin and Padding
@@ -56,4 +61,40 @@
 // close icon class
 .#{$prefix}-close {
     @include hcl-close-icon(24);
+}
+
+/* 
+ * ICON UTILITY CLASSES
+ *
+ * ICON SIZES
+ *
+ * 1 -> 1rem = 16px
+ * 2 -> 2rem = 32px
+ * 3 -> 3rem = 48px
+ *
+ *********************************************************************
+*/
+
+$iconSizesMap: ("icon-1": 1rem, "icon-2": 2rem, "icon-3": 3rem);
+
+@each $key,
+$value in $iconSizesMap {
+    .#{$prefix}-#{$key} {
+        display: inline-flex;
+        height: $value;
+        width: $value;
+        font-size: $value;
+        background-color: transparent;
+        overflow: hidden;
+    }
+}
+
+// ACTIVE TAB/MENU UTILITY CLASS
+.#{$prefix}-active {
+    @include nav-active;
+}
+
+// TODO: Subjecto to be changed
+.bg-white {
+    background-color: var(--white);
 }
