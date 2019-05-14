@@ -16,7 +16,7 @@
     min-height: calc(100vh - 3.125rem);
     align-items: flex-start;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
     transition: transform .15s ease-in-out;
 
     .#{$prefix}-icon-2 {
