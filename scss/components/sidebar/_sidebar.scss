@@ -17,7 +17,7 @@
     align-items: flex-start;
     position: relative;
     overflow: auto;
-    transition: transform .15s ease-in-out;
+    transition: all .35s;
 
     .#{$prefix}-icon-2 {
         position: absolute;
@@ -81,11 +81,12 @@ label[for="demo-sidebar-showhide"] {
     color: var(--white);
     cursor: pointer;
     z-index: 9999;
+    transition: all .35s;
 }
 
 input[class="demo-sidebar-showhide"][type="checkbox"] {
     display: none;
-    transition: all .15s;
+    transition: all .35s;
 }
 
 input[class="demo-sidebar-showhide"][type="checkbox"]:checked~.#{$prefix}-sidebar {
@@ -93,6 +94,7 @@ input[class="demo-sidebar-showhide"][type="checkbox"]:checked~.#{$prefix}-sideba
     background-color: var(--white);
     color: var(--grey);
     border-right: 1px solid var(--grey-secondary);
+    transition: all .35s;
 
     .#{$prefix}-sidebar-list {
         display: initial;
@@ -100,7 +102,7 @@ input[class="demo-sidebar-showhide"][type="checkbox"]:checked~.#{$prefix}-sideba
         &-item:hover::before,
         &-item--active::before {
             transform: scaleY(1);
-            width: 2%;
+            width: 3px;
             background-color: var(--blue);
         }
 
@@ -117,8 +119,9 @@ input[class="demo-sidebar-showhide"][type="checkbox"]:checked~.#{$prefix}-sideba
 input[class="demo-sidebar-showhide"][type="checkbox"]:checked~label[class^="hcl-icon"] {
     left: 16rem;
     top: 4rem;
-    transform: rotate(180deg);
+    transform: rotate(540deg);
     color: var(--grey);
+    transition: all .35s;
 }
 
 // COLLAPSING AT SCREEN SIZE <= 768px
