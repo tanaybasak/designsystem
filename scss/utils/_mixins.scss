@@ -209,3 +209,19 @@
         }
     }
 }
+
+// ellipsis icon
+@mixin hcl-ellipsis($color: $black, $font-size:1.25rem) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $color;
+    font-size: $font-size;
+
+    &:after {
+        content: "\2022 \2022 \2022";
+        transform: rotate(90deg);
+        padding: 0 0.5rem;
+    }
+}

@@ -1,0 +1,88 @@
+.#{$prefix}-dropdown {
+    display: inline-block;
+    position: relative;
+    min-width: 25rem;
+
+    &-toggle {
+        background: #efefef;
+        font-size: 0.875rem;
+        color: $dark-blue;
+        line-height: 1.125rem;
+        outline: none;
+        width: 100%;
+        text-align: left;
+        margin: 0;
+        border-bottom: 1px solid $grey-2;
+        padding-right: 2.5rem;
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: .3em solid $blue;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+            position: absolute;
+            top: 50%;
+            right: .875rem;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        will-change: transform;
+        z-index: 2;
+        min-width: 10rem;
+        font-size: 1rem;
+        color: #212529;
+        text-align: left;
+        list-style: none;
+        background-color: $white;
+        background-clip: padding-box;
+        box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
+        border-bottom: 1px solid $grey-2;
+        display: none;
+        width: 100%;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    &-item {
+        height: 2.5rem;
+        @include getFontWeight("regular");
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        font-size: 0.875rem;
+        color: $grey-3;
+        border: 1px solid transparent;
+        padding: 0.8125rem 1rem;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1;
+
+        &:hover {
+            background: rgba(70, 150, 210, 0.10);
+        }
+    }
+
+    &-item-selected {
+        display: none;
+    }
+
+    &.#{$prefix}-droptop {
+        .#{$prefix}-dropdown-container {
+            border: transparent;
+            border-top: 1px solid $grey-2;
+        }
+    }
+
+}

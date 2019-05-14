@@ -58,6 +58,11 @@
     @include hcl-close-icon(24);
 }
 
+// ellipsis icon
+.#{$prefix}-ellipsis {
+    @include hcl-ellipsis();
+}
+
 // Border
 .b-0 {
     border: 0;

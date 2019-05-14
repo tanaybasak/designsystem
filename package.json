@@ -1,10 +1,10 @@
 {
   "name": "patron-css",
-  "version": "1.0.11",
+  "version": "1.0.16",
   "description": "Patron CSS Framework",
-  "main": "index.js",
+  "main": "",
   "scripts": {
-    "dev": "parcel index.html -d output",
+    "start": "parcel index.html -d output --port 8000",
     "build": "parcel build index.html -d dist && node defaultBundleName.js"
   },
   "author": "HCL Products & Platforms",
