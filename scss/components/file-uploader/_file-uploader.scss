@@ -22,13 +22,27 @@
             display: none;
 
             &:disabled+.#{$prefix}-file-btn {
-                background: var(--primary-background-disabled);
+                opacity: 0.5;
                 cursor: not-allowed;
 
                 &:hover {
-                    background-color: var(--dark-secondary);
-                    color: var(--white);
-                    border-color: transparent;
+                    color: var(--blue);
+                    background-color: transparent;
+                    border-color: var(--blue);
+
+                    .#{$prefix}-file-btn-icon {
+                        background-color: var(--blue);
+
+                        &:before,
+                        &:after {
+                            background-color: var(--white);
+                        }
+                    }
+                }
+
+                .#{$prefix}-file-btn-icon {
+                    cursor: not-allowed;
+                    opacity: 0.5;
                 }
             }
         }
@@ -44,7 +58,7 @@
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                @include getInputColor('color-5', "background-color");
+                background-color: var(--blue);
                 border-radius: 50%;
                 margin-left: 1rem;
                 cursor: pointer;
@@ -69,7 +83,7 @@
 
                 &:before,
                 &:after {
-                    @include getInputColor('color-5', "background-color");
+                    background-color: var(--blue);
                 }
             }
         }
