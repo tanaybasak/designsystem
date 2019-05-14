@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <script src="./patron-style.js"></script>
 </head>
 
 <body>
@@ -126,13 +125,13 @@
                 <div class="row col-12 mt-4 mb-4"><a href="#">This is a link</a></div>
                 <div class="row col-12">
                     <button class="hcl-btn hcl-primary">Primary Button</button>
-                    <button class="hcl-btn hcl-primary danger">Primary Danger</button>
-                    <button class="hcl-btn hcl-primary danger" disabled>Primary Disabled</button>
+                    <button class="hcl-btn hcl-primary hcl-danger">Primary Danger</button>
+                    <button class="hcl-btn hcl-primary hcl-danger" disabled>Primary Disabled</button>
                     <button class="hcl-btn hcl-primary" disabled>Primary disbaled</button>
 
                     <button class="hcl-btn hcl-secondary">Seconday</button>
-                    <button class="hcl-btn hcl-secondary danger">Secondary Danger</button>
-                    <button class="hcl-btn hcl-secondary danger" disabled>Secondary Danger disable </button>
+                    <button class="hcl-btn hcl-secondary hcl-danger">Secondary Danger</button>
+                    <button class="hcl-btn hcl-secondary hcl-danger" disabled>Secondary Danger disable </button>
                     <button class="hcl-btn hcl-secondary" disabled>Danger Disabled</button>
 
                     <button class="hcl-btn hcl-ghost">Primary Ghost</button>
@@ -140,10 +139,10 @@
                    
 
                     <button class="hcl-btn hcl-primary hcl-sm">Primary Small</button>
-                    <button class="hcl-btn hcl-primary danger hcl-sm">Danger Small</button>
+                    <button class="hcl-btn hcl-primary hcl-danger hcl-sm">Danger Small</button>
 
                     <button class="hcl-btn hcl-secondary hcl-sm">Outline Small</button>
-                    <button class="hcl-btn hcl-secondary danger hcl-sm">Outline Small</button>
+                    <button class="hcl-btn hcl-secondary hcl-danger hcl-sm">Outline Small</button>
                    
 
                     <button class="hcl-btn hcl-ghost hcl-sm">Ghost Small</button>
@@ -259,7 +258,7 @@
                 <span class="hcl-toggle">
                     <input type="checkbox" id="simple-toggle" />
                     <label class="hcl-toggle-label" for="simple-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -267,7 +266,7 @@
                 <span class="hcl-toggle">
                     <input type="checkbox" id="disabled-checked-toggle" disabled checked />
                     <label class="hcl-toggle-label" for="disabled-checked-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -275,7 +274,7 @@
                 <span class="hcl-toggle">
                     <input type="checkbox" id="disabled-toggle" disabled />
                     <label class="hcl-toggle-label" for="disabled-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -285,7 +284,7 @@
                 <span class="hcl-toggle-small">
                     <input type="checkbox" id="simple-small-toggle" />
                     <label class="hcl-toggle-label" for="simple-small-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -293,7 +292,7 @@
                 <span class="hcl-toggle-small">
                     <input type="checkbox" id="disabled-checked-small-toggle" disabled checked />
                     <label class="hcl-toggle-label" for="disabled-checked-small-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -301,7 +300,7 @@
                 <span class="hcl-toggle-small">
                     <input type="checkbox" id="disabled-small-toggle" disabled />
                     <label class="hcl-toggle-label" for="disabled-small-toggle">
-                        <span class="hcl-slider"></span>
+                        <span class="hcl-switch"></span>
                     </label>
                     <label class="hcl-toggle-off">Off</label>
                     <label class="hcl-toggle-on">On</label>
@@ -333,8 +332,8 @@
                 </div>
             </section>
             <!-- Tag -->
-            <section class="row">
-                <div class="col-12">
+            <section class="hcl-row m-0">
+                <div class="hcl-col">
                     <button class="hcl-tag hcl-tag-primary" title="primary" tabindex="0">
                         <span class="hcl-tag-text">
                             primary
@@ -640,18 +639,14 @@
                         </div>
                     </section>
                 </section>
-
             </section>
-
-
 
             <!-- <section class="hcl-lightbox" >    
             </section>-->
 
 
             <!-- Overflow Menu -->
-
-            <section class="hcl-row">
+            <section class="hcl-row m-0">
                 <section class="hcl-col-6 hcl-overflow ">
                     <!-- This paragragh tag is just for landing page, will not be part of design system -->
                     <p style="float: left;">Left Overflow Menu</p>
@@ -660,8 +655,8 @@
                         <input
                             style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem;">
                         <!-- This svg tag is just for landing page, will not be part of design system -->
-                        <svg id="hcl-overflow-ellipsis-left" focusable="false" class="hcl-ellipsis" width="16"
-                            height="16" viewBox="0 0 16 16">
+                        <svg id="hcl-overflow-ellipsis-left" focusable="false" class="hcl-svg" width="16" height="16"
+                            viewBox="0 0 16 16">
                             <circle cx="8" cy="3" r="1.5"></circle>
                             <circle cx="8" cy="8" r="1.5"></circle>
                             <circle cx="8" cy="13" r="1.5"></circle>
@@ -696,7 +691,7 @@
                         <input
                             style="width:1rem; position:absolute; background:transparent; outline: none; padding: 0 0.5rem;">
                         <!-- This svg tag is just for landing page, will not be part of design system -->
-                        <svg focusable="false" class="hcl-ellipsis" width="16" height="16" viewBox="0 0 16 16">
+                        <svg focusable="false" class="hcl-svg" width="16" height="16" viewBox="0 0 16 16">
                             <circle cx="8" cy="3" r="1.5"></circle>
                             <circle cx="8" cy="8" r="1.5"></circle>
                             <circle cx="8" cy="13" r="1.5"></circle>
@@ -754,6 +749,7 @@
                 </div>
 
             </section>
+
             <!-- Content Switcher -->
             <section id="content-switcher" class="hcl-row m-4 p-4 colBorder">
                 <h6 class="p-2">Content Switcher (default)</h6>
@@ -972,7 +968,7 @@
             <!-- Content Switcher Ends-->
 
             <!-- Toast -->
-            <section class="hcl-row">
+            <section class="hcl-row m-3">
                 <div class="hcl-toast hcl-toast-success" role="alert">
                     <svg class="hcl-toast-icon" focusable="false" preserveAspectRatio="xMidYMid meet"
                         style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -989,12 +985,67 @@
                     <button class="hcl-toast-close" type="button" aria-label="close" />
                 </div>
             </section>
+            <!-- Slider -->
+            <section class="hcl-row m-3">
+                <div class="hcl-col">
+                    <label>Slider Label</label>
+                    <div class="hcl-slider">
+                        <label class="hcl-slider-bottom-range">0</label>
+                        <input class="hcl-slider-input" type="range" min="0" max="100" />
+                        <label class="hcl-slider-top-range">100</label>
+                        <input class="hcl-slider-text-input" type="text">
+                    </div>
+            </section>
+            <!-- Dropdown -->
+            <section class="hcl-row m-3">
+                <div class="hcl-col">
+                    <section class="hcl-dropdown hcl-droptop">
+                        <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
+                            Dropdown top
+                        </button>
+                        <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
+                            <li class="hcl-dropdown-item">A</li>
+                            <li class="hcl-dropdown-item">B</li>
+                            <li class="hcl-dropdown-item">C</li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="hcl-col">
+                    <section class="hcl-dropdown">
+                        <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
+                            Dropdown bottom
+                        </button>
+                        <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
+                            <li class="hcl-dropdown-item">A</li>
+                            <li class="hcl-dropdown-item">B</li>
+                            <li class="hcl-dropdown-item">C</li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+            <!-- File Uploader -->
+            <section class="hcl-row m-3">
+                <div class="hcl-col">
+                    <div class="hcl-form-item">
+                        <strong class="hcl-label">
+                            Account photo
+                        </strong>
+                        <p class="hcl-label-description">only .jpg and .png files. 500kb max file size.</p>
+                        <div class="hcl-file">
+                            <label for="file-uploader"
+                                class="hcl-file-btn hcl-btn hcl-primary hcl-primary-outline hcl-sm" role="button"
+                                tabindex="0">
+                                Add file
+                                <span class="hcl-file-btn-icon"></span>
+                            </label>
+                            <input type="file" class="hcl-file-input" id="file-uploader" multiple />
+                        </div>
+                    </div>
+                </div>
+            </section>
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
-    </div>
-    <script src="./scss/components/content-switcher/_content-switcher.js"></script>
-    <script src="./scss/components/tab/_tabs.js"></script>
-    <script src="./scripts/helper.js"></script>
+        <script src="./js/index.js"></script>
 </body>
 
 </html>

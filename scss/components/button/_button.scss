@@ -4,123 +4,142 @@
 */
 
 %button {
-  text-align: center;
-  cursor: pointer;
-  line-height: 1rem;
-  font-size: 0.875rem;
-  border: 1px solid transparent;
-  margin: 0.5rem;
-  background: transparent;
-  color: #000;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1rem;
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+    margin: 0.5rem;
+    background: transparent;
+    color: var(--black);
 }
 
 .#{$prefix}-btn {
-  @extend %button;
-  color: var(--white);
-  background: var(--blue);
-  padding: 0.625rem 1rem;
-  height: 2.5rem;
+    @extend %button;
+    color: var(--white);
+    background: var(--blue);
+    padding: 0.625rem 1rem;
+    height: 2.5rem;
 }
 
 .#{$prefix}-primary {
-  background: var(--blue);
-  color: var(--white);
-  &:hover {
-    background: #4696D2;
-  }
-  &:focus {
-    background: var(--primary-background-focus);
-  }
-  &:disabled ,
-  &[disabled=disabled]{
-    background: var(--primary-disabled);
-    cursor:not-allowed;
-  }
-  &.danger{
-    background: var(--red);
+    background: var(--blue);
+    color: var(--white);
+
     &:hover {
-      background: var(--danger-secondary);
-      color:var(--white);
+        background: #4696D2;
     }
+
     &:focus {
-      background: var(--danger-secondary);
+        background: var(--primary-background-focus);
     }
+
     &:disabled,
-    &[disabled=disabled]{
-      cursor:not-allowed;
-      background: var(--danger-disabled);
-      &:hover{
-        background: var(--danger-disabled);
-      }
+    &[disabled=disabled] {
+        background: var(--primary-disabled);
+        cursor: not-allowed;
     }
-  }
+
+    &.#{$prefix}-danger {
+        background: var(--red);
+
+        &:hover {
+            background: var(--danger-secondary);
+            color: var(--white);
+        }
+
+        &:focus {
+            background: var(--danger-secondary);
+        }
+
+        &:disabled,
+        &[disabled=disabled] {
+            cursor: not-allowed;
+            background: var(--danger-disabled);
+
+            &:hover {
+                background: var(--danger-disabled);
+            }
+        }
+    }
 }
 
 .#{$prefix}-secondary {
-  background: transparent;
-  color: var(--blue);
-  border:1px solid var(--blue);
-  &:hover, &:focus {
-    background: var(--blue);
-    color: var(--white);
-    border:1px solid var(--blue);
-  }
-  &:disabled,
-  &[disabled=disabled] {
-    color: var(--primary-disabled);
-    border:1px solid var(--primary-disabled);
-    cursor: not-allowed;
-    &:hover{
-      background: transparent;
-      color: var(--primary-disabled);
-      border:1px solid var(--primary-disabled);
-    }
-  }
-  &.danger{
     background: transparent;
-    color: var(--red);
-    border:1px solid var(--red);
-    
-      &:hover ,&:focus{
-        background: var(--danger-secondary);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+
+    &:hover,
+    &:focus {
+        background: var(--blue);
         color: var(--white);
-      }
-      
-      &:disabled,
-      &[disabled=disabled] {
-        border:1px solid var(--danger-disabled);
-        color: var(--danger-disabled);
+        border: 1px solid var(--blue);
+    }
+
+    &:disabled,
+    &[disabled=disabled] {
+        color: var(--primary-disabled);
+        border: 1px solid var(--primary-disabled);
         cursor: not-allowed;
-        &:hover{
-          background:transparent;
-          border:1px solid var(--danger-disabled);
-          color: var(--danger-disabled);
+
+        &:hover {
+            background: transparent;
+            color: var(--primary-disabled);
+            border: 1px solid var(--primary-disabled);
         }
-      }
+    }
+
+    &.#{$prefix}-danger {
+        background: transparent;
+        color: var(--red);
+        border: 1px solid var(--red);
+
+        &:hover,
+        &:focus {
+            background: var(--danger-secondary);
+            color: var(--white);
+        }
+
+        &:disabled,
+        &[disabled=disabled] {
+            border: 1px solid var(--danger-disabled);
+            color: var(--danger-disabled);
+            cursor: not-allowed;
+
+            &:hover {
+                background: transparent;
+                border: 1px solid var(--danger-disabled);
+                color: var(--danger-disabled);
+            }
+        }
     }
 }
 
-.#{$prefix}-ghost{
-  background: transparent;
-  color: var(--blue);
-  border:none;
-  &:hover,&:focus {
-    background: var(--blue);;
-    color: var(--white);
-   }
-  &:disabled,
-  &[disabled] {
-    cursor:not-allowed;
-    color: var(--primary-disabled);
-    &:hover{
-      background: transparent;
-      color: var(--primary-disabled);
+.#{$prefix}-ghost {
+    background: transparent;
+    color: var(--blue);
+    border: none;
+
+    &:hover,
+    &:focus {
+        background: var(--blue);
+        ;
+        color: var(--white);
     }
-  }
+
+    &:disabled,
+    &[disabled] {
+        cursor: not-allowed;
+        color: var(--primary-disabled);
+
+        &:hover {
+            background: transparent;
+            color: var(--primary-disabled);
+        }
+    }
 }
 
 .#{$prefix}-sm {
-  padding: 0.4375rem 1rem;
-  height: 2rem;
+    padding: 0.4375rem 1rem;
+    height: 2rem;
 }
-
