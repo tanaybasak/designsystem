@@ -37,7 +37,7 @@
     &:disabled,
     &[disabled=disabled] {
         background: var(--primary-disabled);
-        cursor: not-allowed;
+        @extend %disable;
     }
 
     &.#{$prefix}-danger {
@@ -54,7 +54,7 @@
 
         &:disabled,
         &[disabled=disabled] {
-            cursor: not-allowed;
+            @extend %disable;
             background: var(--danger-disabled);
 
             &:hover {
@@ -104,7 +104,7 @@
         &[disabled=disabled] {
             border: 1px solid var(--danger-disabled);
             color: var(--danger-disabled);
-            cursor: not-allowed;
+            @extend %disable;
 
             &:hover {
                 background: transparent;
@@ -129,8 +129,8 @@
 
     &:disabled,
     &[disabled] {
-        cursor: not-allowed;
         color: var(--primary-disabled);
+        @extend %disable; 
 
         &:hover {
             background: transparent;
