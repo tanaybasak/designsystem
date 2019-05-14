@@ -63,6 +63,11 @@
     @include hcl-close-icon(24);
 }
 
+// ellipsis icon
+.#{$prefix}-ellipsis {
+    @include hcl-ellipsis();
+}
+
 /* 
  * ICON UTILITY CLASSES
  *
