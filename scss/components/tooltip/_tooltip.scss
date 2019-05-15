@@ -1,0 +1,109 @@
+$tooltip-default-max-width: 12.5rem;
+$tooltip-interactive-max-width: 15rem;
+$tooltip-arrow-size-default-main: 0.625rem;
+$tooltip-arrow-size-default: $tooltip-arrow-size-default-main/2;
+$tooltip-arrow-size-icon-main: 0.3125rem;
+$tooltip-arrow-size-icon: $tooltip-arrow-size-icon-main/2;
+$tooltip-arrow-size-interactive: $tooltip-arrow-size-default+0.0625rem;
+$tooltip-box-shadow:rgba(0,0,0,0.10);
+
+
+.#{$prefix}-tooltip {
+    position: absolute;
+    display: block;
+    font-size: var(--small-font-size);
+    word-wrap: break-word;
+    text-align: left;
+    max-width: $tooltip-default-max-width;
+    background-color: var(--black-light);
+    color: var(--white);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px 0 $tooltip-box-shadow;
+
+    &-arrow {
+        position: absolute;
+        width: $tooltip-arrow-size-default-main;
+        height: $tooltip-arrow-size-default-main;
+        background: var(--black-light);
+
+        &[data-direction='bottom'] {
+            top: -($tooltip-arrow-size-default);
+            transform: rotate(-45deg);
+        }
+
+        &[data-direction='top'] {
+            bottom: -($tooltip-arrow-size-default);
+            transform: rotate(135deg);
+        }
+
+        &[data-direction='right'] {
+            left: -($tooltip-arrow-size-default);
+            transform: rotate(-135deg);
+        }
+
+        &[data-direction='left'] {
+            right: -($tooltip-arrow-size-default);
+            transform: rotate(45deg);
+        }
+    }
+
+    &[data-focus-on-click='true'] {
+        background-color: var(--white);
+        color: var(--dark-blue);
+        max-width: $tooltip-interactive-max-width;
+        border: 0.0625rem solid var(--danger);
+        padding: 1rem;
+
+        .#{$prefix}-tooltip-arrow {
+            background: var(--white);
+            border-top: 0.0625rem solid var(--danger);
+            border-right: 0.0625rem solid var(--danger);
+
+            &[data-direction='bottom'] {
+                top: -($tooltip-arrow-size-interactive);
+            }
+
+            &[data-direction='top'] {
+                bottom: -($tooltip-arrow-size-interactive);
+            }
+
+            &[data-direction='right'] {
+                left: -($tooltip-arrow-size-interactive);
+            }
+
+            &[data-direction='left'] {
+                right: -($tooltip-arrow-size-interactive);
+            }
+        }
+    }
+
+    &.#{$prefix}-tooltip-icon {
+        padding: .25rem;
+
+        .#{$prefix}-tooltip-arrow {
+            width: $tooltip-arrow-size-icon-main;
+            height: $tooltip-arrow-size-icon-main;
+
+            &[data-direction='bottom'] {
+                top: -($tooltip-arrow-size-icon);
+            }
+
+            &[data-direction='top'] {
+                bottom: -($tooltip-arrow-size-icon);
+            }
+
+            &[data-direction='right'] {
+                left: -($tooltip-arrow-size-icon);
+            }
+
+            &[data-direction='left'] {
+                right: -($tooltip-arrow-size-icon);
+            }
+        }
+    }
+}
+
+.#{$prefix}-tooltip-dottedline {
+    border-bottom: 1px dotted black;
+}
