@@ -21,16 +21,17 @@
     --grey-secondary: #f3f3f3;
     --grey-light: #5A6872;
     --white: #fff;
-    --blue: #0066b3;
+    --blue: #0066b3; //TODO: Rename the -blue to -primary
     --sky-blue: #E4F5FC;
     --dark-blue: #132730; // TODO: Remove
-    --dark-secondary: #4696D2;
+    --dark-secondary: #4696D2; // TODO: Remove. Duplicate of --primary-hover
     --primary-background-focus: #00578F;
-    --primary-background-disabled: #B9E6FA;
-    --red: #EB1946;
-    --red-secondary: #C3143A;
-    --red-background-focus: #C3143A;
-    --red-background-disabled: #F8B2C1;
+    --primary-disabled: #8CD7FA;
+    --primary-hover :#4696D2;
+    --red: #EB1946; //TODO: Rename --red to --danger?
+    --danger-secondary: #C3143A;
+    --danger-focus: #C3143A;
+    --danger-disabled: #F8B2C1;
     --black-secondary: #555;
     --error: #E0182D;
     --grey-lighter: #DFE3E6; // TODO : Rename 
@@ -58,7 +59,11 @@ $primary: $blue !default;
 $secondary: $black !default;
 $tertiary: $red !default;
 $link-hover-color: var(--dark-secondary);
+$dark-blue: var(--dark-blue);
+$grey-2: #8c8c8c;
+$grey-3: #565656;
 $lightGrey: #5A6872;
+$grey-secondary: var(--grey-secondary);
 // THEMES
 $theme-colors: () !default;
 $theme-colors: map-merge(("primary": $primary, "danger": $red, "tertiary": $tertiary), $theme-colors);
