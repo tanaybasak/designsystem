@@ -40,8 +40,6 @@
     }
 
     @else if ($type==right) {
-        left: 0.125rem;
-
     }
 }
 
@@ -67,6 +65,8 @@
 }
 
 .#{$prefix}-overflow {
+    display: inline-block;
+    position:relative;
 
     &-caret {
         @include caret(left);
@@ -110,6 +110,7 @@
 
     &-right {
         @include wrap(right)
+        
     }
 
     &-default {
