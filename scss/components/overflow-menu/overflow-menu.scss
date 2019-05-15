@@ -16,7 +16,7 @@
 
     @else if ($type==danger) {
         &:hover {
-            background-color: rgba(224, 24, 45, 1); //TODO
+            background-color: rgba(224, 24, 45, 1) !important; //TODO
             color: var(--white);
         }
     }
@@ -94,11 +94,14 @@
 
     &-menu {
         display: none;
+        position: absolute;
+        z-index:9;
         height: auto;
         width: 11.25rem;
         background-color: var(--white);
         border: 0.0625rem solid var(--danger);
         box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
+        list-style: none;
     }
 
     &-left {
@@ -114,7 +117,7 @@
         @include options(default);
     }
 
-    &-option {
+    li ,  &-option{
         @include option(default);
     }
 
@@ -124,7 +127,7 @@
 
     }
 
-    &-optiondanger {
+    &-optiondanger ,.danger{
         @include option(danger);
     }
 
