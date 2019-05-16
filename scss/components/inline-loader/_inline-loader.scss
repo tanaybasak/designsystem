@@ -1,0 +1,36 @@
+@mixin inlineloader() {
+    display: flex;
+    justify-content: center;
+    > svg {
+        height: 1rem;
+        width: 1rem;
+        --spinner-color: var(--dark-blue);
+        margin-left: 1rem;
+        animation-name: infinite-spinning;
+        animation-duration: 0.7s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+    circle {
+        stroke: var(--spinner-color);
+        stroke-dashoffset: 40;
+        stroke-width: 12;
+        stroke-dasharray: 240;
+        fill: transparent;
+     }
+}
+}
+
+.#{$prefix}-inlineloader {
+    @include inlineloader();
+}
+
+@keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
