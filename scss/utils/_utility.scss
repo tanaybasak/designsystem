@@ -62,3 +62,11 @@
 .#{$prefix}-ellipsis {
     @include hcl-ellipsis();
 }
+
+// Disable
+%disable,
+.disable{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
