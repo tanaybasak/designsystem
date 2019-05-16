@@ -211,7 +211,7 @@
 }
 
 // ellipsis icon
-@mixin hcl-ellipsis($color: $black, $font-size:1.25rem) {
+@mixin hcl-ellipsis($color: $black, $font-size: 0.8rem) {
     position: relative;
     display: inline-flex;
     align-items: center;
