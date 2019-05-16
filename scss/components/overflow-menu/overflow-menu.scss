@@ -39,7 +39,9 @@
         left: 7.8125rem;
     }
 
-    @else if ($type==right) {}
+    @else if ($type==right) {
+        left: 0;
+    }
 }
 
 @mixin caret($type) {
@@ -101,11 +103,9 @@
         border: 0.0625rem solid var(--grey-lighter);
         box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
         list-style: none;
-    }
-
-    &-left {
         @include wrap(left)
     }
+
 
     &-right {
         @include wrap(right)
