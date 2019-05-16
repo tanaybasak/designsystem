@@ -34,7 +34,13 @@
 
     @if($type==right) {
 
-        right: 10px;
+        left: 8.375rem;
+
+    }
+
+    @else if($type==left) {
+
+        left: -0.6875rem;
 
     }
 }
