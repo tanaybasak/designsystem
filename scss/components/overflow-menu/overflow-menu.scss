@@ -16,7 +16,7 @@
 
     @else if ($type==danger) {
         &:hover {
-            background-color: rgba(224, 24, 45, 1); //TODO
+            background-color : var(--red) !important; 
             color: var(--white);
         }
     }
@@ -26,7 +26,7 @@
     padding: 0.375rem 0;
 
     @if ($type==danger) {
-        border-top: 0.0625rem solid var(--danger);
+        border-top: 0.0625rem solid var( --grey-lighter);
     }
 }
 
@@ -40,8 +40,6 @@
     }
 
     @else if ($type==right) {
-        left: 0.125rem;
-
     }
 }
 
@@ -52,8 +50,8 @@
     height: 0.65625rem;
     transform: rotate(-45deg);
     background: var(--white);
-    border-top: 0.0625rem solid var(--danger);
-    border-right: 0.0625rem solid var(--danger);
+    border-top: 0.0625rem solid var(--grey-lighter);
+    border-right: 0.0625rem solid var(--grey-lighter);
     z-index: 5;
     box-shadow: 0.5rem 0 0.625rem -0.375rem rgba(0, 0, 0, 0.10);
 
@@ -67,6 +65,8 @@
 }
 
 .#{$prefix}-overflow {
+    display: inline-block;
+    position:relative;
 
     &-caret {
         @include caret(left);
@@ -93,16 +93,15 @@
     }
 
     &-menu {
-        display: none;
+       // display: none;
+        position: absolute;
+        z-index:9;
         height: auto;
         width: 11.25rem;
         background-color: var(--white);
-        border: 0.0625rem solid var(--danger);
+        border: 0.0625rem solid var( --grey-lighter);
         box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
-
-        &-show {
-            display: block;
-        }
+        list-style: none;
     }
 
     &-left {
@@ -111,6 +110,7 @@
 
     &-right {
         @include wrap(right)
+        
     }
 
     &-default {
@@ -118,7 +118,7 @@
         @include options(default);
     }
 
-    &-option {
+    li ,  &-option{
         @include option(default);
     }
 
@@ -128,7 +128,7 @@
 
     }
 
-    &-optiondanger {
+    &-optiondanger ,.danger{
         @include option(danger);
     }
 
@@ -136,4 +136,8 @@
         cursor: not-allowed !important;
         opacity: 0.3;
     }
+}
+
+.#{$prefix}-hidden{
+    display:none;
 }
