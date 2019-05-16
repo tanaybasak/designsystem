@@ -157,15 +157,27 @@ h6,
 }
 
 // Anchor link
-// TODO: change the color as per the theme
-a {
-    color: theme-color("primary");
+a{
+    color:theme-color("primary");
     @include getFontSize("14");
-
-    &:hover {
-        color: $link-hover-color;
+    line-height:24px;
+    margin-right:16px;
+    text-decoration:none;
+    &:hover{
+      color:var(--black-light);
+      text-decoration:underline;
     }
-}
+    &:focus{
+      color:var(--black-light);
+      outline:1px solid theme-color("primary");
+      text-decoration:underline;
+      outline-offset: 3px;
+    }
+    &:disables,[disabled]{
+      color:var(--black-light);
+      opacity:0.5;
+    }
+  }
 
 // Paragraph
 p,
