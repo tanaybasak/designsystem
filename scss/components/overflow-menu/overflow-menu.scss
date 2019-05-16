@@ -34,14 +34,12 @@
 
     @if($type==right) {
 
-        left: 8.375rem;
-
+        left: -0.875rem
     }
 
     @else if($type==left) {
 
-        left: -0.6875rem;
-
+        left: -9.375rem
     }
 }
 
@@ -67,8 +65,6 @@
 }
 
 .#{$prefix}-overflow {
-    display: inline-block;
-    position: relative;
 
     &-caret {
         @include caret(left);
@@ -84,6 +80,7 @@
 
     &-container {
         position: relative;
+        display: inline-block;
 
         >input:focus~.hcl-overflow-menu {
             display: block !important;
