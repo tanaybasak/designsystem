@@ -32,14 +32,16 @@
 
 @mixin wrap($type) {
 
+    top:1.4375rem;
+
     @if($type==right) {
 
-        left: -0.875rem
+        left: -1.125rem
     }
 
     @else if($type==left) {
 
-        left: -9.375rem
+        left: -9.5625rem
     }
 }
 
@@ -74,13 +76,10 @@
         }
     }
 
-    &-svg {
-        fill: var(--dark-blue);
-    }
-
     &-container {
         position: relative;
         display: inline-block;
+
 
         >input:focus~.hcl-overflow-menu {
             display: block !important;
@@ -137,4 +136,8 @@
 
 .#{$prefix}-hidden {
     display: none;
+}
+
+.#{$prefix}-ellipsis {
+    width: 0.5rem;
 }
