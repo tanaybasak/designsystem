@@ -89,6 +89,8 @@
             let arrowSize = type === 'icon' ? 2.5 : 5;
             tooltip.removeAttribute("style");
             icon.removeAttribute("style");
+            let offsetY = window.pageYOffset;
+            let offsetX = window.pageXOffset;
             switch (posHorizontal) {
                 case "left": {
                     left = parseInt(parentCoords.left) - dist - tooltip.offsetWidth;
@@ -96,17 +98,17 @@
                     bottom = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 + (tooltip.offsetHeight / 2);
                     if (top < 0) {
                         top = 0;
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.top = this.getRem(parentCoords.top + (parentCoords.height / 2) - arrowSize)
                     } else if (bottom > window.innerHeight) {
                         bottom = 0;
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.bottom = this.getRem(bottom + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.bottom = this.getRem(bottom - offsetY)
                         icon.style.bottom = this.getRem((window.innerHeight - (parentCoords.bottom - (parentCoords.height / 2))) - arrowSize);
                     } else {
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.top = this.getRem(tooltip.offsetHeight / 2 - arrowSize)
                     }
                     break;
@@ -117,17 +119,17 @@
                     left = parseInt(parentCoords.right) + dist;
                     if (top < 0) {
                         top = 0;
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.top = this.getRem(parentCoords.top + (parentCoords.height / 2) - arrowSize)
                     } else if (bottom > window.innerHeight) {
                         bottom = 0;
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.bottom = this.getRem(bottom + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.bottom = this.getRem(bottom - offsetY)
                         icon.style.bottom = this.getRem((window.innerHeight - parentCoords.bottom + (parentCoords.height / 2)) - arrowSize)
                     } else {
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.top = this.getRem(tooltip.offsetHeight / 2 - arrowSize)
                     }
                     break;
@@ -138,17 +140,17 @@
                     top = parseInt(parentCoords.top) - tooltip.offsetHeight - dist;
                     if (left < 0) {
                         left = 0;
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.left = this.getRem((parentCoords.left + parentCoords.width / 2) - (arrowSize));
                     } else if (right > window.innerWidth) {
                         right = 0;
-                        tooltip.style.right = this.getRem(right)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.right = this.getRem(right - offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.right = this.getRem(((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize))
                     } else {
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.left = this.getRem((tooltip.offsetWidth / 2) - arrowSize);
                     }
                     break;
@@ -159,17 +161,17 @@
                     top = parseInt(parentCoords.bottom) + dist;
                     if (left < 0) {
                         left = 0;
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.left = this.getRem((parentCoords.left + parentCoords.width / 2) - (arrowSize))
                     } else if (right > window.innerWidth) {
                         right = 0;
-                        tooltip.style.right = this.getRem(right)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.right = this.getRem(right - offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.right = this.getRem(((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize))
                     } else {
-                        tooltip.style.left = this.getRem(left)
-                        tooltip.style.top = this.getRem(top + pageYOffset)
+                        tooltip.style.left = this.getRem(left + offsetX)
+                        tooltip.style.top = this.getRem(top + offsetY)
                         icon.style.left = this.getRem((tooltip.offsetWidth / 2) - (arrowSize))
                     }
                     break;
