@@ -135,18 +135,18 @@
                     <button class="hcl-btn hcl-secondary" disabled>Disabled</button>
 
                     <button class="hcl-btn hcl-ghost">Primary Ghost</button>
-                    <button class="hcl-btn hcl-ghost"  disabled>Ghost Disabled</button>
-                   
+                    <button class="hcl-btn hcl-ghost" disabled>Ghost Disabled</button>
+
 
                     <button class="hcl-btn hcl-primary hcl-sm">Primary Small</button>
                     <button class="hcl-btn hcl-primary hcl-danger hcl-sm">Danger Small</button>
 
                     <button class="hcl-btn hcl-secondary hcl-sm">Outline Small</button>
                     <button class="hcl-btn hcl-secondary hcl-danger hcl-sm">Outline Small</button>
-                   
+
 
                     <button class="hcl-btn hcl-ghost hcl-sm">Ghost Small</button>
-                    
+
                     <button class="hcl-btn">Default</button>
                 </div>
             </section>
@@ -543,8 +543,7 @@
                         </div>
                         <footer class="hcl-modal-footer ">
                             <!-- id is just for landing page, will not be part of design system  -->
-                            <button id="hcl-modal-cancel-type7"
-                                class="hcl-btn hcl-secondary hcl-danger">Cancel</button>
+                            <button id="hcl-modal-cancel-type7" class="hcl-btn hcl-secondary hcl-danger">Cancel</button>
                             <button class="hcl-btn hcl-primary hcl-danger">Delete</button>
                         </footer>
                         <!-- id is just for landing page, will not be part of design system  -->
@@ -568,8 +567,7 @@
                         </div>
                         <footer class="hcl-modal-footer ">
                             <!-- id is just for landing page, will not be part of design system  -->
-                            <button id="hcl-modal-cancel-type8"
-                                class="hcl-btn hcl-secondary">Cancel</button>
+                            <button id="hcl-modal-cancel-type8" class="hcl-btn hcl-secondary">Cancel</button>
                             <button class="hcl-btn hcl-primary hcl-danger">Delete</button>
                         </footer>
                         <!-- id is just for landing page, will not be part of design system  -->
@@ -652,16 +650,8 @@
                     <p style="float: left;">Left Overflow Menu</p>
                     <div class="hcl-overflow-container">
                         <!-- This input tag is just for landing page, will not be part of design system -->
-                        <input
-                            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem;">
-                        <!-- This svg tag is just for landing page, will not be part of design system -->
-                        <svg id="hcl-overflow-ellipsis-left" focusable="false" class="hcl-svg" width="16" height="16"
-                            viewBox="0 0 16 16">
-                            <circle cx="8" cy="3" r="1.5"></circle>
-                            <circle cx="8" cy="8" r="1.5"></circle>
-                            <circle cx="8" cy="13" r="1.5"></circle>
-                        </svg>
-
+                        <input style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
+                        <div class="hcl-ellipsis"></div>
                         <div class="hcl-overflow-menu hcl-hidden">
                             <ul class="hcl-overflow-default">
                                 <li class="hcl-overflow-option">
@@ -688,14 +678,8 @@
                     <p style="float: left;">Right Overflow Menu</p>
                     <div class="hcl-overflow-container ">
                         <!-- This input tag is just for landing page, will not be part of design system -->
-                        <input
-                            style="width:1rem; position:absolute; background:transparent; outline: none; padding: 0 0.5rem;">
-                        <!-- This svg tag is just for landing page, will not be part of design system -->
-                        <svg focusable="false" class="hcl-svg" width="16" height="16" viewBox="0 0 16 16">
-                            <circle cx="8" cy="3" r="1.5"></circle>
-                            <circle cx="8" cy="8" r="1.5"></circle>
-                            <circle cx="8" cy="13" r="1.5"></circle>
-                        </svg>
+                        <input style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
+                        <div class="hcl-ellipsis"></div>
                         <div class="hcl-overflow-menu hcl-overflow-right hcl-hidden">
                             <ul class="hcl-overflow-default">
                                 <li class="hcl-overflow-option">
@@ -1032,9 +1016,8 @@
                         </strong>
                         <p class="hcl-label-description">only .jpg and .png files. 500kb max file size.</p>
                         <div class="hcl-file">
-                            <label for="file-uploader"
-                                class="hcl-file-btn hcl-btn hcl-primary hcl-secondary hcl-sm" role="button"
-                                tabindex="0">
+                            <label for="file-uploader" class="hcl-file-btn hcl-btn hcl-primary hcl-secondary hcl-sm"
+                                role="button" tabindex="0">
                                 Add file
                                 <span class="hcl-file-btn-icon"></span>
                             </label>
