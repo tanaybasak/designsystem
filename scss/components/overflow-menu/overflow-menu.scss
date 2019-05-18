@@ -22,17 +22,10 @@
     }
 }
 
-@mixin options($type) {
-    padding: 0.375rem 0;
-
-    @if ($type==danger) {
-        border-top: 0.0625rem solid var(--grey-lighter);
-    }
-}
 
 @mixin wrap($type) {
 
-    top:1.4375rem;
+    top: 1.4375rem;
 
     @if($type==right) {
 
@@ -67,6 +60,11 @@
 }
 
 .#{$prefix}-overflow {
+
+    &-separator {
+        border-top: 0.0625rem solid var(--grey-lighter);
+        padding-top: 0.375rem;
+    }
 
     &-caret {
         @include caret(left);
@@ -107,9 +105,8 @@
         @include wrap(right)
     }
 
-    &-default {
-
-        @include options(default);
+    &-list {
+        padding: 0.375rem 0;
     }
 
     li,
@@ -117,11 +114,7 @@
         @include option(default);
     }
 
-    &-danger {
 
-        @include options(danger);
-
-    }
 
     &-optiondanger,
     .danger {
