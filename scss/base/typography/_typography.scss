@@ -113,7 +113,6 @@ h5,
     @include getFontWeight(light);
 }
 
-
 .#{$prefix}-type-delta {
     @include getFontSize("h6");
     @include lineHeight("heading");
@@ -157,27 +156,29 @@ h6,
 }
 
 // Anchor link
-a{
-    color:theme-color("primary");
+a {
+    color: theme-color("primary");
     @include getFontSize("14");
-    line-height:24px;
-    margin-right:16px;
-    text-decoration:none;
-    &:hover{
-      color:var(--black-light);
-      text-decoration:underline;
+    line-height: 24px;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--black-light);
+        text-decoration: underline;
     }
-    &:focus{
-      color:var(--black-light);
-      outline:1px solid theme-color("primary");
-      text-decoration:underline;
-      outline-offset: 3px;
+
+    &:focus {
+        color: var(--black-light);
+        outline: 1px solid theme-color("primary");
+        text-decoration: underline;
+        outline-offset: 3px;
     }
-    &:disables,[disabled]{
-      color:var(--black-light);
-      opacity:0.5;
+
+    &.disable{
+        color: var(--black-light);
+        pointer-events: none;
     }
-  }
+}
 
 // Paragraph
 p,
