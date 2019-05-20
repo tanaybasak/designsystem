@@ -57,3 +57,16 @@
 .#{$prefix}-close {
     @include hcl-close-icon(24);
 }
+
+// ellipsis icon
+.#{$prefix}-ellipsis {
+    @include hcl-ellipsis();
+}
+
+// Disable
+%disable,
+.disable{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
