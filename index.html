@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    
+
 </head>
 
 <body>
@@ -982,9 +984,9 @@
             <!-- Dropdown -->
             <section class="hcl-row">
                 <div class="hcl-col">
-                    <section class="hcl-dropdown hcl-droptop">
+                    <section class="hcl-dropdown bottom">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
-                            Dropdown top
+                            Dropdown Bottom
                         </button>
                         <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
                             <li class="hcl-dropdown-item">A</li>
@@ -994,9 +996,9 @@
                     </section>
                 </div>
                 <div class="hcl-col">
-                    <section class="hcl-dropdown">
+                    <section class="hcl-dropdown top">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
-                            Dropdown bottom
+                            Dropdown Top
                         </button>
                         <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
                             <li class="hcl-dropdown-item">A</li>
@@ -1009,6 +1011,12 @@
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
         <script src="./js/index.js"></script>
+    <script>
+        patron.dropdown(".hcl-dropdown.top", { position : "top", onChange : (element, value)=>{
+            console.log(element, value);
+        }})
+        patron.dropdown(".hcl-dropdown.bottom")
+    </script>
 </body>
 
 </html>

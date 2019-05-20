@@ -1,101 +1,77 @@
-(function () {
-    const DROPDOWN_SELECTOR = '.hcl-dropdown .hcl-dropdown-toggle';
-    const DROPDOWN_ITEM_SELECTOR = '.hcl-dropdown .hcl-dropdown-item';
+import { PREFIX } from "./utils/config";
+import { NOOP } from "./utils/functions";
+import { isElement, trackDocumentClick } from "./utils/dom";
+import getCloset from "./utils/get-closest";
 
-    const dropdownElements = document.querySelectorAll(DROPDOWN_SELECTOR);
-    const dropdownItemElements = document.querySelectorAll(DROPDOWN_ITEM_SELECTOR);
+const Dropdown = function(element, options) {
+  if (!isElement(element)) {
+    console.error("Invalid element provided.");
+    return false;
+  }
 
-    if (dropdownElements) {
-        dropdownElements.forEach(item => {
-            item.addEventListener('click', event => {
-                const _nextElementSibling = event.currentTarget.nextElementSibling;
+  const state = {
+    isOpen: false,
+    position: "bottom",
+    selected: 0,
+    onChange: NOOP,
+    ...options
+  };
 
-                if (/show/i.test(_nextElementSibling.className)) {
-                    _nextElementSibling.classList.remove('show');
-                } else {
-                    _nextElementSibling.classList.add('show');
-                }
+  const toggle = element.querySelector(`.${PREFIX}-dropdown-toggle`);
 
-                const parent = getClosest(event.currentTarget, '.hcl-dropdown');
+  const position =
+    state.position === "top"
+      ? `${PREFIX}-dropdown-top`
+      : `${PREFIX}-dropdown-bottom`;
 
-                if (parent) {
-                    const parentElementClassName = parent.className;
-                    const position = getPosition(parentElementClassName);
-                    let { height } = _nextElementSibling.getBoundingClientRect();
-                    if (position === 'top') {
-                        height = (height + 2) * -1;
-                    } else {
-                        height = 42;
-                    }
+  const setValue = value => {
+    toggle.innerText = value;
+  };
 
-                    _nextElementSibling.style.transform = 'translate3d(0, ' + height + 'px, 0)';
-                }
-            });
-        });
+  const toggleState = state => {
+    if (state) {
+      element.classList.add(`${PREFIX}-dropdown-open`);
+      element.classList.remove(`${PREFIX}-dropdown-close`);
+    } else {
+      element.classList.remove(`${PREFIX}-dropdown-open`);
+      element.classList.add(`${PREFIX}-dropdown-close`);
     }
+  };
 
-    if (dropdownItemElements) {
-        dropdownItemElements.forEach(item => {
-            item.addEventListener('click', event => {
-                const _currentTarget = event.currentTarget;
-                const _value = _currentTarget.dataset.value;
-                const _label = _currentTarget.textContent.trim();
-                const parent = getClosest(_currentTarget, '.hcl-dropdown-container');
-                if (parent) {
-                    const _dropdownElement = parent.previousElementSibling;
-                    if (_dropdownElement) {
-                        _dropdownElement.setAttribute('data-value', _value);
-                        _dropdownElement.innerHTML = _label;
-                        parent.classList.remove('show');
-
-                        const previouslySelectedElement = parent.querySelector('.hcl-dropdown-item.hcl-dropdown-item-selected');
-                        if (previouslySelectedElement) {
-                            previouslySelectedElement.classList.remove('hcl-dropdown-item-selected');
-                        }
-                        _currentTarget.classList.add('hcl-dropdown-item-selected');
-                    }
-                }
-            });
-        });
+  const setSelection = (subElement, className) => {
+    const selected = getCloset(subElement, className);
+    if (selected) {
+      selected.classList.remove(className);
     }
+    subElement.classList.add(className);
+  };
 
+  // Set Defaults
+  toggleState(state.isOpen);
+  element.classList.add(position);
+  // Attach events
+  element.addEventListener("click", event => {
+    event.stopPropagation();
+    trackDocumentClick(element, () => {
+      toggleState(false);
+      state.isOpen = !state.isOpen;
+    });
+    state.isOpen = !state.isOpen;
+    toggleState(state.isOpen);
+  });
 
-    function getClosest(element, selector) {
-        // Element.matches() polyfill
-        if (!Element.prototype.matches) {
-            Element.prototype.matches =
-                Element.prototype.matchesSelector ||
-                Element.prototype.mozMatchesSelector ||
-                Element.prototype.msMatchesSelector ||
-                Element.prototype.oMatchesSelector ||
-                Element.prototype.webkitMatchesSelector ||
-                function (s) {
-                    var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-                        i = matches.length;
-                    while (--i >= 0 && matches.item(i) !== this) { }
-                    return i > -1;
-                };
+  element
+    .querySelectorAll(`.${PREFIX}-dropdown-item`)
+    .forEach((element, index) => {
+      element.addEventListener("click", event => {
+        setSelection(event.target, `.${PREFIX}-dropdown-item-selected`);
+        setValue(event.target.innerText);
+        state.selected = index;
+        if (typeof state.onChange === "function") {
+          state.onChange(event, event.target.innerText);
         }
+      });
+    });
+};
 
-        // Get the closest matching element
-        for (; element && element !== document; element = element.parentNode) {
-            if (element.matches(selector)) return element;
-        }
-        return null;
-    }
-
-    function getPosition(_className) {
-        switch (true) {
-            case /droptop/i.test(_className):
-                return 'top';
-            case /dropright/i.test(_className):
-                return 'right';
-            case /dropbottom/i.test(_className):
-                return 'bottom';
-            case /dropleft/i.test(_className):
-                return 'left';
-            default:
-                return 'bottom';
-        }
-    }
-})();
+export default Dropdown;

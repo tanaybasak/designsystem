@@ -14,9 +14,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.4.10",
-    "sass": "^1.17.3",
     "parcel-bundler": "^1.11.0",
-    "postcss-cli": "^6.1.2"
+    "postcss-cli": "^6.1.2",
+    "sass": "^1.17.3"
   },
   "browserslist": [
     "> .1%",
