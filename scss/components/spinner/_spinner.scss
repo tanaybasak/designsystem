@@ -6,13 +6,16 @@
 
     >svg {
         @if($size==normal) {
-            height: 10.5rem;
-            width: 10.5rem;
+            height: 5.25rem;
+            width: 5.25rem;
         }
 
         @else if ($size==small) {
-            height: 2rem;
-            width: 2rem;
+            height: 1rem;
+            width: 1rem;
+            --spinner-color:var(--dark-blue);
+            margin-left:1rem;
+
         }
 
         animation-name: infinite-spinning;
@@ -20,7 +23,7 @@
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
-
+       
         >circle {
             stroke: var(--spinner-color);
             stroke-dashoffset: 40;
