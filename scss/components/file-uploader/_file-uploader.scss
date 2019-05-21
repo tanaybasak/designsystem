@@ -1,91 +1,31 @@
 .#{$prefix}-form-item {
     .#{$prefix}-label {
         font-size: 0.875rem;
-        @include getInputColor('color-1', "color");
         letter-spacing: 0;
         line-height: 1.125rem;
+        padding: 0.5rem;
+        @include getInputColor('color-1', "color");
     }
 
     .#{$prefix}-label-description {
         font-size: 0.875rem;
         color: #aaa;
         line-height: 1.313rem;
+        padding: 0.5rem;
     }
+}
 
-    .#{$prefix}-file {
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-        margin: 0.5rem;
+.#{$prefix}-file-uploader {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 
-        &-input {
-            display: none;
+    .#{$prefix}-file-input {
+        display: none;
 
-            &:disabled+.#{$prefix}-file-btn {
-                opacity: 0.5;
-                cursor: not-allowed;
-
-                &:hover {
-                    color: var(--blue);
-                    background-color: transparent;
-                    border-color: var(--blue);
-
-                    .#{$prefix}-file-btn-icon {
-                        background-color: var(--blue);
-
-                        &:before,
-                        &:after {
-                            background-color: var(--white);
-                        }
-                    }
-                }
-
-                .#{$prefix}-file-btn-icon {
-                    cursor: not-allowed;
-                    opacity: 0.5;
-                }
-            }
-        }
-
-        &-btn {
-            display: inline-flex;
-            margin: 0;
-
-            &-icon {
-                width: 1rem;
-                height: 1rem;
-                position: relative;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                background-color: var(--blue);
-                border-radius: 50%;
-                margin-left: 1rem;
-                cursor: pointer;
-
-                &:before,
-                &:after {
-                    content: "";
-                    position: absolute;
-                    width: 0.125rem;
-                    height: 0.5rem;
-                    background-color: var(--white);
-                }
-
-                &:after {
-                    transform: rotate(-90deg);
-                }
-            }
-
-            &:focus .#{$prefix}-file-btn-icon,
-            &:hover .#{$prefix}-file-btn-icon {
-                background-color: var(--white);
-
-                &:before,
-                &:after {
-                    background-color: var(--blue);
-                }
-            }
+        &:disabled+.#{$prefix}-file-btn {
+            opacity: 0.5;
+            pointer-events: none;
         }
     }
 }
