@@ -88,6 +88,16 @@
                     </a>
                 </li>
                 <li class="hcl-sidebar-list-item">
+                    <a href="#textinput" class="hcl-sidebar-list-link">
+                        <span>Text Input</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#textarea" class="hcl-sidebar-list-link">
+                        <span>Textarea</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
                     <a href="#radio" class="hcl-sidebar-list-link">
                         <span>Radio</span>
                     </a>
@@ -1113,19 +1123,14 @@
                 </fieldset>
             </article>
             <!-- Input Components -->
-            <form id="formcomp" class="m-5">
+            <section id="textinput" class="m-5 p-5 colBorder">
                 <div class="hcl-form-group">
                     <input type="text" class="hcl-form-control" id="firstname" placeholder="Enter First Name" />
                     <label for="firstname">First Name</label>
                 </div>
                 <div class="hcl-form-group">
-                    <input type="text" class="hcl-form-control" id="lastname" placeholder="Enter Last Name" />
-                    <label for="lastname">Last Name</label>
-                    <div class="hcl-helper-text">Optional Helper text goes here</div>
-                </div>
-                <div class="hcl-form-group">
                     <input data-invalid="true" type="text" class="hcl-form-control" id="middlename"
-                    placeholder="Middle Name" />
+                        placeholder="Middle Name" />
                     <label for="middlename">Middle Name</label>
                     <div class="hcl-error-msg">Validation message here</div>
                 </div>
@@ -1134,14 +1139,15 @@
                         aria-disabled="true" />
                     <label for="error">Address</label>
                 </div>
+            </section>
+            <section id="textarea" class="m-5 p-5 colBorder">
                 <div class="hcl-form-group">
-                    <textarea class="hcl-textarea" id="feedback1" rows="4" cols="50"
-                        placeholder="Please Feedback here"></textarea>
-                    <label for="feedback1">Feedback Form</label>
+                    <textarea class="hcl-textarea" id="feedback1" rows="4" cols="50" placeholder="Comments"></textarea>
+                    <label for="feedback1">Comments</label>
                 </div>
                 <div class="hcl-form-group">
                     <textarea disabled aria-disabled="true" class="hcl-textarea" id="feedback2" rows="4"
-                    cols="50"></textarea>
+                        cols="50"></textarea>
                     <label for="feedback2">Review Summary</label>
                     <div class="hcl-helper-text">Optional Helper text goes here</div>
                 </div>
@@ -1152,7 +1158,21 @@
                     <div class="hcl-helper-text">Optional Helper text goes here</div>
                     <div class="hcl-error-msg">Validation message here</div>
                 </div>
-            </form>
+            </section>
+            <section id="formcomp">
+                <form class="m-5">
+                    <div class="hcl-form-group">
+                        <input type="text" class="hcl-form-control" id="firstname" placeholder="Enter First Name" />
+                        <label for="firstname">First Name</label>
+                        <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    </div>
+                    <div class="hcl-form-group">
+                        <textarea class="hcl-textarea" id="feedback1" rows="4" cols="50"
+                            placeholder="Please Feedback here"></textarea>
+                        <label for="feedback1">Feedback Form</label>
+                    </div>
+                </form>
+            </section>
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
         <script src="./js/index.js"></script>
