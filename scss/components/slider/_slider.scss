@@ -1,0 +1,178 @@
+// excess height to improve interactive area / accessibility
+$height: 1.875rem;
+$thumb-height: 1.5rem;
+$track-height: 0.25rem;
+
+// colours
+$upper-color: #aaa;
+$thumb-hover-color: #55c2ff;
+$thumb-active-color: #7CC7FF;
+
+$upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
+$lower-background: linear-gradient(to bottom, $blue, $blue) 100% 50% / 100% $track-height no-repeat transparent;
+
+// Webkit Bug : Webkit cannot style progress. To fix it added a long shadow on the thumb element to create fake the style.
+@function webkit-slider-thumb-shadow($i: 1) {
+    $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
+
+    @if $i==1 {
+        @for $k from 2 through 3000 {
+            $val: #{$val},
+            webkit-slider-thumb-shadow($k);
+        }
+    }
+
+    @return $val;
+}
+
+.#{$prefix}-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+
+    .#{$prefix}-slider-bottom-range,
+    .#{$prefix}-slider-top-range {
+        display: inline-flex;
+        margin: 0 0.5rem;
+    }
+
+    >input.#{$prefix}-slider-text-input {
+        font-size: .875rem;
+        @include getFontWeight(regular);
+        line-height: 1.125rem;
+        letter-spacing: .16px;
+        outline: 2px solid transparent;
+        outline-offset: -2px;
+        background-color: $grey-secondary;
+        width: 2.5rem;
+        height: 2rem;
+        padding: 0;
+        color: $black;
+        border: none;
+        border-bottom: 1px solid #8c8c8c;
+        transition: all .11s;
+        text-align: center
+    }
+
+    // Range
+    >input[type=range].#{$prefix}-slider-input {
+        appearance: none;
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+        cursor: pointer;
+        margin: 0 0.5rem;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-moz-focus-outer {
+            border: 0;
+        }
+
+        &:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+    }
+
+    // Webkit
+    .#{$prefix}-slider-input::-webkit-slider-runnable-track {
+        width: 100%;
+        height: $height;
+        background: $lower-background;
+    }
+
+    .#{$prefix}-slider-input::-webkit-slider-thumb {
+        position: relative;
+        appearance: none;
+        height: $thumb-height;
+        width: $thumb-height;
+        background: $blue;
+        border-radius: 100%;
+        border: 0;
+        top: 50%;
+        margin-top: (-$thumb-height/2);
+        box-shadow: webkit-slider-thumb-shadow();
+        transition: background-color 150ms;
+    }
+
+    // Firefox
+    .#{$prefix}-slider-input::-moz-range-track,
+    .#{$prefix}-slider-input::-moz-range-progress {
+        width: 100%;
+        height: $height;
+        background: $upper-background;
+    }
+
+    .#{$prefix}-slider-input::-moz-range-progress {
+        background: $lower-background;
+    }
+
+    .#{$prefix}-slider-input::-moz-range-thumb {
+        appearance: none;
+        height: $thumb-height;
+        width: $thumb-height;
+        background: $blue;
+        border-radius: 100%;
+        border: 0;
+        margin: 0;
+        transition: background-color 150ms;
+    }
+
+    // Internet Exploder
+    .#{$prefix}-slider-input::-ms-track {
+        width: 100%;
+        height: $height;
+        border: 0;
+        // color needed to hide track marks
+        color: transparent;
+        background: transparent;
+    }
+
+    .#{$prefix}-slider-input::-ms-fill-lower {
+        background: $lower-background;
+    }
+
+    .#{$prefix}-slider-input::-ms-fill-upper {
+        background: $upper-background;
+    }
+
+    .#{$prefix}-slider-input::-ms-thumb {
+        appearance: none;
+        height: $thumb-height;
+        width: $thumb-height;
+        background: $blue;
+        border-radius: 100%;
+        border: 0;
+        transition: background-color 150ms;
+        // IE Edge thinks it can support -webkit prefixes
+        top: 0;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .#{$prefix}-slider-input:active {
+        outline: none;
+
+        &::-webkit-slider-thumb {
+            border: 3px solid $thumb-active-color;
+        }
+
+        &::-moz-range-thumb {
+            border: 3px solid $thumb-active-color;
+        }
+
+        &::-ms-thumb {
+            border: 3px solid $thumb-active-color;
+        }
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
