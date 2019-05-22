@@ -113,7 +113,6 @@ h5,
     @include getFontWeight(light);
 }
 
-
 .#{$prefix}-type-delta {
     @include getFontSize("h6");
     @include lineHeight("heading");
@@ -157,17 +156,27 @@ h6,
 }
 
 // Anchor link
-// TODO: change the color as per the theme
 a {
     color: theme-color("primary");
     @include getFontSize("14");
-
+    line-height: 1.5rem;
+    text-decoration: none;
     &:hover {
-        color: $link-hover-color;
+        color: var(--black-light);
+        text-decoration: underline;
+    }
+    &:focus {
+        color: var(--black-light);
+        outline: 1px solid theme-color("primary");
+        text-decoration: underline;
+        outline-offset: 3px;
+    }
+    &.disable{
+        color: var(--black-light);
+        pointer-events: none;
     }
 }
 
-// Paragraph
 p,
 .#{$prefix}-p,
 .#{$prefix}-16 {
