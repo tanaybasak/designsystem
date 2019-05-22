@@ -333,6 +333,7 @@ const DatePicker = function () {
         };
 
     })(datePickerController, UIController);
+    console.log('this.element', this);
     controller.init();
 };
 export default DatePicker;

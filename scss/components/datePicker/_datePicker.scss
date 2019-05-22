@@ -180,7 +180,7 @@
 
     &-panel {
         background-color: var(--grey-secondary);
-        display: none;
+        display: block;
         z-index: 9;
 
         &-show {
