@@ -66,7 +66,7 @@ const DatePicker = function (datePickerElm) {
 
         const DOMstrings = {
             showDateContainer: 'hcl-datePicker-panel-show',
-            dateSelected: 'hcl-datePicker-date-picked', 
+            dateSelected: 'hcl-datePicker-date-picked',
             datePicked: 'hcl-datePicker-date-picked',// need to work hcl-datePicker-dates
             todayHighlight: 'hcl-datePicker-dates-today',
             dateUnSelected: 'hcl-datePicker-date', // need to work  hcl-datePicker-dates
@@ -109,7 +109,7 @@ const DatePicker = function (datePickerElm) {
 
             let numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
             // let tempHtml = `<span class="${DOMstrings.dateUnSelected}" id="d%month%d%day%d%year%">%day% </span>`;
-            let tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMids.fade}" id="d%month%d%day%d%year%">%day% </span>`;
+            let tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMids.fade}" date="%month%/%day%/%year%">%day% </span>`;
 
             let element = DOMids.datePanel;
 
@@ -127,7 +127,7 @@ const DatePicker = function (datePickerElm) {
             }
 
             // days from current month
-            tempHtml = `<span class="${DOMstrings.dateUnSelected}" id="d%month%d%day%d%year%">%day% </span>`;
+            tempHtml = `<span class="${DOMstrings.dateUnSelected}" date="%month%/%day%/%year%">%day%</span>`;
             for (let i = 1; i <= numOfDaysInMonth; i++) {
                 let dayHTML = tempHtml.replaceAll('%day%', ('0' + String(i)).slice(-2));
                 dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month) + 1)).slice(-2));
@@ -136,7 +136,7 @@ const DatePicker = function (datePickerElm) {
             }
 
             // days from next month  
-            tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMids.fade}" id="d%month%d%day%d%year%">%day% </span>`;
+            tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMids.fade}" date="%month%/%day%/%year%">%day% </span>`;
             let numOfDaysFromNextMonth = numOfDaysFromPrevMonth === 6 ? 42 - numOfDaysInMonth + 1 : 42 - numOfDaysInMonth - numOfDaysFromPrevMonth;
             for (let i = 1; i < numOfDaysFromNextMonth; i++) {
                 let dayHTML = tempHtml.replaceAll('%day%', ('0' + String(i)).slice(-2));
@@ -147,11 +147,12 @@ const DatePicker = function (datePickerElm) {
 
             // hightlight today's Date
             let todayDate = new Date();
-            todayDate = `#d${('0' + (todayDate.getMonth() + 1)).slice(-2)}d${('0' + todayDate.getDate()).slice(-2)}d${todayDate.getFullYear()}`;
-
-            // console.log('todayDate ---> ',todayDate);
-            if (datePickerElm.querySelector(todayDate)) {
-                datePickerElm.querySelector(todayDate).classList.add(DOMstrings.todayHighlight);
+            todayDate = `${('0' + (todayDate.getMonth() + 1)).slice(-2)}/${('0' + todayDate.getDate()).slice(-2)}/${todayDate.getFullYear()}`;
+            let selector = "[date='%id%']";
+            selector = selector.replaceAll('%id%', todayDate);
+            console.log('todayDate ---> ',todayDate);
+            if (datePickerElm.querySelector(selector)) {
+                datePickerElm.querySelector(selector).classList.add(DOMstrings.todayHighlight);
             }
         };
 
@@ -168,13 +169,19 @@ const DatePicker = function (datePickerElm) {
         const hightlightSelectedDate = function (id) {
             // REmove old highloighed one 
 
+
+            console.log('id', id);
             // add to new hightler
+
+
             let elm = datePickerElm.querySelector(`.${DOMstrings.datePicked}`);
-            console.log('DOMstrings.dateSelected',DOMstrings.dateSelected);
-            console.log('elm', elm);
-            
             elm ? elm.classList.remove(DOMstrings.datePicked) : null;
-            datePickerElm.querySelector(`#${id}`).classList.add(DOMstrings.datePicked);
+            window.elm = datePickerElm;
+            let selector = "[date='%id%']";
+            selector = selector.replaceAll('%id%', id);
+            console.log('selector', selector);
+
+            datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked);
             // let elm = datePickerElm.querySelector(document.getElementById(DOMids.inputDate).value);
             // elm ? elm.classList.replace(DOMstrings.dateSelected, DOMstrings.dateUnSelected) : null;
             // document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
@@ -193,6 +200,11 @@ const DatePicker = function (datePickerElm) {
 
             initDatePanel: function (curMonthObj) {
                 initDatePanel(curMonthObj);
+                let selector = "[date='%id%']";
+                selector = selector.replaceAll('%id%', datePickerElm.querySelector(DOMids.inputDate).value );
+                console.log('selctort', selector);
+                const elm = datePickerElm.querySelector(selector);
+                elm ? datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked) : null;
                 // let elm = document.getElementById(document.getElementById(DOMids.inputDate).value);
                 // elm ? elm.classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected) : null;
             },
@@ -215,11 +227,10 @@ const DatePicker = function (datePickerElm) {
             selectDate: function (event) {
                 console.log('selectDate!!!' + event.target.id);
                 console.log(event.target);
-                // datePickerElm.querySelector(DOMids.inputDate).classList.remove(DOMstrings.addErrorBorder);
-                // datePickerElm.querySelector(DOMids.errorDiv).classList.remove(DOMstrings.showErrorDiv);
-                hightlightSelectedDate(event.target.id);
+                console.log('event.target.date', event.target);
+                hightlightSelectedDate(event.target.getAttribute('date'));
 
-                datePickerElm.querySelector(DOMids.inputDate).value = event.target.id.split('d').slice(1,5).join('/');;
+                datePickerElm.querySelector(DOMids.inputDate).value = event.target.getAttribute('date');
             },
             hightlightSelectedDate: function (id) {
                 hightlightSelectedDate(id);
