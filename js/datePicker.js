@@ -169,7 +169,7 @@ const DatePicker = function (datePickerElm) {
         };
 
         const hideDateContainer = function () {
-            // datePickerElm.querySelector(DOMids.dateContainer).classList.remove(DOMstrings.showDateContainer);
+            datePickerElm.querySelector(DOMids.dateContainer).classList.remove(DOMstrings.showDateContainer);
         };
 
         const toggleDateContainer = function () {
