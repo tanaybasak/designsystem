@@ -1,6 +1,5 @@
 .#{$prefix}-datePicker {
 
-
     &-container {
         position: relative;
         display: flex;
@@ -11,12 +10,8 @@
             top: 0.75rem;
             left: 1rem;
             fill: var(--blue-light);
-            cursor: pointer;
             z-index: 1;
-
-            // &:hover {
-            //     fill: var(--blue-light);
-            // }
+            cursor: pointer;
         }
 
         &-error {
@@ -32,6 +27,8 @@
             background-color: rgba(70, 150, 210, 0.05);
             outline: none;
             font-size: 0.875rem;
+            cursor: pointer;
+
         }
     }
 
@@ -194,9 +191,10 @@
     }
 
     &-panel {
+        position: absolute;
         background-color: var(--white);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
-        display: block;
+        display: none;
         z-index: 9;
         width: 17.8125rem;
         height: 16.375rem;
@@ -207,9 +205,13 @@
             display: block;
         }
 
-        &-hide {
-            display: none;
+        &-above{
+           bottom:40px;
         }
+
+        &-below{
+            top: 40px;
+         }
     }
 
     &-error {
