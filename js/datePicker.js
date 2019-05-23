@@ -176,6 +176,24 @@ const DatePicker = function (datePickerElm) {
             datePickerElm.querySelector(DOMids.dateContainer).classList.toggle(DOMstrings.showDateContainer);
         };
 
+        const datePicked = function(){
+            let selector = "[date='%id%']";
+            selector = selector.replaceAll('%id%', datePickerElm.querySelector(DOMids.inputDate).value);
+            const elm = datePickerElm.querySelector(selector);
+            elm ? datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked) : null;
+        };
+
+        const removeExistingDates =function () {
+            let element = DOMids.datePanel;
+            datePickerElm.querySelector(element).innerHTML = "";
+        };
+
+        const selectDate = function (event) {
+            hightlightSelectedDate(event.target.getAttribute('date'));
+            hideErrorInvalidDate();
+            datePickerElm.querySelector(DOMids.inputDate).value = event.target.getAttribute('date');
+        }
+
         return {
             initDatePicker: function (curMonthObj) {
                 initWeekDaysPanel();
@@ -189,10 +207,7 @@ const DatePicker = function (datePickerElm) {
 
             initDatePanel: function (curMonthObj) {
                 initDatePanel(curMonthObj);
-                let selector = "[date='%id%']";
-                selector = selector.replaceAll('%id%', datePickerElm.querySelector(DOMids.inputDate).value);
-                const elm = datePickerElm.querySelector(selector);
-                elm ? datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked) : null;
+                datePicked();
             },
 
             getDOMstrings: function () {
@@ -204,8 +219,7 @@ const DatePicker = function (datePickerElm) {
             },
 
             removeExistingDates: function () {
-                let element = DOMids.datePanel;
-                datePickerElm.querySelector(element).innerHTML = "";
+                removeExistingDates();
             },
 
             toggleDateContainer: function () {
@@ -217,9 +231,7 @@ const DatePicker = function (datePickerElm) {
             },
 
             selectDate: function (event) {
-                hightlightSelectedDate(event.target.getAttribute('date'));
-                hideErrorInvalidDate();
-                datePickerElm.querySelector(DOMids.inputDate).value = event.target.getAttribute('date');
+                selectDate(event);
             },
 
             hightlightSelectedDate: function (id) {
