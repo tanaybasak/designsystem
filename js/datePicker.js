@@ -157,7 +157,6 @@ const DatePicker = function (datePickerElm) {
         const hightlightSelectedDate = function (id) {
             let elm = datePickerElm.querySelector(`.${DOMstrings.datePicked}`);
             elm ? elm.classList.remove(DOMstrings.datePicked) : null;
-            window.elm = datePickerElm;
             let selector = "[date='%id%']";
             selector = selector.replaceAll('%id%', id);
             datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked);
