@@ -19,7 +19,6 @@ const DatePicker = function (datePickerElm) {
         };
 
         return {
-
             getCurrentMonthDetails: function () {
                 let date = new Date();
                 return createDateObject(date);
@@ -205,14 +204,17 @@ const DatePicker = function (datePickerElm) {
                 let element = DOMids.datePanel;
                 datePickerElm.querySelector(element).innerHTML = "";
             },
+
             toggleDateContainer: function () {
                 datePickerElm.querySelector(DOMids.dateContainer).classList.toggle(DOMstrings.showDateContainer);
             },
+
             selectDate: function (event) {
                 hightlightSelectedDate(event.target.getAttribute('date'));
                 hideErrorInvalidDate();
                 datePickerElm.querySelector(DOMids.inputDate).value = event.target.getAttribute('date');
             },
+
             hightlightSelectedDate: function (id) {
                 hightlightSelectedDate(id);
             },
@@ -220,6 +222,7 @@ const DatePicker = function (datePickerElm) {
             showErrorInvalidDate: function () {
                 showErrorInvalidDate();
             },
+
             hideErrorInvalidDate: function () {
                 hideErrorInvalidDate();
 
