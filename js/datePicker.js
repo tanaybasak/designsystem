@@ -5,9 +5,7 @@ import getCloset from "./utils/get-closest";
 
 const DatePicker = function (datePickerElm) {
     // DatePicker Controller
-
     const datePickerController = (function () {
-
         let currDateObj = {};
 
         const createDateObject = function (date) {
@@ -63,17 +61,15 @@ const DatePicker = function (datePickerElm) {
     const UIController = (function () {
         const weekDays = ['S', 'M', 'T', 'W', 'Th', 'F', 'S'];
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
         const DOMstrings = {
             showDateContainer: 'hcl-datePicker-panel-show',
             dateSelected: 'hcl-datePicker-date-picked',
-            datePicked: 'hcl-datePicker-date-picked',// need to work hcl-datePicker-dates
+            datePicked: 'hcl-datePicker-date-picked',
             todayHighlight: 'hcl-datePicker-dates-today',
-            dateUnSelected: 'hcl-datePicker-date', // need to work  hcl-datePicker-dates
+            dateUnSelected: 'hcl-datePicker-date',
             showErrorDiv: 'hcl-datePicker-error-show',
             addErrorBorder: 'hcl-datePicker-container-error'
         };
-
         const DOMids = {
             inputCalSVG: '.hcl-datePicker-container-svg',
             prevMonth: '.hcl-datePicker-month-prev',
@@ -88,15 +84,13 @@ const DatePicker = function (datePickerElm) {
             dateContainer: '.hcl-datePicker-panel',
             errorDiv: '.hcl-datePicker-error',
             fade: 'hcl-datePicker-date-fade',
-        }
+        };
 
         const getDaysInMonth = function (month, year) {
             return new Date(year, month, 0).getDate();
         };
 
-
         const initWeekDaysPanel = function () {
-
             let tempHtml = '<span>%weekDay%</span>';
             let element = DOMids.weekDaysPanel;
             weekDays.forEach((weekDay) => {
@@ -106,15 +100,10 @@ const DatePicker = function (datePickerElm) {
         };
 
         const initDatePanel = function (curMonthObj) {
-
             let numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
-            // let tempHtml = `<span class="${DOMstrings.dateUnSelected}" id="d%month%d%day%d%year%">%day% </span>`;
             let tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMids.fade}" date="%month%/%day%/%year%">%day% </span>`;
-
             let element = DOMids.datePanel;
-
             //days from previous month
-
             let numOfDaysFromPrevMonth = curMonthObj.day - curMonthObj.date % 7;
             numOfDaysFromPrevMonth = numOfDaysFromPrevMonth < 0 ? 7 + numOfDaysFromPrevMonth : numOfDaysFromPrevMonth;
             let numOfDaysInPrevMonth = getDaysInMonth(curMonthObj.month === 0 ? 12 : curMonthObj.month, curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
@@ -150,7 +139,6 @@ const DatePicker = function (datePickerElm) {
             todayDate = `${('0' + (todayDate.getMonth() + 1)).slice(-2)}/${('0' + todayDate.getDate()).slice(-2)}/${todayDate.getFullYear()}`;
             let selector = "[date='%id%']";
             selector = selector.replaceAll('%id%', todayDate);
-            // console.log('todayDate ---> ',todayDate);
             if (datePickerElm.querySelector(selector)) {
                 datePickerElm.querySelector(selector).classList.add(DOMstrings.todayHighlight);
             }
@@ -172,20 +160,16 @@ const DatePicker = function (datePickerElm) {
             window.elm = datePickerElm;
             let selector = "[date='%id%']";
             selector = selector.replaceAll('%id%', id);
-            console.log('selector', selector);
-
             datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked);
-           document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
+            document.getElementById(id).classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected);
         };
 
         const showErrorInvalidDate = function () {
-            console.log('showErrorInvalidDate');
             datePickerElm.querySelector(DOMids.errorDiv).classList.add(DOMstrings.showErrorDiv);
             datePickerElm.querySelector(DOMids.inputDate).classList.add(DOMstrings.addErrorBorder);
 
         };
         const hideErrorInvalidDate = function () {
-            console.log('hideErrorInvalidDate');
             datePickerElm.querySelector(DOMids.inputDate).classList.remove(DOMstrings.addErrorBorder);
             datePickerElm.querySelector(DOMids.errorDiv).classList.remove(DOMstrings.showErrorDiv);
 
@@ -206,11 +190,8 @@ const DatePicker = function (datePickerElm) {
                 initDatePanel(curMonthObj);
                 let selector = "[date='%id%']";
                 selector = selector.replaceAll('%id%', datePickerElm.querySelector(DOMids.inputDate).value);
-                // console.log('selctort', selector);
                 const elm = datePickerElm.querySelector(selector);
                 elm ? datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked) : null;
-                // let elm = document.getElementById(document.getElementById(DOMids.inputDate).value);
-                // elm ? elm.classList.replace(DOMstrings.dateUnSelected, DOMstrings.dateSelected) : null;
             },
 
             getDOMstrings: function () {
@@ -226,13 +207,9 @@ const DatePicker = function (datePickerElm) {
                 datePickerElm.querySelector(element).innerHTML = "";
             },
             toggleDateContainer: function () {
-                console.log(' in showDateContainer')
                 datePickerElm.querySelector(DOMids.dateContainer).classList.toggle(DOMstrings.showDateContainer);
             },
             selectDate: function (event) {
-                // console.log('selectDate!!!' + event.target.id);
-                // console.log(event.target);
-                // console.log('event.target.date', event.target);
                 hightlightSelectedDate(event.target.getAttribute('date'));
                 hideErrorInvalidDate();
                 datePickerElm.querySelector(DOMids.inputDate).value = event.target.getAttribute('date');
@@ -241,10 +218,6 @@ const DatePicker = function (datePickerElm) {
                 hightlightSelectedDate(id);
             },
 
-            // hideDateContainer: function () {
-            //     let element = DOMids.dateContainer;
-            //     document.getElementById(element).classList.remove(DOMstrings.showDateContainer);
-            // },
             showErrorInvalidDate: function () {
                 showErrorInvalidDate();
             },
@@ -258,12 +231,9 @@ const DatePicker = function (datePickerElm) {
 
     // Main controller
     const controller = (function (dateCtrl, UICtrl) {
-
         const setupEventListeners = function () {
             let DOM = UICtrl.getDOMstrings();
             let DOMids = UICtrl.getDOMids();
-
-            // console.log('DOMids.prevMonth',datePickerElm.querySelector(DOMids.prevMonth));
             datePickerElm.querySelector(DOMids.prevMonth).addEventListener('click', prevMonth);
             datePickerElm.querySelector(DOMids.nextMonth).addEventListener('click', nextMonth);
             datePickerElm.querySelector(DOMids.yearDecrease).addEventListener('click', yearDecrease);
@@ -272,9 +242,7 @@ const DatePicker = function (datePickerElm) {
             datePickerElm.querySelector(DOMids.inputDate).addEventListener('change', dateChangeHandler);
             datePickerElm.querySelector(DOMids.inputCalSVG).addEventListener('click', UICtrl.toggleDateContainer);
             datePickerElm.querySelector(DOMids.yearInput).addEventListener('change', yearChangeHandler);
-
             let dateElement = datePickerElm.querySelector(DOMids.datePanel).children;
-
             for (let i = 0; i < dateElement.length; i++) {
                 dateElement[i].addEventListener('click', UICtrl.selectDate);
             }
@@ -283,7 +251,6 @@ const DatePicker = function (datePickerElm) {
         const yearChangeHandler = function (event) {
             let regex = /^[0-9]{4}$/g;
             let validYear = regex.test(event.target.value);
-
             if (validYear) {
                 // set current Date;
                 let currDateObj = dateCtrl.getDateObject();
@@ -292,9 +259,7 @@ const DatePicker = function (datePickerElm) {
                 UICtrl.initDatePanel(currDateObj);
                 UICtrl.initMonthYearPanel(currDateObj);
                 UICtrl.hideErrorInvalidDate();
-
             } else {
-                console.log('Invalid Date')
                 UICtrl.showErrorInvalidDate();
             }
         };
@@ -311,14 +276,11 @@ const DatePicker = function (datePickerElm) {
                 UICtrl.hightlightSelectedDate(event.target.value);
                 UICtrl.hideErrorInvalidDate();
             } else {
-                console.log('Invalid Date')
                 UICtrl.showErrorInvalidDate();
             }
         };
 
-
         const prevMonth = function () {
-            console.log('prevMonth');
             event.stopPropagation();
             event.preventDefault();
             let prevMonthObj = dateCtrl.getPrevMonthDetails();
@@ -329,8 +291,6 @@ const DatePicker = function (datePickerElm) {
         };
 
         const nextMonth = function () {
-            console.log('nextMonth');
-
             event.stopPropagation();
             event.preventDefault();
             let nextMonObj = dateCtrl.getNextMonthDetails();
@@ -368,8 +328,6 @@ const DatePicker = function (datePickerElm) {
         };
 
     })(datePickerController, UIController);
-    // console.log('datePickerElm', datePickerElm);
-    // console.log('datePickerElm.querySelectorAll ==>',datePickerElm.querySelector('.hcl-datePicker-days'));
     controller.init();
 };
 export default DatePicker;
