@@ -36,7 +36,6 @@
     }
 
     &-link {
-        @include getFontWeight('semibold');
         text-decoration: none;
         display: inline-block;
         color: $black;
