@@ -1,5 +1,5 @@
 .#{$prefix}-datePicker {
-    width: 18rem !important;
+
 
     &-container {
         position: relative;
@@ -9,14 +9,14 @@
         >svg {
             position: absolute;
             top: 0.75rem;
-            right: 1rem;
-            fill: var(--black);
+            left: 1rem;
+            fill: var(--blue-light);
             cursor: pointer;
             z-index: 1;
 
-            &:hover {
-                fill: var(--blue);
-            }
+            // &:hover {
+            //     fill: var(--blue-light);
+            // }
         }
 
         &-error {
@@ -24,16 +24,14 @@
         }
 
         >input {
-            padding-left: 1rem;
+            padding: 0 1rem 0 3rem;
             border: none;
-            width: 100%;
+            width: 9rem;
             height: 2.5rem;
-            border-bottom: 0.0625rem solid var(--grey);
-            color: var(--black);
-            background-color: var(--grey-secondary);
-            padding-right: 3rem;
-            box-sizing: border-box;
+            border-bottom: 0.0625rem solid var(--dark-blue);
+            background-color: rgba(70, 150, 210, 0.05);
             outline: none;
+            font-size: 0.875rem;
         }
     }
 
@@ -80,8 +78,10 @@
         position: relative;
 
         >input {
-            width: 3rem;
-            background-color: var(--grey-secondary);
+            width: 2.5rem;
+            background-color: rgba(70, 150, 210, 0.05);
+            text-align: center;
+
         }
 
     }
@@ -93,16 +93,20 @@
     }
 
     &-month {
-        height: 2.5rem;
+        // height: 2.5rem;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         font-weight: 600;
+        margin-bottom: .25rem;
+        // padding: 0 1.09375rem 0 1.09375rem;
 
         >span {
-            height: 2.5rem;
-            width: 2.5rem;
+            height: 1.75rem;
+            width: 1.75rem;
+            padding: 0.5rem;
+            fill: var(--dark-blue);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,47 +115,58 @@
     }
 
     &-days {
-        height: 2.5rem;
+        height: 1.75rem;
         display: flex;
-        flex-direction: row;
+        margin-bottom: .25rem;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 12px;
+
+        // padding: 0 2.6875rem 0 2.6875rem;
 
         span {
-            height: 2.5rem;
-            width: 2.5rem;
+            height: 1.5rem;
+            width: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--black);
+            // color: var(--black);
             border-radius: 0;
             border: none;
+            margin: 0.125rem;
         }
     }
 
     &-dates {
-        height: 15.375rem;
+        // height: 15.375rem;
+        // padding: 0 2.1875rem 0 2.1875rem;
+
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-around;
+
 
         &-today {
             &:after {
                 content: "";
                 position: absolute;
                 display: block;
-                bottom: 0.4375rem;
+                top: 90%;
                 left: 50%;
-                transform: translateX(-50%);
-                height: 0.25rem;
-                width: 0.25rem;
-                background: var(--blue);
+                height: 3px;
+                width: 3px;
+                border-radius: 50%;
+                background: #3d70b2;
             }
         }
 
         span {
             cursor: pointer;
-            font-size: .875rem;
-            height: 2.5rem;
-            width: 2.5rem;
+            font-size: 12px;
+            height: 1.5625rem;
+            width: 1.8rem;
+            margin: 0.125rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -162,26 +177,31 @@
     }
 
     &-date {
-        color: var(--black);
+        // color: var(--black);
 
         &:hover {
-            background-color: var(--grey-3);
+            background-color: rgba(85, 150, 230, .1);
         }
 
         &-picked {
-            background-color: var(--blue);
-            color: var(--white);
+           border: 2px solid #3d70b2 !important;
+        }
 
-            &:hover {
-                color: var(--black);
-            }
+        &-fade {
+            opacity: .5;
+            color: #5a6872;
         }
     }
 
     &-panel {
-        background-color: var(--grey-secondary);
+        background-color: var(--white);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
         display: block;
         z-index: 9;
+        width: 17.8125rem;
+        height: 16.375rem;
+        padding: 1rem 1rem 0.25rem 1rem;
+        color: var(--blue-4);
 
         &-show {
             display: block;
