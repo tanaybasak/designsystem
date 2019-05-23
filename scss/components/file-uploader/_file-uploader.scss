@@ -21,11 +21,21 @@
     display: inline-block;
 
     .#{$prefix}-file-input {
-        display: none;
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
 
         &:disabled+.#{$prefix}-file-btn {
             opacity: 0.5;
             pointer-events: none;
+        }
+
+        &:focus+.#{$prefix}-file-btn {
+            // Added to implement accessibility via keybord
+            outline: rgba(0, 103, 244, 0.247) auto 5px;
         }
     }
 }
