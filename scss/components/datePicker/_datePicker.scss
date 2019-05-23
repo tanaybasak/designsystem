@@ -1,5 +1,4 @@
 .#{$prefix}-datePicker {
-
     &-container {
         position: relative;
         display: flex;
@@ -28,17 +27,7 @@
             outline: none;
             font-size: 0.875rem;
             cursor: pointer;
-
         }
-    }
-
-    &-overlay {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 8;
     }
 
     &-curMonth {
@@ -54,7 +43,6 @@
         top: 0rem;
         left: 2.5rem;
         justify-content: space-evenly;
-
     }
 
     &-up {
@@ -78,9 +66,7 @@
             width: 2.5rem;
             background-color: rgba(70, 150, 210, 0.05);
             text-align: center;
-
         }
-
     }
 
     &-select {
@@ -90,14 +76,12 @@
     }
 
     &-month {
-        // height: 2.5rem;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         font-weight: 600;
         margin-bottom: .25rem;
-        // padding: 0 1.09375rem 0 1.09375rem;
 
         >span {
             height: 1.75rem;
@@ -117,9 +101,7 @@
         margin-bottom: .25rem;
         justify-content: space-around;
         align-items: center;
-        font-size: 12px;
-
-        // padding: 0 2.6875rem 0 2.6875rem;
+        font-size: 0.75rem;
 
         span {
             height: 1.5rem;
@@ -127,7 +109,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            // color: var(--black);
             border-radius: 0;
             border: none;
             margin: 0.125rem;
@@ -135,14 +116,10 @@
     }
 
     &-dates {
-        // height: 15.375rem;
-        // padding: 0 2.1875rem 0 2.1875rem;
-
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-
 
         &-today {
             &:after {
@@ -151,16 +128,16 @@
                 display: block;
                 top: 90%;
                 left: 50%;
-                height: 3px;
-                width: 3px;
+                height: 0.1875rem;
+                width: 0.1875rem;
                 border-radius: 50%;
-                background: #3d70b2;
+                background: var(--blue-light);
             }
         }
 
         span {
             cursor: pointer;
-            font-size: 12px;
+            font-size: 0.75rem;
             height: 1.5625rem;
             width: 1.8rem;
             margin: 0.125rem;
@@ -174,14 +151,12 @@
     }
 
     &-date {
-        // color: var(--black);
-
         &:hover {
             background-color: rgba(85, 150, 230, .1);
         }
 
         &-picked {
-           border: 2px solid #3d70b2 !important;
+            border: 0.125rem solid var(--blue-light) !important;
         }
 
         &-fade {
@@ -193,7 +168,7 @@
     &-panel {
         position: absolute;
         background-color: var(--white);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+        box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
         display: none;
         z-index: 9;
         width: 17.8125rem;
@@ -205,13 +180,13 @@
             display: block;
         }
 
-        &-above{
-           bottom:40px;
+        &-above {
+            bottom: 2.5rem;
         }
 
-        &-below{
-            top: 40px;
-         }
+        &-below {
+            top: 2.5rem;
+        }
     }
 
     &-error {
