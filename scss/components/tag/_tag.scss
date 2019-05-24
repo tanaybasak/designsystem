@@ -38,6 +38,7 @@
 
         >.#{$prefix}-close {
             @include hcl-close-icon(18, $white, #3D70B2, true);
+            margin-left: 0.625rem;
         }
     }
 
@@ -58,6 +59,7 @@
 
         >.#{$prefix}-close {
             @include hcl-close-icon(20, $blue, $white, true);
+            margin-left: 10px;
         }
     }
 
@@ -65,6 +67,10 @@
     &[disabled] {
         opacity: 0.5;
         cursor: not-allowed;
+
+        >.#{$prefix}-close {
+            pointer-events: none;
+        }
     }
 
     &-thumbnail {

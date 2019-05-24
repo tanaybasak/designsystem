@@ -21,23 +21,25 @@
     --grey-secondary: #f3f3f3;
     --grey-light: #5A6872;
     --white: #fff;
-    --blue: #0066b3;
+    --blue: #0066b3; //TODO: Rename the -blue to -primary
     --sky-blue: #E4F5FC;
-    --dark-blue: #132730;
-    --dark-secondary: #4696D2;
+    --dark-blue: #132730; // TODO: Remove
+    --dark-secondary: #4696D2; // TODO: Remove. Duplicate of --primary-hover
     --primary-background-focus: #00578F;
-    --primary-background-disabled: #B9E6FA;
-    --red: #EB1946;
-    --red-secondary: #C3143A;
-    --red-background-focus: #C3143A;
-    --red-background-disabled: #F8B2C1;
+    --primary-disabled: #8CD7FA;
+    --primary-hover :#4696D2;
+    --red: #EB1946; //TODO: Rename --red to --danger?
+    --danger-secondary: #C3143A;
+    --danger-focus: #C3143A;
+    --danger-disabled: #F8B2C1;
     --black-secondary: #555;
     --error: #E0182D;
-    --danger: #DFE3E6;
+    --grey-lighter: #DFE3E6; // TODO : Rename 
     --success: #589D25;
     --info: #4696D2;
     --warning: #FAC43B;
     --blue-light: #3d70b2;
+    --black-light:#3B5060;
 }
 
 // SASS VARIABLES

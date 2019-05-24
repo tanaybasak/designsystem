@@ -103,3 +103,10 @@ $value in $iconSizesMap {
 .bg-white {
     background-color: var(--white);
 }
+
+// Disable
+%disable,
+.disable {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

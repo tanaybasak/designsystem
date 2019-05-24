@@ -1,131 +1,145 @@
-/******************************************************************
- * HCL Confidential
- *
- * Copyright HCL Technologies Ltd. 2019 All rights reserved.
- *
- *******************************************************************
- */
-
-/* blue - primary ; danger - red ; success - green ; warning - yellow */
-
-// TODO: To add other buttons once the UX will give the theme.
-
-$baseKey: "background";
-$theme: "primary";
-$themes: ("primary", "danger");
-$colorMap: (
-  "primary": (
-    "background": var(--blue),
-    "background-hover": var(--dark-secondary),
-    "background-disabled": var(--primary-background-disabled),
-    "font-color": var(--white),
-    "border-color": transparent,
-    "hover-borderColor": transparent
-  ),
-  "danger": (
-    "background": var(--red),
-    "background-hover": var(--red-secondary),
-    "background-disabled": var(--red-background-disabled),
-    "font-color": var(--white),
-    "border-color": transparent,
-    "hover-borderColor": transparent
-  )
-);
+/* HCL design system following type of buttons - primary, secondary, outline & ghost. 
+   Primary is default and color is HCL theme.
+   Danger is only applicable when use-case of delete/cancel is.
+*/
 
 %button {
-  text-align: center;
-  cursor: pointer;
-  line-height: 1rem;
-  font-size: 0.875rem;
-  border: 1px solid transparent;
-  margin: 0.5rem;
-  background: transparent;
-  color: #000;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1rem;
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+    margin: 0.5rem;
+    background: transparent;
+    color: var(--black);
 }
 
-// Buttons
 .#{$prefix}-btn {
-  @extend %button;
-  color: var(--white);
-  background: var(--blue);
-  padding: 0.625rem 1rem;
-  height: 2.5rem;
+    @extend %button;
+    color: var(--white);
+    background: var(--blue);
+    padding: 0.625rem 1rem;
+    height: 2.5rem;
 }
 
-@function getColor($name: "primary", $bkey: $baseKey) {
-  $color: null;
-  $colorList: map-get($colorMap, $name);
-
-  @if $colorList {
-    $color: map-get($colorList, $bkey);
-  }
-
-  @return $color;
-}
-
-@each $theme in $themes {
-  .#{$prefix}-#{$theme} {
-    background: getColor($theme);
-    color: getColor($theme, "font-color");
-    border-color: getColor($theme, "border-color");
+.#{$prefix}-primary {
+    background: var(--blue);
+    color: var(--white);
 
     &:hover {
-      background: getColor($theme, "background-hover");
-      color: getColor($theme, "font-color");
-      border-color: getColor($theme, "hover-borderColor");
+        background:var(--primary-hover);
     }
 
     &:focus {
-      background: getColor($theme, "background-hover");
-      border-color: getColor($theme, "hover-borderColor");
-      color: getColor($theme, "font-color");
+        background: var(--primary-background-focus);
     }
 
-    &:disabled {
-      background: getColor($theme, "background-disabled");
+    &:disabled,
+    &[disabled=disabled] {
+        background: var(--primary-disabled);
+        @extend %disable;
     }
 
-    @at-root {
-      .#{$prefix}-#{$theme}-outline {
-        color: getColor($theme, "background");
-        background: transparent;
-        border-color: getColor($theme, "background");
+    &.#{$prefix}-danger {
+        background: var(--red);
 
         &:hover {
-          background: getColor($theme, "background-hover");
-          color: getColor($theme, "font-color");
-          border-color: getColor($theme, "hover-borderColor");
+            background: var(--danger-secondary);
+            color: var(--white);
         }
 
         &:focus {
-          background: getColor($theme, "background-hover");
-          border-color: getColor($theme, "hover-borderColor");
-          color: getColor($theme, "font-color");
+            background: var(--danger-secondary);
         }
-      }
 
-      .#{$prefix}-#{$theme}-ghost {
-        color: getColor($theme, "background");
-        border-color: transparent;
-        background: transparent;
+        &:disabled,
+        &[disabled=disabled] {
+            @extend %disable;
+            background: var(--danger-disabled);
+
+            &:hover {
+                background: var(--danger-disabled);
+            }
+        }
+    }
+}
+
+.#{$prefix}-secondary {
+    background: transparent;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+
+    &:hover,
+    &:focus {
+        background: var(--blue);
+        color: var(--white);
+        border: 1px solid var(--blue);
+    }
+
+    &:disabled,
+    &[disabled=disabled] {
+        color: var(--primary-disabled);
+        border: 1px solid var(--primary-disabled);
+        cursor: not-allowed;
 
         &:hover {
-          background: getColor($theme, "background-hover");
-          color: getColor($theme, "font-color");
-          border-color: getColor($theme, "hover-borderColor");
+            background: transparent;
+            color: var(--primary-disabled);
+            border: 1px solid var(--primary-disabled);
+        }
+    }
+
+    &.#{$prefix}-danger {
+        background: transparent;
+        color: var(--red);
+        border: 1px solid var(--red);
+
+        &:hover,
+        &:focus {
+            background: var(--danger-secondary);
+            color: var(--white);
         }
 
-        &:focus {
-          background: getColor($theme, "background-hover");
-          border-color: getColor($theme, "hover-borderColor");
-          color: getColor($theme, "font-color");
+        &:disabled,
+        &[disabled=disabled] {
+            border: 1px solid var(--danger-disabled);
+            color: var(--danger-disabled);
+            @extend %disable;
+
+            &:hover {
+                background: transparent;
+                border: 1px solid var(--danger-disabled);
+                color: var(--danger-disabled);
+            }
         }
-      }
     }
-  }
+}
+
+.#{$prefix}-ghost {
+    background: transparent;
+    color: var(--blue);
+    border: none;
+
+    &:hover,
+    &:focus {
+        background: var(--blue);
+        ;
+        color: var(--white);
+    }
+
+    &:disabled,
+    &[disabled] {
+        color: var(--primary-disabled);
+        @extend %disable; 
+
+        &:hover {
+            background: transparent;
+            color: var(--primary-disabled);
+        }
+    }
 }
 
 .#{$prefix}-sm {
-  padding: 0.4375rem 1rem;
-  height: 2rem;
+    padding: 0.4375rem 1rem;
+    height: 2rem;
 }
