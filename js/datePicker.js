@@ -64,8 +64,6 @@ const DatePicker = function (datePickerElm) {
             dateUnSelected: `${PREFIX}-datePicker-date`,
             showErrorDiv: `${PREFIX}-datePicker-error-show`,
             addErrorBorder: `${PREFIX}-datePicker-container-error`,
-        };
-        const DOMids = {
             inputCalSVG: `.${PREFIX}-datePicker-container-svg`,
             prevMonth: `.${PREFIX}-datePicker-month-prev`,
             yearInput: `.${PREFIX}-datePicker-year-input`,
@@ -87,7 +85,7 @@ const DatePicker = function (datePickerElm) {
 
         const initWeekDaysPanel = function () {
             let tempHtml = '<span>%weekDay%</span>';
-            let element = DOMids.weekDaysPanel;
+            let element = DOMstrings.weekDaysPanel;
             weekDays.forEach((weekDay) => {
                 let weekDayHTML = tempHtml.replace('%weekDay%', weekDay);
                 datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', weekDayHTML);
@@ -96,8 +94,8 @@ const DatePicker = function (datePickerElm) {
 
         const initDatePanel = function (curMonthObj) {
             let numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
-            let tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMids.fade}" date="%month%/%day%/%year%">%day% </span>`;
-            let element = DOMids.datePanel;
+            let tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMstrings.fade}" date="%month%/%day%/%year%">%day% </span>`;
+            let element = DOMstrings.datePanel;
             //days from previous month
             let numOfDaysFromPrevMonth = curMonthObj.day - curMonthObj.date % 7;
             numOfDaysFromPrevMonth = numOfDaysFromPrevMonth < 0 ? 7 + numOfDaysFromPrevMonth : numOfDaysFromPrevMonth;
@@ -120,7 +118,7 @@ const DatePicker = function (datePickerElm) {
             }
 
             // days from next month  
-            tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMids.fade}" date="%month%/%day%/%year%">%day% </span>`;
+            tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMstrings.fade}" date="%month%/%day%/%year%">%day% </span>`;
             let numOfDaysFromNextMonth = numOfDaysFromPrevMonth === 6 ? 42 - numOfDaysInMonth + 1 : 42 - numOfDaysInMonth - numOfDaysFromPrevMonth;
             for (let i = 1; i < numOfDaysFromNextMonth; i++) {
                 let dayHTML = tempHtml.replaceAll('%day%', ('0' + String(i)).slice(-2));
@@ -145,8 +143,8 @@ const DatePicker = function (datePickerElm) {
         };
 
         const initMonthYearPanel = function (curMonthObj) {
-            datePickerElm.querySelector(DOMids.monthInput).innerHTML = months[curMonthObj.month];
-            datePickerElm.querySelector(DOMids.yearInput).value = String(curMonthObj.year);
+            datePickerElm.querySelector(DOMstrings.monthInput).innerHTML = months[curMonthObj.month];
+            datePickerElm.querySelector(DOMstrings.yearInput).value = String(curMonthObj.year);
         };
 
         const hightlightSelectedDate = function (id) {
@@ -158,40 +156,40 @@ const DatePicker = function (datePickerElm) {
         };
 
         const showErrorInvalidDate = function () {
-            datePickerElm.querySelector(DOMids.errorDiv).classList.add(DOMstrings.showErrorDiv);
-            datePickerElm.querySelector(DOMids.inputDate).classList.add(DOMstrings.addErrorBorder);
+            datePickerElm.querySelector(DOMstrings.errorDiv).classList.add(DOMstrings.showErrorDiv);
+            datePickerElm.querySelector(DOMstrings.inputDate).classList.add(DOMstrings.addErrorBorder);
 
         };
         const hideErrorInvalidDate = function () {
-            datePickerElm.querySelector(DOMids.inputDate).classList.remove(DOMstrings.addErrorBorder);
-            datePickerElm.querySelector(DOMids.errorDiv).classList.remove(DOMstrings.showErrorDiv);
+            datePickerElm.querySelector(DOMstrings.inputDate).classList.remove(DOMstrings.addErrorBorder);
+            datePickerElm.querySelector(DOMstrings.errorDiv).classList.remove(DOMstrings.showErrorDiv);
 
         };
 
         const hideDateContainer = function () {
-            datePickerElm.querySelector(DOMids.dateContainer).classList.remove(DOMstrings.showDateContainer);
+            datePickerElm.querySelector(DOMstrings.dateContainer).classList.remove(DOMstrings.showDateContainer);
         };
 
         const toggleDateContainer = function () {
-            datePickerElm.querySelector(DOMids.dateContainer).classList.toggle(DOMstrings.showDateContainer);
+            datePickerElm.querySelector(DOMstrings.dateContainer).classList.toggle(DOMstrings.showDateContainer);
         };
 
         const datePicked = function(){
             let selector = "[date='%id%']";
-            selector = selector.replaceAll('%id%', datePickerElm.querySelector(DOMids.inputDate).value);
+            selector = selector.replaceAll('%id%', datePickerElm.querySelector(DOMstrings.inputDate).value);
             const elm = datePickerElm.querySelector(selector);
             elm ? datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked) : null;
         };
 
         const removeExistingDates =function () {
-            let element = DOMids.datePanel;
+            let element = DOMstrings.datePanel;
             datePickerElm.querySelector(element).innerHTML = "";
         };
 
         const selectDate = function (event) {
             hightlightSelectedDate(event.target.getAttribute('date'));
             hideErrorInvalidDate();
-            datePickerElm.querySelector(DOMids.inputDate).value = event.target.getAttribute('date');
+            datePickerElm.querySelector(DOMstrings.inputDate).value = event.target.getAttribute('date');
             hideDateContainer();
         }
 
@@ -213,10 +211,6 @@ const DatePicker = function (datePickerElm) {
 
             getDOMstrings: function () {
                 return DOMstrings;
-            },
-
-            getDOMids: function () {
-                return DOMids;
             },
 
             removeExistingDates: function () {
@@ -253,22 +247,21 @@ const DatePicker = function (datePickerElm) {
 
     // Main controller
     const controller = (function (dateCtrl, UICtrl) {
-        let DOM = UICtrl.getDOMstrings();
-        let DOMids = UICtrl.getDOMids();
+        let DOMstrings = UICtrl.getDOMstrings();
         const setupEventListeners = function () {
-            datePickerElm.querySelector(DOMids.prevMonth).addEventListener('click', prevMonth);
-            datePickerElm.querySelector(DOMids.nextMonth).addEventListener('click', nextMonth);
-            datePickerElm.querySelector(DOMids.yearDecrease).addEventListener('click', yearDecrease);
-            datePickerElm.querySelector(DOMids.yearIncrease).addEventListener('click', yearIncrease);
-            datePickerElm.querySelector(DOMids.inputDate).addEventListener('click', UICtrl.toggleDateContainer);
-            datePickerElm.querySelector(DOMids.inputDate).addEventListener('change', dateChangeHandler);
-            datePickerElm.querySelector(DOMids.inputCalSVG).addEventListener('click', UICtrl.toggleDateContainer);
-            datePickerElm.querySelector(DOMids.yearInput).addEventListener('change', yearChangeHandler);
+            datePickerElm.querySelector(DOMstrings.prevMonth).addEventListener('click', prevMonth);
+            datePickerElm.querySelector(DOMstrings.nextMonth).addEventListener('click', nextMonth);
+            datePickerElm.querySelector(DOMstrings.yearDecrease).addEventListener('click', yearDecrease);
+            datePickerElm.querySelector(DOMstrings.yearIncrease).addEventListener('click', yearIncrease);
+            datePickerElm.querySelector(DOMstrings.inputDate).addEventListener('click', UICtrl.toggleDateContainer);
+            datePickerElm.querySelector(DOMstrings.inputDate).addEventListener('change', dateChangeHandler);
+            datePickerElm.querySelector(DOMstrings.inputCalSVG).addEventListener('click', UICtrl.toggleDateContainer);
+            datePickerElm.querySelector(DOMstrings.yearInput).addEventListener('change', yearChangeHandler);
             bindDateEvent();
         };
 
         const bindDateEvent = function () {
-            let dateElement = datePickerElm.querySelector(DOMids.datePanel).children;
+            let dateElement = datePickerElm.querySelector(DOMstrings.datePanel).children;
             for (let i = 0; i < dateElement.length; i++) {
                 dateElement[i].addEventListener('click', UICtrl.selectDate);
             }
@@ -358,5 +351,3 @@ const DatePicker = function (datePickerElm) {
     controller.init();
 };
 export default DatePicker;
-
-
