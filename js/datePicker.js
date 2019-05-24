@@ -275,8 +275,9 @@ const DatePicker = function (datePickerElm) {
             event.stopPropagation();
             event.preventDefault();
             UICtrl.removeExistingDates();
-            UICtrl.initMonthYearPanel(dateCtrl.getPrevMonthDetails());
-            UICtrl.initDatePanel(dateCtrl.getPrevMonthDetails());
+            const prevMonthObj = dateCtrl.getPrevMonthDetails();
+            UICtrl.initMonthYearPanel(prevMonthObj);
+            UICtrl.initDatePanel(prevMonthObj);
             setupEventListeners();
         };
 
@@ -284,8 +285,9 @@ const DatePicker = function (datePickerElm) {
             event.stopPropagation();
             event.preventDefault();
             UICtrl.removeExistingDates();
-            UICtrl.initMonthYearPanel(dateCtrl.getNextMonthDetails());
-            UICtrl.initDatePanel(dateCtrl.getNextMonthDetails());
+            const nextMonObj = dateCtrl.getNextMonthDetails();
+            UICtrl.initMonthYearPanel(nextMonObj);
+            UICtrl.initDatePanel(nextMonObj);
             setupEventListeners();
         };
 
@@ -293,8 +295,9 @@ const DatePicker = function (datePickerElm) {
             event.stopPropagation();
             event.preventDefault();
             UICtrl.removeExistingDates();
-            UICtrl.initMonthYearPanel(dateCtrl.getYearIncreaseMonthDetails());
-            UICtrl.initDatePanel(dateCtrl.getYearIncreaseMonthDetails());
+            const incYearMonObj = dateCtrl.getYearIncreaseMonthDetails();
+            UICtrl.initMonthYearPanel(incYearMonObj);
+            UICtrl.initDatePanel(incYearMonObj);
             setupEventListeners();
         };
 
@@ -302,8 +305,9 @@ const DatePicker = function (datePickerElm) {
             event.stopPropagation();
             event.preventDefault();
             UICtrl.removeExistingDates();
-            UICtrl.initMonthYearPanel(dateCtrl.getYearDecreaseMonthDetails());
-            UICtrl.initDatePanel(dateCtrl.getYearDecreaseMonthDetails());
+            const decYearMonObj = dateCtrl.getYearDecreaseMonthDetails();
+            UICtrl.initMonthYearPanel(decYearMonObj);
+            UICtrl.initDatePanel(decYearMonObj);
             setupEventListeners();
         };
 
