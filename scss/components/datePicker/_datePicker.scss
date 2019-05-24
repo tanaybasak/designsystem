@@ -48,17 +48,18 @@
         justify-content: space-evenly;
     }
 
-    &-up {
-        cursor: pointer;
-        border-left: 0.25rem solid transparent;
-        border-right: 0.25rem solid transparent;
-        border-bottom: 0.25rem solid var(--blue);
-    }
-
+    &-up,
     &-down {
         cursor: pointer;
         border-left: 0.25rem solid transparent;
         border-right: 0.25rem solid transparent;
+    }
+
+    &-up {
+        border-bottom: 0.25rem solid var(--blue);
+    }
+
+    &-down {
         border-top: 0.25rem solid var(--blue);
     }
 
