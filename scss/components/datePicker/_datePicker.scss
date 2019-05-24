@@ -81,6 +81,15 @@
         justify-content: space-between;
     }
 
+    &-month>span,
+    &-days>span {
+        height: 1.75rem;
+        width: 1.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     &-month {
         display: flex;
         flex-direction: row;
@@ -90,13 +99,8 @@
         margin-bottom: .25rem;
 
         >span {
-            height: 1.75rem;
-            width: 1.75rem;
             padding: 0.5rem;
             fill: var(--dark-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             cursor: pointer;
         }
     }
@@ -109,12 +113,7 @@
         align-items: center;
         font-size: 0.75rem;
 
-        span {
-            height: 1.5rem;
-            width: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        >span {
             border-radius: 0;
             border: none;
             margin: 0.125rem;
