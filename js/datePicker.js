@@ -169,30 +169,38 @@ const DatePicker = function (datePickerElm) {
         }
 
         return {
+            // to initialize datepicker for first time
             initDatePicker: function (curMonthObj) {
                 initWeekDaysPanel();
                 initDatePanel(curMonthObj);
                 initMonthYearPanel(curMonthObj);
             },
+            // to initialize month/year panel
             initMonthYearPanel: function (curMonthObj) {
                 initMonthYearPanel(curMonthObj);
             },
+            // to initialize date panel
             initDatePanel: function (curMonthObj) {
                 initDatePanel(curMonthObj);
                 hightlightSelectedDate(datePickerElm.querySelector(DOMstrings.inputDate).value);
             },
+            // returns DOMStrings
             getDOMstrings: function () {
                 return DOMstrings;
             },
+            // remove existing dates from datePanel
             removeExistingDates: function () {
                 removeExistingDates();
             },
+            // show/hide datepicker
             toggleDateContainer: function () {
                 toggleDateContainer();
             },
+            // hide datepicker
             hideDateContainer: function () {
                 hideDateContainer();
             },
+            // action taken once date is selected
             selectDate: function (event) {
                 selectDate(event);
             },
