@@ -100,3 +100,13 @@ $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 160
 $mobile-width: 640px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
+//Tooltip
+$tooltip-default-max-width: 12.5rem;
+$tooltip-interactive-max-width: 15rem;
+$tooltip-arrow-size-default: 0.625rem;
+$tooltip-arrow-size-default-position: $tooltip-arrow-size-default/2;
+$tooltip-arrow-size-icon: 0.3125rem;
+$tooltip-arrow-size-icon-position: $tooltip-arrow-size-icon/2;
+$tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+0.0625rem;
+$tooltip-box-shadow:rgba(0, 0, 0, 0.10);
+$tooltip-zindex:5;
