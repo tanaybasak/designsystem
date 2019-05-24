@@ -26,12 +26,15 @@
             background-color: rgba(70, 150, 210, 0.05);
             outline: none;
             font-size: 0.875rem;
+            line-height: 1.125rem;
             cursor: pointer;
         }
     }
 
     &-curMonth {
         padding-right: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.125rem;
     }
 
     &-arrows {
@@ -66,6 +69,8 @@
             width: 2.5rem;
             background-color: rgba(70, 150, 210, 0.05);
             text-align: center;
+            font-size: 0.875rem;
+            line-height: 1.125rem;
         }
     }
 
