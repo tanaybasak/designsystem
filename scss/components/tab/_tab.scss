@@ -20,8 +20,8 @@
             border-bottom: 2px solid var(--blue);
         }
 
-        &.#{$prefix}-tabs-disabled{
-            >a:focus{
+        &.#{$prefix}-tabs-disabled {
+            >a:focus {
                 outline: none;
             }
         }
@@ -46,6 +46,10 @@
         &:focus {
             text-decoration: none;
         }
+
+        &:hover {
+            color: var(--primary-hover);
+        }
     }
 }
 
@@ -65,12 +69,17 @@
 .#{$prefix}-tabs-disabled {
     opacity: 0.5;
 
-    &:hover,
-    >a {
+    >a,
+    .#{$prefix}-tabs-nav-link {
         cursor: not-allowed;
         color: $black;
-        :focus {
+
+        &:focus {
             outline: none;
+        }
+
+        &:hover {
+            color: $black;
         }
     }
 }
