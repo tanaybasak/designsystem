@@ -1,65 +1,41 @@
 .#{$prefix}-form-item {
     .#{$prefix}-label {
         font-size: 0.875rem;
-        @include getInputColor('color-1', "color");
         letter-spacing: 0;
         line-height: 1.125rem;
+        padding: 0.5rem;
+        @include getInputColor('color-1', "color");
     }
 
     .#{$prefix}-label-description {
         font-size: 0.875rem;
         color: #aaa;
         line-height: 1.313rem;
+        padding: 0.5rem;
     }
+}
 
-    .#{$prefix}-file {
-        position: relative;
+.#{$prefix}-file-uploader {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    .#{$prefix}-file-input {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
         overflow: hidden;
-        display: inline-block;
-        margin: 0.5rem;
+        position: absolute;
+        z-index: -1;
 
-        &-btn {
-            display: inline-flex;
-            margin: 0;
-
-            &-icon {
-                width: 1rem;
-                height: 1rem;
-                position: relative;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                @include getInputColor('color-5', "background-color");
-                border-radius: 50%;
-                margin-left: 1rem;
-                cursor: pointer;
-
-                &:before,
-                &:after {
-                    content: "";
-                    position: absolute;
-                    width: 0.125rem;
-                    height: 0.5rem;
-                    background-color: var(--white);
-                }
-
-                &:after {
-                    transform: rotate(-90deg);
-                }
-            }
-
-            &:hover .#{$prefix}-file-btn-icon {
-                background-color: var(--white);
-
-                &:before,
-                &:after {
-                    @include getInputColor('color-5', "background-color");
-                }
-            }
+        &:disabled+.#{$prefix}-file-btn {
+            opacity: 0.5;
+            pointer-events: none;
         }
 
-        &-input {
-            display: none;
+        &:focus+.#{$prefix}-file-btn {
+            // Added to implement accessibility via keybord
+            outline: rgba(0, 103, 244, 0.247) auto 5px;
         }
     }
 }

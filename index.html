@@ -73,6 +73,11 @@
                     </a>
                 </li>
                 <li class="hcl-sidebar-list-item">
+                    <a href="#tabsexample" class="hcl-sidebar-list-link">
+                        <span>Tabs</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
                     <a href="#toggle" class="hcl-sidebar-list-link">
                         <span>Toggle</span>
                     </a>
@@ -85,6 +90,31 @@
                 <li class="hcl-sidebar-list-item">
                     <a href="#content-switcher" class="hcl-sidebar-list-link">
                         <span>Content Switcher</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#textinput" class="hcl-sidebar-list-link">
+                        <span>Text Input</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#textarea" class="hcl-sidebar-list-link">
+                        <span>Textarea</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#radio" class="hcl-sidebar-list-link">
+                        <span>Radio</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#checkbox" class="hcl-sidebar-list-link">
+                        <span>Checkbox</span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-list-item">
+                    <a href="#formcomp" class="hcl-sidebar-list-link">
+                        <span>Form</span>
                     </a>
                 </li>
             </ul>
@@ -122,7 +152,8 @@
                         paragraph.
                     </p>
                 </div>
-                <div class="row col-12 mt-4 mb-4"><a href="#">This is a link</a></div>
+                <div class="row col-12 mt-4 mb-4"> <a href="#" class="mr-4 disable" aria-disabled="true">Link
+                        example</a> <a href="#">Link Example</a></div>
                 <div class="row col-12">
                     <button class="hcl-btn hcl-primary">Primary Button</button>
                     <button class="hcl-btn hcl-primary hcl-danger">Primary Danger</button>
@@ -232,11 +263,6 @@
             <section>
                 <div class="hcl-spinner" title="loading">
                     <svg viewBox="-75 -75 150 150">
-                        <circle cx="0" cy="0" r="37.5" />
-                    </svg>
-                </div>
-                <div class="hcl-spinner-small" title="loading">
-                    <svg viewBox="-75 -75 150 150 ">
                         <circle cx="0" cy="0" r="37.5" />
                     </svg>
                 </div>
@@ -579,7 +605,7 @@
             <!-- <section class="hcl-lightbox" >
             </section> -->
 
-            <section class="colBorder m-5 p-5">
+            <section id="tabsexample" class="colBorder m-5 p-5">
                 <section class="hcl-tab">
                     <nav data-tabs role="navigation">
                         <ul role="tablist" class="hcl-tabs-nav">
@@ -608,35 +634,6 @@
                         </div>
                     </section>
                 </section>
-
-                <section class="hcl-tab">
-                    <nav data-tabs role="navigation">
-                        <ul role="tablist" class="hcl-tabs-nav">
-                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab4" data-target="tab4">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 4</a>
-                            </li>
-                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab5" aria-selected="true"
-                                data-target="tab5">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 5</a>
-                            </li>
-                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab6"
-                                data-target="tab6">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 6</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <section class="hcl-tabcontent">
-                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel active">
-                            <p>Tabbable Content 4</p>
-                        </div>
-                        <div role="tabpanel" aria-labelledby="tab5" id="tab5" class="hcl-tabs-panel">
-                            <p>Tabbable Content 5</p>
-                        </div>
-                        <div role="tabpanel" aria-labelledby="tab6" id="tab6" class="hcl-tabs-panel">
-                            <p>Tabbable Content 6</p>
-                        </div>
-                    </section>
-                </section>
             </section>
 
             <!-- <section class="hcl-lightbox" >    
@@ -650,10 +647,11 @@
                     <p style="float: left;">Left Overflow Menu</p>
                     <div class="hcl-overflow-container">
                         <!-- This input tag is just for landing page, will not be part of design system -->
-                        <input style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
+                        <input
+                            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
                         <div class="hcl-ellipsis"></div>
                         <div class="hcl-overflow-menu hcl-hidden">
-                            <ul class="hcl-overflow-default">
+                            <ul class="hcl-overflow-list">
                                 <li class="hcl-overflow-option">
                                     Option 1
                                 </li>
@@ -663,9 +661,7 @@
                                 <li class="hcl-overflow-option hcl-overflow-disable">
                                     Option 3
                                 </li>
-                            </ul>
-                            <ul class="hcl-overflow-danger">
-                                <li class="hcl-overflow-optiondanger">
+                                <li class="hcl-overflow-optiondanger hcl-overflow-separator">
                                     Danger
                                 </li>
                             </ul>
@@ -676,12 +672,13 @@
                 <section class="hcl-col-6 hcl-overflow">
                     <!-- This paragragh tag is just for landing page, will not be part of design system -->
                     <p style="float: left;">Right Overflow Menu</p>
-                    <div class="hcl-overflow-container ">
+                    <div class="hcl-overflow-container">
                         <!-- This input tag is just for landing page, will not be part of design system -->
-                        <input style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
+                        <input
+                            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
                         <div class="hcl-ellipsis"></div>
                         <div class="hcl-overflow-menu hcl-overflow-right hcl-hidden">
-                            <ul class="hcl-overflow-default">
+                            <ul class="hcl-overflow-list">
                                 <li class="hcl-overflow-option">
                                     Option 1
                                 </li>
@@ -691,9 +688,7 @@
                                 <li class="hcl-overflow-option hcl-overflow-disable">
                                     Option 3
                                 </li>
-                            </ul>
-                            <ul class="hcl-overflow-danger">
-                                <li class="hcl-overflow-optiondanger">
+                                <li class="hcl-overflow-optiondanger hcl-overflow-separator">
                                     Danger
                                 </li>
                             </ul>
@@ -1011,125 +1006,148 @@
             <section class="hcl-row m-3">
                 <div class="hcl-col">
                     <div class="hcl-form-item">
-                        <strong class="hcl-label">
+                        <span class="hcl-label">
                             Account photo
-                        </strong>
+                        </span>
                         <p class="hcl-label-description">only .jpg and .png files. 500kb max file size.</p>
-                        <div class="hcl-file">
-                            <label for="file-uploader" class="hcl-file-btn hcl-btn hcl-primary hcl-secondary hcl-sm"
-                                role="button" tabindex="0">
-                                Add file
-                                <span class="hcl-file-btn-icon"></span>
-                            </label>
+                        <div class="hcl-file-uploader">
                             <input type="file" class="hcl-file-input" id="file-uploader" multiple />
+                            <label for="file-uploader" class="hcl-file-btn hcl-btn hcl-primary hcl-secondary hcl-sm"
+                                role="button">
+                                Add file
+                            </label>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <!-- Tooltip -->
-            <section class="hcl-row pt-7 mb-7">
-                <div class="hcl-col">
-                    <div class="hcl-row">
-                        <div class="hcl-col-4">&nbsp;</div>
-                        <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" class="hcl-tooltip-icon" data-direction="right" data-type="icon"
-                                focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                aria-hidden="true">
-                                <path
-                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
-                                </path>
-                            </svg>
-                        </div>
-
-                        <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="top" focusable="false" data-type="icon"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                aria-hidden="true">
-                                <path
-                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="bottom" focusable="false" data-type="icon"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                aria-hidden="true">
-                                <path
-                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="left" focusable="false" data-type="icon"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                aria-hidden="true">
-                                <path
-                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div class="hcl-col-4">&nbsp;</div>
+            <!-- Inline Loader -->
+            <section class="hcl-inlineloader" title="loading">
+                <svg viewBox="-75 -75 150 150 ">
+                    <circle cx="0" cy="0" r="37.5" />
+                </svg>
+                <span class="hcl-type-zeta">Loading...</span>
+            </section>
+            <!-- Radio Components -->
+            <article id="radio" class="m-1 p-2 colBorder">
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Horizontally arranged (default)</legend>
+                    <div class="hcl-radio-item">
+                        <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" />
+                        <label class="hcl-radio-label" for="radio1">1 (default)</label>
                     </div>
-
-                    <div class="hcl-row pt-7 m-7">
-
-                        <div class="hcl-col-3">
-                            <span data-direction="top" data-tooltip="Breif Definition of the dotted underlined word.">
-                                Definition Tooltip on Top
-                            </span>
-                        </div>
-                        <div class="hcl-col-3">
-                            <span data-direction="right" data-tooltip="Breif Definition of the dotted underlined word.">
-                                Definition Tooltip on Right
-                            </span>
-                        </div>
-                        <div class="hcl-col-3">
-                            <span data-direction="bottom"
-                                data-tooltip="Breif Definition of the dotted underlined word.">
-                                Definition Tooltip on Bottom
-                            </span>
-                        </div>
-                        <div class="hcl-col-3">
-                            <span data-direction="left" data-tooltip="Breif Definition of the dotted underlined word.">
-                                Definition Tooltip on Left
-                            </span>
-                        </div>
-
-
+                    <div class="hcl-radio-item">
+                        <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" checked />
+                        <label class="hcl-radio-label" for="radio2">2</label>
                     </div>
-                    <div class="hcl-row m-7">
-
-                        <span> Interactive Tooltip Label
-                            <svg data-direction="top" data-focus-on-click data-tooltip="#tooltipContent"
-                                focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                aria-hidden="true">
-                                <path
-                                    d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z">
-                                </path>
-                                <path
-                                    d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z">
-                                </path>
-                            </svg>
-                        </span>
-                        <div id="tooltipContent">
-                            <p>This is some tooltip text. This box shows the maximum amount of text that should appear
-                                inside. If more room is
-                                needed
-                                please use a modal instead.
-                            </p>
-                            <div class="tooltip-footer">
-                                <a href="#">Learn More</a>
-                                <button type="button" class="hcl-btn hcl-primary">Create</button>
-                            </div>
+                    <div class="hcl-radio-item">
+                        <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
+                        <label class="hcl-radio-label" for="radio3">3 (disabled)</label>
+                    </div>
+                </fieldset>
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Vertically arranged</legend>
+                    <div class="hcl-radio-group hcl-stack-vertical">
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio4" type="radio" value="Option4" name="animals" />
+                            <label class="hcl-radio-label" for="radio4">1 (default)</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio5" type="radio" value="Option5" name="animals" checked />
+                            <label class="hcl-radio-label" for="radio5">2</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio6" type="radio" value="Option6" name="animals" disabled />
+                            <label class="hcl-radio-label" for="radio6">3 (disabled)</label>
                         </div>
                     </div>
+                </fieldset>
+            </article>
+            <!-- Checkbox Components -->
+            <article id="checkbox" class="m-1 p-2 colBorder">
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Horizontally arranged (default)</legend>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
+                        <label class="hcl-checkbox-label" for="check1">1 (default)</label>
+                    </div>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
+                        <label class="hcl-checkbox-label" for="check2">2</label>
+                    </div>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
+                        <label class="hcl-checkbox-label" for="check3">3 (disabled)</label>
+                    </div>
+                </fieldset>
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Vertically arranged</legend>
+                    <div class="hcl-checkbox-group hcl-stack-vertical">
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check4" type="checkbox" value="check4" />
+                            <label class="hcl-checkbox-label" for="check4">1 (default)</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check5" type="checkbox" value="check5" checked />
+                            <label class="hcl-checkbox-label" for="check5">2</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check6" type="checkbox" value="check6" disabled />
+                            <label class="hcl-checkbox-label" for="check6">3 (disabled)</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </article>
+            <!-- Input Components -->
+            <section id="textinput" class="m-1 p-2 colBorder">
+                <div class="hcl-form-group">
+                    <input type="text" class="hcl-form-control" id="firstname1" placeholder="Enter First Name" />
+                    <label for="firstname1">First Name</label>
                 </div>
+                <div class="hcl-form-group">
+                    <input data-invalid="true" type="text" class="hcl-form-control" id="middlename"
+                        placeholder="Middle Name" />
+                    <label for="middlename">Middle Name</label>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+                <div class="hcl-form-group">
+                    <input type="text" class="hcl-form-control" id="error" placeholder="Enter Address Details" disabled
+                        aria-disabled="true" />
+                    <label for="error">Address</label>
+                </div>
+            </section>
+            <section id="textarea" class="m-1 p-5 colBorder">
+                <div class="hcl-form-group">
+                    <textarea class="hcl-textarea" id="feedback1" rows="4" cols="50" placeholder="Comments"></textarea>
+                    <label for="feedback1">Comments</label>
+                </div>
+                <div class="hcl-form-group">
+                    <textarea disabled aria-disabled="true" class="hcl-textarea" id="feedback2" rows="4"
+                        cols="50"></textarea>
+                    <label for="feedback2">Review Summary</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                </div>
+                <div class="hcl-form-group">
+                    <textarea data-invalid="true" aria-disabled="false" class="hcl-textarea" id="feedback3" rows="4"
+                        cols="50"></textarea>
+                    <label for="feedback3">Remarks</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+            </section>
+            <section id="formcomp" class="m-1 p-2 colBorder">
+                <form class="m-5">
+                    <div class="hcl-form-group">
+                        <input type="text" class="hcl-form-control" id="firstname" placeholder="Enter First Name" />
+                        <label for="firstname">First Name</label>
+                        <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    </div>
+                    <div class="hcl-form-group">
+                        <textarea class="hcl-textarea" id="feedback11" rows="4" cols="50"
+                            placeholder="Please Feedback here"></textarea>
+                        <label for="feedback11">Feedback Form</label>
+                    </div>
+                    <button class="hcl-btn hcl-primary">Submit</button>
+                </form>
             </section>
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>

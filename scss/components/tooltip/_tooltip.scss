@@ -5,7 +5,7 @@
     word-wrap: break-word;
     text-align: left;
     max-width: $tooltip-default-max-width;
-    background-color: var(--black-light);
+    background-color: var(--black-lighter);
     color: var(--white);
     border-radius: 0.25rem;
     padding: 0.5rem;
@@ -16,7 +16,7 @@
         position: absolute;
         width: $tooltip-arrow-size-default;
         height: $tooltip-arrow-size-default;
-        background: var(--black-light);
+        background: var(--black-lighter);
 
         &[data-direction="bottom"] {
             top: -($tooltip-arrow-size-default-position);

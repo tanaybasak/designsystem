@@ -81,7 +81,7 @@
     @extend %basic-toggle;
 
     .#{$prefix}-toggle-label {
-        height: 1.5rem;
+        height: 0.375rem;
         width: 3rem;
 
         &:before {
@@ -124,6 +124,8 @@
         }
 
         &:checked:disabled~.#{$prefix}-toggle-label {
+            width: 1.563rem;
+            margin-right: 1.938rem;
             &:before {
                 width: 1.5rem;
                 background-color: var(--disabled-blue);
@@ -151,6 +153,7 @@
     .#{$prefix}-toggle-label {
         height: 1rem;
         width: 2rem;
+        border-radius: 6.25rem;
 
         &:before {
             height: 1rem;
@@ -187,8 +190,8 @@
                     content: "";
                     width: 5.8px;
                     height: 3.7px;
-                    border-left: 1px solid var(--blue);
-                    border-bottom: 1px solid var(--blue);
+                    border-left: 1px solid $blue;
+                    border-bottom: 1px solid $blue;
                     position: absolute;
                     left: 0.125rem;
                     top: 50%;
