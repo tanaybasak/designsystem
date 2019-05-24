@@ -192,6 +192,7 @@ const DatePicker = function (datePickerElm) {
             hightlightSelectedDate(event.target.getAttribute('date'));
             hideErrorInvalidDate();
             datePickerElm.querySelector(DOMids.inputDate).value = event.target.getAttribute('date');
+            hideDateContainer();
         }
 
         return {
