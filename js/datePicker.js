@@ -17,32 +17,32 @@ const DatePicker = function (datePickerElm) {
 
         return {
             getCurrentMonthDetails: function () {
-                let date = new Date();
+                const date = new Date();
                 return createDateObject(date);
             },
 
             getPrevMonthDetails: function () {
-                let date = new Date(currDateObj.month === 0 ? currDateObj.year - 1 : currDateObj.year, currDateObj.month === 0 ? 11 : currDateObj.month - 1, 15);
+                const date = new Date(currDateObj.month === 0 ? currDateObj.year - 1 : currDateObj.year, currDateObj.month === 0 ? 11 : currDateObj.month - 1, 15);
                 return createDateObject(date);
             },
 
             getNextMonthDetails: function () {
-                let date = new Date(currDateObj.month === 11 ? currDateObj.year + 1 : currDateObj.year, currDateObj.month === 11 ? 0 : currDateObj.month + 1, 15);
+                const date = new Date(currDateObj.month === 11 ? currDateObj.year + 1 : currDateObj.year, currDateObj.month === 11 ? 0 : currDateObj.month + 1, 15);
                 return createDateObject(date);
             },
 
             getYearIncreaseMonthDetails: function () {
-                let date = new Date(currDateObj.year + 1, currDateObj.month, 15);
+                const date = new Date(currDateObj.year + 1, currDateObj.month, 15);
                 return createDateObject(date);
             },
 
             getYearDecreaseMonthDetails: function () {
-                let date = new Date(currDateObj.year - 1, currDateObj.month, 15);
+                const date = new Date(currDateObj.year - 1, currDateObj.month, 15);
                 return createDateObject(date);
             },
 
             setDateObject: function (date) {
-                let dateArray = date.split('/');
+                const dateArray = date.split('/');
                 return createDateObject(new Date(dateArray[2], Number(dateArray[0]) - 1, dateArray[1]));
             },
 
@@ -90,8 +90,8 @@ const DatePicker = function (datePickerElm) {
         };
 
         const createDayHTML = function (type, i, curMonthObj) {
-            let month, year;
-            let day = ('0' + String(i)).slice(-2);
+            let  month, year;
+            const day = ('0' + String(i)).slice(-2);
             switch (type) {
                 case 'previous':
                     month = ('0' + (curMonthObj.month === 0 ? 12 : curMonthObj.month)).slice(-2);
@@ -109,11 +109,11 @@ const DatePicker = function (datePickerElm) {
         };
 
         const initDatePanel = function (curMonthObj) {
-            let numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
-            let element = DOMstrings.datePanel;
+            const numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
+            const element = DOMstrings.datePanel;
             let numOfDaysFromPrevMonth = curMonthObj.day - curMonthObj.date % 7;
             numOfDaysFromPrevMonth = numOfDaysFromPrevMonth < 0 ? 7 + numOfDaysFromPrevMonth : numOfDaysFromPrevMonth;
-            let numOfDaysInPrevMonth = getDaysInMonth(curMonthObj.month === 0 ? 12 : curMonthObj.month, curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
+            const numOfDaysInPrevMonth = getDaysInMonth(curMonthObj.month === 0 ? 12 : curMonthObj.month, curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
 
             //days from previous month
             for (let i = numOfDaysInPrevMonth - numOfDaysFromPrevMonth; i <= numOfDaysInPrevMonth && numOfDaysFromPrevMonth !== 6; i++) {
@@ -124,7 +124,7 @@ const DatePicker = function (datePickerElm) {
                 datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', createDayHTML('current', i, curMonthObj));
             }
             // days from next month  
-            let numOfDaysFromNextMonth = numOfDaysFromPrevMonth === 6 ? 42 - numOfDaysInMonth + 1 : 42 - numOfDaysInMonth - numOfDaysFromPrevMonth;
+            const numOfDaysFromNextMonth = numOfDaysFromPrevMonth === 6 ? 42 - numOfDaysInMonth + 1 : 42 - numOfDaysInMonth - numOfDaysFromPrevMonth;
             for (let i = 1; i < numOfDaysFromNextMonth; i++) {
                 datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', createDayHTML('next', i, curMonthObj));
             }
@@ -133,11 +133,6 @@ const DatePicker = function (datePickerElm) {
             todayDate = `${('0' + (todayDate.getMonth() + 1)).slice(-2)}/${('0' + todayDate.getDate()).slice(-2)}/${todayDate.getFullYear()}`;
             const selector = `[date='${todayDate}']`;
             datePickerElm.querySelector(selector) ? datePickerElm.querySelector(selector).classList.add(DOMstrings.todayHighlight) : null;
-        };
-
-        String.prototype.replaceAll = function (search, replacement) {
-            let target = this;
-            return target.split(search).join(replacement);
         };
 
         const initMonthYearPanel = function (curMonthObj) {
@@ -172,8 +167,7 @@ const DatePicker = function (datePickerElm) {
         };
 
         const removeExistingDates = function () {
-            let element = DOMstrings.datePanel;
-            datePickerElm.querySelector(element).innerHTML = "";
+            datePickerElm.querySelector(DOMstrings.datePanel).innerHTML = "";
         };
 
         const selectDate = function (event) {
@@ -237,7 +231,7 @@ const DatePicker = function (datePickerElm) {
 
     // Main controller
     const controller = (function (dateCtrl, UICtrl) {
-        let DOMstrings = UICtrl.getDOMstrings();
+        const DOMstrings = UICtrl.getDOMstrings();
         const setupEventListeners = function () {
             datePickerElm.querySelector(DOMstrings.prevMonth).addEventListener('click', prevMonth);
             datePickerElm.querySelector(DOMstrings.nextMonth).addEventListener('click', nextMonth);
@@ -251,15 +245,15 @@ const DatePicker = function (datePickerElm) {
         };
 
         const bindDateEvent = function () {
-            let dateElement = datePickerElm.querySelector(DOMstrings.datePanel).children;
+            const dateElement = datePickerElm.querySelector(DOMstrings.datePanel).children;
             for (let i = 0; i < dateElement.length; i++) {
                 dateElement[i].addEventListener('click', UICtrl.selectDate);
             }
         };
 
         const yearChangeHandler = function (event) {
-            let regex = /^[0-9]{4}$/g;
-            let validYear = regex.test(event.target.value);
+            const regex = /^[0-9]{4}$/g;
+            const validYear = regex.test(event.target.value);
             if (validYear) {
                 // set current Date;
                 let currDateObj = dateCtrl.getDateObject();
@@ -274,11 +268,11 @@ const DatePicker = function (datePickerElm) {
         };
 
         const dateChangeHandler = function (event) {
-            let regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
-            let validDate = regex.test(event.target.value);
+            const regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
+            const validDate = regex.test(event.target.value);
             UICtrl.hideDateContainer();
             if (validDate) {
-                let currDateObj = dateCtrl.setDateObject(event.target.value);
+                const currDateObj = dateCtrl.setDateObject(event.target.value);
                 UICtrl.removeExistingDates();
                 UICtrl.initDatePanel(currDateObj);
                 UICtrl.initMonthYearPanel(currDateObj);
@@ -293,40 +287,36 @@ const DatePicker = function (datePickerElm) {
         const prevMonth = function () {
             event.stopPropagation();
             event.preventDefault();
-            let prevMonthObj = dateCtrl.getPrevMonthDetails();
             UICtrl.removeExistingDates();
-            UICtrl.initMonthYearPanel(prevMonthObj);
-            UICtrl.initDatePanel(prevMonthObj);
+            UICtrl.initMonthYearPanel(dateCtrl.getPrevMonthDetails());
+            UICtrl.initDatePanel(dateCtrl.getPrevMonthDetails());
             setupEventListeners();
         };
 
         const nextMonth = function () {
             event.stopPropagation();
             event.preventDefault();
-            let nextMonObj = dateCtrl.getNextMonthDetails();
             UICtrl.removeExistingDates();
-            UICtrl.initMonthYearPanel(nextMonObj);
-            UICtrl.initDatePanel(nextMonObj);
+            UICtrl.initMonthYearPanel(dateCtrl.getNextMonthDetails());
+            UICtrl.initDatePanel(dateCtrl.getNextMonthDetails());
             setupEventListeners();
         };
 
         const yearIncrease = function () {
             event.stopPropagation();
             event.preventDefault();
-            let incYearMonObj = dateCtrl.getYearIncreaseMonthDetails();
             UICtrl.removeExistingDates();
-            UICtrl.initMonthYearPanel(incYearMonObj);
-            UICtrl.initDatePanel(incYearMonObj);
+            UICtrl.initMonthYearPanel(dateCtrl.getYearIncreaseMonthDetails());
+            UICtrl.initDatePanel(dateCtrl.getYearIncreaseMonthDetails());
             setupEventListeners();
         };
 
         const yearDecrease = function () {
             event.stopPropagation();
             event.preventDefault();
-            let decYearMonObj = dateCtrl.getYearDecreaseMonthDetails();
             UICtrl.removeExistingDates();
-            UICtrl.initMonthYearPanel(decYearMonObj);
-            UICtrl.initDatePanel(decYearMonObj);
+            UICtrl.initMonthYearPanel(dateCtrl.getYearDecreaseMonthDetails());
+            UICtrl.initDatePanel(dateCtrl.getYearDecreaseMonthDetails());
             setupEventListeners();
         };
 
