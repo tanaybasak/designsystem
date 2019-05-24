@@ -314,7 +314,6 @@ const DatePicker = function (datePickerElm) {
                 setupEventListeners();
             }
         };
-
     })(datePickerController, UIController);
     controller.init();
 };
