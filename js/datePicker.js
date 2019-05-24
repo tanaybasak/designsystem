@@ -84,57 +84,55 @@ const DatePicker = function (datePickerElm) {
         };
 
         const initWeekDaysPanel = function () {
-            let tempHtml = '<span>%weekDay%</span>';
-            let element = DOMstrings.weekDaysPanel;
             weekDays.forEach((weekDay) => {
-                let weekDayHTML = tempHtml.replace('%weekDay%', weekDay);
-                datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', weekDayHTML);
+                datePickerElm.querySelector(DOMstrings.weekDaysPanel).insertAdjacentHTML('beforeend', `<span>${weekDay}</span>`);
             });
+        };
+
+        const createDayHTML = function (type, i, curMonthObj) {
+            let month, year;
+            let day = ('0' + String(i)).slice(-2);
+            switch (type) {
+                case 'previous':
+                    month = ('0' + (curMonthObj.month === 0 ? 12 : curMonthObj.month)).slice(-2);
+                    year = curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year;
+                    break;
+                case 'current':
+                    month = ('0' + (Number(curMonthObj.month) + 1)).slice(-2);
+                    year = curMonthObj.year;
+                    break;
+                case 'next':
+                    month = ('0' + (Number(curMonthObj.month === 11 ? -1 : curMonthObj.month) + 2)).slice(-2);
+                    year = curMonthObj.month === 11 ? curMonthObj.year + 1 : curMonthObj.year;
+            }
+            return `<span class="${DOMstrings.dateUnSelected} ${type !== 'current' ? DOMstrings.fade : ''}" date="${month}/${day}/${year}">${day} </span>`;
         };
 
         const initDatePanel = function (curMonthObj) {
             let numOfDaysInMonth = getDaysInMonth(curMonthObj.month + 1, curMonthObj.year);
-            let tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMstrings.fade}" date="%month%/%day%/%year%">%day% </span>`;
             let element = DOMstrings.datePanel;
-            //days from previous month
             let numOfDaysFromPrevMonth = curMonthObj.day - curMonthObj.date % 7;
             numOfDaysFromPrevMonth = numOfDaysFromPrevMonth < 0 ? 7 + numOfDaysFromPrevMonth : numOfDaysFromPrevMonth;
             let numOfDaysInPrevMonth = getDaysInMonth(curMonthObj.month === 0 ? 12 : curMonthObj.month, curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
 
+            //days from previous month
             for (let i = numOfDaysInPrevMonth - numOfDaysFromPrevMonth; i <= numOfDaysInPrevMonth && numOfDaysFromPrevMonth !== 6; i++) {
-                let dayHTML = tempHtml.replaceAll('%day%', ('0' + String(i)).slice(-2));
-                dayHTML = dayHTML.replaceAll('%month%', ('0' + (curMonthObj.month === 0 ? 12 : curMonthObj.month)).slice(-2));
-                dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year);
-                datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
+                datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', createDayHTML('previous', i, curMonthObj));
             }
-
             // days from current month
-            tempHtml = `<span class="${DOMstrings.dateUnSelected}" date="%month%/%day%/%year%">%day%</span>`;
             for (let i = 1; i <= numOfDaysInMonth; i++) {
-                let dayHTML = tempHtml.replaceAll('%day%', ('0' + String(i)).slice(-2));
-                dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month) + 1)).slice(-2));
-                dayHTML = dayHTML.replaceAll('%year%', curMonthObj.year);
-                datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
+                datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', createDayHTML('current', i, curMonthObj));
             }
-
             // days from next month  
-            tempHtml = `<span class="${DOMstrings.dateUnSelected} ${DOMstrings.fade}" date="%month%/%day%/%year%">%day% </span>`;
             let numOfDaysFromNextMonth = numOfDaysFromPrevMonth === 6 ? 42 - numOfDaysInMonth + 1 : 42 - numOfDaysInMonth - numOfDaysFromPrevMonth;
             for (let i = 1; i < numOfDaysFromNextMonth; i++) {
-                let dayHTML = tempHtml.replaceAll('%day%', ('0' + String(i)).slice(-2));
-                dayHTML = dayHTML.replaceAll('%month%', ('0' + (Number(curMonthObj.month === 11 ? -1 : curMonthObj.month) + 2)).slice(-2));
-                dayHTML = dayHTML.replaceAll('%year%', curMonthObj.month === 11 ? curMonthObj.year + 1 : curMonthObj.year);
-                datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', dayHTML);
+                datePickerElm.querySelector(element).insertAdjacentHTML('beforeend', createDayHTML('next', i, curMonthObj));
             }
-
             // hightlight today's Date
             let todayDate = new Date();
             todayDate = `${('0' + (todayDate.getMonth() + 1)).slice(-2)}/${('0' + todayDate.getDate()).slice(-2)}/${todayDate.getFullYear()}`;
-            let selector = "[date='%id%']";
-            selector = selector.replaceAll('%id%', todayDate);
-            if (datePickerElm.querySelector(selector)) {
-                datePickerElm.querySelector(selector).classList.add(DOMstrings.todayHighlight);
-            }
+            const selector = `[date='${todayDate}']`;
+            datePickerElm.querySelector(selector) ? datePickerElm.querySelector(selector).classList.add(DOMstrings.todayHighlight) : null;
         };
 
         String.prototype.replaceAll = function (search, replacement) {
@@ -148,11 +146,10 @@ const DatePicker = function (datePickerElm) {
         };
 
         const hightlightSelectedDate = function (id) {
-            let elm = datePickerElm.querySelector(`.${DOMstrings.datePicked}`);
+            const elm = datePickerElm.querySelector(`.${DOMstrings.datePicked}`);
             elm ? elm.classList.remove(DOMstrings.datePicked) : null;
-            let selector = "[date='%id%']";
-            selector = selector.replaceAll('%id%', id);
-            datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked);
+            const selector = `[date='${id}']`;
+            datePickerElm.querySelector(selector) ? datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked) : null;
         };
 
         const showErrorInvalidDate = function () {
@@ -172,13 +169,6 @@ const DatePicker = function (datePickerElm) {
 
         const toggleDateContainer = function () {
             datePickerElm.querySelector(DOMstrings.dateContainer).classList.toggle(DOMstrings.showDateContainer);
-        };
-
-        const datePicked = function () {
-            let selector = "[date='%id%']";
-            selector = selector.replaceAll('%id%', datePickerElm.querySelector(DOMstrings.inputDate).value);
-            const elm = datePickerElm.querySelector(selector);
-            elm ? datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked) : null;
         };
 
         const removeExistingDates = function () {
@@ -206,7 +196,7 @@ const DatePicker = function (datePickerElm) {
 
             initDatePanel: function (curMonthObj) {
                 initDatePanel(curMonthObj);
-                datePicked();
+                hightlightSelectedDate(datePickerElm.querySelector(DOMstrings.inputDate).value);
             },
 
             getDOMstrings: function () {
