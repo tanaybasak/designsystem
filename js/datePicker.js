@@ -55,7 +55,7 @@ const DatePicker = function (datePickerElm) {
 
     // UI Controller
     const UIController = (function () {
-       
+
         const DOMstrings = {
             showDateContainer: `${PREFIX}-datePicker-panel-show`,
             dateSelected: `${PREFIX}-datePicker-date-picked`,
@@ -69,7 +69,7 @@ const DatePicker = function (datePickerElm) {
             yearInput: `.${PREFIX}-datePicker-year-input`,
             nextMonth: `.${PREFIX}-datePicker-month-next`,
             inputDate: `.${PREFIX}-datePicker-input`,
-            weekDaysPanel:`.${PREFIX}-datePicker-days`,
+            weekDaysPanel: `.${PREFIX}-datePicker-days`,
             datePanel: `.${PREFIX}-datePicker-dates`,
             yearIncrease: `.${PREFIX}-datePicker-up`,
             yearDecrease: `.${PREFIX}-datePicker-down`,
@@ -174,14 +174,14 @@ const DatePicker = function (datePickerElm) {
             datePickerElm.querySelector(DOMstrings.dateContainer).classList.toggle(DOMstrings.showDateContainer);
         };
 
-        const datePicked = function(){
+        const datePicked = function () {
             let selector = "[date='%id%']";
             selector = selector.replaceAll('%id%', datePickerElm.querySelector(DOMstrings.inputDate).value);
             const elm = datePickerElm.querySelector(selector);
             elm ? datePickerElm.querySelector(selector).classList.add(DOMstrings.datePicked) : null;
         };
 
-        const removeExistingDates =function () {
+        const removeExistingDates = function () {
             let element = DOMstrings.datePanel;
             datePickerElm.querySelector(element).innerHTML = "";
         };
