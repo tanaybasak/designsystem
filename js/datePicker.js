@@ -14,48 +14,39 @@ const DatePicker = function (datePickerElm) {
             };
             return currDateObj;
         };
-
         return {
             getCurrentMonthDetails: function () {
                 const date = new Date();
                 return createDateObject(date);
             },
-
             getPrevMonthDetails: function () {
                 const date = new Date(currDateObj.month === 0 ? currDateObj.year - 1 : currDateObj.year, currDateObj.month === 0 ? 11 : currDateObj.month - 1, 15);
                 return createDateObject(date);
             },
-
             getNextMonthDetails: function () {
                 const date = new Date(currDateObj.month === 11 ? currDateObj.year + 1 : currDateObj.year, currDateObj.month === 11 ? 0 : currDateObj.month + 1, 15);
                 return createDateObject(date);
             },
-
             getYearIncreaseMonthDetails: function () {
                 const date = new Date(currDateObj.year + 1, currDateObj.month, 15);
                 return createDateObject(date);
             },
-
             getYearDecreaseMonthDetails: function () {
                 const date = new Date(currDateObj.year - 1, currDateObj.month, 15);
                 return createDateObject(date);
             },
-
             setDateObject: function (date) {
                 const dateArray = date.split('/');
                 return createDateObject(new Date(dateArray[2], Number(dateArray[0]) - 1, dateArray[1]));
             },
-
             getDateObject: function () {
                 return currDateObj;
             },
         };
     })();
 
-
     // UI Controller
     const UIController = (function () {
-
         const DOMstrings = {
             showDateContainer: `${PREFIX}-datePicker-panel-show`,
             dateSelected: `${PREFIX}-datePicker-date-picked`,
@@ -90,7 +81,7 @@ const DatePicker = function (datePickerElm) {
         };
 
         const createDayHTML = function (type, i, curMonthObj) {
-            let  month, year;
+            let month, year;
             const day = ('0' + String(i)).slice(-2);
             switch (type) {
                 case 'previous':
@@ -183,55 +174,44 @@ const DatePicker = function (datePickerElm) {
                 initDatePanel(curMonthObj);
                 initMonthYearPanel(curMonthObj);
             },
-
             initMonthYearPanel: function (curMonthObj) {
                 initMonthYearPanel(curMonthObj);
             },
-
             initDatePanel: function (curMonthObj) {
                 initDatePanel(curMonthObj);
                 hightlightSelectedDate(datePickerElm.querySelector(DOMstrings.inputDate).value);
             },
-
             getDOMstrings: function () {
                 return DOMstrings;
             },
-
             removeExistingDates: function () {
                 removeExistingDates();
             },
-
             toggleDateContainer: function () {
                 toggleDateContainer();
             },
-
             hideDateContainer: function () {
                 hideDateContainer();
             },
-
             selectDate: function (event) {
                 selectDate(event);
             },
-
             hightlightSelectedDate: function (id) {
                 hightlightSelectedDate(id);
             },
-
             showErrorInvalidDate: function () {
                 showErrorInvalidDate();
             },
-
             hideErrorInvalidDate: function () {
                 hideErrorInvalidDate();
-
             }
         };
     })();
 
-
     // Main controller
     const controller = (function (dateCtrl, UICtrl) {
         const DOMstrings = UICtrl.getDOMstrings();
+
         const setupEventListeners = function () {
             datePickerElm.querySelector(DOMstrings.prevMonth).addEventListener('click', prevMonth);
             datePickerElm.querySelector(DOMstrings.nextMonth).addEventListener('click', nextMonth);
