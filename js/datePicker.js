@@ -49,7 +49,6 @@ const DatePicker = function (datePickerElm) {
     const UIController = (function () {
         const DOMstrings = {
             showDateContainer: `${PREFIX}-datePicker-panel-show`,
-            dateSelected: `${PREFIX}-datePicker-date-picked`,
             datePicked: `${PREFIX}-datePicker-date-picked`,
             todayHighlight: `${PREFIX}-datePicker-dates-today`,
             dateUnSelected: `${PREFIX}-datePicker-date`,
