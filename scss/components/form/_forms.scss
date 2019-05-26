@@ -39,13 +39,14 @@
     order: 2;
 }
 
-label {
-    @include getInputColor('color-1', "color");
-    font-weight: $input-label-weight;
-    display: block;
-    order: 1;
-    margin-bottom: $label-margin-bottom;
-}
+// Commented out: All feature specific CSS rules should be specified under its parent rule
+// label {
+//     @include getInputColor('color-1', "color");
+//     font-weight: $input-label-weight;
+//     display: block;
+//     order: 1;
+//     margin-bottom: $label-margin-bottom;
+// }
 
 .#{$prefix}-form-control {
     @include getFormControl("inputcontrol");
@@ -150,7 +151,8 @@ label {
 }
 
 // Radio
-.#{$prefix}-radio-group, .#{$prefix}-checkbox-group {
+.#{$prefix}-radio-group,
+.#{$prefix}-checkbox-group {
     margin-top: .5rem;
 }
 
@@ -166,9 +168,11 @@ label {
     display: flex;
     flex-direction: column;
 
-    .#{$prefix}-radio-item, .#{$prefix}-checkbox-item {
+    .#{$prefix}-radio-item,
+    .#{$prefix}-checkbox-item {
         margin-bottom: 1rem;
         margin-top: 0;
+
         &:first-of-type {
             margin-top: 0.5rem;
         }
@@ -224,7 +228,7 @@ label {
         display: inline-block;
         position: absolute;
         top: -1px;
-        left:0;
+        left: 0;
         background-color: $white;
         border-radius: 50%;
         border: 2px solid #5a6872;
