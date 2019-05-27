@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Patron CSS Framework Responsive</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <main>
+        <section class="patron-container pt-3">
+            <!-- Input Components -->
+            <form class="m-5">
+                <div class="hcl-form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="hcl-form-control" id="firstname" placeholder="Enter First Name" />
+                </div>
+                <div class="hcl-form-group">
+                    <label for="lastname">Last Name</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <input type="text" class="hcl-form-control" id="lastname" placeholder="Enter Last Name" />
+                </div>
+                <div class="hcl-form-group">
+                    <label for="middlename">Middle Name</label>
+                    <input data-invalid="true" type="text" class="hcl-form-control" id="middlename"
+                        placeholder="Disabled" />
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+                <div class="hcl-form-group">
+                    <label for="error">Address</label>
+                    <input type="text" class="hcl-form-control" id="error" placeholder="Enter Address Details" disabled
+                        aria-disabled="true" />
+                </div>
+                <div class="hcl-form-group">
+                    <label for="feedback1">Feedback Form</label>
+                    <textarea class="hcl-textarea" id="feedback1" rows="4" cols="50"
+                        placeholder="Please Feedback here"></textarea>
+                </div>
+                <div class="hcl-form-group">
+                    <label for="feedback2">Review Summary</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <textarea disabled aria-disabled="true" class="hcl-textarea" id="feedback2" rows="4"
+                        cols="50"></textarea>
+                </div>
+                <div class="hcl-form-group">
+                    <label for="feedback3">Remarks</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <textarea data-invalid="true" aria-disabled="false" class="hcl-textarea" id="feedback3" rows="4"
+                        cols="50"></textarea>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+            </form>
+
+            <!-- Checkbox Components -->
+            <article class="m-5">
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Horizontally arranged (default)</legend>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
+                        <label class="hcl-checkbox-label" for="check1">1 (default)</label>
+                    </div>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
+                        <label class="hcl-checkbox-label" for="check2">2</label>
+                    </div>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
+                        <label class="hcl-checkbox-label" for="check3">3 (disabled)</label>
+                    </div>
+                </fieldset>
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Vertically arranged</legend>
+                    <div class="hcl-checkbox-group hcl-stack-vertical">
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check4" type="checkbox" value="check4" />
+                            <label class="hcl-checkbox-label" for="check4">1 (default)</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check5" type="checkbox" value="check5" checked />
+                            <label class="hcl-checkbox-label" for="check5">2</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check6" type="checkbox" value="check6" disabled />
+                            <label class="hcl-checkbox-label" for="check6">3 (disabled)</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </article>
+
+            <!-- Radio Components -->
+            <article class="m-5">
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Horizontally arranged (default)</legend>
+                    <div class="hcl-radio-item">
+                        <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" />
+                        <label class="hcl-radio-label" for="radio1">1 (default)</label>
+                    </div>
+                    <div class="hcl-radio-item">
+                        <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" checked/>
+                        <label class="hcl-radio-label" for="radio2">2</label>
+                    </div>
+                    <div class="hcl-radio-item">
+                        <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
+                        <label class="hcl-radio-label" for="radio3">3 (disabled)</label>
+                    </div>
+                </fieldset>
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Vertically arranged</legend>
+                    <div class="hcl-radio-group hcl-stack-vertical">
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio4" type="radio" value="Option4" name="animals" />
+                            <label class="hcl-radio-label" for="radio4">1 (default)</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio5" type="radio" value="Option5" name="animals" checked />
+                            <label class="hcl-radio-label" for="radio5">2</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio6" type="radio" value="Option6" name="animals" disabled />
+                            <label class="hcl-radio-label" for="radio6">3 (disabled)</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </article>
+        </section>
+    </main>
+    <script src="./index.js"></script>
+</body>
+
+</html>

@@ -10,8 +10,6 @@
 
 .#{$prefix}-form-group {
     margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
 
     >input[data-invalid=true],
     input[data-invalid=true]:focus,
@@ -22,7 +20,6 @@
 
     input[data-invalid=true]~.#{$prefix}-error-msg,
     textarea[data-invalid=true]~.#{$prefix}-error-msg {
-        order: 4;
         color: $error;
     }
 
@@ -36,14 +33,12 @@
     @include getInputColor('color-2', "color");
     @include lineHeight("helpertext");
     margin-bottom: .5rem;
-    order: 2;
 }
 
 label {
     @include getInputColor('color-1', "color");
     font-weight: $input-label-weight;
     display: block;
-    order: 1;
     margin-bottom: $label-margin-bottom;
 }
 
@@ -55,7 +50,6 @@ label {
 .#{$prefix}-textarea {
     @include getFormControl("inputcontrol");
     min-width: 10rem;
-    order: 3;
     resize: vertical;
     padding: 1rem;
     height: auto;
