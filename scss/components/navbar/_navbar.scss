@@ -358,6 +358,7 @@
 
         &.#{$prefix}-navbar-nav {
             margin-top: 0;
+            display: none;
 
             .#{$prefix}-nav-item {
                 &:not(:last-child) {
@@ -371,6 +372,12 @@
                 &:hover {
                     background-image: none;
                 }
+            }
+        }
+
+        &.show-sidebar {
+            .#{$prefix}-navbar-nav {
+                display: flex !important;
             }
         }
     }

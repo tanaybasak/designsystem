@@ -220,6 +220,10 @@
                 }
             }
         }
+
+        &.#{$prefix}-navbar-nav {
+            display: flex;
+        }
     }
 }
 

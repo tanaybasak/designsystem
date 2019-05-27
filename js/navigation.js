@@ -8,6 +8,7 @@
 
 const ELEMENTS = {
     navbar: '[class*="hcl-navbar"]',
+    navToolbar: '[class*="hcl-navbar-nav toolbar"]',
     search: '[class*="hcl-navbar-search"]',
     searchInput: '[class*="hcl-navbar-search-input"]',
     searchBtn: '[class*="hcl-navbar-search-btn"]',
@@ -50,11 +51,13 @@ class Navigation {
     documentEventHandler(e) {
         const navbarElm = this.getElementByQuery(ELEMENTS.navbar);
         const contentElm = this.getElementByQuery(ELEMENTS.contentMain);
+        const navToolbarElm = this.getElementByQuery(ELEMENTS.navToolbar);
         const hamburgerElm = this.getElementByQuery(ELEMENTS.hamburger);
         const sidebarElms = Array.from(document.querySelectorAll(ELEMENTS.sidebarShow));
         if (sidebarElms && sidebarElms.length && !(hamburgerElm.dataset.hasOwnProperty('hamburgerOpen') && /^(true|"true")/i.test(hamburgerElm.dataset.hamburgerOpen))) {
             // navbarElm.classList.remove(CSS_MODIFIERS.overlay);
             // contentElm.classList.remove(CSS_MODIFIERS.overlay);
+            navToolbarElm.classList.remove(CSS_MODIFIERS.sidebarSmall);
             sidebarElms.forEach(elm => {
                 elm.classList.remove(CSS_MODIFIERS.sidebarSmall);
             });
@@ -71,12 +74,14 @@ class Navigation {
         const sidebarElm = this.getElementByQuery(ELEMENTS.sidebar);
         const sidebarListElm = this.getElementByQuery(ELEMENTS.sidebarList);
         const navbarElm = this.getElementByQuery(ELEMENTS.navbar);
+        const navToolbarElm = this.getElementByQuery(ELEMENTS.navToolbar);
         const contentElm = this.getElementByQuery(ELEMENTS.content);
         const contentMainElm = this.getElementByQuery(ELEMENTS.contentMain);
         if (!sidebarElm.classList.contains(CSS_MODIFIERS.sidebarSmall)) {
             hamburgerElm.setAttribute('data-hamburger-open', true);
             sidebarElm.classList.add(CSS_MODIFIERS.sidebarSmall);
             sidebarListElm.classList.add(CSS_MODIFIERS.sidebarSmall);
+            navToolbarElm.classList.add(CSS_MODIFIERS.sidebarSmall);
             // navbarElm.classList.add(CSS_MODIFIERS.overlay);
             // contentMainElm.classList.add(CSS_MODIFIERS.overlay);
             searchFormElm.classList.remove(CSS_MODIFIERS.show);
@@ -84,6 +89,7 @@ class Navigation {
         } else {
             sidebarElm.classList.remove(CSS_MODIFIERS.sidebarSmall);
             sidebarListElm.classList.remove(CSS_MODIFIERS.sidebarSmall);
+            navToolbarElm.classList.remove(CSS_MODIFIERS.sidebarSmall);
         }
     }
 
