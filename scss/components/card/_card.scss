@@ -45,7 +45,6 @@
         .#{$prefix}-btn {
             display: inline-flex;
             margin: 0;
-
         }
 
         a.#{$prefix}-btn {
@@ -98,8 +97,10 @@
     }
 
     &-close {
+        margin-top: 1rem;
+
         &:hover {
-            color: lighten(#000000, 50%);
+            color: lighten($black, 50%);
         }
     }
 }
