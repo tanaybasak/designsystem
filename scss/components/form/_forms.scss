@@ -29,6 +29,17 @@
     input[data-invalid=false]~.#{$prefix}-error-msg {
         display: none;
     }
+
+    label {
+        display: block;
+        order: 1;
+    }
+    .#{$prefix}-helper-text{
+        order: 2;
+    }
+    .#{$prefix}-textarea {
+        order: 3;
+    }
 }
 
 .#{$prefix}-helper-text {
@@ -36,14 +47,11 @@
     @include getInputColor('color-2', "color");
     @include lineHeight("helpertext");
     margin-bottom: .5rem;
-    order: 2;
 }
 
 label {
     @include getInputColor('color-1', "color");
     font-weight: $input-label-weight;
-    display: block;
-    order: 1;
     margin-bottom: $label-margin-bottom;
 }
 
@@ -55,7 +63,6 @@ label {
 .#{$prefix}-textarea {
     @include getFormControl("inputcontrol");
     min-width: 10rem;
-    order: 3;
     resize: vertical;
     padding: 1rem;
     height: auto;
