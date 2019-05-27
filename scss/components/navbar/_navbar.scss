@@ -235,7 +235,7 @@
             height: 2rem;
             width: 2rem;
             fill: var(--grey);
-            transform: translateX(16px) translateY(6px);
+            transform: translateX(16px) translateY(2px);
             will-change: transform;
         }
 
@@ -313,7 +313,7 @@
 
                 .#{$prefix}-navbar-search-icon {
                     fill: var(--grey) !important;
-                    transform: translateX(16px) translateY(6px) !important;
+                    transform: translateX(16px) translateY(2px) !important;
                     will-change: transform;
                 }
 
@@ -427,7 +427,7 @@
 
         .#{$prefix}-navbar-search-icon {
             fill: var(--white);
-            transform: translateX(0) translateY(6px);
+            transform: translateX(0) translateY(2px);
             will-change: transform;
         }
 
@@ -450,7 +450,7 @@
 
                 .#{$prefix}-navbar-search-icon {
                     fill: var(--grey);
-                    transform: translateX(16px) translateY(6px);
+                    transform: translateX(16px) translateY(2px);
                 }
             }
         }
