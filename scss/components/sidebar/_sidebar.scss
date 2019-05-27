@@ -108,7 +108,7 @@
         }
     }
 
-    button[class^="hcl-icon"] {
+    button[class*="-icon-"] {
         &:focus {
             outline: none;
         }
@@ -159,7 +159,7 @@
         }
     }
 
-    button[class^="hcl-icon"] {
+    button[class*="-icon-"] {
         transform: rotate(180deg);
         transition: all .15s;
     }
@@ -198,7 +198,7 @@
                 &-item {
                     display: flex;
 
-                    &>[class*="hcl-icon"] {
+                    &>[class*="-icon-"] {
                         display: none;
                     }
                 }

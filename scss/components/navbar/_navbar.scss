@@ -72,13 +72,10 @@
             .#{$prefix}-nav-item {
                 display: flex;
                 padding: $navbar-padding-y 0;
+                cursor: pointer;
 
                 &:not(:last-child) {
                     margin-right: 1rem;
-                }
-
-                [class^="hcl-icon"] {
-                    cursor: pointer;
                 }
 
                 &:hover {
@@ -108,7 +105,7 @@
             text-decoration: none;
         }
 
-        [class^="hcl-icon"] {
+        [class*="-icon-"] {
             display: inline-flex;
             flex-direction: column;
             justify-content: space-around;
@@ -252,7 +249,7 @@
             }
         }
 
-        &-btn[class*="hcl-navbar-expand"] {
+        &-btn[class*="-navbar-expand"] {
             position: absolute;
             top: .5rem;
             right: 1rem;
@@ -338,7 +335,7 @@
                 }
             }
 
-            &-btn[class*="hcl-navbar-expand"] {
+            &-btn[class*="-navbar-expand"] {
                 right: 2.375rem;
             }
         }
@@ -401,7 +398,7 @@
                 padding-right: 1.5rem;
             }
 
-            &-btn[class*="hcl-navbar-expand"] {
+            &-btn[class*="-navbar-expand"] {
                 right: 1.5rem;
             }
         }
