@@ -245,6 +245,10 @@
             font-size: 1.5rem;
             color: var(--grey);
             padding-right: 1rem;
+
+            &:focus {
+                outline: none;
+            }
         }
 
         &-btn[class*="hcl-navbar-expand"] {
