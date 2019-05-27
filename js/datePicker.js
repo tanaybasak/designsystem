@@ -244,7 +244,7 @@ const DatePicker = function (datePickerElm) {
             if (validYear) {
                 // set current Date;
                 let currDateObj = dateCtrl.getDateObject();
-                currDateObj = dateCtrl.setDateObject(`${currDateObj.month}/15/${event.target.value}`);
+                currDateObj = dateCtrl.setDateObject(`${currDateObj.month + 1}/15/${event.target.value}`);
                 UICtrl.removeExistingDates();
                 UICtrl.initDatePanel(currDateObj);
                 UICtrl.initMonthYearPanel(currDateObj);
@@ -252,6 +252,7 @@ const DatePicker = function (datePickerElm) {
             } else {
                 UICtrl.showErrorInvalidDate();
             }
+            bindDateEvent();
         };
 
         const dateChangeHandler = function (event) {
