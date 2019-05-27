@@ -27,7 +27,7 @@
     color: var(--white);
 
     &:hover {
-        background:var(--primary-hover);
+        background: var(--primary-hover);
     }
 
     &:focus {
@@ -130,7 +130,7 @@
     &:disabled,
     &[disabled] {
         color: var(--primary-disabled);
-        @extend %disable; 
+        @extend %disable;
 
         &:hover {
             background: transparent;
