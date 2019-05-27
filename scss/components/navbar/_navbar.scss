@@ -313,7 +313,7 @@
 
                 .#{$prefix}-navbar-search-icon {
                     fill: var(--grey) !important;
-                    transform: translateX(16px) translateY(2px) !important;
+                    transform: translateX(16px) translateY(6px) !important;
                     will-change: transform;
                 }
 
@@ -450,7 +450,7 @@
 
                 .#{$prefix}-navbar-search-icon {
                     fill: var(--grey);
-                    transform: translateX(16px) translateY(2px);
+                    transform: translateX(16px) translateY(6px);
                 }
             }
         }
