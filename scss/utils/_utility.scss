@@ -71,3 +71,10 @@
 .b-1 {
     border: 1px solid $card-border-color;
 }
+
+// Disable
+%disable,
+.disable {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

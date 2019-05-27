@@ -6,7 +6,10 @@
  *******************************************************************
  */
 
- $toastThemes: 'error', 'info', 'success', 'warning';
+$toastThemes: 'error',
+'info',
+'success',
+'warning';
 
 @mixin getToastThemes() {
     @each $theme in $toastThemes {
@@ -27,7 +30,7 @@
     width: 16.875rem;
     display: flex;
     height: auto;
-    padding: 0.75rem 1.125rem;
+    padding: 0.75rem 1rem;
     margin: 2rem;
     color: #171717;
     position: fixed;
@@ -43,7 +46,7 @@
 
     &-title {
         font-size: .875rem;
-        line-height: 1.125rem;
+        line-height: 1rem;
         color: #132730;
         letter-spacing: 0;
         @include getFontWeight("semibold");
@@ -51,7 +54,7 @@
 
     &-subtitle,
     &-caption {
-        line-height: 1.125rem;
+        line-height: 0.875rem;
         font-size: 0.75rem;
         color: #aaa;
         letter-spacing: 0;
@@ -59,7 +62,7 @@
     }
 
     &-caption {
-        margin-top: 0.875rem;
+        margin-top: 0.75rem;
     }
 
     &-close {
