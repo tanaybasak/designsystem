@@ -19,7 +19,6 @@ const ELEMENTS = {
     sidebarTitle: '[class*="hcl-sidebar-title"]',
     sidebarList: '[class*="hcl-sidebar-list"]',
     sidebarShow: '[class*="show-sidebar"]',
-    sidebarListShow: '[class*="show-sidebar-list"]',
     content: '[class*="hcl-content"]',
     contentMain: '[class*="hcl-content-main"]'
 };
@@ -54,8 +53,8 @@ class Navigation {
         const hamburgerElm = this.getElementByQuery(ELEMENTS.hamburger);
         const sidebarElms = Array.from(document.querySelectorAll(ELEMENTS.sidebarShow));
         if (sidebarElms && sidebarElms.length && !(hamburgerElm.dataset.hasOwnProperty('hamburgerOpen') && /^(true|"true")/i.test(hamburgerElm.dataset.hamburgerOpen))) {
-            navbarElm.classList.remove(CSS_MODIFIERS.overlay);
-            contentElm.classList.remove(CSS_MODIFIERS.overlay);
+            // navbarElm.classList.remove(CSS_MODIFIERS.overlay);
+            // contentElm.classList.remove(CSS_MODIFIERS.overlay);
             sidebarElms.forEach(elm => {
                 elm.classList.remove(CSS_MODIFIERS.sidebarSmall);
             });
@@ -78,8 +77,8 @@ class Navigation {
             hamburgerElm.setAttribute('data-hamburger-open', true);
             sidebarElm.classList.add(CSS_MODIFIERS.sidebarSmall);
             sidebarListElm.classList.add(CSS_MODIFIERS.sidebarSmall);
-            navbarElm.classList.add(CSS_MODIFIERS.overlay);
-            contentMainElm.classList.add(CSS_MODIFIERS.overlay);
+            // navbarElm.classList.add(CSS_MODIFIERS.overlay);
+            // contentMainElm.classList.add(CSS_MODIFIERS.overlay);
             searchFormElm.classList.remove(CSS_MODIFIERS.show);
             contentElm.classList.remove(CSS_MODIFIERS.mt_3);
         } else {

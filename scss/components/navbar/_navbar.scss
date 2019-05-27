@@ -235,7 +235,7 @@
             height: 2rem;
             width: 2rem;
             fill: var(--grey);
-            transform: translateX(0) translateY(6px);
+            transform: translateX(16px) translateY(6px);
             will-change: transform;
         }
 
@@ -303,6 +303,7 @@
                 .#{$prefix}-navbar-search-btn {
                     position: relative !important;
                     right: 0 !important;
+                    background-color: #efefef;
                 }
 
                 .#{$prefix}-navbar-search-icon {
@@ -394,6 +395,11 @@
             }
         }
     }
+
+    .toolbar {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 }
 
 .search-btn-only {
@@ -432,6 +438,7 @@
 
                 .#{$prefix}-navbar-search-icon {
                     fill: var(--grey);
+                    transform: translateX(16px) translateY(6px);
                 }
             }
         }
