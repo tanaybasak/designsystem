@@ -298,7 +298,7 @@
 
             &.shown {
                 position: absolute;
-                top: 2.75rem;
+                top: 2.25rem;
                 left: 0;
                 width: 100%;
                 margin: 1rem auto;
@@ -427,7 +427,7 @@
 
         .#{$prefix}-navbar-search-icon {
             fill: var(--white);
-            transform: translateX(0) translateY(2px);
+            transform: translateX(0) translateY(6px);
             will-change: transform;
         }
 
