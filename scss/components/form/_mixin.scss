@@ -25,15 +25,27 @@ $inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "c
         border: none;
         box-shadow: 0 1px 0 0 #5a6872;
         border-bottom: 1px solid transparent;
+        order: 3;
+
         &:focus {
             outline: none;
             box-shadow: 0 2px 0 0 #3d70b2;
+
+            &~label {
+                color: #3d70b2;
+            }
         }
 
         &[disabled] {
             opacity: 0.5;
             cursor: not-allowed;
             background-color: $background-disabled;
+
+            &~label,
+            &~.#{$prefix}-error-msg,
+            &~.#{$prefix}-helper-text {
+                opacity: 0.5;
+            }
         }
     }
 
@@ -48,6 +60,7 @@ $inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "c
         ~.#{$prefix}-error-msg {
             @include getFontWeight("regular");
             @include getFontSize("12");
+            order: 4;
             margin-top: .25rem;
             line-height: 1.5;
             max-height: 12.5rem;
