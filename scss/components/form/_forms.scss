@@ -10,8 +10,6 @@
 
 .#{$prefix}-form-group {
     margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
 
     >input[data-invalid=true],
     input[data-invalid=true]:focus,
@@ -22,7 +20,6 @@
 
     input[data-invalid=true]~.#{$prefix}-error-msg,
     textarea[data-invalid=true]~.#{$prefix}-error-msg {
-        order: 4;
         color: $error;
     }
 
