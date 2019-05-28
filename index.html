@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    
+
 
 </head>
 
@@ -1029,7 +1029,7 @@
                 </svg>
                 <span class="hcl-type-zeta">Loading...</span>
             </section>
-            <section id="formcomp" class="m-1 p-2 colBorder">
+            <section class="m-1 p-2 colBorder">
                 <table class="hcl-data-table">
                     <thead>
                         <tr>
@@ -1120,11 +1120,13 @@
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
         <script src="./js/index.js"></script>
-    <script>
-        patron.dropdown(".hcl-dropdown.top", { position : "top", onChange : (element, value)=>{
-            console.log(element, value);
-        }})
-    </script>
+        <script>
+            patron.dropdown(".hcl-dropdown.top", {
+                position: "top", onChange: (element, value) => {
+                    console.log(element, value);
+                }
+            })
+        </script>
 </body>
 
 </html>
