@@ -3,6 +3,8 @@
     position: relative;
     min-width: 25rem;
 
+    
+
     &-toggle {
         background: #efefef;
         font-size: 0.875rem;
@@ -45,12 +47,8 @@
         background-clip: padding-box;
         box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
         border-bottom: 1px solid $grey-2;
-        display: none;
         width: 100%;
-
-        &.show {
-            display: block;
-        }
+        display: none;
     }
 
     &-item {
@@ -75,13 +73,19 @@
     }
 
     &-item-selected {
-        display: none;
+        background-color: #{$grey-2};
     }
 
-    &.#{$prefix}-droptop {
+    &-open {
         .#{$prefix}-dropdown-container {
-            border: transparent;
-            border-top: 1px solid $grey-2;
+            display: block;
+        }
+    }
+
+    &.#{$prefix}-dropdown-top {
+        .#{$prefix}-dropdown-container {
+            bottom: 0;
+            top : inherit
         }
     }
 

@@ -13,17 +13,7 @@
         padding: 0.75rem 0;
 
         &.active {
-            >a {
-                color: var(--blue);
-            }
-
-            border-bottom: 2px solid var(--blue);
-        }
-
-        &.#{$prefix}-tabs-disabled{
-            >a:focus{
-                outline: none;
-            }
+            border-bottom: 2px solid var(--blue-light);
         }
 
         &:hover {
@@ -36,15 +26,13 @@
     }
 
     &-link {
+        @include getFontWeight('semibold');
         text-decoration: none;
         display: inline-block;
         color: $black;
 
-        &:hover,
-        &:active,
-        &:visited,
-        &:focus {
-            text-decoration: none;
+        :not(:disabled):hover {
+            color: var(--blue-light);
         }
     }
 }
@@ -69,8 +57,5 @@
     >a {
         cursor: not-allowed;
         color: $black;
-        :focus {
-            outline: none;
-        }
     }
 }
