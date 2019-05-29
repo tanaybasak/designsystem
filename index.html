@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+
 </head>
 
 <body>
@@ -634,6 +636,35 @@
                         </div>
                     </section>
                 </section>
+
+                <section class="hcl-tab">
+                    <nav data-tabs role="navigation">
+                        <ul role="tablist" class="hcl-tabs-nav">
+                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab4" data-target="tab4">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 4</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab5" aria-selected="true"
+                                data-target="tab5">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 5</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab6"
+                                data-target="tab6">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 6</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="hcl-tabcontent">
+                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel active">
+                            <p>Tabbable Content 4</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab5" id="tab5" class="hcl-tabs-panel">
+                            <p>Tabbable Content 5</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab6" id="tab6" class="hcl-tabs-panel">
+                            <p>Tabbable Content 6</p>
+                        </div>
+                    </section>
+                </section>
             </section>
 
             <!-- <section class="hcl-lightbox" >    
@@ -977,9 +1008,9 @@
             <!-- Dropdown -->
             <section class="hcl-row m-3">
                 <div class="hcl-col">
-                    <section class="hcl-dropdown hcl-droptop">
+                    <section class="hcl-dropdown" data-component="dropdown">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
-                            Dropdown top
+                            Dropdown Bottom
                         </button>
                         <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
                             <li class="hcl-dropdown-item">A</li>
@@ -989,9 +1020,9 @@
                     </section>
                 </div>
                 <div class="hcl-col">
-                    <section class="hcl-dropdown">
+                    <section class="hcl-dropdown top">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
-                            Dropdown bottom
+                            Dropdown Top
                         </button>
                         <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
                             <li class="hcl-dropdown-item">A</li>
@@ -1005,16 +1036,17 @@
             <section class="hcl-row m-3">
                 <div class="hcl-col">
                     <div class="hcl-form-item">
-                        <span class="hcl-label">
+                        <strong class="hcl-label">
                             Account photo
-                        </span>
+                        </strong>
                         <p class="hcl-label-description">only .jpg and .png files. 500kb max file size.</p>
-                        <div class="hcl-file-uploader">
-                            <input type="file" class="hcl-file-input" id="file-uploader" multiple />
+                        <div class="hcl-file">
                             <label for="file-uploader" class="hcl-file-btn hcl-btn hcl-primary hcl-secondary hcl-sm"
-                                role="button">
+                                role="button" tabindex="0">
                                 Add file
+                                <span class="hcl-file-btn-icon"></span>
                             </label>
+                            <input type="file" class="hcl-file-input" id="file-uploader" multiple />
                         </div>
                     </div>
                 </div>
@@ -1151,6 +1183,13 @@
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
         <script src="./js/index.js"></script>
+        <script>
+            patron.dropdown(".hcl-dropdown.top", {
+                position: "top", onChange: (element, value) => {
+                    console.log(element, value);
+                }
+            })
+        </script>
 </body>
 
 </html>

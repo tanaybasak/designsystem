@@ -9,13 +9,12 @@
         },
         tablist: [],
         init: function () {
-            let tabs = Array.from(document.querySelectorAll('nav[data-tabs]'));
-            this.tablist = tabs;
+            this.tablist = Array.from(document.querySelectorAll('nav[data-tabs]')) || [];
             this.bindEventsForEachTab();
         },
         bindEventsForEachTab: function () {
             let me_ = this;
-            this.tablist.forEach(function (item, index) {
+            this.tablist.forEach(function (item) {
                 let tabs = Array.from(item.querySelectorAll('li[role=tab]'));
                 for (let i = 0; i < tabs.length; i++) {
                     tabs[i].addEventListener('click', me_.clickEventListener);
@@ -43,12 +42,13 @@
                 }
                 Tabs.findTabs(tabID, parentIdx);
             }
-
         },
         findTabs: function (tabID, pIdx) {
             let me_ = this;
-            let children = me_.tablist[pIdx].children, tabChildren;
-            for (let u = 0; u < children.length; u++) { // All Tab Loop
+            let children = me_.tablist[pIdx].children,
+                tabChildren;
+            for (let u = 0; u < children.length; u++) {
+                // All Tab Loop
                 if (children[u].classList.contains(Tabs.selectors.tabs)) {
                     tabChildren = children[u].children;
                     break;
@@ -79,5 +79,4 @@
         }
     };
     Tabs.init();
-
 })();

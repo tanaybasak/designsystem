@@ -34,9 +34,11 @@
         display: block;
         order: 1;
     }
-    .#{$prefix}-helper-text{
+
+    .#{$prefix}-helper-text {
         order: 2;
     }
+
     .#{$prefix}-textarea {
         order: 3;
     }
