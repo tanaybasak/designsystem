@@ -1,112 +1,126 @@
-import EventManager from './eventManager'
-let commonElements = [];
+import EventManager from './eventManager';
+import { PREFIX } from './utils/config';
+let commonElements = {};
 let elementNo = 1;
 
 class Tooltip {
+
     constructor(element) {
         this.element = element;
         this.eventName = element.hasAttribute('data-focus-on-click') ? 'click' : 'mouseover';
         this.type = element.getAttribute('data-type') || 'definition';
         this.dataValue = element.getAttribute('data-tooltip');
         this.direction = element.getAttribute('data-direction') || 'bottom';
-        this.attachEvent(element)
     }
 
-    attachEvent(elm) {
-        if (this.dataValue.startsWith('#') && commonElements.indexOf(this.dataValue) === -1) {
-            commonElements.push(this.dataValue)
-            let element = document.getElementById(this.dataValue.substr(1));
-            if (element) {
-                var tooltip = document.createElement('div');
-                tooltip.className = 'hcl-tooltip hcl-tooltip-' + this.type;
-                tooltip.style.display = 'none';
-                if (elm.hasAttribute('data-focus-on-click')) {
-                    tooltip.setAttribute('data-focus-on-click', true);
+    attachEvents() {
+        if (this.dataValue.startsWith('#')) {
+            if (!commonElements[this.dataValue]) {
+
+                let element = document.getElementById(this.dataValue.substr(1));
+                if (element) {
+                    let elementId = 'tooltip-' + (elementNo++);
+                    commonElements[this.dataValue] = elementId;
+                    this.element.setAttribute('aria-describedby', elementId)
+                    let tooltip = document.createElement('div');
+                    tooltip.setAttribute('id', elementId)
+                    tooltip.className = `${PREFIX}-tooltip ${PREFIX}-tooltip-${this.type}`;
+                    tooltip.style.display = 'none';
+                    if (this.element.hasAttribute('data-focus-on-click')) {
+                        tooltip.setAttribute('data-focus-on-click', true);
+                    }
+                    let icon = document.createElement('div');
+                    icon.className = `${PREFIX}-tooltip-arrow`;
+                    tooltip.appendChild(icon);
+                    tooltip.appendChild(element);
+                    document.body.appendChild(tooltip);
                 }
-                var icon = document.createElement('div');
-                icon.className = 'hcl-tooltip-arrow';
-                tooltip.appendChild(icon);
-                tooltip.appendChild(element);
-                document.body.appendChild(tooltip);
+            } else {
+                this.element.setAttribute('aria-describedby', commonElements[this.dataValue])
             }
         }
-        elm.addEventListener(this.eventName, (e) => { this.show(e) });
+        this.element.addEventListener(this.eventName, (e) => { this.show(e) });
         if (this.eventName !== 'click') {
-            elm.addEventListener('mouseout', (e) => { this.hide(e) })
+            this.element.addEventListener('mouseout', (e) => { this.hide(e) })
         }
     }
+
     closeTooltip(e) {
-        let element = document.getElementById(this.element.getAttribute('aria-describedby'));
-        if (!e || !element.contains(e.target)) {
-            if (element.classList.contains('hcl-remove-tooltip')) {
-                document.body.removeChild(element);
+        let tooltip = document.getElementById(this.element.getAttribute('aria-describedby'));
+        if (!e || !tooltip.contains(e.target)) {
+            if (tooltip.classList.contains(`${PREFIX}-remove-tooltip`)) {
+                document.body.removeChild(tooltip);
             } else {
-                element.classList.remove('hcl-tooltip-show');
-                element.style.display = 'none';
+                tooltip.classList.remove(`${PREFIX}-tooltip-show`);
+                tooltip.style.display = 'none';
             }
             EventManager.removeEvent('click');
             EventManager.removeEvent('scroll', true);
         }
     }
+
     show(e) {
-        var tooltip;
-        var icon;
+        let tooltip = null;
+        let icon = null;
         if (this.type === 'definition' && this.eventName !== 'click') {
-            this.element.classList.add('hcl-tooltip-dottedline');
+            this.element.classList.add(`${PREFIX}-tooltip-dottedline`);
         }
         let elementId = 'tooltip-' + (elementNo++);
-        this.element.setAttribute('aria-describedby', elementId)
         if (this.dataValue.startsWith('#')) {
-            var content = document.getElementById(this.dataValue.substr(1));
+            let content = document.getElementById(this.dataValue.substr(1));
             tooltip = content.parentElement;
-            tooltip.setAttribute('id', elementId)
             tooltip.style.display = 'block';
             icon = content.parentElement.children[0];
         } else {
+            this.element.setAttribute('aria-describedby', elementId)
             tooltip = document.createElement('div');
             tooltip.setAttribute('id', elementId);
-            tooltip.className = 'hcl-tooltip hcl-remove-tooltip hcl-tooltip-' + this.type;
+            tooltip.className = `${PREFIX}-tooltip ${PREFIX}-remove-tooltip ${PREFIX}-tooltip-${this.type}`;
             if (this.eventName === 'click') {
                 tooltip.setAttribute('data-focus-on-click', true);
-                tooltip.className += ' hcl-tooltip-show';
+                tooltip.className += ` ${PREFIX}-tooltip-show`;
             }
-            var icon = document.createElement('div');
-            icon.className = 'hcl-tooltip-arrow';
-            var content = document.createElement('div');
+            icon = document.createElement('div');
+            icon.className = `${PREFIX}-tooltip-arrow`;
+            let content = document.createElement('div');
             content.innerHTML = this.dataValue;
             tooltip.appendChild(icon);
             tooltip.appendChild(content);
             document.body.appendChild(tooltip);
         }
         if (this.eventName === 'click') {
-            tooltip.className += ' hcl-tooltip-show';
+            tooltip.className += ` ${PREFIX}-tooltip-show`;
             EventManager.addEvent('click', (e) => { this.closeTooltip(e) });
             EventManager.addEvent('scroll', (e) => { this.updatePositionOnScroll(e) }, true);
         }
         this.tooltipDirection(this.element, tooltip, icon, this.direction, this.type);
         e.stopPropagation();
     }
+
     hide() {
         if (this.type === 'definition') {
-            this.element.classList.remove('hcl-tooltip-dottedline');
+            this.element.classList.remove(`${PREFIX}-tooltip-dottedline`);
         }
         if (this.dataValue.startsWith('#')) {
-            var content = document.getElementById(this.dataValue.substr(1));
+            let content = document.getElementById(this.dataValue.substr(1));
             content.parentElement.style.display = 'none';
         } else {
-            document.body.removeChild(document.querySelector('.hcl-remove-tooltip'));
+            document.body.removeChild(document.querySelector(`.${PREFIX}-remove-tooltip`));
         }
     }
+
     tooltipDirection(parent, tooltip, icon, posHorizontal, type) {
         const dist = 10;
-        var parentCoords = parent.getBoundingClientRect();
+        let parentCoords = parent.getBoundingClientRect();
         let direction = this.getDirection(parentCoords, tooltip, dist, posHorizontal);
         icon.setAttribute('data-direction', direction);
         this.showTooltip(parentCoords, tooltip, icon, direction, dist, type)
     }
+
     getRem(value) {
         return (value / 16) + 'rem';
     }
+
     showTooltip(parentCoords, tooltip, icon, posHorizontal, dist, type) {
         let left = 0;
         let top = 0;
@@ -134,7 +148,7 @@ class Tooltip {
                     tooltip.style.top = this.getRem(top + offsetY)
                     icon.style.top = this.getRem(tooltip.offsetHeight / 2 - arrowSize)
                 }
-                tooltip.style.left = this.getRem(left + offsetX)
+                tooltip.style.left = this.getRem(left + offsetX);
                 break;
             }
             case 'right': {
@@ -212,6 +226,7 @@ class Tooltip {
             }
         }
     }
+    
     getDirection(parentCoords, tooltip, dist, posHorizontal) {
         let newDirection = posHorizontal;
         switch (posHorizontal) {

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    
+
 
 </head>
 
@@ -1253,19 +1253,13 @@
         </main>
         <script src="./js/index.js"></script>
         <script>
-            let tooltipList = Array.from(document.querySelectorAll("[data-tooltip]"));
-            tooltipList.forEach((tooltip) => {
-                new Tooltip(tooltip);
+            patron.dropdown(".hcl-dropdown.top", {
+                position: "top", onChange: (element, value) => {
+                    console.log(element, value);
+                }
             })
+            patron.tooltip("[data-tooltip]")
         </script>
-            <!-- AVAILABLE COMPONENTS ENDS -->
-        </main>
-        <script src="./js/index.js"></script>
-    <script>
-        patron.dropdown(".hcl-dropdown.top", { position : "top", onChange : (element, value)=>{
-            console.log(element, value);
-        }})
-    </script>
 </body>
 
 </html>
