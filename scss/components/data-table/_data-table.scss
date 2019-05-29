@@ -1,0 +1,121 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+.#{$prefix}-data-table {
+    width: 100%;
+    border: 0.0625rem solid var(--grey-lighter);
+
+    thead,
+    tbody {
+        tr {
+
+            th,
+            td {
+                background-color: transparent;
+                border-top: 0.0625rem solid var(--grey-lighter);
+                padding-left: 0.75rem;
+                text-align: left;
+                height: 3rem;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    thead {
+        tr {
+            background-color: rgba(0, 102, 179, 0.10);
+
+            th,
+            td {
+                font-size: 0.875rem;
+                color: var(--dark-blue);
+                letter-spacing: 0;
+                line-height: 1.125rem;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            background-color: var(--white);
+
+            &:hover {
+
+                td {
+                    background-color: rgba(0, 102, 179, 0.10);
+                    border-top: 0.0625rem solid var(--blue);
+                    border-bottom: 0.0625rem solid var(--blue);
+
+                    &:first-child {
+                        border-left: 0.0625rem solid var(--blue);
+                    }
+
+                    &:last-child {
+                        border-right: 0.0625rem solid var(--blue);
+                    }
+                }
+            }
+
+            td {
+                padding-left: 0.75rem;
+                font-size: 0.875rem;
+                color: var(--dark-blue);
+                line-height: 1.5rem;
+                height: 3rem;
+                vertical-align: middle;
+            }
+        }
+    }
+
+
+    &-zebra {
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    background-color: var(--white);
+                }
+
+                &:nth-child(odd) {
+                    background-color: rgba(0, 102, 179, 0.04);
+                }
+            }
+        }
+    }
+
+    &-compact {
+
+        thead,
+        tbody {
+            tr {
+
+                th,
+                td {
+                    height: 1.5rem;
+                }
+            }
+        }
+    }
+
+    &-tall {
+
+        thead,
+        tbody {
+            tr {
+
+                th,
+                td {
+                    height: 4rem;
+                }
+            }
+        }
+    }
+
+    &-borderless {
+        border: 0.0625rem solid transparent;
+    }
+}
