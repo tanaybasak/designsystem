@@ -1,7 +1,10 @@
-/* HCL design system following type of buttons - primary, secondary, outline & ghost. 
-   Primary is default and color is HCL theme.
-   Danger is only applicable when use-case of delete/cancel is.
-*/
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
 
 .#{$prefix}-form-item {
     .#{$prefix}-label {
