@@ -1,12 +1,14 @@
 import "../scss/main.scss";
 import "./modal";
 import "./tabs";
+import Tabs from "./tabsmodified";
 import "./content-switcher";
 import Dropdown from "./dropdown";
 import { isElement } from "./utils/dom";
 
 const ComponentList = {
-  dropdow: Dropdown
+  dropdow: Dropdown,
+  tabs: Tabs
 };
 
 const attachElements = (selector, options, plugin) => {
@@ -26,6 +28,9 @@ const attachElements = (selector, options, plugin) => {
 export const components = {
   dropdown: function(selector, options) {
     attachElements(selector, options, Dropdown);
+  },
+  tabs: function(selector, options) {
+    attachElements(selector, options, Tabs);
   }
 };
 
