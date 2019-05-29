@@ -6,13 +6,6 @@
  *******************************************************************
  */
 
-%title-font {
-    font-size: 0.875rem;
-    color: var(--dark-blue);
-    letter-spacing: 0;
-    line-height: 1.125rem;
-}
-
 .#{$prefix}-data-table {
     width: 100%;
     border: 0.0625rem solid var(--grey-lighter);
@@ -39,17 +32,10 @@
 
             th,
             td {
-                @extend %title-font;
-
-                .#{$prefix}-table-sort {
-                    background-color: transparent;
-                    outline: none;
-                    @extend %title-font;
-
-                    .#{$prefix}-table-header-label {
-                        @extend %title-font;
-                    }
-                }
+                font-size: 0.875rem;
+                color: var(--dark-blue);
+                letter-spacing: 0;
+                line-height: 1.125rem;
             }
         }
     }
