@@ -1,5 +1,6 @@
 import EventManager from './eventManager';
 import { PREFIX } from './utils/config';
+import { getRem } from  './utils/dom';
 let commonElements = {};
 let elementNo = 1;
 
@@ -54,7 +55,7 @@ class Tooltip {
                 tooltip.classList.remove(`${PREFIX}-tooltip-show`);
                 tooltip.style.display = 'none';
             }
-            EventManager.removeEvent('click');
+            EventManager.removeEvent('click',true);
             EventManager.removeEvent('scroll', true);
         }
     }
@@ -90,7 +91,7 @@ class Tooltip {
         }
         if (this.eventName === 'click') {
             tooltip.className += ` ${PREFIX}-tooltip-show`;
-            EventManager.addEvent('click', (e) => { this.closeTooltip(e) });
+            EventManager.addEvent('click', (e) => { this.closeTooltip(e) } , true);
             EventManager.addEvent('scroll', (e) => { this.updatePositionOnScroll(e) }, true);
         }
         this.tooltipDirection(this.element, tooltip, icon, this.direction, this.type);
@@ -117,10 +118,6 @@ class Tooltip {
         this.showTooltip(parentCoords, tooltip, icon, direction, dist, type)
     }
 
-    getRem(value) {
-        return (value / 16) + 'rem';
-    }
-
     showTooltip(parentCoords, tooltip, icon, posHorizontal, dist, type) {
         let left = 0;
         let top = 0;
@@ -138,17 +135,17 @@ class Tooltip {
                 bottom = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 + (tooltip.offsetHeight / 2);
                 if (top < 0) {
                     top = 0;
-                    tooltip.style.top = this.getRem(top + offsetY)
-                    icon.style.top = this.getRem(parentCoords.top + (parentCoords.height / 2) - arrowSize)
+                    tooltip.style.top = getRem(top + offsetY)
+                    icon.style.top = getRem(parentCoords.top + (parentCoords.height / 2) - arrowSize)
                 } else if (bottom > window.innerHeight) {
                     bottom = 0;
-                    tooltip.style.bottom = this.getRem(bottom - offsetY)
-                    icon.style.bottom = this.getRem((window.innerHeight - (parentCoords.bottom - (parentCoords.height / 2))) - arrowSize);
+                    tooltip.style.bottom = getRem(bottom - offsetY)
+                    icon.style.bottom = getRem((window.innerHeight - (parentCoords.bottom - (parentCoords.height / 2))) - arrowSize);
                 } else {
-                    tooltip.style.top = this.getRem(top + offsetY)
-                    icon.style.top = this.getRem(tooltip.offsetHeight / 2 - arrowSize)
+                    tooltip.style.top = getRem(top + offsetY)
+                    icon.style.top = getRem(tooltip.offsetHeight / 2 - arrowSize)
                 }
-                tooltip.style.left = this.getRem(left + offsetX);
+                tooltip.style.left = getRem(left + offsetX);
                 break;
             }
             case 'right': {
@@ -157,17 +154,17 @@ class Tooltip {
                 left = parseInt(parentCoords.right) + dist;
                 if (top < 0) {
                     top = 0;
-                    tooltip.style.top = this.getRem(top + offsetY)
-                    icon.style.top = this.getRem(parentCoords.top + (parentCoords.height / 2) - arrowSize)
+                    tooltip.style.top = getRem(top + offsetY)
+                    icon.style.top = getRem(parentCoords.top + (parentCoords.height / 2) - arrowSize)
                 } else if (bottom > window.innerHeight) {
                     bottom = 0;
-                    tooltip.style.bottom = this.getRem(bottom - offsetY)
-                    icon.style.bottom = this.getRem((window.innerHeight - parentCoords.bottom + (parentCoords.height / 2)) - arrowSize)
+                    tooltip.style.bottom = getRem(bottom - offsetY)
+                    icon.style.bottom = getRem((window.innerHeight - parentCoords.bottom + (parentCoords.height / 2)) - arrowSize)
                 } else {
-                    tooltip.style.top = this.getRem(top + offsetY)
-                    icon.style.top = this.getRem(tooltip.offsetHeight / 2 - arrowSize)
+                    tooltip.style.top = getRem(top + offsetY)
+                    icon.style.top = getRem(tooltip.offsetHeight / 2 - arrowSize)
                 }
-                tooltip.style.left = this.getRem(left + offsetX);
+                tooltip.style.left = getRem(left + offsetX);
                 break;
             }
             case 'top': {
@@ -176,25 +173,25 @@ class Tooltip {
                 top = parseInt(parentCoords.top) - tooltip.offsetHeight - dist;
                 if (left < 0) {
                     left = 0;
-                    tooltip.style.left = this.getRem(left + offsetX)
-                    icon.style.left = this.getRem((parentCoords.left + parentCoords.width / 2) - (arrowSize));
+                    tooltip.style.left = getRem(left + offsetX)
+                    icon.style.left = getRem((parentCoords.left + parentCoords.width / 2) - (arrowSize));
                 } else if (right > window.innerWidth) {
                     right = 0;
-                    tooltip.style.right = this.getRem(right - offsetX)
-                    icon.style.right = this.getRem(((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize))
+                    tooltip.style.right = getRem(right - offsetX)
+                    icon.style.right = getRem(((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize))
                 } else {
-                    tooltip.style.left = this.getRem(left + offsetX)
-                    icon.style.left = this.getRem((tooltip.offsetWidth / 2) - arrowSize);
+                    tooltip.style.left = getRem(left + offsetX)
+                    icon.style.left = getRem((tooltip.offsetWidth / 2) - arrowSize);
                 }
-                tooltip.style.top = this.getRem(top + offsetY);
+                tooltip.style.top = getRem(top + offsetY);
                 break;
             }
             case 'top left': {
                 left = parseInt(parentCoords.left);
                 top = parseInt(parentCoords.top) - tooltip.offsetHeight - dist;
-                tooltip.style.left = this.getRem(left + offsetX)
-                tooltip.style.top = this.getRem(top + offsetY)
-                icon.style.left = this.getRem((parentCoords.width / 2) - arrowSize);
+                tooltip.style.left = getRem(left + offsetX)
+                tooltip.style.top = getRem(top + offsetY)
+                icon.style.left = getRem((parentCoords.width / 2) - arrowSize);
                 break;
             }
             case 'bottom': {
@@ -203,25 +200,25 @@ class Tooltip {
                 top = parseInt(parentCoords.bottom) + dist;
                 if (left < 0) {
                     left = 0;
-                    tooltip.style.left = this.getRem(left + offsetX)
-                    icon.style.left = this.getRem((parentCoords.left + parentCoords.width / 2) - (arrowSize))
+                    tooltip.style.left = getRem(left + offsetX)
+                    icon.style.left = getRem((parentCoords.left + parentCoords.width / 2) - (arrowSize))
                 } else if (right > window.innerWidth) {
                     right = 0;
-                    tooltip.style.right = this.getRem(right - offsetX)
-                    icon.style.right = this.getRem(((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize))
+                    tooltip.style.right = getRem(right - offsetX)
+                    icon.style.right = getRem(((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize))
                 } else {
-                    tooltip.style.left = this.getRem(left + offsetX)
-                    icon.style.left = this.getRem((tooltip.offsetWidth / 2) - (arrowSize))
+                    tooltip.style.left = getRem(left + offsetX)
+                    icon.style.left = getRem((tooltip.offsetWidth / 2) - (arrowSize))
                 }
-                tooltip.style.top = this.getRem(top + offsetY);
+                tooltip.style.top = getRem(top + offsetY);
                 break;
             }
             case 'bottom left': {
                 left = parseInt(parentCoords.left);
                 top = parseInt(parentCoords.bottom) + dist;
-                tooltip.style.left = this.getRem(left + offsetX)
-                tooltip.style.top = this.getRem(top + offsetY)
-                icon.style.left = this.getRem((parentCoords.width / 2) - arrowSize);
+                tooltip.style.left = getRem(left + offsetX)
+                tooltip.style.top = getRem(top + offsetY)
+                icon.style.left = getRem((parentCoords.width / 2) - arrowSize);
                 break;
             }
         }
