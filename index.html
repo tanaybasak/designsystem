@@ -612,15 +612,15 @@
                     <nav data-tabs role="navigation">
                         <ul role="tablist" class="hcl-tabs-nav">
                             <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab1" data-target="tab1">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 1</a>
+                                <a class="hcl-tabs-nav-link" href="#tab1">Tab Label 1</a>
                             </li>
                             <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab2" aria-selected="true"
                                 data-target="tab2">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 2</a>
+                                <a class="hcl-tabs-nav-link" href="#tab2">Tab Label 2</a>
                             </li>
                             <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab3"
                                 data-target="tab3">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 3</a>
+                                <a class="hcl-tabs-nav-link" href="#tab3">Tab Label 3</a>
                             </li>
                         </ul>
                     </nav>
@@ -637,19 +637,19 @@
                     </section>
                 </section>
 
-                <section class="hcl-tab">
+                <section class="hcl-tab" data-component="tabs">
                     <nav data-tabs role="navigation">
                         <ul role="tablist" class="hcl-tabs-nav">
                             <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab4" data-target="tab4">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 4</a>
+                                <a class="hcl-tabs-nav-link" href="#tab4">Tab Label 4</a>
                             </li>
                             <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab5" aria-selected="true"
                                 data-target="tab5">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 5</a>
+                                <a class="hcl-tabs-nav-link" href="#tab5">Tab Label 5</a>
                             </li>
                             <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab6"
                                 data-target="tab6">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 6</a>
+                                <a class="hcl-tabs-nav-link" href="#tab6">Tab Label 6</a>
                             </li>
                         </ul>
                     </nav>
@@ -1021,7 +1021,7 @@
                     </section>
                 </div>
                 <div class="hcl-col">
-                    <section class="hcl-dropdown top">
+                    <section class="hcl-dropdown top" data-component="dropdown">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
                             Dropdown Top
                         </button>
@@ -1185,11 +1185,11 @@
         </main>
         <script src="./js/index.js"></script>
         <script>
-            // patron.dropdown(".hcl-dropdown.top", {
-            //     position: "top", onChange: (element, value) => {
-            //         console.log(element, value);
-            //     }
-            // })
+            patron.dropdown(".hcl-dropdown.top", {
+                position: "top", onChange: (element, value) => {
+                    console.log(element, value);
+                }
+            })
         </script>
 </body>
 

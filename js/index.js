@@ -7,40 +7,55 @@ import Dropdown from "./dropdown";
 import { isElement } from "./utils/dom";
 
 const ComponentList = {
-  dropdow: Dropdown,
-  tabs: Tabs
+    dropdow: Dropdown
+
 };
 
+const AutoInit = [
+    { comp: Tabs, selector: '[data-component="tabs"]' }
+];
+
 const attachElements = (selector, options, plugin) => {
-  document.querySelectorAll(selector).forEach(element => {
-    // Validate element type.
-    if (isElement(element)) {
-      const component = new plugin(element, options);
-      if (typeof component.attachEvents === "function") {
-        component.attachEvents.call(component, element);
-      }
-    } else {
-      console.error("Invalid element provided.");
-    }
-  });
+    document.querySelectorAll(selector).forEach(element => {
+        // Validate element type.
+        if (isElement(element)) {
+            const component = new plugin(element, options);
+            if (typeof component.attachEvents === "function") {
+                component.attachEvents.call(component, element);
+            }
+        } else {
+            console.error("Invalid element provided.");
+        }
+    });
 };
 
 export const components = {
-  dropdown: function(selector, options) {
-    attachElements(selector, options, Dropdown);
-  },
-  tabs: function(selector, options) {
-    attachElements(selector, options, Tabs);
-  }
+    dropdown: function (selector, options) {
+        attachElements(selector, options, Dropdown);
+    },
+    tabs: function (selector, options) {
+        attachElements(selector, options, Tabs);
+    }
 };
 
 for (const componentName in ComponentList) {
-  if (ComponentList.hasOwnProperty(componentName)) {
-    const component = ComponentList[componentName];
-    component.handleDataAPI();
-  }
+    if (ComponentList.hasOwnProperty(componentName)) {
+        const component = ComponentList[componentName];
+        component.handleDataAPI();
+    }
+}
+
+const DOMinit = () => {
+    AutoInit.forEach((Obj) => {
+        if (typeof Obj['comp'] === "function" && Obj['selector'] !== '') {
+            attachElements(Obj['selector'], {}, Obj['comp']);
+        }
+    });
 }
 
 if (window) {
-  window.patron = components;
+    window.patron = components;
+    document.addEventListener("DOMContentLoaded", () => {
+        DOMinit();
+    });
 }
