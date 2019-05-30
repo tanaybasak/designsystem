@@ -8,8 +8,7 @@ class Tabs {
         this.tabs = Array.from(element.querySelectorAll("li"));
         this.tabpanels = Array.from(element.querySelectorAll(`.${PREFIX}-tabcontent div.${PREFIX}-tabs-panel`));
         this.events = {
-            onChange: new Event('onChange'),
-            onBeforeLoad: new Event('onBeforeLoad')
+            onChange: new Event('onChange')
         }
         this.state = {
             selectedIndex: 0,
@@ -33,6 +32,7 @@ class Tabs {
         }
 
         if (tabId && !tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
+            this.onBeforeLoad
             this.toggleTab(tabId);
             this.toggleTabPanel(tabId);
         }
@@ -40,10 +40,6 @@ class Tabs {
 
     onChange = (e) => {
         console.log(Object.assign(e, { selectedIndex: this.state.selectedIndex }));
-    }
-
-    onBeforeLoad = (e) => {
-        console.log(e);
     }
 
     toggleTab = (target) => {

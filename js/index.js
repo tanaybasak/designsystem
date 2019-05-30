@@ -55,7 +55,5 @@ const DOMinit = () => {
 
 if (window) {
     window.patron = components;
-    document.addEventListener("DOMContentLoaded", () => {
-        DOMinit();
-    });
+    document.addEventListener("DOMContentLoaded", DOMinit);
 }
