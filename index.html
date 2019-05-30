@@ -1098,17 +1098,19 @@
             <article id="checkbox" class="m-1 p-2 colBorder">
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Horizontally arranged (default)</legend>
-                    <div class="hcl-checkbox-item">
-                        <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
-                        <label class="hcl-checkbox-label" for="check1">1 (default)</label>
-                    </div>
-                    <div class="hcl-checkbox-item">
-                        <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
-                        <label class="hcl-checkbox-label" for="check2">2</label>
-                    </div>
-                    <div class="hcl-checkbox-item">
-                        <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
-                        <label class="hcl-checkbox-label" for="check3">3 (disabled)</label>
+                    <div class="hcl-checkbox-group">
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
+                            <label class="hcl-checkbox-label" for="check1">1 (default)</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
+                            <label class="hcl-checkbox-label" for="check2">2</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
+                            <label class="hcl-checkbox-label" for="check3">3 (disabled)</label>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset class="hcl-fieldset">
@@ -1279,6 +1281,70 @@
                 </div>
             </section>
 
+            <section class="m-1 p-2 colBorder">
+                <table class="hcl-data-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-header" class="hcl-checkbox" type="checkbox" value="all">
+                                    <label for="hcl-checkbox-header" class="hcl-checkbox-label"></label>
+                                </div>
+                            </th>
+                            <th>Name</th>
+                            <th>Protocol</th>
+                            <th>Port</th>
+                            <th>Rule</th>
+                            <th>Attached Groups</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-1" class="hcl-checkbox" type="checkbox" value="row-1" />
+                                    <label for="hcl-checkbox-1" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 1</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-2" class="hcl-checkbox" type="checkbox" value="row-2" />
+                                    <label for="hcl-checkbox-2" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 2</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-3" class="hcl-checkbox" type="checkbox" value="row-3" />
+                                    <label for="hcl-checkbox-3" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 3</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
         <script src="./js/index.js"></script>
