@@ -1,82 +1,109 @@
-// (function () {
-//     var Tabs = {
-//         selectors: {
-//             tabs: 'hcl-tabs-nav',
-//             tabPanel: 'hcl-tabs-panel',
-//             disabledTabPanel: 'hcl-tabs-disabled',
-//             selectedTabPanel: 'active',
-//             activeTab: 'active'
-//         },
-//         tablist: [],
-//         init: function () {
-//             this.tablist = Array.from(document.querySelectorAll('nav[data-tabs]')) || [];
-//             this.bindEventsForEachTab();
-//         },
-//         bindEventsForEachTab: function () {
-//             let me_ = this;
-//             this.tablist.forEach(function (item) {
-//                 let tabs = Array.from(item.querySelectorAll('li[role=tab]'));
-//                 for (let i = 0; i < tabs.length; i++) {
-//                     tabs[i].addEventListener('click', me_.clickEventListener);
-//                 }
-//             });
-//         },
-//         clickEventListener: function (event) {
-//             const currentTarget = event.currentTarget;
-//             const target = event.target;
-//             const isLi = currentTarget === target; // Li
-//             let tabID, element, parentIdx;
-//             if (isLi) {
-//                 element = currentTarget;
-//                 tabID = currentTarget.dataset.target;
-//             } else {
-//                 element = target.parentElement;
-//                 tabID = target.parentElement.dataset.target;
-//             }
-//             if (!element.classList.contains(Tabs.selectors.disabledTabPanel)) {
-//                 for (let j = 0; j < Tabs.tablist.length; j++) {
-//                     if (Tabs.tablist[j].contains(element)) {
-//                         parentIdx = j;
-//                         break;
-//                     }
-//                 }
-//                 Tabs.findTabs(tabID, parentIdx);
-//             }
-//         },
-//         findTabs: function (tabID, pIdx) {
-//             let me_ = this;
-//             let children = me_.tablist[pIdx].children,
-//                 tabChildren;
-//             for (let u = 0; u < children.length; u++) {
-//                 // All Tab Loop
-//                 if (children[u].classList.contains(Tabs.selectors.tabs)) {
-//                     tabChildren = children[u].children;
-//                     break;
-//                 }
-//             }
-//             me_.toggleTab(tabID, tabChildren);
-//             me_.toggleTabPanel(me_.tablist[pIdx].nextElementSibling.children);
-//             document.getElementById(`${tabID}`).classList.add(Tabs.selectors.activeTab);
-//         },
-//         toggleTab: function (tId, tchildren) {
-//             if (tchildren) {
-//                 for (let p = 0; p < tchildren.length; p++) {
-//                     tchildren[p].classList.remove(Tabs.selectors.selectedTabPanel);
-//                     let href = tchildren[p].dataset.target;
-//                     if (href === tId) {
-//                         tchildren[p].classList.add(Tabs.selectors.selectedTabPanel);
-//                     }
-//                 }
-//             }
-//         },
-//         toggleTabPanel: function (tabpanels) {
-//             if (tabpanels) {
-//                 let len = tabpanels.length;
-//                 for (let i = 0; i < len; i++) {
-//                     tabpanels[i].classList.remove('active');
-//                 }
-//             }
-//         }
-//     };
-//     Tabs.init();
-// })();
+import { PREFIX } from "./utils/config";
+import { NOOP } from "./utils/functions";
+import handleDataBinding from "./utils/data-api";
+
+class Tabs {
+    constructor(element, options) {
+        this.element = element;
+        this.tabs = Array.from(element.querySelectorAll("li"));
+        this.tabpanels = Array.from(element.querySelectorAll(`.${PREFIX}-tabcontent div.${PREFIX}-tabs-panel`));
+        this.events = {
+            onChange: new Event('onChange'),
+            onBeforeLoad: new Event('onBeforeLoad')
+        }
+        this.state = {
+            selectedIndex: 0,
+            onChange: NOOP,
+            ...options
+        };
+    }
+
+    clickEventListener = (e) => {
+        e.preventDefault();
+        const { currentTarget, target } = e;
+        const isLi = currentTarget === target;
+        let tabId, tabItem;
+        if (isLi) {
+            tabId = currentTarget.firstElementChild.getAttribute("href").slice(1);
+            tabItem = currentTarget;
+        }
+        else {
+            tabId = target.getAttribute("href").slice(1);
+            tabItem = target.parentElement;
+        }
+
+        if (tabId && !tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
+            this.toggleTab(tabId);
+            this.toggleTabPanel(tabId);
+        }
+    }
+
+    onChange = (e) => {
+        console.log(Object.assign(e, { selectedIndex: this.state.selectedIndex }));
+    }
+
+    onBeforeLoad = (e) => {
+        console.log(e);
+    }
+
+    toggleTab = (target) => {
+        this.tabs.forEach((item) => {
+            if (item) {
+                item.classList.remove("active");
+                item.setAttribute("aria-selected", false);
+            }
+        });
+        this.selectTab(target);
+    }
+
+    selectTab = (target) => {
+        const link = this.element.querySelector(`a[href="#${target}"]`);
+        if (document.body.contains(link)) {
+            if (!link.parentElement.classList.contains(`${PREFIX}-tabs-disabled`)) {
+                link.parentElement.classList.add('active');
+                link.parentElement.setAttribute("aria-selected", true);
+            }
+        }
+        this.changeState();
+        link.parentElement.dispatchEvent(this.events.onChange);
+    }
+
+    toggleTabPanel = (tabId) => {
+        this.tabpanels.forEach((item) => {
+            if (item) {
+                item.classList.remove("active");
+            }
+        });
+        this.selectTabPanel(tabId);
+    }
+
+    selectTabPanel = (tabId) => {
+        const tabPanel = this.element.querySelector(`div[id="${tabId}"]`);
+        if (tabPanel) {
+            tabPanel.classList.add("active");
+        }
+    }
+
+    changeState = () => {
+        this.state.selectedIndex = this.tabs.findIndex((item) => {
+            return (item.classList.contains("active"));
+        });
+    }
+
+    attachEvents = () => {
+        const me_ = this;
+
+        this.tabs.forEach(function (item) {
+            item.addEventListener('click', me_.clickEventListener);
+            item.addEventListener('onChange', me_.onChange);
+            item.addEventListener('onBeforeLoad', me_.onBeforeLoad);
+        });
+    }
+
+    static handleDataAPI = () => {
+        handleDataBinding("tabs", function (element) {
+            return new Tabs(element, {});
+        })
+    }
+}
+export default Tabs;

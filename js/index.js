@@ -1,7 +1,7 @@
 import "../scss/main.scss";
 import "./modal";
 import "./tabs";
-import Tabs from "./tabsmodified";
+import Tabs from "./tabs";
 import "./content-switcher";
 import Dropdown from "./dropdown";
 import { isElement } from "./utils/dom";
