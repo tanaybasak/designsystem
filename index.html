@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+
 </head>
 
 <body>
@@ -634,6 +636,35 @@
                         </div>
                     </section>
                 </section>
+
+                <section class="hcl-tab">
+                    <nav data-tabs role="navigation">
+                        <ul role="tablist" class="hcl-tabs-nav">
+                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab4" data-target="tab4">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 4</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab5" aria-selected="true"
+                                data-target="tab5">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 5</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab6"
+                                data-target="tab6">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 6</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="hcl-tabcontent">
+                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel active">
+                            <p>Tabbable Content 4</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab5" id="tab5" class="hcl-tabs-panel">
+                            <p>Tabbable Content 5</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab6" id="tab6" class="hcl-tabs-panel">
+                            <p>Tabbable Content 6</p>
+                        </div>
+                    </section>
+                </section>
             </section>
 
             <!-- <section class="hcl-lightbox" >    
@@ -978,9 +1009,9 @@
             <!-- Dropdown -->
             <section class="hcl-row m-3">
                 <div class="hcl-col">
-                    <section class="hcl-dropdown hcl-droptop">
+                    <section class="hcl-dropdown" data-component="dropdown">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
-                            Dropdown top
+                            Dropdown Bottom
                         </button>
                         <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
                             <li class="hcl-dropdown-item">A</li>
@@ -990,9 +1021,9 @@
                     </section>
                 </div>
                 <div class="hcl-col">
-                    <section class="hcl-dropdown">
+                    <section class="hcl-dropdown top">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
-                            Dropdown bottom
+                            Dropdown Top
                         </button>
                         <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
                             <li class="hcl-dropdown-item">A</li>
@@ -1032,17 +1063,19 @@
             <article id="radio" class="m-1 p-2 colBorder">
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Horizontally arranged (default)</legend>
-                    <div class="hcl-radio-item">
-                        <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" />
-                        <label class="hcl-radio-label" for="radio1">1 (default)</label>
-                    </div>
-                    <div class="hcl-radio-item">
-                        <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" checked />
-                        <label class="hcl-radio-label" for="radio2">2</label>
-                    </div>
-                    <div class="hcl-radio-item">
-                        <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
-                        <label class="hcl-radio-label" for="radio3">3 (disabled)</label>
+                    <div class="hcl-radio-group">
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" />
+                            <label class="hcl-radio-label" for="radio1">1 (default)</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" checked />
+                            <label class="hcl-radio-label" for="radio2">2</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
+                            <label class="hcl-radio-label" for="radio3">3 (disabled)</label>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset class="hcl-fieldset">
@@ -1067,17 +1100,19 @@
             <article id="checkbox" class="m-1 p-2 colBorder">
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Horizontally arranged (default)</legend>
-                    <div class="hcl-checkbox-item">
-                        <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
-                        <label class="hcl-checkbox-label" for="check1">1 (default)</label>
-                    </div>
-                    <div class="hcl-checkbox-item">
-                        <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
-                        <label class="hcl-checkbox-label" for="check2">2</label>
-                    </div>
-                    <div class="hcl-checkbox-item">
-                        <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
-                        <label class="hcl-checkbox-label" for="check3">3 (disabled)</label>
+                    <div class="hcl-checkbox-group">
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
+                            <label class="hcl-checkbox-label" for="check1">1 (default)</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
+                            <label class="hcl-checkbox-label" for="check2">2</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
+                            <label class="hcl-checkbox-label" for="check3">3 (disabled)</label>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset class="hcl-fieldset">
@@ -1150,8 +1185,72 @@
                     <button class="hcl-btn hcl-primary">Submit</button>
                 </form>
             </section>
-            <!-- Date Picker -->
-            <div class="hcl-row m-3">
+            <section class="m-1 p-2 colBorder">
+                <table class="hcl-data-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-header" class="hcl-checkbox" type="checkbox" value="all">
+                                    <label for="hcl-checkbox-header" class="hcl-checkbox-label"></label>
+                                </div>
+                            </th>
+                            <th>Name</th>
+                            <th>Protocol</th>
+                            <th>Port</th>
+                            <th>Rule</th>
+                            <th>Attached Groups</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-1" class="hcl-checkbox" type="checkbox" value="row-1" />
+                                    <label for="hcl-checkbox-1" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 1</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-2" class="hcl-checkbox" type="checkbox" value="row-2" />
+                                    <label for="hcl-checkbox-2" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 2</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-3" class="hcl-checkbox" type="checkbox" value="row-3" />
+                                    <label for="hcl-checkbox-3" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 3</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+             <!-- Date Picker -->
+             <div class="hcl-row m-3">
                 <div class="hcl-col">
                     <section class="hcl-datePicker">
                         <label>Date picker label</label>
@@ -1245,6 +1344,11 @@
         </main>
         <script src="./js/index.js"></script>
         <script>
+            patron.dropdown(".hcl-dropdown.top", {
+                position: "top", onChange: (element, value) => {
+                    console.log(element, value);
+                }
+            });
             patron.datePicker(".hcl-datePicker");
         </script>
 </body>

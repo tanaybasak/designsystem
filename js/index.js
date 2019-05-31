@@ -1,22 +1,52 @@
-import '../scss/main.scss';
-import './modal';
-import './tabs';
-import './content-switcher';
-import './dropdown';
+import "../scss/main.scss";
+import "./modal";
+import "./tabs";
+import "./content-switcher";
+import Dropdown from "./dropdown";
+import { isElement } from "./utils/dom";
 import DatePicker from "./datePicker";
 
-const attachElements = (selector, plugin) => {
-    document.querySelectorAll(selector).forEach(element => {
-        new plugin(element);
-    });
+const ComponentList = {
+  dropdow: Dropdown
 };
+
+const attachElements = (selector, options, plugin) => {
+  document.querySelectorAll(selector).forEach(element => {
+    // Validate element type.
+    if (isElement(element)) {
+      const component = new plugin(element, options);
+      if (typeof component.attachEvents === "function") {
+        component.attachEvents.call(component, element);
+      }
+    } else {
+      console.error("Invalid element provided.");
+    }
+  });
+};
+
+const attachElementsDatePicker = (selector, plugin) => {
+  document.querySelectorAll(selector).forEach(element => {
+    new plugin(element);
+  });
+};
+
 
 export const components = {
-    datePicker: function (selector) {
-        attachElements(selector, DatePicker);
-    }
+  dropdown: function(selector, options) {
+    attachElements(selector, options, Dropdown);
+  },
+  datePicker: function (selector) {
+    attachElementsDatePicker(selector, DatePicker);
+}
 };
 
+for (const componentName in ComponentList) {
+  if (ComponentList.hasOwnProperty(componentName)) {
+    const component = ComponentList[componentName];
+    component.handleDataAPI();
+  }
+}
+
 if (window) {
-    window.patron = components;
+  window.patron = components;
 }
