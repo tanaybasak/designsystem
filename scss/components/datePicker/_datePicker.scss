@@ -20,7 +20,7 @@
         >input {
             padding: 0 1rem 0 3rem;
             border: none;
-            width: 9.1875rem;
+            width: 9.4375rem;
             height: 2.5rem;
             border-bottom: 0.0625rem solid var(--dark-blue);
             background-color: rgba(70, 150, 210, 0.05);
@@ -86,8 +86,8 @@
 
     &-month>span,
     &-days>span {
-        height: 1.75rem;
-        width: 1.75rem;
+        height: 1.5rem;
+        width: 1.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -110,10 +110,11 @@
     &-days {
         height: 1.75rem;
         display: flex;
-        margin-bottom: .25rem;
+        margin: 0.625rem 0 .25rem 0;
         justify-content: space-around;
         align-items: center;
         font-size: 0.75rem;
+        padding: 0 1.75rem;
 
         >span {
             border-radius: 0;
@@ -126,6 +127,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        padding: 0 1.75rem;
 
         &-today {
             &:after {
@@ -144,8 +146,8 @@
         span {
             cursor: pointer;
             font-size: 0.75rem;
-            height: 1.5625rem;
-            width: 1.8rem;
+            height: 1.5rem;
+            width: 1.5rem;
             margin: 0.125rem;
             display: flex;
             align-items: center;
@@ -179,7 +181,7 @@
         z-index: 9;
         width: 17.5rem;
         height: 16.375rem;
-        padding: 1rem 1rem 0.25rem 1rem;
+        padding: 1rem 0.625rem 0.25rem 0.625rem;
         color: var(--blue-4);
 
         &-show {
