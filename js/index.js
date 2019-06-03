@@ -7,7 +7,8 @@ import { isElement } from "./utils/dom";
 import DatePicker from "./datePicker";
 
 const ComponentList = {
-  dropdow: Dropdown
+  dropdow: Dropdown,
+  // datePicker: DatePicker
 };
 
 const attachElements = (selector, options, plugin) => {
@@ -26,7 +27,16 @@ const attachElements = (selector, options, plugin) => {
 
 const attachElementsDatePicker = (selector, plugin) => {
   document.querySelectorAll(selector).forEach(element => {
-    new plugin(element);
+     // Validate element type.
+     console.log('isElement(element)',isElement(element));
+     if (isElement(element)) {
+       const component = new plugin(element);
+       if (typeof component.attachEvents === "function") {
+         component.attachEvents.call(component, element);
+       }
+     } else {
+       console.error("Invalid element provided.");
+     }
   });
 };
 
