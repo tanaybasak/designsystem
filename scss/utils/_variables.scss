@@ -40,6 +40,7 @@
     --warning: #FAC43B;
     --blue-light: #3d70b2;
     --black-light:#3B5060;
+    --black-lighter:#272D33;
 }
 
 // SASS VARIABLES
@@ -115,3 +116,13 @@ $nav-link-height: $font-size-base * $line-height-base+$nav-link-padding-y * 2 !d
 $navbar-brand-height: $navbar-brand-font-size * $line-height-base !default;
 $navbar-brand-padding-y: ($nav-link-height - $navbar-brand-height) / 2 !default;
 $navbar-hamburger-font-size: $font-size-base * 1.25 !default;
+//Tooltip
+$tooltip-default-max-width: 12.5rem;
+$tooltip-interactive-max-width: 15rem;
+$tooltip-arrow-size-default: 0.625rem;
+$tooltip-arrow-size-default-position: $tooltip-arrow-size-default/2;
+$tooltip-arrow-size-icon: 0.3125rem;
+$tooltip-arrow-size-icon-position: $tooltip-arrow-size-icon/2;
+$tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+0.0625rem;
+$tooltip-box-shadow:rgba(0, 0, 0, 0.10);
+$tooltip-zindex:5;

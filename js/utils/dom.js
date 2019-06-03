@@ -21,4 +21,9 @@ const trackDocumentClick = (element, callback) => {
   document.addEventListener("click", handler);
 };
 
-export { isElement, trackDocumentClick };
+// Converting px to rem
+const getRem = (value) => {
+    return (value / 16) + 'rem';
+}
+
+export { isElement, trackDocumentClick, getRem };

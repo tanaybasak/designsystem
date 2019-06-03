@@ -71,3 +71,15 @@ $inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "c
         @warn 'This is not define in the HCL design System! - `#{$which}`';
     }
 }
+
+@mixin groupOption($which) {
+    >.#{$prefix}-#{$which}-item:not(:first-of-type) {
+        margin-left: 1rem;
+    }
+
+    &.#{$prefix}-stack-vertical {
+        >.#{$prefix}-#{$which}-item:not(:first-of-type) {
+            margin-left: 0rem;
+        }
+    }
+}

@@ -5,13 +5,14 @@ import "./content-switcher";
 import Dropdown from "./dropdown";
 import './navigation';
 import { isElement } from "./utils/dom";
+import Tooltip from "./tooltip";
 
 const ComponentList = {
     dropdow: Dropdown
 };
 
 const attachElements = (selector, options, plugin) => {
-    document.querySelectorAll(selector).forEach(element => {
+    Array.from(document.querySelectorAll(selector)).forEach(element => {
         // Validate element type.
         if (isElement(element)) {
             const component = new plugin(element, options);
@@ -27,6 +28,9 @@ const attachElements = (selector, options, plugin) => {
 export const components = {
     dropdown: function (selector, options) {
         attachElements(selector, options, Dropdown);
+    },
+    tooltip: function (selector, options) {
+        attachElements(selector, options, Tooltip);
     }
 };
 

@@ -83,12 +83,17 @@ label {
 }
 
 //Checkbox
+.#{$prefix}-checkbox-group,
+.#{$prefix}-radio-group {
+    display: flex;
+    flex-direction: row;
+    margin-top: .5rem;
+}
 
 .#{$prefix}-checkbox-item {
     position: relative;
-    display: inline-block;
-    margin-right: 1rem;
-    margin-top: 1rem;
+    display: flex;
+    align-items: center;
     user-select: none;
 
     .#{$prefix}-checkbox {
@@ -158,22 +163,18 @@ label {
     }
 }
 
-// Radio
-.#{$prefix}-radio-group,
 .#{$prefix}-checkbox-group {
-    margin-top: .5rem;
+    @include groupOption("checkbox");
 }
 
+// Radio
 .#{$prefix}-radio-item {
     position: relative;
-    display: inline-block;
-    margin-right: 1rem;
-    margin-top: 1rem;
+    display: flex;
     user-select: none;
 }
 
 .#{$prefix}-stack-vertical {
-    display: flex;
     flex-direction: column;
 
     .#{$prefix}-radio-item,
@@ -184,10 +185,6 @@ label {
         &:first-of-type {
             margin-top: 0.5rem;
         }
-
-        // &:last-of-type {
-        //     margin-bottom: 0.5rem;
-        // }
     }
 }
 
@@ -243,6 +240,10 @@ label {
         height: 1.125rem;
         width: 1.125rem;
     }
+}
+
+.#{$prefix}-radio-group {
+    @include groupOption("radio");
 }
 
 // Fieldset
