@@ -248,10 +248,7 @@ class DatePicker {
             } else {
                 const selectedDate = this.datePickerElm.querySelector(DOMstrings.inputDate).value;
                 if (isValidDate(selectedDate) && selectedDate !== '') {
-                    dateCtrl.setDateObject(selectedDate);
-                    UICtrl.initMonthYearPanel(dateCtrl.getCurrentMonthDetails());
-                    UICtrl.removeExistingDates();
-                    UICtrl.initDatePanel(dateCtrl.getCurrentMonthDetails());
+                    eventHandler(dateCtrl.setDateObject(selectedDate));
                 }
                 UICtrl.showDateContainer();
             }
@@ -274,9 +271,7 @@ class DatePicker {
                 // set current Date;
                 let currDateObj = dateCtrl.getDateObject();
                 currDateObj = dateCtrl.setDateObject(`${currDateObj.month + 1}/15/${event.target.value}`);
-                UICtrl.removeExistingDates();
-                UICtrl.initDatePanel(currDateObj);
-                UICtrl.initMonthYearPanel(currDateObj);
+                eventHandler(currDateObj);
                 UICtrl.hideErrorInvalidDate();
             } else {
                 UICtrl.showErrorInvalidDate();
@@ -296,10 +291,7 @@ class DatePicker {
         const dateChangeHandler = (event) => {
             UICtrl.hideDateContainer();
             if (isValidDate(event.target.value)) {
-                const currDateObj = dateCtrl.setDateObject(event.target.value);
-                UICtrl.removeExistingDates();
-                UICtrl.initDatePanel(currDateObj);
-                UICtrl.initMonthYearPanel(currDateObj);
+                eventHandler(dateCtrl.setDateObject(event.target.value));
                 UICtrl.hightlightSelectedDate(event.target.value);
                 UICtrl.hideErrorInvalidDate();
                 bindDateEvent();
@@ -308,38 +300,28 @@ class DatePicker {
             }
         };
 
-        const clearDates = () => {
+        const eventHandler = (dateObj) => {
             event.stopPropagation();
             event.preventDefault();
             UICtrl.removeExistingDates();
+            UICtrl.initMonthYearPanel(dateObj);
+            UICtrl.initDatePanel(dateObj);
         };
 
         const prevMonth = () => {
-            clearDates();
-            const prevMonthObj = dateCtrl.getPrevMonthDetails();
-            UICtrl.initMonthYearPanel(prevMonthObj);
-            UICtrl.initDatePanel(prevMonthObj);
+            eventHandler(dateCtrl.getPrevMonthDetails());
         };
 
         const nextMonth = () => {
-            clearDates();
-            const nextMonObj = dateCtrl.getNextMonthDetails();
-            UICtrl.initMonthYearPanel(nextMonObj);
-            UICtrl.initDatePanel(nextMonObj);
+            eventHandler(dateCtrl.getNextMonthDetails());
         };
 
         const yearIncrease = () => {
-            clearDates();
-            const incYearMonObj = dateCtrl.getYearIncreaseMonthDetails();
-            UICtrl.initMonthYearPanel(incYearMonObj);
-            UICtrl.initDatePanel(incYearMonObj);
+            eventHandler(dateCtrl.getYearIncreaseMonthDetails());
         };
 
         const yearDecrease = () => {
-            clearDates();
-            const decYearMonObj = dateCtrl.getYearDecreaseMonthDetails();
-            UICtrl.initMonthYearPanel(decYearMonObj);
-            UICtrl.initDatePanel(decYearMonObj);
+            eventHandler(dateCtrl.getYearDecreaseMonthDetails());
         };
 
         return {
