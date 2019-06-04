@@ -11,7 +11,7 @@ const ComponentList = {
     dropdow: Dropdown
 };
 
-const AutoInit = [
+const autoInit = [
     { comp: Tabs, selector: '[data-component="tabs"]' }
 ];
 
@@ -49,7 +49,7 @@ for (const componentName in ComponentList) {
 }
 
 const DOMinit = () => {
-    AutoInit.forEach((Obj) => {
+    autoInit.forEach((Obj) => {
         if (typeof Obj['comp'] === "function" && Obj['selector'] !== '') {
             attachElements(Obj['selector'], {}, Obj['comp']);
         }
