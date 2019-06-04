@@ -5,9 +5,6 @@ import handleDataBinding from "./utils/data-api";
 class DatePicker {
     constructor(element) {
         this.datePickerElm = element;
-        // console.log('this.datePickerElm', this.datePickerElm)
-        // console.log('in constructor')
-
     }
     // DatePicker Controller
     datePickerController = () => {
@@ -54,7 +51,6 @@ class DatePicker {
 
     // UI Controller
     UIController = () => {
-        // console.log('this.datePickerElm', this.datePickerElm)
         const DOMstrings = {
             showDateContainer: `${PREFIX}-datePicker-panel-show`,
             datePicked: `${PREFIX}-datePicker-date-picked`,
@@ -189,7 +185,6 @@ class DatePicker {
             // to initialize date panel
             initDatePanel: (curMonthObj) => {
                 initDatePanel(curMonthObj);
-                // console.log('this.datePickerElm', this.datePickerElm)
                 hightlightSelectedDate(this.datePickerElm.querySelector(DOMstrings.inputDate).value);
             },
             // returns DOMStrings
@@ -241,19 +236,11 @@ class DatePicker {
             this.datePickerElm.querySelector(DOMstrings.inputCalSVG).addEventListener('click', UICtrl.toggleDateContainer);
             this.datePickerElm.querySelector(DOMstrings.yearInput).addEventListener('change', yearChangeHandler);
             bindDateEvent();
-            console.log('elm',this.datePickerElm.querySelector(DOMstrings.inputDate));
-           
         };
 
         const bindDateEvent = () => {
-            // const dateElement = this.datePickerElm.querySelector(DOMstrings.datePanel).children;
-            // for (let i = 0; i < dateElement.length; i++) {
-            //     dateElement[i].addEventListener('click', UICtrl.selectDate);
-            // }
-
             const datePanel = this.datePickerElm.querySelector(DOMstrings.datePanel);
             datePanel.addEventListener('click', UICtrl.selectDate);
-          
         };
 
         const yearChangeHandler = (event) => {
@@ -341,10 +328,6 @@ class DatePicker {
 
     attachEvents = () => {
         const UICtrl = this.UIController();
-        const DOMstrings = UICtrl.getDOMstrings();
-        // trackDocumentClick(this.datePickerElm.querySelector(DOMstrings.inputDate), () => {
-        //     UICtrl.hideDateContainer();
-        // });
         this.controller(this.datePickerController(), UICtrl).init();
         UICtrl.toggleDateContainer();
     };
