@@ -159,6 +159,9 @@ class DatePicker {
 
         const showDateContainer = () => {
             this.datePickerElm.querySelector(DOMstrings.dateContainer).classList.add(DOMstrings.showDateContainer);
+            trackDocumentClick(this.datePickerElm.querySelector(DOMstrings.inputDate), () => {
+                hideDateContainer();
+            });
         };
 
         const removeExistingDates = () => {
@@ -169,9 +172,13 @@ class DatePicker {
             if (event.target.getAttribute('date')) {
                 hightlightSelectedDate(event.target.getAttribute('date'));
                 hideErrorInvalidDate();
-                this.datePickerElm.querySelector(DOMstrings.inputDate).value = event.target.getAttribute('date');
+                setInputDate(event.target.getAttribute('date'));
                 hideDateContainer();
             }
+        };
+
+        const setInputDate = (date) =>{
+            this.datePickerElm.querySelector(DOMstrings.inputDate).value = date;
         };
 
         return {
@@ -201,9 +208,6 @@ class DatePicker {
             // show/hide datepicker
             showDateContainer: () => {
                 showDateContainer();
-                trackDocumentClick(this.datePickerElm.querySelector(DOMstrings.inputDate), () => {
-                    hideDateContainer();
-                });
             },
             // hide datepicker
             hideDateContainer: () => {
@@ -221,6 +225,9 @@ class DatePicker {
             },
             hideErrorInvalidDate: () => {
                 hideErrorInvalidDate();
+            },
+            setInputDate : (date) =>{
+                setInputDate(date);
             }
         };
     };
@@ -291,6 +298,14 @@ class DatePicker {
         const dateChangeHandler = (event) => {
             UICtrl.hideDateContainer();
             if (isValidDate(event.target.value)) {
+                let date = event.target.value;
+                date = date.split('/');
+                if (date[0].length === 1 || date[1].length === 1) {
+                    date[0].length === 1 ? date[0] = date[0].padStart(2, '0') : null;
+                    date[1].length === 1 ? date[1] = date[1].padStart(2, '0') : null;
+                    date = date.join('/');
+                    UICtrl.setInputDate(date);
+                }
                 eventHandler(dateCtrl.setDateObject(event.target.value));
                 UICtrl.hightlightSelectedDate(event.target.value);
                 UICtrl.hideErrorInvalidDate();
