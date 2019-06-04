@@ -165,11 +165,13 @@ class DatePicker {
         };
 
         const selectDate = (event) => {
-            hightlightSelectedDate(event.target.getAttribute('date'));
-            hideErrorInvalidDate();
-            this.datePickerElm.querySelector(DOMstrings.inputDate).value = event.target.getAttribute('date');
-            hideDateContainer();
-        }
+            if(event.target.getAttribute('date')){
+                hightlightSelectedDate(event.target.getAttribute('date'));
+                hideErrorInvalidDate();
+                this.datePickerElm.querySelector(DOMstrings.inputDate).value = event.target.getAttribute('date');
+                hideDateContainer();
+            }
+        };
 
         return {
             // to initialize datepicker for first time
@@ -235,7 +237,14 @@ class DatePicker {
             this.datePickerElm.querySelector(DOMstrings.inputDate).addEventListener('change', dateChangeHandler);
             this.datePickerElm.querySelector(DOMstrings.inputCalSVG).addEventListener('click', UICtrl.toggleDateContainer);
             this.datePickerElm.querySelector(DOMstrings.yearInput).addEventListener('change', yearChangeHandler);
+            this.datePickerElm.querySelector(DOMstrings.dateContainer).addEventListener('click', datePanelClickHandler);
             bindDateEvent();
+        };
+
+        const datePanelClickHandler = () => {
+            console.log('in datePanelClickHandler')
+            event.stopPropagation();
+            event.preventDefault();
         };
 
         const bindDateEvent = () => {
@@ -260,11 +269,18 @@ class DatePicker {
             bindDateEvent();
         };
 
+        const isValidDate = (s) => {
+            if (s === '') {
+                return true;
+            }
+            const bits = s.split('/');
+            const d = new Date(bits[2], bits[0] - 1, bits[1]);
+            return d && (d.getMonth() + 1) == bits[0];
+        }
+
         const dateChangeHandler = (event) => {
-            const regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
-            const validDate = regex.test(event.target.value);
             UICtrl.hideDateContainer();
-            if (validDate) {
+            if (isValidDate(event.target.value)) {
                 const currDateObj = dateCtrl.setDateObject(event.target.value);
                 UICtrl.removeExistingDates();
                 UICtrl.initDatePanel(currDateObj);
@@ -331,7 +347,7 @@ class DatePicker {
         this.controller(this.datePickerController(), UICtrl).init();
         UICtrl.toggleDateContainer();
     };
-    
+
     static handleDataAPI = () => {
         handleDataBinding("datepicker", function (element) {
             return new DatePicker(element);
