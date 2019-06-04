@@ -299,7 +299,6 @@ class DatePicker {
             const prevMonthObj = dateCtrl.getPrevMonthDetails();
             UICtrl.initMonthYearPanel(prevMonthObj);
             UICtrl.initDatePanel(prevMonthObj);
-            setupEventListeners();
         };
 
         const nextMonth = () => {
@@ -309,7 +308,6 @@ class DatePicker {
             const nextMonObj = dateCtrl.getNextMonthDetails();
             UICtrl.initMonthYearPanel(nextMonObj);
             UICtrl.initDatePanel(nextMonObj);
-            setupEventListeners();
         };
 
         const yearIncrease = () => {
@@ -319,7 +317,6 @@ class DatePicker {
             const incYearMonObj = dateCtrl.getYearIncreaseMonthDetails();
             UICtrl.initMonthYearPanel(incYearMonObj);
             UICtrl.initDatePanel(incYearMonObj);
-            setupEventListeners();
         };
 
         const yearDecrease = () => {
@@ -329,7 +326,6 @@ class DatePicker {
             const decYearMonObj = dateCtrl.getYearDecreaseMonthDetails();
             UICtrl.initMonthYearPanel(decYearMonObj);
             UICtrl.initDatePanel(decYearMonObj);
-            setupEventListeners();
         };
 
         return {
