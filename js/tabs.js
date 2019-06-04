@@ -7,9 +7,6 @@ class Tabs {
         this.element = element;
         this.tabs = Array.from(element.querySelectorAll("li"));
         this.tabpanels = Array.from(element.querySelectorAll(`.${PREFIX}-tabcontent div.${PREFIX}-tabs-panel`));
-        // this.events = {
-        //     onChange: new Event('onChange')
-        // }
         this.state = {
             selectedIndex: 0,
             onChange: NOOP,
@@ -18,7 +15,6 @@ class Tabs {
     }
 
     clickEventListener = (e) => {
-        console.log(e);
         e.preventDefault();
         const { currentTarget, target } = e;
         const isLi = currentTarget === target;
@@ -37,10 +33,6 @@ class Tabs {
             this.toggleTabPanel(tabId);
         }
     }
-
-    // onChange = (e) => {
-    //     console.log(Object.assign(e, { selectedIndex: this.state.selectedIndex }));
-    // }
 
     toggleTab = (target) => {
         this.tabs.forEach((item) => {
@@ -61,7 +53,6 @@ class Tabs {
             }
         }
         this.changeState();
-        //link.parentElement.dispatchEvent(this.events.onChange);
     }
 
     toggleTabPanel = (tabId) => {
@@ -87,12 +78,10 @@ class Tabs {
     }
 
     attachEvents = () => {
-        const me_ = this;
-
-        this.tabs.forEach(function (item) {
-            item.addEventListener('click', me_.clickEventListener);
-            //item.addEventListener('onChange', me_.onChange);
-        });
+        const len = this.tabs.length;
+        for(let i=0; i< len; i++){
+            this.tabs[i].addEventListener('click', this.clickEventListener);
+        }
     }
 
     static handleDataAPI = () => {
