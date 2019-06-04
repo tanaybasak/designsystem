@@ -7,8 +7,8 @@ import { isElement } from "./utils/dom";
 import DatePicker from "./datePicker";
 
 const ComponentList = {
-  dropdow: Dropdown,
-  // datePicker: DatePicker
+  // dropdow: Dropdown,
+  datepicker: DatePicker
 };
 
 const attachElements = (selector, options, plugin) => {
@@ -25,29 +25,29 @@ const attachElements = (selector, options, plugin) => {
   });
 };
 
-const attachElementsDatePicker = (selector, plugin) => {
-  document.querySelectorAll(selector).forEach(element => {
-     // Validate element type.
-     console.log('isElement(element)',isElement(element));
-     if (isElement(element)) {
-       const component = new plugin(element);
-       if (typeof component.attachEvents === "function") {
-         component.attachEvents.call(component, element);
-       }
-     } else {
-       console.error("Invalid element provided.");
-     }
-  });
-};
+// const attachElementsDatePicker = (selector, plugin) => {
+//   document.querySelectorAll(selector).forEach(element => {
+//      // Validate element type.
+//      console.log('isElement(element)',isElement(element));
+//      if (isElement(element)) {
+//        const component = new plugin(element);
+//        if (typeof component.attachEvents === "function") {
+//          component.attachEvents.call(component, element);
+//        }
+//      } else {
+//        console.error("Invalid element provided.");
+//      }
+//   });
+// };
 
 
 export const components = {
   dropdown: function(selector, options) {
     attachElements(selector, options, Dropdown);
   },
-  datePicker: function (selector) {
-    attachElementsDatePicker(selector, DatePicker);
-}
+//   datePicker: function (selector) {
+//     attachElementsDatePicker(selector, DatePicker);
+// }
 };
 
 for (const componentName in ComponentList) {

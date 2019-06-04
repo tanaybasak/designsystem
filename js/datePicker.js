@@ -203,6 +203,9 @@ class DatePicker {
             // show/hide datepicker
             toggleDateContainer: () => {
                 toggleDateContainer();
+                trackDocumentClick(this.datePickerElm.querySelector(DOMstrings.inputDate), () => {
+                    hideDateContainer();
+                });
             },
             // hide datepicker
             hideDateContainer: () => {
@@ -238,17 +241,19 @@ class DatePicker {
             this.datePickerElm.querySelector(DOMstrings.inputCalSVG).addEventListener('click', UICtrl.toggleDateContainer);
             this.datePickerElm.querySelector(DOMstrings.yearInput).addEventListener('change', yearChangeHandler);
             bindDateEvent();
-            // console.log('elm',this.datePickerElm.querySelector(DOMstrings.inputDate));
-            // trackDocumentClick(this.datePickerElm.querySelector(DOMstrings.inputDate), () => {
-            //     UICtrl.hideDateContainer();
-            // });
+            console.log('elm',this.datePickerElm.querySelector(DOMstrings.inputDate));
+           
         };
 
         const bindDateEvent = () => {
-            const dateElement = this.datePickerElm.querySelector(DOMstrings.datePanel).children;
-            for (let i = 0; i < dateElement.length; i++) {
-                dateElement[i].addEventListener('click', UICtrl.selectDate);
-            }
+            // const dateElement = this.datePickerElm.querySelector(DOMstrings.datePanel).children;
+            // for (let i = 0; i < dateElement.length; i++) {
+            //     dateElement[i].addEventListener('click', UICtrl.selectDate);
+            // }
+
+            const datePanel = this.datePickerElm.querySelector(DOMstrings.datePanel);
+            datePanel.addEventListener('click', UICtrl.selectDate);
+          
         };
 
         const yearChangeHandler = (event) => {
@@ -337,14 +342,15 @@ class DatePicker {
     attachEvents = () => {
         const UICtrl = this.UIController();
         const DOMstrings = UICtrl.getDOMstrings();
-        trackDocumentClick(this.datePickerElm.querySelector(DOMstrings.inputDate), () => {
-            UICtrl.hideDateContainer();
-        });
+        // trackDocumentClick(this.datePickerElm.querySelector(DOMstrings.inputDate), () => {
+        //     UICtrl.hideDateContainer();
+        // });
         this.controller(this.datePickerController(), UICtrl).init();
+        UICtrl.toggleDateContainer();
     };
     
     static handleDataAPI = () => {
-        handleDataBinding("datePicker", function (element) {
+        handleDataBinding("datepicker", function (element) {
             return new DatePicker(element);
         })
     };
