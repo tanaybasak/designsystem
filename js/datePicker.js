@@ -242,7 +242,6 @@ class DatePicker {
         };
 
         const datePanelClickHandler = () => {
-            console.log('in datePanelClickHandler')
             event.stopPropagation();
             event.preventDefault();
         };
