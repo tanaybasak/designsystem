@@ -5,10 +5,10 @@ import Tabs from "./tabs";
 import "./content-switcher";
 import Dropdown from "./dropdown";
 import { isElement } from "./utils/dom";
+import Tooltip from "./tooltip";
 
 const ComponentList = {
     dropdow: Dropdown
-
 };
 
 const AutoInit = [
@@ -16,7 +16,7 @@ const AutoInit = [
 ];
 
 const attachElements = (selector, options, plugin) => {
-    document.querySelectorAll(selector).forEach(element => {
+    Array.from(document.querySelectorAll(selector)).forEach(element => {
         // Validate element type.
         if (isElement(element)) {
             const component = new plugin(element, options);
@@ -35,6 +35,9 @@ export const components = {
     },
     tabs: function (selector, options) {
         attachElements(selector, options, Tabs);
+    },
+    tooltip: function (selector, options) {
+        attachElements(selector, options, Tooltip);
     }
 };
 
