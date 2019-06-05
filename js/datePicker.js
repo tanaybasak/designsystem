@@ -1,4 +1,4 @@
-import { PREFIX, weekDays, months } from "./utils/config";
+import { PREFIX, WEEKDAYS, MONTHS } from "./utils/config";
 import { trackDocumentClick } from "./utils/dom";
 import handleDataBinding from "./utils/data-api";
 
@@ -78,7 +78,7 @@ class DatePicker {
         };
 
         const initWeekDaysPanel = () => {
-            weekDays.forEach((weekDay) => {
+            WEEKDAYS.forEach((weekDay) => {
                 this.datePickerElm.querySelector(DOMstrings.weekDaysPanel).insertAdjacentHTML('beforeend', `<span>${weekDay}</span>`);
             });
         };
@@ -131,7 +131,7 @@ class DatePicker {
         };
 
         const initMonthYearPanel = (curMonthObj) => {
-            this.datePickerElm.querySelector(DOMstrings.monthInput).innerHTML = months[curMonthObj.month];
+            this.datePickerElm.querySelector(DOMstrings.monthInput).innerHTML = MONTHS[curMonthObj.month];
             this.datePickerElm.querySelector(DOMstrings.yearInput).value = String(curMonthObj.year);
         };
 

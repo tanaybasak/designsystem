@@ -32,6 +32,9 @@ export const components = {
     },
     tooltip: function (selector, options) {
         attachElements(selector, options, Tooltip);
+    },
+    datepicker: function (selector, options) {
+        attachElements(selector, options, DatePicker);
     }
 };
 
