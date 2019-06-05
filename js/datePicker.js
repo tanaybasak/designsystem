@@ -283,7 +283,7 @@ class DatePicker {
 
         const yearChangeHandler = (event) => {
             const regex = /^[0-9]{4}$/g;
-            const validYear = regex.test(event.target.value);
+            const validYear = regex.test(event.target.value) && event.target.value > 999;
             if (validYear) {
                 // set current Date;
                 let currDateObj = dateCtrl.getDateObject();
