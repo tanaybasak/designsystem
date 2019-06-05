@@ -177,7 +177,7 @@ class DatePicker {
             }
         };
 
-        const setInputDate = (date) =>{
+        const setInputDate = (date) => {
             this.datePickerElm.querySelector(DOMstrings.inputDate).value = date;
         };
 
@@ -226,7 +226,7 @@ class DatePicker {
             hideErrorInvalidDate: () => {
                 hideErrorInvalidDate();
             },
-            setInputDate : (date) =>{
+            setInputDate: (date) => {
                 setInputDate(date);
             }
         };
@@ -249,11 +249,15 @@ class DatePicker {
             bindDateEvent();
         };
 
-        const toggleDateContainer = (event) => {
-            if(isValidDate(event.target.value)){
+        const checkErrorBox = (value) => {
+            if (isValidDate(value)) {
                 UICtrl.hideErrorInvalidDate();
-                event.target.value==='' ? UICtrl.initMonthYearPanel(dateCtrl.getDateObject()) : null;
+                value === '' ? UICtrl.initMonthYearPanel(dateCtrl.getDateObject()) : null;
             }
+        }
+
+        const toggleDateContainer = (event) => {
+            checkErrorBox(event.target.value);
             if (this.datePickerElm.querySelector(DOMstrings.dateContainer).classList.contains(DOMstrings.showDateContainer)) {
                 UICtrl.hideDateContainer();
             } else {
@@ -301,6 +305,7 @@ class DatePicker {
         }
 
         const dateChangeHandler = (event) => {
+            checkErrorBox(event.target.value);
             UICtrl.hideDateContainer();
             if (isValidDate(event.target.value)) {
                 let date = event.target.value;
