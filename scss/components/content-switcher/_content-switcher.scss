@@ -47,11 +47,13 @@
             cursor: not-allowed;
             background-color: rgba(255, 255, 255, 0.50);
             color: rgba(61, 112, 178, 0.50);
+            border-color: rgba(0, 102, 179, 0.50);
 
             &.active {
                 background-color: rgba(0, 102, 179, 0.50);
                 color: rgba(255, 255, 255, 0.50);
             }
+
             .#{$prefix}-thumbnail {
                 background-color: rgba(0, 102, 179, 0.50);
             }
@@ -74,6 +76,10 @@
 
     &-btn:not(:first-of-type) {
         border-left: 1px solid var(--blue-light);
+    }
+
+    &-btn:disabled:not(:first-of-type) {
+        border-color: rgba(0, 102, 179, 0.5);
     }
 
     &-btn:not(:last-of-type) {
