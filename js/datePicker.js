@@ -291,12 +291,13 @@ class DatePicker {
         };
 
         const isValidDate = (s) => {
+            const regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
             if (s === '') {
                 return true;
             }
             const bits = s.split('/');
             const d = new Date(bits[2], bits[0] - 1, bits[1]);
-            return d && (d.getMonth() + 1) == bits[0];
+            return d && (d.getMonth() + 1) == bits[0] && regex.test(s);
         }
 
         const dateChangeHandler = (event) => {
