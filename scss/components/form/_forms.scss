@@ -29,6 +29,19 @@
     input[data-invalid=false]~.#{$prefix}-error-msg {
         display: none;
     }
+
+    label {
+        display: block;
+        order: 1;
+    }
+
+    .#{$prefix}-helper-text {
+        order: 2;
+    }
+
+    .#{$prefix}-textarea {
+        order: 3;
+    }
 }
 
 .#{$prefix}-helper-text {
@@ -36,14 +49,11 @@
     @include getInputColor('color-2', "color");
     @include lineHeight("helpertext");
     margin-bottom: .5rem;
-    order: 2;
 }
 
 label {
     @include getInputColor('color-1', "color");
     font-weight: $input-label-weight;
-    display: block;
-    order: 1;
     margin-bottom: $label-margin-bottom;
 }
 
@@ -55,7 +65,6 @@ label {
 .#{$prefix}-textarea {
     @include getFormControl("inputcontrol");
     min-width: 10rem;
-    order: 3;
     resize: vertical;
     padding: 1rem;
     height: auto;
@@ -74,12 +83,17 @@ label {
 }
 
 //Checkbox
+.#{$prefix}-checkbox-group,
+.#{$prefix}-radio-group {
+    display: flex;
+    flex-direction: row;
+    margin-top: .5rem;
+}
 
 .#{$prefix}-checkbox-item {
     position: relative;
-    display: inline-block;
-    margin-right: 1rem;
-    margin-top: 1rem;
+    display: flex;
+    align-items: center;
     user-select: none;
 
     .#{$prefix}-checkbox {
@@ -149,33 +163,28 @@ label {
     }
 }
 
-// Radio
-.#{$prefix}-radio-group, .#{$prefix}-checkbox-group {
-    margin-top: .5rem;
+.#{$prefix}-checkbox-group {
+    @include groupOption("checkbox");
 }
 
+// Radio
 .#{$prefix}-radio-item {
     position: relative;
-    display: inline-block;
-    margin-right: 1rem;
-    margin-top: 1rem;
+    display: flex;
     user-select: none;
 }
 
 .#{$prefix}-stack-vertical {
-    display: flex;
     flex-direction: column;
 
-    .#{$prefix}-radio-item, .#{$prefix}-checkbox-item {
+    .#{$prefix}-radio-item,
+    .#{$prefix}-checkbox-item {
         margin-bottom: 1rem;
         margin-top: 0;
+
         &:first-of-type {
             margin-top: 0.5rem;
         }
-
-        // &:last-of-type {
-        //     margin-bottom: 0.5rem;
-        // }
     }
 }
 
@@ -224,13 +233,17 @@ label {
         display: inline-block;
         position: absolute;
         top: -1px;
-        left:0;
+        left: 0;
         background-color: $white;
         border-radius: 50%;
         border: 2px solid #5a6872;
         height: 1.125rem;
         width: 1.125rem;
     }
+}
+
+.#{$prefix}-radio-group {
+    @include groupOption("radio");
 }
 
 // Fieldset

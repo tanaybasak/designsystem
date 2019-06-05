@@ -57,6 +57,7 @@ $lower-background: linear-gradient(to bottom, $blue, $blue) 100% 50% / 100% $tra
 
     // Range
     >input[type=range].#{$prefix}-slider-input {
+        background-color: transparent;
         appearance: none;
         width: 100%;
         overflow: hidden;

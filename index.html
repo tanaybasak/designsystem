@@ -7,45 +7,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+
 </head>
 
 <body>
     <!-- HEADER LAYOUT -->
-    <header class="hcl-header">
+    <header class="hcl-navbar hcl-navbar-expand-lg">
+        <!-- HAMBURGER -->
+        <button class="hcl-navbar-hamburger" role="button" data-toggle="collapse" data-target="#collapsibleContent"
+            aria-controls="collapsibleContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="hcl-icon-2">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
         <!-- BRAND LOGO -->
-        <a href="/" class="hcl-logo"></a>
+        <a href="/" class="hcl-navbar-brand">
+            <img src="/logo.png" alt="Logo">
+        </a>
         <!-- HORIZONTAL NAVIGATION -->
-        <ul class="hcl-navbar">
-            <li class="hcl-navbar-nav hcl-active">Tab 1</li>
-            <li class="hcl-navbar-nav">Tab 2</li>
-            <li class="hcl-navbar-nav">Tab 3</li>
-            <li class="hcl-navbar-nav">Tab 4</li>
-            <li class="hcl-navbar-nav">Tab 5</li>
-        </ul>
-        <!-- HORIZONTAL TOOLBAR -->
-        <ul class="hcl-toolbar">
-            <li class="hcl-toolbar-icon">
-                <span class="hcl-icon-1"></span>
-            </li>
-            <li class="hcl-toolbar-icon">
-                <span class="hcl-icon-1"></span>
-            </li>
-            <li class="hcl-toolbar-icon">
-                <span class="hcl-icon-1"></span>
-            </li>
-            <li class="hcl-toolbar-icon">
-                <span class="hcl-icon-1"></span>
-            </li>
-            <li class="hcl-toolbar-icon">
-                <span class="hcl-icon-1"></span>
-            </li>
-        </ul>
+        <div class="hcl-collapse hcl-navbar-collapse" id="collapsibleContent">
+            <ul class="hcl-navbar-nav mr-auto hidden">
+                <li class="hcl-nav-item hcl-active">
+                    <a href="#" class="hcl-nav-link">Tab 1</a>
+                </li>
+                <li class="hcl-nav-item">
+                    <a href="#" class="hcl-nav-link">Tab 2</a>
+                </li>
+                <li class="hcl-nav-item">
+                    <a href="#" class="hcl-nav-link">Tab 3</a>
+                </li>
+                <li class="hcl-nav-item">
+                    <a href="#" class="hcl-nav-link">Tab 4</a>
+                </li>
+                <li class="hcl-nav-item">
+                    <a href="#" class="hcl-nav-link">Tab 5</a>
+                </li>
+            </ul>
+            <!-- SEARCH ICON -->
+            <form action="#" class="hcl-navbar-search ml-auto search-btn-only">
+                <button class="hcl-navbar-search-btn">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                        class="hcl-navbar-search-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <path
+                            d="M18.125,15.804l-4.038-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z">
+                        </path>
+                    </svg>
+                </button>
+                <input type="text" class="hcl-navbar-search-input" placeholder="Search..." />
+                <button class="hcl-navbar-search-close">&times;</button>
+            </form>
+            <!-- HORIZONTAL TOOLBAR -->
+            <ul class="hcl-navbar-nav toolbar">
+                <li class="hcl-nav-item">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-nav-item">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-nav-item">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-nav-item">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-nav-item">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+            </ul>
+        </div>
+        <button class="hcl-navbar-search-btn hcl-navbar-expand-lg">
+            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                class="hcl-navbar-search-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                <path
+                    d="M18.125,15.804l-4.038-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z">
+                </path>
+            </svg>
+        </button>
     </header>
     <!-- CONTENT LAYOUT -->
     <div class="hcl-content">
         <!-- SIDEBAR LAYOUT -->
         <nav class="hcl-sidebar">
-            <span class="hcl-icon-2">&larr;</span>
+            <div class="hcl-sidebar-title">
+                <div class="hcl-sidebar-title-item">
+                    <span class="hcl-icon-2"></span>
+                    <span class="hcl-sidebar-title-text">Section Title</span>
+                </div>
+                <div class="hcl-sidebar-title-item">
+                    <button class="hcl-icon-2">&#62;</button>
+                </div>
+            </div>
             <ul class="hcl-sidebar-list">
                 <li class="hcl-sidebar-list-item">
                     <a href="#typography" class="hcl-sidebar-list-link">
@@ -639,11 +693,39 @@
                         </div>
                     </section>
                 </section>
+
+                <section class="hcl-tab">
+                    <nav data-tabs role="navigation">
+                        <ul role="tablist" class="hcl-tabs-nav">
+                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab4" data-target="tab4">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 4</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab5" aria-selected="true"
+                                data-target="tab5">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 5</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab6"
+                                data-target="tab6">
+                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 6</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="hcl-tabcontent">
+                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel active">
+                            <p>Tabbable Content 4</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab5" id="tab5" class="hcl-tabs-panel">
+                            <p>Tabbable Content 5</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab6" id="tab6" class="hcl-tabs-panel">
+                            <p>Tabbable Content 6</p>
+                        </div>
+                    </section>
+                </section>
             </section>
 
             <!-- <section class="hcl-lightbox" >    
             </section>-->
-
 
             <!-- Overflow Menu -->
             <section class="hcl-row m-0">
@@ -1081,9 +1163,9 @@
             <!-- Dropdown -->
             <section class="hcl-row m-3">
                 <div class="hcl-col">
-                    <section class="hcl-dropdown hcl-droptop">
+                    <section class="hcl-dropdown" data-component="dropdown">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
-                            Dropdown top
+                            Dropdown Bottom
                         </button>
                         <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
                             <li class="hcl-dropdown-item">A</li>
@@ -1093,9 +1175,9 @@
                     </section>
                 </div>
                 <div class="hcl-col">
-                    <section class="hcl-dropdown">
+                    <section class="hcl-dropdown top">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
-                            Dropdown bottom
+                            Dropdown Top
                         </button>
                         <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
                             <li class="hcl-dropdown-item">A</li>
@@ -1109,16 +1191,17 @@
             <section class="hcl-row m-3">
                 <div class="hcl-col">
                     <div class="hcl-form-item">
-                        <span class="hcl-label">
+                        <strong class="hcl-label">
                             Account photo
-                        </span>
+                        </strong>
                         <p class="hcl-label-description">only .jpg and .png files. 500kb max file size.</p>
-                        <div class="hcl-file-uploader">
-                            <input type="file" class="hcl-file-input" id="file-uploader" multiple />
+                        <div class="hcl-file">
                             <label for="file-uploader" class="hcl-file-btn hcl-btn hcl-primary hcl-secondary hcl-sm"
-                                role="button">
+                                role="button" tabindex="0">
                                 Add file
+                                <span class="hcl-file-btn-icon"></span>
                             </label>
+                            <input type="file" class="hcl-file-input" id="file-uploader" multiple />
                         </div>
                     </div>
                 </div>
@@ -1134,17 +1217,19 @@
             <article id="radio" class="m-1 p-2 colBorder">
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Horizontally arranged (default)</legend>
-                    <div class="hcl-radio-item">
-                        <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" />
-                        <label class="hcl-radio-label" for="radio1">1 (default)</label>
-                    </div>
-                    <div class="hcl-radio-item">
-                        <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" checked />
-                        <label class="hcl-radio-label" for="radio2">2</label>
-                    </div>
-                    <div class="hcl-radio-item">
-                        <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
-                        <label class="hcl-radio-label" for="radio3">3 (disabled)</label>
+                    <div class="hcl-radio-group">
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" />
+                            <label class="hcl-radio-label" for="radio1">1 (default)</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" checked />
+                            <label class="hcl-radio-label" for="radio2">2</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
+                            <label class="hcl-radio-label" for="radio3">3 (disabled)</label>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset class="hcl-fieldset">
@@ -1169,17 +1254,19 @@
             <article id="checkbox" class="m-1 p-2 colBorder">
                 <fieldset class="hcl-fieldset">
                     <legend class="hcl-legend">Horizontally arranged (default)</legend>
-                    <div class="hcl-checkbox-item">
-                        <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
-                        <label class="hcl-checkbox-label" for="check1">1 (default)</label>
-                    </div>
-                    <div class="hcl-checkbox-item">
-                        <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
-                        <label class="hcl-checkbox-label" for="check2">2</label>
-                    </div>
-                    <div class="hcl-checkbox-item">
-                        <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
-                        <label class="hcl-checkbox-label" for="check3">3 (disabled)</label>
+                    <div class="hcl-checkbox-group">
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
+                            <label class="hcl-checkbox-label" for="check1">1 (default)</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
+                            <label class="hcl-checkbox-label" for="check2">2</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
+                            <label class="hcl-checkbox-label" for="check3">3 (disabled)</label>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset class="hcl-fieldset">
@@ -1252,9 +1339,179 @@
                     <button class="hcl-btn hcl-primary">Submit</button>
                 </form>
             </section>
+            <!-- Tooltip -->
+            <section class="hcl-row pt-7 mb-7">
+                <div class="hcl-col">
+                    <div class="hcl-row">
+                        <div class="hcl-col-4">&nbsp;</div>
+                        <div class="hcl-col-1">
+                            <svg data-tooltip="Filter" data-direction="right" data-type="icon" focusable="false"
+                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="hcl-col-1">
+                            <svg data-tooltip="Filter" data-direction="top" focusable="false" data-type="icon"
+                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="hcl-col-1">
+                            <svg data-tooltip="Filter" data-direction="bottom" focusable="false" data-type="icon"
+                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="hcl-col-1">
+                            <svg data-tooltip="Filter" data-direction="left" focusable="false" data-type="icon"
+                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="hcl-col-4">&nbsp;</div>
+                    </div>
+                    <div class="hcl-row pt-7 m-7">
+                        <div class="hcl-col-3">
+                            <span data-direction="top" data-tooltip="Breif Definition of the dotted underlined word.">
+                                Definition Tooltip on Top
+                        </div>
+                        <div class="hcl-col-3">
+                            <span data-direction="right" data-tooltip="Breif Definition of the dotted underlined word.">
+                                Definition Tooltip on Right
+                            </span>
+                        </div>
+                        <div class="hcl-col-3">
+                            <span data-direction="bottom"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
+                                Definition on Bottom
+                            </span>
+                        </div>
+                        <div class="hcl-col-3">
+                            <span data-direction="left" data-tooltip="Breif Definition of the dotted underlined word.">
+                                Definition Tooltip on Left
+                            </span>
+                        </div>
+                    </div>
+                    <div class="hcl-row m-7">
+                        <span> Interactive Tooltip Label
+                            <svg data-direction="top" data-focus-on-click data-tooltip="#tooltipContent"
+                                focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z">
+                                </path>
+                                <path
+                                    d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z">
+                                </path>
+                            </svg>
+                        </span>
+                        <div id="tooltipContent">
+                            <p>This is some tooltip text. This box shows the maximum amount of text that should appear
+                                inside. If more room is
+                                needed
+                                please use a modal instead.
+                            </p>
+                            <div>
+                                <a href="#">Learn More</a>
+                                <button type="button" class="hcl-btn hcl-primary">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="m-1 p-2 colBorder">
+                <table class="hcl-data-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-header" class="hcl-checkbox" type="checkbox" value="all">
+                                    <label for="hcl-checkbox-header" class="hcl-checkbox-label"></label>
+                                </div>
+                            </th>
+                            <th>Name</th>
+                            <th>Protocol</th>
+                            <th>Port</th>
+                            <th>Rule</th>
+                            <th>Attached Groups</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-1" class="hcl-checkbox" type="checkbox" value="row-1" />
+                                    <label for="hcl-checkbox-1" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 1</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-2" class="hcl-checkbox" type="checkbox" value="row-2" />
+                                    <label for="hcl-checkbox-2" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 2</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-3" class="hcl-checkbox" type="checkbox" value="row-3" />
+                                    <label for="hcl-checkbox-3" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 3</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
         <script src="./js/index.js"></script>
+        <script>
+            patron.dropdown(".hcl-dropdown.top", {
+                position: "top", onChange: (element, value) => {
+                    console.log(element, value);
+                }
+            })
+            patron.tooltip("[data-tooltip]")
+        </script>
 </body>
 
 </html>

@@ -39,6 +39,7 @@ $toastThemes: 'error',
     box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
     background: var(--white);
     @include getToastThemes();
+    z-index: 999;
 
     &-details {
         margin: 0 1rem;
