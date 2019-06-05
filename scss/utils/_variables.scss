@@ -102,6 +102,20 @@ $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 160
 $mobile-width: 640px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
+// Cards
+$card-width: 31.25rem !default;
+$card-spacing-y: 1.5rem !default;
+$card-spacing-x: 3rem !default;
+$card-border-width: 1px !default;
+$card-border-radius: .25rem !default;
+$card-border-color: #e2e2e2 !default;
+$card-color: #5A6872 !default;
+$card-color-text: #152935 !default;
+$card-line-height: 1.25rem !default;
+$card-bg: $white !default;
+$card-box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10) !default;
+$card-imgtop-height: 12.5rem !default;
+$card-imgtop-bg: #d2d2d2 !default;
 // BORDER
 $border-width: 1px !default;
 $border-radius: .25rem !default;

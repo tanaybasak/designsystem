@@ -72,6 +72,14 @@
     @include hcl-ellipsis();
 }
 
+// Border
+.b-0 {
+    border: 0;
+}
+
+.b-1 {
+    border: 1px solid $card-border-color;
+}
 /* 
  * ICON UTILITY CLASSES
  *
