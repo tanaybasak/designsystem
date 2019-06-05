@@ -158,6 +158,8 @@ class DatePicker {
         };
 
         const showDateContainer = () => {
+            event.stopPropagation();
+            event.preventDefault();
             this.datePickerElm.querySelector(DOMstrings.dateContainer).classList.add(DOMstrings.showDateContainer);
             trackDocumentClick(this.datePickerElm.querySelector(DOMstrings.inputDate), () => {
                 hideDateContainer();
@@ -250,7 +252,7 @@ class DatePicker {
         };
 
         const checkErrorBox = (value) => {
-            if (isValidDate(value)) {
+            if (isValidDate(value) || value === '') {
                 UICtrl.hideErrorInvalidDate();
                 value === '' ? UICtrl.initMonthYearPanel(dateCtrl.getDateObject()) : null;
             }
@@ -295,13 +297,24 @@ class DatePicker {
         };
 
         const isValidDate = (s) => {
-            const regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
-            if (s === '') {
-                return true;
+            if(s){
+                const regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
+                s = s.split('/');
+                if (s.length === 3 && (s[0].length === 1 || s[1].length === 1)) {
+                    s[0].length === 1 ? s[0] = s[0].padStart(2, '0') : null;
+                    s[1].length === 1 ? s[1] = s[1].padStart(2, '0') : null;
+                }
+                const d = new Date(s[2], s[0] - 1, s[1]);
+                if (d && (d.getMonth() + 1) == s[0] && regex.test(s.join('/')) && s[2] > 999) {
+                    UICtrl.setInputDate(s.join('/'));
+                    return true;
+                } else {
+                    return false;
+                }   
+            }else{
+                return false;
             }
-            const bits = s.split('/');
-            const d = new Date(bits[2], bits[0] - 1, bits[1]);
-            return d && (d.getMonth() + 1) == bits[0] && regex.test(s);
+         
         }
 
         const dateChangeHandler = (event) => {
@@ -310,17 +323,12 @@ class DatePicker {
             if (isValidDate(event.target.value)) {
                 let date = event.target.value;
                 date = date.split('/');
-                if (date[0].length === 1 || date[1].length === 1) {
-                    date[0].length === 1 ? date[0] = date[0].padStart(2, '0') : null;
-                    date[1].length === 1 ? date[1] = date[1].padStart(2, '0') : null;
-                    date = date.join('/');
-                    UICtrl.setInputDate(date);
-                }
                 eventHandler(dateCtrl.setDateObject(event.target.value));
                 UICtrl.hightlightSelectedDate(event.target.value);
                 UICtrl.hideErrorInvalidDate();
                 bindDateEvent();
             } else {
+                if(event.target.value !== '')
                 UICtrl.showErrorInvalidDate();
             }
         };
