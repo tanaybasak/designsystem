@@ -1,89 +1,101 @@
-(function () {
-    var Tabs = {
-        selectors: {
-            tabs: 'hcl-tabs-nav',
-            tabPanel: 'hcl-tabs-panel',
-            disabledTabPanel: 'hcl-tabs-disabled',
-            selectedTabPanel: 'active',
-            activeTab: 'active'
-        },
-        tablist: [],
-        init: function () {
-            this.tablist = Array.from(document.querySelectorAll('nav[data-tabs]')) || [];
-            this.bindEventsForEachTab();
-        },
-        bindEventsForEachTab: function () {
-            this.tablist.forEach((item, parentIdx)=>{
-                let tabs = Array.from(item.querySelectorAll('li[role=tab]'));
-                for (let i = 0; i < tabs.length; i++) {
-                    tabs[i].addEventListener('click', ()=>{
-                        const currentTarget = event.currentTarget;
-                        const target = event.target;
-                        const isLi = currentTarget === target; 
-                        this.clickEventListener({
-                            currentTarget,
-                            target,
-                            isLi,
-                            parentIdx
-                        })
-                    });
-                }
-            });
-        },
-        clickEventListener: function (params) {
-            
-            let {
-                currentTarget,
-                target,
-                isLi,
-                parentIdx
-            } = params;
+import { PREFIX } from "./utils/config";
+import { NOOP } from "./utils/functions";
+import handleDataBinding from "./utils/data-api";
+import getClosest from "./utils/get-closest";
 
-            if (isLi) {
-                element = currentTarget;
-                tabID = currentTarget.dataset.target;
-            } else {
-                element = target.parentElement;
-                tabID = target.parentElement.dataset.target;
+class Tabs {
+    constructor(element, options) {
+        this.element = element;
+        this.tabs = Array.from(element.querySelectorAll("li"));
+        this.tabpanels = Array.from(element.querySelectorAll(`.${PREFIX}-tabcontent div.${PREFIX}-tabs-panel`));
+        this.state = {
+            selectedIndex: 0,
+            onChange: NOOP,
+            selectedTabId : "",
+            ...options
+        };
+
+        if(this.state.selectedTabId !== "")
+            {
+                this.toggleTab(this.state.selectedTabId);
+                this.toggleTabPanel(this.state.selectedTabId)
             }
-            if (!element.classList.contains(Tabs.selectors.disabledTabPanel)) {
-                Tabs.findTabs(tabID, parentIdx);            
+    }
+
+    clickEventListener = (e) => {
+        e.preventDefault();
+        const { currentTarget, target } = e;
+        const isLi = currentTarget === target;
+        let tabId, tabItem;
+        if (isLi) {
+            tabId = currentTarget.firstElementChild.getAttribute("href").slice(1);
+            tabItem = currentTarget;
+        }
+        else {
+            tabId = target.getAttribute("href").slice(1);
+            tabItem = target.parentElement;
+        }
+
+        if (tabId && !tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
+            this.toggleTab(tabId);
+            this.toggleTabPanel(tabId);
+        }
+    }
+
+    toggleTab = (target) => {
+        this.tabs.forEach((item) => {
+            if (item) {
+                item.classList.remove("active");
+                item.setAttribute("aria-selected", false);
             }
-        },
-        findTabs: function (tabID, pIdx) {
-            let me_ = this;
-            let children = me_.tablist[pIdx].children,
-                tabChildren;
-            for (let u = 0; u < children.length; u++) {
-                // All Tab Loop
-                if (children[u].classList.contains(Tabs.selectors.tabs)) {
-                    tabChildren = children[u].children;
-                    break;
-                }
-            }
-            me_.toggleTab(tabID, tabChildren);
-            me_.toggleTabPanel(me_.tablist[pIdx].nextElementSibling.children);
-            document.getElementById(`${tabID}`).classList.add(Tabs.selectors.activeTab);
-        },
-        toggleTab: function (tId, tchildren) {
-            if (tchildren) {
-                for (let p = 0; p < tchildren.length; p++) {
-                    tchildren[p].classList.remove(Tabs.selectors.selectedTabPanel);
-                    let href = tchildren[p].dataset.target;
-                    if (href === tId) {
-                        tchildren[p].classList.add(Tabs.selectors.selectedTabPanel);
-                    }
-                }
-            }
-        },
-        toggleTabPanel: function (tabpanels) {
-            if (tabpanels) {
-                let len = tabpanels.length;
-                for (let i = 0; i < len; i++) {
-                    tabpanels[i].classList.remove('active');
-                }
+        });
+        this.selectTab(target);
+    }
+
+    selectTab = (target) => {
+        const link = this.element.querySelector(`a[href="#${target}"]`);
+        if (document.body.contains(link)) {
+            if (!link.parentElement.classList.contains(`${PREFIX}-tabs-disabled`)) {
+                link.parentElement.classList.add('active');
+                link.parentElement.setAttribute("aria-selected", true);
             }
         }
-    };
-    Tabs.init();
-})();
+        this.changeState();
+    }
+
+    toggleTabPanel = (tabId) => {
+        this.tabpanels.forEach((item) => {
+            if (item) {
+                item.classList.remove("active");
+            }
+        });
+        this.selectTabPanel(tabId);
+    }
+
+    selectTabPanel = (tabId) => {
+        const tabPanel = this.element.querySelector(`div[id="${tabId}"]`);
+        if (tabPanel) {
+            tabPanel.classList.add("active");
+        }
+    }
+
+    changeState = () => {
+        this.state.selectedIndex = this.tabs.findIndex((item) => {
+            return (item.classList.contains("active"));
+        });
+    }
+
+    attachEvents = () => {
+        const len = this.tabs.length;
+        for(let i=0; i< len; i++){
+            this.tabs[i].addEventListener('click', this.clickEventListener);
+        }
+    }
+
+    static handleDataAPI = () => {
+        handleDataBinding("tabs", function (element, target) {
+            return new Tabs(element, { selectedTabId :  getClosest(target, "li").getAttribute("data-target")});
+        })
+    }
+}
+export default Tabs;

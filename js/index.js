@@ -1,13 +1,16 @@
 import "../scss/main.scss";
 import "./modal";
 import "./tabs";
+import Tabs from "./tabs";
 import "./content-switcher";
 import Dropdown from "./dropdown";
 import { isElement } from "./utils/dom";
 import Tooltip from "./tooltip";
 
 const ComponentList = {
-    dropdow: Dropdown
+    dropdow: Dropdown,
+    tabs : Tabs,
+    tooltip : Tooltip
 };
 
 const attachElements = (selector, options, plugin) => {
@@ -28,6 +31,9 @@ export const components = {
     dropdown: function (selector, options) {
         attachElements(selector, options, Dropdown);
     },
+    tabs: function (selector, options) {
+        attachElements(selector, options, Tabs);
+    },
     tooltip: function (selector, options) {
         attachElements(selector, options, Tooltip);
     }
@@ -36,9 +42,20 @@ export const components = {
 for (const componentName in ComponentList) {
     if (ComponentList.hasOwnProperty(componentName)) {
         const component = ComponentList[componentName];
-        component.handleDataAPI();
+        if(typeof component.handleDataAPI === "function")
+            {
+                component.handleDataAPI();
+            }
     }
 }
+
+// const DOMinit = () => {
+//     autoInit.forEach((Obj) => {
+//         if (typeof Obj['comp'] === "function" && Obj['selector'] !== '') {
+//             attachElements(Obj['selector'], {}, Obj['comp']);
+//         }
+//     });
+// }
 
 if (window) {
     window.patron = components;
