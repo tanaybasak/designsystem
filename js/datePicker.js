@@ -250,6 +250,10 @@ class DatePicker {
         };
 
         const toggleDateContainer = (event) => {
+            if(isValidDate(event.target.value)){
+                UICtrl.hideErrorInvalidDate();
+                event.target.value==='' ? UICtrl.initMonthYearPanel(dateCtrl.getDateObject()) : null;
+            }
             if (this.datePickerElm.querySelector(DOMstrings.dateContainer).classList.contains(DOMstrings.showDateContainer)) {
                 UICtrl.hideDateContainer();
             } else {
