@@ -3,6 +3,7 @@ import "./modal";
 import "./tabs";
 import "./content-switcher";
 import Dropdown from "./dropdown";
+import './navigation';
 import { isElement } from "./utils/dom";
 import Tooltip from "./tooltip";
 
