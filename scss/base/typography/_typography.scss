@@ -161,17 +161,20 @@ a {
     @include getFontSize("14");
     line-height: 1.5rem;
     text-decoration: none;
+
     &:hover {
         color: var(--black-light);
         text-decoration: underline;
     }
+
     &:focus {
         color: var(--black-light);
         outline: 1px solid theme-color("primary");
         text-decoration: underline;
         outline-offset: 3px;
     }
-    &.disable{
+
+    &.disable {
         color: var(--black-light);
         pointer-events: none;
     }
