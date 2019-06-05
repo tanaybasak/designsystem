@@ -13,19 +13,32 @@
             this.bindEventsForEachTab();
         },
         bindEventsForEachTab: function () {
-            let me_ = this;
-            this.tablist.forEach(function (item) {
+            this.tablist.forEach((item, parentIdx)=>{
                 let tabs = Array.from(item.querySelectorAll('li[role=tab]'));
                 for (let i = 0; i < tabs.length; i++) {
-                    tabs[i].addEventListener('click', me_.clickEventListener);
+                    tabs[i].addEventListener('click', ()=>{
+                        const currentTarget = event.currentTarget;
+                        const target = event.target;
+                        const isLi = currentTarget === target; 
+                        this.clickEventListener({
+                            currentTarget,
+                            target,
+                            isLi,
+                            parentIdx
+                        })
+                    });
                 }
             });
         },
-        clickEventListener: function (event) {
-            const currentTarget = event.currentTarget;
-            const target = event.target;
-            const isLi = currentTarget === target; // Li
-            let tabID, element, parentIdx;
+        clickEventListener: function (params) {
+            
+            let {
+                currentTarget,
+                target,
+                isLi,
+                parentIdx
+            } = params;
+
             if (isLi) {
                 element = currentTarget;
                 tabID = currentTarget.dataset.target;
@@ -34,13 +47,7 @@
                 tabID = target.parentElement.dataset.target;
             }
             if (!element.classList.contains(Tabs.selectors.disabledTabPanel)) {
-                for (let j = 0; j < Tabs.tablist.length; j++) {
-                    if (Tabs.tablist[j].contains(element)) {
-                        parentIdx = j;
-                        break;
-                    }
-                }
-                Tabs.findTabs(tabID, parentIdx);
+                Tabs.findTabs(tabID, parentIdx);            
             }
         },
         findTabs: function (tabID, pIdx) {
