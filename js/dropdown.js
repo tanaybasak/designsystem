@@ -51,11 +51,21 @@ class Dropdown {
   };
 
   attachEvents = () => {
+    trackDocumentClick(this.element, () => {
+      if(this.state.isOpen)
+        {
+          this.toggleState(!this.state.isOpen);
+          this.state.isOpen = !this.state.isOpen;
+        }
+    });
     this.element.addEventListener("click", event => {
       event.stopPropagation();
       trackDocumentClick(this.element, () => {
-        this.toggleState(false);
-        this.state.isOpen = !this.state.isOpen;
+        if(this.state.isOpen)
+          {
+            this.toggleState(!this.state.isOpen);
+            this.state.isOpen = !this.state.isOpen;
+          }
       });
       this.state.isOpen = !this.state.isOpen;
       this.toggleState(this.state.isOpen);

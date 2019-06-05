@@ -5,6 +5,7 @@ $colorMap: ("info": $info, "danger": $danger, "success": $success, "warning": $w
     max-width: 52rem;
     margin: 1rem 0;
     background-color: #eee;
+    z-index: 999;
 
     @each $key,
     $value in $colorMap {
