@@ -6,10 +6,12 @@ import Dropdown from "./dropdown";
 import './navigation';
 import { isElement } from "./utils/dom";
 import Tooltip from "./tooltip";
+import DatePicker from "./datePicker";
 
 const ComponentList = {
-    dropdow: Dropdown
-};
+  dropdow: Dropdown,
+  datepicker: DatePicker
+}
 
 const attachElements = (selector, options, plugin) => {
     Array.from(document.querySelectorAll(selector)).forEach(element => {
@@ -31,6 +33,9 @@ export const components = {
     },
     tooltip: function (selector, options) {
         attachElements(selector, options, Tooltip);
+    },
+    datepicker: function (selector, options) {
+        attachElements(selector, options, DatePicker);
     }
 };
 

@@ -52,6 +52,7 @@
 @import "components/button/button";
 @import "components/breadcrumb/breadcrumb";
 @import "components/spinner/spinner";
+// Form Components TODO: To Separate into different file after component list grows.
 @import "components/tag/tag";
 @import "components/toggle/toggle";
 @import "components/tab/tab";
@@ -72,3 +73,4 @@
 @import "components/sidebar/sidebar";
 @import "components/tooltip/tooltip";
 @import "components/data-table/data-table";
+@import "components/datePicker/datePicker";
