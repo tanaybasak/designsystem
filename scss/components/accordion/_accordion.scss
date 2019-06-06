@@ -54,7 +54,7 @@
             transition: all 0.2s ease-in-out;
         }
 
-        input[type=checkbox] {
+        .#{$prefix}-accordion-expended {
             position: absolute;
             width: 100%;
             height: 2.75rem;
