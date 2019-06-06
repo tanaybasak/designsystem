@@ -23,6 +23,10 @@
         position: relative;
         border-top: 0.0625rem solid var(--light-50);
 
+        &:last-child {
+            border-bottom: 0.0625rem solid var(--light-50);
+        }
+
         .#{$prefix}-accordion-icon {
             display: inline-block;
             height: 0.625rem;
