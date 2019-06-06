@@ -3,15 +3,17 @@ import "./modal";
 import "./tabs";
 import Tabs from "./tabs";
 import "./content-switcher";
-import Dropdown from "./dropdown";
+import './navigation';
 import { isElement } from "./utils/dom";
+import Dropdown from "./dropdown";
 import Tooltip from "./tooltip";
+import DatePicker from "./datePicker";
 
 const ComponentList = {
     dropdow: Dropdown,
-    tabs : Tabs,
-    tooltip : Tooltip
-};
+    datepicker: DatePicker,
+    tabs: Tabs
+}
 
 const attachElements = (selector, options, plugin) => {
     Array.from(document.querySelectorAll(selector)).forEach(element => {
@@ -36,16 +38,18 @@ export const components = {
     },
     tooltip: function (selector, options) {
         attachElements(selector, options, Tooltip);
+    },
+    datepicker: function (selector, options) {
+        attachElements(selector, options, DatePicker);
     }
 };
 
 for (const componentName in ComponentList) {
     if (ComponentList.hasOwnProperty(componentName)) {
         const component = ComponentList[componentName];
-        if(typeof component.handleDataAPI === "function")
-            {
-                component.handleDataAPI();
-            }
+        if (typeof component.handleDataAPI === "function") {
+            component.handleDataAPI();
+        }
     }
 }
 

@@ -47,13 +47,12 @@
 @import "base/typography/typography";
 // Layout partials
 @import "layout/grids";
-@import "layout/header";
-@import "layout/sidebar";
 @import "layout/content";
 // Components partials
 @import "components/button/button";
 @import "components/breadcrumb/breadcrumb";
 @import "components/spinner/spinner";
+// Form Components TODO: To Separate into different file after component list grows.
 @import "components/tag/tag";
 @import "components/toggle/toggle";
 @import "components/tab/tab";
@@ -68,6 +67,10 @@
 @import "components/slider/slider";
 @import "components/dropdown/dropdown";
 @import "components/file-uploader/file-uploader";
-@import "components/tooltip/tooltip";
+@import "components/card/card";
 @import "components/inline-loader/inline-loader";
+@import "components/navbar/navbar";
+@import "components/sidebar/sidebar";
+@import "components/tooltip/tooltip";
 @import "components/data-table/data-table";
+@import "components/datePicker/datePicker";
