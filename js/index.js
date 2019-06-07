@@ -1,11 +1,10 @@
 import "../scss/main.scss";
-import "./modal";
-import "./tabs";
-import Tabs from "./tabs";
-import "./content-switcher";
-import './navigation';
 import { isElement } from "./utils/dom";
+import "./modal";
+import './navigation';
+import "./content-switcher";
 import Dropdown from "./dropdown";
+import Tabs from "./tabs";
 import Tooltip from "./tooltip";
 import DatePicker from "./datePicker";
 
@@ -52,14 +51,6 @@ for (const componentName in ComponentList) {
         }
     }
 }
-
-// const DOMinit = () => {
-//     autoInit.forEach((Obj) => {
-//         if (typeof Obj['comp'] === "function" && Obj['selector'] !== '') {
-//             attachElements(Obj['selector'], {}, Obj['comp']);
-//         }
-//     });
-// }
 
 if (window) {
     window.patron = components;

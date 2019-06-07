@@ -694,10 +694,10 @@
                     </section>
                 </section>
 
-                <section class="hcl-tab" data-component="tabs">
+                <section class="hcl-tab" id="tabsjs">
                     <nav data-tabs role="navigation">
                         <ul role="tablist" class="hcl-tabs-nav">
-                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab4" data-target="tab4">
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab4" data-target="tab4">
                                 <a class="hcl-tabs-nav-link" href="#tab4">Tab Label 4</a>
                             </li>
                             <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab5" aria-selected="true"
@@ -711,7 +711,7 @@
                         </ul>
                     </nav>
                     <section class="hcl-tabcontent">
-                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel active">
+                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel">
                             <p>Tabbable Content 4</p>
                         </div>
                         <div role="tabpanel" aria-labelledby="tab5" id="tab5" class="hcl-tabs-panel">
@@ -1602,6 +1602,7 @@
                 }
             });
             patron.tooltip("[data-tooltip]");
+            patron.tabs("#tabsjs", { selectedTabId: 'tab5' });
         </script>
 </body>
 

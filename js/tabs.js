@@ -11,15 +11,14 @@ class Tabs {
         this.state = {
             selectedIndex: 0,
             onChange: NOOP,
-            selectedTabId : "",
+            selectedTabId: "",
             ...options
         };
 
-        if(this.state.selectedTabId !== "")
-            {
-                this.toggleTab(this.state.selectedTabId);
-                this.toggleTabPanel(this.state.selectedTabId)
-            }
+        if (this.state.selectedTabId !== "") {
+            this.toggleTab(this.state.selectedTabId);
+            this.toggleTabPanel(this.state.selectedTabId)
+        }
     }
 
     clickEventListener = (e) => {
@@ -54,7 +53,7 @@ class Tabs {
 
     selectTab = (target) => {
         const link = this.element.querySelector(`a[href="#${target}"]`);
-        if (document.body.contains(link)) {
+        if (this.element.contains(link)) {
             if (!link.parentElement.classList.contains(`${PREFIX}-tabs-disabled`)) {
                 link.parentElement.classList.add('active');
                 link.parentElement.setAttribute("aria-selected", true);
@@ -85,16 +84,16 @@ class Tabs {
         });
     }
 
-    attachEvents = () => {
+    attachEvents = (ele) => {
         const len = this.tabs.length;
-        for(let i=0; i< len; i++){
+        for (let i = 0; i < len; i++) {
             this.tabs[i].addEventListener('click', this.clickEventListener);
         }
     }
 
     static handleDataAPI = () => {
         handleDataBinding("tabs", function (element, target) {
-            return new Tabs(element, { selectedTabId :  getClosest(target, "li").getAttribute("data-target")});
+            return new Tabs(element, { selectedTabId: getClosest(target, "li").getAttribute("data-target") });
         })
     }
 }
