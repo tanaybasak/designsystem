@@ -1,0 +1,77 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+// TODO: Will move to _variables.scss
+:root {
+    --light-50: rgb(210, 210, 210);
+    --dark: rgba(75, 75, 75);
+    --dark-40: rgb(85, 85, 85);
+}
+
+.#{$prefix}-accordion {
+    display: block;
+    list-style: none;
+    width: 100%;
+
+    &-item {
+        display: block;
+        position: relative;
+        border-top: 0.0625rem solid var(--light-50);
+
+        .#{$prefix}-accordion-icon {
+            display: inline-block;
+            height: 0.625rem;
+            width: 0.625rem;
+            border-right: 0.0625rem solid var(--dark-40);
+            border-bottom: 0.0625rem solid var(--dark-40);
+            transform: scale(1) rotate(-45deg);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .#{$prefix}-accordion-title {
+            display: inline-block;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: var(--dark);
+            padding: 0.625rem;
+        }
+
+        .#{$prefix}-accordion-content {
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            opacity: 0;
+            height: 0;
+            font-size: 0.875rem;
+            line-height: 1.5rem;
+            color: var(--dark);
+            padding: 0.375rem 0.625rem 1.5rem 1.5rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .#{$prefix}-accordion-expended {
+            position: absolute;
+            width: 100%;
+            height: 2.75rem;
+            opacity: 0;
+            z-index: 1;
+            cursor: pointer;
+
+            &:checked~.#{$prefix}-accordion-content {
+                position: initial;
+                opacity: 1;
+                height: initial;
+                transform: translate(0, 0);
+            }
+
+            &:checked~.#{$prefix}-accordion-icon {
+                transform: scale(1) rotate(45deg);
+            }
+        }
+    }
+}
