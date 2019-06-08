@@ -4,12 +4,15 @@ import "./tabs";
 import "./content-switcher";
 import Dropdown from "./dropdown";
 import Navigation from "./navigation"
+import Search from "./search"
+
 import { isElement } from "./utils/dom";
 import Tooltip from "./tooltip";
 
 const ComponentList = {
     dropdow: Dropdown,
-    navigation : Navigation
+    navigation : Navigation,
+    search : Search
 };
 
 const attachElements = (selector, options, plugin) => {
@@ -35,6 +38,9 @@ export const components = {
     },
     navigation: function (selector, options) {
         attachElements(selector, options, Navigation);
+    },
+    search: function (selector, options) {
+        attachElements(selector, options, Search);
     }
 };
 
