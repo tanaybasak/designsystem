@@ -1,7 +1,6 @@
 import { PREFIX } from "./utils/config";
 import { NOOP } from "./utils/functions";
 import handleDataBinding from "./utils/data-api";
-import getClosest from "./utils/get-closest";
 
 class Tabs {
     constructor(element, options) {
