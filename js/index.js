@@ -3,12 +3,13 @@ import "./modal";
 import "./tabs";
 import "./content-switcher";
 import Dropdown from "./dropdown";
-import './navigation';
+import Navigation from "./navigation"
 import { isElement } from "./utils/dom";
 import Tooltip from "./tooltip";
 
 const ComponentList = {
-    dropdow: Dropdown
+    dropdow: Dropdown,
+    navigation : Navigation
 };
 
 const attachElements = (selector, options, plugin) => {
@@ -31,6 +32,9 @@ export const components = {
     },
     tooltip: function (selector, options) {
         attachElements(selector, options, Tooltip);
+    },
+    navigation: function (selector, options) {
+        attachElements(selector, options, Navigation);
     }
 };
 
