@@ -14,6 +14,15 @@ const ComponentList = {
     tabs: Tabs
 }
 
+for (const componentName in ComponentList) {
+    if (ComponentList.hasOwnProperty(componentName)) {
+        const component = ComponentList[componentName];
+        if (typeof component.handleDataAPI === "function") {
+            component.handleDataAPI();
+        }
+    }
+}
+
 const attachElements = (selector, options, plugin) => {
     Array.from(document.querySelectorAll(selector)).forEach(element => {
         // Validate element type.
@@ -42,15 +51,6 @@ export const components = {
         attachElements(selector, options, DatePicker);
     }
 };
-
-for (const componentName in ComponentList) {
-    if (ComponentList.hasOwnProperty(componentName)) {
-        const component = ComponentList[componentName];
-        if (typeof component.handleDataAPI === "function") {
-            component.handleDataAPI();
-        }
-    }
-}
 
 if (window) {
     window.patron = components;
