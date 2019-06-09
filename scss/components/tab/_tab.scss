@@ -13,7 +13,17 @@
         padding: 0.75rem 0;
 
         &.active {
-            border-bottom: 2px solid var(--blue-light);
+            >a {
+                color: var(--blue);
+            }
+
+            border-bottom: 2px solid var(--blue);
+        }
+
+        &.#{$prefix}-tabs-disabled {
+            >a:focus {
+                outline: none;
+            }
         }
 
         &:hover {
@@ -26,13 +36,19 @@
     }
 
     &-link {
-        @include getFontWeight('semibold');
         text-decoration: none;
         display: inline-block;
         color: $black;
 
-        :not(:disabled):hover {
-            color: var(--blue-light);
+        &:hover,
+        &:active,
+        &:visited,
+        &:focus {
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: var(--primary-hover);
         }
     }
 }
@@ -53,9 +69,17 @@
 .#{$prefix}-tabs-disabled {
     opacity: 0.5;
 
-    &:hover,
-    >a {
+    >a,
+    .#{$prefix}-tabs-nav-link {
         cursor: not-allowed;
         color: $black;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            color: $black;
+        }
     }
 }
