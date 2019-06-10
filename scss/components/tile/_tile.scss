@@ -59,13 +59,9 @@
 
         &:checked+.#{$prefix}-tile-checkbox {
             visibility: visible;
-
-            &.#{$prefix}-tile-checkbox>svg {
-                fill: var(--blue-light);
-                background-color: var(--white);
-            }
+            fill: var(--blue-light);
+            background-color: var(--white);   
         }
-
 
         &:checked+.#{$prefix}-tile-arrow>svg {
             transform: rotate(180deg);
@@ -78,12 +74,9 @@
         top: 1rem;
         right: 1rem;
         position: absolute;
-
-        >svg {
-            border-radius: 50%;
-            background-color: hsla(0, 0%, 100%, .25);
-            fill: rgba(61, 112, 178, .25);
-        }
+        border-radius: 50%;
+        background-color: hsla(0, 0%, 100%, .25);
+        fill: rgba(61, 112, 178, .25);
     }
 
     &-arrow {
