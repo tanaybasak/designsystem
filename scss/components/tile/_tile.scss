@@ -20,7 +20,6 @@
         }
     }
 
-
     @if($type==selectable) {
         padding-right: 3rem;
     }
@@ -35,7 +34,6 @@
             }
         }
     }
-
 }
 
 .#{$prefix}-tile {
@@ -47,7 +45,6 @@
 
     &-selectable {
         @include tile(selectable);
-
     }
 
     &-expandable {
@@ -60,7 +57,7 @@
         &:checked+.#{$prefix}-tile-checkbox {
             visibility: visible;
             fill: var(--blue-light);
-            background-color: var(--white);   
+            background-color: var(--white);
         }
 
         &:checked+.#{$prefix}-tile-arrow>svg {
@@ -84,7 +81,6 @@
         right: 1rem;
         position: absolute;
         cursor: pointer;
-        // margin-top: 1rem;
 
         >svg {
             border-radius: 50%;
@@ -100,5 +96,4 @@
     &-hide {
         display: none;
     }
-
 }
