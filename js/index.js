@@ -1,7 +1,7 @@
 import "../scss/main.scss";
 import "./modal";
 import "./tabs";
-import "./content-switcher";
+import ContentSwitcher from "./content-switcher_modified";
 import Dropdown from "./dropdown";
 import './navigation';
 import { isElement } from "./utils/dom";
@@ -9,8 +9,9 @@ import Tooltip from "./tooltip";
 import DatePicker from "./datePicker";
 
 const ComponentList = {
-  dropdow: Dropdown,
-  datepicker: DatePicker
+    dropdow: Dropdown,
+    datepicker: DatePicker,
+    contentswitcher: ContentSwitcher
 }
 
 const attachElements = (selector, options, plugin) => {
