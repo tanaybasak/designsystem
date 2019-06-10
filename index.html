@@ -1596,19 +1596,22 @@
             <!-- <section
                 style="display:flex; flex-direction: column; justify-content: space-around; align-items:center;  width:500px ; height: 500px"> -->
             <section class="hcl-offset-4">
-                <!-- default tile -->
-                <div class="hcl-tile mt-1">
-                    <p>This is read only tile</p>
-                </div>
-                <!-- clickable  tile -->
+
                 <div class="mt-1">
-                    <a data-tile="clickable" class="hcl-tile hcl-tile-clickable" tabindex="0">
+                    <!-- default tile -->
+                    <p class="hcl-tile mt-1">This is read only tile</p>
+                </div>
+
+                <div class="mt-1">
+                    <!-- clickable  tile -->
+                    <a data-tile="clickable" class="hcl-tile-clickable" tabindex="0">
                         <p>This is clickable tile</p>
                     </a>
                 </div>
-                <!-- selectable tile -->
+
                 <div class="mt-1">
-                    <label for="tile-id" class="hcl-tile hcl-tile-clickable hcl-tile-select" tabindex="-1">
+                    <!-- selectable tile -->
+                    <label for="tile-id" class="hcl-tile-selectable" tabindex="-1">
                         <input id="tile-id" class="hcl-tile-input" type="checkbox" title="tile" />
                         <div class="hcl-tile-checkbox">
                             <svg width="16" height="16" viewBox="0 0 16 16">
@@ -1617,26 +1620,20 @@
                                     fill-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <div class="hcl-tile-content">
-                            <p>Click to select tile</p>
-                        </div>
+                        <p>Click to select tile</p>
                     </label>
                 </div>
-                <!-- expandable tile -->
                 <div class="mt-1 mb-4">
-                    <div class="hcl-tile hcl-tile-expandable" style="max-height: 64px;">
+                    <!-- expandable tile -->
+                    <div class="hcl-tile-expandable">
                         <input id="tile-id-expand" class="hcl-tile-input" type="checkbox" title="tile" />
-                        <label for="tile-id-expand" class="hcl-tile-checkbox-temp">
+                        <label for="tile-id-expand" class="hcl-tile-arrow">
                             <svg width="12" height="7" viewBox="0 0 12 7">
                                 <path fill-rule="nonzero" d="M6.002 5.55L11.27 0l.726.685L6.003 7 0 .685.726 0z"></path>
                             </svg>
                         </label>
-                        <span class="hcl-tile-content">
-                            <p>Content show prior expand</p>
-                        </span>
-                        <span class="hcl-tile-hidden-content">
-                            <p>Content added after expand</p>
-                        </span>
+                        <p class="hcl-tile-content">Content shown prior expand </p>
+                        <p class="hcl-tile-hide">Content shown after expand </p>
                     </div>
                 </div>
 
