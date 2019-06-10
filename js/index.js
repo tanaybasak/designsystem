@@ -2,7 +2,7 @@ import "../scss/main.scss";
 import { isElement } from "./utils/dom";
 import "./modal";
 import './navigation';
-import ContentSwitcher from "./content-switcher_modified";
+import ContentSwitcher from "./content-switcher";
 import Dropdown from "./dropdown";
 import Tabs from "./tabs";
 import Tooltip from "./tooltip";
