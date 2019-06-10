@@ -37,6 +37,9 @@ export const components = {
     },
     datepicker: function (selector, options) {
         attachElements(selector, options, DatePicker);
+    },
+    contentswitch: function (selector, options) {
+        attachElements(selector, options, ContentSwitcher);
     }
 };
 

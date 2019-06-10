@@ -10,9 +10,9 @@ function handleDataBinding(component, bind = NOOP) {
         var target = event.target;
         var componentElement = getClosest(target, `[data-component="${component}"]`);
         componentElement.setAttribute("data-init", component);
-        const componentInstance = bind(componentElement);
+        const componentInstance = bind(componentElement, target);
         if (componentInstance && typeof componentInstance.attachEvents === "function") {
-            componentInstance.attachEvents()
+            componentInstance.attachEvents();
         }
     })
 }
