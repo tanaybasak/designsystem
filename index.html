@@ -322,7 +322,7 @@
             <section>
                 <div class="hcl-spinner" title="loading">
                     <svg viewBox="-75 -75 150 150">
-                        <circle cx="0" cy="0" r="37.5" />
+                        <circle cx="0" cy="0" r="67" />
                     </svg>
                 </div>
             </section>
@@ -665,27 +665,27 @@
             </section> -->
 
             <section id="tabsexample" class="colBorder m-5 p-5">
-                <section class="hcl-tab">
+                <section class="hcl-tab" data-component="tabs">
                     <nav data-tabs role="navigation">
                         <ul role="tablist" class="hcl-tabs-nav">
-                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab1" data-target="tab1">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 1</a>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab1" data-target="tab1">
+                                <a class="hcl-tabs-nav-link" href="#tab1">Tab Label 1</a>
                             </li>
-                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab2" aria-selected="true"
+                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab2" aria-selected="true"
                                 data-target="tab2">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 2</a>
+                                <a class="hcl-tabs-nav-link" href="#tab2">Tab Label 2</a>
                             </li>
                             <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab3"
                                 data-target="tab3">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 3</a>
+                                <a class="hcl-tabs-nav-link" href="#tab3">Tab Label 3</a>
                             </li>
                         </ul>
                     </nav>
                     <section class="hcl-tabcontent">
-                        <div role="tabpanel" aria-labelledby="tab1" id="tab1" class="hcl-tabs-panel active">
+                        <div role="tabpanel" aria-labelledby="tab1" id="tab1" class="hcl-tabs-panel">
                             <p>Tabbable Content 1</p>
                         </div>
-                        <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel">
+                        <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel active">
                             <p>Tabbable Content 2</p>
                         </div>
                         <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="hcl-tabs-panel">
@@ -694,24 +694,23 @@
                     </section>
                 </section>
 
-                <section class="hcl-tab">
+                <section class="hcl-tab" id="tabsjs">
                     <nav data-tabs role="navigation">
                         <ul role="tablist" class="hcl-tabs-nav">
-                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab4" data-target="tab4">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 4</a>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab4" data-target="tab4">
+                                <a class="hcl-tabs-nav-link" href="#tab4">Tab Label 4</a>
                             </li>
                             <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab5" aria-selected="true"
                                 data-target="tab5">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 5</a>
+                                <a class="hcl-tabs-nav-link" href="#tab5">Tab Label 5</a>
                             </li>
-                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab6"
-                                data-target="tab6">
-                                <a class="hcl-tabs-nav-link" href="javascript:void(0);">Tab Label 6</a>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab6" data-target="tab6">
+                                <a class="hcl-tabs-nav-link" href="#tab6">Tab Label 6</a>
                             </li>
                         </ul>
                     </nav>
                     <section class="hcl-tabcontent">
-                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel active">
+                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel">
                             <p>Tabbable Content 4</p>
                         </div>
                         <div role="tabpanel" aria-labelledby="tab5" id="tab5" class="hcl-tabs-panel">
@@ -1175,7 +1174,7 @@
                     </section>
                 </div>
                 <div class="hcl-col">
-                    <section class="hcl-dropdown top">
+                    <section class="hcl-dropdown top" data-component="dropdown">
                         <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
                             Dropdown Top
                         </button>
@@ -1207,9 +1206,9 @@
                 </div>
             </section>
             <!-- Inline Loader -->
-            <section class="hcl-inlineloader" title="loading">
+            <section class="hcl-spinner-inline" title="loading">
                 <svg viewBox="-75 -75 150 150 ">
-                    <circle cx="0" cy="0" r="37.5" />
+                    <circle cx="0" cy="0" r="63" />
                 </svg>
                 <span class="hcl-type-zeta">Loading...</span>
             </section>
@@ -1390,6 +1389,7 @@
                         <div class="hcl-col-3">
                             <span data-direction="top" data-tooltip="Breif Definition of the dotted underlined word.">
                                 Definition Tooltip on Top
+                            </span>
                         </div>
                         <div class="hcl-col-3">
                             <span data-direction="right" data-tooltip="Breif Definition of the dotted underlined word.">
@@ -1410,7 +1410,7 @@
                     </div>
                     <div class="hcl-row m-7">
                         <span> Interactive Tooltip Label
-                            <svg data-direction="top" data-focus-on-click data-tooltip="#tooltipContent"
+                            <svg data-direction="right" data-focus-on-click data-tooltip="#tooltipContent"
                                 focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
@@ -1596,8 +1596,7 @@
                 <ul class="hcl-accordion">
                     <li class="hcl-accordion-item">
                         <input class="hcl-accordion-expended" type="checkbox">
-                        <span class="hcl-accordion-icon"></span>
-                        <span class="hcl-accordion-title">What is Lorem Ipsum ?</span>
+                        <h4 class="hcl-accordion-title">What is Lorem Ipsum ?</h4>
                         <p class="hcl-accordion-content">
                             Lorem Ipsum is simply dummy text of the printing and
                             typesetting industry. Lorem Ipsum
@@ -1611,8 +1610,7 @@
                     </li>
                     <li class="hcl-accordion-item">
                         <input class="hcl-accordion-expended" type="checkbox">
-                        <span class="hcl-accordion-icon"></span>
-                        <span class="hcl-accordion-title">Why do we use it ?</span>
+                        <h4 class="hcl-accordion-title">Why do we use it ?</h4>
                         <p class="hcl-accordion-content">
                             It is a long established fact that a reader will be distracted
                             by the readable content of
@@ -1627,8 +1625,7 @@
                     </li>
                     <li class="hcl-accordion-item">
                         <input class="hcl-accordion-expended" type="checkbox">
-                        <span class="hcl-accordion-icon"></span>
-                        <span class="hcl-accordion-title">Wher we can it ?</span>
+                        <h4 class="hcl-accordion-title">Wher we can it ?</h4>
                         <p class="hcl-accordion-content">
                             There are many variations of passages of Lorem Ipsum available,
                             but the majority have

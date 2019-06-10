@@ -12,12 +12,13 @@ class Tooltip {
         this.type = element.getAttribute('data-type') || 'definition';
         this.dataValue = element.getAttribute('data-tooltip');
         this.direction = element.getAttribute('data-direction') || 'bottom';
+        this.positionDirection = this.direction;
+        this.diff = 0;
     }
 
     attachEvents() {
         if (this.dataValue.startsWith('#')) {
             if (!commonElements[this.dataValue]) {
-
                 let element = document.getElementById(this.dataValue.substr(1));
                 if (element) {
                     let elementId = 'tooltip-' + (elementNo++);
@@ -48,7 +49,7 @@ class Tooltip {
 
     closeTooltip(e) {
         let tooltip = document.getElementById(this.element.getAttribute('aria-describedby'));
-        if (!e || !tooltip.contains(e.target)) {
+        if (!e || (tooltip && !tooltip.contains(e.target))) {
             if (tooltip.classList.contains(`${PREFIX}-remove-tooltip`)) {
                 document.body.removeChild(tooltip);
             } else {
@@ -94,6 +95,7 @@ class Tooltip {
             EventManager.addEvent('click', (e) => { this.closeTooltip(e) } , true);
             EventManager.addEvent('scroll', (e) => { this.updatePositionOnScroll(e) }, true);
         }
+        tooltip.style.minWidth = tooltip.offsetWidth+'px';
         this.tooltipDirection(this.element, tooltip, icon, this.direction, this.type);
         e.stopPropagation();
     }
@@ -113,9 +115,17 @@ class Tooltip {
     tooltipDirection(parent, tooltip, icon, posHorizontal, type) {
         const dist = 10;
         let parentCoords = parent.getBoundingClientRect();
-        let direction = this.getDirection(parentCoords, tooltip, dist, posHorizontal);
-        icon.setAttribute('data-direction', direction);
-        this.showTooltip(parentCoords, tooltip, icon, direction, dist, type)
+        this.diff = undefined;
+        this.direction = this.getDirection(parentCoords, tooltip, dist, posHorizontal);
+        this.positionDirection = this.getDirectionPosition(parentCoords, tooltip, this.direction);
+        icon.setAttribute('data-direction', this.direction);
+        this.showTooltip(parentCoords, tooltip, icon, this.positionDirection, dist, type);
+    }
+
+    updateIconPosition(icon, position, value) {
+        icon.removeAttribute("style");
+        icon.style[position] = getRem(value);
+        
     }
 
     showTooltip(parentCoords, tooltip, icon, posHorizontal, dist, type) {
@@ -124,104 +134,149 @@ class Tooltip {
         let bottom = 0;
         let right = 0;
         let arrowSize = type === 'icon' ? 2.5 : 5;
-        tooltip.removeAttribute('style');
-        icon.removeAttribute('style');
         let offsetY = window.pageYOffset;
         let offsetX = window.pageXOffset;
+
+        if (posHorizontal.startsWith('left')) {
+            left = parseInt(parentCoords.left) - dist - tooltip.offsetWidth;
+            top = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 - tooltip.offsetHeight / 2;
+            if (posHorizontal === 'left') {
+                this.updateIconPosition(icon , 'top' , (tooltip.offsetHeight / 2 - arrowSize));
+            } else {
+                if (this.diff === undefined) {
+                    if (posHorizontal === 'left top') {
+                        this.diff = top;
+                        this.updateIconPosition(icon , 'top' , (parentCoords.top + (parentCoords.height / 2) - arrowSize));
+                    } else {
+                        bottom = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 + (tooltip.offsetHeight / 2);
+                        this.diff = bottom - window.innerHeight;
+                        this.updateIconPosition(icon , 'bottom' , ((window.innerHeight - (parentCoords.bottom - (parentCoords.height / 2))) - arrowSize));
+                    }
+                }
+                top = top - this.diff;
+            }
+            tooltip.style.left = getRem(left + offsetX);
+            tooltip.style.top = getRem(top + offsetY);
+
+        } else if (posHorizontal.startsWith('right')) {
+
+            top = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 - tooltip.offsetHeight / 2;
+            left = parseInt(parentCoords.right) + dist;
+            if (posHorizontal === 'right') {
+                this.updateIconPosition(icon , 'top' , (tooltip.offsetHeight / 2 - arrowSize));
+            } else {
+                if (this.diff === undefined) {
+                    if (posHorizontal === 'right top') {
+                        this.diff = top;
+                        this.updateIconPosition(icon , 'top' , (parentCoords.top + (parentCoords.height / 2) - arrowSize));
+                    } else {
+                        bottom = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 + (tooltip.offsetHeight / 2);
+                        this.diff = bottom - window.innerHeight;
+                        this.updateIconPosition(icon , 'bottom' , ((window.innerHeight - parentCoords.bottom + (parentCoords.height / 2)) - arrowSize));
+                    }
+                }
+                top = top - this.diff;
+            }
+            tooltip.style.left = getRem(left + offsetX);
+            tooltip.style.top = getRem(top + offsetY);
+
+        } else if (posHorizontal.startsWith('top')) {
+
+            left = parseInt(parentCoords.left) + ((parentCoords.width - tooltip.offsetWidth) / 2);
+            top = parseInt(parentCoords.top) - tooltip.offsetHeight - dist;
+
+            if (posHorizontal === 'top') {
+                this.updateIconPosition(icon , 'left' , ((tooltip.offsetWidth / 2) - arrowSize));
+            } else {
+                if (this.diff === undefined) {
+                    if (posHorizontal === 'top left') {
+                        this.diff = left;
+                        this.updateIconPosition(icon , 'left' , ((parentCoords.left + parentCoords.width / 2) - (arrowSize)));
+                    } else {
+                        right = parseInt(parentCoords.right) + ((tooltip.offsetWidth - parentCoords.width) / 2);
+                        this.diff = right - window.innerWidth;
+                        this.updateIconPosition(icon , 'right' , (((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize)));
+                    }
+                }
+                left = left - this.diff;
+            }
+            tooltip.style.top = getRem(top + offsetY);
+            tooltip.style.left = getRem(left + offsetX)
+
+        } else if (posHorizontal.startsWith('bottom')) {
+            left = parseInt(parentCoords.left) + ((parentCoords.width - tooltip.offsetWidth) / 2);
+            top = parseInt(parentCoords.bottom) + dist;
+
+            if (posHorizontal === 'bottom') {
+                this.updateIconPosition(icon , 'left' , ((tooltip.offsetWidth / 2) - (arrowSize)));
+            } else {
+                if (this.diff === undefined) {
+                    if (posHorizontal === 'bottom left') {
+                        this.diff = left;
+                        this.updateIconPosition(icon , 'left' , ((parentCoords.left + parentCoords.width / 2) - (arrowSize)));
+                    } else {
+                        right = parseInt(parentCoords.right) + ((tooltip.offsetWidth - parentCoords.width) / 2);
+                        this.diff = right - window.innerWidth;
+                        this.updateIconPosition(icon , 'right' , (((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize)));
+                    }
+                }
+                left = left - this.diff;
+            }
+            tooltip.style.left = getRem(left + offsetX)
+            tooltip.style.top = getRem(top + offsetY);
+        }
+    }
+
+    getDirectionPosition(parentCoords, tooltip, posHorizontal) {
+        let left = 0;
+        let top = 0;
+        let bottom = 0;
+        let right = 0;
+        let direction = posHorizontal;
         switch (posHorizontal) {
             case 'left': {
-                left = parseInt(parentCoords.left) - dist - tooltip.offsetWidth;
                 top = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 - tooltip.offsetHeight / 2;
                 bottom = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 + (tooltip.offsetHeight / 2);
                 if (top < 0) {
-                    top = 0;
-                    tooltip.style.top = getRem(top + offsetY)
-                    icon.style.top = getRem(parentCoords.top + (parentCoords.height / 2) - arrowSize)
+                    direction = "left top";
                 } else if (bottom > window.innerHeight) {
-                    bottom = 0;
-                    tooltip.style.bottom = getRem(bottom - offsetY)
-                    icon.style.bottom = getRem((window.innerHeight - (parentCoords.bottom - (parentCoords.height / 2))) - arrowSize);
-                } else {
-                    tooltip.style.top = getRem(top + offsetY)
-                    icon.style.top = getRem(tooltip.offsetHeight / 2 - arrowSize)
+                    direction = "left bottom";
                 }
-                tooltip.style.left = getRem(left + offsetX);
                 break;
             }
             case 'right': {
                 top = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 - tooltip.offsetHeight / 2;
                 bottom = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 + (tooltip.offsetHeight / 2);
-                left = parseInt(parentCoords.right) + dist;
                 if (top < 0) {
-                    top = 0;
-                    tooltip.style.top = getRem(top + offsetY)
-                    icon.style.top = getRem(parentCoords.top + (parentCoords.height / 2) - arrowSize)
+                    direction = "right top";
                 } else if (bottom > window.innerHeight) {
-                    bottom = 0;
-                    tooltip.style.bottom = getRem(bottom - offsetY)
-                    icon.style.bottom = getRem((window.innerHeight - parentCoords.bottom + (parentCoords.height / 2)) - arrowSize)
-                } else {
-                    tooltip.style.top = getRem(top + offsetY)
-                    icon.style.top = getRem(tooltip.offsetHeight / 2 - arrowSize)
+                    direction = "right bottom";
                 }
-                tooltip.style.left = getRem(left + offsetX);
+
                 break;
             }
             case 'top': {
                 left = parseInt(parentCoords.left) + ((parentCoords.width - tooltip.offsetWidth) / 2);
                 right = parseInt(parentCoords.right) + ((tooltip.offsetWidth - parentCoords.width) / 2);
-                top = parseInt(parentCoords.top) - tooltip.offsetHeight - dist;
                 if (left < 0) {
-                    left = 0;
-                    tooltip.style.left = getRem(left + offsetX)
-                    icon.style.left = getRem((parentCoords.left + parentCoords.width / 2) - (arrowSize));
+                    direction = "top left";
                 } else if (right > window.innerWidth) {
-                    right = 0;
-                    tooltip.style.right = getRem(right - offsetX)
-                    icon.style.right = getRem(((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize))
-                } else {
-                    tooltip.style.left = getRem(left + offsetX)
-                    icon.style.left = getRem((tooltip.offsetWidth / 2) - arrowSize);
+                    direction = "top right";
                 }
-                tooltip.style.top = getRem(top + offsetY);
-                break;
-            }
-            case 'top left': {
-                left = parseInt(parentCoords.left);
-                top = parseInt(parentCoords.top) - tooltip.offsetHeight - dist;
-                tooltip.style.left = getRem(left + offsetX)
-                tooltip.style.top = getRem(top + offsetY)
-                icon.style.left = getRem((parentCoords.width / 2) - arrowSize);
                 break;
             }
             case 'bottom': {
                 left = parseInt(parentCoords.left) + ((parentCoords.width - tooltip.offsetWidth) / 2);
                 right = parseInt(parentCoords.right) + ((tooltip.offsetWidth - parentCoords.width) / 2);
-                top = parseInt(parentCoords.bottom) + dist;
                 if (left < 0) {
-                    left = 0;
-                    tooltip.style.left = getRem(left + offsetX)
-                    icon.style.left = getRem((parentCoords.left + parentCoords.width / 2) - (arrowSize))
+                    direction = "bottom left";
                 } else if (right > window.innerWidth) {
-                    right = 0;
-                    tooltip.style.right = getRem(right - offsetX)
-                    icon.style.right = getRem(((window.innerWidth - parentCoords.right) + (parentCoords.width / 2)) - (arrowSize))
-                } else {
-                    tooltip.style.left = getRem(left + offsetX)
-                    icon.style.left = getRem((tooltip.offsetWidth / 2) - (arrowSize))
+                    direction = "bottom right";
                 }
-                tooltip.style.top = getRem(top + offsetY);
-                break;
-            }
-            case 'bottom left': {
-                left = parseInt(parentCoords.left);
-                top = parseInt(parentCoords.bottom) + dist;
-                tooltip.style.left = getRem(left + offsetX)
-                tooltip.style.top = getRem(top + offsetY)
-                icon.style.left = getRem((parentCoords.width / 2) - arrowSize);
                 break;
             }
         }
+        return direction;
     }
     
     getDirection(parentCoords, tooltip, dist, posHorizontal) {
@@ -326,7 +381,7 @@ class Tooltip {
         if (!this.ticking) {
             window.requestAnimationFrame(() => {
                 let newelement = document.getElementById(this.element.getAttribute('aria-describedby'));
-                this.tooltipDirection(this.element, newelement, newelement.children[0], this.direction, this.type);
+                this.showTooltip(this.element.getBoundingClientRect(), newelement, newelement.children[0], this.positionDirection, 10, this.type)
                 this.ticking = false;
             });
             this.ticking = true;

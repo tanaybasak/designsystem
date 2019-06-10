@@ -6,17 +6,16 @@
     justify-content: center;
 
     >svg {
-        @if($size==normal) {
-            height: 5.25rem;
-            width: 5.25rem;
+        @if($size==default) {
+            height: 5.8771875rem;
+            width: 5.8771875rem;
         }
 
-        @else if ($size==small) {
-            height: 1rem;
-            width: 1rem;
-            --spinner-color:var(--dark-blue);
-            margin-left:1rem;
-
+        @else if ($size==inline) {
+            height: 1.190625rem;
+            width: 1.190625rem;
+            --spinner-color: var(--dark-blue);
+            margin-left: 1rem;
         }
 
         animation-name: infinite-spinning;
@@ -24,19 +23,18 @@
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
-       
+
         >circle {
             stroke: var(--spinner-color);
-            stroke-dashoffset: 40;
+            stroke-dasharray: 480;
+            stroke-dashoffset: 120;
 
-            @if($size=='normal') {
+            @if($size=='default') {
                 stroke-width: 8;
-                stroke-dasharray: 240;
             }
 
-            @else if ($size=='small') {
+            @else if ($size=='inline') {
                 stroke-width: 12;
-                stroke-dasharray: 240;
             }
 
             fill: transparent;
@@ -45,11 +43,11 @@
 }
 
 .#{$prefix}-spinner {
-    @include spinner(normal);
+    @include spinner(default);
 }
 
-.#{$prefix}-spinner-small {
-    @include spinner(small);
+.#{$prefix}-spinner-inline {
+    @include spinner(inline);
 }
 
 @keyframes infinite-spinning {
