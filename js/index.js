@@ -7,11 +7,13 @@ import Dropdown from "./dropdown";
 import Tabs from "./tabs";
 import Tooltip from "./tooltip";
 import DatePicker from "./datePicker";
+import NumberInput from "./numberInput";
 
 const ComponentList = {
     dropdow: Dropdown,
     datepicker: DatePicker,
-    tabs: Tabs
+    tabs: Tabs,
+    numberInput: NumberInput
 }
 
 for (const componentName in ComponentList) {
@@ -49,7 +51,10 @@ export const components = {
     },
     datepicker: function (selector, options) {
         attachElements(selector, options, DatePicker);
-    }
+    },
+    numberInput: function (selector, options) {
+        attachElements(selector, options, NumberInput);
+    },
 };
 
 if (window) {
