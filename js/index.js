@@ -2,7 +2,7 @@ import "../scss/main.scss";
 import { isElement } from "./utils/dom";
 import "./modal";
 import './navigation';
-import "./content-switcher";
+import ContentSwitcher from "./content-switcher";
 import Dropdown from "./dropdown";
 import Tabs from "./tabs";
 import Tooltip from "./tooltip";
@@ -11,6 +11,7 @@ import DatePicker from "./datePicker";
 const ComponentList = {
     dropdow: Dropdown,
     datepicker: DatePicker,
+    contentswitcher: ContentSwitcher,
     tabs: Tabs
 }
 
@@ -49,6 +50,9 @@ export const components = {
     },
     datepicker: function (selector, options) {
         attachElements(selector, options, DatePicker);
+    },
+    contentswitch: function (selector, options) {
+        attachElements(selector, options, ContentSwitcher);
     }
 };
 
