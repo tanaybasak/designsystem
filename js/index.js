@@ -1,15 +1,19 @@
 import "../scss/main.scss";
-import { isElement } from "./utils/dom";
 import "./modal";
 import './navigation';
 import ContentSwitcher from "./content-switcher";
 import Dropdown from "./dropdown";
+import Navigation from "./navigation"
+import Search from "./search"
+import { isElement } from "./utils/dom";
 import Tabs from "./tabs";
 import Tooltip from "./tooltip";
 import DatePicker from "./datePicker";
 
 const ComponentList = {
     dropdow: Dropdown,
+    navigation : Navigation,
+    search : Search,
     datepicker: DatePicker,
     contentswitcher: ContentSwitcher,
     tabs: Tabs
@@ -48,6 +52,12 @@ export const components = {
     tooltip: function (selector, options) {
         attachElements(selector, options, Tooltip);
     },
+    navigation: function (selector, options) {
+        attachElements(selector, options, Navigation);
+    },
+    search: function (selector, options) {
+        attachElements(selector, options, Search);
+    },
     datepicker: function (selector, options) {
         attachElements(selector, options, DatePicker);
     },
@@ -59,3 +69,6 @@ export const components = {
 if (window) {
     window.patron = components;
 }
+
+export default patron;
+
