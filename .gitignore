@@ -25,4 +25,5 @@ yarn-error.log*
 /.metadata/
 nohup.out
 
-dist
+# Templates
+/js/base.js

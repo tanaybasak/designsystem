@@ -1,19 +1,31 @@
 import "../scss/main.scss";
 import "./modal";
-import "./tabs";
+import './navigation';
 import "./content-switcher";
 import Dropdown from "./dropdown";
 import Navigation from "./navigation"
 import Search from "./search"
-
 import { isElement } from "./utils/dom";
+import Tabs from "./tabs";
 import Tooltip from "./tooltip";
+import DatePicker from "./datePicker";
 
 const ComponentList = {
     dropdow: Dropdown,
     navigation : Navigation,
-    search : Search
-};
+    search : Search,
+    datepicker: DatePicker,
+    tabs: Tabs
+}
+
+for (const componentName in ComponentList) {
+    if (ComponentList.hasOwnProperty(componentName)) {
+        const component = ComponentList[componentName];
+        if (typeof component.handleDataAPI === "function") {
+            component.handleDataAPI();
+        }
+    }
+}
 
 const attachElements = (selector, options, plugin) => {
     Array.from(document.querySelectorAll(selector)).forEach(element => {
@@ -33,6 +45,9 @@ export const components = {
     dropdown: function (selector, options) {
         attachElements(selector, options, Dropdown);
     },
+    tabs: function (selector, options) {
+        attachElements(selector, options, Tabs);
+    },
     tooltip: function (selector, options) {
         attachElements(selector, options, Tooltip);
     },
@@ -41,18 +56,15 @@ export const components = {
     },
     search: function (selector, options) {
         attachElements(selector, options, Search);
+    },
+    datepicker: function (selector, options) {
+        attachElements(selector, options, DatePicker);
     }
 };
-
-for (const componentName in ComponentList) {
-    if (ComponentList.hasOwnProperty(componentName)) {
-        const component = ComponentList[componentName];
-        component.handleDataAPI();
-    }
-}
 
 if (window) {
     window.patron = components;
 }
 
 export default patron;
+
