@@ -54,3 +54,5 @@ for (const componentName in ComponentList) {
 if (window) {
     window.patron = components;
 }
+
+export default patron;
