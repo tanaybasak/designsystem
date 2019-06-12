@@ -74,21 +74,18 @@
 
     &-footer {
         display: flex;
-        margin-top: auto;
-        height: 4rem;
+        flex-wrap: wrap;
         background-color: var(--sky-blue);
         justify-content: flex-end;
-        padding: 0.75rem 3.5rem;
-        height: 3.875rem;
+        padding: 1rem 3rem;
+        align-items: center;
 
         &-hide {
             display: none;
         }
-
     }
 
-    .hcl-btn {
-        margin: 0 0.625rem !important;
-        width: 5.625rem;
+    &-btn {
+        margin: 0.5rem !important;
     }
 }
