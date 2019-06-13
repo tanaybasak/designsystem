@@ -1,0 +1,108 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+.#{$prefix}-pagination {
+    font-size: $pagination-font-size;
+    @include getFontWeight('regular');
+    line-height: $pagination-line-height;
+    width: 100%;
+    background-color: $pagination-bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: hcl-rem(40px);
+    border: 1px solid var(--grey-4);
+
+    &-left,
+    &-right {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    &-left {
+        padding: 0 1rem;
+
+        .#{$prefix}-pagination-select-wrapper {
+            &:after {
+                @include media-breakpoint-only(xs) {
+                    display: none;
+                }
+
+                content: '|';
+            }
+        }
+    }
+
+    &-right {
+
+        button.#{$prefix}-pagination-button-backward,
+        button.#{$prefix}-pagination-button-forward {
+            height: 100%;
+            margin: 0;
+            border-width: 0 1px 0 1px;
+            border-style: solid;
+            border-color: var(--grey-4);
+            padding: 0 0.875rem;
+            cursor: pointer;
+
+            &:focus {
+                outline: 2px solid #0062ff;
+                outline-offset: -2px;
+            }
+        }
+
+        .#{$prefix}-pagination-text {
+            margin-right: hcl-rem(16px);
+        }
+    }
+
+    label,
+    &-text {
+        margin-bottom: 0rem;
+        font-weight: normal;
+
+        @include media-breakpoint-only(xs) {
+            display: none;
+        }
+    }
+
+    span.#{$prefix}-pagination-text {
+        margin-left: 1rem;
+
+        @include media-breakpoint-only(xs) {
+            display: none;
+        }
+    }
+
+    &-select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        border: none;
+
+        select,
+        .#{$prefix}-pagination-select {
+            width: auto;
+            height: 100%;
+            padding: 0 1rem 0 1rem;
+            appearance: none;
+            cursor: pointer;
+            background-color: $white;
+        }
+
+        svg,
+        .#{$prefix}-select-arrow {
+            position: relative;
+            top: auto;
+            right: 1.2rem;
+            bottom: auto;
+        }
+    }
+}

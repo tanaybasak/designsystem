@@ -42,8 +42,8 @@
     --info: #4696D2;
     --warning: #FAC43B;
     --blue-light: #3d70b2;
-    --black-light:#3B5060;
-    --black-lighter:#272D33;
+    --black-light: #3B5060;
+    --black-lighter: #272D33;
 }
 
 // SASS VARIABLES
@@ -143,3 +143,7 @@ $tooltip-arrow-size-icon-position: $tooltip-arrow-size-icon/2;
 $tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+0.0625rem;
 $tooltip-box-shadow:rgba(0, 0, 0, 0.10);
 $tooltip-zindex:5;
+//Pagination
+$pagination-font-size:var(--body-font-size);
+$pagination-line-height: 1.125rem;
+$pagination-bg-color: var(--white);
