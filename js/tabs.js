@@ -1,13 +1,15 @@
 import { PREFIX } from "./utils/config";
 import { NOOP } from "./utils/functions";
 import handleDataBinding from "./utils/data-api";
+import getClosest from "./utils/get-closest";
 
 class Tabs {
     constructor(element, options) {
         this.element = element;
         this.selectors = {
             tabItem: `li`,
-            selectableTabs: `li:not(.${PREFIX}-tabs-disabled)`,
+            selectableTabs: `li.${PREFIX}-tabs-nav-item:not(.${PREFIX}-tabs-disabled)`,
+            selectableTabsAll: `li.${PREFIX}-tabs-nav-item`,
             tabContent: `.${PREFIX}-tabcontent`,
             tabPanel: `.${PREFIX}-tabcontent > div.${PREFIX}-tabs-panel`
         }
@@ -37,8 +39,12 @@ class Tabs {
             tabItem = target.parentElement;
         }
 
-        tabId = Array.from(this.element.querySelectorAll(this.selectors.selectableTabs)).findIndex((item) => {
-            return item.isEqualNode(currentTarget);
+        if (tabItem && tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
+            return false;
+        }
+
+        tabId = Array.from(this.element.querySelectorAll(this.selectors.selectableTabsAll)).findIndex((item) => {
+            return item.isEqualNode(tabItem);
         });
 
         if (tabId > -1 && !tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
@@ -48,7 +54,7 @@ class Tabs {
     }
 
     toggleTab = (target) => {
-        Array.from(this.element.querySelectorAll(this.selectors.selectableTabs)).forEach((item) => {
+        Array.from(this.element.querySelectorAll(this.selectors.selectableTabsAll)).forEach((item) => {
             if (item) {
                 item.classList.remove("active");
                 item.setAttribute("aria-selected", false);
@@ -58,7 +64,7 @@ class Tabs {
     }
 
     selectTab = (target) => {
-        const tabItem = Array.from(this.element.querySelectorAll(this.selectors.selectableTabs)).find((item, index) => {
+        const tabItem = Array.from(this.element.querySelectorAll(this.selectors.selectableTabsAll)).find((item, index) => {
             return target === index;
         });
 
@@ -91,13 +97,13 @@ class Tabs {
     }
 
     changeState = () => {
-        this.state.selectedIndex = Array.from(this.element.querySelectorAll(this.selectors.selectableTabs)).findIndex((item) => {
+        this.state.selectedIndex = Array.from(this.element.querySelectorAll(this.selectors.selectableTabsAll)).findIndex((item) => {
             return (item.classList.contains("active"));
         });
     }
 
     attachEvents = () => {
-        const tabs = this.element.querySelectorAll(this.selectors.selectableTabs);
+        const tabs = Array.from(this.element.querySelectorAll(this.selectors.selectableTabsAll));
         const len = tabs.length;
         for (let i = 0; i < len; i++) {
             tabs[i].addEventListener('click', this.clickEventListener.bind(this));
@@ -108,7 +114,11 @@ class Tabs {
         handleDataBinding("tabs", function (element, target) {
             let idx = 0;
             if (element && target) {
-                idx = Array.from(element.querySelectorAll(`li:not(.${PREFIX}-tabs-disabled)`)).findIndex((item) => {
+                target = getClosest(target, `li.${PREFIX}-tabs-nav-item`);
+                if (target.classList.contains(`${PREFIX}-tabs-disabled`)) {
+                    return false;
+                }
+                idx = Array.from(element.querySelectorAll(`li.${PREFIX}-tabs-nav-item`)).findIndex((item) => {
                     return item.isEqualNode(target);
                 });
             }
