@@ -7,7 +7,7 @@
     padding: 1rem;
     cursor: default;
 
-    @if($type==clickable or $type==selectable) {
+    @if($type==clickable or $type==selectable or $type==expandable) {
         cursor: pointer;
         outline: none !important;
 
