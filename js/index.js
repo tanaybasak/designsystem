@@ -9,14 +9,16 @@ import { isElement } from "./utils/dom";
 import Tabs from "./tabs";
 import Tooltip from "./tooltip";
 import DatePicker from "./datePicker";
+import NumberInput from "./numberInput";
 
 const ComponentList = {
     dropdow: Dropdown,
     navigation : Navigation,
     search : Search,
     datepicker: DatePicker,
+    tabs: Tabs,
     contentswitcher: ContentSwitcher,
-    tabs: Tabs
+    numberInput: NumberInput
 }
 
 for (const componentName in ComponentList) {
@@ -60,6 +62,9 @@ export const components = {
     },
     datepicker: function (selector, options) {
         attachElements(selector, options, DatePicker);
+    },
+    numberInput: function (selector, options) {
+        attachElements(selector, options, NumberInput);
     },
     contentswitch: function (selector, options) {
         attachElements(selector, options, ContentSwitcher);
