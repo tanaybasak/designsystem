@@ -12,7 +12,7 @@ function handleDataBinding(component, bind = NOOP) {
         componentElement.setAttribute("data-init", component);
         const componentInstance = bind(componentElement, target);
         if (componentInstance && typeof componentInstance.attachEvents === "function") {
-            componentInstance.attachEvents()
+            componentInstance.attachEvents();
         }
     })
 }

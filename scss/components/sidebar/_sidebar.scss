@@ -115,11 +115,12 @@
     }
 }
 
-.expanded-sidebar {
+.#{$prefix}-sidebar-expanded {
     &.#{$prefix}-sidebar {
         width: 200px !important;
         transition: all .15s;
         overflow: auto;
+        display: block;
 
         .#{$prefix}-sidebar-title {
             &-item {
