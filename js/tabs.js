@@ -18,6 +18,7 @@ class Tabs {
             selectedIndex: 0,
             onChange: NOOP,
             selectedTabId: "",
+            disabled: [],
             ...options
         };
 
@@ -73,6 +74,13 @@ class Tabs {
                 tabItem.classList.add('active');
                 tabItem.setAttribute("aria-selected", true);
             }
+        }
+
+        if (this.state.disabled && this.state.disabled.length > 0) {
+            Array.from(this.element.querySelectorAll(this.selectors.selectableTabsAll)).forEach((item, index) => {
+                this.state.disabled.indexOf(index) > -1 ?
+                    item.classList.add(`${PREFIX}-tabs-disabled`) : '';
+            });
         }
         this.changeState();
     }
