@@ -48,7 +48,7 @@
             border-width: 0 1px 0 1px;
             border-style: solid;
             border-color: var(--grey-4);
-            padding: 0 0.875rem;
+            padding: 0 1rem;
             cursor: pointer;
 
             &:focus {
@@ -95,6 +95,7 @@
             appearance: none;
             cursor: pointer;
             background-color: $white;
+            margin-right: -0.65rem;
         }
 
         svg,
