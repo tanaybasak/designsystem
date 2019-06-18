@@ -1,0 +1,99 @@
+@mixin tile($type) {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    display: inline-block;
+    background-color: var(--white);
+    border: 1px solid transparent;
+    position: relative;
+    padding: 1rem;
+    cursor: default;
+
+    @if($type==clickable or $type==selectable or $type==expandable) {
+        cursor: pointer;
+        outline: none !important;
+
+        &:focus {
+            border: 1px solid var(--blue);
+        }
+
+        &:hover .#{$prefix}-tile-checkbox {
+            visibility: visible;
+        }
+    }
+
+    @if($type==selectable) {
+        padding-right: 3rem;
+    }
+
+    @if($type==expandable) {
+        padding-bottom: 1.5rem;
+        cursor: default;
+
+        input {
+            &:checked~.hcl-tile-hide {
+                display: block;
+            }
+        }
+    }
+}
+
+.#{$prefix}-tile {
+    @include tile(default);
+
+    &-clickable {
+        @include tile(clickable);
+    }
+
+    &-selectable {
+        @include tile(selectable);
+    }
+
+    &-expandable {
+        @include tile(expandable);
+    }
+
+    &-input {
+        display: none;
+
+        &:checked+.#{$prefix}-tile-checkbox {
+            visibility: visible;
+            fill: var(--blue-light);
+            background-color: var(--white);
+        }
+
+        &:checked+.#{$prefix}-tile-arrow>svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &-checkbox {
+        visibility: hidden;
+        height: 1rem;
+        top: 1rem;
+        right: 1rem;
+        position: absolute;
+        border-radius: 50%;
+        background-color: hsla(0, 0%, 100%, .25);
+        fill: rgba(61, 112, 178, .25);
+    }
+
+    &-arrow {
+        bottom: 0rem;
+        right: 1rem;
+        position: absolute;
+        cursor: pointer;
+
+        >svg {
+            border-radius: 50%;
+            background-color: hsla(0, 0%, 100%, .25);
+            fill: var(--dark-40);
+
+            &:hover {
+                fill: var(--blue);
+            }
+        }
+    }
+
+    &-hide {
+        display: none;
+    }
+}
