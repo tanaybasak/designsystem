@@ -15,7 +15,10 @@ const trackDocumentClick = (element, callback) => {
   const handler = event => {
     if (event.target !== element) {
       document.removeEventListener("click", handler);
-      callback();
+      if(typeof callback === "function")
+        {
+          callback();
+        }
     }
   };
   document.addEventListener("click", handler);

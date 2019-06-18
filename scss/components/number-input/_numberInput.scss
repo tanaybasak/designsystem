@@ -1,0 +1,55 @@
+.#{$prefix}-number-input {
+    display: flex;
+    padding: 0;
+    position: relative;
+
+    &-control {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+
+        button {
+            background: none;
+            appearance: none;
+            cursor: pointer;
+            width: 2.625rem;
+            height: 1.25rem;
+
+            svg {
+                fill: $blue;
+                width: 0.625rem;
+                height: 0.3125rem;
+            }
+        }
+
+        .increment-btn svg {
+            margin-top: 0.3125rem;
+        }
+
+        .decrement-btn svg {
+            margin-bottom: 0.3125rem;
+        }
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+        padding-right: 2.625rem;
+    }
+}
+
+[data-invalid=true] .#{$prefix}-error-msg {
+    order: 4;
+    color: $error;
+}
+
+[data-numberinput][disabled="disabled"] {
+    opacity: 0.5;
+}

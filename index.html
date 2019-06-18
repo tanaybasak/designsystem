@@ -15,8 +15,9 @@
     <!-- HEADER LAYOUT -->
     <header class="hcl-navbar hcl-navbar-expand-lg">
         <!-- HAMBURGER -->
-        <button class="hcl-navbar-hamburger" role="button" data-toggle="collapse" data-target="#collapsibleContent"
-            aria-controls="collapsibleContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button data-component="hamburger" class="hcl-navbar-hamburger" role="button" data-toggle="collapse"
+            data-target="#collapsibleContent" aria-controls="collapsibleContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="hcl-icon-2">
                 <span></span>
                 <span></span>
@@ -47,7 +48,7 @@
                 </li>
             </ul>
             <!-- SEARCH ICON -->
-            <form action="#" class="hcl-navbar-search ml-auto search-btn-only">
+            <form action="#" data-component="search" class="hcl-navbar-search ml-auto search-btn-only">
                 <button class="hcl-navbar-search-btn">
                     <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
                         class="hcl-navbar-search-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
@@ -90,7 +91,7 @@
     <!-- CONTENT LAYOUT -->
     <div class="hcl-content">
         <!-- SIDEBAR LAYOUT -->
-        <nav class="hcl-sidebar">
+        <nav class="hcl-sidebar" data-component="navigation">
             <div class="hcl-sidebar-title">
                 <div class="hcl-sidebar-title-item">
                     <span class="hcl-icon-2"></span>
@@ -534,8 +535,8 @@
                         <footer class="hcl-modal-footer ">
                             <!-- id is just for landing page, will not be part of design system  -->
                             <button id="hcl-modal-cancel-type3"
-                                class="hcl-btn hcl-primary hcl-secondary">Cancel</button>
-                            <button class="hcl-btn hcl-primary">Save</button>
+                                class="hcl-modal-btn hcl-btn hcl-primary hcl-secondary">Cancel</button>
+                            <button class="hcl-modal-btn hcl-btn hcl-primary">Save</button>
                         </footer>
                         <!-- id is just for landing page, will not be part of design system  -->
                         <button id="hcl-modal-close-type3" class="hcl-modal-close"></button>
@@ -558,8 +559,8 @@
                         <footer class="hcl-modal-footer ">
                             <!-- id is just for landing page, will not be part of design system  -->
                             <button id="hcl-modal-cancel-type4"
-                                class="hcl-btn hcl-primary hcl-secondary">Cancel</button>
-                            <button class="hcl-btn hcl-primary">Save</button>
+                                class="hcl-modal-btn hcl-btn hcl-primary hcl-secondary">Cancel</button>
+                            <button class="hcl-modal-btn hcl-btn hcl-primary">Save</button>
                         </footer>
                         <!-- id is just for landing page, will not be part of design system  -->
                         <button id="hcl-modal-close-type4" class="hcl-modal-close"></button>
@@ -584,8 +585,8 @@
                         <footer class="hcl-modal-footer ">
                             <!-- id is just for landing page, will not be part of design system  -->
                             <button id="hcl-modal-cancel-type5"
-                                class="hcl-btn hcl-primary hcl-secondary">Cancel</button>
-                            <button class="hcl-btn hcl-primary hcl-danger">Delete</button>
+                                class="hcl-modal-btn hcl-btn hcl-primary hcl-secondary">Cancel</button>
+                            <button class="hcl-modal-btn hcl-btn hcl-primary hcl-danger">Delete</button>
                         </footer>
                         <!-- id is just for landing page, will not be part of design system  -->
                         <button id="hcl-modal-close-type5" class="hcl-modal-close"></button>
@@ -628,8 +629,9 @@
                         </div>
                         <footer class="hcl-modal-footer ">
                             <!-- id is just for landing page, will not be part of design system  -->
-                            <button id="hcl-modal-cancel-type7" class="hcl-btn hcl-secondary hcl-danger">Cancel</button>
-                            <button class="hcl-btn hcl-primary hcl-danger">Delete</button>
+                            <button id="hcl-modal-cancel-type7"
+                                class="hcl-btn hcl-modal-btn hcl-secondary hcl-danger">Cancel</button>
+                            <button class="hcl-btn hcl-primary hcl-danger hcl-modal-btn">Delete</button>
                         </footer>
                         <!-- id is just for landing page, will not be part of design system  -->
                         <button id="hcl-modal-close-type7" class="hcl-modal-close"></button>
@@ -652,8 +654,9 @@
                         </div>
                         <footer class="hcl-modal-footer ">
                             <!-- id is just for landing page, will not be part of design system  -->
-                            <button id="hcl-modal-cancel-type8" class="hcl-btn hcl-secondary">Cancel</button>
-                            <button class="hcl-btn hcl-primary hcl-danger">Delete</button>
+                            <button id="hcl-modal-cancel-type8"
+                                class="hcl-btn hcl-secondary hcl-modal-btn">Cancel</button>
+                            <button class="hcl-btn hcl-primary hcl-danger hcl-modal-btn">Delete</button>
                         </footer>
                         <!-- id is just for landing page, will not be part of design system  -->
                         <button id="hcl-modal-close-type8" class="hcl-modal-close"></button>
@@ -916,7 +919,7 @@
             <!-- Content Switcher -->
             <section id="content-switcher" class="hcl-row m-4 p-4 colBorder">
                 <h6 class="p-2">Content Switcher (default)</h6>
-                <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                <div data-component="contentswitcher" class="hcl-content-switcher" role="tablist">
                     <button class="hcl-content-switcher-btn active" role="tab" data-target=".gate">
                         <span>All</span>
                     </button>
@@ -968,7 +971,7 @@
             </section>
             <section id="content-switcher2" class="hcl-row m-4 p-4 colBorder">
                 <h6 class="p-2">Content Switcher (disabled)</h6>
-                <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                <div data-component="contentswitcher" class="hcl-content-switcher" role="tablist">
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".hello" disabled>
                         <span>All</span>
                     </button>
@@ -1021,16 +1024,22 @@
             <section id="content-switcher3" class="hcl-row m-4 p-4 colBorder">
                 <h6 class="p-2">Content Switcher (with icons)</h6>
                 <div data-content-switcher class="hcl-content-switcher" role="tablist">
-                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".vanilla">
-                        <span class="hcl-thumbnail"></span>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".vanilla">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>All</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".react">
-                        <span class="hcl-thumbnail"></span>
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>Cybernetics</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".angular">
-                        <span class="hcl-thumbnail"></span>
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>Information & Communication</span>
                     </button>
                 </div>
@@ -1051,7 +1060,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="react" hidden>
+                    <div class="react">
                         <ol class="hcl-list-ordered">
                             <li class="hcl-list-item">Cybernetics
                                 <ul class="hcl-list-nested">
@@ -1061,7 +1070,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="angular" hidden>
+                    <div class="angular">
                         <ol class="hcl-list-ordered">
                             <li class="hcl-list-item">Information & Communication technology
                                 <ul class="hcl-list-nested">
@@ -1076,16 +1085,22 @@
             <section id="content-switcher4" class="hcl-row m-4 p-4 colBorder">
                 <h6 class="p-2">Content Switcher - with icons (disabled)</h6>
                 <div data-content-switcher class="hcl-content-switcher" role="tablist">
-                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".target1" disabled>
-                        <span class="hcl-thumbnail"></span>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target1">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>All</span>
                     </button>
-                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target2" disabled>
-                        <span class="hcl-thumbnail"></span>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target2">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>Cybernetics</span>
                     </button>
-                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target3" disabled>
-                        <span class="hcl-thumbnail"></span>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target3">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>Information & Communication</span>
                     </button>
                 </div>
@@ -1685,6 +1700,89 @@
                     </div>
                 </div>
             </section>
+            <!-- Number Input -->
+            <section class="m-1 p-2 colBorder">
+                <div data-numberinput class="hcl-form-group">
+                    <div class="hcl-form-control hcl-number-input">
+                        <input type="number" value="15" min="10" max="20" class="hcl-form-control" id="numbetInput1" />
+                        <div class="hcl-number-input-control">
+                            <button aria-label="increase number input" class="increment-btn" type="button"
+                                aria-live="polite" aria-atomic="true" tabindex="-1">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M0 4l4-4 4 4z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="decrease number input" class="decrement-btn" type="button"
+                                aria-live="polite" aria-atomic="true" tabindex="-1">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M8 0L4 4 0 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <label for="numbetInput1">Number Input</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here (max 20 and min 10)</div>
+                </div>
+
+                <div data-numberinput data-invalid="true" class="hcl-form-group">
+                    <div class="hcl-form-control hcl-number-input">
+                        <input type="number" value="10" data-invalid="true" class="hcl-form-control"
+                            id="numbetInput2" />
+                        <div class="hcl-number-input-control">
+                            <button aria-label="increase number input" class="increment-btn" type="button"
+                                aria-live="polite" aria-atomic="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M0 4l4-4 4 4z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="decrease number input" class="decrement-btn" type="button"
+                                aria-live="polite" aria-atomic="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M8 0L4 4 0 0z"></path>
+                                </svg>
+                            </button>
+
+                        </div>
+                    </div>
+                    <label for="numbetInput2">Number Input Validation</label>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+
+                <div data-numberinput disabled="disabled" class="hcl-form-group">
+                    <div class="hcl-form-control hcl-number-input">
+                        <input type="number" value="11" min="10" max="20" disabled="disabled" data-invalid="true"
+                            class="hcl-form-control" id="numbetInput3" />
+                        <div class="hcl-number-input-control">
+                            <button aria-label="increase number input" disabled="disabled" class="increment-btn"
+                                type="button" aria-live="polite" aria-atomic="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M0 4l4-4 4 4z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="decrease number input" disabled="disabled" class="decrement-btn"
+                                type="button" aria-live="polite" aria-atomic="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M8 0L4 4 0 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <label for="numbetInput3">Number Input Disabled</label>
+                </div>
+            </section>
+
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
         <script src="./js/index.js"></script>
@@ -1693,14 +1791,26 @@
                 position: "top", onChange: (element, value) => {
                     console.log(element, value);
                 }
-            });
+            })
             patron.tooltip("[data-tooltip]");
-            patron.tabs("#tabsjs", {
+
+            patron.contentswitch("#content-switcher3", {
                 selectedIndex: 2,
+                disabled: [],
                 onChange: function (e) {
                     console.log(e);
                 }
             });
+
+            patron.contentswitch("#content-switcher4", {
+                selectedIndex: 2,
+                disabled: [2],
+                onChange: function (e) {
+                    console.log(e);
+                }
+            });
+
+            patron.numberInput("[data-numberinput]");
         </script>
 </body>
 
