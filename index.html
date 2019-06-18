@@ -674,11 +674,11 @@
                             <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab1" data-target="tab1">
                                 <a class="hcl-tabs-nav-link" href="#tab1">Tab Label 1</a>
                             </li>
-                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab2" aria-selected="true"
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab2" aria-selected="true"
                                 data-target="tab2">
                                 <a class="hcl-tabs-nav-link" href="#tab2">Tab Label 2</a>
                             </li>
-                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab3"
+                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled active" aria-controls="tab3"
                                 data-target="tab3">
                                 <a class="hcl-tabs-nav-link" href="#tab3">Tab Label 3</a>
                             </li>
@@ -688,10 +688,10 @@
                         <div role="tabpanel" aria-labelledby="tab1" id="tab1" class="hcl-tabs-panel">
                             <p>Tabbable Content 1</p>
                         </div>
-                        <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel active">
+                        <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel">
                             <p>Tabbable Content 2</p>
                         </div>
-                        <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="hcl-tabs-panel">
+                        <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="hcl-tabs-panel active">
                             <p>Tabbable Content 3</p>
                         </div>
                     </section>
@@ -1793,6 +1793,14 @@
                 }
             })
             patron.tooltip("[data-tooltip]");
+
+            patron.tabs("#tabsjs", {
+                selectedIndex: 2,
+                disabled: [2],
+                onChange: function (e) {
+                    console.log(e);
+                }
+            });
 
             patron.contentswitch("#content-switcher3", {
                 selectedIndex: 2,

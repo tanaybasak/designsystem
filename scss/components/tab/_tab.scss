@@ -15,6 +15,7 @@
         &.active {
             >a {
                 color: var(--blue);
+                outline: none;
             }
 
             border-bottom: 2px solid var(--blue);
@@ -80,6 +81,20 @@
 
         &:hover {
             color: $black;
+        }
+    }
+
+    &.active {
+
+        >a,
+        .#{$prefix}-tabs-nav-link {
+            &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                color: var(--blue);
+            }
         }
     }
 }
