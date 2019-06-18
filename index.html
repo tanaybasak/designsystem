@@ -16,7 +16,7 @@
     <header class="hcl-navbar hcl-navbar-expand-lg">
         <!-- HAMBURGER -->
         <button data-component="hamburger" class="hcl-navbar-hamburger" role="button" data-toggle="collapse" data-target="#collapsibleContent"
-            aria-controls="collapsibleContent" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="collapsibleContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="hcl-icon-2">
                 <span></span>
                 <span></span>
@@ -1190,17 +1190,16 @@
             <section class="hcl-row m-3">
                 <div class="hcl-col">
                     <div class="hcl-form-item">
-                        <strong class="hcl-label">
+                        <span class="hcl-label">
                             Account photo
-                        </strong>
+                        </span>
                         <p class="hcl-label-description">only .jpg and .png files. 500kb max file size.</p>
-                        <div class="hcl-file">
-                            <label for="file-uploader" class="hcl-file-btn hcl-btn hcl-primary hcl-secondary hcl-sm"
-                                role="button" tabindex="0">
+                        <div class="hcl-file-uploader">
+                            <input type="file" class="hcl-file-input" id="hcl-file-uploader" tabIndex=0 multiple
+                                accept=".jpg,.png" />
+                            <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm" role="button">
                                 Add file
-                                <span class="hcl-file-btn-icon"></span>
                             </label>
-                            <input type="file" class="hcl-file-input" id="file-uploader" multiple />
                         </div>
                     </div>
                 </div>
