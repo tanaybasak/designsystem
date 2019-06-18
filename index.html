@@ -15,8 +15,9 @@
     <!-- HEADER LAYOUT -->
     <header class="hcl-navbar hcl-navbar-expand-lg">
         <!-- HAMBURGER -->
-        <button data-component="hamburger" class="hcl-navbar-hamburger" role="button" data-toggle="collapse" data-target="#collapsibleContent"
-        aria-controls="collapsibleContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button data-component="hamburger" class="hcl-navbar-hamburger" role="button" data-toggle="collapse"
+            data-target="#collapsibleContent" aria-controls="collapsibleContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="hcl-icon-2">
                 <span></span>
                 <span></span>
@@ -628,7 +629,8 @@
                         </div>
                         <footer class="hcl-modal-footer ">
                             <!-- id is just for landing page, will not be part of design system  -->
-                            <button id="hcl-modal-cancel-type7" class="hcl-btn hcl-modal-btn hcl-secondary hcl-danger">Cancel</button>
+                            <button id="hcl-modal-cancel-type7"
+                                class="hcl-btn hcl-modal-btn hcl-secondary hcl-danger">Cancel</button>
                             <button class="hcl-btn hcl-primary hcl-danger hcl-modal-btn">Delete</button>
                         </footer>
                         <!-- id is just for landing page, will not be part of design system  -->
@@ -652,7 +654,8 @@
                         </div>
                         <footer class="hcl-modal-footer ">
                             <!-- id is just for landing page, will not be part of design system  -->
-                            <button id="hcl-modal-cancel-type8" class="hcl-btn hcl-secondary hcl-modal-btn" >Cancel</button>
+                            <button id="hcl-modal-cancel-type8"
+                                class="hcl-btn hcl-secondary hcl-modal-btn">Cancel</button>
                             <button class="hcl-btn hcl-primary hcl-danger hcl-modal-btn">Delete</button>
                         </footer>
                         <!-- id is just for landing page, will not be part of design system  -->
@@ -671,11 +674,11 @@
                             <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab1" data-target="tab1">
                                 <a class="hcl-tabs-nav-link" href="#tab1">Tab Label 1</a>
                             </li>
-                            <li role="tab" class="hcl-tabs-nav-item active" aria-controls="tab2" aria-selected="true"
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab2" aria-selected="true"
                                 data-target="tab2">
                                 <a class="hcl-tabs-nav-link" href="#tab2">Tab Label 2</a>
                             </li>
-                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled" aria-controls="tab3"
+                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled active" aria-controls="tab3"
                                 data-target="tab3">
                                 <a class="hcl-tabs-nav-link" href="#tab3">Tab Label 3</a>
                             </li>
@@ -685,10 +688,10 @@
                         <div role="tabpanel" aria-labelledby="tab1" id="tab1" class="hcl-tabs-panel">
                             <p>Tabbable Content 1</p>
                         </div>
-                        <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel active">
+                        <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel">
                             <p>Tabbable Content 2</p>
                         </div>
-                        <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="hcl-tabs-panel">
+                        <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="hcl-tabs-panel active">
                             <p>Tabbable Content 3</p>
                         </div>
                     </section>
@@ -1022,15 +1025,21 @@
                 <h6 class="p-2">Content Switcher (with icons)</h6>
                 <div data-content-switcher class="hcl-content-switcher" role="tablist">
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".vanilla">
-                        <span class="hcl-thumbnail"></span>
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>All</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".react">
-                        <span class="hcl-thumbnail"></span>
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>Cybernetics</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".angular">
-                        <span class="hcl-thumbnail"></span>
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>Information & Communication</span>
                     </button>
                 </div>
@@ -1077,15 +1086,21 @@
                 <h6 class="p-2">Content Switcher - with icons (disabled)</h6>
                 <div data-content-switcher class="hcl-content-switcher" role="tablist">
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".target1">
-                        <span class="hcl-thumbnail"></span>
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>All</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".target2">
-                        <span class="hcl-thumbnail"></span>
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>Cybernetics</span>
                     </button>
                     <button class="hcl-content-switcher-btn" role="tab" data-target=".target3">
-                        <span class="hcl-thumbnail"></span>
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
                         <span>Information & Communication</span>
                     </button>
                 </div>
@@ -1640,6 +1655,50 @@
                     </li>
                 </ul>
             </section>
+            <!-- tile -->
+            <section class="hcl-offset-4">
+                <div class="mt-1 hcl-row">
+                    <!-- default tile -->
+                    <div class="hcl-tile ">
+                        <p>This is read only tile</p>
+                    </div>
+                </div>
+                <div class="mt-1 hcl-row">
+                    <!-- clickable  tile -->
+                    <div class="hcl-tile-clickable" tabindex="0">
+                        <a>
+                            <p>This is clickable tile</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-1 hcl-row">
+                    <!-- selectable tile -->
+                    <div>
+                        <label for="tile-id" class="hcl-tile-selectable" tabindex="0">
+                            <input id="tile-id" class="hcl-tile-input" type="checkbox" title="tile" />
+                            <svg class="hcl-tile-checkbox" width="16" height="16" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                            <p>Click to select tile</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-1 mb-4 hcl-row">
+                    <!-- expandable tile -->
+                    <div class="hcl-tile-expandable" tabindex="0">
+                        <input id="tile-id-expand" class="hcl-tile-input" type="checkbox" title="tile" />
+                        <label for="tile-id-expand" class="hcl-tile-arrow">
+                            <svg width="12" height="7" viewBox="0 0 12 7">
+                                <path fill-rule="nonzero" d="M6.002 5.55L11.27 0l.726.685L6.003 7 0 .685.726 0z"></path>
+                            </svg>
+                        </label>
+                        <p class="hcl-tile-content">Content shown prior expand </p>
+                        <p class="hcl-tile-hide">Content shown after expand </p>
+                    </div>
+                </div>
+            </section>
             <!-- Number Input -->
             <section class="m-1 p-2 colBorder">
                 <div data-numberinput class="hcl-form-group">
@@ -1733,6 +1792,14 @@
                 }
             })
             patron.tooltip("[data-tooltip]");
+
+            patron.tabs("#tabsjs", {
+                selectedIndex: 2,
+                disabled: [2],
+                onChange: function (e) {
+                    console.log(e);
+                }
+            });
 
             patron.contentswitch("#content-switcher3", {
                 selectedIndex: 2,
