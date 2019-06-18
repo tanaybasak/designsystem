@@ -58,7 +58,7 @@
         }
 
         >.#{$prefix}-close {
-            @include hcl-close-icon(20, $blue, $white, true);
+            @include hcl-close-icon(18, $blue, $white, true);
             margin-left: 10px;
         }
     }
