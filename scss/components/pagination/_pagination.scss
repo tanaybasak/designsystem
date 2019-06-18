@@ -65,6 +65,10 @@
             }
         }
 
+        button.#{$prefix}-pagination-button-forward {
+            border-right-width: 0;
+        }
+
         .#{$prefix}-pagination-text {
             margin-right: hcl-rem(16px);
         }
