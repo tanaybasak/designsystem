@@ -248,7 +248,7 @@
                         <label id="hcl-pagination-select-7" class="hcl-pagination-text"
                             for="hcl-pagination-select-7">Items per page:</label>
                         <div class="hcl-pagination-select-wrapper">
-                            <select class="hcl-pagination-select hcl-items-page">
+                            <select class="hcl-pagination-select hcl-page-items">
                                 <option>10</option>
                                 <option>20</option>
                                 <option>30</option>
@@ -1876,11 +1876,15 @@
             patron.numberInput("[data-numberinput]");
 
             document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
-                console.log('Custom Event', event);
+                console.log('Page Change', event);
             });
 
             document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageNumber', (event) => {
-                console.log('Custom Event', event);
+                console.log('Page Number', event);
+            });
+
+            document.getElementsByClassName('hcl-pagination')[0].addEventListener('itemsPerPage', (event) => {
+                console.log('Items per Page', event);
             });
         </script>
 </body>
