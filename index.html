@@ -243,7 +243,7 @@
             </section>
             <!-- Pagination -->
             <section class="m-1 p-2">
-                <div class="hcl-pagination" data-pagination>
+                <div data-component="pagination" class="hcl-pagination">
                     <div class="hcl-pagination-left">
                         <label id="hcl-pagination-select-7" class="hcl-pagination-text"
                             for="hcl-pagination-select-7">Items per page:</label>
@@ -1267,7 +1267,8 @@
                         <div class="hcl-file-uploader">
                             <input type="file" class="hcl-file-input" id="hcl-file-uploader" tabIndex=0 multiple
                                 accept=".jpg,.png" />
-                            <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm" role="button">
+                            <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm"
+                                role="button">
                                 Add file
                             </label>
                         </div>
@@ -1873,6 +1874,10 @@
             });
 
             patron.numberInput("[data-numberinput]");
+
+            document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
+                console.log('Custom Event', event.detail.direction);
+            });
         </script>
 </body>
 

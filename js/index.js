@@ -10,15 +10,17 @@ import Tabs from "./tabs";
 import Tooltip from "./tooltip";
 import DatePicker from "./datePicker";
 import NumberInput from "./numberInput";
+import Pagination from "./pagination";
 
 const ComponentList = {
     dropdow: Dropdown,
-    navigation : Navigation,
-    search : Search,
+    navigation: Navigation,
+    search: Search,
     datepicker: DatePicker,
     tabs: Tabs,
     contentswitcher: ContentSwitcher,
-    numberInput: NumberInput
+    numberInput: NumberInput,
+    pagination: Pagination
 }
 
 for (const componentName in ComponentList) {
