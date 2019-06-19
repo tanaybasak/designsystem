@@ -49,8 +49,8 @@
 
     &-right {
 
-        button.#{$prefix}-pagination-button-backward,
-        button.#{$prefix}-pagination-button-forward {
+        button.#{$prefix}-pagination-button-previous,
+        button.#{$prefix}-pagination-button-next {
             height: 100%;
             margin: 0;
             border-width: 0 1px 0 1px;
@@ -60,12 +60,12 @@
             cursor: pointer;
 
             &:focus {
-                outline: 2px solid #0062ff;
-                outline-offset: -2px;
+                outline: 1px solid var(--blue);
+                outline-offset: -1px;
             }
         }
 
-        button.#{$prefix}-pagination-button-forward {
+        button.#{$prefix}-pagination-button-next {
             border-right-width: 0;
         }
 

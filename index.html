@@ -248,7 +248,7 @@
                         <label id="hcl-pagination-select-7" class="hcl-pagination-text"
                             for="hcl-pagination-select-7">Items per page:</label>
                         <div class="hcl-pagination-select-wrapper">
-                            <select class="hcl-pagination-select">
+                            <select class="hcl-pagination-select hcl-items-page">
                                 <option>10</option>
                                 <option>20</option>
                                 <option>30</option>
@@ -270,14 +270,14 @@
                         <span class="hcl-pagination-text">
                             <span class="hcl-page-start">1</span>&nbsp;of&nbsp;
                             <span class="hcl-page-end">4</span>&nbsp;pages</span>
-                        <button class="hcl-pagination-button-backward" aria-label="Previous page">
+                        <button class="hcl-pagination-button-previous" aria-label="Previous page">
                             <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
                                 <path fill-rule="nonzero" d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z">
                                 </path>
                             </svg>
                         </button>
                         <div class="hcl-pagination-select-wrapper">
-                            <select class="hcl-pagination-select">
+                            <select class="hcl-pagination-select hcl-page-number">
                                 <option>1</option>
                                 <option>3</option>
                                 <option>4</option>
@@ -287,7 +287,7 @@
                                 <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <button class="hcl-pagination-button-forward" aria-label="Next page">
+                        <button class="hcl-pagination-button-next" aria-label="Next page">
                             <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
                                 <path fill-rule="nonzero"
                                     d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"></path>
@@ -1876,6 +1876,10 @@
             patron.numberInput("[data-numberinput]");
 
             document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
+                console.log('Custom Event', event);
+            });
+
+            document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageNumber', (event) => {
                 console.log('Custom Event', event);
             });
         </script>
