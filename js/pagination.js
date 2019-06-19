@@ -48,9 +48,9 @@ class Pagination {
         const { target } = e;
         e.preventDefault();
         if (target && getClosest(target, `.${PREFIX}-pagination-button-forward`)) {
-            this.emitEvent(this.events.eventPageChange, { 'direction': { 'direction': this.buttons.FORWARD } });
+            this.emitEvent(this.events.eventPageChange, { 'direction': this.buttons.FORWARD });
         } else if (target && getClosest(target, `.${PREFIX}-pagination-button-backward`)) {
-            this.emitEvent(this.events.eventPageChange, { 'direction': { 'direction': this.buttons.BACKWARD } });
+            this.emitEvent(this.events.eventPageChange, { 'direction': this.buttons.BACKWARD });
         }
     }
 
