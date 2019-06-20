@@ -1,0 +1,45 @@
+
+
+.#{$prefix}-select {
+    background-color: transparent;
+    color: #3d70b2;
+    font-weight: 600;
+    box-shadow: none;
+    padding-right: 2rem;
+    height: 40px;
+    -webkit-appearance: none;
+    /*Removes default chrome and safari style*/
+    -moz-appearance: none;
+    /* Removes Default Firefox style*/
+    padding: 0 2.5rem 0 1rem;
+
+    &:focus {
+        outline: 1px solid #3d70b2;
+    }
+
+    &-option {
+        font-weight: normal;
+        display: block;
+        white-space: pre;
+        min-height: 1.2em;
+        padding: 0px 2px 1px;
+    }
+
+    &-arrow {
+        bottom: auto;
+        top: 1rem;
+        right: .875rem;
+        fill: #3d70b2;
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        width: .625rem;
+        height: .3125rem;
+        pointer-events: none;
+    }
+
+    &-container {
+        position: relative;
+        width: fit-content;
+    }
+}

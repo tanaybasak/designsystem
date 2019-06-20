@@ -1,3 +1,52 @@
-.#{$prefix}-datePicker {
-   
+.#{$prefix}-time-picker {
+    display: flex;
+    align-items: flex-end;
+
+    &-label {
+        font-family: inherit;
+        font-size: .875rem;
+        color: #152935;
+        font-weight: 600;
+        display: inline-block;
+        vertical-align: baseline;
+        margin-bottom: .5rem;
+    }
+
+    &-input {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid transparent;
+    }
+
+    &-input-field {
+        font-size: .875rem;
+        display: flex;
+        align-items: center;
+        background-color: #f4f7fb;
+        border: none;
+        width: 4.875rem;
+        color: #152935;
+        height: 2.5rem;
+        padding: 0 1rem;
+        order: 2;
+        box-shadow: 0 1px 0 0 #5a6872;
+    }
+
+    &-msg {
+        font-size: .75rem;
+        margin: .75rem 0 0;
+        max-height: 0;
+        overflow: hidden;
+        font-weight: 600;
+        line-height: 1.5;
+        display: none;
+    }
+
+    &-select {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+
+    }
 }

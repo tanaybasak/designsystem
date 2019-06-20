@@ -182,6 +182,54 @@
         <!-- MAIN CONTENT LAYOUT -->
         <main class="hcl-content-main">
             <!-- AVAILABLE COMPONENTS STARTS -->
+            <section class="ml-4">
+                 <!-- Select option -->
+                <div class="hcl-select-container">
+                    <select id="hcl-select-id-1" class="hcl-select">
+                        <option class="hcl-select-option" value="option 1">option 1</option>
+                        <option class="hcl-select-option" value="option 2">option 2</option>
+                        <option class="hcl-select-option" value="option 2">option 2</option>
+                    </select>
+                    <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
+                        <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+            </section>
+            <!-- Time Picker -->
+            <section>
+                <div class="hcl-time-picker">
+                    <div class="hcl-time-picker-input">
+                        <!-- <label for="time-picker-1" class="hcl-label">Select a time</label> -->
+                        <input id="time-picker-1" type="text" class="hcl-time-picker-input-field"
+                            pattern="(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)" placeholder="hh:mm" maxlength="5">
+                        <div class="hcl-time-picker-msg">
+                            Invalid time.
+                        </div>
+                    </div>
+                    <div class="hcl-time-picker-select">
+                        <!-- <label for="select-id-1" class="hcl-label hcl-visually-hidden">Select AM/PM</label> -->
+                        <select id="select-id-1" class="hcl-select">
+                            <option class="hcl-select-option" value="AM">AM</option>
+                            <option class="hcl-select-option" value="PM">PM</option>
+                        </select>
+                        <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
+                            <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="hcl-time-picker-select">
+                        <!-- <label for="select-id-2" class="hcl-label hcl-visually-hidden">Select time zone</label> -->
+                        <select id="select-id-2" class="hcl-select">
+                            <option class="hcl-select-option" value="option-1">Time zone 1</option>
+                            <option class="hcl-select-option" value="option-2">Time zone 2</option>
+                            <option class="hcl-select-option" value="option-3">Time zone 3</option>
+                        </select>
+                        <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
+                            <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
             <section id="typography" class="hcl-container">
                 <div class="hcl-row">
                     <div class="hcl-col-12">
@@ -1212,7 +1260,8 @@
                         <div class="hcl-file-uploader">
                             <input type="file" class="hcl-file-input" id="hcl-file-uploader" tabIndex=0 multiple
                                 accept=".jpg,.png" />
-                            <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm" role="button">
+                            <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm"
+                                role="button">
                                 Add file
                             </label>
                         </div>
