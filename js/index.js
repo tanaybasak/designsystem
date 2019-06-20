@@ -10,15 +10,17 @@ import Tabs from "./tabs";
 import Tooltip from "./tooltip";
 import DatePicker from "./datePicker";
 import NumberInput from "./numberInput";
+import Accordion from "./accordion"
 
 const ComponentList = {
     dropdow: Dropdown,
-    navigation : Navigation,
-    search : Search,
+    navigation: Navigation,
+    search: Search,
     datepicker: DatePicker,
     tabs: Tabs,
     contentswitcher: ContentSwitcher,
-    numberInput: NumberInput
+    numberInput: NumberInput,
+    accordion: Accordion
 }
 
 for (const componentName in ComponentList) {
@@ -68,6 +70,9 @@ export const components = {
     },
     contentswitch: function (selector, options) {
         attachElements(selector, options, ContentSwitcher);
+    },
+    accordion: function (selector, options) {
+        attachElements(selector, options, Accordion);
     }
 };
 
