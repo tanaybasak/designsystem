@@ -4,21 +4,38 @@ class Accordion {
 
     constructor(element, options) {
         this.element = element;
+
+        this.state = {
+            uncontrolled: options.uncontrolled || false,
+            ...options
+        };
+
+        this.elements = this.element.querySelectorAll(`.${PREFIX}-accordion-title`);
     }
 
     toggleContent = (event) => {
-        const item = event.currentTarget.parentNode;
-        if (item.classList.contains('expanded')) {
-            item.classList.remove('expanded');
+        const comp = event.currentTarget;
+        const item = comp.parentNode;
+        const expanded = item.classList.contains("expanded");
+        if (this.state.uncontrolled) {
+            if (expanded) {
+                item.classList.remove("expanded");
+            }
         } else {
+            this.elements.forEach(element => {
+                const itm = element.parentNode;
+                itm.classList.remove("expanded");
+            });
+        }
+        if (!expanded) {
             item.classList.add("expanded");
         }
     }
+
     attachEvents = () => {
-        this.element.querySelectorAll(`.${PREFIX}-accordion-title`)
-            .forEach((item, index) => {
-                item.addEventListener("click", this.toggleContent);
-            });
+        this.elements.forEach((item, index) => {
+            item.addEventListener("click", this.toggleContent);
+        });
     }
 }
 
