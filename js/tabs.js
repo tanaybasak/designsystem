@@ -70,10 +70,8 @@ class Tabs {
         });
 
         if (this.element.contains(tabItem)) {
-            if (!tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
                 tabItem.classList.add('active');
                 tabItem.setAttribute("aria-selected", true);
-            }
         }
 
         if (this.state.disabled && this.state.disabled.length > 0) {
@@ -120,18 +118,35 @@ class Tabs {
 
     static handleDataAPI = () => {
         handleDataBinding("tabs", function (element, target) {
-            let idx = 0;
+            let defaultTabOption = { selectedIndex: 0, disabled: [] };
             if (element && target) {
-                target = getClosest(target, `li.${PREFIX}-tabs-nav-item`);
-                if (target.classList.contains(`${PREFIX}-tabs-disabled`)) {
-                    return false;
+
+                let tabItems = Array.from(element.querySelectorAll(`li.${PREFIX}-tabs-nav-item`)), len = 0;
+                if (!getClosest(target, `li.${PREFIX}-tabs-nav-item`)) {
+                    const tabPanel = getClosest(target, `.${PREFIX}-tabs-panel`);
+                    defaultTabOption['selectedIndex'] = Array.from(element.querySelectorAll(`div.${PREFIX}-tabs-panel`))
+                        .findIndex((item, index) => {
+                            return item.isEqualNode(tabPanel);
+                        });
+                } else {
+                    target = getClosest(target, `li.${PREFIX}-tabs-nav-item`);
+                    defaultTabOption['selectedIndex'] = tabItems.findIndex((item) => {
+                        return item.isEqualNode(target);
+                    });
                 }
-                idx = Array.from(element.querySelectorAll(`li.${PREFIX}-tabs-nav-item`)).findIndex((item) => {
-                    return item.isEqualNode(target);
-                });
+
+                len = tabItems.length;
+
+                for (let i = 0; i < len; i++) {
+                    if (tabItems[i].classList.contains(`${PREFIX}-tabs-disabled`)) {
+                        defaultTabOption['disabled'].push(i);
+                    }
+                }
             }
             return new Tabs(element, {
-                selectedIndex: idx || 0
+                selectedIndex: 0,
+                disabled: [],
+                ...defaultTabOption
             });
         })
     }
