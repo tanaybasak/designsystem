@@ -6,18 +6,24 @@
  *******************************************************************
  */
 import handleDataBinding from "./utils/data-api";
+import getClosest from "./utils/get-closest";
+import { PREFIX } from './utils/config';
 
 class Search {
-    constructor(element) {
+    constructor(element, options) {
         this.element = element;
         this.input = this.element.querySelector('input');
-        this.searchIcon = this.element.querySelector('.hcl-search-btn');
-        this.resetIcon = this.element.querySelector('.hcl-search-reset');
+        this.searchIcon = this.element.querySelector(`.${PREFIX}-search-btn`);
+        this.resetIcon = this.element.querySelector(`.${PREFIX}-search-reset`);
+
+        if (options && options.openSearch) {
+            this.showSearch();
+        }
     }
 
     attachEvents() {
-        if (this.element.classList.contains('hcl-search-btn-only')) {
-            this.searchIcon.addEventListener('mousedown', (e) => { this.showSearch(e); });
+        if (this.element.classList.contains(`${PREFIX}-search-btn-only`)) {
+            this.searchIcon.addEventListener('click', (e) => { this.showSearch(e); });
             this.input.addEventListener('blur', (e) => { this.onBlur(e) });
         }
         this.resetIcon.addEventListener('mousedown', e => { this.clearSearch(e); });
@@ -25,46 +31,47 @@ class Search {
     }
 
     showSearch(event) {
-        event.preventDefault();
-        this.element.classList.remove('hcl-search-btn-only');
-        this.element.classList.add('shown');
-        this.searchIcon.style.display = "none";
+        if (event)
+            event.preventDefault();
+        this.element.classList.add('show');
         setTimeout(() => {
             this.input.focus();
-        }, 150)
+        }, 200)
     }
 
     displayReset(e) {
         if (this.input.value !== '') {
-            this.resetIcon.style.visibility = 'visible';
+            this.resetIcon.classList.add('show');
         } else {
-            this.resetIcon.style.visibility = 'hidden';
+            this.resetIcon.classList.remove('show');
         }
     }
 
     closeSearch() {
-        this.element.classList.add('hcl-search-btn-only')
-        this.element.classList.remove('shown');
+        this.element.classList.remove('show');
     }
 
     clearSearch(event) {
         event.preventDefault();
         this.input.value = '';
-        this.resetIcon.style.visibility = 'hidden';
+        this.resetIcon.classList.remove('show');
         this.input.focus();
     }
 
     onBlur() {
         if (this.input.value === '') {
-            this.element.classList.add('hcl-search-btn-only');
-            this.searchIcon.style.display = 'block';
-            this.element.classList.remove('shown');
+            this.element.classList.remove('show');
         }
     }
 
     static handleDataAPI = () => {
-        handleDataBinding("search", function (element) {
-            return new Search(element);
+        handleDataBinding("search", function (element, target) {
+            let openSearch = false;
+            let newTarget = getClosest(target, `.${PREFIX}-search-btn`);
+            if (newTarget) {
+                openSearch = true;
+            }
+            return new Search(element, { openSearch: openSearch });
         })
     }
 }

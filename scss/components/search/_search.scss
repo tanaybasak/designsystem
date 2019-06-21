@@ -5,7 +5,7 @@
     width: 100%;
     height: $search-height;
 
-    &.shown {
+    &.show {
         direction: rtl;
 
         &>* {
@@ -15,22 +15,24 @@
         .#{$prefix}-search-input {
             padding-left: 1rem !important;
         }
+
+        .#{$prefix}-search-btn {
+            display: none;
+        }
     }
 
     .#{$prefix}-search-btn {
         height: $search-height;
         width: $search-height;
         position: absolute;
-        left: 0;
-        top: 0;
         display: flex;
         flex-direction: column;
         background: none;
         pointer-events: none;
 
         .#{$prefix}-search-icon {
-            margin-left: ($search-height - $icon-size)/2;
-            margin-top: ($search-height - $icon-size)/2;
+            margin-left: ($search-height - $search-icon-size)/2;
+            margin-top: ($search-height - $search-icon-size)/2;
             fill: var(--blue-light);
         }
     }
@@ -45,7 +47,7 @@
         border: none;
         right: 0;
         position: unset;
-        transition: all 0.15s ease-out;
+        transition: all .15s ease-out;
 
         &:focus {
             outline: none;
@@ -65,6 +67,11 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        transition: visibility .15s ease-out;
+
+        &.show {
+            visibility: visible;
+        }
 
         &:before,
         &:after {
@@ -72,7 +79,7 @@
             position: absolute;
             width: 0.125rem;
             background-color: var(--grey-7);
-            height: $icon-size;
+            height: $search-icon-size;
         }
 
         &:before {
@@ -98,8 +105,8 @@
             width: $search-height-sm;
 
             .#{$prefix}-search-icon {
-                margin-left: ($search-height-sm - $icon-size)/2;
-                margin-top: ($search-height-sm - $icon-size)/2;
+                margin-left: ($search-height-sm - $search-icon-size)/2;
+                margin-top: ($search-height-sm - $search-icon-size)/2;
             }
         }
 
@@ -111,17 +118,21 @@
 
     &.#{$prefix}-search-btn-only {
 
-        .#{$prefix}-search-input {
-            visibility: hidden;
-            width: 0;
-            min-width: 0;
-            position: absolute;
-        }
+        &:not(.show) {
 
-        .#{$prefix}-search-btn {
-            right: 0;
-            left: unset;
-            pointer-events: unset;
+            .#{$prefix}-search-input {
+                visibility: hidden;
+                width: 0;
+                padding: 0px;
+                position: absolute;
+            }
+
+            .#{$prefix}-search-btn {
+                right: 0;
+                left: unset;
+                pointer-events: unset;
+            }
+
         }
     }
 
