@@ -5,7 +5,7 @@
     &-label {
         font-family: inherit;
         font-size: .875rem;
-        color: #152935;
+        color: var(--black);
         font-weight: 600;
         display: inline-block;
         vertical-align: baseline;
@@ -16,20 +16,27 @@
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid transparent;
+
+
     }
 
     &-input-field {
         font-size: .875rem;
         display: flex;
         align-items: center;
-        background-color: #f4f7fb;
+        background-color: rgba(70,150,210,0.05);
         border: none;
-        width: 4.875rem;
-        color: #152935;
+        width: 5.25rem;
+        color: var(--black);
         height: 2.5rem;
         padding: 0 1rem;
         order: 2;
         box-shadow: 0 1px 0 0 #5a6872;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 2px 0 0 #3d70b2;
+        }
     }
 
     &-msg {
