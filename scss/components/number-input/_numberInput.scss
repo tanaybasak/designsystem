@@ -23,6 +23,10 @@
                     width: 0.625rem;
                     height: 0.3125rem;
                 }
+
+                &[disabled] {
+                    cursor: not-allowed;
+                }
             }
 
             .increment-btn svg {
@@ -46,7 +50,7 @@
         }
     }
 
-    &[disabled="disabled"] {
+    &[disabled] {
         opacity: 0.5;
     }
 
