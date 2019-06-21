@@ -1212,7 +1212,8 @@
                         <div class="hcl-file-uploader">
                             <input type="file" class="hcl-file-input" id="hcl-file-uploader" tabIndex=0 multiple
                                 accept=".jpg,.png" />
-                            <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm" role="button">
+                            <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm"
+                                role="button">
                                 Add file
                             </label>
                         </div>
@@ -1698,7 +1699,7 @@
             </section>
             <!-- Number Input -->
             <section class="m-1 p-2 colBorder">
-                <div data-numberinput class="hcl-form-group">
+                <div class="hcl-number-input-wrapper hcl-form-group">
                     <div class="hcl-form-control hcl-number-input">
                         <input type="number" value="15" min="10" max="20" class="hcl-form-control" id="numbetInput1" />
                         <div class="hcl-number-input-control">
@@ -1724,7 +1725,7 @@
                     <div class="hcl-helper-text">Optional Helper text goes here (max 20 and min 10)</div>
                 </div>
 
-                <div data-numberinput data-invalid="true" class="hcl-form-group">
+                <div data-invalid="true" data-component="numberInput" class="hcl-number-input-wrapper hcl-form-group">
                     <div class="hcl-form-control hcl-number-input">
                         <input type="number" value="10" data-invalid="true" class="hcl-form-control"
                             id="numbetInput2" />
@@ -1752,7 +1753,7 @@
                     <div class="hcl-error-msg">Validation message here</div>
                 </div>
 
-                <div data-numberinput disabled="disabled" class="hcl-form-group">
+                <div disabled="disabled" class="hcl-number-input-wrapper hcl-form-group">
                     <div class="hcl-form-control hcl-number-input">
                         <input type="number" value="11" min="10" max="20" disabled="disabled" data-invalid="true"
                             class="hcl-form-control" id="numbetInput3" />
@@ -1818,7 +1819,7 @@
                 uncontrolled: false
             });
 
-            patron.numberInput("[data-numberinput]");
+            patron.numberInput(".hcl-number-input-wrapper");
         </script>
 </body>
 
