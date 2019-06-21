@@ -9,7 +9,10 @@ class Pagination {
             next: `.${PREFIX}-pagination-button-next`,
             previous: `.${PREFIX}-pagination-button-previous`,
             PageNumber: `.${PREFIX}-pagination-select.${PREFIX}-page-number`,
-            PageItems: `.${PREFIX}-pagination-select.${PREFIX}-page-items`
+            PageItems: `.${PREFIX}-pagination-select.${PREFIX}-page-items`,
+            pageStart: `.${PREFIX}-page-start`,
+            rangeStart: `.${PREFIX}-range-start`,
+            rangeEnd: `.${PREFIX}-range-end`
         }
 
         this.events = {
@@ -81,9 +84,17 @@ class Pagination {
         const { target } = e;
         e.preventDefault();
         if (target && getClosest(target, this.selectors.PageNumber)) {
-            this.emitEvent(this.events.eventPageNumber, { 'value': target.options[target.selectedIndex].value });
+            this.emitEvent(this.events.eventPageNumber, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
+            if (target['options']) {
+                this.element.querySelector(this.selectors.pageStart).innerHTML = target.options[target.selectedIndex].value;
+            }
         } else if (target && getClosest(target, this.selectors.PageItems)) {
-            this.emitEvent(this.events.eventPageItems, { 'value': target.options[target.selectedIndex].value });
+            this.emitEvent(this.events.eventPageItems, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
+            if (target['options']) {
+                this.element.querySelector(this.selectors.rangeEnd).innerHTML = target.options[target.selectedIndex].value;
+                this.element.querySelector(this.selectors.PageNumber).options[0].selected = true;
+                this.emitEvent(this.events.eventPageNumber, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
+            }
         }
     }
 

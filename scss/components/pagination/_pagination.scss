@@ -63,6 +63,11 @@
                 outline: 1px solid var(--blue);
                 outline-offset: -1px;
             }
+
+            &:disabled {
+                opacity: 0.3;
+                background-color: #e6e6e6;
+            }
         }
 
         button.#{$prefix}-pagination-button-next {
