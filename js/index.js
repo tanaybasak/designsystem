@@ -11,6 +11,7 @@ import Tooltip from "./tooltip";
 import DatePicker from "./datePicker";
 import NumberInput from "./numberInput";
 import Pagination from "./pagination";
+import Accordion from "./accordion"
 
 const ComponentList = {
     dropdow: Dropdown,
@@ -20,7 +21,8 @@ const ComponentList = {
     tabs: Tabs,
     contentswitcher: ContentSwitcher,
     numberInput: NumberInput,
-    pagination: Pagination
+    pagination: Pagination,
+    accordion: Accordion
 }
 
 for (const componentName in ComponentList) {
@@ -70,6 +72,9 @@ export const components = {
     },
     contentswitch: function (selector, options) {
         attachElements(selector, options, ContentSwitcher);
+    },
+    accordion: function (selector, options) {
+        attachElements(selector, options, Accordion);
     }
 };
 
