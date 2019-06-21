@@ -8,6 +8,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     padding: 0 2.5rem 0 1rem;
+    cursor: pointer;
 
     &:focus {
         outline: 1px solid var(--blue-light);
