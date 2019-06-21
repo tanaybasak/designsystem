@@ -3,13 +3,13 @@ import getClosest from "./utils/get-closest";
 
 class NumberInput {
 
-    constructor(element, config) {
+    constructor(element, options) {
         this.element = element;
         this.input = this.element.querySelector('input');
-        if (config) {
-            if (config.action === 'increment') {
+        if (options) {
+            if (options.action === 'increment') {
                 this.increment()
-            } else if (config.action === 'decrement') {
+            } else if (options.action === 'decrement') {
                 this.decrement()
             }
         }
