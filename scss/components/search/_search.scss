@@ -47,11 +47,9 @@
         border: none;
         right: 0;
         position: unset;
-        transition: all .15s ease-out;
-
+        transition: width .15s ease-out;
         &:focus {
-            outline: none;
-            border: 0.0625rem solid $blue;
+            outline: 0.0625rem solid $blue;
         }
     }
 
@@ -125,6 +123,7 @@
                 width: 0;
                 padding: 0px;
                 position: absolute;
+                transition: all .15s ease-out;
             }
 
             .#{$prefix}-search-btn {
