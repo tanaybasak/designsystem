@@ -35,14 +35,13 @@ class Pagination {
             },
             pageNumber: {
                 clicked: false,
-                value: 0
+                value: 1
             },
             pageItems: {
                 clicked: false,
-                value: 0
+                value: 10
             },
             totalItems: 0,
-            currentPage: 1,
             ...options
         }
 
@@ -53,14 +52,25 @@ class Pagination {
         const { clicked: navigationClicked = false, which } = state.navigationButton;
         const { clicked: pageNumberClicked = false } = state.pageNumber;
         const { clicked: pageItemsClicked = false } = state.pageItems;
+        let pageNumberDropdown = this.element.querySelector(this.selectors.PageNumber);
         if (navigationClicked) {
+            if (which === this.buttons.NEXT) {
+                this.state.pageNumber.value++;
+                pageNumberDropdown.selectedIndex++;
+            } else if (which === this.buttons.PREVIOUS) {
+                this.state.pageNumber.value--;
+                pageNumberDropdown.selectedIndex--;
+            }
             this.emitEvent(this.events.eventPageChange, { 'direction': which });
         }
         if (pageNumberClicked) {
-            this.emitEvent(this.events.eventPageNumber, { 'value': state.pageNumber.value });
+            const pageNumberDropdown = this.element.querySelector(this.selectors.PageNumber);
+            this.state.pageNumber.value = pageNumberDropdown.options[pageNumberDropdown.selectedIndex].value;;
+            this.emitEvent(this.events.eventPageNumber, { 'value': this.state.pageNumber.value });
         }
         if (pageItemsClicked) {
-            this.emitEvent(this.events.eventPageItems, { 'value': state.pageItems.value });
+            this.state.pageItems
+            this.emitEvent(this.events.eventPageItems, { 'value': this.state.pageItems.value });
         }
     }
 
@@ -76,30 +86,31 @@ class Pagination {
 
     next = (selector) => {
         let nextButton = this.element.querySelector(selector),
-            pageItemsSelected = this.element.querySelector(this.selectors.PageItems),
-            pages = this.getPages(this.state.totalItems,
-                pageItemsSelected.options[pageItemsSelected.selectedIndex].value);
+            totalPages = this.getPages();
 
-        if (nextButton && !nextButton.disabled && pages !== this.state.currentPage) {
+        if (nextButton && !nextButton.disabled && totalPages !== this.state.pageNumber.value) {
+            let pageNumberDropdown = this.element.querySelector(this.selectors.PageNumber);
+            pageNumberDropdown.selectedIndex++;
             this.state.pageNumber.value++;
-            this.element.querySelector(this.selectors.PageNumber).selectedIndex = this.state.pageNumber.value;
-            this.state.currentPage++;
-            if (pages === this.state.currentPage) {
-                nextButton.disabled = true;
-            } else {
-                this.element.querySelector(this.selectors.previous).disabled = false;
-                nextButton.disabled = false;
-            }
+            this.toggleNavigationButtons(pageNumberDropdown.selectedIndex, pageNumberDropdown.options.length);
             this.emitEvent(this.events.eventPageChange, { 'direction': this.buttons.NEXT });
         }
     }
 
     previous = (selector) => {
-        let previousButton = this.element.querySelector(selector);
-        this.emitEvent(this.events.eventPageChange, { 'direction': this.buttons.PREVIOUS });
+        let previousButton = this.element.querySelector(selector),
+            pageItemsSelected = this.element.querySelector(this.selectors.PageItems);
+
+        if (previousButton && !previousButton.disabled && this.state.pageNumber.value > 1) {
+            let pageNumberDropdown = this.element.querySelector(this.selectors.PageNumber);
+            pageNumberDropdown.selectedIndex--;
+            this.state.pageNumber.value--;
+            this.toggleNavigationButtons(pageNumberDropdown.selectedIndex, pageNumberDropdown.options.length);
+            this.emitEvent(this.events.eventPageChange, { 'direction': this.buttons.PREVIOUS });
+        }
     }
 
-    handleNavigation = (e) => {
+    handleNavigation = (e) => { // Next & Previous Button Click
         const { target } = e;
         e.preventDefault();
         if (target && getClosest(target, this.selectors.next)) {
@@ -109,15 +120,17 @@ class Pagination {
         }
     }
 
-    handleChange = (e) => {
+    handleChange = (e) => { //Drop-Down Change
         const { target } = e;
         e.preventDefault();
-        if (target && getClosest(target, this.selectors.PageNumber)) {
+        if (target && getClosest(target, this.selectors.PageNumber)) { // PageNumber Drop-Down change
             this.emitEvent(this.events.eventPageNumber, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
             if (target['options']) {
                 this.element.querySelector(this.selectors.pageStart).innerHTML = target.options[target.selectedIndex].value;
+                this.state.pageNumber.value = target.options[target.selectedIndex].value;
+                this.toggleNavigationButtons(target.selectedIndex, target.options.length);
             }
-        } else if (target && getClosest(target, this.selectors.PageItems)) {
+        } else if (target && getClosest(target, this.selectors.PageItems)) { // PageItems Drop-Down change
             this.emitEvent(this.events.eventPageItems, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
             if (target['options']) {
                 this.element.querySelector(this.selectors.rangeEnd).innerHTML = target.options[target.selectedIndex].value;
@@ -125,13 +138,45 @@ class Pagination {
                 this.createOption(this.selectors.PageNumber,
                     Number(this.element.querySelector(this.selectors.totalitems).innerText),
                     target.options[target.selectedIndex].value);
+                    this.resetNavigationButtons();
                 this.state.pageItems = target.options[target.selectedIndex].value;
             }
         }
     }
 
-    getPages = (totalItems, selectedValue) => {
-        return (Math.ceil(totalItems / selectedValue));
+    resetNavigationButtons = () => {
+        let nextButton = this.element.querySelector(this.selectors.next),
+            previousButton = this.element.querySelector(this.selectors.previous);
+        nextButton.disabled = false;
+        previousButton.disabled = true;
+    }
+
+    toggleNavigationButtons = (selectedIndex, optionsLength) => {
+        let nextButton = this.element.querySelector(this.selectors.next),
+            previousButton = this.element.querySelector(this.selectors.previous),
+            nextIndex = selectedIndex;
+        nextIndex++;
+
+        if (selectedIndex === 0) { //First Index
+            previousButton.disabled = true;
+            nextButton.disabled = false;
+        } else if (nextIndex === optionsLength) { //Last Index
+            nextButton.disabled = true;
+            previousButton.disabled = false;
+        } else { // Enable Navigation Buttons
+            nextButton.disabled = false;
+            previousButton.disabled = false;
+        }
+        let pageNumberDropDown = this.element.querySelector(this.selectors.PageNumber);
+        this.element.querySelector(this.selectors.pageStart).innerHTML = pageNumberDropDown.options[pageNumberDropDown.selectedIndex].value;
+    }
+
+    getPages = () => {
+        let pageItemsSelected = this.element.querySelector(this.selectors.PageItems);
+
+        if (pageItemsSelected && this.state.totalItems) {
+            return (Math.ceil(this.state.totalItems / pageItemsSelected.options[pageItemsSelected.selectedIndex].value));
+        }
     }
 
     createOption = (selector, totalItems, selectedValue) => {
@@ -180,14 +225,13 @@ class Pagination {
                     },
                     pageNumber: {
                         clicked: false,
-                        value: 0
+                        value: 1
                     },
                     pageItems: {
                         clicked: false,
-                        value: 0
+                        value: 10
                     },
                     totalItems: 0,
-                    currentPage: 1
                 };
 
                 if (getClosest(target, `.${PREFIX}-pagination-button-next`)) {
