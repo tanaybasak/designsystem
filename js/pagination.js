@@ -61,16 +61,17 @@ class Pagination {
                 this.state.pageNumber.value--;
                 pageNumberDropdown.selectedIndex--;
             }
+            this.adjustRangeChange();
             this.emitEvent(this.events.eventPageChange, { 'direction': which });
         }
         if (pageNumberClicked) {
             const pageNumberDropdown = this.element.querySelector(this.selectors.PageNumber);
             this.state.pageNumber.value = pageNumberDropdown.options[pageNumberDropdown.selectedIndex].value;;
-            this.emitEvent(this.events.eventPageNumber, { 'value': this.state.pageNumber.value });
+            this.emitEvent(this.events.eventPageNumber, { 'value': Number(this.state.pageNumber.value) });
         }
         if (pageItemsClicked) {
             this.state.pageItems
-            this.emitEvent(this.events.eventPageItems, { 'value': this.state.pageItems.value });
+            this.emitEvent(this.events.eventPageItems, { 'value': Number(this.state.pageItems.value) });
         }
     }
 
@@ -84,6 +85,18 @@ class Pagination {
         this.element.dispatchEvent(event);
     }
 
+    adjustRangeChange = (from = undefined) => {
+        let { value: pageNumber } = this.state.pageNumber,
+            rangeStart = this.element.querySelector(this.selectors.rangeStart),
+            rangeEnd = this.element.querySelector(this.selectors.rangeEnd);
+        rangeStart.innerHTML = ((pageNumber - 1) * this.state.pageItems.value) + 1;
+        if ((pageNumber * this.state.pageItems.value) > this.state.totalItems) {
+            rangeEnd.innerHTML = this.state.totalItems;
+        } else {
+            rangeEnd.innerHTML = (pageNumber * this.state.pageItems.value);
+        }
+    }
+
     next = (selector) => {
         let nextButton = this.element.querySelector(selector),
             totalPages = this.getPages();
@@ -93,19 +106,20 @@ class Pagination {
             pageNumberDropdown.selectedIndex++;
             this.state.pageNumber.value++;
             this.toggleNavigationButtons(pageNumberDropdown.selectedIndex, pageNumberDropdown.options.length);
+            this.adjustRangeChange();
             this.emitEvent(this.events.eventPageChange, { 'direction': this.buttons.NEXT });
         }
     }
 
     previous = (selector) => {
-        let previousButton = this.element.querySelector(selector),
-            pageItemsSelected = this.element.querySelector(this.selectors.PageItems);
+        let previousButton = this.element.querySelector(selector);
 
         if (previousButton && !previousButton.disabled && this.state.pageNumber.value > 1) {
             let pageNumberDropdown = this.element.querySelector(this.selectors.PageNumber);
             pageNumberDropdown.selectedIndex--;
             this.state.pageNumber.value--;
             this.toggleNavigationButtons(pageNumberDropdown.selectedIndex, pageNumberDropdown.options.length);
+            this.adjustRangeChange();
             this.emitEvent(this.events.eventPageChange, { 'direction': this.buttons.PREVIOUS });
         }
     }
@@ -124,22 +138,24 @@ class Pagination {
         const { target } = e;
         e.preventDefault();
         if (target && getClosest(target, this.selectors.PageNumber)) { // PageNumber Drop-Down change
-            this.emitEvent(this.events.eventPageNumber, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
             if (target['options']) {
                 this.element.querySelector(this.selectors.pageStart).innerHTML = target.options[target.selectedIndex].value;
-                this.state.pageNumber.value = target.options[target.selectedIndex].value;
+                this.state.pageNumber.value = Number(target.options[target.selectedIndex].value);
                 this.toggleNavigationButtons(target.selectedIndex, target.options.length);
+                this.adjustRangeChange();
+                this.emitEvent(this.events.eventPageNumber, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
             }
         } else if (target && getClosest(target, this.selectors.PageItems)) { // PageItems Drop-Down change
-            this.emitEvent(this.events.eventPageItems, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
             if (target['options']) {
                 this.element.querySelector(this.selectors.rangeEnd).innerHTML = target.options[target.selectedIndex].value;
-                this.emitEvent(this.events.eventPageNumber, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
                 this.createOption(this.selectors.PageNumber,
                     Number(this.element.querySelector(this.selectors.totalitems).innerText),
                     target.options[target.selectedIndex].value);
-                    this.resetNavigationButtons();
-                this.state.pageItems = target.options[target.selectedIndex].value;
+                this.state.pageItems.value = Number(target.options[target.selectedIndex].value);
+                this.adjustRangeChange();
+                this.resetNavigationButtons();
+                this.emitEvent(this.events.eventPageItems, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
+                this.emitEvent(this.events.eventPageNumber, { 'value': target['options'] ? target.options[target.selectedIndex].value : '' });
             }
         }
     }
@@ -200,6 +216,7 @@ class Pagination {
             pageNumberDropdown.options[0].selected = true;
             this.element.querySelector(this.selectors.pageEnd).innerText = pages;
             this.element.querySelector(this.selectors.pageStart).innerText = 1;
+            this.state.pageNumber.value = 1;
         }
     }
 
