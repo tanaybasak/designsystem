@@ -242,6 +242,68 @@
                     <button class="hcl-btn">Default</button>
                 </div>
             </section>
+            <!-- Pagination -->
+            <section class="m-1 p-2">
+                <div data-component="pagination" class="hcl-pagination">
+                    <div class="hcl-pagination-left">
+                        <label id="hcl-pagination-select-7" class="hcl-pagination-text"
+                            for="hcl-pagination-select-7">Items per page:</label>
+                        <div class="hcl-pagination-select-wrapper">
+                            <select class="hcl-pagination-select hcl-page-items">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                            </select>
+                            <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
+                                <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <span class="hcl-pagination-text">
+                            <span class="hcl-pagination-range">
+                                <span class="hcl-range-start">1</span>&nbsp;
+                                <span class="hcl-range-separator">-</span>&nbsp;
+                                <span class="hcl-range-end">10</span>
+                            </span>&nbsp;of&nbsp;
+                            <span class="hcl-pagination-totalitems">103</span>&nbsp;items
+                        </span>
+                    </div>
+                    <div class="hcl-pagination-right">
+                        <span class="hcl-pagination-text">
+                            <span class="hcl-page-start">1</span>&nbsp;of&nbsp;
+                            <span class="hcl-page-end">11</span>&nbsp;pages</span>
+                        <button disabled class="hcl-pagination-button-previous" aria-label="Previous page">
+                            <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
+                                <path fill-rule="nonzero" d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z">
+                                </path>
+                            </svg>
+                        </button>
+                        <div class="hcl-pagination-select-wrapper">
+                            <select class="hcl-pagination-select hcl-page-number">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                            </select>
+                            <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
+                                <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <button class="hcl-pagination-button-next" aria-label="Next page">
+                            <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
+                                <path fill-rule="nonzero"
+                                    d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
             <section id="gridSystem" class="hcl-container">
                 <div class="hcl-row">
                     <div class="hcl-col-1 colBorder bgColor">1</div>
@@ -1938,6 +2000,17 @@
                 uncontrolled: false
             });
 
+            document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
+                console.log('Page Change', event);
+            });
+
+            document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageNumber', (event) => {
+                console.log('Page Number', event);
+            });
+
+            document.getElementsByClassName('hcl-pagination')[0].addEventListener('itemsPerPage', (event) => {
+                console.log('Items per Page', event);
+            });
             patron.search(".hcl-search");
             patron.numberInput(".hcl-number-input-wrapper");
         </script>

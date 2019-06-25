@@ -10,6 +10,7 @@ import Tabs from "./tabs";
 import Tooltip from "./tooltip";
 import DatePicker from "./datePicker";
 import NumberInput from "./numberInput";
+import Pagination from "./pagination";
 import Accordion from "./accordion"
 
 const ComponentList = {
@@ -20,6 +21,7 @@ const ComponentList = {
     tabs: Tabs,
     contentswitcher: ContentSwitcher,
     numberInput: NumberInput,
+    pagination: Pagination,
     accordion: Accordion
 }
 

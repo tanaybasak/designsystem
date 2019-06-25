@@ -147,6 +147,10 @@ $tooltip-arrow-size-icon-position: $tooltip-arrow-size-icon/2;
 $tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+0.0625rem;
 $tooltip-box-shadow:rgba(0, 0, 0, 0.10);
 $tooltip-zindex:5;
+//Pagination
+$pagination-font-size:var(--body-font-size);
+$pagination-line-height: 1.125rem;
+$pagination-bg-color: var(--white);
 //Search
 $search-height: 2.5rem;
 $search-height-sm: 2rem;
