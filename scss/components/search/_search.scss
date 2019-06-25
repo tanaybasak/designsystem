@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    width: 100%;
+    padding: 0 !important;
     height: $search-height;
 
     &.show {
@@ -48,8 +48,10 @@
         right: 0;
         position: unset;
         transition: width .15s ease-out;
+
         &:focus {
             outline: 0.0625rem solid $blue;
+            outline-offset: -1px;
         }
     }
 
