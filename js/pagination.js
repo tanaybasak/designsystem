@@ -62,16 +62,15 @@ class Pagination {
                 this.state.pageNumber.value--;
                 pageNumberDropdown.selectedIndex--;
             }
+            this.toggleNavigationButtons(pageNumberDropdown.selectedIndex, pageNumberDropdown.options.length);
             this.adjustRangeChange();
             this.emitEvent(this.events.eventPageChange, { 'direction': which });
         }
         if (pageNumberClicked) {
             this.state.pageNumber.value = Number(pageNumberDropdown.options[pageNumberDropdown.selectedIndex].value);
-            this.emitEvent(this.events.eventPageNumber, { 'value': this.state.pageNumber.value });
         }
         if (pageItemsClicked) {
             this.state.pageItems.value = Number(pageItemsDropdown.options[pageItemsDropdown.selectedIndex].value);
-            this.emitEvent(this.events.eventPageItems, { 'value': this.state.pageItems.value });
         }
     }
 
@@ -85,7 +84,7 @@ class Pagination {
         this.element.dispatchEvent(event);
     }
 
-    adjustRangeChange = (from = undefined) => {
+    adjustRangeChange = () => {
         let { value: pageNumber } = this.state.pageNumber,
             rangeStart = this.element.querySelector(this.selectors.rangeStart),
             rangeEnd = this.element.querySelector(this.selectors.rangeEnd);
