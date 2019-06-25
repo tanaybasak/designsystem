@@ -48,18 +48,19 @@
                 </li>
             </ul>
             <!-- SEARCH ICON -->
-            <form action="#" data-component="search" class="hcl-navbar-search ml-auto search-btn-only">
-                <button class="hcl-navbar-search-btn">
-                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
-                        class="hcl-navbar-search-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-                        <path
-                            d="M18.125,15.804l-4.038-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z">
+            <div style="width:300px" class="hcl-search hcl-search-btn-only hcl-search-sm mr-2 ml-auto">
+                <button class="hcl-search-btn">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                        xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                        viewBox="0 0 16 16" aria-hidden="true">
+                        <path fill="white"
+                            d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
                         </path>
                     </svg>
                 </button>
-                <input type="text" class="hcl-navbar-search-input" placeholder="Search..." />
-                <button class="hcl-navbar-search-close">&times;</button>
-            </form>
+                <input type="text" class="hcl-search-input" placeholder="Search..." />
+                <button class="hcl-search-reset" tabindex="-1"></button>
+            </div>
             <!-- HORIZONTAL TOOLBAR -->
             <ul class="hcl-navbar-nav toolbar">
                 <li class="hcl-nav-item">
@@ -454,6 +455,7 @@
                     <label class="hcl-toggle-on">On</label>
                 </span>
             </section>
+            <!--- Notification -->
             <section id="notification" class="hcl-row m-0">
                 <div class="hcl-col">
                     <div data-notification="" class="hcl-notification hcl-success" role="alert">
@@ -466,7 +468,7 @@
                                 </path>
                             </svg>
                             <div class="hcl-notification-text-wrapper">
-                                <p class="hcl-notification-title">Notification title</p>
+                                <h5 class="hcl-notification-title">Notification title</h5>
                                 <p class="hcl-notification-subtitle">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum
@@ -479,6 +481,7 @@
                     </div>
                 </div>
             </section>
+            <!--- Notification ENDS -->
             <!-- Tag -->
             <section class="hcl-row m-0">
                 <div class="hcl-col">
@@ -1761,7 +1764,7 @@
             </section>
             <!-- Number Input -->
             <section class="m-1 p-2 colBorder">
-                <div data-numberinput class="hcl-form-group">
+                <div class="hcl-number-input-wrapper hcl-form-group">
                     <div class="hcl-form-control hcl-number-input">
                         <input type="number" value="15" min="10" max="20" class="hcl-form-control" id="numbetInput1" />
                         <div class="hcl-number-input-control">
@@ -1787,7 +1790,7 @@
                     <div class="hcl-helper-text">Optional Helper text goes here (max 20 and min 10)</div>
                 </div>
 
-                <div data-numberinput data-invalid="true" class="hcl-form-group">
+                <div data-invalid="true" data-component="numberInput" class="hcl-number-input-wrapper hcl-form-group">
                     <div class="hcl-form-control hcl-number-input">
                         <input type="number" value="10" data-invalid="true" class="hcl-form-control"
                             id="numbetInput2" />
@@ -1815,7 +1818,7 @@
                     <div class="hcl-error-msg">Validation message here</div>
                 </div>
 
-                <div data-numberinput disabled="disabled" class="hcl-form-group">
+                <div disabled class="hcl-number-input-wrapper hcl-form-group">
                     <div class="hcl-form-control hcl-number-input">
                         <input type="number" value="11" min="10" max="20" disabled="disabled" data-invalid="true"
                             class="hcl-form-control" id="numbetInput3" />
@@ -1839,6 +1842,122 @@
                         </div>
                     </div>
                     <label for="numbetInput3">Number Input Disabled</label>
+                </div>
+            </section>
+
+            <!-- Search -->
+            <section class="m-1 p-2 colBorder">
+                <div class="hcl-search mb-2">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="text" id="goal-input" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-btn-only mb-2">
+                    <button class="hcl-search-btn">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </button>
+                    <input type="text" id="goal-input1" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-sm mb-2">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="text" id="goal-input3" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-btn-only hcl-search-sm mb-2">
+                    <button class="hcl-search-btn">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </button>
+                    <input type="text" id="goal-input5" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+            </section>
+            <section class="m-1 p-2 colBorder" style="background: #F5F7FB">
+                <div class="hcl-search hcl-bg-white mb-2">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="text" id="goal-input" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-btn-only hcl-bg-white mb-2">
+                    <button class="hcl-search-btn">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </button>
+                    <input type="text" id="goal-input1" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-sm hcl-bg-white mb-2">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="text" id="goal-input3" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-btn-only hcl-search-sm hcl-bg-white mb-2">
+                    <button class="hcl-search-btn">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </button>
+                    <input type="text" id="goal-input5" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
                 </div>
             </section>
 
@@ -1881,8 +2000,6 @@
                 uncontrolled: false
             });
 
-            patron.numberInput("[data-numberinput]");
-
             document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
                 console.log('Page Change', event);
             });
@@ -1894,6 +2011,8 @@
             document.getElementsByClassName('hcl-pagination')[0].addEventListener('itemsPerPage', (event) => {
                 console.log('Items per Page', event);
             });
+            patron.search(".hcl-search");
+            patron.numberInput(".hcl-number-input-wrapper");
         </script>
 </body>
 

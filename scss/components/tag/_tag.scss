@@ -59,7 +59,7 @@
 
         >.#{$prefix}-close {
             @include hcl-close-icon(18, $blue, $white, true);
-            margin-left: 10px;
+            margin-left: 0.625rem;
         }
     }
 
