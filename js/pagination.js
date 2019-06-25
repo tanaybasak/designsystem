@@ -225,10 +225,10 @@ class Pagination {
         const PageBackward = this.element.querySelector(this.selectors.previous);
         const pageNumber = this.element.querySelector(this.selectors.PageNumber);
         const pageItems = this.element.querySelector(this.selectors.PageItems);
-        pageForward.addEventListener('click', this.handleNavigation.bind(this));
-        PageBackward.addEventListener('click', this.handleNavigation.bind(this));
-        pageNumber.addEventListener('change', this.handleChange.bind(this));
-        pageItems.addEventListener('change', this.handleChange.bind(this));
+        pageForward.addEventListener('click', this.handleNavigation);
+        PageBackward.addEventListener('click', this.handleNavigation);
+        pageNumber.addEventListener('change', this.handleChange);
+        pageItems.addEventListener('change', this.handleChange);
     }
 
     static handleDataAPI = () => {
