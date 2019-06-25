@@ -49,10 +49,11 @@ class Pagination {
     }
 
     toggleState = (state) => {
-        const { clicked: navigationClicked = false, which } = state.navigationButton;
-        const { clicked: pageNumberClicked = false } = state.pageNumber;
-        const { clicked: pageItemsClicked = false } = state.pageItems;
+        let { clicked: navigationClicked = false, which } = state.navigationButton;
+        let { clicked: pageNumberClicked = false } = state.pageNumber;
+        let { clicked: pageItemsClicked = false } = state.pageItems;
         let pageNumberDropdown = this.element.querySelector(this.selectors.PageNumber);
+        let pageItemsDropdown = this.element.querySelector(this.selectors.PageItems);
         if (navigationClicked) {
             if (which === this.buttons.NEXT) {
                 this.state.pageNumber.value++;
@@ -65,13 +66,12 @@ class Pagination {
             this.emitEvent(this.events.eventPageChange, { 'direction': which });
         }
         if (pageNumberClicked) {
-            const pageNumberDropdown = this.element.querySelector(this.selectors.PageNumber);
-            this.state.pageNumber.value = pageNumberDropdown.options[pageNumberDropdown.selectedIndex].value;;
-            this.emitEvent(this.events.eventPageNumber, { 'value': Number(this.state.pageNumber.value) });
+            this.state.pageNumber.value = Number(pageNumberDropdown.options[pageNumberDropdown.selectedIndex].value);
+            this.emitEvent(this.events.eventPageNumber, { 'value': this.state.pageNumber.value });
         }
         if (pageItemsClicked) {
-            this.state.pageItems
-            this.emitEvent(this.events.eventPageItems, { 'value': Number(this.state.pageItems.value) });
+            this.state.pageItems.value = Number(pageItemsDropdown.options[pageItemsDropdown.selectedIndex].value);
+            this.emitEvent(this.events.eventPageItems, { 'value': this.state.pageItems.value });
         }
     }
 
