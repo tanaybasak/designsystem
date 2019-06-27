@@ -74,10 +74,10 @@ class Tooltip {
                 }
                 this.status = false;
             }
-
+            EventManager.removeEvent('click', true);
+            EventManager.removeEvent('scroll', true);
         }
-        EventManager.removeEvent('click', true);
-        EventManager.removeEvent('scroll', true);
+
     }
 
     show(e) {
