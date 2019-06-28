@@ -1607,6 +1607,49 @@
                     </section>
                 </div>
             </div>
+            <!-- Time Picker -->
+            <section class="ml-4 mt-4">
+                <div class="hcl-time-picker">
+                    <div class="hcl-time-picker-input">
+                        <label for="hcl-time-picker-1">Select a time</label>
+                        <input id="hcl-time-picker-1" type="text" class="hcl-time-picker-input-field"
+                            pattern="(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)" placeholder="hh:mm" maxlength="5">
+                    </div>
+                    <div class="hcl-time-picker-tz">
+                        <select class="hcl-select">
+                            <option class="hcl-select-option" value="AM">AM</option>
+                            <option class="hcl-select-option" value="PM">PM</option>
+                        </select>
+                        <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
+                            <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="hcl-time-picker-tz">
+                        <select class="hcl-select">
+                            <option class="hcl-select-option" value="option-1">Time zone 1</option>
+                            <option class="hcl-select-option" value="option-2">Time zone 2</option>
+                            <option class="hcl-select-option" value="option-3">Time zone 3</option>
+                        </select>
+                        <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
+                            <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+            <section class="ml-4">
+                <!-- Select option -->
+                <label for="hcl-select-id-1">Select label</label>
+                <div class="hcl-select-container">
+                    <select id="hcl-select-id-1" class="hcl-select">
+                        <option class="hcl-select-option" value="option 1">option 1</option>
+                        <option class="hcl-select-option" value="option 2">option 2</option>
+                        <option class="hcl-select-option" value="option 3">option 3</option>
+                    </select>
+                    <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
+                        <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+            </section>
             <section class="m-1 p-2 colBorder">
                 <ul class="hcl-accordion">
                     <li class="hcl-accordion-item">
@@ -1780,49 +1823,6 @@
                         </div>
                     </div>
                     <label for="numbetInput3">Number Input Disabled</label>
-                </div>
-            </section>
-            <!-- Time Picker -->
-            <section class="ml-4 mt-4">
-                <div class="hcl-time-picker">
-                    <div class="hcl-time-picker-input">
-                        <label for="hcl-time-picker-1" class="hcl-label">Select a time</label>
-                        <input id="hcl-time-picker-1" type="text" class="hcl-time-picker-input-field"
-                            pattern="(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)" placeholder="hh:mm" maxlength="5">
-                    </div>
-                    <div class="hcl-time-picker-select">
-                        <select class="hcl-select">
-                            <option class="hcl-select-option" value="AM">AM</option>
-                            <option class="hcl-select-option" value="PM">PM</option>
-                        </select>
-                        <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
-                            <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <div class="hcl-time-picker-select">
-                        <select class="hcl-select">
-                            <option class="hcl-select-option" value="option-1">Time zone 1</option>
-                            <option class="hcl-select-option" value="option-2">Time zone 2</option>
-                            <option class="hcl-select-option" value="option-3">Time zone 3</option>
-                        </select>
-                        <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
-                            <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                </div>
-            </section>
-            <section class="ml-4">
-                <!-- Select option -->
-                <div class="hcl-select-container">
-                    <label for="hcl-select-id-1" class="hcl-label">Select label</label>
-                    <select id="hcl-select-id-1" class="hcl-select">
-                        <option class="hcl-select-option" value="option 1">option 1</option>
-                        <option class="hcl-select-option" value="option 2">option 2</option>
-                        <option class="hcl-select-option" value="option 3">option 3</option>
-                    </select>
-                    <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
-                        <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
-                    </svg>
                 </div>
             </section>
 

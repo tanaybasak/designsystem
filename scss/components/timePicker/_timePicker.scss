@@ -31,11 +31,11 @@
         height: 2.5rem;
         padding: 0 1rem;
         order: 2;
-        box-shadow: 0 1px 0 0 #5a6872;
+        box-shadow: 0 1px 0 0 var(--grey-light);
 
         &:focus {
             outline: none;
-            box-shadow: 0 2px 0 0 #3d70b2;
+            box-shadow: 0 2px 0 0 var(--blue-light);
         }
     }
 
@@ -49,7 +49,7 @@
         display: none;
     }
 
-    &-select {
+    &-tz {
         position: relative;
         display: flex;
         flex-direction: column;
