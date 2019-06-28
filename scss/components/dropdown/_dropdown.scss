@@ -3,7 +3,9 @@
     position: relative;
     min-width: 25rem;
 
-
+    &.#{$prefix}-loading {
+        @include loading();
+    }
 
     &-toggle {
         background: #efefef;
