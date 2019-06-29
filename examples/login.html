@@ -10,12 +10,48 @@
 <link rel="stylesheet" href="./css/login.css" />
 
 
-<body class="bg-default">
+<body>
     <noscript>
         You need to enable JavaScript to run this app.
     </noscript>
-    <main class="hcl-container">
-        <section class="hcl-row justify-content-center align-items-center height-100vh">
+    <main class="layout-main">
+        <header></header>
+        <section class="bg-default main">
+            <section class="hcl-col-4 bg-white form-wrapper p-8">
+                <form class="margin-around-5">
+                    <h4 class="hcl-textalign-center text-default hcl-textweight-bold mb-5">Product Title</h4>
+                    <div class="hcl-form-group">
+                        <input type="text" required data-invalid="false" class="hcl-form-control" id="username"
+                            placeholder="Your User Name" />
+                        <label for="username">User Name</label>
+                        <!-- <div class="hcl-error-msg">Please Verify Username.</div> -->
+                    </div>
+                    <div class="hcl-form-group">
+                        <input type="password" required data-invalid="false" class="hcl-form-control" id="password"
+                            placeholder="Your Password" />
+                        <label for="password">Password</label>
+                        <!-- <div class="hcl-error-msg">Please Verify Password.</div> -->
+                    </div>
+                    <div class="hcl-checkbox-item">
+                        <input class="hcl-checkbox" id="remember" type="checkbox" value="remember" />
+                        <label class="hcl-checkbox-label" for="remember">Remember Password</label>
+                    </div>
+                    <div class="hcl-textalign-center">
+                        <button type="button" class="hcl-btn hcl-primary mt-4">Submit</button>
+                    </div>
+                    <p class="hcl-type-legal mt-4">
+                        Use of the notice informs the public that a work is protected by copyright, identifies the
+                        copyright owner and shows the year of first publiction. Furthermore in the event that a work is infringed,
+                        if the work carries a proper notice, the court will not give any weight to a defendant's use of an
+                        innocent infringement defense- that is, to a claim that the defendant did not realize that the
+                        work was protected. An innocent infringement defense can result in a reduction in damages that the
+                        copyright owner would otherwise receive. &copy; Copyright HCL Technologies Limited 2019. All
+                        Rights Reserved.
+                    </p>
+                </form>
+            </section>
+        </section>
+        <!-- <section class="hcl-row justify-content-center align-items-center height-100vh">
             <header class="hcl-row hcl-logo-container mt-3 ml-1">
                 <a class="hcl-col-1" href="#">
                     <img class="hcl-logo" src="../logo.png" height=30 width=100 alt="HCL logo" title="HCL" />
@@ -58,7 +94,7 @@
                     </p>
                 </form>
             </section>
-        </section>
+        </section> -->
     </main>
 </body>
 
