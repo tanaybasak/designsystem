@@ -1,0 +1,31 @@
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.height-100vh {
+    height: 100vh;
+}
+
+.text-default {
+    color: rgb(39, 103, 176);
+}
+
+.bg-default {
+    background: url(../../login_bg.jpg) 0 top no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.hcl-logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
