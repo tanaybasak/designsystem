@@ -48,16 +48,17 @@ class Password {
         let button = getClosest(e.target, `.${PREFIX}-password-visibility`),
             svgOff = button.querySelector(this.selectors.visibilityoff),
             svgOn = button.querySelector(this.selectors.visibilityon),
-            inputTag = button.parentElement.querySelector('input');
+            inputTag = button.parentElement ? button.parentElement.querySelector('input') : null;
 
-        this.toggle(inputTag, svgOff, svgOn);
+        if (button && svgOff && svgOn && inputTag) {
+            this.toggle(inputTag, svgOff, svgOn);
+        }
     }
 
     attachEvents = () => {
         const button = this.element;
         button.addEventListener('click', this.handleToggle);
     }
-
 
     static handleDataAPI = () => {
         handleDataBinding("password", function (element, target) {
