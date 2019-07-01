@@ -60,6 +60,35 @@ label {
 .#{$prefix}-form-control {
     @include getFormControl("inputcontrol");
     @include getErrorMarkup("inputcontrol");
+
+    &[data-toggle-password-visibility] {
+        &~button {
+            position: relative;
+            top: -1.75rem;
+            right: .75rem;
+            display: flex;
+            justify-content: center;
+            align-self: flex-end;
+            align-items: center;
+            order: 5;
+            height: 1rem;
+            width: 1rem;
+            padding: 0;
+            margin-bottom: -1rem;
+            border: 0;
+            background: none;
+            cursor: pointer;
+            outline: inherit;
+
+            svg[hidden="true"] {
+                display: none;
+            }
+
+            svg {
+                fill: #3d70b2;
+            }
+        }
+    }
 }
 
 .#{$prefix}-textarea {
