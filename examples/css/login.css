@@ -68,5 +68,6 @@ header {
 @media screen and (max-width:667px) {
     .form-wrapper {
         min-width: 100%;
+        height:100%;
     }
 }
