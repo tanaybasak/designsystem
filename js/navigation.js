@@ -5,76 +5,53 @@
  *
  *******************************************************************
  */
-import delegate from "delegate";
-import handleDataBinding from "./utils/data-api";
-import { NOOP } from "./utils/functions";
+
+import { PREFIX } from "./utils/config";
 
 class Navigation {
-  constructor(element, options) {
-    this.element = element;
-    this.state = {
-      ...{
-        isOpen: false,
-        onChange: NOOP
-      },
-      ...options
-    };
-    this.setNavigationState(this.state.isOpen);
-  }
+    constructor(element, options) {
+        this.element = element;
 
-  setNavigationState() {
-    if (this.state.isOpen) {
-      this.element.classList.add("hcl-sidebar-expanded");
-      document.addEventListener("click", this.handleDocumentClick);
-    } else {
-      this.element.classList.remove("hcl-sidebar-expanded");
-      document.removeEventListener("click", this.handleDocumentClick);
+        this.state = {
+            expanded: false,
+            ...options
+        };
+
+        this.elements = this.element.querySelectorAll(`.${PREFIX}-sidebar-title`);
+        this.categories = this.element.querySelectorAll(`.${PREFIX}-sidebar-category`);
     }
-  }
 
-  toggleNavigationState() {
-    this.state.isOpen = !this.state.isOpen;
-    this.setNavigationState();
-    if (typeof this.state.onClick === "function") {
-      this.state.onChange(this.state.isOpen);
+    toggleSidebar = (event) => {
+        const comp = event.currentTarget;
+        const item = comp.parentNode;
+
+        if (this.state.expanded) {
+            item.classList.remove("expanded");
+        } else {
+            item.classList.add("expanded");
+        }
+
+        this.state.expanded = !this.state.expanded;
     }
-  }
 
-  handleDocumentClick = () => {
-    if (this.state.isOpen) {
-      this.state.isOpen = false;
-      this.setNavigationState();
+    toggleCategory = event => {
+        const comp = event.currentTarget;
+
+        if (comp.classList.contains("expanded")) {
+            comp.classList.remove("expanded");
+        } else {
+            comp.classList.add("expanded");
+        }
     }
-    document.removeEventListener("click", this.handleDocumentClick);
-  };
 
-  attachEvents() {
-    this.element
-      .querySelector(".hcl-sidebar-title")
-      .addEventListener("click", e => {
-        e.stopPropagation();
-        this.toggleNavigationState();
-      });
-
-    document
-      .querySelector(".hcl-navbar-hamburger")
-      .addEventListener("click", e => {
-        e.stopPropagation();
-        this.toggleNavigationState();
-      });
-  }
-
-  static handleDataAPI = () => {
-    const navigation = document.querySelector(`[data-component="navigation"]`);
-
-    handleDataBinding("navigation", function(element) {
-      return new Navigation(navigation, { isOpen: true });
-    });
-
-    handleDataBinding("hamburger", function() {
-      return new Navigation(navigation, { isOpen: true });
-    });
-  };
+    attachEvents = () => {
+        this.elements.forEach((item, index) => {
+            item.addEventListener("click", this.toggleSidebar);
+        });
+        this.categories.forEach((category, index) => {
+            category.addEventListener("click", this.toggleCategory);
+        });
+    }
 }
 
 export default Navigation;
