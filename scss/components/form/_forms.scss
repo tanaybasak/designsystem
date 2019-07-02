@@ -64,7 +64,6 @@ label {
 
 .#{$prefix}-textarea {
     @include getFormControl("inputcontrol");
-    min-width: 10rem;
     resize: vertical;
     padding: 1rem;
     height: auto;
