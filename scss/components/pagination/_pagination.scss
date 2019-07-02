@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-.#{$prefix}-pagination {
+ .#{$prefix}-pagination {
     font-size: $pagination-font-size;
     @include getFontWeight('regular');
     line-height: $pagination-line-height;
@@ -44,6 +44,18 @@
                 content: '|';
                 margin-left: hcl-rem(8px);
             }
+        }
+
+        .#{$prefix}-range-separator {
+            margin: 0 hcl-rem(2px) 0;
+        }
+
+        .#{$prefix}-pagination-range {
+            margin-right: hcl-rem(2px);
+        }
+
+        .#{$prefix}-pagination-totalitems {
+            margin: 0 hcl-rem(2px) 0;
         }
     }
 
@@ -94,6 +106,14 @@
             .#{$prefix}-select-arrow {
                 right: hcl-rem(16px);
             }
+        }
+
+        .#{$prefix}-page-start {
+            margin-right: hcl-rem(2px);
+        }
+
+        .#{$prefix}-page-end {
+            margin: 0 hcl-rem(2px) 0;
         }
     }
 
