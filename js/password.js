@@ -56,7 +56,7 @@ class Password {
     }
 
     attachEvents = () => {
-        delegate(`.${PREFIX}-password-visibility`, 'click', (e) => {
+        delegate(this.selectors.button, 'click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             this.handleToggle(e);
