@@ -1,6 +1,7 @@
 import { PREFIX } from "./utils/config";
 import handleDataBinding from "./utils/data-api";
 import getClosest from "./utils/get-closest";
+import delegate from "delegate";
 
 class Password {
     constructor(element, options) {
@@ -44,7 +45,6 @@ class Password {
     }
 
     handleToggle = (e) => {
-        e.preventDefault();
         let button = getClosest(e.target, `.${PREFIX}-password-visibility`),
             svgOff = button.querySelector(this.selectors.visibilityoff),
             svgOn = button.querySelector(this.selectors.visibilityon),
@@ -56,8 +56,11 @@ class Password {
     }
 
     attachEvents = () => {
-        const button = this.element;
-        button.addEventListener('click', this.handleToggle);
+        delegate(`.${PREFIX}-password-visibility`, 'click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.handleToggle(e);
+        }, false);
     }
 
     static handleDataAPI = () => {
