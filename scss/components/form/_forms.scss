@@ -42,6 +42,11 @@
     .#{$prefix}-textarea {
         order: 3;
     }
+
+    input[type="password"]::-ms-reveal,
+    input[type="password"]::-ms-clear {
+        display: none;
+    }
 }
 
 .#{$prefix}-helper-text {
