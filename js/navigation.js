@@ -18,7 +18,8 @@ class Navigation {
         };
 
         this.elements = this.element.querySelectorAll(`.${PREFIX}-sidebar-title`);
-        this.categories = this.element.querySelectorAll(`.${PREFIX}-sidebar-category`);
+        this.categories = this.element.querySelectorAll(`.${PREFIX}-sidebar-category-title`);
+        this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
     }
 
     toggleSidebar = (event) => {
@@ -35,7 +36,7 @@ class Navigation {
     }
 
     toggleCategory = event => {
-        const comp = event.currentTarget;
+        const comp = event.currentTarget.parentNode;
 
         if (comp.classList.contains("expanded")) {
             comp.classList.remove("expanded");
@@ -44,12 +45,26 @@ class Navigation {
         }
     }
 
+    toggleItems = event => {
+        const comp = event.currentTarget;
+
+        this.items.forEach(item => {
+            if (item.classList.contains("hcl-sidebar-item-active")) {
+                item.classList.remove("hcl-sidebar-item-active");
+            }
+        });
+        comp.classList.add("hcl-sidebar-item-active");
+    }
+
     attachEvents = () => {
         this.elements.forEach((item, index) => {
             item.addEventListener("click", this.toggleSidebar);
         });
         this.categories.forEach((category, index) => {
             category.addEventListener("click", this.toggleCategory);
+        });
+        this.items.forEach((item, index) => {
+            item.addEventListener("click", this.toggleItems);
         });
     }
 }

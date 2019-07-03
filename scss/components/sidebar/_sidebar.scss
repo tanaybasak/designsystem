@@ -17,6 +17,16 @@
     overflow: hidden;
     transition: all 220ms ease-in-out;
 
+    a.#{$prefix}-sidebar-link {
+
+        &:focus,
+        &:active,
+        &:hover {
+            text-decoration: none;
+            outline: none;
+        }
+    }
+
     &-title {
         display: flex;
         cursor: pointer;
@@ -66,7 +76,7 @@
     &-list {
         overflow: auto;
 
-        >.#{$prefix}-sidebar-category,
+        >.#{$prefix}-sidebar-category .#{$prefix}-sidebar-category-title,
         >.#{$prefix}-sidebar-item {
             display: block;
 
@@ -84,33 +94,31 @@
         }
 
         .#{$prefix}-sidebar-category {
-            cursor: pointer;
+            &-title {
+                cursor: pointer;
 
-            &:hover {
-                background-color: #555;
-            }
+                .#{$prefix}-sidebar-icon {
+                    display: inline-block;
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    margin: 0.5rem 1rem;
+                    border: 0.0625rem solid var(--white);
+                }
 
-            .#{$prefix}-sidebar-icon {
-                display: inline-block;
-                width: 0.75rem;
-                height: 0.75rem;
-                margin: 0.5rem 1rem;
-                border: 0.0625rem solid var(--white);
-            }
+                >.#{$prefix}-sidebar-link {
+                    position: relative;
 
-            >.#{$prefix}-sidebar-link {
-                position: relative;
-
-                &:after {
-                    content: "";
-                    display: none;
-                    position: absolute;
-                    padding: 0.3125rem;
-                    box-shadow: 0.125rem -0.125rem 0 0 var(--white) inset;
-                    top: 50%;
-                    right: 0rem;
-                    transform: translate(-50%, -50%) rotate(-45deg);
-                    transition: all 220ms ease-in-out;
+                    &:after {
+                        content: "";
+                        display: none;
+                        position: absolute;
+                        padding: 0.3125rem;
+                        box-shadow: 0.125rem -0.125rem 0 0 var(--white) inset;
+                        top: 50%;
+                        right: 0rem;
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                        transition: all 220ms ease-in-out;
+                    }
                 }
             }
 
@@ -124,8 +132,17 @@
 
                 .#{$prefix}-sidebar-item {
 
-                    &:hover {
-                        background-color: #6D6E70;
+                    &-active {
+                        background-color: var(--grey-7);
+                        position: relative;
+
+                        &:before {
+                            content: "";
+                            background-color: var(--blue);
+                            position: absolute;
+                            height: 100%;
+                            width: 0.375rem;
+                        }
                     }
 
                     .#{$prefix}-sidebar-link {
@@ -143,25 +160,33 @@
             }
 
             &.expanded {
+                .#{$prefix}-sidebar-category-title {
+                    .#{$prefix}-sidebar-link {
+                        &:after {
+                            transform: translate(-50%, -50%) rotate(-225deg);
+                        }
+                    }
+                }
+
                 .#{$prefix}-sidebar-children {
                     transform: scaleY(1);
                     height: auto;
-
-                    .#{$prefix}-sidebar-item {}
-                }
-
-                .#{$prefix}-sidebar-link {
-
-                    &:after {
-                        transform: translate(-50%, -50%) rotate(-225deg);
-                    }
                 }
             }
         }
 
         .#{$prefix}-sidebar-item {
-            &:hover {
-                background-color: #6D6E70;
+            &-active {
+                background-color: var(--grey-7);
+                position: relative;
+
+                &:before {
+                    content: "";
+                    background-color: var(--blue);
+                    position: absolute;
+                    height: 100%;
+                    width: 0.375rem;
+                }
             }
 
             .#{$prefix}-sidebar-link {
@@ -198,12 +223,14 @@
             .#{$prefix}-sidebar-category {
                 width: 12.5rem;
 
-                .#{$prefix}-sidebar-link {
-                    display: inline-block;
-                }
+                &-title {
+                    .#{$prefix}-sidebar-link {
+                        display: inline-block;
+                    }
 
-                .#{$prefix}-sidebar-link:after {
-                    display: inline-block;
+                    .#{$prefix}-sidebar-link:after {
+                        display: inline-block;
+                    }
                 }
             }
 
