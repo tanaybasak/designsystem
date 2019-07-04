@@ -153,22 +153,6 @@ $value in $iconSizesMap {
     box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
 
-
-$displayProperties: ("icon-1": 1rem, "icon-2": 2rem, "icon-3": 3rem);
-
-@each $key,
-$value in $iconSizesMap {
-    .#{$prefix}-#{$key} {
-        display: inline-flex;
-        height: $value;
-        width: $value;
-        font-size: $value;
-        background-color: transparent;
-        overflow: hidden;
-    }
-}
-
-
 $displayProperties: none inline inline-block block table table-cell table-row flex inline-flex;
 
 @each $displayProperty in $displayProperties {
