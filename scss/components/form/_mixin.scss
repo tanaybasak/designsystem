@@ -18,7 +18,6 @@ $inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "c
         @include getFontSize("14");
         width: 100%;
         height: $input-height;
-        min-width: $input-min-width;
         padding: $input-padding-y $input-padding-x;
         @include getInputColor('color-1', "color");
         @include getInputColor('color-3', "background-color");

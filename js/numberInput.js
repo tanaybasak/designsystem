@@ -1,19 +1,28 @@
 import handleDataBinding from "./utils/data-api";
+import getClosest from "./utils/get-closest";
+
 class NumberInput {
 
-    constructor(element) {
+    constructor(element, options) {
         this.element = element;
         this.input = this.element.querySelector('input');
+        if (options) {
+            if (options.action === 'increment') {
+                this.increment()
+            } else if (options.action === 'decrement') {
+                this.decrement()
+            }
+        }
     }
 
     attachEvents = () => {
-        //this.element.querySelector('.hcl-number-control').style.top = (this.input.getBoundingClientRect().top - this.element.getBoundingClientRect().top) + 'px';
         this.element.querySelector('.increment-btn').addEventListener('mousedown', (event) => { this.increment(event) })
         this.element.querySelector('.decrement-btn').addEventListener('mousedown', (event) => { this.decrement(event) })
     }
 
     increment = (event) => {
-        event.preventDefault();
+        if (event)
+            event.preventDefault();
         try {
             this.input.stepUp();
         } catch (e) {
@@ -23,7 +32,8 @@ class NumberInput {
     }
 
     decrement = (event) => {
-        event.preventDefault();
+        if (event)
+            event.preventDefault();
         try {
             this.input.stepDown();
         } catch (e) {
@@ -52,8 +62,18 @@ class NumberInput {
     }
 
     static handleDataAPI = () => {
-        handleDataBinding("numberInput", function (element) {
-            return new NumberInput(element);
+        handleDataBinding("numberInput", function (element, target) {
+            let action = undefined;
+            let newTarget = getClosest(target, `.increment-btn`);
+            if (!newTarget) {
+                newTarget = getClosest(target, `.decrement-btn`);
+                if (newTarget) {
+                    action = 'decrement';
+                }
+            } else {
+                action = 'increment';
+            }
+            return new NumberInput(element, { action: action });
         })
     }
 

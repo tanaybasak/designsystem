@@ -1,0 +1,165 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+ .#{$prefix}-pagination {
+    font-size: $pagination-font-size;
+    @include getFontWeight('regular');
+    line-height: $pagination-line-height;
+    width: 100%;
+    background-color: $pagination-bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: hcl-rem(40px);
+    border: 1px solid var(--grey-4);
+
+    &-left,
+    &-right {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .#{$prefix}-pagination-select-wrapper {
+            &:after {
+                content: '';
+                margin-left: hcl-rem(16px);
+            }
+        }
+    }
+
+    &-left {
+        padding: 0 1rem;
+
+        .#{$prefix}-pagination-select-wrapper {
+            &:after {
+                @include media-breakpoint-only(xs) {
+                    display: none;
+                }
+
+                content: '|';
+                margin-left: hcl-rem(8px);
+            }
+        }
+
+        .#{$prefix}-range-separator {
+            margin: 0 hcl-rem(2px) 0;
+        }
+
+        .#{$prefix}-pagination-range {
+            margin-right: hcl-rem(2px);
+        }
+
+        .#{$prefix}-pagination-totalitems {
+            margin: 0 hcl-rem(2px) 0;
+        }
+    }
+
+    &-right {
+
+        button.#{$prefix}-pagination-button-previous,
+        button.#{$prefix}-pagination-button-next {
+            height: 100%;
+            margin: 0;
+            border-width: 0 1px 0 1px;
+            border-style: solid;
+            border-color: var(--grey-4);
+            padding: 0 1rem;
+            cursor: pointer;
+
+            &:focus {
+                outline: 1px solid var(--blue);
+                outline-offset: -1px;
+            }
+
+            &:disabled {
+                opacity: 0.3;
+                background-color: #e6e6e6;
+                cursor: not-allowed;
+            }
+        }
+
+        button.#{$prefix}-pagination-button-next {
+            border-right-width: 0;
+        }
+
+        .#{$prefix}-pagination-text {
+            margin-right: hcl-rem(16px);
+        }
+
+        .#{$prefix}-pagination-select-wrapper {
+
+            select,
+            .#{$prefix}-pagination-select {
+                padding-right: 2rem;
+            }
+
+            &:after {
+                margin-left: 0;
+            }
+
+            svg,
+            .#{$prefix}-select-arrow {
+                right: hcl-rem(16px);
+            }
+        }
+
+        .#{$prefix}-page-start {
+            margin-right: hcl-rem(2px);
+        }
+
+        .#{$prefix}-page-end {
+            margin: 0 hcl-rem(2px) 0;
+        }
+    }
+
+    label,
+    &-text {
+        margin-bottom: 0rem;
+        font-weight: normal;
+
+        @include media-breakpoint-only(xs) {
+            display: none;
+        }
+    }
+
+    span.#{$prefix}-pagination-text {
+        margin-left: 1rem;
+
+        @include media-breakpoint-only(xs) {
+            display: none;
+        }
+    }
+
+    &-select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        border: none;
+
+        select,
+        .#{$prefix}-pagination-select {
+            width: auto;
+            height: 100%;
+            padding: 0 1rem 0 1rem;
+            appearance: none;
+            background-color: $white;
+            margin-right: -0.65rem;
+            cursor: pointer;
+        }
+
+        svg,
+        .#{$prefix}-select-arrow {
+            pointer-events: none;
+            fill: var(--blue-light);
+            position: relative;
+            top: auto;
+            bottom: auto;
+        }
+    }
+}
