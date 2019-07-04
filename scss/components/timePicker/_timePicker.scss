@@ -15,9 +15,7 @@
     &-input {
         display: flex;
         flex-direction: column;
-        border-bottom: 1px solid transparent;
-
-
+        border-bottom: 0.0625rem solid transparent;
     }
 
     &-input-field {
@@ -31,29 +29,12 @@
         height: 2.5rem;
         padding: 0 1rem;
         order: 2;
-        box-shadow: 0 1px 0 0 var(--grey-light);
+        box-shadow: 0 0.0625rem 0 0 var(--grey-light);
 
         &:focus {
             outline: none;
-            box-shadow: 0 2px 0 0 var(--blue-light);
+            box-shadow: 0 0.125rem 0 0 var(--blue-light);
         }
     }
 
-    &-msg {
-        font-size: .75rem;
-        margin: .75rem 0 0;
-        max-height: 0;
-        overflow: hidden;
-        font-weight: 600;
-        line-height: 1.5;
-        display: none;
-    }
-
-    &-tz {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-
-
-    }
 }
