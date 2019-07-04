@@ -11,11 +11,15 @@
     display: flex;
     flex-direction: column;
     height: calc(100vh - 3.125rem);
-    width: 3rem;
+    width: 2.75rem;
     align-items: flex-start;
     position: relative;
     overflow: hidden;
     transition: all 220ms ease-in-out;
+
+    @include media-breakpoint-down(md) {
+        width: 0;
+    }
 
     a.#{$prefix}-sidebar-link {
 
@@ -24,6 +28,51 @@
         &:hover {
             text-decoration: none;
             outline: none;
+        }
+    }
+
+    &-hamburger {
+        display: none;
+        font-size: $navbar-hamburger-font-size;
+        margin-right: $navbar-padding-x+.75rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 0;
+        margin: 0.625rem;
+
+        @include hover-focus {
+            text-decoration: none;
+        }
+
+        [class*="-icon-"] {
+            content: "";
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 1.5em;
+            height: 1.5em;
+            vertical-align: middle;
+            background: no-repeat center center;
+            background-size: 100% 100%;
+            font-size: initial;
+            cursor: pointer;
+
+            &>* {
+                width: 100%;
+                border: 1px solid $white;
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        @include media-breakpoint-down(md) {
+            left: 0;
+            top: 0;
+            display: block;
+            position: fixed;
         }
     }
 
@@ -51,7 +100,7 @@
             font-size: 0.75rem;
             color: var(--white);
             line-height: 1.125rem;
-            width: 6.75rem;
+            width: calc(100% - 5.5rem);
         }
 
         &-toggle {
@@ -59,15 +108,15 @@
             cursor: pointer;
             align-items: center;
             height: 3.125rem;
-            width: 3rem;
+            width: 2.75rem;
 
             &:before {
                 content: "";
                 border-top: 0.125rem solid var(--white);
                 border-right: 0.125rem solid var(--white);
                 transform: rotate(45deg);
-                height: 0.75rem;
-                width: 0.75rem;
+                height: 0.5rem;
+                width: 0.5rem;
                 margin: 1.125rem;
             }
         }
@@ -75,6 +124,8 @@
 
     &-list {
         overflow: auto;
+        width: 100%;
+        transition: all 220ms ease-in-out;
 
         >.#{$prefix}-sidebar-category .#{$prefix}-sidebar-category-title,
         >.#{$prefix}-sidebar-item {
@@ -126,11 +177,13 @@
                 display: block;
                 overflow: hidden;
                 height: 0;
+                width: 100%;
                 transform: scaleY(0);
                 transform-origin: top;
                 transition: transform 220ms ease-in-out;
 
                 .#{$prefix}-sidebar-item {
+                    width: 100%;
 
                     &-active {
                         background-color: var(--grey-7);
@@ -152,8 +205,8 @@
                         overflow: hidden;
                         white-space: nowrap;
                         line-height: 1.75rem;
-                        width: calc(100% - 3rem);
-                        margin-left: 3rem;
+                        width: calc(100% - 2.75rem);
+                        margin-left: 2.75rem;
                         padding-right: 0.5rem;
                     }
                 }
@@ -191,8 +244,8 @@
 
             .#{$prefix}-sidebar-link {
                 display: none;
-                width: calc(100% - 3rem);
-                margin-left: 3rem;
+                width: calc(100% - 2.75rem);
+                margin-left: 2.75rem;
             }
         }
     }
@@ -200,8 +253,22 @@
     &.expanded {
         width: 12.5rem;
 
+        @include media-breakpoint-down(md) {
+            width: 75vw;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 5;
+            display: flex;
+        }
+
+        .#{$prefix}-sidebar-hamburger {
+            display: none;
+        }
+
         .#{$prefix}-sidebar-title {
-            width: 12.5rem;
+            width: 100%;
             float: right;
 
             &-icon {
@@ -220,8 +287,10 @@
         }
 
         .#{$prefix}-sidebar-list {
+            width: 100%;
+
             .#{$prefix}-sidebar-category {
-                width: 12.5rem;
+                width: 100%;
 
                 &-title {
                     .#{$prefix}-sidebar-link {
@@ -235,7 +304,7 @@
             }
 
             .#{$prefix}-sidebar-item {
-                width: 12.5rem;
+                width: 100%;
 
                 .#{$prefix}-sidebar-link {
                     display: inline-block;

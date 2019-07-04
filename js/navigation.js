@@ -17,7 +17,8 @@ class Navigation {
             ...options
         };
 
-        this.elements = this.element.querySelectorAll(`.${PREFIX}-sidebar-title`);
+        this.title = this.element.querySelector(`.${PREFIX}-sidebar-title`);
+        this.hamburger = this.element.querySelector(`.${PREFIX}-sidebar-hamburger`);
         this.categories = this.element.querySelectorAll(`.${PREFIX}-sidebar-category-title`);
         this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
     }
@@ -57,9 +58,8 @@ class Navigation {
     }
 
     attachEvents = () => {
-        this.elements.forEach((item, index) => {
-            item.addEventListener("click", this.toggleSidebar);
-        });
+        this.title.addEventListener("click", this.toggleSidebar);
+        this.hamburger.addEventListener("click", this.toggleSidebar);
         this.categories.forEach((category, index) => {
             category.addEventListener("click", this.toggleCategory);
         });
