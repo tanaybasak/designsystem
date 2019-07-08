@@ -23,27 +23,40 @@
         display: flex;
         align-items: center;
         height: 100%;
-
-        .#{$prefix}-pagination-select-wrapper {
-            &:after {
-                content: '';
-                margin-left: hcl-rem(16px);
-            }
-        }
     }
 
     &-left {
         padding: 0 1rem;
 
         .#{$prefix}-pagination-select-wrapper {
-            &:after {
-                @include media-breakpoint-only(xs) {
-                    display: none;
-                }
 
-                content: '|';
-                margin-left: hcl-rem(8px);
+            select,
+            .#{$prefix}-pagination-select {
+                padding-right: hcl-rem(20.8px);
             }
+
+            svg,
+            .#{$prefix}-select-arrow {
+                right: hcl-rem(8px);
+            }
+
+            &::after {
+                content: "";
+                border-right: 1px solid var(--grey-4);
+                height: 100%;
+            }
+        }
+
+        .#{$prefix}-range-separator {
+            margin: 0 hcl-rem(2px) 0;
+        }
+
+        .#{$prefix}-pagination-range {
+            margin-right: hcl-rem(2px);
+        }
+
+        .#{$prefix}-pagination-totalitems {
+            margin: 0 hcl-rem(2px) 0;
         }
     }
 
@@ -95,6 +108,14 @@
                 right: hcl-rem(16px);
             }
         }
+
+        .#{$prefix}-page-start {
+            margin-right: hcl-rem(2px);
+        }
+
+        .#{$prefix}-page-end {
+            margin: 0 hcl-rem(2px) 0;
+        }
     }
 
     label,
@@ -108,7 +129,7 @@
     }
 
     span.#{$prefix}-pagination-text {
-        margin-left: 1rem;
+        margin-left: hcl-rem(16px);
 
         @include media-breakpoint-only(xs) {
             display: none;
@@ -131,6 +152,7 @@
             background-color: $white;
             margin-right: -0.65rem;
             cursor: pointer;
+            text-align-last: center;
         }
 
         svg,
