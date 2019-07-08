@@ -18,6 +18,7 @@ $loading-bg : rgba(61, 112, 178, .1);
 
     &>* {
         color: transparent !important;
+        //opacity: 0;
     }
 
     &:before {

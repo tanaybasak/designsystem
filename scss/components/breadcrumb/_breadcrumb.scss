@@ -43,4 +43,10 @@ $breadcrumb-margin: 1rem;
             @include getTextDecorationLine("underline");
         }
     }
+
+    &.#{$prefix}-loading {
+        .#{$prefix}-link {
+            @include loading();
+        }
+    }
 }

@@ -1,5 +1,12 @@
 .#{$prefix}-tab {
     margin-top: hcl-rem(5px);
+
+    &.#{$prefix}-loading {
+        .#{$prefix}-tabs-nav-item {
+            @include loading();
+            height: 1rem;
+        }
+    }
 }
 
 .#{$prefix}-tabs-nav {
