@@ -23,7 +23,7 @@
 }
 
 .#{$prefix}-sidebar {
-    background-color: #383838;
+    background-color: var(--dark-50);
     display: flex;
     flex-direction: column;
     height: calc(100vh - 3.125rem);
@@ -98,7 +98,7 @@
         justify-content: space-between;
         align-items: center;
         height: 3.125rem;
-        border-bottom: 0.0625rem solid #717171;
+        border-bottom: 0.0625rem solid var(--dark-20);
         position: relative;
         transition: all 220ms ease-in-out;
 
@@ -113,7 +113,7 @@
             width: 1.5rem;
             margin: 0.625rem;
             border-radius: 50%;
-            background-color: #D8D8D8;
+            background-color: var(--light-50);
         }
 
         &-text {
