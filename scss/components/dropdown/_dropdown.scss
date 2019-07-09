@@ -3,10 +3,6 @@
     position: relative;
     min-width: 25rem;
 
-    &.#{$prefix}-loading {
-        @include loading();
-    }
-
     &-toggle {
         background: #efefef;
         font-size: 0.875rem;
