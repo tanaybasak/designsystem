@@ -1,0 +1,28 @@
+.#{$prefix}-select {
+    background-color: transparent;
+    color: var(--blue-light);
+    font-weight: 600;
+    padding-right: 2rem;
+    height: 2.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 2.5rem 0 1rem;
+    cursor: pointer;
+    background-image: linear-gradient(45deg,
+        transparent 50%,
+        var(--blue-light) 50%),
+        linear-gradient(135deg, var(--blue-light) 50%, transparent 50%);
+    background-position: calc(100% - 1.25rem) calc(1em + 0.125rem),
+        calc(100% - 0.9375rem) calc(1em + 0.125rem), 100% 0;
+    background-size: 0.3125rem 0.3125rem, 0.3125rem 0.3125rem, 2.5em 2.5em;
+    background-repeat: no-repeat;
+
+    &:focus {
+        outline: 1px solid var(--blue-light);
+    }
+
+    &-container {
+        position: relative;
+        display: inline-block;
+    }
+}
