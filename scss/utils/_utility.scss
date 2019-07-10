@@ -153,7 +153,7 @@ $value in $iconSizesMap {
     box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
 
-$displayProperties: none inline inline-block block table table-cell table-row flex inline-flex;
+$displayProperties: none inline inline-block block table inline-table table-cell table-row table-column flex inline-flex;
 
 @each $displayProperty in $displayProperties {
     .#{$prefix}-#{$displayProperty} {
