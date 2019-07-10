@@ -14,16 +14,6 @@
 <body>
     <!-- HEADER LAYOUT -->
     <header class="hcl-navbar hcl-navbar-expand-lg">
-        <!-- HAMBURGER -->
-        <button data-component="hamburger" class="hcl-navbar-hamburger" role="button" data-toggle="collapse"
-            data-target="#collapsibleContent" aria-controls="collapsibleContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="hcl-icon-2">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
-        </button>
         <!-- BRAND LOGO -->
         <a href="/" class="hcl-navbar-brand">
             <img src="/logo.png" alt="Logo">
@@ -93,90 +83,113 @@
     <div class="hcl-content">
         <!-- SIDEBAR LAYOUT -->
         <nav class="hcl-sidebar" data-component="navigation">
+            <button class="hcl-sidebar-hamburger">
+                <span class="hcl-icon-2">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
             <div class="hcl-sidebar-title">
-                <div class="hcl-sidebar-title-item">
-                    <span class="hcl-icon-2"></span>
-                    <span class="hcl-sidebar-title-text">Section Title</span>
-                </div>
-                <div class="hcl-sidebar-title-item">
-                    <button class="hcl-icon-2">&#62;</button>
-                </div>
+                <span class="hcl-sidebar-title-icon"></span>
+                <span class="hcl-sidebar-title-text">Section Title</span>
+                <span class="hcl-sidebar-title-toggle"></span>
             </div>
             <ul class="hcl-sidebar-list">
-                <li class="hcl-sidebar-list-item">
-                    <a href="#typography" class="hcl-sidebar-list-link">
-                        <span>Typography</span>
-                    </a>
+                <li class="hcl-sidebar-category">
+                    <span class="hcl-sidebar-category-title">
+                        <span class="hcl-sidebar-icon"></span>
+                        <span class="hcl-sidebar-link">
+                            Atoms
+                        </span>
+                    </span>
+                    <ul class="hcl-sidebar-children">
+                        <li class="hcl-sidebar-item">
+                            <a href="#typography" class="hcl-sidebar-link">
+                                Typography
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#gridSystem" class="hcl-sidebar-link">
+                                Grid System
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#boxExamples" class="hcl-sidebar-link">
+                                Box Examples
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#spinner" class="hcl-sidebar-link">
+                                Spinner
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#breadcrumb" class="hcl-sidebar-link">
+                                Breadcrumb
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#toggle" class="hcl-sidebar-link">
+                                Toggle
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#notification" class="hcl-sidebar-link">
+                                Notification
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#cards" class="hcl-sidebar-link">
+                                Card
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#textinput" class="hcl-sidebar-link">
+                                Text Input
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#textarea" class="hcl-sidebar-link">
+                                Textarea
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#radio" class="hcl-sidebar-link">
+                                Radio
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#checkbox" class="hcl-sidebar-link">
+                                Checkbox
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#gridSystem" class="hcl-sidebar-list-link">
-                        <span>Grid System</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#boxExamples" class="hcl-sidebar-list-link">
-                        <span>Box Examples</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#spinner" class="hcl-sidebar-list-link">
-                        <span>Spinner</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#breadcrumb" class="hcl-sidebar-list-link">
-                        <span>Breadcrumb</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#tabsexample" class="hcl-sidebar-list-link">
-                        <span>Tabs</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#toggle" class="hcl-sidebar-list-link">
-                        <span>Toggle</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#notification" class="hcl-sidebar-list-link">
-                        <span>Notification</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#cards" class="hcl-sidebar-list-link">
-                        <span>Card</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#content-switcher" class="hcl-sidebar-list-link">
-                        <span>Content Switcher</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#textinput" class="hcl-sidebar-list-link">
-                        <span>Text Input</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#textarea" class="hcl-sidebar-list-link">
-                        <span>Textarea</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#radio" class="hcl-sidebar-list-link">
-                        <span>Radio</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#checkbox" class="hcl-sidebar-list-link">
-                        <span>Checkbox</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#formcomp" class="hcl-sidebar-list-link">
-                        <span>Form</span>
-                    </a>
+                <li class="hcl-sidebar-category">
+                    <span class="hcl-sidebar-category-title">
+                        <span class="hcl-sidebar-icon"></span>
+                        <span class="hcl-sidebar-link">
+                            Molecules
+                        </span>
+                    </span>
+                    <ul class="hcl-sidebar-children">
+                        <li class="hcl-sidebar-item">
+                            <a href="#content-switcher" class="hcl-sidebar-link">
+                                Content Switcher
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#tabsexample" class="hcl-sidebar-link">
+                                Tabs
+                            </a>
+                        </li>
+                        <li class="hcl-sidebar-item">
+                            <a href="#formcomp" class="hcl-sidebar-link">
+                                Form
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -1425,8 +1438,8 @@
                     <div class="hcl-row">
                         <div class="hcl-col-4">&nbsp;</div>
                         <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="right" data-type="icon" focusable="false"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="right" data-type="icon"
+                                focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
                                 <path
@@ -1435,8 +1448,8 @@
                             </svg>
                         </div>
                         <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="top" focusable="false" data-type="icon"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="top" focusable="false"
+                                data-type="icon" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
                                 <path
@@ -1445,8 +1458,8 @@
                             </svg>
                         </div>
                         <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="bottom" focusable="false" data-type="icon"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="bottom" focusable="false"
+                                data-type="icon" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
                                 <path
@@ -1455,8 +1468,8 @@
                             </svg>
                         </div>
                         <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="left" focusable="false" data-type="icon"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="left" focusable="false"
+                                data-type="icon" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
                                 <path
@@ -1468,30 +1481,33 @@
                     </div>
                     <div class="hcl-row pt-7 m-7">
                         <div class="hcl-col-3">
-                            <span data-direction="top" data-tooltip="Breif Definition of the dotted underlined word.">
+                            <span tabindex="0" data-direction="top"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
                                 Definition Tooltip on Top
                             </span>
                         </div>
                         <div class="hcl-col-3">
-                            <span data-direction="right" data-tooltip="Breif Definition of the dotted underlined word.">
+                            <span tabindex="0" data-direction="right"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
                                 Definition Tooltip on Right
                             </span>
                         </div>
                         <div class="hcl-col-3">
-                            <span data-direction="bottom"
+                            <span tabindex="0" data-direction="bottom"
                                 data-tooltip="Breif Definition of the dotted underlined word.">
                                 Definition on Bottom
                             </span>
                         </div>
                         <div class="hcl-col-3">
-                            <span data-direction="left" data-tooltip="Breif Definition of the dotted underlined word.">
+                            <span tabindex="0" data-direction="left"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
                                 Definition Tooltip on Left
                             </span>
                         </div>
                     </div>
                     <div class="hcl-row m-7">
                         <span> Interactive Tooltip Label
-                            <svg data-direction="right" data-focus-on-click data-tooltip="#tooltipContent"
+                            <svg tabindex="0" data-direction="right" data-focus-on-click data-tooltip="#tooltipContent"
                                 focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
@@ -1673,6 +1689,34 @@
                     </section>
                 </div>
             </div>
+            <!-- Time Picker -->
+            <section class="ml-4 mt-4">
+                <div class="hcl-timepicker">
+                    <div class="hcl-timepicker-input">
+                        <label for="hcl-timepicker-1">Select a time</label>
+                        <input id="hcl-timepicker-1" type="text" class="hcl-timepicker-input-field"
+                            pattern="(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)" placeholder="hh:mm" maxlength="5">
+                    </div>
+                    <select class="hcl-select">
+                        <option class="hcl-select-option" value="AM">AM</option>
+                        <option class="hcl-select-option" value="PM">PM</option>
+                    </select>
+                    <select class="hcl-select">
+                        <option class="hcl-select-option" value="option-1">Time zone 1</option>
+                        <option class="hcl-select-option" value="option-2">Time zone 2</option>
+                        <option class="hcl-select-option" value="option-3">Time zone 3</option>
+                    </select>
+                </div>
+            </section>
+            <section class="ml-4">
+                <!-- Select option -->
+                <label for="hcl-select-id-1">Select label</label>
+                <select id="hcl-select-id-1" class="hcl-select">
+                    <option class="hcl-select-option" value="option 1">option 1</option>
+                    <option class="hcl-select-option" value="option 2">option 2</option>
+                    <option class="hcl-select-option" value="option 3">option 3</option>
+                </select>
+            </section>
             <section class="m-1 p-2 colBorder">
                 <ul class="hcl-accordion">
                     <li class="hcl-accordion-item">
@@ -1964,6 +2008,7 @@
 
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
+    </div>
         <script src="./js/index.js"></script>
         <script>
             patron.dropdown(".hcl-dropdown.top", {
@@ -2000,6 +2045,8 @@
             patron.accordion(".hcl-accordion", {
                 uncontrolled: false
             });
+
+            patron.navigation(".hcl-sidebar", {});
 
             document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
                 console.log('Page Change', event);
