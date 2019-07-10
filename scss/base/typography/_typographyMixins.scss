@@ -9,7 +9,7 @@
 /* MIXINS SPECIFIC TO TYPOGRAPHY */
 
 // Font weight
-$fontWeights-map: (light: 300, regular: 400, semibold: 600, bold: 800);
+$fontWeights-map: (light: 300, regular: 400, semibold: 500, bold: 800);
 
 @mixin getFontWeight($fontWeight) {
     @if map-has-key($fontWeights-map, $fontWeight) {
