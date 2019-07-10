@@ -246,3 +246,11 @@
     background-size: cover;
     transition: all ease .1s;
 }
+
+@mixin clearfix() {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
