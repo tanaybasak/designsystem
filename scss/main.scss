@@ -41,6 +41,7 @@
 @import "utils/mixins";
 @import 'utils/placeholders';
 @import "utils/utility";
+@import "utils/loading";
 // Base partials
 @import "base/reset";
 @import "base/global";
@@ -80,3 +81,4 @@
 @import "components/search/search";
 @import "components/select/select";
 @import "components/timePicker/timePicker";
+@import "components/loading-state/loading-state";
