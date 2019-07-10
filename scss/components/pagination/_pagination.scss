@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
- .#{$prefix}-pagination {
+.#{$prefix}-pagination {
     font-size: $pagination-font-size;
     @include getFontWeight('regular');
     line-height: $pagination-line-height;
@@ -23,26 +23,27 @@
         display: flex;
         align-items: center;
         height: 100%;
-
-        .#{$prefix}-pagination-select-wrapper {
-            &:after {
-                content: '';
-                margin-left: hcl-rem(16px);
-            }
-        }
     }
 
     &-left {
         padding: 0 1rem;
 
         .#{$prefix}-pagination-select-wrapper {
-            &:after {
-                @include media-breakpoint-only(xs) {
-                    display: none;
-                }
 
-                content: '|';
-                margin-left: hcl-rem(8px);
+            select,
+            .#{$prefix}-pagination-select {
+                padding-right: hcl-rem(20.8px);
+            }
+
+            svg,
+            .#{$prefix}-select-arrow {
+                right: hcl-rem(8px);
+            }
+
+            &::after {
+                content: "";
+                border-right: 1px solid var(--grey-4);
+                height: 100%;
             }
         }
 
@@ -128,7 +129,7 @@
     }
 
     span.#{$prefix}-pagination-text {
-        margin-left: 1rem;
+        margin-left: hcl-rem(16px);
 
         @include media-breakpoint-only(xs) {
             display: none;
@@ -151,6 +152,7 @@
             background-color: $white;
             margin-right: -0.65rem;
             cursor: pointer;
+            text-align-last: center;
         }
 
         svg,

@@ -62,6 +62,14 @@
     }
 }
 
+.m-0 {
+    margin: 0;
+}
+
+.p-0 {
+    margin: 0;
+}
+
 // close icon class
 .#{$prefix}-close {
     @include hcl-close-icon(24);
@@ -164,4 +172,12 @@ $floatProperties: right left none;
 
 .#{$prefix}-clearfix {
     @include clearfix;
+}
+
+$displayProperties: none inline inline-block block table inline-table table-cell table-row table-column flex inline-flex;
+
+@each $displayProperty in $displayProperties {
+    .#{$prefix}-#{$displayProperty} {
+        display: $displayProperty;
+    }
 }
