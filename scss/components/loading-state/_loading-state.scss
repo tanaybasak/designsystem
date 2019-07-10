@@ -1,6 +1,6 @@
 button.hcl-loading {
     @include loading();
-    width: 270px;
+    width: 16.88rem;
     height: 2.5rem;
     border-radius: 0;
 }
@@ -22,7 +22,7 @@ p.hcl-loading {
     &.#{$prefix}-loading {
         .#{$prefix}-link {
             @include loading();
-            width: 150px;
+            width: 9.375rem;
             height: 1rem;
             display: inline-block;
         }
@@ -37,7 +37,7 @@ p.hcl-loading {
 
             a {
                 @include loading();
-                width: 150px;
+                width: 9.375rem;
                 height: 1rem;
             }
         }
@@ -54,7 +54,7 @@ p.hcl-loading {
             &.expanded {
                 .#{$prefix}-accordion-content {
                     @include loading();
-                    height: 100px !important;
+                    height: 6.25rem !important;
                     margin-left: 25px;
                     margin-right: 10px;
                     margin-bottom: 10px;
