@@ -49,34 +49,18 @@
 
     &-hamburger {
         display: none;
-        font-size: $navbar-hamburger-font-size;
-        margin-right: $navbar-padding-x+.75rem;
-        line-height: 1;
         background-color: transparent;
-        border: 0;
-        margin: 0.625rem;
+        padding: 1.5rem;
 
-        @include hover-focus {
-            text-decoration: none;
-        }
+        span {
+            display: block;
+            width: 1.5rem;
+            height: 0.125rem;
+            background-color: var(--white);
+            margin-top: 0.3125rem;
 
-        [class*="-icon-"] {
-            content: "";
-            display: inline-flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            width: 1.5em;
-            height: 1.5em;
-            vertical-align: middle;
-            background: no-repeat center center;
-            background-size: 100% 100%;
-            font-size: initial;
-            cursor: pointer;
-
-            &>* {
-                width: 100%;
-                border: 1px solid $white;
+            &:first-child {
+                margin-top: 0;
             }
         }
 
