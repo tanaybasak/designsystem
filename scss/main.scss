@@ -41,6 +41,7 @@
 @import "utils/mixins";
 @import 'utils/placeholders';
 @import "utils/utility";
+@import "utils/loading";
 // Base partials
 @import "base/reset";
 @import "base/global";
@@ -52,11 +53,10 @@
 @import "components/button/button";
 @import "components/breadcrumb/breadcrumb";
 @import "components/spinner/spinner";
-// Form Components TODO: To Separate into different file after component list grows.
 @import "components/tag/tag";
 @import "components/toggle/toggle";
 @import "components/tab/tab";
-@import "components/form/forms"; // TODO: To Separate into different file after component list grows.
+@import "components/form/forms"; 
 @import "components/notification/notification";
 @import "components/modal/modal";
 @import "components/lightbox/lightbox";
@@ -72,11 +72,12 @@
 @import "components/sidebar/sidebar";
 @import "components/tooltip/tooltip";
 @import "components/data-table/data-table";
-@import "components/datePicker/datePicker";
+@import "components/date-picker/date-picker";
 @import "components/accordion/accordion";
 @import "components/pagination/pagination";
 @import "components/tile/tile";
 @import "components/number-input/numberInput";
 @import "components/search/search";
 @import "components/select/select";
-@import "components/timePicker/timePicker";
+@import "components/time-picker/time-picker";
+@import "components/loading-state/loading-state";

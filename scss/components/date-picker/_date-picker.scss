@@ -38,11 +38,11 @@
 
     &-arrows {
         height: 1.25rem;
-        width: 0rem;
+        width: 0;
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 0rem;
+        top: 0;
         left: 3rem;
         justify-content: space-evenly;
     }
