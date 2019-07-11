@@ -1,11 +1,3 @@
-/******************************************************************
- * HCL Confidential
- *
- * Copyright HCL Technologies Ltd. 2019 All rights reserved.
- *
- *******************************************************************
- */
-
 import { PREFIX } from "./utils/config";
 
 class Navigation {
