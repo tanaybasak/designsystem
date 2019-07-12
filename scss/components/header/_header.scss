@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-.#{$prefix}-navbar {
+.#{$prefix}-header {
     display: flex;
     justify-content: flex-start;
     flex-grow: 1;
@@ -57,13 +57,13 @@
         }
     }
 
-    &-toolbar {
+    &-icons {
         display: flex;
         margin: 0 0.5rem;
         flex-grow: 0;
         flex-shrink: 0;
 
-        .#{$prefix}-nav-item {
+        .#{$prefix}-header-icon {
             display: inline-flex;
             margin: 1rem 0.5rem;
             height: 0.875rem;
