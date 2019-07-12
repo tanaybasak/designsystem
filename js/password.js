@@ -35,12 +35,12 @@ class Password {
     toggle = (inputTag, svgOff, svgOn) => {
         if (inputTag.type === "password") {
             inputTag.type = "text";
-            svgOn.removeAttribute('hidden');
-            svgOff.setAttribute("hidden", true);
+            svgOn.style.display = "initial";
+            svgOff.style.display = "none";
         } else if (inputTag.type === "text") {
             inputTag.type = "password";
-            svgOff.removeAttribute('hidden');
-            svgOn.setAttribute("hidden", true);
+            svgOff.style.display = "initial";
+            svgOn.style.display = "none";
         }
         inputTag.focus();
     }
