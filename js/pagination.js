@@ -120,7 +120,6 @@ class Pagination {
     next = (selector) => {
         let nextButton = this.element.querySelector(selector),
             totalPages = this.getPages();
-
         if (nextButton && !nextButton.disabled && totalPages !== this.state.pageNumber.value) {
             let pageNumberDropdown = this.element.querySelector(this.selectors.PageNumber);
             pageNumberDropdown.selectedIndex++;
@@ -209,7 +208,6 @@ class Pagination {
     }
 
     getPages = () => {
-        debugger;
         let pageItemsSelected = this.element.querySelector(this.selectors.PageItems);
 
         if (pageItemsSelected && this.state.totalItems) {
@@ -321,16 +319,13 @@ class Pagination {
                     defaultOption['pageItems'] = { clicked: true, value: 10 };
                 }
 
-                // if (element.querySelector(`.${PREFIX}-pagination-totalitems`)) {
-                //     defaultOption['totalItems'] = Number(element.querySelector(`.${PREFIX}-pagination-totalitems`).innerText);
-                // }
-
                 if (element.hasAttribute("data-totalitems")) {
                     defaultOption['totalItems'] = Number(element.dataset.totalitems);
                 }
 
                 if (element.hasAttribute("data-itemstepper")) {
                     defaultOption['itemstepper'] = Number(element.dataset.itemstepper);
+                    defaultOption['pageItems'] = { clicked: true, value: Number(element.dataset.itemstepper) };
                 }
 
                 return new Pagination(element, {
