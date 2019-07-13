@@ -26,6 +26,10 @@
     }
 
     &-left {
+        @include media-breakpoint-only(xs) {
+            padding-left: 0;
+        }
+
         padding: 0 1rem;
 
         .#{$prefix}-pagination-select-wrapper {
