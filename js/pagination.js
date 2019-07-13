@@ -31,10 +31,11 @@ class Pagination {
             PREVIOUS: 'previous'
         };
 
-        this.HTMLstring = {
+        this.string = {
             dropdownsvg: `<svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
                             <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
-                          </svg>`
+                          </svg>`,
+            pageItemsLimit: 100
         };
 
         this.state = {
@@ -218,7 +219,7 @@ class Pagination {
     createPageItemsDropDown = () => {
         const { itemstepper } = this.state;
         const wrapper = this.element.querySelector(`${this.selectors.leftSection} ${this.selectors.selectWrapper}`);
-        const arrayItems = [itemstepper], limit = 100;
+        const arrayItems = [itemstepper], limit = Number(this.string.pageItemsLimit);
 
         for (let i = 1; i <= limit; i++) {
             if (arrayItems[i - 1] * 2 > limit) {
@@ -238,7 +239,7 @@ class Pagination {
             select.appendChild(option);
         }
         wrapper.appendChild(select);
-        wrapper.insertAdjacentHTML('beforeend', this.HTMLstring.dropdownsvg);
+        wrapper.insertAdjacentHTML('beforeend', this.string.dropdownsvg);
         this.createPageNumberOptions(this.selectors.PageNumber,
             this.state.totalItems,
             select.options[select.selectedIndex].value,
@@ -251,7 +252,7 @@ class Pagination {
             let select = document.createElement("select");
             select.classList.add(`${PREFIX}-pagination-select`, `${PREFIX}-page-number`);
             wrapper.appendChild(select);
-            wrapper.insertAdjacentHTML('beforeend', this.HTMLstring.dropdownsvg);
+            wrapper.insertAdjacentHTML('beforeend', this.string.dropdownsvg);
         }
         let pageNumberDropdown = this.element.querySelector(selector);
 
