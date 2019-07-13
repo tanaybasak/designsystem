@@ -14,19 +14,28 @@ class Pagination {
             pageEnd: `.${PREFIX}-page-end`,
             rangeStart: `.${PREFIX}-range-start`,
             rangeEnd: `.${PREFIX}-range-end`,
-            totalitems: `.${PREFIX}-pagination-totalitems`
-        }
+            totalitems: `.${PREFIX}-pagination-totalitems`,
+            leftSection: `.${PREFIX}-pagination-left`,
+            rightSection: `.${PREFIX}-pagination-right`,
+            selectWrapper: `.${PREFIX}-pagination-select-wrapper`
+        };
 
         this.events = {
             eventPageChange: 'pageChange',
             eventPageNumber: 'pageNumber',
             eventPageItems: 'itemsPerPage',
-        }
+        };
 
         this.buttons = {
             NEXT: 'next',
             PREVIOUS: 'previous'
-        }
+        };
+
+        this.HTMLstring = {
+            dropdownsvg: `<svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
+                            <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
+                          </svg>`
+        };
 
         this.state = {
             navigationButton: {
@@ -41,11 +50,23 @@ class Pagination {
                 clicked: false,
                 value: 10
             },
+            itemstepper: 10,
             totalItems: 0,
             ...options
         }
-
+        this.init();
         this.toggleState(this.state);
+    }
+
+    init = () => {
+        this.createPageItemsDropDown();
+        this.element.querySelector(this.selectors.totalitems).innerHTML = this.state.totalItems;
+        const pageItemsDropDown = this.element.querySelector(this.selectors.PageItems);
+        const pageNumberDropDown = this.element.querySelector(this.selectors.PageNumber);
+        this.element.querySelector(this.selectors.rangeStart).innerHTML = 1;
+        this.element.querySelector(this.selectors.pageStart).innerHTML = 1;
+        this.element.querySelector(this.selectors.rangeEnd).innerHTML = pageItemsDropDown.options[pageItemsDropDown.selectedIndex].value;
+        this.element.querySelector(this.selectors.pageEnd).innerHTML = pageNumberDropDown.options[pageNumberDropDown.options.length - 1].value;
     }
 
     toggleState = (state) => {
@@ -147,9 +168,10 @@ class Pagination {
         } else if (target && getClosest(target, this.selectors.PageItems)) { // PageItems Drop-Down change
             if (target['options']) {
                 this.element.querySelector(this.selectors.rangeEnd).innerHTML = target.options[target.selectedIndex].value;
-                this.createOption(this.selectors.PageNumber,
-                    Number(this.element.querySelector(this.selectors.totalitems).innerText),
-                    target.options[target.selectedIndex].value);
+                this.createPageNumberOptions(this.selectors.PageNumber,
+                    Number(this.state.totalItems),
+                    target.options[target.selectedIndex].value,
+                    false);
                 this.state.pageItems.value = Number(target.options[target.selectedIndex].value);
                 this.adjustRangeChange();
                 this.resetNavigationButtons();
@@ -187,6 +209,7 @@ class Pagination {
     }
 
     getPages = () => {
+        debugger;
         let pageItemsSelected = this.element.querySelector(this.selectors.PageItems);
 
         if (pageItemsSelected && this.state.totalItems) {
@@ -194,7 +217,44 @@ class Pagination {
         }
     }
 
-    createOption = (selector, totalItems, selectedValue) => {
+    createPageItemsDropDown = () => {
+        const { itemstepper } = this.state;
+        const wrapper = this.element.querySelector(`${this.selectors.leftSection} ${this.selectors.selectWrapper}`);
+        const arrayItems = [itemstepper], limit = 100;
+
+        for (let i = 1; i <= limit; i++) {
+            if (arrayItems[i - 1] * 2 > limit) {
+                break;
+            }
+            arrayItems.push(arrayItems[i - 1] * 2);
+        }
+
+        //Create select and append options
+        let select = document.createElement("select");
+        select.classList.add(`${PREFIX}-pagination-select`, `${PREFIX}-page-items`);
+
+        for (let i = 0; i < arrayItems.length; i++) {
+            let option = document.createElement("option");
+            option.value = arrayItems[i];
+            option.text = arrayItems[i];
+            select.appendChild(option);
+        }
+        wrapper.appendChild(select);
+        wrapper.insertAdjacentHTML('beforeend', this.HTMLstring.dropdownsvg);
+        this.createPageNumberOptions(this.selectors.PageNumber,
+            this.state.totalItems,
+            select.options[select.selectedIndex].value,
+            true);
+    }
+
+    createPageNumberOptions = (selector, totalItems, selectedValue, INITIALIZE) => {
+        if (INITIALIZE) {
+            const wrapper = this.element.querySelector(`${this.selectors.rightSection} ${this.selectors.selectWrapper}`);
+            let select = document.createElement("select");
+            select.classList.add(`${PREFIX}-pagination-select`, `${PREFIX}-page-number`);
+            wrapper.appendChild(select);
+            wrapper.insertAdjacentHTML('beforeend', this.HTMLstring.dropdownsvg);
+        }
         let pageNumberDropdown = this.element.querySelector(selector);
 
         while (pageNumberDropdown.firstChild) {
@@ -247,6 +307,7 @@ class Pagination {
                         clicked: false,
                         value: 10
                     },
+                    itemstepper: 10,
                     totalItems: 0,
                 };
 
@@ -255,13 +316,21 @@ class Pagination {
                 } else if (getClosest(target, `.${PREFIX}-pagination-button-previous`)) {
                     defaultOption['navigationButton'] = { clicked: true, which: 'previous' };
                 } else if (getClosest(target, `.${PREFIX}-pagination-select.${PREFIX}-page-number`)) {
-                    defaultOption['pageNumber'] = { clicked: true };
+                    defaultOption['pageNumber'] = { clicked: true, value: 1 };
                 } else if (getClosest(target, `.${PREFIX}-pagination-select.${PREFIX}-page-items`)) {
-                    defaultOption['pageItems'] = { clicked: true };
+                    defaultOption['pageItems'] = { clicked: true, value: 10 };
                 }
 
-                if (element.querySelector(`.${PREFIX}-pagination-totalitems`)) {
-                    defaultOption['totalItems'] = Number(element.querySelector(`.${PREFIX}-pagination-totalitems`).innerText);
+                // if (element.querySelector(`.${PREFIX}-pagination-totalitems`)) {
+                //     defaultOption['totalItems'] = Number(element.querySelector(`.${PREFIX}-pagination-totalitems`).innerText);
+                // }
+
+                if (element.hasAttribute("data-totalitems")) {
+                    defaultOption['totalItems'] = Number(element.dataset.totalitems);
+                }
+
+                if (element.hasAttribute("data-itemstepper")) {
+                    defaultOption['itemstepper'] = Number(element.dataset.itemstepper);
                 }
 
                 return new Pagination(element, {
