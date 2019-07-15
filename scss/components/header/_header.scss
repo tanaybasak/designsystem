@@ -53,7 +53,7 @@
         }
 
         @include media-breakpoint-down(md) {
-            display: none;
+            margin: 0.75rem;
         }
     }
 
@@ -72,28 +72,6 @@
 
         @include media-breakpoint-down(md) {
             display: none;
-        }
-    }
-
-    &-searchbtn {
-        display: none;
-        flex-grow: 0;
-        flex-shrink: 0;
-        margin: 0.75rem;
-        height: 2.5rem;
-        width: 23.13rem;
-
-        @include media-breakpoint-down(md) {
-            display: inline-flex;
-        }
-
-        .#{$prefix}-search {
-            height: 100% !important;
-            width: 100% !important;
-            &-input {
-                height: 100% !important;
-                width: 100% !important;
-            }
         }
     }
 }
