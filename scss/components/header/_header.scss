@@ -22,15 +22,12 @@
         display: inline-flex;
         height: 3.125rem;
         margin-left: 1.5rem;
-        position: relative;
         flex-grow: 1;
         flex-shrink: 1;
+        align-items: center;
 
-        img {
-            height: 1rem;
-            top: 50%;
-            position: absolute;
-            transform: translateY(-50%);
+        a {
+            line-height: initial !important;
         }
 
         @include media-breakpoint-down(md) {
