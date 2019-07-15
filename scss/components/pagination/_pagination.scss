@@ -26,6 +26,10 @@
     }
 
     &-left {
+        @include media-breakpoint-only(xs) {
+            padding-left: 0;
+        }
+
         padding: 0 1rem;
 
         .#{$prefix}-pagination-select-wrapper {
@@ -130,10 +134,15 @@
 
     span.#{$prefix}-pagination-text {
         margin-left: hcl-rem(16px);
+        color: $pagination-text-variant-2;
 
         @include media-breakpoint-only(xs) {
             display: none;
         }
+    }
+
+    div.#{$prefix}-pagination-text {
+        color: $pagination-text-variant-1;
     }
 
     &-select-wrapper {
@@ -153,6 +162,7 @@
             margin-right: -0.65rem;
             cursor: pointer;
             text-align-last: center;
+            color: $pagination-select-text-color;
         }
 
         svg,
