@@ -51,7 +51,6 @@ class Pagination {
                 clicked: false,
                 value: 10
             },
-            itemstepper: 10,
             totalItems: 0,
             ...options
         }
@@ -217,7 +216,7 @@ class Pagination {
     }
 
     createPageItemsDropDown = () => {
-        const { itemstepper } = this.state;
+        const { value: itemstepper } = this.state.pageItems;
         const wrapper = this.element.querySelector(`${this.selectors.leftSection} ${this.selectors.selectWrapper}`);
         const arrayItems = [itemstepper], limit = Number(this.string.pageItemsLimit);
 
@@ -306,7 +305,6 @@ class Pagination {
                         clicked: false,
                         value: 10
                     },
-                    itemstepper: 10,
                     totalItems: 0,
                 };
 
@@ -320,13 +318,15 @@ class Pagination {
                     defaultOption['pageItems'] = { clicked: true, value: 10 };
                 }
 
-                if (element.hasAttribute("data-totalitems")) {
+                if (element.hasAttribute("data-totalitems") && element.dataset.totalitems != "") {
                     defaultOption['totalItems'] = Number(element.dataset.totalitems);
+                } else {
+                    throw "Require totalitems dataset.";
                 }
-
-                if (element.hasAttribute("data-itemstepper")) {
-                    defaultOption['itemstepper'] = Number(element.dataset.itemstepper);
+                if (element.hasAttribute("data-itemstepper") && element.dataset.itemstepper != "") {
                     defaultOption['pageItems'] = { clicked: true, value: Number(element.dataset.itemstepper) };
+                } else {
+                    throw "Require itemstepper dataset."
                 }
 
                 return new Pagination(element, {
