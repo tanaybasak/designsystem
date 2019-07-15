@@ -85,7 +85,7 @@ label {
         cursor: pointer;
         outline: inherit;
 
-        svg[hidden="true"] {
+        svg.#{$prefix}-icon-visibility-on {
             display: none;
         }
 
