@@ -1,0 +1,79 @@
+/******************************************************************
+ * HCL Confidential
+ *
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
+ *
+ *******************************************************************
+ */
+
+.#{$prefix}-header {
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--blue);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 0 1rem;
+    z-index: 8;
+
+    &-brand {
+        display: inline-flex;
+        width: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        align-items: center;
+        line-height: initial !important;
+
+        @include media-breakpoint-down(md) {
+            margin-left: 5rem;
+        }
+    }
+
+    &-wrapper {
+        display: inline-flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+        flex-shrink: 1;
+
+        .#{$prefix}-header-search {
+            display: inline-flex;
+            margin: 0.3125rem;
+            width: 23.13rem;
+            flex-grow: 0;
+            flex-shrink: 0;
+
+            .#{$prefix}-search {
+                width: 100% !important;
+            }
+
+            @include media-breakpoint-down(md) {
+                margin: 0.75rem;
+            }
+        }
+
+        .#{$prefix}-header-icons {
+            display: flex;
+            margin: 0 0 0 1rem;
+            flex-grow: 0;
+            flex-shrink: 0;
+
+            .#{$prefix}-header-icon {
+                display: inline-flex;
+                margin: 1rem 0.5rem;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+    }
+}
