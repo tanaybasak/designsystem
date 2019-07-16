@@ -18,11 +18,18 @@ class Navigation {
     toggleSidebar = (event) => {
         const comp = event.currentTarget;
         const item = comp.parentNode;
+        const container = document.querySelector('[data-withsidenav]');
 
         if (this.state.expanded) {
             item.classList.remove("expanded");
+            if (container) {
+                container.classList.toggle('sidebar-expanded', false);
+            }
         } else {
             item.classList.add("expanded");
+            if (container) {
+                container.classList.toggle('sidebar-expanded', true);
+            }
         }
 
         this.state.expanded = !this.state.expanded;
