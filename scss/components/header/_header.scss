@@ -9,66 +9,71 @@
 .#{$prefix}-header {
     display: flex;
     justify-content: flex-start;
-    flex-grow: 1;
     background-color: var(--blue);
-    height: 3.125rem;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
-
-    @include media-breakpoint-down(md) {
-        height: 4rem;
-    }
+    padding: 0 1rem;
+    z-index: 8;
 
     &-brand {
         display: inline-flex;
-        height: 3.125rem;
-        margin-left: 1.5rem;
-        flex-grow: 1;
-        flex-shrink: 1;
+        width: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
         align-items: center;
-
-        a {
-            line-height: initial !important;
-        }
+        line-height: initial !important;
 
         @include media-breakpoint-down(md) {
-            height: 4rem;
             margin-left: 5rem;
         }
     }
 
-    &-search {
+    &-wrapper {
         display: inline-flex;
-        margin: 0.3125rem;
-        height: 2.5rem;
-        width: 23.13rem;
-        flex-grow: 0;
-        flex-shrink: 0;
+        justify-content: flex-end;
+        flex-grow: 1;
+        flex-shrink: 1;
 
-        .#{$prefix}-search {
-            height: 100% !important;
-            width: 100% !important;
-        }
-
-        @include media-breakpoint-down(md) {
-            margin: 0.75rem;
-        }
-    }
-
-    &-icons {
-        display: flex;
-        margin: 0 0.5rem;
-        flex-grow: 0;
-        flex-shrink: 0;
-
-        .#{$prefix}-header-icon {
+        .#{$prefix}-header-search {
             display: inline-flex;
-            margin: 1rem 0.5rem;
-            height: 0.875rem;
-            width: 0.875rem;
+            margin: 0.3125rem;
+            width: 23.13rem;
+            flex-grow: 0;
+            flex-shrink: 0;
+
+            .#{$prefix}-search {
+                width: 100% !important;
+            }
+
+            @include media-breakpoint-down(md) {
+                margin: 0.75rem;
+            }
         }
 
-        @include media-breakpoint-down(md) {
-            display: none;
+        .#{$prefix}-header-icons {
+            display: flex;
+            margin: 0 0 0 1rem;
+            flex-grow: 0;
+            flex-shrink: 0;
+
+            .#{$prefix}-header-icon {
+                display: inline-flex;
+                margin: 1rem 0.5rem;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
         }
     }
 }

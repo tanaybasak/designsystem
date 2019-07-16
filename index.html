@@ -14,156 +14,156 @@
 <body>
     <!-- HEADER LAYOUT -->
     <header class="hcl-header">
-        <div class="hcl-header-brand">
-            <a href="/">
-                <img src="/logo.png" alt="Logo">
-            </a>
-        </div>
-        <div class="hcl-header-search">
-            <div class="hcl-search hcl-bg-white mb-2  hcl-search-btn-only">
-                <span class="hcl-search-btn" tabindex="-1">
-                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform; fill: #fff"
-                        xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
-                        viewBox="0 0 16 16" aria-hidden="true">
-                        <path
-                            d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
-                        </path>
-                    </svg>
-                </span>
-                <input type="text" id="header-search-input-full" class="hcl-search-input" placeholder="Search..." />
-                <button class="hcl-search-reset" tabindex="-1"></button>
-            </div>
-        </div>
-        <ul class="hcl-header-icons">
-            <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
-            </li>
-            <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
-            </li>
-            <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
-            </li>
-            <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
-            </li>
-            <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
-            </li>
-        </ul>
-    </header>
-    <!-- CONTENT LAYOUT -->
-    <div class="hcl-content">
-        <!-- SIDEBAR LAYOUT -->
-        <nav class="hcl-sidebar" data-component="navigation">
-            <button class="hcl-sidebar-hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="hcl-sidebar-title">
-                <span class="hcl-sidebar-title-icon"></span>
-                <span class="hcl-sidebar-title-text">Section Title</span>
-                <span class="hcl-sidebar-title-toggle"></span>
-            </div>
-            <ul class="hcl-sidebar-list">
-                <li class="hcl-sidebar-category">
-                    <span class="hcl-sidebar-category-title">
-                        <span class="hcl-sidebar-icon"></span>
-                        <span class="hcl-sidebar-link">
-                            Atoms
-                        </span>
+        <a href="/" class="hcl-header-brand">
+            <img src="/logo.png" alt="Logo">
+        </a>
+        <div class="hcl-header-wrapper">
+            <div class="hcl-header-search">
+                <div class="hcl-search hcl-bg-white hcl-search-btn-only">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            style="will-change: transform; fill: #fff" xmlns="http://www.w3.org/2000/svg"
+                            class="hcl-search-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
                     </span>
-                    <ul class="hcl-sidebar-children">
-                        <li class="hcl-sidebar-item">
-                            <a href="#typography" class="hcl-sidebar-link">
-                                Typography
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#gridSystem" class="hcl-sidebar-link">
-                                Grid System
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#boxExamples" class="hcl-sidebar-link">
-                                Box Examples
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#spinner" class="hcl-sidebar-link">
-                                Spinner
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#breadcrumb" class="hcl-sidebar-link">
-                                Breadcrumb
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#toggle" class="hcl-sidebar-link">
-                                Toggle
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#notification" class="hcl-sidebar-link">
-                                Notification
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#cards" class="hcl-sidebar-link">
-                                Card
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#textinput" class="hcl-sidebar-link">
-                                Text Input
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#textarea" class="hcl-sidebar-link">
-                                Textarea
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#radio" class="hcl-sidebar-link">
-                                Radio
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#checkbox" class="hcl-sidebar-link">
-                                Checkbox
-                            </a>
-                        </li>
-                    </ul>
+                    <input type="text" id="header-search-input-full" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+            </div>
+            <ul class="hcl-header-icons">
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
                 </li>
-                <li class="hcl-sidebar-category">
-                    <span class="hcl-sidebar-category-title">
-                        <span class="hcl-sidebar-icon"></span>
-                        <span class="hcl-sidebar-link">
-                            Molecules
-                        </span>
-                    </span>
-                    <ul class="hcl-sidebar-children">
-                        <li class="hcl-sidebar-item">
-                            <a href="#content-switcher" class="hcl-sidebar-link">
-                                Content Switcher
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#tabsexample" class="hcl-sidebar-link">
-                                Tabs
-                            </a>
-                        </li>
-                        <li class="hcl-sidebar-item">
-                            <a href="#formcomp" class="hcl-sidebar-link">
-                                Form
-                            </a>
-                        </li>
-                    </ul>
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
                 </li>
             </ul>
-        </nav>
+        </div>
+    </header>
+    <nav class="hcl-sidebar" data-component="navigation">
+        <button class="hcl-sidebar-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="hcl-sidebar-title">
+            <span class="hcl-sidebar-title-icon"></span>
+            <span class="hcl-sidebar-title-text">Section Title</span>
+            <span class="hcl-sidebar-title-toggle"></span>
+        </div>
+        <ul class="hcl-sidebar-list">
+            <li class="hcl-sidebar-category">
+                <span class="hcl-sidebar-category-title">
+                    <span class="hcl-sidebar-icon"></span>
+                    <span class="hcl-sidebar-link">
+                        Atoms
+                    </span>
+                </span>
+                <ul class="hcl-sidebar-children">
+                    <li class="hcl-sidebar-item">
+                        <a href="#typography" class="hcl-sidebar-link">
+                            Typography
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#gridSystem" class="hcl-sidebar-link">
+                            Grid System
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#boxExamples" class="hcl-sidebar-link">
+                            Box Examples
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#spinner" class="hcl-sidebar-link">
+                            Spinner
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#breadcrumb" class="hcl-sidebar-link">
+                            Breadcrumb
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#toggle" class="hcl-sidebar-link">
+                            Toggle
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#notification" class="hcl-sidebar-link">
+                            Notification
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#cards" class="hcl-sidebar-link">
+                            Card
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#textinput" class="hcl-sidebar-link">
+                            Text Input
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#textarea" class="hcl-sidebar-link">
+                            Textarea
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#radio" class="hcl-sidebar-link">
+                            Radio
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#checkbox" class="hcl-sidebar-link">
+                            Checkbox
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="hcl-sidebar-category">
+                <span class="hcl-sidebar-category-title">
+                    <span class="hcl-sidebar-icon"></span>
+                    <span class="hcl-sidebar-link">
+                        Molecules
+                    </span>
+                </span>
+                <ul class="hcl-sidebar-children">
+                    <li class="hcl-sidebar-item">
+                        <a href="#content-switcher" class="hcl-sidebar-link">
+                            Content Switcher
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#tabsexample" class="hcl-sidebar-link">
+                            Tabs
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#formcomp" class="hcl-sidebar-link">
+                            Form
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- CONTENT LAYOUT -->
+    <div class="hcl-content mt-5" data-withsidenav>
+        <!-- SIDEBAR LAYOUT -->
         <!-- MAIN CONTENT LAYOUT -->
         <main class="hcl-content-main">
             <!-- AVAILABLE COMPONENTS STARTS -->

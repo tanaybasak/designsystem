@@ -29,12 +29,16 @@
     height: calc(100vh - 3.125rem);
     width: 2.75rem;
     align-items: flex-start;
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 3.125rem;
     overflow: hidden;
     transition: all 220ms ease-in-out;
+    z-index: 9;
 
     @include media-breakpoint-down(md) {
         width: 0;
+        top: 4rem;
     }
 
     a.#{$prefix}-sidebar-link {
@@ -291,7 +295,6 @@
             position: fixed;
             left: 0;
             top: 0;
-            z-index: 5;
             display: flex;
         }
 
@@ -345,5 +348,14 @@
                 }
             }
         }
+    }
+}
+
+.#{$prefix}-content[data-withsidenav] {
+    margin-left: 2.75rem;
+    transition: all 220ms ease-in-out;
+
+    &.sidebar-expanded {
+        margin-left: 12.5rem;
     }
 }
