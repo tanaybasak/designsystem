@@ -1,7 +1,6 @@
 .#{$prefix}-dropdown {
     display: inline-block;
     position: relative;
-    min-width: 25rem;
 
     &-toggle {
         background: #efefef;
@@ -56,7 +55,7 @@
         background-color: transparent;
         border: 0;
         font-size: 0.875rem;
-        color: $grey-3;
+        color: $dark-blue;
         border: 1px solid transparent;
         padding: 0.8125rem 1rem;
         max-width: 100%;
@@ -71,7 +70,7 @@
     }
 
     &-item-selected {
-        background-color: #{$grey-2};
+        display: none;
     }
 
     &-open {
@@ -83,7 +82,9 @@
     &.#{$prefix}-dropdown-top {
         .#{$prefix}-dropdown-container {
             bottom: 2.5rem;
-            top: inherit
+            top: inherit;
+            border: 0;
+            border-top: 1px solid #8c8c8c;
         }
     }
 
