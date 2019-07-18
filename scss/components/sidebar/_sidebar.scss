@@ -7,18 +7,18 @@
  */
 
 %arrow {
-    content: "";
-    height: 0.5rem;
-    width: 0.5rem;
+    content: '';
+    height: 0.625rem;
+    width: 0.625rem;
     position: absolute;
-    padding: 0.3125rem;
-    box-shadow: 0.125rem -0.125rem 0 0 var(--white) inset;
+    border-left: 0.125rem solid var(--white);
+    border-bottom: 0.125rem solid var(--white);
     top: 50%;
     transition: all 220ms ease-in-out;
 
     @include media-breakpoint-down(md) {
-        padding: 0.625rem;
-        box-shadow: 0.25rem -0.25rem 0 0 var(--white) inset;
+        height: 0.75rem;
+        width: 0.75rem;
     }
 }
 
@@ -145,7 +145,8 @@
 
         .#{$prefix}-sidebar-category .#{$prefix}-sidebar-category-title,
         .#{$prefix}-sidebar-item {
-            display: block;
+            display: flex;
+            align-items: center;
 
             >.#{$prefix}-sidebar-link {
                 display: none;
@@ -156,6 +157,7 @@
                 white-space: nowrap;
                 line-height: 1.75rem;
                 width: calc(100% - 3rem);
+                align-items: center;
 
                 @include media-breakpoint-down(md) {
                     font-size: 1.5rem;
@@ -176,11 +178,12 @@
                 }
 
                 .#{$prefix}-sidebar-icon {
-                    display: inline-block;
+                    display: inline-flex;
                     width: 0.75rem;
                     height: 0.75rem;
                     margin: 0.5rem 1rem;
                     border: 0.0625rem solid var(--white);
+                    align-items: center;
 
                     @include media-breakpoint-down(md) {
                         width: 1.5rem;
@@ -195,7 +198,7 @@
 
                     &:after {
                         @extend %arrow;
-                        content: "";
+                        content: '';
                         display: none;
                         right: 1rem;
                         transform: translateY(-50%) rotate(-45deg);
@@ -219,12 +222,12 @@
                 .#{$prefix}-sidebar-item {
                     width: 100%;
 
-                    &-active {
+                    &-active, &:hover {
                         background-color: var(--grey-7);
                         position: relative;
 
                         &:before {
-                            content: "";
+                            content: '';
                             background-color: var(--blue);
                             position: absolute;
                             height: 100%;
@@ -261,12 +264,12 @@
         }
 
         .#{$prefix}-sidebar-item {
-            &-active {
+            &-active, &:hover {
                 background-color: var(--grey-7);
                 position: relative;
 
                 &:before {
-                    content: "";
+                    content: '';
                     background-color: var(--blue);
                     position: absolute;
                     height: 100%;
@@ -307,7 +310,7 @@
             float: right;
 
             &-icon {
-                display: inline-block;
+                display: inline-flex;
 
                 @include media-breakpoint-down(md) {
                     display: none;
@@ -315,7 +318,7 @@
             }
 
             &-text {
-                display: inline-block;
+                display: inline-flex;
             }
 
             &-toggle {
@@ -326,16 +329,14 @@
         }
 
         .#{$prefix}-sidebar-list {
-
             .#{$prefix}-sidebar-category {
-
                 &-title {
                     .#{$prefix}-sidebar-link {
-                        display: inline-block;
+                        display: inline-flex;
                     }
 
                     .#{$prefix}-sidebar-link:after {
-                        display: inline-block;
+                        display: inline-flex;
                     }
                 }
             }
@@ -344,7 +345,7 @@
                 width: 100%;
 
                 .#{$prefix}-sidebar-link {
-                    display: inline-block;
+                    display: inline-flex;
                 }
             }
         }
