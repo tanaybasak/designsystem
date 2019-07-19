@@ -147,6 +147,7 @@
         .#{$prefix}-sidebar-item {
             display: flex;
             align-items: center;
+            cursor: pointer;
 
             >.#{$prefix}-sidebar-link {
                 display: none;
@@ -222,10 +223,13 @@
                 .#{$prefix}-sidebar-item {
                     width: 100%;
 
-                    &-active, &:hover {
+                    &-active,
+                    &:hover {
                         background-color: var(--grey-7);
                         position: relative;
+                    }
 
+                    &-active {
                         &:before {
                             content: '';
                             background-color: var(--blue);
@@ -264,10 +268,14 @@
         }
 
         .#{$prefix}-sidebar-item {
-            &-active, &:hover {
+
+            &-active,
+            &:hover {
                 background-color: var(--grey-7);
                 position: relative;
+            }
 
+            &-active {
                 &:before {
                     content: '';
                     background-color: var(--blue);
