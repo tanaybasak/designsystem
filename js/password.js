@@ -57,11 +57,11 @@ class Password {
     }
 
     attachEvents = () => {
-        delegate(this.selectors.button, 'click', (e) => {
+        this.element.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             this.handleToggle(e);
-        }, false);
+        });
     }
 
     static handleDataAPI = () => {
