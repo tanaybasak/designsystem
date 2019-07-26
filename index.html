@@ -1333,7 +1333,7 @@
                     <label for="firstname1">First Name</label>
                 </div>
                 <div class="hcl-form-group">
-                    <input type="password" class="hcl-form-control" id="password1" placeholder="Password" />
+                    <input type="password" class="hcl-form-control" data-invalid="true" id="password1" placeholder="Password" />
                     <label for="password1">Password</label>
                     <button class="hcl-password-visibility" aria-label="Show password" data-component="password">
                         <svg class="hcl-icon-visibility-off" width="16" height="16" viewBox="0 0 16 16">
@@ -1350,6 +1350,8 @@
                             </path>
                         </svg>
                     </button>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <div class="hcl-error-msg">Validation message here</div>
                 </div>
                 <div class="hcl-form-group">
                     <input data-invalid="true" type="text" class="hcl-form-control" id="middlename"
