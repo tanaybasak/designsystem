@@ -42,3 +42,7 @@ dl {
     font-size: inherit;
     line-height: inherit;
 }
+
+input::-ms-clear {
+    display: none;
+}
