@@ -22,17 +22,10 @@ class Slider {
     );
     if (this.textInput) {
       this.textInput.addEventListener(
-        'input',
-        this.debounce.bind(this, this._handleTextChange, 500)
+        'blur',
+        this._handleTextChange.bind(this)
       );
     }
-  }
-
-  debounce(callback, delay) {
-    let debounceTimer = null;
-    const context = this;
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => callback.call(context), delay);
   }
 
   _handleRangeChange(event) {
@@ -40,7 +33,8 @@ class Slider {
     this._setRange();
   }
 
-  _handleTextChange() {
+  _handleTextChange(event) {
+    event.stopPropagation(event);
     const value = Number(this.textInput.value);
     if (value < this.min) {
       this.textInput.value = this.min;
