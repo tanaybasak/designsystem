@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-
-
 </head>
 
 <body>
@@ -21,9 +19,9 @@
             <div class="hcl-header-search">
                 <div class="hcl-search hcl-bg-white hcl-search-btn-only">
                     <span class="hcl-search-btn" tabindex="-1">
-                        <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-                            style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-                            class="hcl-search-icon white" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon white" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
                             <path
                                 d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
                             </path>
@@ -1193,10 +1191,10 @@
                 <div class="hcl-col">
                     <label>Slider Label</label>
                     <div class="hcl-slider">
-                        <label class="hcl-slider-bottom-range">0</label>
-                        <input class="hcl-slider-input" type="range" min="0" max="100" />
+                        <label class="hcl-slider-bottom-range">10</label>
+                        <input class="hcl-slider-input" type="range" value="50" min="10" max="100" />
                         <label class="hcl-slider-top-range">100</label>
-                        <input class="hcl-slider-text-input" type="text">
+                        <input class="hcl-form-control hcl-slider-text-input" type="number" />
                     </div>
             </section>
             <!-- Dropdown -->
@@ -1333,7 +1331,8 @@
                     <label for="firstname1">First Name</label>
                 </div>
                 <div class="hcl-form-group">
-                    <input type="password" class="hcl-form-control" data-invalid="true" id="password1" placeholder="Password" />
+                    <input type="password" class="hcl-form-control" data-invalid="true" id="password1"
+                        placeholder="Password" />
                     <label for="password1">Password</label>
                     <button class="hcl-password-visibility" aria-label="Show password" data-component="password">
                         <svg class="hcl-icon-visibility-off" width="16" height="16" viewBox="0 0 16 16">
@@ -2131,7 +2130,6 @@
                     </table>
                 </div>
             </section>
-
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
     </div>
@@ -2187,6 +2185,9 @@
         });
         patron.search(".hcl-search");
         patron.numberInput(".hcl-number-input-wrapper");
+
+        // Slider
+        patron.slider('.hcl-slider');
     </script>
 </body>
 
