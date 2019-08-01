@@ -43,3 +43,8 @@ dl {
     font-size: inherit;
     line-height: inherit;
 }
+
+//clear icon removed from input for edge browser.
+input::-ms-clear {
+    display: none;
+}
