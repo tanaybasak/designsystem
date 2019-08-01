@@ -50,10 +50,10 @@
 }
 
 .#{$prefix}-helper-text {
-    @include getFontSize("12");
     @include getInputColor('color-2', "color");
-    @include lineHeight("helpertext");
     margin-bottom: .5rem;
+    font-size: 0.75rem;
+    line-height: getLineHeight(0.75rem)
 }
 
 label {
@@ -104,9 +104,9 @@ label {
     &[data-invalid=true]~.#{$prefix}-error-msg {
         color: $error;
         @include getFontWeight("regular");
-        @include getFontSize("12");
+        font-size: 0.75rem;
+        line-height: getLineHeight(0.75rem);
         margin-top: .25rem;
-        @include lineHeight("error");
     }
 
     &[data-invalid=false]~.#{$prefix}-error-msg {
@@ -159,7 +159,7 @@ label {
 
     .#{$prefix}-checkbox-label {
         @include getFontWeight("regular");
-        @include getFontSize("14");
+        font-size: 0.875rem;
         display: inline-block;
         cursor: pointer;
         margin-bottom: 0;
@@ -253,7 +253,7 @@ label {
 
 .#{$prefix}-radio-label {
     @include getFontWeight("regular");
-    @include getFontSize("14");
+    font-size: 0.875rem;
     display: inline-block;
     cursor: pointer;
     margin-bottom: 0;
@@ -285,10 +285,10 @@ label {
 
 // Legend
 .#{$prefix}-legend {
-    @include getFontSize("14");
     @include getFontWeight("semibold");
     @include getInputColor("color-1", "color");
     vertical-align: baseline;
     display: inline-block;
     margin-bottom: .5rem;
+    font-size: 0.875rem;
 }
