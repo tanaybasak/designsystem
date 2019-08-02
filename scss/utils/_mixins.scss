@@ -141,14 +141,8 @@
 }
 
 // Line height
-@mixin lineHeight($type) {
-    @if ($type=="heading") {
-        line-height: 1.125;
-    }
-
-    @else {
-        line-height: 1.15;
-    }
+@function getLineHeight($font-size) {
+    @return $font-size*1.5;
 }
 
 // px to rem

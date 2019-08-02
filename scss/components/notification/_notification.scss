@@ -29,10 +29,10 @@ $colorMap: ("info": $info, "danger": $danger, "success": $success, "warning": $w
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-
+          
             .#{$prefix}-notification-title {
-                @include getFontSize("14");
-                line-height: 1.125rem;
+                font-size: 0.875rem;
+                line-height: getLineHeight(0.875rem);
                 letter-spacing: 0;
                 color: #132730;
                 margin-right: 0.5rem;
@@ -40,11 +40,11 @@ $colorMap: ("info": $info, "danger": $danger, "success": $success, "warning": $w
             }
 
             .#{$prefix}-notification-subtitle {
-                @include getFontSize("14");
+                font-size: 0.875rem;
+                line-height: getLineHeight(0.875rem);
                 @include getFontWeight("regular");
                 word-break: break-word;
                 color: #aaa;
-                line-height: 1.125rem;
             }
         }
     }

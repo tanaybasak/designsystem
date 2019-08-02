@@ -59,9 +59,9 @@
         position: absolute !important;
         right: 0;
         top: 0;
-        margin: 1rem 1.25rem;
+        margin: 1rem;
         // we are not using var for #5A6872 because of saas issue
-        @include hcl-close-icon(14, $white, $lightGrey);
+        @include hcl-close-icon(10, $white, $lightGrey);
     }
 
     &-content {
