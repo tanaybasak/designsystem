@@ -224,6 +224,12 @@
         transform: rotate(90deg);
         padding: 0 0.5rem;
     }
+
+    &.horizontal-ellipsis {
+        &:after {
+            transform: none;
+        }
+    }
 }
 
 // HOVER
