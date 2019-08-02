@@ -224,6 +224,12 @@
         transform: rotate(90deg);
         padding: 0 0.5rem;
     }
+
+    &.horizontal-ellipsis {
+        &:after {
+            transform: none;
+        }
+    }
 }
 
 // HOVER
@@ -245,4 +251,12 @@
     background-image: linear-gradient(to top, $white 0%, $white 4%, transparent 4%); // MAGIC NUMBER -> 4% ~ 2px/.125rem TODO: Subject to be changed
     background-size: cover;
     transition: all ease .1s;
+}
+
+@mixin clearfix() {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
 }

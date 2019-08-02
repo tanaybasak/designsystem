@@ -1,5 +1,5 @@
 {
-  "name": "patron-css",
+  "name": "patron-css-dev",
   "version": "1.0.18",
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",

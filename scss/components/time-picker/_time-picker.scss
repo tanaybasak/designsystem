@@ -1,0 +1,39 @@
+.#{$prefix}-timepicker {
+    display: flex;
+    align-items: flex-end;
+
+    &-label {
+        font-family: inherit;
+        font-size: .875rem;
+        color: var(--black);
+        font-weight: 600;
+        display: inline-block;
+        vertical-align: baseline;
+        margin-bottom: .5rem;
+    }
+
+    &-input {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 0.0625rem solid transparent;
+    }
+
+    &-input-field {
+        font-size: .875rem;
+        display: flex;
+        align-items: center;
+        background-color: rgba(70, 150, 210, 0.05);
+        border: none;
+        width: 5.25rem;
+        color: var(--black);
+        height: 2.5rem;
+        padding: 0 1rem;
+        box-shadow: 0 0.0625rem 0 0 var(--grey-light);
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0.125rem 0 0 var(--blue-light);
+        }
+    }
+
+}

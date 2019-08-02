@@ -42,6 +42,11 @@
     .#{$prefix}-textarea {
         order: 3;
     }
+
+    input[type="password"]::-ms-reveal,
+    input[type="password"]::-ms-clear {
+        display: none;
+    }
 }
 
 .#{$prefix}-helper-text {
@@ -60,11 +65,38 @@ label {
 .#{$prefix}-form-control {
     @include getFormControl("inputcontrol");
     @include getErrorMarkup("inputcontrol");
+
+    &~button.#{$prefix}-password-visibility,
+    &~[data-component="password"] {
+        position: relative;
+        top: -1.75rem;
+        right: .75rem;
+        display: flex;
+        justify-content: center;
+        align-self: flex-end;
+        align-items: center;
+        order: 3;
+        height: 1rem;
+        width: 1rem;
+        padding: 0;
+        margin-bottom: -1rem;
+        border: 0;
+        background: none;
+        cursor: pointer;
+        outline: inherit;
+
+        svg.#{$prefix}-icon-visibility-on {
+            display: none;
+        }
+
+        svg {
+            fill: var(--blue-light);
+        }
+    }
 }
 
 .#{$prefix}-textarea {
     @include getFormControl("inputcontrol");
-    min-width: 10rem;
     resize: vertical;
     padding: 1rem;
     height: auto;

@@ -34,6 +34,10 @@
             margin-left: ($search-height - $search-icon-size)/2;
             margin-top: ($search-height - $search-icon-size)/2;
             fill: var(--blue-light);
+
+            &.white {
+                fill: var(--white);
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 .#{$prefix}-tooltip {
     position: absolute;
-    display: block;
+    display: none;
     font-size: var(--small-font-size);
     word-wrap: break-word;
     text-align: left;
@@ -37,6 +37,10 @@
             right: -($tooltip-arrow-size-default-position);
             transform: rotate(45deg);
         }
+    }
+
+    &.show {
+        display: block;
     }
 
     &[data-focus-on-click="true"] {

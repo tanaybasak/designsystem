@@ -18,7 +18,7 @@
             td {
                 background-color: transparent;
                 border-top: 0.0625rem solid var(--grey-lighter);
-                padding-left: 0.75rem;
+                padding: 0 0 0 0.75rem;
                 text-align: left;
                 height: 3rem;
                 vertical-align: middle;
@@ -35,10 +35,10 @@
                 font-size: 0.875rem;
                 color: var(--dark-blue);
                 letter-spacing: 0;
-                line-height: 1.125rem;
+                line-height: 1rem;
 
                 &.sortable {
-                    display: inline-flex;
+                    display: flex;
                     align-items: center;
 
                     &:after {
@@ -88,7 +88,7 @@
                 padding-left: 0.75rem;
                 font-size: 0.875rem;
                 color: var(--dark-blue);
-                line-height: 1.5rem;
+                line-height: 1rem;
                 height: 3rem;
                 vertical-align: middle;
             }
@@ -112,11 +112,9 @@
 
     &-compact {
 
-        thead,
         tbody {
             tr {
 
-                th,
                 td {
                     height: 1.5rem;
                 }
@@ -126,11 +124,9 @@
 
     &-tall {
 
-        thead,
         tbody {
             tr {
 
-                th,
                 td {
                     height: 4rem;
                 }
