@@ -133,4 +133,7 @@
 
 .#{$prefix}-ellipsis {
     width: 0.5rem;
+    &.horizontal-ellipsis {
+        width: 1rem;
+    }
 }
