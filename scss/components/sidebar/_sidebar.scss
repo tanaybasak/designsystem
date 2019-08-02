@@ -316,6 +316,7 @@
         .#{$prefix}-sidebar-title {
             width: 100%;
             float: right;
+            justify-content: flex-end;
 
             &-icon {
                 display: inline-flex;
