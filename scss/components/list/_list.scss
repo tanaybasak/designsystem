@@ -2,7 +2,7 @@
 .#{$prefix}-list-unordered {
     font-size: .875rem;
     @include getFontWeight(regular);
-    line-height: 1.125rem;
+    line-height: 1.5rem;
     letter-spacing: .16px;
 
     .#{$prefix}-list-item {
