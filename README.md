@@ -112,7 +112,7 @@ then we can move the list styling from Typography.scss and create new file list.
 
 # Coding standard and guidelines
 - Follow the mail sent for linting/indentation process
-- ...rest will be updated soon!
+- ...will be updated soon!
 
 # License
 
