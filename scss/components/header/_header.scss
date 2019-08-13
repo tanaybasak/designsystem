@@ -35,10 +35,6 @@
         &:active {
             outline: none;
         }
-
-        @include media-breakpoint-down(md) {
-            margin-left: 5rem;
-        }
     }
 
     &-wrapper {

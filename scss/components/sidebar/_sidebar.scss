@@ -372,3 +372,11 @@
         }
     }
 }
+
+.#{$prefix}-header[data-withsidenav] {
+    .#{$prefix}-header-brand {
+        @include media-breakpoint-down(md) {
+            margin-left: 5rem;
+        }
+    }
+}
