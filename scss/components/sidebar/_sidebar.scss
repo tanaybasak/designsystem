@@ -367,5 +367,8 @@
 
     &.sidebar-expanded {
         margin-left: 12.5rem;
+        @include media-breakpoint-down(md) {
+            margin-left: 75vw;
+        }
     }
 }
