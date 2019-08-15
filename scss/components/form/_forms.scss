@@ -133,7 +133,7 @@ label {
         width: 18px;
         height: 18px;
         top: 0;
-        left: 0px;
+        left: 0;
         position: absolute;
 
         &[disabled]~.#{$prefix}-checkbox-label {

@@ -138,3 +138,9 @@
         border: 0.0625rem solid transparent;
     }
 }
+
+.#{$prefix}-data-table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
