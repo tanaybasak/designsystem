@@ -15,21 +15,50 @@ class Navigation {
         this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
     }
 
+    isDescendant = (parent, child) => {
+        let node = child.parentNode;
+        while (node != null) {
+            if (node == parent) {
+                return true;
+            }
+            node = node.parentNode;
+        }
+        return false;
+    };
+
+    hideSidebarDocumentClick = () => {
+        const handler = event => {
+            const classList = event.target.classList;
+            if (!this.isDescendant(this.element, event.target)) {
+                document.removeEventListener("click", handler);
+                const containers = document.querySelectorAll(`[data-withsidenav]`);
+                if (this.state.expanded) {
+                    this.element.classList.remove("expanded");
+                    this.state.expanded = false;
+                    if (containers && containers.length) {
+                        containers.forEach(container => container.classList.toggle('sidebar-expanded', false));
+                    }
+                }
+            }
+        };
+        document.addEventListener("click", handler);
+    };
+
     toggleSidebar = (event) => {
-        const comp = event.currentTarget;
-        const item = comp.parentNode;
-        const container = document.querySelector('[data-withsidenav]');
+        const item = this.element;
+        const containers = document.querySelectorAll(`[data-withsidenav]`);
 
         if (this.state.expanded) {
             item.classList.remove("expanded");
-            if (container) {
-                container.classList.toggle('sidebar-expanded', false);
+            if (containers && containers.length) {
+                containers.forEach(container => container.classList.toggle('sidebar-expanded', false));
             }
         } else {
             item.classList.add("expanded");
-            if (container) {
-                container.classList.toggle('sidebar-expanded', true);
+            if (containers && containers.length) {
+                containers.forEach(container => container.classList.toggle('sidebar-expanded', true));
             }
+            this.hideSidebarDocumentClick();
         }
 
         this.state.expanded = !this.state.expanded;

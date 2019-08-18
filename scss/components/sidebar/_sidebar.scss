@@ -38,7 +38,7 @@
 
     @include media-breakpoint-down(md) {
         width: 0;
-        top: 4rem;
+        top: 0;
     }
 
     a.#{$prefix}-sidebar-link {
@@ -92,7 +92,8 @@
 
         @include media-breakpoint-down(md) {
             height: auto;
-            padding-left: 2.375rem;
+            padding-left: 0;
+            border-bottom: none;
         }
 
         &-icon {
@@ -102,6 +103,10 @@
             margin: 0.625rem;
             border-radius: 50%;
             background-color: var(--light-50);
+            @include media-breakpoint-down(md) {
+                height: auto;
+                padding-left: 0;
+            }
         }
 
         &-text {
@@ -117,8 +122,10 @@
             @include media-breakpoint-down(md) {
                 font-size: 1.75rem;
                 line-height: 2rem;
-                padding-top: 2.5rem;
-                padding-bottom: 2.5rem;
+                padding: 2.5rem 0;
+            }
+            @include media-breakpoint-down(md) {
+                width: calc(100% - 2.75rem);
             }
         }
 
@@ -135,6 +142,9 @@
                 left: 50%;
                 transform: translate(-50%, -50%) rotate(225deg);
             }
+            @include media-breakpoint-down(md) {
+                opacity: 0;
+            }
         }
     }
 
@@ -148,6 +158,9 @@
             display: flex;
             align-items: center;
             cursor: pointer;
+            @include media-breakpoint-down(md) {
+                padding-left: 0;
+            }
 
             >.#{$prefix}-sidebar-link {
                 display: none;
@@ -159,13 +172,13 @@
                 line-height: 1.75rem;
                 width: calc(100% - 3rem);
                 align-items: center;
+                padding-right: 1rem;
 
                 @include media-breakpoint-down(md) {
                     font-size: 1.5rem;
                     line-height: 1.75rem;
-                    width: calc(100% - 3.75rem);
-                    padding-top: 2rem;
-                    padding-bottom: 2rem;
+                    width: 100%;
+                    padding: 2rem 1rem;
                 }
             }
         }
@@ -189,8 +202,7 @@
                     @include media-breakpoint-down(md) {
                         width: 1.5rem;
                         height: 1.5rem;
-                        margin-top: 1.75rem;
-                        margin-bottom: 2rem;
+                        margin: 1.75rem 0 2rem;
                     }
                 }
 
@@ -205,7 +217,7 @@
                         transform: translateY(-50%) rotate(-45deg);
 
                         @include media-breakpoint-down(md) {
-                            right: 2.5rem;
+                            right: 0.5rem;
                         }
                     }
                 }
@@ -245,7 +257,8 @@
 
                     .#{$prefix}-sidebar-link {
                         @include media-breakpoint-down(md) {
-                            padding-left: 4.875rem;
+                            padding-left: 0rem;
+                            margin-left: 2.5rem;
                         }
                     }
                 }
@@ -317,12 +330,16 @@
             width: 100%;
             float: right;
             justify-content: flex-end;
+            @include media-breakpoint-down(md) {
+                padding: 0 2.5rem;
+            }
 
             &-icon {
                 display: inline-flex;
 
                 @include media-breakpoint-down(md) {
                     display: none;
+                    margin: 0;
                 }
             }
 
@@ -331,17 +348,20 @@
             }
 
             &-toggle {
-                &::before {
+                &:before {
                     transform: translate(-50%, -50%) rotate(45deg);
                 }
             }
         }
 
         .#{$prefix}-sidebar-list {
+            @include media-breakpoint-down(md) {
+                padding: 0 2.5rem;
+            }
             .#{$prefix}-sidebar-category {
                 &-title {
                     .#{$prefix}-sidebar-link {
-                        display: inline-flex;
+                        display: block;
                     }
 
                     .#{$prefix}-sidebar-link:after {
@@ -354,7 +374,7 @@
                 width: 100%;
 
                 .#{$prefix}-sidebar-link {
-                    display: inline-flex;
+                    display: block;
                 }
             }
         }
@@ -368,7 +388,7 @@
     &.sidebar-expanded {
         margin-left: 12.5rem;
         @include media-breakpoint-down(md) {
-            margin-left: 75vw;
+            margin-left: 2.75rem;
         }
     }
 }
