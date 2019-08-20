@@ -78,7 +78,7 @@ $inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "c
 
     &.#{$prefix}-stack-vertical {
         >.#{$prefix}-#{$which}-item:not(:first-of-type) {
-            margin-left: 0rem;
+            margin-left: 0;
         }
     }
 }
