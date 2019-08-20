@@ -10,7 +10,7 @@
     bottom: 0;
     left: 0;
     background-color: hsla(0, 0%, 9%, .5);
-    z-index: 969; // this is added because of tabs
+    z-index: 969;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +60,6 @@
         right: 0;
         top: 0;
         margin: 1rem;
-        // we are not using var for #5A6872 because of saas issue
         @include hcl-close-icon(10, $white, $lightGrey);
     }
 
@@ -86,6 +85,6 @@
     }
 
     &-btn {
-        margin: 0.5rem !important;
+        margin: 0.5rem;
     }
 }

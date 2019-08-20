@@ -6,13 +6,6 @@
  *******************************************************************
  */
 
-// TODO: Will move to _variables.scss
-:root {
-    --light-50: rgb(210, 210, 210);
-    --dark: rgba(75, 75, 75);
-    --dark-40: rgb(85, 85, 85);
-}
-
 .#{$prefix}-accordion {
     display: block;
     list-style: none;

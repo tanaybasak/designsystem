@@ -242,7 +242,7 @@
 }
 
 @mixin nav-active {
-    background-image: linear-gradient(to top, $white 0%, $white 4%, transparent 4%); // MAGIC NUMBER -> 4% ~ 2px/.125rem TODO: Subject to be changed
+    background-image: linear-gradient(to top, $white 0%, $white 4%, transparent 4%); 
     background-size: cover;
     transition: all ease .1s;
 }

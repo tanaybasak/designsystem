@@ -22,43 +22,43 @@
 // Margin and Padding
 @for $i from 0 to 10 {
     .mt-#{$i} {
-        margin-top: $i * 4px !important;
+        margin-top: $i * 4px;
     }
 
     .mb-#{$i} {
-        margin-bottom: $i * 4px !important;
+        margin-bottom: $i * 4px;
     }
 
     .ml-#{$i} {
-        margin-left: $i * 4px !important;
+        margin-left: $i * 4px;
     }
 
     .mr-#{$i} {
-        margin-right: $i * 4px !important;
+        margin-right: $i * 4px;
     }
 
     .m-#{$i} {
-        margin: $i * 4px !important;
+        margin: $i * 4px;
     }
 
     .pt-#{$i} {
-        padding-top: $i * 4px !important;
+        padding-top: $i * 4px;
     }
 
     .pb-#{$i} {
-        padding-bottom: $i * 4px !important;
+        padding-bottom: $i * 4px;
     }
 
     .pl-#{$i} {
-        padding-left: $i * 4px !important;
+        padding-left: $i * 4px;
     }
 
     .pr-#{$i} {
-        padding-right: $i * 4px !important;
+        padding-right: $i * 4px;
     }
 
     .p-#{$i} {
-        padding: $i * 4px !important;
+        padding: $i * 4px;
     }
 }
 
@@ -120,7 +120,6 @@ $value in $iconSizesMap {
     @include nav-active;
 }
 
-// TODO: Subjecto to be changed
 .bg-white {
     background-color: var(--white);
 }
@@ -138,7 +137,7 @@ $value in $iconSizesMap {
 }
 
 .#{$prefix}-boxshadow-0 {
-    box-shadow: none !important;
+    box-shadow: none;
 }
 
 .#{$prefix}-boxshadow-1 {

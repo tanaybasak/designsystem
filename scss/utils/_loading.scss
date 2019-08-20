@@ -2,11 +2,11 @@ $loading-bg : rgba(61, 112, 178, .1);
 
 @mixin loading() {
     position: relative;
-    border: none !important;
-    box-shadow: none !important;
-    pointer-events: none !important;
-    background: $loading-bg !important;
-    color: transparent !important;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
+    background: $loading-bg;
+    color: transparent;
 
     &:hover,
     &:focus,
@@ -17,9 +17,8 @@ $loading-bg : rgba(61, 112, 178, .1);
     }
 
     &>* {
-        color: transparent !important;
-        //opacity: 0;
-    }
+        color: transparent;
+        }
 
     &:before {
         content: '';

@@ -5,14 +5,6 @@
  *
  *******************************************************************
  */
-
-// TODO: Will move to _variables.scss once confirmed from designers
-:root {
-    --disabled-grey: rgba(75, 75, 75, 0.50);
-    --enabled-grey: rgb(75, 75, 75);
-    --disabled-blue: rgba(0, 102, 179, 0.50);
-}
-
 %basic-toggle {
     display: inline-block;
 

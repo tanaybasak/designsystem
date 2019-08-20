@@ -22,7 +22,7 @@ $fontWeights-map: (light: 300, regular: 400, semibold: 500, bold: 800);
 }
 
 // Font style
-$textStyles-map: (none: none, underline: underline, italic: italic, strike: strike-through, overline: overline, line-through: line-through);
+$textStyles-map: (normal: normal, italic: italic, oblique: oblique, initial: initial);
 
 @mixin getTextStyles($textTextStyle) {
     @if map-has-key($textStyles-map, $textTextStyle) {
