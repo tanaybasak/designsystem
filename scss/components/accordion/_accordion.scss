@@ -68,7 +68,7 @@
                 position: initial;
                 opacity: 1;
                 height: initial;
-                transform: translate(0, 0);
+                overflow: initial;
             }
 
             .#{$prefix}-accordion-title:before {

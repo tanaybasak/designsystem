@@ -141,14 +141,8 @@
 }
 
 // Line height
-@mixin lineHeight($type) {
-    @if ($type=="heading") {
-        line-height: 1.125;
-    }
-
-    @else {
-        line-height: 1.15;
-    }
+@function getLineHeight($font-size) {
+    @return $font-size*1.5;
 }
 
 // px to rem
@@ -223,6 +217,12 @@
         content: "\2022 \2022 \2022";
         transform: rotate(90deg);
         padding: 0 0.5rem;
+    }
+
+    &.horizontal-ellipsis {
+        &:after {
+            transform: none;
+        }
     }
 }
 

@@ -15,7 +15,7 @@ $inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "c
 // getFormControl(<control>)
 @mixin getFormControl($which) {
     @if ($which=="inputcontrol") {
-        @include getFontSize("14");
+        font-size: 0.875rem;
         width: 100%;
         height: $input-height;
         padding: $input-padding-y $input-padding-x;
@@ -58,10 +58,10 @@ $inputColor-map: ("color-1": #152935, "color-2": #5a6872, "color-3": #EFEFEF, "c
     @if ($which=="inputcontrol") {
         ~.#{$prefix}-error-msg {
             @include getFontWeight("regular");
-            @include getFontSize("12");
+            font-size: 0.75rem;
+            line-height: getLineHeight(0.75rem);
             order: 4;
             margin-top: .25rem;
-            line-height: 1.5;
             max-height: 12.5rem;
         }
     }

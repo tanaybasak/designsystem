@@ -13,7 +13,6 @@
     --base-font-size-px: 16px;
     --body-font-size: 0.875rem;
     --small-font-size: 0.75rem;
-    --base-line-height: 1.15;
     --base-margin: 0.5rem;
     --base-padding: 0.2rem;
     --black: #000;
@@ -48,6 +47,7 @@
     --black-light: #3B5060;
     --black-lighter: #272D33;
     --light-50: #d2d2d2;
+    --dark-10: #4b4b4b;
     --dark-20: #717171;
     --dark-40: #555555;
     --dark-50: #383838;
@@ -153,6 +153,9 @@ $tooltip-zindex:5;
 $pagination-font-size:var(--body-font-size);
 $pagination-line-height: 1.125rem;
 $pagination-bg-color: var(--white);
+$pagination-text-variant-1: var(--dark-10);
+$pagination-text-variant-2: var(--dark-20);
+$pagination-select-text-color: var(--blue);
 //Search
 $search-height: 2.5rem;
 $search-height-sm: 2rem;
