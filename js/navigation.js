@@ -58,7 +58,9 @@ class Navigation {
             if (containers && containers.length) {
                 containers.forEach(container => container.classList.toggle('sidebar-expanded', true));
             }
-            this.hideSidebarDocumentClick();
+            if (window.screen.width < 992) {
+                this.hideSidebarDocumentClick();
+            }
         }
 
         this.state.expanded = !this.state.expanded;
