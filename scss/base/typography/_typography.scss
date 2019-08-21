@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-@import "typographyMixins";
+@import 'typographyMixins';
 
 // Font weight
 @each $key,
@@ -77,7 +77,7 @@ $value in $writingModes-map {
 h1,
 .#{$prefix}-h1,
 .#{$prefix}-giga {
-    @include getFontSizeAndLineHeightForHeadings("h1");
+    @include getFontSizeAndLineHeightForHeadings('h1');
     @include getFontWeight(light);
 }
 
@@ -85,7 +85,7 @@ h1,
 h2,
 .#{$prefix}-h2,
 .#{$prefix}-mega {
-    @include getFontSizeAndLineHeightForHeadings("h2");
+    @include getFontSizeAndLineHeightForHeadings('h2');
     @include getFontWeight(light);
 }
 
@@ -93,7 +93,7 @@ h2,
 h3,
 .#{$prefix}-h3,
 .#{$prefix}-alpha {
-    @include getFontSizeAndLineHeightForHeadings("h3");
+    @include getFontSizeAndLineHeightForHeadings('h3');
     @include getFontWeight(light);
 }
 
@@ -101,7 +101,7 @@ h3,
 h4,
 .#{$prefix}-h4,
 .#{$prefix}-beta {
-    @include getFontSizeAndLineHeightForHeadings("h4");
+    @include getFontSizeAndLineHeightForHeadings('h4');
     @include getFontWeight(light);
 }
 
@@ -109,20 +109,20 @@ h4,
 h5,
 .#{$prefix}-h5,
 .#{$prefix}-gamma {
-    @include getFontSizeAndLineHeightForHeadings("h5");
+    @include getFontSizeAndLineHeightForHeadings('h5');
     @include getFontWeight(light);
 }
 
 // font-size: 1.125rem or 18px
 .#{$prefix}-type-delta {
-    @include getFontSizeAndLineHeightForHeadings("h6");
+    @include getFontSizeAndLineHeightForHeadings('h6');
     @include getFontWeight(semibold);
 }
 
 // font-size: 1.125rem or 18px
 h6,
 .#{$prefix}-h6 {
-    @include getFontSizeAndLineHeightForHeadings("h6");
+    @include getFontSizeAndLineHeightForHeadings('h6');
 }
 
 // font-size: 1rem or 16px
@@ -162,7 +162,7 @@ h6,
 
 // Anchor link
 a {
-    color: theme-color("primary");
+    color: theme-color('primary');
     font-size: 0.875rem;
     line-height: getLineHeight(0.875rem);
     text-decoration: none;
@@ -174,7 +174,7 @@ a {
 
     &:focus {
         color: var(--black-light);
-        outline: 1px solid theme-color("primary");
+        outline: 1px solid theme-color('primary');
         text-decoration: underline;
         outline-offset: 3px;
     }

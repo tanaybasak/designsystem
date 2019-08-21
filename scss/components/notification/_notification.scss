@@ -1,4 +1,4 @@
-$colorMap: ("info": $info, "danger": $danger, "success": $success, "warning": $warning);
+$colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $warning);
 
 .#{$prefix}-notification {
     display: inline-flex;
@@ -42,7 +42,7 @@ $colorMap: ("info": $info, "danger": $danger, "success": $success, "warning": $w
             .#{$prefix}-notification-subtitle {
                 font-size: 0.875rem;
                 line-height: getLineHeight(0.875rem);
-                @include getFontWeight("regular");
+                @include getFontWeight('regular');
                 word-break: break-word;
                 color: #aaa;
             }

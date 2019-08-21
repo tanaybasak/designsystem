@@ -87,7 +87,7 @@ $textAlignments-map: (center: center, left: left, right: right, justify: justify
 }
 
 // Font Sizes
-$typeSizes-map: ("h1": 4.75rem, "h2": 3.375rem, "h3": 2.25rem, "h4": 1.75rem, "h5": 1.25rem, "h6": 1.125rem);
+$typeSizes-map: ('h1': 4.75rem, 'h2': 3.375rem, 'h3': 2.25rem, 'h4': 1.75rem, 'h5': 1.25rem, 'h6': 1.125rem);
 
 @mixin getFontSizeAndLineHeightForHeadings($size) {
     @if map-has-key($typeSizes-map, $size) {

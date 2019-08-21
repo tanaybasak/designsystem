@@ -126,7 +126,7 @@
             width: 2.75rem;
             position: relative;
 
-            &:before {
+            &::before {
                 @extend %arrow;
                 left: 50%;
                 transform: translate(-50%, -50%) rotate(225deg);
@@ -193,7 +193,7 @@
                 >.#{$prefix}-sidebar-link {
                     position: relative;
 
-                    &:after {
+                    &::after {
                         @extend %arrow;
                         content: '';
                         display: none;
@@ -226,7 +226,7 @@
                     }
 
                     &-active {
-                        &:before {
+                        &::before {
                             content: '';
                             background-color: var(--blue);
                             position: absolute;
@@ -250,7 +250,7 @@
             &.expanded {
                 .#{$prefix}-sidebar-category-title {
                     .#{$prefix}-sidebar-link {
-                        &:after {
+                        &::after {
                             transform: translateY(-50%) rotate(-225deg);
                         }
                     }
@@ -272,7 +272,7 @@
             }
 
             &-active {
-                &:before {
+                &::before {
                     content: '';
                     background-color: var(--blue);
                     position: absolute;
@@ -340,7 +340,7 @@
                         display: inline-flex;
                     }
 
-                    .#{$prefix}-sidebar-link:after {
+                    .#{$prefix}-sidebar-link::after {
                         display: inline-flex;
                     }
                 }

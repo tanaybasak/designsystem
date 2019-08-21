@@ -133,8 +133,8 @@
         padding: 0 1.75rem;
 
         &-today {
-            &:after {
-                content: "";
+            &::after {
+                content: '';
                 position: absolute;
                 display: block;
                 top: 90%;

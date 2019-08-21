@@ -24,5 +24,14 @@
   "browserslist": [
     "> .1%",
     "not IE <= 12"
-  ]
+  ],
+  "stylelint": {
+    "rules": {
+      "color-no-invalid-hex": true,
+      "selector-type-case": "lower",
+      "string-quotes": "single",
+      "selector-pseudo-element-colon-notation": "double",
+      "unit-blacklist": ["em"]
+    }
+  }
 }

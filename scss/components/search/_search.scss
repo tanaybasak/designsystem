@@ -77,20 +77,20 @@
             visibility: visible;
         }
 
-        &:before,
-        &:after {
-            content: " ";
+        &::before,
+        &::after {
+            content: ' ';
             position: absolute;
             width: 0.125rem;
             background-color: var(--grey-7);
             height: $search-icon-size;
         }
 
-        &:before {
+        &::before {
             transform: rotate(45deg);
         }
 
-        &:after {
+        &::after {
             transform: rotate(-45deg);
         }
     }
