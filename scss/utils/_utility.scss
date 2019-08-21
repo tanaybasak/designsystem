@@ -182,7 +182,7 @@ $floatProperties: right left none;
 
 @each $floatroperty in $floatProperties {
     .#{$prefix}-float-#{$floatroperty} {
-        float: float-#{$floatroperty};
+        float: #{$floatroperty};
     }
 }
 

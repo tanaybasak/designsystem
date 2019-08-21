@@ -52,13 +52,9 @@ $colorMap: ("info": $info, "danger": $danger, "success": $success, "warning": $w
     &-close {
         outline: 0.125rem solid transparent;
         outline-offset: -0.125rem;
-        background-color: transparent;
         border: none;
-        cursor: pointer;
         margin-left: auto;
         padding: 0;
-        height: 0.625rem;
-        width: 0.625rem;
         min-height: 0.625rem;
         min-width: 0.625rem;
         transition: outline .11s, background-color .11s;
