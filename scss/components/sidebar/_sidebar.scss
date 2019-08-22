@@ -93,7 +93,7 @@
         height: 3.125rem;
         border-bottom: 0.0625rem solid var(--dark-20);
         position: relative;
-        transition: all 220ms ease-in-out;
+        transition: width 220ms ease-in-out;
 
         @include media-breakpoint-down(md) {
             height: auto;
