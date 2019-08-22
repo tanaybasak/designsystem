@@ -73,6 +73,14 @@
                     background-color: rgba(0, 102, 179, 0.10);
                     border-top: 0.0625rem solid var(--blue);
                     border-bottom: 0.0625rem solid var(--blue);
+
+                    &:first-of-type {
+                        border-left: 0.0625rem solid var(--blue);
+                    }
+
+                    &:last-of-type {
+                        border-right: 0.0625rem solid var(--blue);
+                    }
                 }
             }
 
