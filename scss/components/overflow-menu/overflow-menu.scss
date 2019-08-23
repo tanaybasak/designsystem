@@ -109,8 +109,8 @@
         padding: 0.375rem 0;
     }
 
-    li,
-    &-option {
+    &-option,
+    &-option-danger {
         @include option(default);
     }
 
@@ -133,6 +133,7 @@
 
 .#{$prefix}-ellipsis {
     width: 0.5rem;
+
     &.horizontal-ellipsis {
         width: 1rem;
     }
