@@ -42,6 +42,7 @@
     }
 
     .#{$prefix}-search-input {
+        -webkit-appearance: none;
         font-size: var(--body-font-size);
         width: 100%;
         height: $search-height;
@@ -56,6 +57,21 @@
         &:focus {
             outline: 0.0625rem solid $blue;
             outline-offset: -1px;
+        }
+
+        &::-ms-clear,
+        &::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        /* clears the 'x' from Chrome */
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+            display: none;
         }
     }
 
