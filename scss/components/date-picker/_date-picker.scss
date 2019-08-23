@@ -14,7 +14,7 @@
         }
 
         &-error {
-            border: 0.0625rem solid var(--error) !important;
+            border: 0.0625rem solid var(--error);
         }
 
         >input {
@@ -133,8 +133,8 @@
         padding: 0 1.75rem;
 
         &-today {
-            &:after {
-                content: "";
+            &::after {
+                content: '';
                 position: absolute;
                 display: block;
                 top: 90%;
@@ -167,7 +167,7 @@
         }
 
         &-picked {
-            border: 0.125rem solid var(--blue-light) !important;
+            border: 0.125rem solid var(--blue-light);
         }
 
         &-fade {
