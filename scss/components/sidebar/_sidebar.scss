@@ -62,6 +62,10 @@
             height: 0.125rem;
             background-color: var(--white);
             margin-top: 0.3125rem;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
         }
 
         &:focus {
