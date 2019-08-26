@@ -9,7 +9,7 @@
 /* MIXINS SPECIFIC TO TYPOGRAPHY */
 
 // Font weight
-$fontWeights-map: (light: 300, regular: 400, semibold: 600, bold: 800);
+$fontWeights-map: (light: 300, regular: 400, semibold: 500, bold: 800);
 
 @mixin getFontWeight($fontWeight) {
     @if map-has-key($fontWeights-map, $fontWeight) {
@@ -22,7 +22,7 @@ $fontWeights-map: (light: 300, regular: 400, semibold: 600, bold: 800);
 }
 
 // Font style
-$textStyles-map: (none: none, underline: underline, italic: italic, strike: strike-through, overline: overline, line-through: line-through);
+$textStyles-map: (normal: normal, italic: italic, oblique: oblique, initial: initial);
 
 @mixin getTextStyles($textTextStyle) {
     @if map-has-key($textStyles-map, $textTextStyle) {
@@ -87,11 +87,12 @@ $textAlignments-map: (center: center, left: left, right: right, justify: justify
 }
 
 // Font Sizes
-$typeSizes-map: ("h1": 4.75rem, "h2": 3.375rem, "h3": 2.25rem, "h4": 1.75rem, "h5": 1.25rem, "h6": 1.125rem, "16": 1rem, "14": 0.875rem, "12": 0.75rem, "11": 0.6875rem);
+$typeSizes-map: ('h1': 4.75rem, 'h2': 3.375rem, 'h3': 2.25rem, 'h4': 1.75rem, 'h5': 1.25rem, 'h6': 1.125rem);
 
-@mixin getFontSize($size) {
+@mixin getFontSizeAndLineHeightForHeadings($size) {
     @if map-has-key($typeSizes-map, $size) {
         font-size: map-get($typeSizes-map, $size);
+        line-height: map-get($typeSizes-map, $size)*1.25;
     }
 
     @else {

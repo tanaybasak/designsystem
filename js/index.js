@@ -12,6 +12,7 @@ import DatePicker from "./datePicker";
 import NumberInput from "./numberInput";
 import Pagination from "./pagination";
 import Accordion from "./accordion"
+import Password from "./password"
 
 const ComponentList = {
     dropdow: Dropdown,
@@ -22,6 +23,7 @@ const ComponentList = {
     contentswitcher: ContentSwitcher,
     numberInput: NumberInput,
     pagination: Pagination,
+    password: Password,
     accordion: Accordion
 }
 

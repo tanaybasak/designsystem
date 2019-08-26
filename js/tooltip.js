@@ -12,6 +12,7 @@ class Tooltip {
         this.dataValue = element.getAttribute('data-tooltip');
         this.direction = element.getAttribute('data-direction') || 'bottom';
         this.positionDirection = this.direction;
+        this.status = false;
         this.diff = 0;
     }
 
@@ -25,7 +26,6 @@ class Tooltip {
                     let tooltip = document.createElement('div');
                     tooltip.setAttribute('id', elementId)
                     tooltip.className = `${PREFIX}-tooltip ${PREFIX}-tooltip-${this.type}`;
-                    tooltip.style.display = 'none';
                     if (this.element.hasAttribute('data-focus-on-click')) {
                         tooltip.setAttribute('data-focus-on-click', true);
                     }
@@ -41,7 +41,16 @@ class Tooltip {
         }
         this.element.addEventListener(this.eventName, (e) => { this.show(e) });
         if (this.eventName !== 'click') {
-            this.element.addEventListener('mouseout', (e) => { this.hide(e) })
+            this.element.addEventListener('focus', (e) => { this.show(e) });
+            this.element.addEventListener('blur', (e) => { this.hide(e) });
+            this.element.addEventListener('mouseout', (e) => { this.hide(e) });
+        } else {
+            this.element.addEventListener('keypress', (e) => {
+                var key = e.which || e.keyCode;
+                if (key === 13) {
+                    this.show(e)
+                }
+            });
         }
     }
 
@@ -57,18 +66,24 @@ class Tooltip {
     closeTooltip(e) {
         let tooltip = document.getElementById(this.element.getAttribute('aria-describedby'));
         if (!e || (tooltip && !tooltip.contains(e.target))) {
-            if (tooltip.classList.contains(`${PREFIX}-remove-tooltip`)) {
-                document.body.removeChild(tooltip);
-            } else {
-                tooltip.classList.remove(`${PREFIX}-tooltip-show`);
-                tooltip.style.display = 'none';
+            if (tooltip) {
+                if (tooltip.classList.contains(`${PREFIX}-remove-tooltip`)) {
+                    document.body.removeChild(tooltip);
+                } else {
+                    tooltip.classList.remove("show");
+                }
+                this.status = false;
             }
             EventManager.removeEvent('click', true);
             EventManager.removeEvent('scroll', true);
         }
+
     }
 
     show(e) {
+        if (this.status) {
+            return;
+        }
         let tooltip = null;
         let icon = null;
         if (this.type === 'definition' && this.eventName !== 'click') {
@@ -78,16 +93,15 @@ class Tooltip {
         if (this.dataValue.startsWith('#')) {
             let content = document.getElementById(this.dataValue.substr(1));
             tooltip = content.parentElement;
-            tooltip.style.display = 'block';
+            tooltip.classList.add("show");
             icon = content.parentElement.children[0];
         } else {
-            this.element.setAttribute('aria-describedby', elementId)
+            this.element.setAttribute('aria-describedby', elementId);
             tooltip = document.createElement('div');
             tooltip.setAttribute('id', elementId);
-            tooltip.className = `${PREFIX}-tooltip ${PREFIX}-remove-tooltip ${PREFIX}-tooltip-${this.type}`;
+            tooltip.className = `${PREFIX}-tooltip ${PREFIX}-remove-tooltip ${PREFIX}-tooltip-${this.type} show`;
             if (this.eventName === 'click') {
                 tooltip.setAttribute('data-focus-on-click', true);
-                tooltip.className += ` ${PREFIX}-tooltip-show`;
             }
             icon = document.createElement('div');
             icon.className = `${PREFIX}-tooltip-arrow`;
@@ -98,25 +112,30 @@ class Tooltip {
             document.body.appendChild(tooltip);
         }
         if (this.eventName === 'click') {
-            tooltip.className += ` ${PREFIX}-tooltip-show`;
             EventManager.addEvent('click', (e) => { this.closeTooltip(e) }, true);
-            EventManager.addEvent('scroll', (e) => { this.updatePositionOnScroll(e) }, true);
         }
+        EventManager.addEvent('scroll', (e) => { this.updatePositionOnScroll(e) }, true);
         tooltip.style.minWidth = tooltip.offsetWidth + 'px';
         this.tooltipDirection(this.element, tooltip, icon, this.direction, this.type);
+        this.status = true;
         e.stopPropagation();
     }
 
     hide() {
+        if (!this.status) {
+            return;
+        }
         if (this.type === 'definition') {
             this.element.classList.remove(`${PREFIX}-tooltip-dottedline`);
         }
+        const tooltip = document.getElementById(this.element.getAttribute('aria-describedby'));
         if (this.dataValue.startsWith('#')) {
-            let content = document.getElementById(this.dataValue.substr(1));
-            content.parentElement.style.display = 'none';
+            tooltip.classList.remove("show");
         } else {
-            document.body.removeChild(document.querySelector(`.${PREFIX}-remove-tooltip`));
+            if (tooltip)
+                document.body.removeChild(tooltip)
         }
+        this.status = false;
     }
 
     tooltipDirection(parent, tooltip, icon, posHorizontal, type) {
@@ -132,7 +151,6 @@ class Tooltip {
     updateIconPosition(icon, position, value) {
         icon.removeAttribute("style");
         icon.style[position] = getRem(value);
-
     }
 
     showTooltip(parentCoords, tooltip, icon, posHorizontal, dist, type) {
@@ -388,7 +406,9 @@ class Tooltip {
         if (!this.ticking) {
             window.requestAnimationFrame(() => {
                 let newelement = document.getElementById(this.element.getAttribute('aria-describedby'));
-                this.showTooltip(this.element.getBoundingClientRect(), newelement, newelement.children[0], this.positionDirection, 10, this.type)
+                if (newelement) {
+                    this.showTooltip(this.element.getBoundingClientRect(), newelement, newelement.children[0], this.positionDirection, 10, this.type)
+                }
                 this.ticking = false;
             });
             this.ticking = true;

@@ -9,7 +9,7 @@
 .#{$prefix}-form-item {
     .#{$prefix}-label {
         font-size: 0.875rem;
-        @include getInputColor('color-1', "color");
+        @include getInputColor('color-1', 'color');
         letter-spacing: 0;
         line-height: 1.125rem;
     }

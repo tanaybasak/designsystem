@@ -1,0 +1,93 @@
+$loading-bg : rgba(61, 112, 178, .1);
+
+@mixin loading() {
+    position: relative;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
+    background: $loading-bg;
+    color: transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: none;
+        outline: none;
+        cursor: default;
+    }
+
+    &>* {
+        color: transparent;
+        }
+
+    &::before {
+        content: '';
+        width: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+        background: $loading-bg;
+        animation: loading-animation 3s ease-in-out infinite;
+    }
+}
+
+@keyframes loading-animation {
+    0% {
+        width: 0;
+        left: 0;
+        right: auto;
+        opacity: .3
+    }
+
+    20% {
+        width: 100%;
+        left: 0;
+        right: auto;
+        opacity: 1
+    }
+
+    28% {
+        width: 100%;
+        left: auto;
+        right: 0
+    }
+
+    51% {
+        width: 0;
+        left: auto;
+        right: 0
+    }
+
+    58% {
+        width: 0;
+        left: auto;
+        right: 0
+    }
+
+    82% {
+        width: 100%;
+        left: auto;
+        right: 0
+    }
+
+    83% {
+        width: 100%;
+        left: 0;
+        right: auto
+    }
+
+    96% {
+        width: 0;
+        left: 0;
+        right: auto
+    }
+
+    to {
+        width: 0;
+        left: 0;
+        right: auto;
+        opacity: .3
+    }
+}

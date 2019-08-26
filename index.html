@@ -5,181 +5,187 @@
     <title>Patron CSS Framework</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <style>
+        .bgColor {
+            background-color: #eee;
+        }
 
+        .colBorder {
+            border: 1px solid #999;
+        }
 
+        .bigCol {
+            min-height: 5rem;
+            padding: 0.9375rem;
+        }
+
+        .darkBox {
+            background-color: #555;
+            color: #BBB;
+        }
+    </style>
 </head>
 
 <body>
     <!-- HEADER LAYOUT -->
-    <header class="hcl-navbar hcl-navbar-expand-lg">
-        <!-- HAMBURGER -->
-        <button data-component="hamburger" class="hcl-navbar-hamburger" role="button" data-toggle="collapse"
-            data-target="#collapsibleContent" aria-controls="collapsibleContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="hcl-icon-2">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
-        </button>
-        <!-- BRAND LOGO -->
-        <a href="/" class="hcl-navbar-brand">
+    <header class="hcl-header">
+        <a href="/" class="hcl-header-brand">
             <img src="/logo.png" alt="Logo">
         </a>
-        <!-- HORIZONTAL NAVIGATION -->
-        <div class="hcl-collapse hcl-navbar-collapse" id="collapsibleContent">
-            <ul class="hcl-navbar-nav mr-auto hidden">
-                <li class="hcl-nav-item hcl-active">
-                    <a href="#" class="hcl-nav-link">Tab 1</a>
-                </li>
-                <li class="hcl-nav-item">
-                    <a href="#" class="hcl-nav-link">Tab 2</a>
-                </li>
-                <li class="hcl-nav-item">
-                    <a href="#" class="hcl-nav-link">Tab 3</a>
-                </li>
-                <li class="hcl-nav-item">
-                    <a href="#" class="hcl-nav-link">Tab 4</a>
-                </li>
-                <li class="hcl-nav-item">
-                    <a href="#" class="hcl-nav-link">Tab 5</a>
-                </li>
-            </ul>
-            <!-- SEARCH ICON -->
-            <div style="width:300px" class="hcl-search hcl-search-btn-only hcl-search-sm mr-2 ml-auto">
-                <button class="hcl-search-btn">
-                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                        xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
-                        viewBox="0 0 16 16" aria-hidden="true">
-                        <path fill="white"
-                            d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
-                        </path>
-                    </svg>
-                </button>
-                <input type="text" class="hcl-search-input" placeholder="Search..." />
-                <button class="hcl-search-reset" tabindex="-1"></button>
+        <div class="hcl-header-wrapper">
+            <div class="hcl-header-search">
+                <div class="hcl-search hcl-bg-white hcl-search-btn-only">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon white" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="text" id="header-search-input-full" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
             </div>
-            <!-- HORIZONTAL TOOLBAR -->
-            <ul class="hcl-navbar-nav toolbar">
-                <li class="hcl-nav-item">
+            <ul class="hcl-header-icons">
+                <li class="hcl-header-icon">
                     <span class="hcl-icon-1 bg-white"></span>
                 </li>
-                <li class="hcl-nav-item">
+                <li class="hcl-header-icon">
                     <span class="hcl-icon-1 bg-white"></span>
                 </li>
-                <li class="hcl-nav-item">
+                <li class="hcl-header-icon">
                     <span class="hcl-icon-1 bg-white"></span>
                 </li>
-                <li class="hcl-nav-item">
+                <li class="hcl-header-icon">
                     <span class="hcl-icon-1 bg-white"></span>
                 </li>
-                <li class="hcl-nav-item">
+                <li class="hcl-header-icon">
                     <span class="hcl-icon-1 bg-white"></span>
                 </li>
             </ul>
         </div>
-        <button class="hcl-navbar-search-btn hcl-navbar-expand-lg">
-            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
-                class="hcl-navbar-search-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-                <path
-                    d="M18.125,15.804l-4.038-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z">
-                </path>
-            </svg>
-        </button>
     </header>
+    <nav class="hcl-sidebar" data-component="navigation">
+        <button class="hcl-sidebar-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="hcl-sidebar-title">
+            <span class="hcl-sidebar-title-icon"></span>
+            <span class="hcl-sidebar-title-text">Section Title</span>
+            <span class="hcl-sidebar-title-toggle"></span>
+        </div>
+        <ul class="hcl-sidebar-list">
+            <li class="hcl-sidebar-category">
+                <span class="hcl-sidebar-category-title">
+                    <span class="hcl-sidebar-icon"></span>
+                    <span class="hcl-sidebar-link">
+                        Atoms
+                    </span>
+                </span>
+                <ul class="hcl-sidebar-children">
+                    <li class="hcl-sidebar-item">
+                        <a href="#typography" class="hcl-sidebar-link">
+                            Typography
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#gridSystem" class="hcl-sidebar-link">
+                            Grid System
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#boxExamples" class="hcl-sidebar-link">
+                            Box Examples
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#spinner" class="hcl-sidebar-link">
+                            Spinner
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#breadcrumb" class="hcl-sidebar-link">
+                            Breadcrumb
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#toggle" class="hcl-sidebar-link">
+                            Toggle
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#notification" class="hcl-sidebar-link">
+                            Notification
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#cards" class="hcl-sidebar-link">
+                            Card
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#overflowmenu" class="hcl-sidebar-link">
+                            Overflow Menu
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#textinput" class="hcl-sidebar-link">
+                            Text Input
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#textarea" class="hcl-sidebar-link">
+                            Textarea
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#radio" class="hcl-sidebar-link">
+                            Radio
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#checkbox" class="hcl-sidebar-link">
+                            Checkbox
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="hcl-sidebar-category">
+                <span class="hcl-sidebar-category-title">
+                    <span class="hcl-sidebar-icon"></span>
+                    <span class="hcl-sidebar-link">
+                        Molecules
+                    </span>
+                </span>
+                <ul class="hcl-sidebar-children">
+                    <li class="hcl-sidebar-item">
+                        <a href="#content-switcher" class="hcl-sidebar-link">
+                            Content Switcher
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#tabsexample" class="hcl-sidebar-link">
+                            Tabs
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#formcomp" class="hcl-sidebar-link">
+                            Form
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
     <!-- CONTENT LAYOUT -->
-    <div class="hcl-content">
+    <div class="hcl-content" style="margin-top: 4rem" data-withsidenav>
         <!-- SIDEBAR LAYOUT -->
-        <nav class="hcl-sidebar" data-component="navigation">
-            <div class="hcl-sidebar-title">
-                <div class="hcl-sidebar-title-item">
-                    <span class="hcl-icon-2"></span>
-                    <span class="hcl-sidebar-title-text">Section Title</span>
-                </div>
-                <div class="hcl-sidebar-title-item">
-                    <button class="hcl-icon-2">&#62;</button>
-                </div>
-            </div>
-            <ul class="hcl-sidebar-list">
-                <li class="hcl-sidebar-list-item">
-                    <a href="#typography" class="hcl-sidebar-list-link">
-                        <span>Typography</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#gridSystem" class="hcl-sidebar-list-link">
-                        <span>Grid System</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#boxExamples" class="hcl-sidebar-list-link">
-                        <span>Box Examples</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#spinner" class="hcl-sidebar-list-link">
-                        <span>Spinner</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#breadcrumb" class="hcl-sidebar-list-link">
-                        <span>Breadcrumb</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#tabsexample" class="hcl-sidebar-list-link">
-                        <span>Tabs</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#toggle" class="hcl-sidebar-list-link">
-                        <span>Toggle</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#notification" class="hcl-sidebar-list-link">
-                        <span>Notification</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#cards" class="hcl-sidebar-list-link">
-                        <span>Card</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#content-switcher" class="hcl-sidebar-list-link">
-                        <span>Content Switcher</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#textinput" class="hcl-sidebar-list-link">
-                        <span>Text Input</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#textarea" class="hcl-sidebar-list-link">
-                        <span>Textarea</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#radio" class="hcl-sidebar-list-link">
-                        <span>Radio</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#checkbox" class="hcl-sidebar-list-link">
-                        <span>Checkbox</span>
-                    </a>
-                </li>
-                <li class="hcl-sidebar-list-item">
-                    <a href="#formcomp" class="hcl-sidebar-list-link">
-                        <span>Form</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
         <!-- MAIN CONTENT LAYOUT -->
         <main class="hcl-content-main">
             <!-- AVAILABLE COMPONENTS STARTS -->
@@ -244,33 +250,25 @@
             </section>
             <!-- Pagination -->
             <section class="m-1 p-2">
-                <div data-component="pagination" class="hcl-pagination">
+                <div data-component="pagination" data-totalitems="373" data-itemstepper="20" class="hcl-pagination">
                     <div class="hcl-pagination-left">
-                        <label id="hcl-pagination-select-7" class="hcl-pagination-text"
-                            for="hcl-pagination-select-7">Items per page:</label>
+                        <div class="hcl-pagination-text">Items per page:</div>
                         <div class="hcl-pagination-select-wrapper">
-                            <select class="hcl-pagination-select hcl-page-items">
-                                <option value="10">10</option>
-                                <option value="20">20</option>
-                                <option value="30">30</option>
-                            </select>
-                            <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
-                                <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
-                            </svg>
                         </div>
                         <span class="hcl-pagination-text">
                             <span class="hcl-pagination-range">
-                                <span class="hcl-range-start">1</span>&nbsp;
-                                <span class="hcl-range-separator">-</span>&nbsp;
-                                <span class="hcl-range-end">10</span>
-                            </span>&nbsp;of&nbsp;
-                            <span class="hcl-pagination-totalitems">103</span>&nbsp;items
+                                <span class="hcl-range-start"></span>
+                                <span class="hcl-range-separator">-</span>
+                                <span class="hcl-range-end"></span>
+                            </span>of
+                            <span class="hcl-pagination-totalitems"></span>items
                         </span>
                     </div>
                     <div class="hcl-pagination-right">
                         <span class="hcl-pagination-text">
-                            <span class="hcl-page-start">1</span>&nbsp;of&nbsp;
-                            <span class="hcl-page-end">11</span>&nbsp;pages</span>
+                            <span class="hcl-page-start"></span>of
+                            <span class="hcl-page-end"></span>pages
+                        </span>
                         <button disabled class="hcl-pagination-button-previous" aria-label="Previous page">
                             <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
                                 <path fill-rule="nonzero" d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z">
@@ -278,22 +276,6 @@
                             </svg>
                         </button>
                         <div class="hcl-pagination-select-wrapper">
-                            <select class="hcl-pagination-select hcl-page-number">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                            </select>
-                            <svg class="hcl-select-arrow" width="10" height="5" viewBox="0 0 10 5">
-                                <path d="M0 0l5 4.998L10 0z" fill-rule="evenodd"></path>
-                            </svg>
                         </div>
                         <button class="hcl-pagination-button-next" aria-label="Next page">
                             <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
@@ -795,15 +777,15 @@
             </section>-->
 
             <!-- Overflow Menu -->
-            <section class="hcl-row m-0">
-                <section class="hcl-col-6 hcl-overflow ">
+            <section id="overflowmenu" class="hcl-row m-0">
+                <section class="hcl-col-6 hcl-overflow">
                     <!-- This paragragh tag is just for landing page, will not be part of design system -->
                     <p style="float: left;">Left Overflow Menu</p>
                     <div class="hcl-overflow-container">
                         <!-- This input tag is just for landing page, will not be part of design system -->
                         <input
                             style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
-                        <div class="hcl-ellipsis"></div>
+                        <div class="hcl-ellipsis horizontal-ellipsis"></div>
                         <div class="hcl-overflow-menu hcl-hidden">
                             <ul class="hcl-overflow-list">
                                 <li class="hcl-overflow-option">
@@ -1373,6 +1355,30 @@
                     <label for="firstname1">First Name</label>
                 </div>
                 <div class="hcl-form-group">
+                    <input type="password" class="hcl-form-control" data-invalid="true" id="password1"
+                        placeholder="Password" />
+                    <label for="password1">Password</label>
+                    <button class="hcl-password-visibility" aria-label="Show password" data-component="password">
+                        <svg class="hcl-icon-visibility-off" width="16" height="16" viewBox="0 0 16 16"
+                            data-tooltip="Show Password" data-direction="top">
+                            <path
+                                d="M11.846 3.45L15.293.007 16 .714l-3.284 3.281c1.261.902 2.377 2.212 3.347 3.93C14.02 11.642 11.333 13.5 8 13.5c-1.392 0-2.667-.324-3.822-.973L.703 16l-.706-.708 3.323-3.32C2.071 11.042.976 9.694.035 7.924 2.012 4.308 4.667 2.5 8 2.5c1.395 0 2.677.317 3.846.95zm-6.928 8.338c.944.477 1.97.712 3.082.712 2.795 0 5.076-1.483 6.907-4.568-.866-1.417-1.833-2.486-2.91-3.219l-1.55 1.55a3 3 0 0 1-4.185 4.182l-1.344 1.343zm-.882-.533l1.518-1.517A3 3 0 0 1 9.74 5.556l1.364-1.363A7.02 7.02 0 0 0 8 3.5c-2.798 0-5.047 1.439-6.819 4.432.842 1.465 1.792 2.568 2.855 3.323zm2.948-1.532a2 2 0 0 0 2.74-2.738l-2.74 2.738zm-.707-.707l2.74-2.738a2 2 0 0 0-2.74 2.738z">
+                            </path>
+                        </svg>
+                        <svg class="hcl-icon-visibility-on" width="16" height="16" viewBox="0 0 16 11" hidden="true"
+                            data-tooltip="Hide Password" data-direction="top">
+                            <path
+                                d="M8 7.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 1c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z">
+                            </path>
+                            <path
+                                d="M8 10c2.8 0 5.1-1.5 6.9-4.6C13.1 2.5 10.8 1 8 1 5.2 1 3 2.4 1.2 5.4 2.9 8.6 5.2 10 8 10zM8 0c3.3 0 6 1.8 8.1 5.4C14 9.2 11.3 11 8 11S2 9.2 0 5.5C2 1.9 4.6 0 8 0z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+                <div class="hcl-form-group">
                     <input data-invalid="true" type="text" class="hcl-form-control" id="middlename"
                         placeholder="Middle Name" />
                     <label for="middlename">Middle Name</label>
@@ -1424,8 +1430,8 @@
                     <div class="hcl-row">
                         <div class="hcl-col-4">&nbsp;</div>
                         <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="right" data-type="icon" focusable="false"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="right" data-type="icon"
+                                focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
                                 <path
@@ -1434,8 +1440,8 @@
                             </svg>
                         </div>
                         <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="top" focusable="false" data-type="icon"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="top" focusable="false"
+                                data-type="icon" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
                                 <path
@@ -1444,8 +1450,8 @@
                             </svg>
                         </div>
                         <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="bottom" focusable="false" data-type="icon"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="bottom" focusable="false"
+                                data-type="icon" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
                                 <path
@@ -1454,8 +1460,8 @@
                             </svg>
                         </div>
                         <div class="hcl-col-1">
-                            <svg data-tooltip="Filter" data-direction="left" focusable="false" data-type="icon"
-                                preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="left" focusable="false"
+                                data-type="icon" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
                                 <path
@@ -1467,30 +1473,33 @@
                     </div>
                     <div class="hcl-row pt-7 m-7">
                         <div class="hcl-col-3">
-                            <span data-direction="top" data-tooltip="Breif Definition of the dotted underlined word.">
+                            <span tabindex="0" data-direction="top"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
                                 Definition Tooltip on Top
                             </span>
                         </div>
                         <div class="hcl-col-3">
-                            <span data-direction="right" data-tooltip="Breif Definition of the dotted underlined word.">
+                            <span tabindex="0" data-direction="right"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
                                 Definition Tooltip on Right
                             </span>
                         </div>
                         <div class="hcl-col-3">
-                            <span data-direction="bottom"
+                            <span tabindex="0" data-direction="bottom"
                                 data-tooltip="Breif Definition of the dotted underlined word.">
                                 Definition on Bottom
                             </span>
                         </div>
                         <div class="hcl-col-3">
-                            <span data-direction="left" data-tooltip="Breif Definition of the dotted underlined word.">
+                            <span tabindex="0" data-direction="left"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
                                 Definition Tooltip on Left
                             </span>
                         </div>
                     </div>
                     <div class="hcl-row m-7">
                         <span> Interactive Tooltip Label
-                            <svg data-direction="right" data-focus-on-click data-tooltip="#tooltipContent"
+                            <svg tabindex="0" data-direction="right" data-focus-on-click data-tooltip="#tooltipContent"
                                 focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 aria-hidden="true">
@@ -1516,8 +1525,8 @@
                     </div>
                 </div>
             </section>
-
-            <section class="m-1 p-2 colBorder">
+            <!-- Data table -->
+            <section class="m-1 p-2 colBorder hcl-data-table-responsive">
                 <table class="hcl-data-table">
                     <thead>
                         <tr>
@@ -1672,6 +1681,34 @@
                     </section>
                 </div>
             </div>
+            <!-- Time Picker -->
+            <section class="ml-4 mt-4">
+                <div class="hcl-timepicker">
+                    <div class="hcl-timepicker-input">
+                        <label for="hcl-timepicker-1">Select a time</label>
+                        <input id="hcl-timepicker-1" type="text" class="hcl-timepicker-input-field"
+                            pattern="(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)" placeholder="hh:mm" maxlength="5">
+                    </div>
+                    <select class="hcl-select">
+                        <option class="hcl-select-option" value="AM">AM</option>
+                        <option class="hcl-select-option" value="PM">PM</option>
+                    </select>
+                    <select class="hcl-select">
+                        <option class="hcl-select-option" value="option-1">Time zone 1</option>
+                        <option class="hcl-select-option" value="option-2">Time zone 2</option>
+                        <option class="hcl-select-option" value="option-3">Time zone 3</option>
+                    </select>
+                </div>
+            </section>
+            <section class="ml-4">
+                <!-- Select option -->
+                <label for="hcl-select-id-1">Select label</label>
+                <select id="hcl-select-id-1" class="hcl-select">
+                    <option class="hcl-select-option" value="option 1">option 1</option>
+                    <option class="hcl-select-option" value="option 2">option 2</option>
+                    <option class="hcl-select-option" value="option 3">option 3</option>
+                </select>
+            </section>
             <section class="m-1 p-2 colBorder">
                 <ul class="hcl-accordion">
                     <li class="hcl-accordion-item">
@@ -1718,7 +1755,7 @@
                     </li>
                 </ul>
             </section>
-            <!-- tile -->
+            <!-- Tile -->
             <section class="hcl-offset-4">
                 <div class="mt-1 hcl-row">
                     <!-- default tile -->
@@ -1857,7 +1894,7 @@
                             </path>
                         </svg>
                     </span>
-                    <input type="text" id="goal-input" class="hcl-search-input" placeholder="Search..." />
+                    <input type="search" id="goal-input" class="hcl-search-input" placeholder="Search..." />
                     <button class="hcl-search-reset" tabindex="-1"></button>
                 </div>
 
@@ -1871,7 +1908,7 @@
                             </path>
                         </svg>
                     </button>
-                    <input type="text" id="goal-input1" class="hcl-search-input" placeholder="Search..." />
+                    <input type="search" id="goal-input1" class="hcl-search-input" placeholder="Search..." />
                     <button class="hcl-search-reset" tabindex="-1"></button>
                 </div>
 
@@ -1885,7 +1922,7 @@
                             </path>
                         </svg>
                     </span>
-                    <input type="text" id="goal-input3" class="hcl-search-input" placeholder="Search..." />
+                    <input type="search" id="goal-input3" class="hcl-search-input" placeholder="Search..." />
                     <button class="hcl-search-reset" tabindex="-1"></button>
                 </div>
 
@@ -1899,7 +1936,7 @@
                             </path>
                         </svg>
                     </button>
-                    <input type="text" id="goal-input5" class="hcl-search-input" placeholder="Search..." />
+                    <input type="search" id="goal-input5" class="hcl-search-input" placeholder="Search..." />
                     <button class="hcl-search-reset" tabindex="-1"></button>
                 </div>
             </section>
@@ -1914,7 +1951,7 @@
                             </path>
                         </svg>
                     </span>
-                    <input type="text" id="goal-input" class="hcl-search-input" placeholder="Search..." />
+                    <input type="search" id="goal-input" class="hcl-search-input" placeholder="Search..." />
                     <button class="hcl-search-reset" tabindex="-1"></button>
                 </div>
 
@@ -1928,7 +1965,7 @@
                             </path>
                         </svg>
                     </button>
-                    <input type="text" id="goal-input1" class="hcl-search-input" placeholder="Search..." />
+                    <input type="search" id="goal-input1" class="hcl-search-input" placeholder="Search..." />
                     <button class="hcl-search-reset" tabindex="-1"></button>
                 </div>
 
@@ -1942,7 +1979,7 @@
                             </path>
                         </svg>
                     </span>
-                    <input type="text" id="goal-input3" class="hcl-search-input" placeholder="Search..." />
+                    <input type="search" id="goal-input3" class="hcl-search-input" placeholder="Search..." />
                     <button class="hcl-search-reset" tabindex="-1"></button>
                 </div>
 
@@ -1956,8 +1993,168 @@
                             </path>
                         </svg>
                     </button>
-                    <input type="text" id="goal-input5" class="hcl-search-input" placeholder="Search..." />
+                    <input type="search" id="goal-input5" class="hcl-search-input" placeholder="Search..." />
                     <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+            </section>
+            <!-- Loading -->
+            <section class="m-1 p-2 colBorder">
+                <h4>Loading State</h4>
+                <div class="hcl-rectagle hcl-loading"></div>
+                <div style="width: 400px;">
+                    <div class="hcl-slider hcl-loading">
+                        <label class="hcl-slider-bottom-range"></label>
+                        <input class="hcl-slider-input" type="range" min="0" max="100" />
+                        <label class="hcl-slider-top-range"></label>
+                        <input class="hcl-slider-text-input" type="text">
+                    </div>
+                </div>
+                <button class="hcl-tag hcl-tag-primary hcl-loading" title="primary" tabindex="0">
+                    <span class="hcl-tag-text"></span>
+                </button>
+                <div class="hcl-number-input-wrapper hcl-form-group hcl-loading">
+                    <div class="hcl-form-control hcl-number-input">
+                        <input type="number" value="15" min="10" max="20" class="hcl-form-control" id="numbetInput1" />
+                        <div class="hcl-number-input-control">
+                            <button aria-label="increase number input" class="increment-btn" type="button"
+                                aria-live="polite" aria-atomic="true" tabindex="-1">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M0 4l4-4 4 4z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="decrease number input" class="decrement-btn" type="button"
+                                aria-live="polite" aria-atomic="true" tabindex="-1">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M8 0L4 4 0 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <label for="numbetInput1"></label>
+                </div>
+                <label class="hcl-loading"></label>
+                <div class="hcl-col">
+                    <section class="hcl-dropdown hcl-loading" data-component="dropdown">
+                        <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown"></button>
+                        <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton"></ul>
+                    </section>
+                </div>
+                <div class="hcl-col">
+                    <ul class="hcl-accordion hcl-loading">
+                        <li class="hcl-accordion-item expanded">
+                            <h4 class="hcl-accordion-title">
+                                <span></span>
+                            </h4>
+                            <p class="hcl-accordion-content"></p>
+                        </li>
+                        <li class="hcl-accordion-item">
+                            <h4 class="hcl-accordion-title">
+                                <span></span>
+                            </h4>
+                            <p class="hcl-accordion-content"></p>
+                        </li>
+                        <li class="hcl-accordion-item">
+                            <h4 class="hcl-accordion-title">
+                                <span></span>
+                            </h4>
+                            <p class="hcl-accordion-content"></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hcl-col">
+                    <section id="breadcrumb2" class="hcl-container pt-5 mb-5">
+                        <ul class="hcl-breadcrumb hcl-loading" aria-label="breadcrumb">
+                            <li class="hcl-breadcrumb-item">
+                                <a href="#" class="hcl-link"></a>
+                            </li>
+                            <li class="hcl-breadcrumb-item hcl-breadcrumb-item-active">
+                                <a href="#" class="hcl-link"></a>
+                            </li>
+                            <li class="hcl-breadcrumb-item">
+                                <a href="#" class="hcl-link"></a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="hcl-col">
+                    <section class="hcl-tab hcl-loading" data-component="tabs">
+                        <nav data-tabs role="navigation">
+                            <ul role="tablist" class="hcl-tabs-nav">
+                                <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab1" data-target="tab1">
+                                    <a class="hcl-tabs-nav-link" href="#tab1"></a>
+                                </li>
+                                <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab2" aria-selected="true"
+                                    data-target="tab2">
+                                    <a class="hcl-tabs-nav-link" href="#tab2"></a>
+                                </li>
+                                <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled active" aria-controls="tab3"
+                                    data-target="tab3">
+                                    <a class="hcl-tabs-nav-link" href="#tab3"></a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <section class="hcl-tabcontent">
+                            <div role="tabpanel" aria-labelledby="tab1" id="tab1" class="hcl-tabs-panel">
+                                <p></p>
+                            </div>
+                            <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel">
+                                <p></p>
+                            </div>
+                            <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="hcl-tabs-panel active">
+                                <p></p>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+                <div class="hcl-col">
+                    <table class="hcl-data-table hcl-loading">
+                        <thead>
+                            <tr>
+                                <th>
+                                    TEST
+                                </th>
+                                <th class="sortable">Name</th>
+                                <th>Protocol</th>
+                                <th>Port</th>
+                                <th>Rule</th>
+                                <th>Attached Groups</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                            </tr>
+                            <tr>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                            </tr>
+                            <tr>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
             <!-- action bar -->
@@ -1996,60 +2193,62 @@
                     <button data-event="action-bar-cancel" class="hcl-btn hcl-primary hcl-sm">Cancel</button>
                 </div>
             </section>
-
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
-        <script src="./js/index.js"></script>
-        <script>
-            patron.dropdown(".hcl-dropdown.top", {
-                position: "top", onChange: (element, value) => {
-                    console.log(element, value);
-                }
-            })
-            patron.tooltip("[data-tooltip]");
+    </div>
+    <script src="./js/index.js"></script>
+    <script>
+        patron.dropdown(".hcl-dropdown.top", {
+            position: "top", onChange: (element, value) => {
+                console.log(element, value);
+            }
+        })
+        patron.tooltip("[data-tooltip]");
 
-            patron.tabs("#tabsjs", {
-                selectedIndex: 2,
-                disabled: [2],
-                onChange: function (e) {
-                    console.log(e);
-                }
-            });
+        patron.tabs("#tabsjs", {
+            selectedIndex: 2,
+            disabled: [2],
+            onChange: function (e) {
+                console.log(e);
+            }
+        });
 
-            patron.contentswitch("#content-switcher3", {
-                selectedIndex: 2,
-                disabled: [],
-                onChange: function (e) {
-                    console.log(e);
-                }
-            });
+        patron.contentswitch("#content-switcher3", {
+            selectedIndex: 2,
+            disabled: [],
+            onChange: function (e) {
+                console.log(e);
+            }
+        });
 
-            patron.contentswitch("#content-switcher4", {
-                selectedIndex: 2,
-                disabled: [2],
-                onChange: function (e) {
-                    console.log(e);
-                }
-            });
+        patron.contentswitch("#content-switcher4", {
+            selectedIndex: 2,
+            disabled: [2],
+            onChange: function (e) {
+                console.log(e);
+            }
+        });
 
-            patron.accordion(".hcl-accordion", {
-                uncontrolled: false
-            });
+        patron.accordion(".hcl-accordion", {
+            uncontrolled: false
+        });
 
-            document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
-                console.log('Page Change', event);
-            });
+        patron.navigation(".hcl-sidebar", {});
 
-            document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageNumber', (event) => {
-                console.log('Page Number', event);
-            });
+        document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
+            console.log('Page Change', event);
+        });
 
-            document.getElementsByClassName('hcl-pagination')[0].addEventListener('itemsPerPage', (event) => {
-                console.log('Items per Page', event);
-            });
-            patron.search(".hcl-search");
-            patron.numberInput(".hcl-number-input-wrapper");
-        </script>
+        document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageNumber', (event) => {
+            console.log('Page Number', event);
+        });
+
+        document.getElementsByClassName('hcl-pagination')[0].addEventListener('itemsPerPage', (event) => {
+            console.log('Items per Page', event);
+        });
+        patron.search(".hcl-search");
+        patron.numberInput(".hcl-number-input-wrapper");
+    </script>
 </body>
 
 </html>

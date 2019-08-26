@@ -14,7 +14,7 @@
         }
 
         &-error {
-            border: 0.0625rem solid var(--error) !important;
+            border: 0.0625rem solid var(--error);
         }
 
         >input {
@@ -33,16 +33,15 @@
 
     &-curMonth {
         font-size: 0.875rem;
-        line-height: 1.125rem;
     }
 
     &-arrows {
         height: 1.25rem;
-        width: 0rem;
+        width: 0;
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 0rem;
+        top: 0;
         left: 3rem;
         justify-content: space-evenly;
     }
@@ -134,8 +133,8 @@
         padding: 0 1.75rem;
 
         &-today {
-            &:after {
-                content: "";
+            &::after {
+                content: '';
                 position: absolute;
                 display: block;
                 top: 90%;
@@ -168,7 +167,7 @@
         }
 
         &-picked {
-            border: 0.125rem solid var(--blue-light) !important;
+            border: 0.125rem solid var(--blue-light);
         }
 
         &-fade {

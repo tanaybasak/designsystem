@@ -12,14 +12,12 @@ html {
 }
 
 body {
-
-    // $body-color: var(--black) !default; // TODO: Not seen being used anywhere, so commented out
     font: {
         family: 'Roboto', sans-serif;
     }
 
     color: var(--black);
-    line-height: var(--base-line-height);
+    font-size: 1rem;
 }
 
 ul,
@@ -41,4 +39,9 @@ dl {
     color: inherit;
     font-size: inherit;
     line-height: inherit;
+}
+
+//clear icon removed from input for edge browser.
+input::-ms-clear {
+    display: none;
 }

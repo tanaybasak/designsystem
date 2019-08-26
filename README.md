@@ -8,7 +8,7 @@ Patron is a CSS framework. It follows the HCL guidelines and priniciples. If you
   - HCL themes
   - Supported in all modern browsers
   - rem unit
-  - line-height : headings: 1.15 and body 1.125
+  - line-height :  for headings: 1.25*font-size and for body 1.5*font-size
   - TypeSize from 12px
   - Base TypeSize is 16px
 
@@ -112,7 +112,7 @@ then we can move the list styling from Typography.scss and create new file list.
 
 # Coding standard and guidelines
 - Follow the mail sent for linting/indentation process
-- ...rest will be updated soon!
+- ...will be updated soon!
 
 # License
 

@@ -22,44 +22,52 @@
 // Margin and Padding
 @for $i from 0 to 10 {
     .mt-#{$i} {
-        margin-top: $i * 4px !important;
+        margin-top: $i * 4px;
     }
 
     .mb-#{$i} {
-        margin-bottom: $i * 4px !important;
+        margin-bottom: $i * 4px;
     }
 
     .ml-#{$i} {
-        margin-left: $i * 4px !important;
+        margin-left: $i * 4px;
     }
 
     .mr-#{$i} {
-        margin-right: $i * 4px !important;
+        margin-right: $i * 4px;
     }
 
     .m-#{$i} {
-        margin: $i * 4px !important;
+        margin: $i * 4px;
     }
 
     .pt-#{$i} {
-        padding-top: $i * 4px !important;
+        padding-top: $i * 4px;
     }
 
     .pb-#{$i} {
-        padding-bottom: $i * 4px !important;
+        padding-bottom: $i * 4px;
     }
 
     .pl-#{$i} {
-        padding-left: $i * 4px !important;
+        padding-left: $i * 4px;
     }
 
     .pr-#{$i} {
-        padding-right: $i * 4px !important;
+        padding-right: $i * 4px;
     }
 
     .p-#{$i} {
-        padding: $i * 4px !important;
+        padding: $i * 4px;
     }
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.p-0 {
+    margin: 0;
 }
 
 // close icon class
@@ -80,6 +88,7 @@
 .b-1 {
     border: 1px solid $card-border-color;
 }
+
 /* 
  * ICON UTILITY CLASSES
  *
@@ -92,7 +101,7 @@
  *********************************************************************
 */
 
-$iconSizesMap: ("icon-1": 1rem, "icon-2": 2rem, "icon-3": 3rem);
+$iconSizesMap: ('icon-1': 1rem, 'icon-2': 2rem, 'icon-3': 3rem);
 
 @each $key,
 $value in $iconSizesMap {
@@ -111,7 +120,6 @@ $value in $iconSizesMap {
     @include nav-active;
 }
 
-// TODO: Subjecto to be changed
 .bg-white {
     background-color: var(--white);
 }
@@ -129,7 +137,7 @@ $value in $iconSizesMap {
 }
 
 .#{$prefix}-boxshadow-0 {
-    box-shadow: none !important;
+    box-shadow: none;
 }
 
 .#{$prefix}-boxshadow-1 {
@@ -150,4 +158,41 @@ $value in $iconSizesMap {
 
 .#{$prefix}-boxshadow-5 {
     box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+
+
+$positionProperties: static fixed absolute relative sticky;
+
+@each $positionProperty in $positionProperties {
+    .#{$prefix}-#{$positionProperty} {
+        position: $positionProperty;
+    }
+}
+
+$textAlignment: left center right justify;
+
+@each $alignment in $textAlignment {
+    .#{$prefix}-text-#{$alignment} {
+        text-align: $alignment;
+    }
+}
+
+$floatProperties: right left none;
+
+@each $floatroperty in $floatProperties {
+    .#{$prefix}-float-#{$floatroperty} {
+        float: #{$floatroperty};
+    }
+}
+
+.#{$prefix}-clearfix {
+    @include clearfix;
+}
+
+$displayProperties: none inline inline-block block table inline-table table-cell table-row table-column flex inline-flex;
+
+@each $displayProperty in $displayProperties {
+    .#{$prefix}-#{$displayProperty} {
+        display: $displayProperty;
+    }
 }
