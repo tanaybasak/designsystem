@@ -14,6 +14,7 @@ class Tooltip {
         this.positionDirection = this.direction;
         this.status = false;
         this.diff = 0;
+        this.targetTooltipContent = null;
     }
 
     attachEvents() {
@@ -33,7 +34,7 @@ class Tooltip {
                     icon.className = `${PREFIX}-tooltip-arrow`;
                     tooltip.appendChild(icon);
                     tooltip.appendChild(element);
-                    document.body.appendChild(tooltip);
+                    this.targetTooltipContent = tooltip;
                 }
             } else {
                 this.element.setAttribute('aria-describedby', document.querySelector(this.dataValue).parentElement.id)
@@ -67,17 +68,13 @@ class Tooltip {
         let tooltip = document.getElementById(this.element.getAttribute('aria-describedby'));
         if (!e || (tooltip && !tooltip.contains(e.target))) {
             if (tooltip) {
-                if (tooltip.classList.contains(`${PREFIX}-remove-tooltip`)) {
-                    document.body.removeChild(tooltip);
-                } else {
-                    tooltip.classList.remove("show");
-                }
+                document.body.removeChild(tooltip);
                 this.status = false;
             }
-            EventManager.removeEvent('click', true);
-            EventManager.removeEvent('scroll', true);
         }
-
+        console.log("closeTooltip")
+        EventManager.removeEvent('click', true);
+        EventManager.removeEvent('scroll', true);
     }
 
     show(e) {
@@ -91,15 +88,15 @@ class Tooltip {
         }
         let elementId = 'tooltip-' + (elementNo++);
         if (this.dataValue.startsWith('#')) {
-            let content = document.getElementById(this.dataValue.substr(1));
-            tooltip = content.parentElement;
-            tooltip.classList.add("show");
-            icon = content.parentElement.children[0];
+            tooltip = this.targetTooltipContent;
+            //tooltip.classList.add("show");
+            icon = tooltip.children[0];
+            document.body.appendChild(tooltip);
         } else {
             this.element.setAttribute('aria-describedby', elementId);
             tooltip = document.createElement('div');
             tooltip.setAttribute('id', elementId);
-            tooltip.className = `${PREFIX}-tooltip ${PREFIX}-remove-tooltip ${PREFIX}-tooltip-${this.type} show`;
+            tooltip.className = `${PREFIX}-tooltip ${PREFIX}-remove-tooltip ${PREFIX}-tooltip-${this.type}`;
             if (this.eventName === 'click') {
                 tooltip.setAttribute('data-focus-on-click', true);
             }
@@ -130,12 +127,17 @@ class Tooltip {
         }
         const tooltip = document.getElementById(this.element.getAttribute('aria-describedby'));
         if (this.dataValue.startsWith('#')) {
-            tooltip.classList.remove("show");
+            //tooltip.classList.remove("show");
+            if (tooltip)
+                document.body.removeChild(tooltip)
         } else {
             if (tooltip)
                 document.body.removeChild(tooltip)
         }
         this.status = false;
+        console.log('HIDE')
+        //EventManager.removeEvent('click', true);
+        EventManager.removeEvent('scroll', true);
     }
 
     tooltipDirection(parent, tooltip, icon, posHorizontal, type) {
@@ -250,6 +252,7 @@ class Tooltip {
             tooltip.style.left = getRem(left + offsetX)
             tooltip.style.top = getRem(top + offsetY);
         }
+        tooltip.classList.add("show");
     }
 
     getDirectionPosition(parentCoords, tooltip, posHorizontal) {
@@ -403,7 +406,8 @@ class Tooltip {
 
     }
     updatePositionOnScroll(e) {
-        if (!this.ticking) {
+        console.log("Scrolling" , this)
+        if (!this.ticking && this.status) {
             window.requestAnimationFrame(() => {
                 let newelement = document.getElementById(this.element.getAttribute('aria-describedby'));
                 if (newelement) {
@@ -412,6 +416,10 @@ class Tooltip {
                 this.ticking = false;
             });
             this.ticking = true;
+        }else{
+            console.log('Tooltip not present')
+            EventManager.removeEvent('scroll', true);
+            //EventManager.removeEvent('click', true);
         }
     }
 }

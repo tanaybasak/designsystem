@@ -1,6 +1,7 @@
 .#{$prefix}-tooltip {
     position: absolute;
-    display: none;
+    display: block;
+    visibility: hidden;
     font-size: var(--small-font-size);
     word-wrap: break-word;
     text-align: left;
@@ -11,6 +12,8 @@
     padding: 0.5rem;
     box-shadow: 0 4px 8px 0 $tooltip-box-shadow;
     z-index: $tooltip-zindex;
+    top:0;
+    left: 0;
 
     &-arrow {
         position: absolute;
@@ -40,7 +43,7 @@
     }
 
     &.show {
-        display: block;
+        visibility: visible;
     }
 
     &[data-focus-on-click="true"] {

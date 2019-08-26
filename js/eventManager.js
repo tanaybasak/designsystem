@@ -9,6 +9,7 @@ const EventManager = {
         document.addEventListener(eventName, this.functionList[eventName], status);
     },
     removeEvent(eventName, status) {
+        console.log(this.functionList)
         document.removeEventListener(eventName, this.functionList[eventName], status);
         delete this.functionList[eventName]
     }
