@@ -9,7 +9,7 @@
 
     @if($type==clickable or $type==selectable or $type==expandable) {
         cursor: pointer;
-        outline: none !important;
+        outline: none;
 
         &:focus {
             border: 1px solid var(--blue);

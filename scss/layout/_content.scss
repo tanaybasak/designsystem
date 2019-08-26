@@ -22,7 +22,7 @@
 @include media-breakpoint-down(sm) {
     .#{$prefix}-content {
         &.mt-3 {
-            margin-top: 3.875rem !important;
+            margin-top: 3.875rem;
         }
     }
 }

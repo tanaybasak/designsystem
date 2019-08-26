@@ -8,7 +8,7 @@
 
 // GLOBAL VARIABLES
 :root {
-    --ff-roboto: "Roboto", sans-serif;
+    --ff-roboto: 'Roboto', sans-serif;
     --base-font-size: 1rem;
     --base-font-size-px: 16px;
     --body-font-size: 0.875rem;
@@ -51,10 +51,16 @@
     --dark-20: #717171;
     --dark-40: #555555;
     --dark-50: #383838;
+    --disabled-grey: rgba(75, 75, 75, 0.50);
+    --enabled-grey: rgb(75, 75, 75);
+    --disabled-blue: rgba(0, 102, 179, 0.50);
+    --light-50: rgb(210, 210, 210);
+    --dark: rgba(75, 75, 75);
+    --dark-40: rgb(85, 85, 85);
 }
 
 // SASS VARIABLES
-$prefix: "hcl";
+$prefix: 'hcl';
 $base-font-size: var(--base-font-size) !default;
 $base-font-size-px: 16px; 
 $font-size-base: 1rem !default;
@@ -79,7 +85,7 @@ $lightGrey: #5A6872;
 $grey-secondary: var(--grey-secondary);
 // THEMES
 $theme-colors: () !default;
-$theme-colors: map-merge(("primary": $primary, "danger": $red, "tertiary": $tertiary), $theme-colors);
+$theme-colors: map-merge(('primary': $primary, 'danger': $red, 'tertiary': $tertiary), $theme-colors);
 // Forms
 $label-margin-bottom: .5rem;
 $input-padding-y: 0;

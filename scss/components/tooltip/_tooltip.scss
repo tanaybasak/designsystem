@@ -21,22 +21,22 @@
         height: $tooltip-arrow-size-default;
         background: var(--black-lighter);
 
-        &[data-direction="bottom"] {
+        &[data-direction='bottom'] {
             top: -($tooltip-arrow-size-default-position);
             transform: rotate(-45deg);
         }
 
-        &[data-direction="top"] {
+        &[data-direction='top'] {
             bottom: -($tooltip-arrow-size-default-position);
             transform: rotate(135deg);
         }
 
-        &[data-direction="right"] {
+        &[data-direction='right'] {
             left: -($tooltip-arrow-size-default-position);
             transform: rotate(-135deg);
         }
 
-        &[data-direction="left"] {
+        &[data-direction='left'] {
             right: -($tooltip-arrow-size-default-position);
             transform: rotate(45deg);
         }
@@ -46,7 +46,7 @@
         visibility: visible;
     }
 
-    &[data-focus-on-click="true"] {
+    &[data-focus-on-click='true'] {
         background-color: var(--white);
         color: var(--dark-blue);
         max-width: $tooltip-interactive-max-width;
@@ -58,19 +58,19 @@
             border-top: 0.0625rem solid var(--grey-lighter);
             border-right: 0.0625rem solid var(--grey-lighter);
 
-            &[data-direction="bottom"] {
+            &[data-direction='bottom'] {
                 top: -($tooltip-arrow-size-interactive-position);
             }
 
-            &[data-direction="top"] {
+            &[data-direction='top'] {
                 bottom: -($tooltip-arrow-size-interactive-position);
             }
 
-            &[data-direction="right"] {
+            &[data-direction='right'] {
                 left: -($tooltip-arrow-size-interactive-position);
             }
 
-            &[data-direction="left"] {
+            &[data-direction='left'] {
                 right: -($tooltip-arrow-size-interactive-position);
             }
         }
@@ -83,19 +83,19 @@
             width: $tooltip-arrow-size-icon;
             height: $tooltip-arrow-size-icon;
 
-            &[data-direction="bottom"] {
+            &[data-direction='bottom'] {
                 top: -($tooltip-arrow-size-icon-position);
             }
 
-            &[data-direction="top"] {
+            &[data-direction='top'] {
                 bottom: -($tooltip-arrow-size-icon-position);
             }
 
-            &[data-direction="right"] {
+            &[data-direction='right'] {
                 left: -($tooltip-arrow-size-icon-position);
             }
 
-            &[data-direction="left"] {
+            &[data-direction='left'] {
                 right: -($tooltip-arrow-size-icon-position);
             }
         }

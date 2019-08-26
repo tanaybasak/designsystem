@@ -50,7 +50,7 @@ $toastThemes: 'error',
         line-height: 1rem;
         color: #132730;
         letter-spacing: 0;
-        @include getFontWeight("semibold");
+        @include getFontWeight('semibold');
     }
 
     &-subtitle,
@@ -59,7 +59,7 @@ $toastThemes: 'error',
         font-size: 0.75rem;
         color: #aaa;
         letter-spacing: 0;
-        @include getFontWeight("regular");
+        @include getFontWeight('regular');
     }
 
     &-caption {
