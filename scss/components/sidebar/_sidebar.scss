@@ -154,7 +154,6 @@
             }
 
             @include media-breakpoint-down(sm) {
-                width: calc(100% - 2.75rem);
                 padding: 1.5rem 0;
                 width: calc(100% - 1.5rem);
             }
@@ -190,9 +189,11 @@
             display: flex;
             align-items: center;
             cursor: pointer;
+            width: 12.5rem;
 
             @include media-breakpoint-down(md) {
                 padding-left: 0;
+                width: 75vw;
             }
 
             >.#{$prefix}-sidebar-link {
@@ -347,6 +348,9 @@
             @include media-breakpoint-down(md) {
                 padding: 0 2.5rem;
             }
+            @include media-breakpoint-down(sm) {
+                padding: 0 1.5rem;
+            }
 
             &-icon {
                 width: 1.5rem;
@@ -360,6 +364,10 @@
 
             &-text {
                 width: calc(100% - 5.5rem);
+
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                }
             }
 
             &-toggle {
