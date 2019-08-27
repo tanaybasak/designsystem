@@ -41,6 +41,25 @@
         top: 0;
     }
 
+    .#{$prefix}-sidebar-icon {
+        display: inline-flex;
+        width: 0.75rem;
+        height: 0.75rem;
+        margin: 0.5rem 1rem;
+        border: 0.0625rem solid var(--white);
+        align-items: center;
+
+        @include media-breakpoint-down(md) {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: 1.75rem 0 2rem 2.5rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin: 1.75rem 0 2rem 1.5rem;
+        }
+    }
+
     a.#{$prefix}-sidebar-link {
 
         &:focus,
@@ -204,25 +223,6 @@
                     padding-left: 2.375rem;
                 }
 
-                .#{$prefix}-sidebar-icon {
-                    display: inline-flex;
-                    width: 0.75rem;
-                    height: 0.75rem;
-                    margin: 0.5rem 1rem;
-                    border: 0.0625rem solid var(--white);
-                    align-items: center;
-
-                    @include media-breakpoint-down(md) {
-                        width: 1.5rem;
-                        height: 1.5rem;
-                        margin: 1.75rem 0 2rem 2.5rem;
-                    }
-
-                    @include media-breakpoint-down(sm) {
-                        margin: 1.75rem 0 2rem 1.5rem;
-                    }
-                }
-
                 >.#{$prefix}-sidebar-link {
                     position: relative;
 
@@ -247,7 +247,9 @@
             }
 
             .#{$prefix}-sidebar-children {
-                display: block;
+                display: flex;
+                justify-content: right;
+                flex-direction: column;
                 overflow: hidden;
                 height: 0;
                 width: 100%;
@@ -257,17 +259,36 @@
 
                 .#{$prefix}-sidebar-item {
                     width: 100%;
+                    display: flex;
+                    align-self: flex-end;
 
-                    .#{$prefix}-sidebar-link {
+                    @include media-breakpoint-down(md) {
+                        padding-left: 5rem;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        margin-left: 4rem;
+                    }
+
+
+                    .#{$prefix}-sidebar-icon {
+                        margin-left: 2.75rem;
+
                         @include media-breakpoint-down(md) {
-                            padding-left: 0rem;
-                            margin-left: 5rem;
-                        }
-
-                        @include media-breakpoint-down(sm) {
-                            margin-left: 4rem;
+                            margin-left: 1rem;
                         }
                     }
+
+                    // .#{$prefix}-sidebar-link {
+                    //     @include media-breakpoint-down(md) {
+                    //         padding-left: 0rem;
+                    //         margin-left: 5rem;
+                    //     }
+
+                    //     @include media-breakpoint-down(sm) {
+                    //         margin-left: 4rem;
+                    //     }
+                    // }
                 }
             }
 
@@ -287,10 +308,11 @@
         }
 
         .#{$prefix}-sidebar-item {
+            display: flex;
+            justify-content: flex-end;
 
             .#{$prefix}-sidebar-link {
                 width: calc(100% - 2.75rem);
-                margin-left: 2.75rem;
             }
         }
     }
@@ -352,9 +374,13 @@
             .#{$prefix}-sidebar-category .#{$prefix}-sidebar-category-title,
             .#{$prefix}-sidebar-item {
                 .#{$prefix}-sidebar-link {
-                    display: block;
-                    width: calc(100% - 3rem);
+                    display: flex;
+                    width: calc(100% - 2.75rem);
                     padding-right: 1rem;
+
+                    @include media-breakpoint-down(md) {
+                        width: 100%;
+                    }
                 }
             }
 
@@ -382,6 +408,7 @@
                                 position: absolute;
                                 height: 100%;
                                 width: 0.375rem;
+                                left: 0;
 
                                 @include media-breakpoint-down(md) {
                                     width: 0.75rem;
@@ -418,6 +445,7 @@
                         position: absolute;
                         height: 100%;
                         width: 0.375rem;
+                        left: 0;
 
                         @include media-breakpoint-down(md) {
                             width: 0.75rem;
