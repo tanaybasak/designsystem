@@ -16,6 +16,16 @@
     background: var(--blue);
     padding: 0.625rem 1rem;
     height: 2.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &-icon {
+        width: 1rem;
+        height: 1rem;
+        margin-left: .5rem;
+        fill: var(--white);
+    }
 }
 
 a.#{$prefix}-primary {
@@ -125,8 +135,11 @@ a.#{$prefix}-primary {
     &:hover,
     &:focus {
         background: var(--blue);
-        ;
         color: var(--white);
+
+        >.#{$prefix}-btn-icon {
+            fill: var(--white);
+        }
     }
 
     &:disabled,
@@ -138,6 +151,10 @@ a.#{$prefix}-primary {
             background: transparent;
             color: var(--primary-disabled);
         }
+    }
+
+    >.#{$prefix}-btn-icon {
+        fill: var(--blue);
     }
 }
 
