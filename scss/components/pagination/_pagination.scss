@@ -45,7 +45,7 @@
             }
 
             &::after {
-                content: "";
+                content: '';
                 border-right: 1px solid var(--grey-4);
                 height: 100%;
             }
@@ -103,7 +103,7 @@
                 padding-right: 2rem;
             }
 
-            &:after {
+            &::after {
                 margin-left: 0;
             }
 

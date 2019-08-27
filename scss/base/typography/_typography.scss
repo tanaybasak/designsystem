@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-@import "typographyMixins";
+@import 'typographyMixins';
 
 // Font weight
 @each $key,
@@ -73,87 +73,87 @@ $value in $writingModes-map {
 }
 
 // Headings
-//font-size: 4.75rem or 76px
+// font-size: 4.75rem or 76px
 h1,
 .#{$prefix}-h1,
 .#{$prefix}-giga {
-    @include getFontSizeAndLineHeightForHeadings("h1");
+    @include getFontSizeAndLineHeightForHeadings('h1');
     @include getFontWeight(light);
 }
 
-//font-size: 3.375rem or 54px
+// font-size: 3.375rem or 54px
 h2,
 .#{$prefix}-h2,
 .#{$prefix}-mega {
-    @include getFontSizeAndLineHeightForHeadings("h2");
+    @include getFontSizeAndLineHeightForHeadings('h2');
     @include getFontWeight(light);
 }
 
-//font-size: 2.25rem or 36px
+// font-size: 2.25rem or 36px
 h3,
 .#{$prefix}-h3,
 .#{$prefix}-alpha {
-    @include getFontSizeAndLineHeightForHeadings("h3");
+    @include getFontSizeAndLineHeightForHeadings('h3');
     @include getFontWeight(light);
 }
 
-//font-size: 1.75rem or 28px
+// font-size: 1.75rem or 28px
 h4,
 .#{$prefix}-h4,
 .#{$prefix}-beta {
-    @include getFontSizeAndLineHeightForHeadings("h4");
+    @include getFontSizeAndLineHeightForHeadings('h4');
     @include getFontWeight(light);
 }
 
-//font-size: 1.25rem or 20px
+// font-size: 1.25rem or 20px
 h5,
 .#{$prefix}-h5,
 .#{$prefix}-gamma {
-    @include getFontSizeAndLineHeightForHeadings("h5");
+    @include getFontSizeAndLineHeightForHeadings('h5');
     @include getFontWeight(light);
 }
 
-//font-size: 1.125rem or 18px
+// font-size: 1.125rem or 18px
 .#{$prefix}-type-delta {
-    @include getFontSizeAndLineHeightForHeadings("h6");
+    @include getFontSizeAndLineHeightForHeadings('h6');
     @include getFontWeight(semibold);
 }
 
-//font-size: 1.125rem or 18px
+// font-size: 1.125rem or 18px
 h6,
 .#{$prefix}-h6 {
-    @include getFontSizeAndLineHeightForHeadings("h6");
+    @include getFontSizeAndLineHeightForHeadings('h6');
 }
 
-//font-size: 1rem or 16px
+// font-size: 1rem or 16px
 .#{$prefix}-type-epsilon {
     font-size: 1rem;
     line-height: getLineHeight(1rem);
     @include getFontWeight(semibold);
 }
 
-//font-size: 0.875rem or 14px
+// font-size: 0.875rem or 14px
 .#{$prefix}-type-zeta {
     font-size: 0.875rem;
     line-height: getLineHeight(0.875rem);
     @include getFontWeight(semibold);
 }
 
-//font-size: 0.75rem or 12px
+// font-size: 0.75rem or 12px
 .#{$prefix}-type-omega {
     font-size: 0.75rem;
     line-height: getLineHeight(0.75rem);
     @include getFontWeight(semibold);
 }
 
-//font-size: 0.6875rem or 10px
+// font-size: 0.6875rem or 10px
 .#{$prefix}-type-legal {
     font-size: 0.6875rem;
     line-height: getLineHeight(0.6875rem);
     @include getFontWeight(regular);
 }
 
-//font-size: 0.75rem or 12px
+// font-size: 0.75rem or 12px
 .#{$prefix}-type-caption {
     font-size: 0.75rem;
     line-height: getLineHeight(0.75rem);
@@ -162,7 +162,7 @@ h6,
 
 // Anchor link
 a {
-    color: theme-color("primary");
+    color: theme-color('primary');
     font-size: 0.875rem;
     line-height: getLineHeight(0.875rem);
     text-decoration: none;
@@ -174,7 +174,7 @@ a {
 
     &:focus {
         color: var(--black-light);
-        outline: 1px solid theme-color("primary");
+        outline: 1px solid theme-color('primary');
         text-decoration: underline;
         outline-offset: 3px;
     }

@@ -15,8 +15,8 @@
         border-bottom: 1px solid $grey-2;
         padding-right: 2.5rem;
 
-        &:after {
-            content: "";
+        &::after {
+            content: '';
             width: 0;
             height: 0;
             border-top: .3em solid $blue;
@@ -50,7 +50,7 @@
 
     &-item {
         height: 2.5rem;
-        @include getFontWeight("regular");
+        @include getFontWeight('regular');
         white-space: nowrap;
         background-color: transparent;
         border: 0;

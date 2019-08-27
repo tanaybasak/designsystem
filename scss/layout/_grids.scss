@@ -18,21 +18,3 @@
 
 @include generate-cols();
 
-// TODO: Subject to be removed
-.bgColor {
-    background-color: #eee;
-}
-
-.colBorder {
-    border: 1px solid #999;
-}
-
-.bigCol {
-    min-height: 5rem;
-    padding: 0.9375rem;
-}
-
-.darkBox {
-    background-color: #555;
-    color: #BBB;
-}

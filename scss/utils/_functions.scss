@@ -7,7 +7,7 @@
  */
 
 // Themes
-@function theme-color($key: "primary") {
+@function theme-color($key: 'primary') {
     @return map-get($theme-colors, $key);
 }
 
@@ -30,7 +30,7 @@
 }
 
 // Colors
-@function getColor($name: "default", $BKey: $baseKey) {
+@function getColor($name: 'default', $BKey: $baseKey) {
     $color: null;
     $colorList: map-get($colorMap, $name);
 

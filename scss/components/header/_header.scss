@@ -29,7 +29,7 @@
         flex-grow: 0;
         flex-shrink: 0;
         align-items: center;
-        line-height: initial !important;
+        line-height: initial;
 
         &:focus,
         &:active {
@@ -51,7 +51,7 @@
             flex-shrink: 0;
 
             .#{$prefix}-search {
-                width: 100% !important;
+                width: 100%;
             }
 
             @include media-breakpoint-down(md) {
@@ -68,14 +68,6 @@
             .#{$prefix}-header-icon {
                 display: inline-flex;
                 margin: 1rem 0.5rem;
-
-                &:first-child {
-                    margin-left: 0;
-                }
-
-                &:last-child {
-                    margin-right: 0;
-                }
             }
 
             @include media-breakpoint-down(md) {
