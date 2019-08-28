@@ -1,15 +1,15 @@
 function getPosition(_className) {
   switch (true) {
     case /droptop/i.test(_className):
-      return "top";
+      return 'top';
     case /dropright/i.test(_className):
-      return "right";
+      return 'right';
     case /dropbottom/i.test(_className):
-      return "bottom";
+      return 'bottom';
     case /dropleft/i.test(_className):
-      return "left";
+      return 'left';
     default:
-      return "bottom";
+      return 'bottom';
   }
 }
 
