@@ -553,8 +553,7 @@ class Tooltip {
     return isOutofBound;
   }
 
-  updatePositionOnScroll(e) {
-    e.preventDefault();
+  updatePositionOnScroll() {
     if (!this.ticking) {
       window.requestAnimationFrame(() => {
         const newelement = document.getElementById(
