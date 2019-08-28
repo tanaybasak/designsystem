@@ -8,7 +8,7 @@
 
 .#{$prefix}-data-table {
     width: 100%;
-    border: 0.0625rem solid var(--grey-lighter);
+    border: .0625rem solid var(--grey-lighter);
 
     thead,
     tbody {
@@ -17,8 +17,8 @@
             th,
             td {
                 background-color: transparent;
-                border-top: 0.0625rem solid var(--grey-lighter);
-                padding: 0 0 0 0.75rem;
+                border-top: .0625rem solid var(--grey-lighter);
+                padding: 0 0 0 .75rem;
                 text-align: left;
                 height: 3rem;
                 vertical-align: middle;
@@ -28,11 +28,11 @@
 
     thead {
         tr {
-            background-color: rgba(0, 102, 179, 0.10);
+            background-color: rgba(0, 102, 179, .1);
 
             th,
             td {
-                font-size: 0.875rem;
+                font-size: .875rem;
                 color: var(--dark-blue);
                 letter-spacing: 0;
                 line-height: 1rem;
@@ -45,10 +45,10 @@
                         content: '';
                         width: 0;
                         height: 0;
-                        border-top: 0.3em solid var(--blue);
-                        border-right: 0.3em solid transparent;
+                        border-top: .3rem solid var(--blue);
+                        border-right: .3rem solid transparent;
                         border-bottom: 0;
-                        border-left: 0.3em solid transparent;
+                        border-left: .3rem solid transparent;
                         margin-left: 1rem;
                         cursor: pointer;
                     }
@@ -70,23 +70,23 @@
             &:hover {
 
                 td {
-                    background-color: rgba(0, 102, 179, 0.10);
-                    border-top: 0.0625rem solid var(--blue);
-                    border-bottom: 0.0625rem solid var(--blue);
+                    background-color: rgba(0, 102, 179, .1);
+                    border-top: .0625rem solid var(--blue);
+                    border-bottom: .0625rem solid var(--blue);
 
                     &:first-of-type {
-                        border-left: 0.0625rem solid var(--blue);
+                        border-left: .0625rem solid var(--blue);
                     }
 
                     &:last-of-type {
-                        border-right: 0.0625rem solid var(--blue);
+                        border-right: .0625rem solid var(--blue);
                     }
                 }
             }
 
             td {
-                padding-left: 0.75rem;
-                font-size: 0.875rem;
+                padding-left: .75rem;
+                font-size: .875rem;
                 color: var(--dark-blue);
                 line-height: 1rem;
                 height: 3rem;
@@ -104,7 +104,7 @@
                 }
 
                 &:nth-child(odd) {
-                    background-color: rgba(0, 102, 179, 0.04);
+                    background-color: rgba(0, 102, 179, .04);
                 }
             }
         }
@@ -135,7 +135,7 @@
     }
 
     &-borderless {
-        border: 0.0625rem solid transparent;
+        border: .0625rem solid transparent;
     }
 }
 

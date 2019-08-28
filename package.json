@@ -5,7 +5,8 @@
   "main": "dist/patron-style.js",
   "scripts": {
     "start": "parcel index.html -d output --port 8000",
-    "build": "parcel build index.html -d dist && node defaultBundleName.js --global patron --no-source-maps"
+    "build": "parcel build index.html -d dist && node defaultBundleName.js --global patron --no-source-maps",
+    "stylelint": "stylelint '**/*.scss'; exit 0"
   },
   "author": "HCL Products & Platforms",
   "license": "ISC",
@@ -19,7 +20,8 @@
     "delegate": "^3.2.0",
     "parcel-bundler": "^1.11.0",
     "postcss-cli": "^6.1.2",
-    "sass": "^1.17.3"
+    "sass": "^1.17.3",
+    "stylelint": "^10.1.0"
   },
   "browserslist": [
     "> .1%",
@@ -31,7 +33,20 @@
       "selector-type-case": "lower",
       "string-quotes": "single",
       "selector-pseudo-element-colon-notation": "double",
-      "unit-blacklist": ["em"]
+      "unit-blacklist": [
+        "em"
+      ],
+      "block-no-empty": true,
+      "unit-no-unknown": true,
+      "comment-no-empty": true,
+      "value-no-vendor-prefix": true,
+      "function-calc-no-invalid": true,
+      "no-descending-specificity": true,
+      "no-duplicate-at-import-rules": true,
+      "no-duplicate-selectors": true,
+      "number-leading-zero": "never",
+      "number-no-trailing-zeros": true,
+      "length-zero-no-unit": true
     }
   }
 }

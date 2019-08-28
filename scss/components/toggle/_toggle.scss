@@ -13,8 +13,8 @@
         cursor: pointer;
         display: inline-block;
         top: 0;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
+        margin-left: .5rem;
+        margin-right: .5rem;
         margin-bottom: 0;
 
         &::before {
@@ -23,7 +23,7 @@
             display: block;
             top: 50%;
             left: 0;
-            transition: 0.4s;
+            transition: .4s;
             transform: translate(0, -50%);
         }
 
@@ -32,7 +32,7 @@
             display: block;
             left: 0;
             top: 50%;
-            transition: 0.4s;
+            transition: .4s;
             border-radius: 50%;
         }
     }
@@ -73,11 +73,11 @@
     @extend %basic-toggle;
 
     .#{$prefix}-toggle-label {
-        height: 0.375rem;
+        height: .375rem;
         width: 3rem;
 
         &::before {
-            height: 0.375rem;
+            height: .375rem;
             width: 3rem;
             background-color: var(--enabled-grey);
         }
@@ -85,7 +85,7 @@
         .#{$prefix}-switch {
             height: 1.5rem;
             width: 1.5rem;
-            border: 0.0625rem solid var(--enabled-grey);
+            border: .0625rem solid var(--enabled-grey);
             background-color: var(--white);
             transform: translate(0, -50%);
         }
@@ -111,7 +111,7 @@
             }
 
             .#{$prefix}-switch {
-                border: 0.0625rem solid var(--disabled-grey);
+                border: .0625rem solid var(--disabled-grey);
             }
         }
 
@@ -131,9 +131,9 @@
 
     .#{$prefix}-toggle-off,
     .#{$prefix}-toggle-on {
-        font-size: 0.875rem;
+        font-size: .875rem;
         line-height: 1.5rem;
-        letter-spacing: 0.01rem;
+        letter-spacing: .01rem;
         color: var(--enabled-grey);
     }
 }
@@ -151,16 +151,16 @@
             height: 1rem;
             width: 2rem;
             background-color: var(--white);
-            border: 0.0625rem solid var(--enabled-grey);
+            border: .0625rem solid var(--enabled-grey);
             border-radius: 6.25rem;
         }
 
         .#{$prefix}-switch {
-            height: 0.625rem;
-            width: 0.625rem;
+            height: .625rem;
+            width: .625rem;
             background-color: var(--enabled-grey);
             border: none;
-            transform: translate(0.1875rem, -50%);
+            transform: translate(.1875rem, -50%);
         }
     }
 
@@ -185,16 +185,16 @@
                     border-left: 1px solid $blue;
                     border-bottom: 1px solid $blue;
                     position: absolute;
-                    left: 0.125rem;
+                    left: .125rem;
                     top: 50%;
-                    margin-top: -0.1875rem;
+                    margin-top: -.1875rem;
                 }
             }
         }
 
         &:not(:checked):disabled~.#{$prefix}-toggle-label {
             &::before {
-                border: 0.0625rem solid var(--disabled-grey);
+                border: .0625rem solid var(--disabled-grey);
             }
 
             .#{$prefix}-switch {
@@ -211,9 +211,9 @@
 
     .#{$prefix}-toggle-off,
     .#{$prefix}-toggle-on {
-        font-size: 0.875rem;
+        font-size: .875rem;
         line-height: 1rem;
-        letter-spacing: 0.01rem;
+        letter-spacing: .01rem;
         color: var(--enabled-grey);
     }
 }
