@@ -15,10 +15,11 @@
     background-color: var(--blue-light);
 
     &-list {
-        >.hcl-btn {
+        >.#{$prefix}-btn {
             color: var(--white);
+            margin: 0;
 
-            >.hcl-btn-icon {
+            >.#{$prefix}-btn-icon {
                 fill: var(--white);
             }
 
@@ -27,7 +28,7 @@
                 background-color: var(--white);
                 color: var(--blue-light);
 
-                >.hcl-btn-icon {
+                >.#{$prefix}-btn-icon {
                     fill: var(--blue-light);
                 }
             }
@@ -61,7 +62,8 @@
         font-weight: 600;
         cursor: pointer;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             border-bottom: 1px solid var(--white);
         }
     }
