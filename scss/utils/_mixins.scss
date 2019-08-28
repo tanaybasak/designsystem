@@ -94,7 +94,7 @@
             @for $i from 0 through ($cols - 1) {
 
                 // Avoid emitting useless .#{$prefix}-offset-0
-                @if not ($infix==""and $i==0) {
+                @if not ($infix==''and $i==0) {
                     .#{$prefix}-offset#{$infix}-#{$i} {
                         @include generate-col-offset($i, $cols);
                     }
@@ -115,7 +115,7 @@
     &::after {
         display: block;
         clear: both;
-        content: "";
+        content: '';
     }
 }
 
@@ -141,14 +141,8 @@
 }
 
 // Line height
-@mixin lineHeight($type) {
-    @if ($type=="heading") {
-        line-height: 1.125;
-    }
-
-    @else {
-        line-height: 1.15;
-    }
+@function getLineHeight($font-size) {
+    @return $font-size*1.5;
 }
 
 // px to rem
@@ -167,9 +161,9 @@
     background-color: $bg-color;
     cursor: pointer;
 
-    &:before,
-    &:after {
-        content: " ";
+    &::before,
+    &::after {
+        content: ' ';
         position: absolute;
         width: 2px;
         background-color: lighten($fg-color, 20%);
@@ -178,33 +172,33 @@
     @if $rounded {
         border-radius: 50%;
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             height: #{round($size - 10)}px;
         }
     }
 
     @else {
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             height: #{$size}px;
         }
 
     }
 
-    &:before {
+    &::before {
         transform: rotate(45deg);
     }
 
-    &:after {
+    &::after {
         transform: rotate(-45deg);
     }
 
     &:hover {
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             background-color: lighten($fg-color, 0);
         }
     }
@@ -219,10 +213,16 @@
     color: $color;
     font-size: $font-size;
 
-    &:after {
-        content: "\2022 \2022 \2022";
+    &::after {
+        content: '\2022 \2022 \2022';
         transform: rotate(90deg);
         padding: 0 0.5rem;
+    }
+
+    &.horizontal-ellipsis {
+        &::after {
+            transform: none;
+        }
     }
 }
 
@@ -242,7 +242,7 @@
 }
 
 @mixin nav-active {
-    background-image: linear-gradient(to top, $white 0%, $white 4%, transparent 4%); // MAGIC NUMBER -> 4% ~ 2px/.125rem TODO: Subject to be changed
+    background-image: linear-gradient(to top, $white 0%, $white 4%, transparent 4%);
     background-size: cover;
     transition: all ease .1s;
 }
@@ -250,7 +250,7 @@
 @mixin clearfix() {
     &::after {
         display: block;
-        content: "";
+        content: '';
         clear: both;
     }
 }

@@ -67,12 +67,10 @@
             }
         }
 
-
         &:disabled {
             opacity: .5;
             cursor: not-allowed;
         }
-
 
         &::-moz-range-track {
             border: 0;

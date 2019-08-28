@@ -32,7 +32,7 @@ p.hcl-loading {
 .#{$prefix}-tab {
     &.#{$prefix}-loading {
         .#{$prefix}-tabs-nav-item {
-            border-bottom: none !important;
+            border-bottom: none;
             pointer-events: none;
 
             a {
@@ -47,14 +47,14 @@ p.hcl-loading {
 .#{$prefix}-accordion {
     &.#{$prefix}-loading {
         &>* {
-            pointer-events: none !important;
+            pointer-events: none;
         }
 
         .#{$prefix}-accordion-item {
             &.expanded {
                 .#{$prefix}-accordion-content {
                     @include loading();
-                    height: 6.25rem !important;
+                    height: 6.25rem;
                     margin-left: 25px;
                     margin-right: 10px;
                     margin-bottom: 10px;
@@ -74,7 +74,7 @@ p.hcl-loading {
 .#{$prefix}-data-table {
     &.#{$prefix}-loading {
         &>* {
-            pointer-events: none !important;
+            pointer-events: none;
         }
 
         tbody {
@@ -95,7 +95,7 @@ p.hcl-loading {
         @include loading();
 
         &>* {
-            pointer-events: none !important;
+            pointer-events: none;
             opacity: 0;
         }
     }
@@ -104,7 +104,7 @@ p.hcl-loading {
 .#{$prefix}-number-input-wrapper {
     &.#{$prefix}-loading {
         &>* {
-            pointer-events: none !important;
+            pointer-events: none;
 
         }
 
@@ -135,7 +135,7 @@ p.hcl-loading {
 .#{$prefix}-slider {
     &.#{$prefix}-loading {
         &>* {
-            pointer-events: none !important;
+            pointer-events: none;
 
         }
 

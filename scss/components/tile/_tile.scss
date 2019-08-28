@@ -1,4 +1,4 @@
-@mixin tile($type) {
+    @mixin tile($type) {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
     display: inline-block;
     background-color: var(--white);
@@ -9,7 +9,7 @@
 
     @if($type==clickable or $type==selectable or $type==expandable) {
         cursor: pointer;
-        outline: none !important;
+        outline: none;
 
         &:focus {
             border: 1px solid var(--blue);
@@ -77,7 +77,7 @@
     }
 
     &-arrow {
-        bottom: 0rem;
+        bottom: 0;
         right: 1rem;
         position: absolute;
         cursor: pointer;

@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-@import "mixin";
+@import 'mixin';
 
 .#{$prefix}-form-group {
     margin-bottom: 1.5rem;
@@ -43,31 +43,31 @@
         order: 3;
     }
 
-    input[type="password"]::-ms-reveal,
-    input[type="password"]::-ms-clear {
+    input[type='password']::-ms-reveal,
+    input[type='password']::-ms-clear {
         display: none;
     }
 }
 
 .#{$prefix}-helper-text {
-    @include getFontSize("12");
-    @include getInputColor('color-2', "color");
-    @include lineHeight("helpertext");
+    @include getInputColor('color-2', 'color');
     margin-bottom: .5rem;
+    font-size: 0.75rem;
+    line-height: getLineHeight(0.75rem)
 }
 
 label {
-    @include getInputColor('color-1', "color");
+    @include getInputColor('color-1', 'color');
     font-weight: $input-label-weight;
     margin-bottom: $label-margin-bottom;
 }
 
 .#{$prefix}-form-control {
-    @include getFormControl("inputcontrol");
-    @include getErrorMarkup("inputcontrol");
+    @include getFormControl('inputcontrol');
+    @include getErrorMarkup('inputcontrol');
 
     &~button.#{$prefix}-password-visibility,
-    &~[data-component="password"] {
+    &~[data-component='password'] {
         position: relative;
         top: -1.75rem;
         right: .75rem;
@@ -96,17 +96,17 @@ label {
 }
 
 .#{$prefix}-textarea {
-    @include getFormControl("inputcontrol");
+    @include getFormControl('inputcontrol');
     resize: vertical;
     padding: 1rem;
     height: auto;
 
     &[data-invalid=true]~.#{$prefix}-error-msg {
         color: $error;
-        @include getFontWeight("regular");
-        @include getFontSize("12");
+        @include getFontWeight('regular');
+        font-size: 0.75rem;
+        line-height: getLineHeight(0.75rem);
         margin-top: .25rem;
-        @include lineHeight("error");
     }
 
     &[data-invalid=false]~.#{$prefix}-error-msg {
@@ -133,7 +133,7 @@ label {
         width: 18px;
         height: 18px;
         top: 0;
-        left: 0px;
+        left: 0;
         position: absolute;
 
         &[disabled]~.#{$prefix}-checkbox-label {
@@ -158,8 +158,8 @@ label {
     }
 
     .#{$prefix}-checkbox-label {
-        @include getFontWeight("regular");
-        @include getFontSize("14");
+        @include getFontWeight('regular');
+        font-size: 0.875rem;
         display: inline-block;
         cursor: pointer;
         margin-bottom: 0;
@@ -196,7 +196,7 @@ label {
 }
 
 .#{$prefix}-checkbox-group {
-    @include groupOption("checkbox");
+    @include groupOption('checkbox');
 }
 
 // Radio
@@ -243,22 +243,23 @@ label {
         width: 0.5rem;
         height: 0.5rem;
         border-radius: 50%;
-        @include getInputColor("color-5", "background-color");
+        @include getInputColor('color-5', 'background-color');
     }
 
     &:checked+.#{$prefix}-radio-label::before {
-        @include getInputColor("color-5", "border-color");
+        @include getInputColor('color-5', 'border-color');
     }
 }
 
 .#{$prefix}-radio-label {
-    @include getFontWeight("regular");
-    @include getFontSize("14");
+    @include getFontWeight('regular');
+    font-size: 0.875rem;
     display: inline-block;
     cursor: pointer;
     margin-bottom: 0;
     position: relative;
     padding-left: 24px;
+
 
     &::before {
         content: '';
@@ -275,7 +276,7 @@ label {
 }
 
 .#{$prefix}-radio-group {
-    @include groupOption("radio");
+    @include groupOption('radio');
 }
 
 // Fieldset
@@ -285,10 +286,10 @@ label {
 
 // Legend
 .#{$prefix}-legend {
-    @include getFontSize("14");
-    @include getFontWeight("semibold");
-    @include getInputColor("color-1", "color");
+    @include getFontWeight('semibold');
+    @include getInputColor('color-1', 'color');
     vertical-align: baseline;
     display: inline-block;
     margin-bottom: .5rem;
+    font-size: 0.875rem;
 }

@@ -50,7 +50,7 @@ $toastThemes: 'error',
         line-height: 1rem;
         color: #132730;
         letter-spacing: 0;
-        @include getFontWeight("semibold");
+        @include getFontWeight('semibold');
     }
 
     &-subtitle,
@@ -59,7 +59,7 @@ $toastThemes: 'error',
         font-size: 0.75rem;
         color: #aaa;
         letter-spacing: 0;
-        @include getFontWeight("regular");
+        @include getFontWeight('regular');
     }
 
     &-caption {
@@ -69,13 +69,9 @@ $toastThemes: 'error',
     &-close {
         outline: 0.125rem solid transparent;
         outline-offset: -0.125rem;
-        background-color: transparent;
         border: none;
-        cursor: pointer;
         margin-left: auto;
         padding: 0;
-        height: 0.625rem;
-        width: 0.625rem;
         min-height: 0.625rem;
         min-width: 0.625rem;
         transition: outline .11s, background-color .11s;

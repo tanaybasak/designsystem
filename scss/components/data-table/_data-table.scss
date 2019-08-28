@@ -41,8 +41,8 @@
                     display: flex;
                     align-items: center;
 
-                    &:after {
-                        content: "";
+                    &::after {
+                        content: '';
                         width: 0;
                         height: 0;
                         border-top: 0.3em solid var(--blue);
@@ -54,7 +54,7 @@
                     }
 
                     &.desc {
-                        &:after {
+                        &::after {
                             transform: rotate(180deg);
                         }
                     }
@@ -74,11 +74,11 @@
                     border-top: 0.0625rem solid var(--blue);
                     border-bottom: 0.0625rem solid var(--blue);
 
-                    &:first-child {
+                    &:first-of-type {
                         border-left: 0.0625rem solid var(--blue);
                     }
 
-                    &:last-child {
+                    &:last-of-type {
                         border-right: 0.0625rem solid var(--blue);
                     }
                 }
@@ -137,4 +137,10 @@
     &-borderless {
         border: 0.0625rem solid transparent;
     }
+}
+
+.#{$prefix}-data-table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
 }

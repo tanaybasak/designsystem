@@ -1,6 +1,7 @@
 .#{$prefix}-dropdown {
     display: inline-block;
     position: relative;
+    width: 100%;
 
     &-toggle {
         background: #efefef;
@@ -14,8 +15,8 @@
         border-bottom: 1px solid $grey-2;
         padding-right: 2.5rem;
 
-        &:after {
-            content: "";
+        &::after {
+            content: '';
             width: 0;
             height: 0;
             border-top: .3em solid $blue;
@@ -35,7 +36,6 @@
         left: 0;
         will-change: transform;
         z-index: 2;
-        min-width: 10rem;
         font-size: 1rem;
         color: #212529;
         text-align: left;
@@ -50,7 +50,7 @@
 
     &-item {
         height: 2.5rem;
-        @include getFontWeight("regular");
+        @include getFontWeight('regular');
         white-space: nowrap;
         background-color: transparent;
         border: 0;

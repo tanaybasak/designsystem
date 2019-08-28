@@ -2,7 +2,7 @@
 .#{$prefix}-list-unordered {
     font-size: .875rem;
     @include getFontWeight(regular);
-    line-height: 1.125rem;
+    line-height: 1.5rem;
     letter-spacing: .16px;
 
     .#{$prefix}-list-item {
@@ -18,8 +18,8 @@
         margin-left: 2rem;
         font-size: .875rem;
 
-        .#{$prefix}-list-item:before {
-            content: "-";
+        .#{$prefix}-list-item::before {
+            content: '-';
             padding-right: .25rem;
         }
     }
@@ -31,9 +31,9 @@
 
     >.#{$prefix}-list-item {
 
-        &:before {
+        &::before {
             counter-increment: listitem;
-            content: counter(listitem) ".";
+            content: counter(listitem) '.';
             display: inline-block;
             margin-right: 0.625rem;
             margin-bottom: .25rem;
@@ -44,8 +44,8 @@
 .#{$prefix}-list-unordered {
     >.#{$prefix}-list-item {
 
-        &:before {
-            content: "\25CF";
+        &::before {
+            content: '\25CF';
             display: inline-block;
             margin-right: 0.625rem;
             margin-bottom: .25rem;
