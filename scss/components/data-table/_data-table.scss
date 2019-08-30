@@ -38,8 +38,7 @@
                 line-height: 1rem;
 
                 &.sortable {
-                    display: flex;
-                    align-items: center;
+                    position: relative;
 
                     &::after {
                         content: '';
@@ -51,6 +50,9 @@
                         border-left: 0.3em solid transparent;
                         margin-left: 1rem;
                         cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
                     }
 
                     &.desc {
