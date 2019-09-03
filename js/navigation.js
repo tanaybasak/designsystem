@@ -36,7 +36,6 @@ class Navigation {
 
     hideSidebarDocumentClick = () => {
         const handler = event => {
-            const classList = event.target.classList;
             if (!this.isDescendant(this.element, event.target)) {
                 document.removeEventListener("click", handler);
                 if (this.state.expanded) {
@@ -49,7 +48,7 @@ class Navigation {
         document.addEventListener("click", handler);
     };
 
-    toggleSidebar = (event) => {
+    toggleSidebar = () => {
         const item = this.element;
 
         const chk = !this.state.expanded;
