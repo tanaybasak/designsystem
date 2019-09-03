@@ -13,6 +13,7 @@ class Navigation {
         this.hamburger = this.element.querySelector(`.${PREFIX}-sidebar-hamburger`);
         this.categories = this.element.querySelectorAll(`.${PREFIX}-sidebar-category-title`);
         this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
+        this.activeItem = null;
     }
 
     isDescendant = (parent, child) => {
@@ -26,18 +27,22 @@ class Navigation {
         return false;
     };
 
+    updateContainers = (chk) => {
+        const containers = document.querySelectorAll(`[data-withsidenav]`);
+        if (containers && containers.length) {
+            containers.forEach(container => container.classList.toggle('sidebar-expanded', chk));
+        }
+    }
+
     hideSidebarDocumentClick = () => {
         const handler = event => {
             const classList = event.target.classList;
             if (!this.isDescendant(this.element, event.target)) {
                 document.removeEventListener("click", handler);
-                const containers = document.querySelectorAll(`[data-withsidenav]`);
                 if (this.state.expanded) {
                     this.element.classList.remove("expanded");
                     this.state.expanded = false;
-                    if (containers && containers.length) {
-                        containers.forEach(container => container.classList.toggle('sidebar-expanded', false));
-                    }
+                    this.updateContainers(false);
                 }
             }
         };
@@ -46,21 +51,12 @@ class Navigation {
 
     toggleSidebar = (event) => {
         const item = this.element;
-        const containers = document.querySelectorAll(`[data-withsidenav]`);
 
-        if (this.state.expanded) {
-            item.classList.remove("expanded");
-            if (containers && containers.length) {
-                containers.forEach(container => container.classList.toggle('sidebar-expanded', false));
-            }
-        } else {
-            item.classList.add("expanded");
-            if (containers && containers.length) {
-                containers.forEach(container => container.classList.toggle('sidebar-expanded', true));
-            }
-            if (window.screen.width < 992) {
-                this.hideSidebarDocumentClick();
-            }
+        const chk = !this.state.expanded;
+        item.classList.toggle("expanded", chk);
+        this.updateContainers(chk);
+        if (chk && window.screen.width < 992) {
+            this.hideSidebarDocumentClick();
         }
 
         this.state.expanded = !this.state.expanded;
@@ -79,12 +75,11 @@ class Navigation {
     toggleItems = event => {
         const comp = event.currentTarget;
 
-        this.items.forEach(item => {
-            if (item.classList.contains("hcl-sidebar-item-active")) {
-                item.classList.remove("hcl-sidebar-item-active");
-            }
-        });
+        if (this.activeItem && this.activeItem.classList) {
+            this.activeItem.classList.toggle("hcl-sidebar-item-active", false);
+        }
         comp.classList.add("hcl-sidebar-item-active");
+        this.activeItem = comp;
     }
 
     attachEvents = () => {

@@ -39,6 +39,7 @@
     @include media-breakpoint-down(md) {
         width: 0;
         top: 0;
+        height: 100vh;
     }
 
     .#{$prefix}-sidebar-icon {
@@ -323,7 +324,6 @@
 
         @include media-breakpoint-down(md) {
             width: 75vw;
-            height: 100vh;
             position: fixed;
             left: 0;
             top: 0;
