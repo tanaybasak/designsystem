@@ -49,7 +49,7 @@
 
         .#{$prefix}-header-search {
             display: inline-flex;
-            margin: 0.3125rem;
+            margin: .3125rem;
             width: 23.13rem;
             flex-grow: 0;
             flex-shrink: 0;
@@ -59,7 +59,7 @@
             }
 
             @include media-breakpoint-down(md) {
-                margin: 0.75rem;
+                margin: .75rem;
             }
         }
 
@@ -71,7 +71,7 @@
 
             .#{$prefix}-header-icon {
                 display: inline-flex;
-                margin: 1rem 0.5rem;
+                margin: 1rem .5rem;
             }
 
             @include media-breakpoint-down(md) {

@@ -27,7 +27,7 @@ $loading-bg : rgba(61, 112, 178, .1);
         position: absolute;
         top: 0;
         left: 0;
-        opacity: 0.3;
+        opacity: .3;
         background: $loading-bg;
         animation: loading-animation 3s ease-in-out infinite;
     }
