@@ -52,7 +52,6 @@
       "no-descending-specificity": true,
       "no-duplicate-at-import-rules": true,
       "no-duplicate-selectors": true,
-      "number-leading-zero": "never",
       "number-no-trailing-zeros": true,
       "length-zero-no-unit": true
     }
