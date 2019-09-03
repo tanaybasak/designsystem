@@ -360,7 +360,7 @@
             }
 
             &-toggle {
-                &:before {
+                &::before {
                     transform: translate(-50%, -50%) rotate(45deg);
                 }
             }
@@ -399,7 +399,7 @@
                         }
 
                         &-active {
-                            &:before {
+                            &::before {
                                 content: '';
                                 background-color: var(--blue);
                                 position: absolute;
@@ -414,12 +414,9 @@
                         }
                     }
                 }
-            }
-
-            .#{$prefix}-sidebar-category {
                 &-title {
 
-                    .#{$prefix}-sidebar-link:after {
+                    .#{$prefix}-sidebar-link::after {
                         height: 0.625rem;
                         width: 0.625rem;
                     }
@@ -436,7 +433,7 @@
                 }
 
                 &-active {
-                    &:before {
+                    &::before {
                         content: '';
                         background-color: var(--blue);
                         position: absolute;
