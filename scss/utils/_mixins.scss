@@ -205,7 +205,7 @@
 }
 
 // ellipsis icon
-@mixin hcl-ellipsis($color: $black, $font-size: 0.8rem) {
+@mixin hcl-ellipsis($color: $black, $font-size: .8rem) {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -216,7 +216,7 @@
     &::after {
         content: '\2022 \2022 \2022';
         transform: rotate(90deg);
-        padding: 0 0.5rem;
+        padding: 0 .5rem;
     }
 
     &.horizontal-ellipsis {
