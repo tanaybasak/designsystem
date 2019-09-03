@@ -1,5 +1,5 @@
 .#{$prefix}-tag {
-    font-size: 0.75rem;
+    font-size: .75rem;
     @include getFontWeight(regular);
     line-height: 1rem;
     letter-spacing: .32px;
@@ -38,7 +38,7 @@
 
         >.#{$prefix}-close {
             @include hcl-close-icon(18, $white, #3D70B2, true);
-            margin-left: 0.625rem;
+            margin-left: .625rem;
         }
     }
 
@@ -53,19 +53,19 @@
         }
 
         &:active:not([disabled]) {
-            background: rgba(0, 102, 179, 0.18);
+            background: rgba(0, 102, 179, .18);
             border-color: #003D6B;
         }
 
         >.#{$prefix}-close {
             @include hcl-close-icon(18, $blue, $white, true);
-            margin-left: 0.625rem;
+            margin-left: .625rem;
         }
     }
 
     &:disabled,
     &[disabled] {
-        opacity: 0.5;
+        opacity: .5;
         cursor: not-allowed;
 
         >.#{$prefix}-close {
@@ -79,7 +79,7 @@
         border-radius: 50%;
         background-color: #efefef;
         position: absolute;
-        left: 0.625rem;
+        left: .625rem;
 
         +.hcl-tag-text {
             margin-left: 1.875rem;

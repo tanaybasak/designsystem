@@ -1,3 +1,3 @@
 // Empty function for callbacks
 
-export const NOOP = ()=>{}
+export const NOOP = () => {};

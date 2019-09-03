@@ -11,10 +11,10 @@
     --ff-roboto: 'Roboto', sans-serif;
     --base-font-size: 1rem;
     --base-font-size-px: 16px;
-    --body-font-size: 0.875rem;
-    --small-font-size: 0.75rem;
-    --base-margin: 0.5rem;
-    --base-padding: 0.2rem;
+    --body-font-size: .875rem;
+    --small-font-size: .75rem;
+    --base-margin: .5rem;
+    --base-padding: .2rem;
     --black: #000;
     --grey: #707070;
     --grey-secondary: #f3f3f3;
@@ -51,9 +51,9 @@
     --dark-20: #717171;
     --dark-40: #555555;
     --dark-50: #383838;
-    --disabled-grey: rgba(75, 75, 75, 0.50);
+    --disabled-grey: rgba(75, 75, 75, .5);
     --enabled-grey: rgb(75, 75, 75);
-    --disabled-blue: rgba(0, 102, 179, 0.50);
+    --disabled-blue: rgba(0, 102, 179, .5);
     --light-50: rgb(210, 210, 210);
     --dark: rgba(75, 75, 75);
     --dark-40: rgb(85, 85, 85);
@@ -93,7 +93,7 @@ $input-padding-y: 0;
 $input-padding-x: 1rem;
 $input-height: 2.5rem !default;
 $input-label-weight: 600;
-$background-disabled: rgba(70, 150, 210, 0.05);
+$background-disabled: rgba(70, 150, 210, .05);
 // Checkbox
 $checkbox-border-width: 2px;
 $checkbox-border-color: #5a6872;
@@ -109,9 +109,9 @@ $danger: var(--error);
 $warning: var(--warning);
 // GRIDS GUTTER
 $total-gutter-width: 1.875rem !default;
-$gutter: 0.9375rem;
+$gutter: .9375rem;
 $grid-columns: 12;
-$minHeight: 0.0625rem;
+$minHeight: .0625rem;
 // BREAKPOINTS
 $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px) !default;
 // TODO: Subject to be changed once the breakpoints are finalized
@@ -129,7 +129,7 @@ $card-color: #5A6872 !default;
 $card-color-text: #152935 !default;
 $card-line-height: 1.25rem !default;
 $card-bg: $white !default;
-$card-box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10) !default;
+$card-box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .1) !default;
 $card-imgtop-height: 12.5rem !default;
 $card-imgtop-bg: #d2d2d2 !default;
 // BORDER
@@ -149,12 +149,12 @@ $navbar-hamburger-font-size: $font-size-base * 1.25 !default;
 //Tooltip
 $tooltip-default-max-width: 12.5rem;
 $tooltip-interactive-max-width: 15rem;
-$tooltip-arrow-size-default: 0.625rem;
+$tooltip-arrow-size-default: .625rem;
 $tooltip-arrow-size-default-position: $tooltip-arrow-size-default/2;
-$tooltip-arrow-size-icon: 0.3125rem;
+$tooltip-arrow-size-icon: .3125rem;
 $tooltip-arrow-size-icon-position: $tooltip-arrow-size-icon/2;
-$tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+0.0625rem;
-$tooltip-box-shadow:rgba(0, 0, 0, 0.10);
+$tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+.0625rem;
+$tooltip-box-shadow:rgba(0, 0, 0, .1);
 $tooltip-zindex:5;
 //Pagination
 $pagination-font-size:var(--body-font-size);

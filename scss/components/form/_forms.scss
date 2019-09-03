@@ -52,8 +52,8 @@
 .#{$prefix}-helper-text {
     @include getInputColor('color-2', 'color');
     margin-bottom: .5rem;
-    font-size: 0.75rem;
-    line-height: getLineHeight(0.75rem)
+    font-size: .75rem;
+    line-height: getLineHeight(.75rem)
 }
 
 label {
@@ -104,8 +104,8 @@ label {
     &[data-invalid=true]~.#{$prefix}-error-msg {
         color: $error;
         @include getFontWeight('regular');
-        font-size: 0.75rem;
-        line-height: getLineHeight(0.75rem);
+        font-size: .75rem;
+        line-height: getLineHeight(.75rem);
         margin-top: .25rem;
     }
 
@@ -137,7 +137,7 @@ label {
         position: absolute;
 
         &[disabled]~.#{$prefix}-checkbox-label {
-            opacity: 0.5;
+            opacity: .5;
             cursor: not-allowed;
         }
 
@@ -159,7 +159,7 @@ label {
 
     .#{$prefix}-checkbox-label {
         @include getFontWeight('regular');
-        font-size: 0.875rem;
+        font-size: .875rem;
         display: inline-block;
         cursor: pointer;
         margin-bottom: 0;
@@ -188,9 +188,9 @@ label {
             border-bottom: 1px solid $white;
             transform: scale(0) rotate(-45deg);
             position: absolute;
-            left: 0.3125rem;
+            left: .3125rem;
             top: 50%;
-            margin-top: -0.1875rem;
+            margin-top: -.1875rem;
         }
     }
 }
@@ -215,7 +215,7 @@ label {
         margin-top: 0;
 
         &:first-of-type {
-            margin-top: 0.5rem;
+            margin-top: .5rem;
         }
     }
 }
@@ -230,7 +230,7 @@ label {
     }
 
     &:disabled+.#{$prefix}-radio-label {
-        opacity: 0.5;
+        opacity: .5;
         cursor: not-allowed;
     }
 
@@ -240,8 +240,8 @@ label {
         position: absolute;
         top: 4px;
         left: 5px;
-        width: 0.5rem;
-        height: 0.5rem;
+        width: .5rem;
+        height: .5rem;
         border-radius: 50%;
         @include getInputColor('color-5', 'background-color');
     }
@@ -253,7 +253,7 @@ label {
 
 .#{$prefix}-radio-label {
     @include getFontWeight('regular');
-    font-size: 0.875rem;
+    font-size: .875rem;
     display: inline-block;
     cursor: pointer;
     margin-bottom: 0;
@@ -291,5 +291,5 @@ label {
     vertical-align: baseline;
     display: inline-block;
     margin-bottom: .5rem;
-    font-size: 0.875rem;
+    font-size: .875rem;
 }
