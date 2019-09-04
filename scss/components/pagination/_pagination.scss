@@ -36,7 +36,7 @@
 
             select,
             .#{$prefix}-pagination-select {
-                padding-right: hcl-rem(20.8px);
+                padding-right: hcl-rem(2.8px);
             }
 
             svg,
@@ -82,7 +82,7 @@
             }
 
             &:disabled {
-                opacity: 0.3;
+                opacity: .3;
                 background-color: #e6e6e6;
                 cursor: not-allowed;
             }
@@ -124,7 +124,7 @@
 
     label,
     &-text {
-        margin-bottom: 0rem;
+        margin-bottom: 0;
         font-weight: normal;
 
         @include media-breakpoint-only(xs) {
@@ -159,7 +159,7 @@
             padding: 0 1rem 0 1rem;
             appearance: none;
             background-color: $white;
-            margin-right: -0.65rem;
+            margin-right: -.65rem;
             cursor: pointer;
             text-align-last: center;
             color: $pagination-select-text-color;

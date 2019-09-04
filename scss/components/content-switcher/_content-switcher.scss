@@ -6,7 +6,7 @@
 
     &-btn {
         @include media-breakpoint-only(xs) {
-            padding: 0 0.2rem;
+            padding: 0 .2rem;
             flex-grow: 1;
             justify-content: center;
         }
@@ -50,17 +50,17 @@
 
         &:disabled {
             cursor: not-allowed;
-            background-color: rgba(255, 255, 255, 0.50);
-            color: rgba(61, 112, 178, 0.50);
-            border-color: rgba(0, 102, 179, 0.50);
+            background-color: rgba(255, 255, 255, .5);
+            color: rgba(61, 112, 178, .5);
+            border-color: rgba(0, 102, 179, .5);
 
             &.active {
-                background-color: rgba(0, 102, 179, 0.50);
-                color: rgba(255, 255, 255, 0.50);
+                background-color: rgba(0, 102, 179, .5);
+                color: rgba(255, 255, 255, .5);
             }
 
             .#{$prefix}-thumbnail {
-                background-color: rgba(0, 102, 179, 0.50);
+                background-color: rgba(0, 102, 179, .5);
             }
         }
 
@@ -90,7 +90,7 @@
     }
 
     &-btn:disabled:not(:first-of-type) {
-        border-color: rgba(0, 102, 179, 0.5);
+        border-color: rgba(0, 102, 179, .5);
     }
 
     &-btn:not(:last-of-type) {

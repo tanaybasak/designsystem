@@ -3,25 +3,25 @@
 
 const modal = (function() {
   const DOMStrings = {
-    modalContainer: "hcl-modal-type",
-    modalButton: "hcl-btn-modal-type"
+    modalContainer: 'hcl-modal-type',
+    modalButton: 'hcl-btn-modal-type'
   };
 
   const classNames = {
-    modalDisable: "hcl-modal-hide"
+    modalDisable: 'hcl-modal-hide'
   };
 
-  showModal = function(event) {
-    const modalType = event.target.getAttribute("data-modal-type");
+  const showModal = function(event) {
+    const modalType = event.target.getAttribute('data-modal-type');
     document
       .getElementById(`${DOMStrings.modalContainer}${modalType}`)
       .classList.remove(classNames.modalDisable);
   };
 
-  hideModal = function(event) {
+  const hideModal = function(event) {
     const modalType = event.target
-      .closest("section[data-modal-type]")
-      .getAttribute("data-modal-type");
+      .closest('section[data-modal-type]')
+      .getAttribute('data-modal-type');
     document
       .getElementById(`${DOMStrings.modalContainer}${modalType}`)
       .classList.add(classNames.modalDisable);
@@ -30,11 +30,17 @@ const modal = (function() {
   const setupEventListeners = function() {
     for (let type = 1; type <= 8; type++) {
       let elm = document.getElementById(`hcl-btn-modal-type${type}`);
-      elm ? elm.addEventListener("click", showModal) : null;
+      if (elm) {
+        elm.addEventListener('click', showModal);
+      }
       elm = document.getElementById(`hcl-modal-close-type${type}`);
-      elm ? elm.addEventListener("click", hideModal) : null;
+      if (elm) {
+        elm.addEventListener('click', hideModal);
+      }
       elm = document.getElementById(`hcl-modal-cancel-type${type}`);
-      elm ? elm.addEventListener("click", hideModal) : null;
+      if (elm) {
+        elm.addEventListener('click', hideModal);
+      }
     }
   };
 

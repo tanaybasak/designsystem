@@ -20,8 +20,8 @@
 
                 svg {
                     fill: $blue;
-                    width: 0.625rem;
-                    height: 0.3125rem;
+                    width: .625rem;
+                    height: .3125rem;
                 }
 
                 &[disabled] {
@@ -30,11 +30,11 @@
             }
 
             .increment-btn svg {
-                margin-top: 0.3125rem;
+                margin-top: .3125rem;
             }
 
             .decrement-btn svg {
-                margin-bottom: 0.3125rem;
+                margin-bottom: .3125rem;
             }
         }
 
@@ -51,7 +51,7 @@
     }
 
     &[disabled] {
-        opacity: 0.5;
+        opacity: .5;
     }
 
     &[data-invalid=true] .#{$prefix}-error-msg {
