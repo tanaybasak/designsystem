@@ -1,6 +1,6 @@
 {
   "name": "patron-css-dev",
-  "version": "1.0.18",
+  "version": "1.0.0",
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "HCL Products & Platforms",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^1.11.0"
+    "parcel": "^1.12.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
