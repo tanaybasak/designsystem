@@ -12,7 +12,7 @@ $colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $w
     $value in $colorMap {
         &.hcl-#{$key} {
             border: 1px solid $value;
-            border-left: 5px solid $value;
+            border-left: 0.3125rem solid $value;
             background-color: $white;
         }
     }

@@ -55,7 +55,7 @@
 }
 
 .#{$prefix}-tabs-panel {
-    padding-top: 10px;
+    padding-top: hcl-rem(10px);
     display: none;
 
     &.active {
