@@ -1,18 +1,18 @@
-button.hcl-loading {
+button.#{$prefix}-loading {
     @include loading();
     width: 16.88rem;
     height: 2.5rem;
     border-radius: 0;
 }
 
-label.hcl-loading {
+label.#{$prefix}-loading {
     @include loading();
     height: 1rem;
     width: 100%;
     display: flex;
 }
 
-p.hcl-loading {
+p.#{$prefix}-loading {
     @include loading();
     height: 1rem;
     width: 100%;
@@ -55,9 +55,9 @@ p.hcl-loading {
                 .#{$prefix}-accordion-content {
                     @include loading();
                     height: 6.25rem;
-                    margin-left: 25px;
-                    margin-right: 10px;
-                    margin-bottom: 10px;
+                    margin-left: 1.563rem;
+                    margin-right: 0.625rem;
+                    margin-bottom: 0.625rem;
                 }
             }
 
