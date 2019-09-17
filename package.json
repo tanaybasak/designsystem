@@ -10,7 +10,7 @@
     "stylelint": "stylelint '**/*.scss'; exit 0",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js ."
   },
-  "author": "HCL Products & Platforms",
+  "author": "HCL Software",
   "license": "ISC",
   "dependencies": {
     "parcel": "^1.12.3"
