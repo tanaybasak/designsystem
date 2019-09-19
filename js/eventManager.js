@@ -1,17 +1,25 @@
-// To handle Window Events
-const EventManager = {
-    functionList: {},
-    addEvent(eventName, fn, status) {
-        if (this.functionList[eventName]) {
-            this.functionList[eventName]();
-        }
-        this.functionList[eventName] = fn;
-        document.addEventListener(eventName, this.functionList[eventName], status);
-    },
-    removeEvent(eventName, status) {
-        console.log(this.functionList)
-        document.removeEventListener(eventName, this.functionList[eventName], status);
-        delete this.functionList[eventName]
+var _eventHandlers = {};
+
+export const addListener = (node, event, handler, capture) => {
+    if (!(node in _eventHandlers)) {
+        _eventHandlers[node] = {};
     }
-}
-export default EventManager;
+    if (!(event in _eventHandlers[node])) {
+        _eventHandlers[node][event] = [];
+    }
+    _eventHandlers[node][event].push([handler, capture]);
+    document.addEventListener(event, handler, capture);
+};
+
+export const removeListeners = (node, event) => {
+    if (node in _eventHandlers) {
+        var handlers = _eventHandlers[node];
+        if (event in handlers) {
+            var eventHandlers = handlers[event];
+            for (var i = eventHandlers.length; i--;) {
+                var handler = eventHandlers[i];
+                document.removeEventListener(event, handler[0], handler[1]);
+            }
+        }
+    }
+};
