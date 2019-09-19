@@ -8,8 +8,8 @@
     max-width: $tooltip-default-max-width;
     background-color: var(--black-lighter);
     color: var(--white);
-    border-radius: 0.25rem;
-    padding: 0.5rem;
+    border-radius: .25rem;
+    padding: .5rem;
     box-shadow: 0 4px 8px 0 $tooltip-box-shadow;
     z-index: $tooltip-zindex;
     top:0;
@@ -50,13 +50,13 @@
         background-color: var(--white);
         color: var(--dark-blue);
         max-width: $tooltip-interactive-max-width;
-        border: 0.0625rem solid var(--grey-lighter);
+        border: .0625rem solid var(--grey-lighter);
         padding: 1rem;
 
         .#{$prefix}-tooltip-arrow {
             background: var(--white);
-            border-top: 0.0625rem solid var(--grey-lighter);
-            border-right: 0.0625rem solid var(--grey-lighter);
+            border-top: .0625rem solid var(--grey-lighter);
+            border-right: .0625rem solid var(--grey-lighter);
 
             &[data-direction='bottom'] {
                 top: -($tooltip-arrow-size-interactive-position);

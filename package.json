@@ -1,25 +1,35 @@
 {
   "name": "patron-css-dev",
-  "version": "1.0.18",
+  "version": "1.0.0",
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
   "scripts": {
     "start": "parcel index.html -d output --port 8000",
-    "build": "parcel build index.html -d dist && node defaultBundleName.js --global patron --no-source-maps"
+    "build": "parcel build index.html -d dist && node defaultBundleName.js --global patron --no-source-maps",
+    "stylelint": "stylelint '**/*.scss'; exit 0",
+    "pretest": "eslint --ignore-path .gitignore postcss.config.js ."
   },
   "author": "HCL Products & Platforms",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^1.11.0"
+    "parcel": "^1.12.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "autoprefixer": "^9.4.10",
+    "babel-eslint": "^10.0.3",
     "delegate": "^3.2.0",
+    "eslint": "^6.2.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "parcel-bundler": "^1.11.0",
     "postcss-cli": "^6.1.2",
-    "sass": "^1.17.3"
+    "sass": "^1.17.3",
+    "stylelint": "^10.1.0"
   },
   "browserslist": [
     "> .1%",
@@ -31,7 +41,19 @@
       "selector-type-case": "lower",
       "string-quotes": "single",
       "selector-pseudo-element-colon-notation": "double",
-      "unit-blacklist": ["em"]
+      "unit-blacklist": [
+        "em"
+      ],
+      "block-no-empty": true,
+      "unit-no-unknown": true,
+      "comment-no-empty": true,
+      "value-no-vendor-prefix": true,
+      "function-calc-no-invalid": true,
+      "no-descending-specificity": true,
+      "no-duplicate-at-import-rules": true,
+      "no-duplicate-selectors": true,
+      "number-no-trailing-zeros": true,
+      "length-zero-no-unit": true
     }
   }
 }

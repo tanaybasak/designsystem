@@ -2,10 +2,10 @@
     text-align: center;
     cursor: pointer;
     line-height: 1rem;
-    font-size: 0.875rem;
+    font-size: .875rem;
     border: 1px solid transparent;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
     background: transparent;
     color: var(--black);
 }
@@ -14,8 +14,18 @@
     @extend %button;
     color: var(--white);
     background: var(--blue);
-    padding: 0.625rem 1rem;
+    padding: .625rem 1rem;
     height: 2.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &-icon {
+        width: 1rem;
+        height: 1rem;
+        margin-left: .5rem;
+        fill: var(--white);
+    }
 }
 
 a.#{$prefix}-primary {
@@ -69,50 +79,75 @@ a.#{$prefix}-primary {
 .#{$prefix}-secondary {
     background: transparent;
     color: var(--blue);
-    border: 1px solid var(--blue);
+    border: 0.0625rem solid var(--blue);
 
     &:hover,
     &:focus {
         background: var(--blue);
         color: var(--white);
-        border: 1px solid var(--blue);
+        border: 0.0625rem solid var(--blue);
+
+        >.#{$prefix}-btn-icon {
+            fill: var(--white);
+        }
     }
 
     &:disabled,
     &[disabled=disabled] {
         color: var(--primary-disabled);
-        border: 1px solid var(--primary-disabled);
+        border: 0.0625rem solid var(--primary-disabled);
         cursor: not-allowed;
 
         &:hover {
             background: transparent;
             color: var(--primary-disabled);
-            border: 1px solid var(--primary-disabled);
+            border: 0.0625rem solid var(--primary-disabled);
         }
+
+        >.#{$prefix}-btn-icon {
+            fill: var(--primary-disabled);
+        }
+    }
+
+
+    >.#{$prefix}-btn-icon {
+        fill: var(--blue);
     }
 
     &.#{$prefix}-danger {
         background: transparent;
         color: var(--red);
-        border: 1px solid var(--red);
+        border: 0.0625rem solid var(--red);
 
         &:hover,
         &:focus {
             background: var(--danger-secondary);
             color: var(--white);
+
+            >.#{$prefix}-btn-icon {
+                fill: var(--white);
+            }
         }
 
         &:disabled,
         &[disabled=disabled] {
-            border: 1px solid var(--danger-disabled);
+            border: 0.0625rem solid var(--danger-disabled);
             color: var(--danger-disabled);
             @extend %disable;
 
             &:hover {
                 background: transparent;
-                border: 1px solid var(--danger-disabled);
+                border: 0.0625rem solid var(--danger-disabled);
                 color: var(--danger-disabled);
+
+                >.#{$prefix}-btn-icon {
+                    fill: var(--red);
+                }
             }
+        }
+
+        >.#{$prefix}-btn-icon {
+            fill: var(--red);
         }
     }
 }
@@ -125,8 +160,11 @@ a.#{$prefix}-primary {
     &:hover,
     &:focus {
         background: var(--blue);
-        ;
         color: var(--white);
+
+        >.#{$prefix}-btn-icon {
+            fill: var(--white);
+        }
     }
 
     &:disabled,
@@ -137,11 +175,19 @@ a.#{$prefix}-primary {
         &:hover {
             background: transparent;
             color: var(--primary-disabled);
+
+            >.#{$prefix}-btn-icon {
+                fill: var(--blue);
+            }
         }
+    }
+
+    >.#{$prefix}-btn-icon {
+        fill: var(--blue);
     }
 }
 
 .#{$prefix}-sm {
-    padding: 0.4375rem 1rem;
+    padding: .4375rem 1rem;
     height: 2rem;
 }

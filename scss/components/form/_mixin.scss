@@ -15,7 +15,7 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
 // getFormControl(<control>)
 @mixin getFormControl($which) {
     @if ($which=='inputcontrol') {
-        font-size: 0.875rem;
+        font-size: .875rem;
         width: 100%;
         height: $input-height;
         padding: $input-padding-y $input-padding-x;
@@ -36,14 +36,14 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
         }
 
         &[disabled] {
-            opacity: 0.5;
+            opacity: .5;
             cursor: not-allowed;
             background-color: $background-disabled;
 
             &~label,
             &~.#{$prefix}-error-msg,
             &~.#{$prefix}-helper-text {
-                opacity: 0.5;
+                opacity: .5;
             }
         }
     }
@@ -58,8 +58,8 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
     @if ($which=='inputcontrol') {
         ~.#{$prefix}-error-msg {
             @include getFontWeight('regular');
-            font-size: 0.75rem;
-            line-height: getLineHeight(0.75rem);
+            font-size: .75rem;
+            line-height: getLineHeight(.75rem);
             order: 4;
             margin-top: .25rem;
             max-height: 12.5rem;

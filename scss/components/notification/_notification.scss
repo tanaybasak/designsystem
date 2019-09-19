@@ -6,11 +6,11 @@ $colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $w
     margin: 1rem 0;
     background-color: #eee;
     z-index: 999;
-    padding: 0.75rem 1rem;
+    padding: .75rem 1rem;
 
     @each $key,
     $value in $colorMap {
-        &.hcl-#{$key} {
+        &.#{$prefix}-#{$key} {
             border: 1px solid $value;
             border-left: 5px solid $value;
             background-color: $white;
@@ -31,17 +31,17 @@ $colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $w
             align-items: center;
           
             .#{$prefix}-notification-title {
-                font-size: 0.875rem;
-                line-height: getLineHeight(0.875rem);
+                font-size: .875rem;
+                line-height: getLineHeight(.875rem);
                 letter-spacing: 0;
                 color: #132730;
-                margin-right: 0.5rem;
+                margin-right: .5rem;
                 font-weight: 600;
             }
 
             .#{$prefix}-notification-subtitle {
-                font-size: 0.875rem;
-                line-height: getLineHeight(0.875rem);
+                font-size: .875rem;
+                line-height: getLineHeight(.875rem);
                 @include getFontWeight('regular');
                 word-break: break-word;
                 color: #aaa;
@@ -50,13 +50,13 @@ $colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $w
     }
 
     &-close {
-        outline: 0.125rem solid transparent;
-        outline-offset: -0.125rem;
+        outline: .125rem solid transparent;
+        outline-offset: -.125rem;
         border: none;
         margin-left: auto;
         padding: 0;
-        min-height: 0.625rem;
-        min-width: 0.625rem;
+        min-height: .625rem;
+        min-width: .625rem;
         transition: outline .11s, background-color .11s;
         @include hcl-close-icon(16);
     }

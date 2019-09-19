@@ -86,6 +86,7 @@ class Tooltip {
             }
         }
     }
+  }
 
     show(e) {
         if (this.status) {
@@ -136,6 +137,7 @@ class Tooltip {
         this.tooltipDirection(this.element, tooltip, icon, this.direction, this.type);
         this.status = true;
     }
+  };
 
     hide() {
         if (!this.status) {
@@ -155,7 +157,11 @@ class Tooltip {
             document.body.removeChild(tooltip);
         }
         this.status = false;
+      }
+      EventManager.removeEvent('click', true);
+      EventManager.removeEvent('scroll', true);
     }
+  }
 
     tooltipDirection(parent, tooltip, icon, posHorizontal, type) {
         const dist = 10;
@@ -166,11 +172,60 @@ class Tooltip {
         icon.setAttribute("data-direction", this.direction);
         this.showTooltip(parentCoords, tooltip, icon, this.positionDirection, dist, type);
     }
-
-    updateIconPosition(icon, position, value) {
-        icon.removeAttribute("style");
-        icon.style[position] = getRem(value);
+    let tooltip = null;
+    let icon = null;
+    if (this.type === 'definition' && this.eventName !== 'click') {
+      this.element.classList.add(`${PREFIX}-tooltip-dottedline`);
     }
+    const elementId = 'tooltip-' + elementNo++;
+    if (this.dataValue.startsWith('#')) {
+      const content = document.getElementById(this.dataValue.substr(1));
+      tooltip = content.parentElement;
+      tooltip.classList.add('show');
+      icon = content.parentElement.children[0];
+    } else {
+      this.element.setAttribute('aria-describedby', elementId);
+      tooltip = document.createElement('div');
+      tooltip.setAttribute('id', elementId);
+      tooltip.className = `${PREFIX}-tooltip ${PREFIX}-remove-tooltip ${PREFIX}-tooltip-${this.type} show`;
+      if (this.eventName === 'click') {
+        tooltip.setAttribute('data-focus-on-click', true);
+      }
+      icon = document.createElement('div');
+      icon.className = `${PREFIX}-tooltip-arrow`;
+      const content = document.createElement('div');
+      content.innerHTML = this.dataValue;
+      tooltip.appendChild(icon);
+      tooltip.appendChild(content);
+      document.body.appendChild(tooltip);
+    }
+    if (this.eventName === 'click') {
+      EventManager.addEvent(
+        'click',
+        e => {
+          this.closeTooltip(e);
+        },
+        true
+      );
+    }
+    EventManager.addEvent(
+      'scroll',
+      e => {
+        this.updatePositionOnScroll(e);
+      },
+      true
+    );
+    tooltip.style.minWidth = tooltip.offsetWidth + 'px';
+    this.tooltipDirection(
+      this.element,
+      tooltip,
+      icon,
+      this.direction,
+      this.type
+    );
+    this.status = true;
+    e.stopPropagation();
+  }
 
     showTooltip(parentCoords, tooltip, icon, posHorizontal, dist, type) {
         let left = 0;
@@ -266,6 +321,7 @@ class Tooltip {
         }
         tooltip.classList.add("show");
     }
+  }
 
     getDirectionPosition(parentCoords, tooltip, posHorizontal) {
         let left = 0;
@@ -332,8 +388,25 @@ class Tooltip {
                 break;
             }
         }
-        return direction;
+        break;
+      }
+      case 'bottom': {
+        left =
+          parseInt(parentCoords.left) +
+          (parentCoords.width - tooltip.offsetWidth) / 2;
+        right =
+          parseInt(parentCoords.right) +
+          (tooltip.offsetWidth - parentCoords.width) / 2;
+        if (left < 0) {
+          direction = 'bottom left';
+        } else if (right > window.innerWidth) {
+          direction = 'bottom right';
+        }
+        break;
+      }
     }
+    return direction;
+  }
 
     getDirection(parentCoords, tooltip, dist, posHorizontal) {
         let newDirection = posHorizontal;
@@ -406,9 +479,13 @@ class Tooltip {
                 }
                 break;
             }
+          }
         }
-        return newDirection;
+        break;
+      }
     }
+    return newDirection;
+  }
 
     isOutofBound(parentCoords, tooltip, dist, posHorizontal) {
         let isOutofBound = false;
@@ -459,6 +536,10 @@ class Tooltip {
             });
             this.ticking = true;
         }
+        this.ticking = false;
+      });
+      this.ticking = true;
     }
+  }
 }
 export default Tooltip;

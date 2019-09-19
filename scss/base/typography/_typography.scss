@@ -59,7 +59,7 @@ $value in $textAlignments-map {
 // White space
 @each $key,
 $value in $whiteSpaces-map {
-    .#{$prefix}-whitespace-#{key} {
+    .#{$prefix}-whitespace-#{$key} {
         @include getWhiteSpace($key);
     }
 }
@@ -67,7 +67,7 @@ $value in $whiteSpaces-map {
 // Writing Mode
 @each $key,
 $value in $writingModes-map {
-    .#{$prefix}-writing-#{key} {
+    .#{$prefix}-writing-#{$key} {
         @include getWritingMode($key);
     }
 }
@@ -132,39 +132,39 @@ h6,
     @include getFontWeight(semibold);
 }
 
-// font-size: 0.875rem or 14px
+// font-size: .875rem or 14px
 .#{$prefix}-type-zeta {
-    font-size: 0.875rem;
-    line-height: getLineHeight(0.875rem);
+    font-size: .875rem;
+    line-height: getLineHeight(.875rem);
     @include getFontWeight(semibold);
 }
 
-// font-size: 0.75rem or 12px
+// font-size: .75rem or 12px
 .#{$prefix}-type-omega {
-    font-size: 0.75rem;
-    line-height: getLineHeight(0.75rem);
+    font-size: .75rem;
+    line-height: getLineHeight(.75rem);
     @include getFontWeight(semibold);
 }
 
-// font-size: 0.6875rem or 10px
+// font-size: .6875rem or 10px
 .#{$prefix}-type-legal {
-    font-size: 0.6875rem;
-    line-height: getLineHeight(0.6875rem);
+    font-size: .6875rem;
+    line-height: getLineHeight(.6875rem);
     @include getFontWeight(regular);
 }
 
-// font-size: 0.75rem or 12px
+// font-size: .75rem or 12px
 .#{$prefix}-type-caption {
-    font-size: 0.75rem;
-    line-height: getLineHeight(0.75rem);
+    font-size: .75rem;
+    line-height: getLineHeight(.75rem);
     @include getFontWeight(regular);
 }
 
 // Anchor link
 a {
     color: theme-color('primary');
-    font-size: 0.875rem;
-    line-height: getLineHeight(0.875rem);
+    font-size: .875rem;
+    line-height: getLineHeight(.875rem);
     text-decoration: none;
 
     &:hover {
@@ -186,8 +186,7 @@ a {
 }
 
 p,
-.#{$prefix}-p,
-.#{$prefix}-16 {
+.#{$prefix}-p {
     font-size: 1rem;
     line-height: getLineHeight(1rem);
     color: inherit;
