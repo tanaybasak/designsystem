@@ -79,7 +79,7 @@
         display: inline-block;
 
 
-        >input:focus~.hcl-overflow-menu {
+        >input:focus~.#{$prefix}-overflow-menu {
             display: block;
         }
     }
