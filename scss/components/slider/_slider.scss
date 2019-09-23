@@ -4,8 +4,8 @@
     align-items: center;
     height: 2rem;
 
-    .hcl-slider-bottom-range,
-    .hcl-slider-top-range {
+    .#{$prefix}-slider-bottom-range,
+    .#{$prefix}-slider-top-range {
         display: inline-flex;
         margin: 0 .5rem;
     }
@@ -82,7 +82,7 @@
         }
     }
 
-    >input.hcl-slider-text-input {
+    >input.#{$prefix}-slider-text-input {
         font-size: 0.875rem;
         max-width: 4rem;
         min-width: 2rem;
