@@ -79,9 +79,9 @@ class Navigation {
     const comp = event.currentTarget;
 
     if (this.activeItem && this.activeItem.classList) {
-      this.activeItem.classList.toggle('hcl-sidebar-item-active', false);
+      this.activeItem.classList.toggle(`${PREFIX}-sidebar-item-active`, false);
     }
-    comp.classList.add('hcl-sidebar-item-active');
+    comp.classList.add(`${PREFIX}-sidebar-item-active`);
     this.activeItem = comp;
   };
 

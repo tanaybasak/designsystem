@@ -10,7 +10,7 @@ $colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $w
 
     @each $key,
     $value in $colorMap {
-        &.hcl-#{$key} {
+        &.#{$prefix}-#{$key} {
             border: 1px solid $value;
             border-left: 5px solid $value;
             background-color: $white;
