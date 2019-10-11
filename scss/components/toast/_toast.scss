@@ -6,22 +6,14 @@
  *******************************************************************
  */
 
-$toastThemes: 'error',
-'info',
-'success',
-'warning';
+$colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $warning);
 
 @mixin getToastThemes() {
-    @each $theme in $toastThemes {
-        &-#{$theme} {
-            border-left: .3125rem solid var(--#{$theme});
 
-            .#{$prefix}-toast-icon {
-                path {
-                    fill: var(--#{$theme});
-                    stroke: var(--#{$theme});
-                }
-            }
+    @each $key,
+    $value in $colorMap {
+        &-#{$key} {
+            border-left: .3125rem solid $value;
         }
     }
 }
@@ -75,6 +67,6 @@ $toastThemes: 'error',
         min-height: .625rem;
         min-width: .625rem;
         transition: outline .11s, background-color .11s;
-        @include hcl-close-icon(16);
+        @include hcl-close-icon(14);
     }
 }
