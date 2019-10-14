@@ -22,6 +22,9 @@
                 text-align: left;
                 height: 3rem;
                 vertical-align: middle;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
         }
     }
@@ -39,6 +42,7 @@
 
                 &.sortable {
                     position: relative;
+                    padding-right: 2rem;
 
                     &::after {
                         content: '';
