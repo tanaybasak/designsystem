@@ -5,11 +5,12 @@
   "main": "dist/patron-style.js",
   "scripts": {
     "start": "parcel index.html -d output --port 8000",
-    "build": "parcel build index.html -d dist && node defaultBundleName.js --global patron --no-source-maps",
+    "build": "npm run clean && parcel build js/index.js -o patron --no-source-maps ",
+    "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss'; exit 0",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js ."
   },
-  "author": "HCL Products & Platforms",
+  "author": "HCL Software",
   "license": "ISC",
   "dependencies": {
     "parcel": "^1.12.3"
@@ -28,6 +29,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "parcel-bundler": "^1.11.0",
     "postcss-cli": "^6.1.2",
+    "rimraf": "^3.0.0",
     "sass": "^1.17.3",
     "stylelint": "^10.1.0"
   },
