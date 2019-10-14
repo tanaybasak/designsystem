@@ -5,7 +5,7 @@ $loading-bg : rgba(61, 112, 178, .1);
     border: none;
     box-shadow: none;
     pointer-events: none;
-    background: $loading-bg;
+    background: $loading-bg !important;
     color: transparent;
 
     &:hover,
@@ -18,7 +18,7 @@ $loading-bg : rgba(61, 112, 178, .1);
 
     &>* {
         color: transparent;
-        }
+    }
 
     &::before {
         content: '';
