@@ -11,9 +11,7 @@
   },
   "author": "HCL Products & Platforms",
   "license": "ISC",
-  "dependencies": {
-    "parcel": "^1.12.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
@@ -26,7 +24,7 @@
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "parcel-bundler": "^1.11.0",
+    "parcel-bundler": "^1.12.4",
     "postcss-cli": "^6.1.2",
     "sass": "^1.17.3",
     "stylelint": "^10.1.0"
