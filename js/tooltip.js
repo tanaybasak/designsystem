@@ -4,7 +4,7 @@ import { getRem } from './utils/dom';
 let elementNo = 1;
 let tooltipElementRef = 1;
 const tooltipContents = {};
-const tooltipAdjustment = 2;
+const tooltipAdjustment = 5;
 class Tooltip {
   constructor(element) {
     this.element = element;
