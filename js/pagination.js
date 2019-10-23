@@ -32,7 +32,7 @@ class Pagination {
     };
 
     this.string = {
-      dropdownsvg: `<svg class='hcl-select-arrow' width='10' height='5' viewBox='0 0 10 5'>
+      dropdownsvg: `<svg class='${PREFIX}-select-arrow' width='10' height='5' viewBox='0 0 10 5'>
                             <path d='M0 0l5 4.998L10 0z' fill-rule='evenodd'></path>
                           </svg>`,
       pageItemsLimit: 100

@@ -1,8 +1,10 @@
-import EventManager from './eventManager';
+import { addListener, removeListeners } from './eventManager';
 import { PREFIX } from './utils/config';
 import { getRem } from './utils/dom';
 let elementNo = 1;
-
+let tooltipElementRef = 1;
+const tooltipContents = {};
+const tooltipAdjustment = 2;
 class Tooltip {
   constructor(element) {
     this.element = element;
@@ -15,11 +17,13 @@ class Tooltip {
     this.positionDirection = this.direction;
     this.status = false;
     this.diff = 0;
+    this.targetTooltipContent = null;
+    this.tooltipId = tooltipElementRef++;
   }
 
   attachEvents() {
     if (this.dataValue.startsWith('#')) {
-      if (!this.isTooltipElementExist()) {
+      if (!tooltipContents[this.dataValue.substr(1)]) {
         const element = document.getElementById(this.dataValue.substr(1));
         if (element) {
           const elementId = 'tooltip-' + elementNo++;
@@ -34,72 +38,65 @@ class Tooltip {
           icon.className = `${PREFIX}-tooltip-arrow`;
           tooltip.appendChild(icon);
           tooltip.appendChild(element);
-          document.body.appendChild(tooltip);
+          tooltipContents[this.dataValue.substr(1)] = tooltip;
+          this.targetTooltipContent = tooltip;
         }
       } else {
+        this.targetTooltipContent = tooltipContents[this.dataValue.substr(1)];
         this.element.setAttribute(
           'aria-describedby',
-          document.querySelector(this.dataValue).parentElement.id
+          this.targetTooltipContent.id
         );
       }
     }
-    this.element.addEventListener(this.eventName, e => {
-      this.show(e);
+    this.element.addEventListener(this.eventName, () => {
+      this.show();
     });
+
     if (this.eventName !== 'click') {
-      this.element.addEventListener('focus', e => {
-        this.show(e);
+      this.element.addEventListener('focus', () => {
+        this.show();
       });
-      this.element.addEventListener('blur', e => {
-        this.hide(e);
+      this.element.addEventListener('blur', () => {
+        this.hide();
       });
-      this.element.addEventListener('mouseout', e => {
-        this.hide(e);
+      this.element.addEventListener('mouseout', () => {
+        this.hide();
       });
     } else {
       this.element.addEventListener('keypress', e => {
         var key = e.which || e.keyCode;
         if (key === 13) {
-          this.show(e);
+          this.show();
         }
       });
     }
   }
 
-  isTooltipElementExist = () => {
-    const element = document.querySelector(this.dataValue);
-    if (
-      element &&
-      element.parentElement.classList.contains(`${PREFIX}-tooltip`)
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   closeTooltip(e) {
     const tooltip = document.getElementById(
       this.element.getAttribute('aria-describedby')
     );
-    if (!e || (tooltip && !tooltip.contains(e.target))) {
+    if (
+      !e ||
+      (tooltip &&
+        !(tooltip.contains(e.target) || this.element.contains(e.target)))
+    ) {
       if (tooltip) {
-        if (tooltip.classList.contains(`${PREFIX}-remove-tooltip`)) {
-          document.body.removeChild(tooltip);
-        } else {
-          tooltip.classList.remove('show');
-        }
+        removeListeners('id-' + this.tooltipId, 'click');
+        removeListeners('id-' + this.tooltipId, 'scroll');
+        removeListeners('id-' + this.tooltipId, 'keypress');
+        document.body.removeChild(tooltip);
         this.status = false;
       }
-      EventManager.removeEvent('click', true);
-      EventManager.removeEvent('scroll', true);
     }
   }
 
-  show(e) {
+  show() {
     if (this.status) {
       return;
     }
+
     let tooltip = null;
     let icon = null;
     if (this.type === 'definition' && this.eventName !== 'click') {
@@ -107,15 +104,14 @@ class Tooltip {
     }
     const elementId = 'tooltip-' + elementNo++;
     if (this.dataValue.startsWith('#')) {
-      const content = document.getElementById(this.dataValue.substr(1));
-      tooltip = content.parentElement;
-      tooltip.classList.add('show');
-      icon = content.parentElement.children[0];
+      tooltip = this.targetTooltipContent;
+      icon = tooltip.children[0];
+      document.body.appendChild(tooltip);
     } else {
       this.element.setAttribute('aria-describedby', elementId);
       tooltip = document.createElement('div');
       tooltip.setAttribute('id', elementId);
-      tooltip.className = `${PREFIX}-tooltip ${PREFIX}-remove-tooltip ${PREFIX}-tooltip-${this.type} show`;
+      tooltip.className = `${PREFIX}-tooltip ${PREFIX}-remove-tooltip ${PREFIX}-tooltip-${this.type}`;
       if (this.eventName === 'click') {
         tooltip.setAttribute('data-focus-on-click', true);
       }
@@ -128,15 +124,28 @@ class Tooltip {
       document.body.appendChild(tooltip);
     }
     if (this.eventName === 'click') {
-      EventManager.addEvent(
+      addListener(
+        'id-' + this.tooltipId,
         'click',
         e => {
           this.closeTooltip(e);
         },
         true
       );
+      addListener(
+        'id-' + this.tooltipId,
+        'keypress',
+        e => {
+          var key = e.which || e.keyCode;
+          if (key === 13) {
+            this.closeTooltip(e);
+          }
+        },
+        true
+      );
     }
-    EventManager.addEvent(
+    addListener(
+      'id-' + this.tooltipId,
       'scroll',
       e => {
         this.updatePositionOnScroll(e);
@@ -148,27 +157,30 @@ class Tooltip {
       this.element,
       tooltip,
       icon,
-      this.direction,
+      this.element.getAttribute('data-direction'),
       this.type
     );
     this.status = true;
-    e.stopPropagation();
   }
 
   hide() {
     if (!this.status) {
       return;
     }
+
     if (this.type === 'definition') {
       this.element.classList.remove(`${PREFIX}-tooltip-dottedline`);
     }
     const tooltip = document.getElementById(
       this.element.getAttribute('aria-describedby')
     );
-    if (this.dataValue.startsWith('#')) {
-      tooltip.classList.remove('show');
-    } else {
-      if (tooltip) document.body.removeChild(tooltip);
+    if (tooltip) {
+      removeListeners('id-' + this.tooltipId, 'scroll');
+      if (this.eventName === 'click') {
+        removeListeners('id-' + this.tooltipId, 'click');
+        removeListeners('id-' + this.tooltipId, 'keypress');
+      }
+      document.body.removeChild(tooltip);
     }
     this.status = false;
   }
@@ -204,6 +216,163 @@ class Tooltip {
     icon.style[position] = getRem(value);
   }
 
+  multiDirectionPositioning(
+    type,
+    parentCoords,
+    icon,
+    arrowSize,
+    top,
+    bottom,
+    left,
+    right
+  ) {
+    switch (type) {
+      case 'left': {
+        if (this.diff <= 0) {
+          this.diff = this.diff - tooltipAdjustment;
+
+          this.updateIconPosition(
+            icon,
+            'left',
+            parentCoords.left +
+              parentCoords.width / 2 -
+              arrowSize -
+              tooltipAdjustment
+          );
+        } else if (this.diff >= 1 && this.diff < tooltipAdjustment) {
+          this.diff = tooltipAdjustment - this.diff;
+
+          this.updateIconPosition(
+            icon,
+            'left',
+            parentCoords.left +
+              parentCoords.width / 2 -
+              arrowSize -
+              (tooltipAdjustment + this.diff)
+          );
+
+          this.diff = -tooltipAdjustment;
+        } else {
+          this.updateIconPosition(
+            icon,
+            'left',
+            parentCoords.left + parentCoords.width / 2 - arrowSize
+          );
+        }
+        break;
+      }
+      case 'right': {
+        if (right >= window.innerWidth) {
+          this.diff = right - window.innerWidth + tooltipAdjustment;
+          this.updateIconPosition(
+            icon,
+            'right',
+            window.innerWidth -
+              parentCoords.right +
+              parentCoords.width / 2 -
+              arrowSize -
+              tooltipAdjustment
+          );
+        } else if (
+          right < window.innerWidth &&
+          right >= window.innerWidth - tooltipAdjustment
+        ) {
+          this.updateIconPosition(
+            icon,
+            'right',
+            window.innerWidth -
+              parentCoords.right +
+              parentCoords.width / 2 -
+              arrowSize -
+              (tooltipAdjustment + (window.innerWidth - right))
+          );
+          this.diff = tooltipAdjustment;
+        } else {
+          this.diff = right - window.innerWidth;
+          this.updateIconPosition(
+            icon,
+            'right',
+            window.innerWidth -
+              parentCoords.right +
+              parentCoords.width / 2 -
+              arrowSize
+          );
+        }
+        break;
+      }
+      case 'top': {
+        if (this.diff <= 0) {
+          this.diff = this.diff - tooltipAdjustment;
+
+          this.updateIconPosition(
+            icon,
+            'top',
+            parentCoords.top +
+              parentCoords.height / 2 -
+              arrowSize -
+              tooltipAdjustment
+          );
+        } else if (this.diff >= 1 && this.diff < tooltipAdjustment) {
+          this.diff = tooltipAdjustment - this.diff;
+          this.updateIconPosition(
+            icon,
+            'top',
+            parentCoords.top +
+              parentCoords.height / 2 -
+              arrowSize -
+              tooltipAdjustment
+          );
+
+          this.diff = -this.diff;
+        } else {
+          this.updateIconPosition(
+            icon,
+            'top',
+            parentCoords.top + parentCoords.height / 2 - arrowSize
+          );
+        }
+        break;
+      }
+      case 'bottom': {
+        if (bottom >= window.innerHeight) {
+          this.diff = this.diff + tooltipAdjustment;
+          this.updateIconPosition(
+            icon,
+            'bottom',
+            window.innerHeight -
+              (parentCoords.bottom - parentCoords.height / 2) -
+              arrowSize -
+              tooltipAdjustment
+          );
+        } else if (
+          bottom < window.innerHeight &&
+          bottom >= window.innerHeight - tooltipAdjustment
+        ) {
+          this.updateIconPosition(
+            icon,
+            'bottom',
+            window.innerHeight -
+              (parentCoords.bottom - parentCoords.height / 2) -
+              arrowSize -
+              tooltipAdjustment -
+              (window.innerHeight - bottom)
+          );
+          this.diff = tooltipAdjustment;
+        } else {
+          this.diff = right - window.innerWidth;
+          this.updateIconPosition(
+            icon,
+            'bottom',
+            window.innerHeight -
+              (parentCoords.bottom - parentCoords.height / 2) -
+              arrowSize
+          );
+        }
+        break;
+      }
+    }
+  }
+
   showTooltip(parentCoords, tooltip, icon, posHorizontal, dist, type) {
     let left = 0;
     let top = 0;
@@ -228,22 +397,27 @@ class Tooltip {
         if (this.diff === undefined) {
           if (posHorizontal === 'left top') {
             this.diff = top;
-            this.updateIconPosition(
-              icon,
+            this.multiDirectionPositioning(
               'top',
-              parentCoords.top + parentCoords.height / 2 - arrowSize
+              parentCoords,
+              icon,
+              arrowSize
             );
           } else {
             bottom =
               (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 +
               tooltip.offsetHeight / 2;
             this.diff = bottom - window.innerHeight;
-            this.updateIconPosition(
-              icon,
+
+            this.multiDirectionPositioning(
               'bottom',
-              window.innerHeight -
-                (parentCoords.bottom - parentCoords.height / 2) -
-                arrowSize
+              parentCoords,
+              icon,
+              arrowSize,
+              top,
+              bottom,
+              left,
+              right
             );
           }
         }
@@ -266,23 +440,27 @@ class Tooltip {
         if (this.diff === undefined) {
           if (posHorizontal === 'right top') {
             this.diff = top;
-            this.updateIconPosition(
-              icon,
+            this.multiDirectionPositioning(
               'top',
-              parentCoords.top + parentCoords.height / 2 - arrowSize
+              parentCoords,
+              icon,
+              arrowSize
             );
           } else {
             bottom =
               (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 +
               tooltip.offsetHeight / 2;
             this.diff = bottom - window.innerHeight;
-            this.updateIconPosition(
-              icon,
+
+            this.multiDirectionPositioning(
               'bottom',
-              window.innerHeight -
-                parentCoords.bottom +
-                parentCoords.height / 2 -
-                arrowSize
+              parentCoords,
+              icon,
+              arrowSize,
+              top,
+              bottom,
+              left,
+              right
             );
           }
         }
@@ -306,23 +484,31 @@ class Tooltip {
         if (this.diff === undefined) {
           if (posHorizontal === 'top left') {
             this.diff = left;
-            this.updateIconPosition(
-              icon,
+
+            this.multiDirectionPositioning(
               'left',
-              parentCoords.left + parentCoords.width / 2 - arrowSize
+              parentCoords,
+              icon,
+              arrowSize,
+              top,
+              bottom,
+              left,
+              right
             );
           } else {
             right =
               parseInt(parentCoords.right) +
               (tooltip.offsetWidth - parentCoords.width) / 2;
-            this.diff = right - window.innerWidth;
-            this.updateIconPosition(
-              icon,
+
+            this.multiDirectionPositioning(
               'right',
-              window.innerWidth -
-                parentCoords.right +
-                parentCoords.width / 2 -
-                arrowSize
+              parentCoords,
+              icon,
+              arrowSize,
+              top,
+              bottom,
+              left,
+              right
             );
           }
         }
@@ -346,23 +532,30 @@ class Tooltip {
         if (this.diff === undefined) {
           if (posHorizontal === 'bottom left') {
             this.diff = left;
-            this.updateIconPosition(
-              icon,
+            this.multiDirectionPositioning(
               'left',
-              parentCoords.left + parentCoords.width / 2 - arrowSize
+              parentCoords,
+              icon,
+              arrowSize,
+              top,
+              bottom,
+              left,
+              right
             );
           } else {
             right =
               parseInt(parentCoords.right) +
               (tooltip.offsetWidth - parentCoords.width) / 2;
-            this.diff = right - window.innerWidth;
-            this.updateIconPosition(
-              icon,
+
+            this.multiDirectionPositioning(
               'right',
-              window.innerWidth -
-                parentCoords.right +
-                parentCoords.width / 2 -
-                arrowSize
+              parentCoords,
+              icon,
+              arrowSize,
+              top,
+              bottom,
+              left,
+              right
             );
           }
         }
@@ -371,6 +564,7 @@ class Tooltip {
       tooltip.style.left = getRem(left + offsetX);
       tooltip.style.top = getRem(top + offsetY);
     }
+    tooltip.classList.add('show');
   }
 
   getDirectionPosition(parentCoords, tooltip, posHorizontal) {
@@ -387,9 +581,9 @@ class Tooltip {
         bottom =
           (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 +
           tooltip.offsetHeight / 2;
-        if (top < 0) {
+        if (top < tooltipAdjustment) {
           direction = 'left top';
-        } else if (bottom > window.innerHeight) {
+        } else if (bottom > window.innerHeight - tooltipAdjustment) {
           direction = 'left bottom';
         }
         break;
@@ -401,9 +595,9 @@ class Tooltip {
         bottom =
           (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 +
           tooltip.offsetHeight / 2;
-        if (top < 0) {
+        if (top < tooltipAdjustment) {
           direction = 'right top';
-        } else if (bottom > window.innerHeight) {
+        } else if (bottom > window.innerHeight - tooltipAdjustment) {
           direction = 'right bottom';
         }
 
@@ -416,9 +610,9 @@ class Tooltip {
         right =
           parseInt(parentCoords.right) +
           (tooltip.offsetWidth - parentCoords.width) / 2;
-        if (left < 0) {
+        if (left < tooltipAdjustment) {
           direction = 'top left';
-        } else if (right > window.innerWidth) {
+        } else if (right > window.innerWidth - tooltipAdjustment) {
           direction = 'top right';
         }
         break;
@@ -430,9 +624,9 @@ class Tooltip {
         right =
           parseInt(parentCoords.right) +
           (tooltip.offsetWidth - parentCoords.width) / 2;
-        if (left < 0) {
+        if (left < tooltipAdjustment) {
           direction = 'bottom left';
-        } else if (right > window.innerWidth) {
+        } else if (right > window.innerWidth - tooltipAdjustment) {
           direction = 'bottom right';
         }
         break;
@@ -520,7 +714,10 @@ class Tooltip {
     let isOutofBound = false;
     switch (posHorizontal) {
       case 'left': {
-        if (parseInt(parentCoords.left) - dist - tooltip.offsetWidth < 0) {
+        if (
+          parseInt(parentCoords.left) - dist - tooltip.offsetWidth <
+          tooltipAdjustment
+        ) {
           isOutofBound = true;
         }
         break;
@@ -528,14 +725,17 @@ class Tooltip {
       case 'right': {
         if (
           parentCoords.right + dist + tooltip.offsetWidth >
-          window.innerWidth
+          window.innerWidth - tooltipAdjustment
         ) {
           isOutofBound = true;
         }
         break;
       }
       case 'top': {
-        if (parseInt(parentCoords.top) - tooltip.offsetHeight - dist < 0) {
+        if (
+          parseInt(parentCoords.top) - tooltip.offsetHeight - dist <
+          tooltipAdjustment
+        ) {
           isOutofBound = true;
         }
         break;
@@ -543,7 +743,7 @@ class Tooltip {
       case 'bottom': {
         if (
           parseInt(parentCoords.bottom) + dist + tooltip.offsetHeight >
-          window.innerHeight
+          window.innerHeight - tooltipAdjustment
         ) {
           isOutofBound = true;
         }
@@ -554,7 +754,7 @@ class Tooltip {
   }
 
   updatePositionOnScroll() {
-    if (!this.ticking) {
+    if (!this.ticking && this.status) {
       window.requestAnimationFrame(() => {
         const newelement = document.getElementById(
           this.element.getAttribute('aria-describedby')
