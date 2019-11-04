@@ -12,6 +12,7 @@ import NumberInput from './numberInput';
 import Pagination from './pagination';
 import Accordion from './accordion';
 import Password from './password';
+import Slider from './slider';
 
 const ComponentList = {
   dropdow: Dropdown,
@@ -76,6 +77,9 @@ export const components = {
   },
   accordion: function(selector, options) {
     attachElements(selector, options, Accordion);
+  },
+  slider: function(selector) {
+    attachElements(selector, null, Slider);
   }
 };
 
