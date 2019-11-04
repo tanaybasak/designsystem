@@ -1425,11 +1425,12 @@
                 <div class="hcl-col">
                     <label>Slider Label</label>
                     <div class="hcl-slider">
-                        <label class="hcl-slider-bottom-range">0</label>
-                        <input class="hcl-slider-input" type="range" min="0" max="100" />
+                        <label class="hcl-slider-bottom-range">10</label>
+                        <input class="hcl-slider-input" type="range" value="50" min="10" max="100" />
                         <label class="hcl-slider-top-range">100</label>
-                        <input class="hcl-slider-text-input" type="text">
+                        <input class="hcl-form-control hcl-slider-text-input" type="number" />
                     </div>
+                </div>
             </section>
             <!-- Dropdown -->
             <section class="hcl-row m-3">
@@ -2535,6 +2536,9 @@
         });
         patron.search(".hcl-search");
         patron.numberInput(".hcl-number-input-wrapper");
+
+        // Slider
+        patron.slider('.hcl-slider');
     </script>
 </body>
 

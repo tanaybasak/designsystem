@@ -25,21 +25,21 @@
     --grey-6: #f5f5f5;
     --grey-7: #6D6E70;
     --white: #fff;
-    --blue: #0066b3; 
+    --blue: #0066b3;
     --sky-blue: #E4F5FC;
-    --dark-blue: #132730; 
-    --dark-secondary: #4696D2; 
+    --dark-blue: #132730;
+    --dark-secondary: #4696D2;
     --blue-4: #152934;
     --primary-background-focus: #00578F;
     --primary-disabled: #8CD7FA;
     --primary-hover: #4696D2;
-    --red: #EB1946; 
+    --red: #EB1946;
     --danger-secondary: #C3143A;
     --danger-focus: #C3143A;
     --danger-disabled: #F8B2C1;
     --black-secondary: #555;
     --error: #E0182D;
-    --grey-lighter: #DFE3E6; 
+    --grey-lighter: #DFE3E6;
     --success: #589D25;
     --info: #4696D2;
     --warning: #FAC43B;
@@ -65,7 +65,7 @@
 // SASS VARIABLES
 $prefix: 'hcl';
 $base-font-size: var(--base-font-size) !default;
-$base-font-size-px: 16px; 
+$base-font-size-px: 16px;
 $font-size-base: 1rem !default;
 $small-font-size: var(--small-font-size);
 $base-margin: var(--base-margin);
@@ -84,6 +84,7 @@ $link-hover-color: var(--dark-secondary);
 $dark-blue: var(--dark-blue);
 $grey-2: #8c8c8c;
 $grey-3: #565656;
+$grey-5: var(--grey-5);
 $lightGrey: #5A6872;
 $grey-secondary: var(--grey-secondary);
 // THEMES
