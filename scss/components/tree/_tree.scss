@@ -1,0 +1,61 @@
+.#{$prefix}-tree-list {
+    font-size: .875rem;
+    @include getFontWeight(regular);
+    line-height: 1.5rem;
+    letter-spacing: .16px;
+
+    .#{$prefix}-list-item {
+        padding: 0;
+        width: 100%;
+        display: block;
+        color: var(--dark-blue);
+        padding-left: .25rem;
+        position: relative;
+
+        div {
+            margin-left: 24px;
+
+            i {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .#{$prefix}-list-nested {
+        margin-bottom: .25rem;
+        margin-left: 16px;
+        font-size: .875rem;
+    }
+
+    .caret {
+        margin-left: 16px;
+        cursor: pointer;
+    }
+
+    .caret::before {
+        content: " ";
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        margin-left: -16px;
+        margin-top: 9px;
+        border-right: .0625rem solid var(--dark-40);
+        border-bottom: .0625rem solid var(--dark-40);
+        transform: scale(1) rotate(-45deg);
+        transition: all .2s ease-in-out;
+    }
+
+    .caret-down::before {
+        transform: scale(1) rotate(45deg);
+        margin-left: -16px;
+        margin-top: 6px;
+    }
+
+    .nested {
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+}

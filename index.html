@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://10.115.95.40:8090/patron-font.css"> 
     <style>
         .bgColor {
             background-color: #eee;
@@ -25,10 +26,18 @@
             background-color: #555;
             color: #BBB;
         }
+
+        .pi-folder{
+            color: lightblue;
+        }
+
+        .pi-file{
+            color: lightgrey;
+        }
     </style>
 </head>
 
-<body>
+<body onload="load()">
     <!-- HEADER LAYOUT -->
     <header class="hcl-header" data-withsidenav=true>
         <a href="/" class="hcl-header-brand">
@@ -2456,10 +2465,128 @@
             </section>
             <!-- toolbar ends-->
 
+
+            <!-- toolbar -->
+            <section id="treeStructure">
+
+                    
+                <ul class="hcl-tree-list hcl-tree" data-component="tree">
+                    <li class="hcl-list-item">
+                        <div class="caret"><i class="pi pi-folder"></i>Section 1</div>
+                        <ul class="hcl-list-nested nested">
+                            <li class="hcl-list-item">
+                                <div class="caret"><i class="pi pi-folder"></i>Sub Section 1.1</div>
+                                <ul class="hcl-list-nested nested">
+                                    <li class="hcl-list-item"><div><i class="pi pi-folder"></i>Sub Section 1.1.1</div></li>
+                                    <li class="hcl-list-item"><div><i class="pi pi-folder"></i>Sub Section 1.1.2</div></li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 1.2</div></li>
+                        </ul>
+                    </li>
+                    <li class="hcl-list-item">
+                        <div class="caret"><i class="pi pi-folder"></i>Section 2</div>
+                        <ul class="hcl-list-nested nested">
+                                <li class="hcl-list-item"><div><i class="pi pi-folder"></i>Sub Section 2.1</div></li>
+                                <li class="hcl-list-item">
+                                    <div class="caret"><i class="pi pi-folder"></i>Sub Section 2.2</div>
+                                    <ul class="hcl-list-nested nested">
+                                        <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.1</div></li>
+                                        <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.2</div></li>
+                                        <li class="hcl-list-item">
+                                            <div class="caret"><i class="pi pi-folder"></i>Sub Section 2.2.3</div>
+                                            <ul class="hcl-list-nested nested">
+                                                    <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.3.1</div></li>
+                                                    <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.3.2</div></li>
+                                                    
+                                                </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hcl-list-item"><div><i class="pi pi-folder"></i>Sub Section 2.3</div></li>
+                            </ul>
+                    </li>
+                    <li class="hcl-list-item">
+                            <div><i class="pi pi-file"></i>Section 3</div>
+                    </li>
+                </ul>
+
+                <div>Tree Without Icon</div>
+
+
+                <ul class="hcl-tree-list hcl-tree" data-component="tree">
+                        <li class="hcl-list-item">
+                            <div class="caret">Section 1</div>
+                            <ul class="hcl-list-nested nested">
+                                <li class="hcl-list-item">
+                                    <div class="caret">Sub Section 1.1</div>
+                                    <ul class="hcl-list-nested nested">
+                                        <li class="hcl-list-item"><div>Sub Section 1.1.1</div></li>
+                                        <li class="hcl-list-item"><div>Sub Section 1.1.2</div></li>
+                                    </ul>
+                                </li>
+                                <li class="hcl-list-item"><div>Sub Section 1.2</div></li>
+                            </ul>
+                        </li>
+                        <li class="hcl-list-item">
+                            <div class="caret">Section 2</div>
+                            <ul class="hcl-list-nested nested">
+                                    <li class="hcl-list-item"><div>Sub Section 2.1</div></li>
+                                    <li class="hcl-list-item">
+                                        <div class="caret">Sub Section 2.2</div>
+                                        <ul class="hcl-list-nested nested">
+                                            <li class="hcl-list-item"><div>Sub Section 2.2.1</div></li>
+                                            <li class="hcl-list-item"><div>Sub Section 2.2.2</div></li>
+                                            <li class="hcl-list-item">
+                                                <div class="caret">Sub Section 2.2.3</div>
+                                                <ul class="hcl-list-nested nested">
+                                                        <li class="hcl-list-item"><div>Sub Section 2.2.3.1</div></li>
+                                                        <li class="hcl-list-item"><div>Sub Section 2.2.3.2</div></li>
+                                                        
+                                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="hcl-list-item"><div>Sub Section 2.3</div></li>
+                                </ul>
+                        </li>
+                        <li class="hcl-list-item">
+                                <div>Section 3</div>
+                        </li>
+                    </ul>
+
+                    <!-- <ul id="myUL" class="hcl-tree">
+                            <li><span class="caret">Beverages</span>
+                              <ul class="nested">
+                                <li>Water</li>
+                                <li>Coffee</li>
+                                <li><span class="caret">Tea</span>
+                                  <ul class="nested">
+                                    <li>Black Tea</li>
+                                    <li>White Tea</li>
+                                    <li><span class="caret">Green Tea</span>
+                                      <ul class="nested">
+                                        <li>Sencha</li>
+                                        <li>Gyokuro</li>
+                                        <li>Matcha</li>
+                                        <li>Pi Lo Chun</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>  
+                              </ul>
+                            </li>
+                          </ul> -->
+
+
+
+
+                </section>
+
             <!-- footer -->
             <footer class="hcl-footer">
                 <div class="hcl-footer-caption">
-                    Copyright © HCL Software. All rights reserved
+        Copyright © HCL Software. All rights reserved
                 </div>
                 <ul class="hcl-footer-navigation">
                     <li class="hcl-navigation-item">
@@ -2539,6 +2666,13 @@
 
         // Slider
         patron.slider('.hcl-slider');
+
+        // patron.tree('.hcl-tree');
+
+        function load(){
+            var elmnt = document.getElementById("treeStructure");
+            elmnt.scrollIntoView();
+        }
     </script>
 </body>
 
