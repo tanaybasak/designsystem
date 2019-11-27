@@ -106,11 +106,7 @@ class Tabs {
                     ele = this.selectors.tabs[0];
                 }
             }
-            if (direction === -1) {
-                return this.findElementToFocus(ele, direction);
-            } else {
-                return this.findElementToFocus(ele, direction);
-            }
+            return this.findElementToFocus(ele, direction);
         }
     }
 
