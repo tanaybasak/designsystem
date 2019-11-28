@@ -1,61 +1,93 @@
-.#{$prefix}-tree-list {
-    font-size: .875rem;
-    @include getFontWeight(regular);
-    line-height: 1.5rem;
-    letter-spacing: .16px;
+$prefix: 'hcl';
 
-    .#{$prefix}-list-item {
-        padding: 0;
-        width: 100%;
-        display: block;
-        color: var(--dark-blue);
-        padding-left: .25rem;
-        position: relative;
+.#{$prefix}-tree {
+  font-size: 0.875rem;
+  @include getFontWeight(regular);
+  line-height: 1.5rem;
+  letter-spacing: 0.16px;
 
-        div {
-            margin-left: 24px;
+  .#{$prefix}-list-item {
+    padding: 0;
+    width: 100%;
+    display: block;
+    color: var(--dark-blue);
+    padding-left: 0.25rem;
+    position: relative;
 
-            i {
-                margin-right: 8px;
-            }
-        }
+    span {
+      i {
+        margin-right: 8px;
+      }
     }
+  }
 
-    .#{$prefix}-list-nested {
-        margin-bottom: .25rem;
-        margin-left: 16px;
-        font-size: .875rem;
-    }
+  .#{$prefix}-list-nested {
+    margin-bottom: 0.25rem;
+    margin-left: 16px;
+    font-size: 0.875rem;
+  }
 
-    .caret {
-        margin-left: 16px;
-        cursor: pointer;
-    }
+  .caret-icon::before {
+    position: absolute;
+    margin-left: -16px;
+  }
 
-    .caret::before {
-        content: " ";
-        position: absolute;
-        height: 8px;
-        width: 8px;
-        margin-left: -16px;
-        margin-top: 9px;
-        border-right: .0625rem solid var(--dark-40);
-        border-bottom: .0625rem solid var(--dark-40);
-        transform: scale(1) rotate(-45deg);
-        transition: all .2s ease-in-out;
-    }
+  .margin-left20 {
+    margin-left: 22px;
+  }
 
-    .caret-down::before {
-        transform: scale(1) rotate(45deg);
-        margin-left: -16px;
-        margin-top: 6px;
-    }
+  .mainicon {
+    width: 14px;
+    height: 14px;
+  }
 
-    .nested {
-        display: none;
-    }
+  .caret-icon {
+    cursor: pointer;
+    line-height: unset !important;
 
-    .active {
-        display: block;
+    &:hover {
+      background-color: #e5eff7;
     }
+  }
+
+  .caret {
+    margin-right: 22px !important;
+  }
+
+  .caret::before {
+    content: ' ';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    margin-top: 6px;
+    border-right: 0.0625rem solid var(--dark-40);
+    border-bottom: 0.0625rem solid var(--dark-40);
+    transform: scale(1) rotate(-45deg);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .caret-down::before {
+    transform: scale(1) rotate(45deg);
+    margin-top: 6px;
+  }
+
+  [aria-expanded='false'] > ul {
+    display: none;
+  }
+
+  [aria-expanded='false'] > span .expanded {
+      display: none;
+  }
+
+  [aria-expanded='true'] > span .collapsed {
+    display: none;
+}
+
+  [aria-expanded='true'] > ul {
+    display: block;
+  }
+
+  .highlight {
+    background-color: lightblue;
+  }
 }

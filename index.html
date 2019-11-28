@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="https://10.115.95.40:8090/patron-font.css"> 
+    <!-- <link rel="stylesheet" href="https://10.115.95.40:8090/patron-font.css">  -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
         .bgColor {
             background-color: #eee;
@@ -2467,34 +2468,134 @@
 
 
             <!-- toolbar -->
-            <section id="treeStructure">
+            <section id="treeStructure" >
+                <ul role="tree" class="hcl-tree-list hcl-tree" data-collapsed-icon="caret" data-expanded-icon="caret caret-down">
+                    <li class="hcl-list-item" role="treeitem" aria-expanded="false">
+                        <span class="caret-icon" tabindex="0">
+                            <i class="mainicon"></i>
+                            <i class="fa fa-folder-o collapsed"></i>
+                            <i class="fa fa-folder-open expanded"></i>
+                            <span class="node-label">Main 1</span>
+                        </span>
+                        <ul role="tree" class="hcl-list-nested">
+                            <li class="hcl-list-item" role="treeitem">
+                                <span class="caret-icon margin-left20" tabindex="0">
+                                    <i class="fa fa-file-o"></i>
+                                    <span class="node-label">Sub Main 1.1</span>
+                                </span>
+                            </li>
+                            <li class="hcl-list-item" role="treeitem">
+                                <span class="caret-icon margin-left20" tabindex="0">
+                                    <i class="fa fa-file-o"></i>
+                                    <span class="node-label">Sub Main 1.2</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hcl-list-item" role="treeitem" aria-expanded="false">
+                        <span class="caret-icon" tabindex="0">
+                            <i class="mainicon"></i>
+                            <i class="fa fa-folder-o collapsed"></i>
+                            <i class="fa fa-folder-open expanded"></i>
+                            <span class="node-label">Main 2</span>
+                        </span>
+                        <ul role="tree" class="hcl-list-nested">
+                            <li class="hcl-list-item" role="treeitem" aria-expanded="false">
+                                <span class="caret-icon" tabindex="0">
+                                    <i class="mainicon"></i>
+                                    <i class="fa fa-folder-o collapsed"></i>
+                                    <i class="fa fa-folder-open expanded"></i>
+                                    <span class="node-label">Sub Main 2.1</span>
+                                </span>
+                                <ul role="tree" class="hcl-list-nested">
+                                    <li class="hcl-list-item" role="treeitem">
+                                        <span class="caret-icon margin-left20" tabindex="0">
+                                                <i class="fa fa-file-o"></i>
+                                            <span class="node-label">Sub Main 2.1.1</span>
+                                        </span>
+                                    </li>
+                                    <li class="hcl-list-item" role="treeitem">
+                                        <span class="caret-icon margin-left20" tabindex="0">
+                                                <i class="fa fa-file-o"></i>
+                                            <span class="node-label">Sub Main 2.1.2</span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item" role="treeitem" aria-expanded="false">
+                                <span class="caret-icon" tabindex="0">
+                                    <i class="mainicon"></i>
+                                    <i class="fa fa-folder-o collapsed"></i>
+                                    <i class="fa fa-folder-open expanded"></i>
+                                    <span class="node-label">Sub Main 2.2</span>
+                                </span>
+                                <ul role="tree" class="hcl-list-nested">
+                                    <li class="hcl-list-item" role="treeitem">
+                                        <span class="caret-icon margin-left20" tabindex="0">
+                                                <i class="fa fa-file-o"></i>
+                                            <span class="node-label">Sub Main 2.2.1</span>
+                                        </span>
+                                    </li>
+                                    <li class="hcl-list-item" role="treeitem">
+                                        <span class="caret-icon margin-left20" tabindex="0">
+                                                <i class="fa fa-file-o"></i>
+                                            <span class="node-label">Sub Main 2.2.1</span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hcl-list-item" role="treeitem" aria-expanded="false">
+                        <span class="caret-icon" tabindex="0">
+                            <i class="mainicon"></i>
+                            <i class="fa fa-folder-o collapsed"></i>
+                            <i class="fa fa-folder-open expanded"></i>
+                            <span class="node-label">Main 3</span>
+                        </span>
+                        <ul role="tree" class="hcl-list-nested">
+                            <li class="hcl-list-item" role="treeitem">
+                                <span class="caret-icon margin-left20" tabindex="0">
+                                        <i class="fa fa-file-o"></i>
+                                    <span class="node-label">Sub Main 3.1</span>
+                                </span>
+                            </li>
+                            <li class="hcl-list-item" role="treeitem">
+                                <span class="caret-icon margin-left20" tabindex="0">
+                                        <i class="fa fa-file-o"></i>
+                                    <span class="node-label">Sub Main 3.2</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
 
                     
-                <ul class="hcl-tree-list hcl-tree" data-component="tree">
-                    <li class="hcl-list-item">
-                        <div class="caret"><i class="pi pi-folder"></i>Section 1</div>
+                <!-- <ul role="tree" class="hcl-tree-list hcl-tree">
+                    <li class="hcl-list-item" aria-expanded="false">
+                        <div class="caret-icon caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Section 1</div>
                         <ul class="hcl-list-nested nested">
-                            <li class="hcl-list-item">
-                                <div class="caret"><i class="pi pi-folder"></i>Sub Section 1.1</div>
+                            <li class="hcl-list-item" aria-expanded="false">
+                                <div class="caret-icon caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 1.1</div>
                                 <ul class="hcl-list-nested nested">
-                                    <li class="hcl-list-item"><div><i class="pi pi-folder"></i>Sub Section 1.1.1</div></li>
-                                    <li class="hcl-list-item"><div><i class="pi pi-folder"></i>Sub Section 1.1.2</div></li>
+                                    <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 1.1.1</div></li>
+                                    <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 1.1.2</div></li>
                                 </ul>
                             </li>
                             <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 1.2</div></li>
                         </ul>
                     </li>
-                    <li class="hcl-list-item">
-                        <div class="caret"><i class="pi pi-folder"></i>Section 2</div>
+                    <li class="hcl-list-item" aria-expanded="false">
+                        <div class="caret-icon caret"><i class="pi pi-folder"></i>Section 2</div>
                         <ul class="hcl-list-nested nested">
-                                <li class="hcl-list-item"><div><i class="pi pi-folder"></i>Sub Section 2.1</div></li>
-                                <li class="hcl-list-item">
-                                    <div class="caret"><i class="pi pi-folder"></i>Sub Section 2.2</div>
+                                <li class="hcl-list-item" aria-expanded="false"><div><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 2.1</div></li>
+                                <li class="hcl-list-item" aria-expanded="false">
+                                    <div class="caret-icon caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 2.2</div>
                                     <ul class="hcl-list-nested nested">
                                         <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.1</div></li>
                                         <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.2</div></li>
-                                        <li class="hcl-list-item">
-                                            <div class="caret"><i class="pi pi-folder"></i>Sub Section 2.2.3</div>
+                                        <li class="hcl-list-item" aria-expanded="false">
+                                            <div class="caret-icon caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 2.2.3</div>
                                             <ul class="hcl-list-nested nested">
                                                     <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.3.1</div></li>
                                                     <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.3.2</div></li>
@@ -2506,20 +2607,20 @@
                                 <li class="hcl-list-item"><div><i class="pi pi-folder"></i>Sub Section 2.3</div></li>
                             </ul>
                     </li>
-                    <li class="hcl-list-item">
+                    <li class="hcl-list-item" aria-expanded="false">
                             <div><i class="pi pi-file"></i>Section 3</div>
                     </li>
-                </ul>
+                </ul> -->
 
                 <div>Tree Without Icon</div>
 
 
-                <ul class="hcl-tree-list hcl-tree" data-component="tree">
+                <!-- <ul role="tree" class="hcl-tree-list hcl-tree" expanded-icon="pi pi-minus-only" collapsed-icon="pi pi-add-only">
                         <li class="hcl-list-item">
-                            <div class="caret">Section 1</div>
+                            <div class="caret-icon">Section 1</div>
                             <ul class="hcl-list-nested nested">
                                 <li class="hcl-list-item">
-                                    <div class="caret">Sub Section 1.1</div>
+                                    <div class="caret-icon" >Sub Section 1.1</div>
                                     <ul class="hcl-list-nested nested">
                                         <li class="hcl-list-item"><div>Sub Section 1.1.1</div></li>
                                         <li class="hcl-list-item"><div>Sub Section 1.1.2</div></li>
@@ -2529,16 +2630,16 @@
                             </ul>
                         </li>
                         <li class="hcl-list-item">
-                            <div class="caret">Section 2</div>
+                            <div class="caret-icon">Section 2</div>
                             <ul class="hcl-list-nested nested">
                                     <li class="hcl-list-item"><div>Sub Section 2.1</div></li>
                                     <li class="hcl-list-item">
-                                        <div class="caret">Sub Section 2.2</div>
+                                        <div class="caret-icon">Sub Section 2.2</div>
                                         <ul class="hcl-list-nested nested">
                                             <li class="hcl-list-item"><div>Sub Section 2.2.1</div></li>
                                             <li class="hcl-list-item"><div>Sub Section 2.2.2</div></li>
                                             <li class="hcl-list-item">
-                                                <div class="caret">Sub Section 2.2.3</div>
+                                                <div class="caret-icon">Sub Section 2.2.3</div>
                                                 <ul class="hcl-list-nested nested">
                                                         <li class="hcl-list-item"><div>Sub Section 2.2.3.1</div></li>
                                                         <li class="hcl-list-item"><div>Sub Section 2.2.3.2</div></li>
@@ -2553,7 +2654,7 @@
                         <li class="hcl-list-item">
                                 <div>Section 3</div>
                         </li>
-                    </ul>
+                    </ul> -->
 
                     <!-- <ul id="myUL" class="hcl-tree">
                             <li><span class="caret">Beverages</span>
@@ -2667,7 +2768,7 @@
         // Slider
         patron.slider('.hcl-slider');
 
-        // patron.tree('.hcl-tree');
+        patron.tree('.hcl-tree');
 
         function load(){
             var elmnt = document.getElementById("treeStructure");
