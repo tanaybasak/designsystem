@@ -14,17 +14,21 @@ class Tree {
     var toggler = this.element.getElementsByClassName('toggle-icon');
 
     var spans = this.element.getElementsByClassName('tree-node');
-    for (var j = 0; j < spans.length; j++) {
+    for (let j = 0; j < spans.length; j++) {
       spans[j].addEventListener('keydown', e => {
         this.keyDownOnTree(e);
       });
     }
-
-    const collapsedIcon = this.collapsedIcon;
-    var i;
-    for (i = 0; i < toggler.length; i++) {
-      if (collapsedIcon) {
-        const classList = collapsedIcon.split(' ');
+    for (let i = 0; i < toggler.length; i++) {
+      let icon = this.collapsedIcon;
+      if (
+        toggler[i].parentElement.parentElement.getAttribute('aria-expanded') ===
+        'true'
+      ) {
+        icon = this.expandedIcon;
+      }
+      if (icon) {
+        const classList = icon.split(' ');
         toggler[i].classList.add(...classList);
       }
       toggler[i].addEventListener('click', e => {
