@@ -2469,115 +2469,313 @@
 
             <!-- toolbar -->
             <section id="treeStructure" >
-                <ul role="tree" class="hcl-tree-list hcl-tree" data-collapsed-icon="caret" data-expanded-icon="caret caret-down">
-                    <li class="hcl-list-item" role="treeitem" aria-expanded="false">
-                        <span class="caret-icon" tabindex="0">
-                            <i class="mainicon"></i>
-                            <i class="fa fa-folder-o collapsed"></i>
-                            <i class="fa fa-folder-open expanded"></i>
-                            <span class="node-label">Main 1</span>
-                        </span>
-                        <ul role="tree" class="hcl-list-nested">
-                            <li class="hcl-list-item" role="treeitem">
-                                <span class="caret-icon margin-left20" tabindex="0">
-                                    <i class="fa fa-file-o"></i>
-                                    <span class="node-label">Sub Main 1.1</span>
-                                </span>
-                            </li>
-                            <li class="hcl-list-item" role="treeitem">
-                                <span class="caret-icon margin-left20" tabindex="0">
-                                    <i class="fa fa-file-o"></i>
-                                    <span class="node-label">Sub Main 1.2</span>
-                                </span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="hcl-list-item" role="treeitem" aria-expanded="false">
-                        <span class="caret-icon" tabindex="0">
-                            <i class="mainicon"></i>
-                            <i class="fa fa-folder-o collapsed"></i>
-                            <i class="fa fa-folder-open expanded"></i>
-                            <span class="node-label">Main 2</span>
-                        </span>
-                        <ul role="tree" class="hcl-list-nested">
-                            <li class="hcl-list-item" role="treeitem" aria-expanded="false">
-                                <span class="caret-icon" tabindex="0">
-                                    <i class="mainicon"></i>
-                                    <i class="fa fa-folder-o collapsed"></i>
-                                    <i class="fa fa-folder-open expanded"></i>
-                                    <span class="node-label">Sub Main 2.1</span>
-                                </span>
-                                <ul role="tree" class="hcl-list-nested">
-                                    <li class="hcl-list-item" role="treeitem">
-                                        <span class="caret-icon margin-left20" tabindex="0">
-                                                <i class="fa fa-file-o"></i>
-                                            <span class="node-label">Sub Main 2.1.1</span>
-                                        </span>
-                                    </li>
-                                    <li class="hcl-list-item" role="treeitem">
-                                        <span class="caret-icon margin-left20" tabindex="0">
-                                                <i class="fa fa-file-o"></i>
-                                            <span class="node-label">Sub Main 2.1.2</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="hcl-list-item" role="treeitem" aria-expanded="false">
-                                <span class="caret-icon" tabindex="0">
-                                    <i class="mainicon"></i>
-                                    <i class="fa fa-folder-o collapsed"></i>
-                                    <i class="fa fa-folder-open expanded"></i>
-                                    <span class="node-label">Sub Main 2.2</span>
-                                </span>
-                                <ul role="tree" class="hcl-list-nested">
-                                    <li class="hcl-list-item" role="treeitem">
-                                        <span class="caret-icon margin-left20" tabindex="0">
-                                                <i class="fa fa-file-o"></i>
-                                            <span class="node-label">Sub Main 2.2.1</span>
-                                        </span>
-                                    </li>
-                                    <li class="hcl-list-item" role="treeitem">
-                                        <span class="caret-icon margin-left20" tabindex="0">
-                                                <i class="fa fa-file-o"></i>
-                                            <span class="node-label">Sub Main 2.2.1</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="hcl-list-item" role="treeitem" aria-expanded="false">
-                        <span class="caret-icon" tabindex="0">
-                            <i class="mainicon"></i>
-                            <i class="fa fa-folder-o collapsed"></i>
-                            <i class="fa fa-folder-open expanded"></i>
-                            <span class="node-label">Main 3</span>
-                        </span>
-                        <ul role="tree" class="hcl-list-nested">
-                            <li class="hcl-list-item" role="treeitem">
-                                <span class="caret-icon margin-left20" tabindex="0">
-                                        <i class="fa fa-file-o"></i>
-                                    <span class="node-label">Sub Main 3.1</span>
-                                </span>
-                            </li>
-                            <li class="hcl-list-item" role="treeitem">
-                                <span class="caret-icon margin-left20" tabindex="0">
-                                        <i class="fa fa-file-o"></i>
-                                    <span class="node-label">Sub Main 3.2</span>
-                                </span>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="hcl-row">
+                    <div class="hcl-col-4">
 
-                    
-                <!-- <ul role="tree" class="hcl-tree-list hcl-tree">
+                        <ul role="tree" class="hcl-tree">
+                            <li class="tree-item" role="treeitem" aria-expanded="false">
+                                <div class="tree-node" tabindex="0">
+                                    <i class="toggle-icon"></i>
+                                    <i class="fa fa-folder-o collapsed"></i>
+                                    <i class="fa fa-folder-open expanded"></i>
+                                    <span>Main 1</span>
+                                </div>
+                                <ul role="group" class="tree-nested">
+                                    <li class="tree-item" role="treeitem">
+                                        <div class="tree-node pl-5" tabindex="0">
+                                            <i class="fa fa-file-o"></i>
+                                            <span>Sub Main 1.1</span>
+                                        </div>
+                                    </li>
+                                    <li class="tree-item" role="treeitem">
+                                        <div class="tree-node pl-5" tabindex="0">
+                                            <i class="fa fa-file-o"></i>
+                                            <span>Sub Main 1.2</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="tree-item" role="treeitem" aria-expanded="false">
+                                <div class="tree-node" tabindex="0">
+                                    <i class="toggle-icon"></i>
+                                    <i class="fa fa-folder-o collapsed"></i>
+                                    <i class="fa fa-folder-open expanded"></i>
+                                    <span>Main 2</span>
+                                </div>
+                                <ul role="group" class="tree-nested">
+                                    <li class="tree-item" role="treeitem" aria-expanded="false">
+                                        <div class="tree-node" tabindex="0">
+                                            <i class="toggle-icon"></i>
+                                            <i class="fa fa-folder-o collapsed"></i>
+                                            <i class="fa fa-folder-open expanded"></i>
+                                            <span>Sub Main 2.1</span>
+                                        </div>
+                                        <ul role="group" class="tree-nested">
+                                            <li class="tree-item" role="treeitem">
+                                                <div class="tree-node pl-5" tabindex="0">
+                                                        <i class="fa fa-file-o"></i>
+                                                    <span>Sub Main 2.1.1</span>
+                                                </div>
+                                            </li>
+                                            <li class="tree-item" role="treeitem">
+                                                <div class="tree-node pl-5" tabindex="0">
+                                                        <i class="fa fa-file-o"></i>
+                                                    <span>Sub Main 2.1.2</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="tree-item" role="treeitem" aria-expanded="false">
+                                        <div class="tree-node" tabindex="0">
+                                            <i class="toggle-icon"></i>
+                                            <i class="fa fa-folder-o collapsed"></i>
+                                            <i class="fa fa-folder-open expanded"></i>
+                                            <span>Sub Main 2.2</span>
+                                        </div>
+                                        <ul role="group" class="tree-nested">
+                                            <li class="tree-item" role="treeitem">
+                                                <div class="tree-node pl-5" tabindex="0">
+                                                        <i class="fa fa-file-o"></i>
+                                                    <span>Sub Main 2.2.1</span>
+                                                </div>
+                                            </li>
+                                            <li class="tree-item" role="treeitem">
+                                                <div class="tree-node pl-5" tabindex="0">
+                                                        <i class="fa fa-file-o"></i>
+                                                    <span>Sub Main 2.2.1</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="tree-item" role="treeitem" aria-expanded="false">
+                                <div class="tree-node" tabindex="0">
+                                    <i class="toggle-icon"></i>
+                                    <i class="fa fa-folder-o collapsed"></i>
+                                    <i class="fa fa-folder-open expanded"></i>
+                                    <span>Main 3</span>
+                                </div>
+                                <ul role="group" class="tree-nested">
+                                    <li class="tree-item" role="treeitem">
+                                        <div class="tree-node pl-5" tabindex="0">
+                                                <i class="fa fa-file-o"></i>
+                                            <span>Sub Main 3.1</span>
+                                        </div>
+                                    </li>
+                                    <li class="tree-item" role="treeitem">
+                                        <div class="tree-node pl-5" tabindex="0">
+                                                <i class="fa fa-file-o"></i>
+                                            <span>Sub Main 3.2</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="hcl-col-4">
+                            <ul role="tree" class="hcl-tree">
+                                <li class="tree-item" role="treeitem" aria-expanded="false">
+                                    <div class="tree-node" tabindex="0">
+                                        <i class="toggle-icon"></i>
+                                        <span>Main 1</span>
+                                    </div>
+                                    <ul role="group" class="tree-nested">
+                                        <li class="tree-item" role="treeitem">
+                                            <div class="tree-node pl-5" tabindex="0">
+                                                <span>Sub Main 1.1</span>
+                                            </div>
+                                        </li>
+                                        <li class="tree-item" role="treeitem">
+                                            <div class="tree-node pl-5" tabindex="0">
+                                                <span>Sub Main 1.2</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="tree-item" role="treeitem" aria-expanded="false">
+                                    <div class="tree-node" tabindex="0">
+                                        <i class="toggle-icon"></i>
+                                        <span>Main 2</span>
+                                    </div>
+                                    <ul role="group" class="tree-nested">
+                                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                                            <div class="tree-node" tabindex="0">
+                                                <i class="toggle-icon"></i>
+                                                <span>Sub Main 2.1</span>
+                                            </div>
+                                            <ul role="group" class="tree-nested">
+                                                <li class="tree-item" role="treeitem">
+                                                    <div class="tree-node pl-5" tabindex="0">
+                                                        <span>Sub Main 2.1.1</span>
+                                                    </div>
+                                                </li>
+                                                <li class="tree-item" role="treeitem">
+                                                    <div class="tree-node pl-5" tabindex="0">
+                                                        <span>Sub Main 2.1.2</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                                            <div class="tree-node" tabindex="0">
+                                                <i class="toggle-icon"></i>
+                                                <span>Sub Main 2.2</span>
+                                            </div>
+                                            <ul role="group" class="tree-nested">
+                                                <li class="tree-item" role="treeitem">
+                                                    <div class="tree-node pl-5" tabindex="0">
+                                                        <span>Sub Main 2.2.1</span>
+                                                    </div>
+                                                </li>
+                                                <li class="tree-item" role="treeitem">
+                                                    <div class="tree-node pl-5" tabindex="0">
+                                                        <span>Sub Main 2.2.1</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="tree-item" role="treeitem" aria-expanded="false">
+                                    <div class="tree-node" tabindex="0">
+                                        <i class="toggle-icon"></i>
+                                        <span>Main 3</span>
+                                    </div>
+                                    <ul role="group" class="tree-nested">
+                                        <li class="tree-item" role="treeitem">
+                                            <div class="tree-node pl-5" tabindex="0">
+                                                <span>Sub Main 3.1</span>
+                                            </div>
+                                        </li>
+                                        <li class="tree-item" role="treeitem">
+                                            <div class="tree-node pl-5" tabindex="0">
+                                                <span>Sub Main 3.2</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+            
+                                </div>
+
+
+                                <div class="hcl-col-4">
+                                        <ul role="tree" class="hcl-tree" data-collapsed-icon="fa fa-folder-o" data-expanded-icon="fa fa-folder-open">
+                                            <li class="tree-item" role="treeitem" aria-expanded="false">
+                                                <div class="tree-node" tabindex="0">
+                                                    <i class="toggle-icon"></i>
+                                                    <i class="fa fa-folder-o collapsed"></i>
+                                                    <i class="fa fa-folder-open expanded"></i>
+                                                    <span>Main 1</span>
+                                                </div>
+                                                <ul role="group" class="tree-nested">
+                                                    <li class="tree-item" role="treeitem">
+                                                        <div class="tree-node pl-5" tabindex="0">
+                                                            <i class="fa fa-file-o"></i>
+                                                            <span>Sub Main 1.1</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="tree-item" role="treeitem">
+                                                        <div class="tree-node pl-5" tabindex="0">
+                                                            <i class="fa fa-file-o"></i>
+                                                            <span>Sub Main 1.2</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="tree-item" role="treeitem" aria-expanded="false">
+                                                <div class="tree-node" tabindex="0">
+                                                    <i class="toggle-icon"></i>
+                                                    <i class="fa fa-folder-o collapsed"></i>
+                                                    <i class="fa fa-folder-open expanded"></i>
+                                                    <span>Main 2</span>
+                                                </div>
+                                                <ul role="group" class="tree-nested">
+                                                    <li class="tree-item" role="treeitem" aria-expanded="false">
+                                                        <div class="tree-node" tabindex="0">
+                                                            <i class="toggle-icon"></i>
+                                                            <i class="fa fa-folder-o collapsed"></i>
+                                                            <i class="fa fa-folder-open expanded"></i>
+                                                            <span>Sub Main 2.1</span>
+                                                        </div>
+                                                        <ul role="group" class="tree-nested">
+                                                            <li class="tree-item" role="treeitem">
+                                                                <div class="tree-node pl-5" tabindex="0">
+                                                                        <i class="fa fa-file-o"></i>
+                                                                    <span>Sub Main 2.1.1</span>
+                                                                </div>
+                                                            </li>
+                                                            <li class="tree-item" role="treeitem">
+                                                                <div class="tree-node pl-5" tabindex="0">
+                                                                        <i class="fa fa-file-o"></i>
+                                                                    <span>Sub Main 2.1.2</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="tree-item" role="treeitem" aria-expanded="false">
+                                                        <div class="tree-node" tabindex="0">
+                                                            <i class="toggle-icon"></i>
+                                                            <i class="fa fa-folder-o collapsed"></i>
+                                                            <i class="fa fa-folder-open expanded"></i>
+                                                            <span>Sub Main 2.2</span>
+                                                        </div>
+                                                        <ul role="group" class="tree-nested">
+                                                            <li class="tree-item" role="treeitem">
+                                                                <div class="tree-node pl-5" tabindex="0">
+                                                                        <i class="fa fa-file-o"></i>
+                                                                    <span>Sub Main 2.2.1</span>
+                                                                </div>
+                                                            </li>
+                                                            <li class="tree-item" role="treeitem">
+                                                                <div class="tree-node pl-5" tabindex="0">
+                                                                        <i class="fa fa-file-o"></i>
+                                                                    <span>Sub Main 2.2.1</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="tree-item" role="treeitem" aria-expanded="false">
+                                                <div class="tree-node" tabindex="0">
+                                                    <i class="toggle-icon"></i>
+                                                    <i class="fa fa-folder-o collapsed"></i>
+                                                    <i class="fa fa-folder-open expanded"></i>
+                                                    <span>Main 3</span>
+                                                </div>
+                                                <ul role="group" class="tree-nested">
+                                                    <li class="tree-item" role="treeitem">
+                                                        <div class="tree-node pl-5" tabindex="0">
+                                                                <i class="fa fa-file-o"></i>
+                                                            <span>Sub Main 3.1</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="tree-item" role="treeitem">
+                                                        <div class="tree-node pl-5" tabindex="0">
+                                                                <i class="fa fa-file-o"></i>
+                                                            <span>Sub Main 3.2</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                        
+                                            </div>
+
+                                            
+                    </div>
+
+                <!-- <ul role="tree" class="hcl-tree">
                     <li class="hcl-list-item" aria-expanded="false">
-                        <div class="caret-icon caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Section 1</div>
-                        <ul class="hcl-list-nested nested">
+                        <div class="tree-node caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Section 1</div>
+                groupl class="tree-nested nested">
                             <li class="hcl-list-item" aria-expanded="false">
-                                <div class="caret-icon caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 1.1</div>
-                                <ul class="hcl-list-nested nested">
+                                <div class="tree-node caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 1.1</div>
+                        groupl class="tree-nested nested">
                                     <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 1.1.1</div></li>
                                     <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 1.1.2</div></li>
                                 </ul>
@@ -2586,16 +2784,16 @@
                         </ul>
                     </li>
                     <li class="hcl-list-item" aria-expanded="false">
-                        <div class="caret-icon caret"><i class="pi pi-folder"></i>Section 2</div>
-                        <ul class="hcl-list-nested nested">
+                        <div class="tree-node caret"><i class="pi pi-folder"></i>Section 2</div>
+                groupl class="tree-nested nested">
                                 <li class="hcl-list-item" aria-expanded="false"><div><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 2.1</div></li>
                                 <li class="hcl-list-item" aria-expanded="false">
-                                    <div class="caret-icon caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 2.2</div>
-                                    <ul class="hcl-list-nested nested">
+                                    <div class="tree-node caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 2.2</div>
+                            groupl class="hcl-list-nested nested">
                                         <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.1</div></li>
                                         <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.2</div></li>
                                         <li class="hcl-list-item" aria-expanded="false">
-                                            <div class="caret-icon caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 2.2.3</div>
+                                            <div class="tree-node caret"><i class="pi pi-folder"></i><i class="expanded pi pi-minimize"></i>Sub Section 2.2.3</div>
                                             <ul class="hcl-list-nested nested">
                                                     <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.3.1</div></li>
                                                     <li class="hcl-list-item"><div><i class="pi pi-file"></i>Sub Section 2.2.3.2</div></li>
@@ -2612,15 +2810,15 @@
                     </li>
                 </ul> -->
 
-                <div>Tree Without Icon</div>
+                <!-- <div>Tree Without Icon</div> -->
 
 
-                <!-- <ul role="tree" class="hcl-tree-list hcl-tree" expanded-icon="pi pi-minus-only" collapsed-icon="pi pi-add-only">
+                <!-- <ul role="tree" class="hcl-tree" expanded-icon="pi pi-minus-only" collapsed-icon="pi pi-add-only">
                         <li class="hcl-list-item">
-                            <div class="caret-icon">Section 1</div>
+                            <div class="tree-node">Section 1</div>
                             <ul class="hcl-list-nested nested">
                                 <li class="hcl-list-item">
-                                    <div class="caret-icon" >Sub Section 1.1</div>
+                                    <div class="tree-node" >Sub Section 1.1</div>
                                     <ul class="hcl-list-nested nested">
                                         <li class="hcl-list-item"><div>Sub Section 1.1.1</div></li>
                                         <li class="hcl-list-item"><div>Sub Section 1.1.2</div></li>
@@ -2630,16 +2828,16 @@
                             </ul>
                         </li>
                         <li class="hcl-list-item">
-                            <div class="caret-icon">Section 2</div>
+                            <div class="tree-node">Section 2</div>
                             <ul class="hcl-list-nested nested">
                                     <li class="hcl-list-item"><div>Sub Section 2.1</div></li>
                                     <li class="hcl-list-item">
-                                        <div class="caret-icon">Sub Section 2.2</div>
+                                        <div class="tree-node">Sub Section 2.2</div>
                                         <ul class="hcl-list-nested nested">
                                             <li class="hcl-list-item"><div>Sub Section 2.2.1</div></li>
                                             <li class="hcl-list-item"><div>Sub Section 2.2.2</div></li>
                                             <li class="hcl-list-item">
-                                                <div class="caret-icon">Sub Section 2.2.3</div>
+                                                <div class="tree-node">Sub Section 2.2.3</div>
                                                 <ul class="hcl-list-nested nested">
                                                         <li class="hcl-list-item"><div>Sub Section 2.2.3.1</div></li>
                                                         <li class="hcl-list-item"><div>Sub Section 2.2.3.2</div></li>

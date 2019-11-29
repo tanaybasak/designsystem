@@ -4,14 +4,16 @@ import { findLastVisibleChildren, findNextSiblingAncestor } from './utils/dom';
 class Tree {
   constructor(element) {
     this.element = element;
-    this.expandedIcon = this.element.getAttribute('data-expanded-icon');
-    this.collapsedIcon = this.element.getAttribute('data-collapsed-icon');
+    this.expandedIcon =
+      this.element.getAttribute('data-expanded-icon') || 'caret caret-down';
+    this.collapsedIcon =
+      this.element.getAttribute('data-collapsed-icon') || 'caret';
   }
 
   attachEvents = () => {
-    var toggler = this.element.getElementsByClassName('mainicon');
+    var toggler = this.element.getElementsByClassName('toggle-icon');
 
-    var spans = this.element.getElementsByClassName('caret-icon');
+    var spans = this.element.getElementsByClassName('tree-node');
     for (var j = 0; j < spans.length; j++) {
       spans[j].addEventListener('keydown', e => {
         this.keyDownOnTree(e);
@@ -32,7 +34,7 @@ class Tree {
   };
 
   focusNode = node => {
-    if (node.classList.contains('hcl-list-item')) {
+    if (node.classList.contains('tree-item')) {
       node.children[0].focus();
     }
   };
@@ -131,18 +133,8 @@ class Tree {
       nodeElement.classList.remove(...removeClassList);
       nodeElement.classList.add(...newClassList);
     }
-    //console.log(icons.length)
-    // if (icons.length > 1) {
-    //   for (let j = 0; j < icons.length; j++) {
-    //     const icon = icons[j];
-    //     if (icon.classList.contains('expanded')) {
-    //       icon.classList.remove('expanded');
-    //     } else {
-    //       icon.classList.add('expanded');
-    //     }
-    //   }
-    // }
   };
+
   static handleDataAPI = () => {
     handleDataBinding('tree', function(element) {
       return new Tree(element);

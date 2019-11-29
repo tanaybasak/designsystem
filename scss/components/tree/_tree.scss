@@ -1,93 +1,83 @@
 $prefix: 'hcl';
 
 .#{$prefix}-tree {
-  font-size: 0.875rem;
-  @include getFontWeight(regular);
-  line-height: 1.5rem;
-  letter-spacing: 0.16px;
-
-  .#{$prefix}-list-item {
-    padding: 0;
-    width: 100%;
-    display: block;
-    color: var(--dark-blue);
-    padding-left: 0.25rem;
-    position: relative;
-
-    span {
-      i {
-        margin-right: 8px;
-      }
-    }
-  }
-
-  .#{$prefix}-list-nested {
-    margin-bottom: 0.25rem;
-    margin-left: 16px;
     font-size: 0.875rem;
-  }
+    @include getFontWeight(regular);
+    line-height: 1.5rem;
+    letter-spacing: 0.16px;
 
-  .caret-icon::before {
-    position: absolute;
-    margin-left: -16px;
-  }
+    .tree-item {
+        padding: 0;
+        width: 100%;
+        display: block;
+        color: var(--dark-blue);
+        position: relative;
+        padding-top: 5px;
 
-  .margin-left20 {
-    margin-left: 22px;
-  }
+        .tree-node {
+            cursor: pointer;
+            line-height: unset !important;
 
-  .mainicon {
-    width: 14px;
-    height: 14px;
-  }
+            &:hover {
+                background-color: #e5eff7;
+            }
 
-  .caret-icon {
-    cursor: pointer;
-    line-height: unset !important;
+            i {
+                margin-right: 8px;
+            }
 
-    &:hover {
-      background-color: #e5eff7;
+            .toggle-icon {
+                width: 14px;
+                height: 14px;
+            }
+
+            .caret {
+                margin-right: 22px;
+            }
+
+            .caret::before {
+                content: ' ';
+                position: absolute;
+                height: 8px;
+                width: 8px;
+                margin-top: 8px;
+                border-right: 0.0625rem solid var(--dark-40);
+                border-bottom: 0.0625rem solid var(--dark-40);
+                transform: scale(1) rotate(-45deg);
+                transition: all 0.2s ease-in-out;
+                margin-left: 5px;
+            }
+
+            .caret-down::before {
+                transform: scale(1) rotate(45deg);
+                margin-top: 6px;
+            }
+        }
     }
-  }
 
-  .caret {
-    margin-right: 22px !important;
-  }
+    .tree-nested {
+        margin-bottom: 0.25rem;
+        margin-left: 20px;
+        font-size: 0.875rem;
+    }
 
-  .caret::before {
-    content: ' ';
-    position: absolute;
-    height: 8px;
-    width: 8px;
-    margin-top: 6px;
-    border-right: 0.0625rem solid var(--dark-40);
-    border-bottom: 0.0625rem solid var(--dark-40);
-    transform: scale(1) rotate(-45deg);
-    transition: all 0.2s ease-in-out;
-  }
+    [aria-expanded='false']>ul {
+        display: none;
+    }
 
-  .caret-down::before {
-    transform: scale(1) rotate(45deg);
-    margin-top: 6px;
-  }
+    [aria-expanded='true']>ul {
+        display: block;
+    }
 
-  [aria-expanded='false'] > ul {
-    display: none;
-  }
+    [aria-expanded='false']>div .expanded {
+        display: none;
+    }
 
-  [aria-expanded='false'] > span .expanded {
-      display: none;
-  }
+    [aria-expanded='true']>div .collapsed {
+        display: none;
+    }
 
-  [aria-expanded='true'] > span .collapsed {
-    display: none;
-}
-
-  [aria-expanded='true'] > ul {
-    display: block;
-  }
-
-  .highlight {
-    background-color: lightblue;
-  }
+    .highlight {
+        background-color: lightblue;
+    }
 }
