@@ -6,8 +6,8 @@
     word-wrap: break-word;
     text-align: left;
     max-width: $tooltip-default-max-width;
-    background-color: var(--black-lighter);
-    color: var(--white);
+    background-color: $black-lighter;
+    color: $white;
     border-radius: .25rem;
     padding: .5rem;
     box-shadow: 0 0.25rem 0.5rem 0 $tooltip-box-shadow;
@@ -19,7 +19,7 @@
         position: absolute;
         width: $tooltip-arrow-size-default;
         height: $tooltip-arrow-size-default;
-        background: var(--black-lighter);
+        background: $black-lighter;
 
         &[data-direction='bottom'] {
             top: -($tooltip-arrow-size-default-position);
@@ -47,16 +47,16 @@
     }
 
     &[data-focus-on-click='true'] {
-        background-color: var(--white);
-        color: var(--dark-blue);
+        background-color: $white;
+        color: var($dark-blue);
         max-width: $tooltip-interactive-max-width;
-        border: .0625rem solid var(--grey-lighter);
+        border: .0625rem solid $grey-8;
         padding: 1rem;
 
         .#{$prefix}-tooltip-arrow {
-            background: var(--white);
-            border-top: .0625rem solid var(--grey-lighter);
-            border-right: .0625rem solid var(--grey-lighter);
+            background: $white;
+            border-top: .0625rem solid $grey-8;
+            border-right: .0625rem solid $grey-8;
 
             &[data-direction='bottom'] {
                 top: -($tooltip-arrow-size-interactive-position);

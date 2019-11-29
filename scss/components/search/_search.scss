@@ -33,10 +33,10 @@
         .#{$prefix}-search-icon {
             margin-left: ($search-height - $search-icon-size)/2;
             margin-top: ($search-height - $search-icon-size)/2;
-            fill: var(--blue-light);
+            fill: blue-7;
 
             &.white {
-                fill: var(--white);
+                fill: $white;
             }
         }
     }
@@ -47,8 +47,8 @@
         width: 100%;
         height: $search-height;
         padding: 0 $search-height;
-        color: var(--grey-5);
-        background-color: var(--grey-6);
+        color: var($grey-5);
+        background-color: $grey-6;
         border: none;
         right: 0;
         position: unset;
@@ -98,7 +98,7 @@
             content: ' ';
             position: absolute;
             width: .125rem;
-            background-color: var(--grey-7);
+            background-color: $grey-7;
             height: $search-icon-size;
         }
 
@@ -159,7 +159,7 @@
 
     &.#{$prefix}-bg-white {
         .#{$prefix}-search-input {
-            background-color: var(--white);
+            background-color: $white;
         }
     }
 }

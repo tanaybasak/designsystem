@@ -1,7 +1,7 @@
     @mixin tile($type) {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
     display: inline-block;
-    background-color: var(--white);
+    background-color: $white;
     border: 1px solid transparent;
     position: relative;
     padding: 1rem;
@@ -12,7 +12,7 @@
         outline: none;
 
         &:focus {
-            border: 1px solid var(--blue);
+            border: 1px solid $blue;
         }
 
         &:hover .#{$prefix}-tile-checkbox {
@@ -56,8 +56,8 @@
 
         &:checked+.#{$prefix}-tile-checkbox {
             visibility: visible;
-            fill: var(--blue-light);
-            background-color: var(--white);
+            fill: blue-7;
+            background-color: $white;
         }
 
         &:checked+.#{$prefix}-tile-arrow>svg {
@@ -85,10 +85,10 @@
         >svg {
             border-radius: 50%;
             background-color: hsla(0, 0%, 100%, .25);
-            fill: var(--dark-40);
+            fill: $black-2;
 
             &:hover {
-                fill: var(--blue);
+                fill: $blue;
             }
         }
     }

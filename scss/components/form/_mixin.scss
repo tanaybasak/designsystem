@@ -28,17 +28,17 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
 
         &:focus {
             outline: none;
-            box-shadow: 0 2px 0 0 var(--blue-light);
+            box-shadow: 0 2px 0 0 blue-7;
 
             &~label {
-                color: var(--blue-light);
+                color: blue-7;
             }
         }
 
         &[disabled] {
             opacity: .5;
             cursor: not-allowed;
-            background-color: $background-disabled;
+            background-color: rgba($blue-secondary,0.5);
 
             &~label,
             &~.#{$prefix}-error-msg,

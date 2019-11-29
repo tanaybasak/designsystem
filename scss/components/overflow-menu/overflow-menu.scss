@@ -2,7 +2,7 @@
     width: inherit;
     padding: .5rem .625rem;
     font-size: .875rem;
-    color: var(--dark-blue);
+    color: var($dark-blue);
     cursor: pointer;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -16,8 +16,8 @@
 
     @else if ($type==danger) {
         &:hover {
-            background-color: var(--red);
-            color: var(--white);
+            background-color: $red;
+            color: $white;
         }
     }
 }
@@ -44,9 +44,9 @@
     width: .65625rem;
     height: .65625rem;
     transform: rotate(-45deg);
-    background: var(--white);
-    border-top: .0625rem solid var(--grey-lighter);
-    border-right: .0625rem solid var(--grey-lighter);
+    background: $white;
+    border-top: .0625rem solid $grey-8;
+    border-right: .0625rem solid $grey-8;
     z-index: 5;
     box-shadow: .5rem 0 .625rem -.375rem rgba(0, 0, 0, .1);
 
@@ -62,7 +62,7 @@
 .#{$prefix}-overflow {
 
     &-separator {
-        border-top: .0625rem solid var(--grey-lighter);
+        border-top: .0625rem solid $grey-8;
         padding-top: .375rem;
     }
 
@@ -93,8 +93,8 @@
         z-index: 9;
         height: auto;
         width: 11.25rem;
-        background-color: var(--white);
-        border: .0625rem solid var(--grey-lighter);
+        background-color: $white;
+        border: .0625rem solid $grey-8;
         box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .1);
         list-style: none;
         @include wrap(left)

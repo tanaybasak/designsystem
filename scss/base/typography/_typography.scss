@@ -168,19 +168,19 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: var(--black-light);
+        color: $black-light;
         text-decoration: underline;
     }
 
     &:focus {
-        color: var(--black-light);
+        color: $black-light;
         outline: 1px solid theme-color('primary');
         text-decoration: underline;
         outline-offset: 3px;
     }
 
     &.disable {
-        color: var(--black-light);
+        color: $black-light;
         pointer-events: none;
     }
 }

@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-$colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $warning);
+$colorMap: ('info': $info, 'danger': $red-3, 'success': $success, 'warning': $warning);
 
 @mixin getToastThemes() {
 
@@ -29,7 +29,7 @@ $colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $w
     top: 0;
     right: 0;
     box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .1);
-    background: var(--white);
+    background: $white;
     @include getToastThemes();
     z-index: 999;
 

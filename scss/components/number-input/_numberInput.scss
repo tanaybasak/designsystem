@@ -56,6 +56,6 @@
 
     &[data-invalid=true] .#{$prefix}-error-msg {
         order: 4;
-        color: $error;
+        color: $red-3;
     }
 }

@@ -8,13 +8,13 @@
             position: absolute;
             top: .75rem;
             left: 1rem;
-            fill: var(--blue-light);
+            fill: blue-7;
             z-index: 1;
             cursor: pointer;
         }
 
         &-error {
-            border: .0625rem solid var(--error);
+            border: .0625rem solid $red-3;
         }
 
         >input {
@@ -22,7 +22,7 @@
             border: none;
             width: 9.4375rem;
             height: 2.5rem;
-            border-bottom: .0625rem solid var(--dark-blue);
+            border-bottom: .0625rem solid var($dark-blue);
             background-color: rgba(70, 150, 210, .05);
             outline: none;
             font-size: .875rem;
@@ -54,11 +54,11 @@
     }
 
     &-up {
-        border-bottom: .25rem solid var(--blue);
+        border-bottom: .25rem solid $blue;
     }
 
     &-down {
-        border-top: .25rem solid var(--blue);
+        border-top: .25rem solid $blue;
     }
 
     &-year {
@@ -73,7 +73,7 @@
             line-height: 1.125rem;
 
             &:focus {
-                outline: 1px solid var(--blue)
+                outline: 1px solid $blue
             }
         }
 
@@ -105,7 +105,7 @@
 
         >span {
             padding: .5rem;
-            fill: var(--dark-blue);
+            fill: var($dark-blue);
             cursor: pointer;
         }
     }
@@ -142,7 +142,7 @@
                 height: .1875rem;
                 width: .1875rem;
                 border-radius: 50%;
-                background: var(--blue-light);
+                background: blue-7;
             }
         }
 
@@ -167,7 +167,7 @@
         }
 
         &-picked {
-            border: .125rem solid var(--blue-light);
+            border: .125rem solid blue-7;
         }
 
         &-fade {
@@ -178,14 +178,14 @@
 
     &-panel {
         position: absolute;
-        background-color: var(--white);
+        background-color: $white;
         box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .1);
         display: none;
         z-index: 9;
         width: 17.5rem;
         height: 16.375rem;
         padding: 1rem .625rem .25rem .625rem;
-        color: var(--blue-4);
+        color: $blue-4;
 
         &-show {
             display: block;
@@ -202,7 +202,7 @@
 
     &-error {
         display: none;
-        color: var(--error);
+        color: $red-3;
         margin-top: .25rem;
         font-size: .75rem;
         letter-spacing: 0;

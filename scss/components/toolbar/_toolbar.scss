@@ -33,7 +33,7 @@
         &:hover,
         &:focus {
             >.#{$prefix}-toolbar-icon {
-                fill: var(--blue-light);
+                fill: blue-7;
             }
         }
     }
