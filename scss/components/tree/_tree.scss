@@ -1,83 +1,83 @@
 $prefix: 'hcl';
 
 .#{$prefix}-tree {
+  font-size: 0.875rem;
+  @include getFontWeight(regular);
+  line-height: 1.5rem;
+  letter-spacing: 0.16px;
+
+  .tree-item {
+    padding: 0;
+    width: 100%;
+    display: block;
+    color: var(--dark-blue);
+    position: relative;
+    padding-top: 0.3125rem;
+
+    .tree-node {
+      cursor: pointer;
+      line-height: unset !important;
+
+      &:hover {
+        background-color: #e5eff7;
+      }
+
+      i {
+        margin-right: 0.5rem;
+      }
+
+      .toggle-icon {
+        width: 0.875rem;
+        height: 0.875rem;
+      }
+
+      .caret {
+        margin-right: 1.375rem;
+      }
+
+      .caret::before {
+        content: ' ';
+        position: absolute;
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-top: 0.5rem;
+        border-right: 0.0625rem solid var(--dark-40);
+        border-bottom: 0.0625rem solid var(--dark-40);
+        transform: scale(1) rotate(-45deg);
+        transition: all 0.2s ease-in-out;
+        margin-left: 0.3125rem;
+      }
+
+      .caret-down::before {
+        transform: scale(1) rotate(45deg);
+        margin-top: 0.375rem;
+      }
+    }
+  }
+
+  .tree-nested {
+    margin-bottom: 0.25rem;
+    margin-left: 1.25rem;
     font-size: 0.875rem;
-    @include getFontWeight(regular);
-    line-height: 1.5rem;
-    letter-spacing: 0.16px;
+  }
 
-    .tree-item {
-        padding: 0;
-        width: 100%;
-        display: block;
-        color: var(--dark-blue);
-        position: relative;
-        padding-top: 5px;
+  [aria-expanded='false'] > ul {
+    display: none;
+  }
 
-        .tree-node {
-            cursor: pointer;
-            line-height: unset !important;
+  [aria-expanded='true'] > ul {
+    display: block;
+  }
 
-            &:hover {
-                background-color: #e5eff7;
-            }
+  [aria-expanded='false'] > div .expanded {
+    display: none;
+  }
 
-            i {
-                margin-right: 8px;
-            }
+  [aria-expanded='true'] > div .collapsed {
+    display: none;
+  }
 
-            .toggle-icon {
-                width: 14px;
-                height: 14px;
-            }
-
-            .caret {
-                margin-right: 22px;
-            }
-
-            .caret::before {
-                content: ' ';
-                position: absolute;
-                height: 8px;
-                width: 8px;
-                margin-top: 8px;
-                border-right: 0.0625rem solid var(--dark-40);
-                border-bottom: 0.0625rem solid var(--dark-40);
-                transform: scale(1) rotate(-45deg);
-                transition: all 0.2s ease-in-out;
-                margin-left: 5px;
-            }
-
-            .caret-down::before {
-                transform: scale(1) rotate(45deg);
-                margin-top: 6px;
-            }
-        }
-    }
-
-    .tree-nested {
-        margin-bottom: 0.25rem;
-        margin-left: 20px;
-        font-size: 0.875rem;
-    }
-
-    [aria-expanded='false']>ul {
-        display: none;
-    }
-
-    [aria-expanded='true']>ul {
-        display: block;
-    }
-
-    [aria-expanded='false']>div .expanded {
-        display: none;
-    }
-
-    [aria-expanded='true']>div .collapsed {
-        display: none;
-    }
-
-    .highlight {
-        background-color: lightblue;
-    }
+  .highlight {
+    background-color: lightblue;
+  }
 }
