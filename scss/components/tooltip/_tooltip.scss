@@ -1,3 +1,12 @@
+$tooltip-default-max-width: 12.5rem;
+$tooltip-interactive-max-width: 15rem;
+$tooltip-arrow-size-default: .625rem;
+$tooltip-arrow-size-default-position: $tooltip-arrow-size-default/2;
+$tooltip-arrow-size-icon: .3125rem;
+$tooltip-arrow-size-icon-position: $tooltip-arrow-size-icon/2;
+$tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+.0625rem;
+$tooltip-box-shadow:rgba($black, 0.1);
+
 .#{$prefix}-tooltip {
     position: absolute;
     display: block;
@@ -12,7 +21,7 @@
     padding: .5rem;
     box-shadow: 0 0.25rem 0.5rem 0 $tooltip-box-shadow;
     z-index: $tooltip-zindex;
-    top:0;
+    top: 0;
     left: 0;
 
     &-arrow {
