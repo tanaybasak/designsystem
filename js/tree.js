@@ -8,32 +8,53 @@ class Tree {
       this.element.getAttribute('data-expanded-icon') || 'caret caret-down';
     this.collapsedIcon =
       this.element.getAttribute('data-collapsed-icon') || 'caret';
+    this.selectedElement = null;
   }
 
   attachEvents = () => {
-    var toggler = this.element.getElementsByClassName('toggle-icon');
+    const nodeElements = this.element.getElementsByClassName('tree-node');
 
-    var spans = this.element.getElementsByClassName('tree-node');
-    for (let j = 0; j < spans.length; j++) {
-      spans[j].addEventListener('keydown', e => {
+    for (let i = 0; i < nodeElements.length; i++) {
+      const nodeElement = nodeElements[i];
+      nodeElement.addEventListener('keydown', e => {
         this.keyDownOnTree(e);
       });
-    }
-    for (let i = 0; i < toggler.length; i++) {
+
       let icon = this.collapsedIcon;
-      if (
-        toggler[i].parentElement.parentElement.getAttribute('aria-expanded') ===
-        'true'
-      ) {
+      if (nodeElement.parentElement.getAttribute('aria-expanded') === 'true') {
         icon = this.expandedIcon;
       }
       if (icon) {
         const classList = icon.split(' ');
-        toggler[i].classList.add(...classList);
+        if (
+          nodeElement.getElementsByClassName('toggle-icon') &&
+          nodeElement.getElementsByClassName('toggle-icon').length > 0
+        ) {
+          nodeElement
+            .getElementsByClassName('toggle-icon')[0]
+            .classList.add(...classList);
+        }
       }
-      toggler[i].addEventListener('click', e => {
-        this.toggleTree(e.currentTarget);
+      if (nodeElement.querySelector('.toggle-icon')) {
+        nodeElement.addEventListener('click', e => {
+          this.toggleTree(e.currentTarget.children[0]);
+        });
+      }
+
+      nodeElement.querySelector('span').addEventListener('click', e => {
+        e.stopPropagation();
+        this.selectNode(e.currentTarget);
       });
+    }
+  };
+
+  selectNode = node => {
+    if (node !== this.selectedElement) {
+      if (this.selectedElement) {
+        this.selectedElement.classList.remove('highlight');
+      }
+      this.selectedElement = node;
+      node.classList.add('highlight');
     }
   };
 
@@ -107,6 +128,12 @@ class Tree {
             this.focusNode(parentNodeElement);
           }
         }
+        e.preventDefault();
+        break;
+      }
+      case 13: {
+        const highlightElement = nodeElement.querySelector('span');
+        this.selectNode(highlightElement);
         e.preventDefault();
         break;
       }

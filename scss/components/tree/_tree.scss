@@ -19,7 +19,7 @@ $prefix: 'hcl';
       line-height: unset !important;
 
       &:hover {
-        background-color: #e5eff7;
+        background-color: rgb(70, 150, 210, 0.1);
       }
 
       i {
@@ -32,7 +32,7 @@ $prefix: 'hcl';
       }
 
       .caret {
-        margin-right: 1.375rem;
+        display: inline-block;
       }
 
       .caret::before {
@@ -40,7 +40,7 @@ $prefix: 'hcl';
         position: absolute;
         height: 0.5rem;
         width: 0.5rem;
-        margin-top: 0.5rem;
+        margin-top: 0.25rem;
         border-right: 0.0625rem solid var(--dark-40);
         border-bottom: 0.0625rem solid var(--dark-40);
         transform: scale(1) rotate(-45deg);
@@ -50,7 +50,12 @@ $prefix: 'hcl';
 
       .caret-down::before {
         transform: scale(1) rotate(45deg);
-        margin-top: 0.375rem;
+        margin-top: 0.25rem;
+      }
+
+      span {
+        padding: 4px 8px;
+        margin-left: -8px;
       }
     }
   }
@@ -78,6 +83,7 @@ $prefix: 'hcl';
   }
 
   .highlight {
-    background-color: lightblue;
+    background-color: var(--blue);
+    color:var(--white);
   }
 }
