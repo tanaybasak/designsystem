@@ -2471,6 +2471,7 @@
         </main>
     </div>
     <script src="./js/index.js"></script>
+    
     <script>
         var link = document.querySelector('link[rel="import"]');
         var content = link.import;
@@ -2480,6 +2481,7 @@
         document.getElementById('accordion-controlled').appendChild(el.cloneNode(true));
         // document.body.appendChild(el.cloneNode(true));
     </script>
+    <script src="./scss/components/accordion/controlled.js"></script>
     <script>
         patron.dropdown(".hcl-dropdown.top", {
             position: "top", onChange: (element, value) => {
@@ -2512,9 +2514,14 @@
             }
         });
 
-        patron.accordion(".hcl-accordion", {
-            uncontrolled: false
-        });
+        // patron.accordion(".hcl-accordion", {
+        //     uncontrolled: false
+        // });
+
+        //    window.patron.accordion('#con', {
+        //         uncontrolled: false
+        //     });
+
 
         patron.navigation(".hcl-sidebar", {});
 
