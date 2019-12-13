@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <!-- <link rel="stylesheet" href="https://10.115.95.40:8090/patron-font.css">  -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
         .bgColor {
             background-color: #eee;
@@ -38,7 +36,7 @@
     </style>
 </head>
 
-<body onload="load()">
+<body>
     <!-- HEADER LAYOUT -->
     <header class="hcl-header" data-withsidenav=true>
         <a href="/" class="hcl-header-brand">
@@ -2471,25 +2469,20 @@
             <section id="treeStructure" >
                 <div class="hcl-row">
                     <div class="hcl-col-4">
-
                         <ul role="tree" class="hcl-tree">
-                            <li class="tree-item" role="treeitem" aria-expanded="true">
+                            <li class="tree-item" role="treeitem" aria-expanded="false">
                                 <div class="tree-node" tabindex="0">
                                     <i class="toggle-icon"></i>
-                                    <i class="fa fa-folder-o collapsed"></i>
-                                    <i class="fa fa-folder-open expanded"></i>
                                     <span>Main 1</span>
                                 </div>
                                 <ul role="group" class="tree-nested">
                                     <li class="tree-item" role="treeitem">
                                         <div class="tree-node pl-5" tabindex="0">
-                                            <i class="fa fa-file-o"></i>
                                             <span>Sub Main 1.1</span>
                                         </div>
                                     </li>
                                     <li class="tree-item" role="treeitem">
                                         <div class="tree-node pl-5" tabindex="0">
-                                            <i class="fa fa-file-o"></i>
                                             <span>Sub Main 1.2</span>
                                         </div>
                                     </li>
@@ -2498,28 +2491,22 @@
                             <li class="tree-item" role="treeitem" aria-expanded="false">
                                 <div class="tree-node" tabindex="0">
                                     <i class="toggle-icon"></i>
-                                    <i class="fa fa-folder-o collapsed"></i>
-                                    <i class="fa fa-folder-open expanded"></i>
                                     <span>Main 2</span>
                                 </div>
                                 <ul role="group" class="tree-nested">
                                     <li class="tree-item" role="treeitem" aria-expanded="false">
                                         <div class="tree-node" tabindex="0">
                                             <i class="toggle-icon"></i>
-                                            <i class="fa fa-folder-o collapsed"></i>
-                                            <i class="fa fa-folder-open expanded"></i>
                                             <span>Sub Main 2.1</span>
                                         </div>
                                         <ul role="group" class="tree-nested">
                                             <li class="tree-item" role="treeitem">
                                                 <div class="tree-node pl-5" tabindex="0">
-                                                        <i class="fa fa-file-o"></i>
                                                     <span>Sub Main 2.1.1</span>
                                                 </div>
                                             </li>
                                             <li class="tree-item" role="treeitem">
                                                 <div class="tree-node pl-5" tabindex="0">
-                                                        <i class="fa fa-file-o"></i>
                                                     <span>Sub Main 2.1.2</span>
                                                 </div>
                                             </li>
@@ -2528,20 +2515,16 @@
                                     <li class="tree-item" role="treeitem" aria-expanded="false">
                                         <div class="tree-node" tabindex="0">
                                             <i class="toggle-icon"></i>
-                                            <i class="fa fa-folder-o collapsed"></i>
-                                            <i class="fa fa-folder-open expanded"></i>
                                             <span>Sub Main 2.2</span>
                                         </div>
                                         <ul role="group" class="tree-nested">
                                             <li class="tree-item" role="treeitem">
                                                 <div class="tree-node pl-5" tabindex="0">
-                                                        <i class="fa fa-file-o"></i>
                                                     <span>Sub Main 2.2.1</span>
                                                 </div>
                                             </li>
                                             <li class="tree-item" role="treeitem">
                                                 <div class="tree-node pl-5" tabindex="0">
-                                                        <i class="fa fa-file-o"></i>
                                                     <span>Sub Main 2.2.1</span>
                                                 </div>
                                             </li>
@@ -2549,226 +2532,28 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="tree-item" role="treeitem" aria-expanded="true">
+                            <li class="tree-item" role="treeitem" aria-expanded="false">
                                 <div class="tree-node" tabindex="0">
                                     <i class="toggle-icon"></i>
-                                    <i class="fa fa-folder-o collapsed"></i>
-                                    <i class="fa fa-folder-open expanded"></i>
                                     <span>Main 3</span>
                                 </div>
                                 <ul role="group" class="tree-nested">
                                     <li class="tree-item" role="treeitem">
                                         <div class="tree-node pl-5" tabindex="0">
-                                                <i class="fa fa-file-o"></i>
                                             <span>Sub Main 3.1</span>
                                         </div>
                                     </li>
                                     <li class="tree-item" role="treeitem">
                                         <div class="tree-node pl-5" tabindex="0">
-                                                <i class="fa fa-file-o"></i>
                                             <span>Sub Main 3.2</span>
                                         </div>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-
                     </div>
-
-                    <div class="hcl-col-4">
-                            <ul role="tree" class="hcl-tree">
-                                <li class="tree-item" role="treeitem" aria-expanded="false">
-                                    <div class="tree-node" tabindex="0">
-                                        <i class="toggle-icon"></i>
-                                        <span>Main 1</span>
-                                    </div>
-                                    <ul role="group" class="tree-nested">
-                                        <li class="tree-item" role="treeitem">
-                                            <div class="tree-node pl-5" tabindex="0">
-                                                <span>Sub Main 1.1</span>
-                                            </div>
-                                        </li>
-                                        <li class="tree-item" role="treeitem">
-                                            <div class="tree-node pl-5" tabindex="0">
-                                                <span>Sub Main 1.2</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="tree-item" role="treeitem" aria-expanded="false">
-                                    <div class="tree-node" tabindex="0">
-                                        <i class="toggle-icon"></i>
-                                        <span>Main 2</span>
-                                    </div>
-                                    <ul role="group" class="tree-nested">
-                                        <li class="tree-item" role="treeitem" aria-expanded="false">
-                                            <div class="tree-node" tabindex="0">
-                                                <i class="toggle-icon"></i>
-                                                <span>Sub Main 2.1</span>
-                                            </div>
-                                            <ul role="group" class="tree-nested">
-                                                <li class="tree-item" role="treeitem">
-                                                    <div class="tree-node pl-5" tabindex="0">
-                                                        <span>Sub Main 2.1.1</span>
-                                                    </div>
-                                                </li>
-                                                <li class="tree-item" role="treeitem">
-                                                    <div class="tree-node pl-5" tabindex="0">
-                                                        <span>Sub Main 2.1.2</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="tree-item" role="treeitem" aria-expanded="false">
-                                            <div class="tree-node" tabindex="0">
-                                                <i class="toggle-icon"></i>
-                                                <span>Sub Main 2.2</span>
-                                            </div>
-                                            <ul role="group" class="tree-nested">
-                                                <li class="tree-item" role="treeitem">
-                                                    <div class="tree-node pl-5" tabindex="0">
-                                                        <span>Sub Main 2.2.1</span>
-                                                    </div>
-                                                </li>
-                                                <li class="tree-item" role="treeitem">
-                                                    <div class="tree-node pl-5" tabindex="0">
-                                                        <span>Sub Main 2.2.1</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="tree-item" role="treeitem" aria-expanded="false">
-                                    <div class="tree-node" tabindex="0">
-                                        <i class="toggle-icon"></i>
-                                        <span>Main 3</span>
-                                    </div>
-                                    <ul role="group" class="tree-nested">
-                                        <li class="tree-item" role="treeitem">
-                                            <div class="tree-node pl-5" tabindex="0">
-                                                <span>Sub Main 3.1</span>
-                                            </div>
-                                        </li>
-                                        <li class="tree-item" role="treeitem">
-                                            <div class="tree-node pl-5" tabindex="0">
-                                                <span>Sub Main 3.2</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-            
-                                </div>
-
-
-                                <div class="hcl-col-4">
-                                        <ul role="tree" class="hcl-tree" data-collapsed-icon="fa fa-folder-o" data-expanded-icon="fa fa-folder-open">
-                                            <li class="tree-item" role="treeitem">
-                                                <div class="tree-node" tabindex="0">
-                                                    <i class="toggle-icon"></i>
-                                                    <i class="fa fa-folder-o collapsed"></i>
-                                                    <i class="fa fa-folder-open expanded"></i>
-                                                    <span>Main 1</span>
-                                                </div>
-                                                <ul role="group" class="tree-nested">
-                                                    <li class="tree-item" role="treeitem">
-                                                        <div class="tree-node pl-5" tabindex="0">
-                                                            <i class="fa fa-file-o"></i>
-                                                            <span>Sub Main 1.1</span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="tree-item" role="treeitem">
-                                                        <div class="tree-node pl-5" tabindex="0">
-                                                            <i class="fa fa-file-o"></i>
-                                                            <span>Sub Main 1.2</span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="tree-item" role="treeitem">
-                                                <div class="tree-node" tabindex="0">
-                                                    <i class="toggle-icon"></i>
-                                                    <i class="fa fa-folder-o collapsed"></i>
-                                                    <i class="fa fa-folder-open expanded"></i>
-                                                    <span>Main 2</span>
-                                                </div>
-                                                <ul role="group" class="tree-nested">
-                                                    <li class="tree-item" role="treeitem">
-                                                        <div class="tree-node" tabindex="0">
-                                                            <i class="toggle-icon"></i>
-                                                            <i class="fa fa-folder-o collapsed"></i>
-                                                            <i class="fa fa-folder-open expanded"></i>
-                                                            <span>Sub Main 2.1</span>
-                                                        </div>
-                                                        <ul role="group" class="tree-nested">
-                                                            <li class="tree-item" role="treeitem">
-                                                                <div class="tree-node pl-5" tabindex="0">
-                                                                        <i class="fa fa-file-o"></i>
-                                                                    <span>Sub Main 2.1.1</span>
-                                                                </div>
-                                                            </li>
-                                                            <li class="tree-item" role="treeitem">
-                                                                <div class="tree-node pl-5" tabindex="0">
-                                                                        <i class="fa fa-file-o"></i>
-                                                                    <span>Sub Main 2.1.2</span>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="tree-item" role="treeitem">
-                                                        <div class="tree-node" tabindex="0">
-                                                            <i class="toggle-icon"></i>
-                                                            <i class="fa fa-folder-o collapsed"></i>
-                                                            <i class="fa fa-folder-open expanded"></i>
-                                                            <span>Sub Main 2.2</span>
-                                                        </div>
-                                                        <ul role="group" class="tree-nested">
-                                                            <li class="tree-item" role="treeitem">
-                                                                <div class="tree-node pl-5" tabindex="0">
-                                                                        <i class="fa fa-file-o"></i>
-                                                                    <span>Sub Main 2.2.1</span>
-                                                                </div>
-                                                            </li>
-                                                            <li class="tree-item" role="treeitem">
-                                                                <div class="tree-node pl-5" tabindex="0">
-                                                                        <i class="fa fa-file-o"></i>
-                                                                    <span>Sub Main 2.2.1</span>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="tree-item" role="treeitem">
-                                                <div class="tree-node" tabindex="0">
-                                                    <i class="toggle-icon"></i>
-                                                    <i class="fa fa-folder-o collapsed"></i>
-                                                    <i class="fa fa-folder-open expanded"></i>
-                                                    <span>Main 3</span>
-                                                </div>
-                                                <ul role="group" class="tree-nested">
-                                                    <li class="tree-item" role="treeitem">
-                                                        <div class="tree-node pl-5" tabindex="0">
-                                                                <i class="fa fa-file-o"></i>
-                                                            <span>Sub Main 3.1</span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="tree-item" role="treeitem">
-                                                        <div class="tree-node pl-5" tabindex="0">
-                                                                <i class="fa fa-file-o"></i>
-                                                            <span>Sub Main 3.2</span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                        
-                                            </div>
-
-                                            
-                    </div>
-                </section>
+                </div>
+            </section>
 
             <!-- footer -->
             <footer class="hcl-footer">
@@ -2855,11 +2640,7 @@
         patron.slider('.hcl-slider');
 
         patron.tree('.hcl-tree');
-
-        function load(){
-            var elmnt = document.getElementById("treeStructure");
-            elmnt.scrollIntoView();
-        }
+        
     </script>
 </body>
 

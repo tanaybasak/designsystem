@@ -1,5 +1,3 @@
-$prefix: 'hcl';
-
 .#{$prefix}-tree {
   font-size: 0.875rem;
   @include getFontWeight(regular);
@@ -56,42 +54,42 @@ $prefix: 'hcl';
       span {
         padding: 4px 8px;
         margin-left: -8px;
+
+        &.highlight {
+          background-color: var(--blue);
+          color: var(--white);
+        }
       }
     }
-  }
 
-  .tree-nested {
-    margin-bottom: 0.25rem;
-    margin-left: 1.25rem;
-    font-size: 0.875rem;
-  }
+    & > ul {
+      display: none;
+    }
 
-  .tree-item > ul {
-    display: none;
-  }
+    &:not([aria-expanded]) > div .expanded {
+      display: none;
+    }
 
-  .tree-item:not([aria-expanded]) > div .expanded {
-    display: none;
-  }
+    &[aria-expanded='false'] > ul {
+      display: none;
+    }
 
-  [aria-expanded='false'] > ul {
-    display: none;
-  }
+    &[aria-expanded='true'] > ul {
+      display: block;
+    }
 
-  [aria-expanded='true'] > ul {
-    display: block;
-  }
+    &[aria-expanded='false'] > div .expanded {
+      display: none;
+    }
 
-  [aria-expanded='false'] > div .expanded {
-    display: none;
-  }
+    &[aria-expanded='true'] > div .collapsed {
+      display: none;
+    }
 
-  [aria-expanded='true'] > div .collapsed {
-    display: none;
-  }
-
-  .highlight {
-    background-color: var(--blue);
-    color: var(--white);
+    .tree-nested {
+      margin-bottom: 0.25rem;
+      margin-left: 1.25rem;
+      font-size: 0.875rem;
+    }
   }
 }
