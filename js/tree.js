@@ -1,5 +1,4 @@
 import handleDataBinding from './utils/data-api';
-import { findLastVisibleChildren, findNextSiblingAncestor } from './utils/dom';
 
 class Tree {
   constructor(element) {
@@ -10,6 +9,40 @@ class Tree {
       this.element.getAttribute('data-collapsed-icon') || 'caret';
     this.selectedElement = null;
   }
+
+  findNextSiblingAncestor = nodeElement => {
+    const parentNodeElement = nodeElement.parentElement;
+    if (parentNodeElement) {
+      if (parentNodeElement.nextElementSibling) {
+        return parentNodeElement.nextElementSibling;
+      } else {
+        return this.findNextSiblingAncestor(parentNodeElement);
+      }
+    } else {
+      return null;
+    }
+  };
+
+  findLastVisibleChildren = nodeElement => {
+    let nodeStatus = nodeElement.getAttribute('aria-expanded');
+    if (nodeStatus === undefined || nodeStatus === null) {
+      if (nodeElement.children.length > 1) {
+        nodeStatus = 'false';
+      }
+    }
+    if (
+      nodeStatus === 'true' &&
+      nodeElement.children &&
+      nodeElement.children.length > 1
+    ) {
+      const childrenListElements = nodeElement.children[1].children;
+      const lastChildElement =
+        childrenListElements[childrenListElements.length - 1];
+      return this.findLastVisibleChildren(lastChildElement);
+    } else {
+      return nodeElement;
+    }
+  };
 
   attachEvents = () => {
     const nodeElements = this.element.getElementsByClassName('tree-node');
@@ -67,10 +100,19 @@ class Tree {
   keyDownOnTree = e => {
     var key = e.which || e.keyCode;
     const nodeElement = e.currentTarget;
+
+    let nodeStatus = nodeElement.parentElement.getAttribute('aria-expanded');
+
+    if (nodeStatus === undefined || nodeStatus === null) {
+      if (nodeElement.parentElement.children.length > 1) {
+        nodeStatus = 'false';
+      }
+    }
+
     switch (key) {
       case 40: {
         if (
-          nodeElement.parentElement.getAttribute('aria-expanded') === 'true' &&
+          nodeStatus === 'true' &&
           nodeElement.nextElementSibling &&
           nodeElement.nextElementSibling.children &&
           nodeElement.nextElementSibling.children.length > 0
@@ -80,7 +122,7 @@ class Tree {
           if (nodeElement.parentElement.nextElementSibling) {
             this.focusNode(nodeElement.parentElement.nextElementSibling);
           } else {
-            const nextSiblingAncestor = findNextSiblingAncestor(nodeElement);
+            const nextSiblingAncestor = this.findNextSiblingAncestor(nodeElement);
             if (nextSiblingAncestor) {
               this.focusNode(nextSiblingAncestor);
             }
@@ -91,7 +133,7 @@ class Tree {
       }
       case 38: {
         if (nodeElement.parentElement.previousElementSibling) {
-          const lastElement = findLastVisibleChildren(
+          const lastElement = this.findLastVisibleChildren(
             nodeElement.parentElement.previousElementSibling
           );
           this.focusNode(lastElement);
@@ -106,20 +148,14 @@ class Tree {
         break;
       }
       case 39: {
-        if (
-          nodeElement.parentElement.hasAttribute('aria-expanded') &&
-          nodeElement.parentElement.getAttribute('aria-expanded') === 'false'
-        ) {
+        if (nodeStatus === 'false') {
           this.toggleTree(nodeElement.children[0]);
         }
         e.preventDefault();
         break;
       }
       case 37: {
-        if (
-          nodeElement.parentElement.hasAttribute('aria-expanded') &&
-          nodeElement.parentElement.getAttribute('aria-expanded') === 'true'
-        ) {
+        if (nodeStatus === 'true') {
           this.toggleTree(nodeElement.children[0]);
         } else {
           const parentNodeElement =
@@ -143,9 +179,10 @@ class Tree {
   };
 
   toggleTree = nodeElement => {
-    const collapsedStatus = nodeElement.parentElement.parentElement.getAttribute(
-      'aria-expanded'
-    );
+    const collapsedStatus =
+      nodeElement.parentElement.parentElement.getAttribute('aria-expanded') ||
+      'false';
+
     nodeElement.parentElement.parentElement.setAttribute(
       'aria-expanded',
       collapsedStatus === 'false' ? 'true' : 'false'

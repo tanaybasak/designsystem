@@ -19,7 +19,7 @@ $prefix: 'hcl';
       line-height: unset !important;
 
       &:hover {
-        background-color: rgb(70, 150, 210, 0.1);
+        background-color: $treeview-hover;
       }
 
       i {
@@ -66,6 +66,14 @@ $prefix: 'hcl';
     font-size: 0.875rem;
   }
 
+  .tree-item > ul {
+    display: none;
+  }
+
+  .tree-item:not([aria-expanded]) > div .expanded {
+    display: none;
+  }
+
   [aria-expanded='false'] > ul {
     display: none;
   }
@@ -84,6 +92,6 @@ $prefix: 'hcl';
 
   .highlight {
     background-color: var(--blue);
-    color:var(--white);
+    color: var(--white);
   }
 }
