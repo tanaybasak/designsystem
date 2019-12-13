@@ -28,8 +28,4 @@ const getRem = value => {
   return value / 16 + 'rem';
 };
 
-export {
-  isElement,
-  trackDocumentClick,
-  getRem
-};
+export { isElement, trackDocumentClick, getRem };
