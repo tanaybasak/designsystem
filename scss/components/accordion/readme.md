@@ -4,11 +4,11 @@ Accordion helps you expand and collapse sections of content. Accordions are on
 
 ### Controlled Accrdion
 
-Example of controlled accordion
+Example of controlled
 
 ### Uncontrolled Accordion
 
-Example of Uncontrolled accordion
+Example of Uncontrolled
 
 ### General Guidelines
 
@@ -30,18 +30,18 @@ Spec file should be here.
 
 For controlled accordion
 
-Snippet of controlled accordion
+Snippet of controlled trigger
 
 For uncontrolled accordion
 
-Snippet of uncontrolled accordion
+Snippet of uncontrolled trigger
 
 ##### HTML
 
 For controlled accordion
 
-Snippet of controlled accordion
+Snippet of controlled html
 
 For uncontrolled accordion
 
-Snippet of uncontrolled accordion
+Snippet of uncontrolled html
