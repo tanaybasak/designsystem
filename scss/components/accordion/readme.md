@@ -8,7 +8,7 @@ Example of controlled
 
 ### Uncontrolled Accordion
 
-Example of Uncontrolled
+Example of uncontrolled
 
 ### General Guidelines
 
