@@ -2,7 +2,7 @@
 
 Spinners are used when retrieving data or performing slow computations, and help to notify users that loading is underway.
 
-Expample of spinner
+Example of spinner
 
 ### General Guidelines
 
@@ -17,7 +17,7 @@ Spec file should be here.
 
 ##### HTML
 
-Snippet of spinner
+Snippet of spinner html
 
 #### Classes
 
