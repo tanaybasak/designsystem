@@ -1,4 +1,4 @@
-# Button
+## Button
 
 In Patron-CSS we have 3 types of Button style. We have name them:
 - Primary
