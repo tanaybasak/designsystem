@@ -20,6 +20,8 @@ Example of Uncontrolled accordion
 
 ### Spec file
 
+There is no limit to the height of an open row; however, you must follow the padding specs given below. The width of an accordion varies based on the content, layout, and page design. The chevron icon is available on the iconography library page. Avoid any text within 16px / 1rem of the accordion's sides. Additionally, include padding between labels, body copy, and separation lines to allow breathing room between elements. 
+
 Spec file should be here.
 
 ### Documentaion
@@ -43,32 +45,3 @@ Snippet of controlled accordion
 For uncontrolled accordion
 
 Snippet of uncontrolled accordion
-
-#### Modifiers
-
-Use these modifiers with `.bx--accordion` class.
-
-| Default Selector            | Description                                |
-|-----------------------------|--------------------------------------------|
-| .bx--accordion__item--active | The className for an active accordion item |
-
-#### Public Methods
-
-| Name    | Params | Description          |
-|---------|--------|----------------------|
-| release |        | Deletes the instance |
-
-#### Options
-
-| Option                   | Default Selector              | Description                                       |
-|--------------------------|-------------------------------|---------------------------------------------------|
-| selectorInit             | `[data-accordion]`            | The selector to find the accordion                |
-| selectorAccordionItem    | `[data-accordion-item]`       | The selector to find the accordion item component |
-| selectorAccordionContent | `.bx--accordion__content`     | The selector for the accordion content element    |
-| classActive              | `bx--accordion__item--active` | The className for an active accordion item        |
-
-#### Classes
-
-| Name                          | Description                                |
-|-------------------------------|--------------------------------------------|
-| `bx--accordion__item--active` | The className for an active accordion item |

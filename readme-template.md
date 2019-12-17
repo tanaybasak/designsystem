@@ -27,21 +27,21 @@ Spec file should be here.
 
 For variation 1
 
-Snippet of variation 1
+Snippet of variation 1 trigger
 
 For variation 2
 
-Snippet of variation 2
+Snippet of variation 2 trigger
 
 ##### HTML
 
 For variation 1
 
-Snippet of variation 1
+Snippet of variation 1 html
 
 For variation 2
 
-Snippet of variation 2
+Snippet of variation 2 html
 
 #### Classes
 
