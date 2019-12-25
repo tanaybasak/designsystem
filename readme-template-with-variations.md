@@ -12,10 +12,10 @@ Example of variation 2
 
 ### General Guidelines
 
-This is guidline information.
-This is guidline information.
-This is guidline information.
-This is guidline information.
+- _Bold Text:_ This is guidline information.
+- This is guidline information.
+- This is guidline information.
+- This is guidline information.
 
 ### Spec file
 
@@ -45,18 +45,18 @@ Snippet of variation 2 html
 
 #### Classes
 
-| Name                          | Description                                |
-|-------------------------------|--------------------------------------------|
-| .hcl-temporary                | This is temporary description              |
+| Name           | Description                   |
+| -------------- | ----------------------------- |
+| .hcl-temporary | This is temporary description |
 
 #### Modifiers
 
-| Default Selector            | Description                                |
-|-----------------------------|--------------------------------------------|
-| hcl-temporary               | This is temporary description              |
+| Default Selector | Description                   |
+| ---------------- | ----------------------------- |
+| hcl-temporary    | This is temporary description |
 
 #### Public Methods
 
-| Name    | Params | Description                   |
-|---------|--------|-------------------------------|
-| temp    |        | This is temporary description |
+| Name | Params | Description                   |
+| ---- | ------ | ----------------------------- |
+| temp |        | This is temporary description |

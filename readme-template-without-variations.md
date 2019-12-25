@@ -6,10 +6,10 @@ Example of component-name
 
 ### General Guidelines
 
-This is guidline information.
-This is guidline information.
-This is guidline information.
-This is guidline information.
+- _Bold Text:_ This is guidline information.
+- This is guidline information.
+- This is guidline information.
+- This is guidline information.
 
 ### Spec file
 
