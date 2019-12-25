@@ -30,9 +30,9 @@ Example of secondary-danger
 
 Example of secondary-small
 
-### Secondary Small Danger Buttons
+### Secondary Danger Small Buttons
 
-Example of secondary-small-danger
+Example of secondary-danger-small
 
 ### Ghost Buttons
 
@@ -85,9 +85,9 @@ For secondary-small
 
 Snippet of secondary-small html
 
-For secondary-small-danger
+For secondary-danger-small
 
-Snippet of secondary-small-danger html
+Snippet of secondary-danger-small html
 
 For ghost
 
