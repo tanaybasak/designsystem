@@ -16,7 +16,7 @@ Example of bottom
 
 - For label and validation guidance refer to text input (LINK).
 
-####Calendar widget 
+#### Calendar widget 
 
 This widget allows the user choose a date with the visual aid of a calendar. Calendar widget is opened when the user clicks on the input or calendar icon (:focus) 
 
@@ -35,21 +35,3 @@ Snippet of top html
 For bottom side date picker
 
 Snippet of bottom html
-
-#### Classes
-
-| Name           | Description                   |
-| -------------- | ----------------------------- |
-| .hcl-temporary | This is temporary description |
-
-#### Modifiers
-
-| Default Selector | Description                   |
-| ---------------- | ----------------------------- |
-| hcl-temporary    | This is temporary description |
-
-#### Public Methods
-
-| Name | Params | Description                   |
-| ---- | ------ | ----------------------------- |
-| temp |        | This is temporary description |
