@@ -24,16 +24,6 @@ Spec file should be here.
 
 ### Documentaion
 
-##### Triggers
-
-For Inline Spinner
-
-Snippet of inline trigger
-
-For Large Spinner
-
-Snippet of large trigger
-
 ##### HTML
 
 For Inline Spinner
