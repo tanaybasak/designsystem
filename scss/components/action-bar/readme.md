@@ -6,10 +6,10 @@ Example of action-bar
 
 ### General Guidelines
 
-This is guidline information.
-This is guidline information.
-This is guidline information.
-This is guidline information.
+- This is guidline information.
+- This is guidline information.
+- This is guidline information.
+
 
 ### Spec file
 
