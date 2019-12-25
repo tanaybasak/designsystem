@@ -1,4 +1,4 @@
-## <Action Bar>
+## Action Bar
 
 Descrription of component
 
