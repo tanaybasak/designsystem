@@ -10,11 +10,11 @@ Example of readable
 
 Example of clickable
 
-### <selectable>
+### Selectable
 
 Example of selectable
 
-### <expandable>
+### Expandable
 
 Example of expandable
 
@@ -34,35 +34,33 @@ Example of expandable
 
 ### Spec file
 
-- Since tiles are basic containers, height and width may vary with content. Padding may depend on content type. 
+- Since tiles are basic containers, height and width may vary with content. Padding may depend on content type.
 
 ### Documentaion
 
 ##### HTML
 
-For readable
+For readable Tile
 
 Snippet of readable html
 
-For clickable
+For clickable Tile
 
 Snippet of clickable html
 
-For selectable
+For selectable Tile
 
 Snippet of selectable html
 
-For expandable
+For expandable Tile
 
 Snippet of expandable html
 
 #### Classes
 
-| Name                 |                 Description                   |
-| ---------------------|-----------------------------------------------|
-| .hcl-tile            | This class is required create readable tile.  |
-| .hcl-tile-clickable  | This class is required create clickable tile. |
-| .hcl-tile-selectable | This class is required create selectable tile.|
-| .hcl-tile-expandable | This class is required create expandable tile.|
-
-
+| Name                 | Description                                       |
+| -------------------- | ------------------------------------------------- |
+| .hcl-tile            | This class is required to create readable tile.   |
+| .hcl-tile-clickable  | This class is required to create clickable tile.  |
+| .hcl-tile-selectable | This class is required to create selectable tile. |
+| .hcl-tile-expandable | This class is required to create expandable tile. |
