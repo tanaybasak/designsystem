@@ -4,23 +4,23 @@ A Data Table displays a list of information for the user to view or edit, while 
 
 ### Default Data Table
 
-Example of Default Data Table
+Example of default
 
 ### Borderless
 
-Example of Borderless Data Table
+Example of borderless
 
 ### Compact
 
-Example of Compact Data Table
+Example of compact
 
 ### Tall
 
-Example of Tall Data Table
+Example of tall
 
 ### Zebra
 
-Example of Zebra Data Table
+Example of zebra
 
 ### General Guidelines
 
@@ -56,20 +56,20 @@ Spec file should be here.
 
 For Default Data Table
 
-Snippet of Default Data Table
+Snippet of default html
 
 For Borderless Data Table
 
-Snippet of Borderless Data Table
+Snippet of borderless html
 
 For Compact Data Table
 
-Snippet of Compact Data Table
+Snippet of compact html
 
 For Tall Data Table
 
-Snippet of Tall Data Table
+Snippet of tall html
 
 For Zebra Data Table
 
-Snippet of Zebra Data Table
+Snippet of zebra html
