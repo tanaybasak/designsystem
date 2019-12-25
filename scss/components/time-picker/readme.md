@@ -16,10 +16,6 @@ Example of time-picker
 
 ### Documentaion
 
-##### Triggers
-
-Snippet of time-picker trigger
-
 ##### HTML
 
 Snippet of time-picker html
