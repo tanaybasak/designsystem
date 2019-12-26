@@ -1,8 +1,14 @@
-## <component-name>
+## Tag
 
 Descrription of component
 
-Example of component-name
+### Primary tag
+
+Example of primary
+
+### Secondary tag
+
+Example of secondary
 
 ### General Guidelines
 
@@ -17,28 +23,13 @@ Spec file should be here.
 
 ### Documentaion
 
-##### Triggers
-
-Snippet of component-name trigger
-
 ##### HTML
 
-Snippet of component-name html
+For Primary Tag
 
-#### Classes
+Snippet of primary html
 
-| Name                          | Description                                |
-|-------------------------------|--------------------------------------------|
-| .hcl-temporary                | This is temporary description              |
+For Secondary Tag
 
-#### Modifiers
+Snippet of secondary html
 
-| Default Selector            | Description                                |
-|-----------------------------|--------------------------------------------|
-| hcl-temporary               | This is temporary description              |
-
-#### Public Methods
-
-| Name    | Params | Description                   |
-|---------|--------|-------------------------------|
-| temp    |        | This is temporary description |

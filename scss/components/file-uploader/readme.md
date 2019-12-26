@@ -4,7 +4,7 @@ File Uploader allows the user to transfer a file or submit content of their ow
 
 ### File Uploader
 
-Example of File Uploader
+Example of file-uploader
 
 ### General Guidelines
 
@@ -44,4 +44,4 @@ Spec file should be here.
 
 For File Uploader
 
-Snippet of File Uploader
+Snippet of file-uploader
