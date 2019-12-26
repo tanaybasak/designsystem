@@ -4,11 +4,11 @@ Toggle is a control that is used to quickly switch between two possible states
 
 ### Default Toggle
 
-Example of Toggle
+Example of default
 
 ### Small Toggle
 
-Example of Small Toggle
+Example of small 
 
 ### General Guidelines
 
@@ -30,25 +30,15 @@ Spec file should be here.
 
 ### Documentaion
 
-##### Triggers
-
-For default toggle
-
-Snippet of default toggle
-
-For small toggle
-
-Snippet of small toggle
-
 ##### HTML
 
 For default toggle
 
-Snippet of default toggle html
+Snippet of default html
 
 For small toggle
 
-Snippet of small toggle html
+Snippet of small html
 
 #### Classes
 
