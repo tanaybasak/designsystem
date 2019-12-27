@@ -2,13 +2,21 @@
 
 Descrription of component
 
-### <variation 1>
+### Danger Toast
 
-Example of variation 1
+Example of danger
 
-### <variation 2>
+### Info Toast
 
-Example of variation 2
+Example of info
+
+### Success Toast
+
+Example of success
+
+### Warning Toast
+
+Example of warning
 
 ### General Guidelines
 
@@ -22,24 +30,6 @@ Example of variation 2
 Spec file should be here.
 
 ### Documentaion
-
-##### Triggers
-
-For Danger Toast
-
-Snippet of danger trigger
-
-For Info Toast
-
-Snippet of info trigger
-
-For Success Toast
-
-Snippet of success trigger
-
-For Warning Toast
-
-Snippet of warning trigger
 
 ##### HTML
 

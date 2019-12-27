@@ -1,6 +1,8 @@
 ## File Uploader
 
-The header spans the full width of the viewport and is the topmost element in the UI. Header elements are persistent within a product. 
+The header spans the full width of the viewport and is the topmost element in the UI. Header elements are persistent within a product.
+
+Example of header
 
 #### Use a header when:
 
@@ -17,10 +19,6 @@ Headers contain the logo, a global search box either static or expandable, and f
 Spec file should be here.
 
 ### Documentaion
-
-##### Triggers
-
-Snippet of header trigger
 
 ##### HTML
 
