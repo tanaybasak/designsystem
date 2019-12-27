@@ -1,4 +1,4 @@
-## <component-name>
+## Toast
 
 Descrription of component
 
@@ -25,23 +25,39 @@ Spec file should be here.
 
 ##### Triggers
 
-For variation 1
+For Danger Toast
 
-Snippet of variation 1 trigger
+Snippet of danger trigger
 
-For variation 2
+For Info Toast
 
-Snippet of variation 2 trigger
+Snippet of info trigger
+
+For Success Toast
+
+Snippet of success trigger
+
+For Warning Toast
+
+Snippet of warning trigger
 
 ##### HTML
 
-For variation 1
+For Danger Toast
 
-Snippet of variation 1 html
+Snippet of danger html
 
-For variation 2
+For Info Toast
 
-Snippet of variation 2 html
+Snippet of info html
+
+For Success Toast
+
+Snippet of success html
+
+For Warning Toast
+
+Snippet of warning html
 
 #### Classes
 

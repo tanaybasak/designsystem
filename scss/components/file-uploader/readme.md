@@ -14,7 +14,7 @@ Example of file-uploader
 
 - Use an ellipsis (…) if the filename extends beyond the width of its parent element.
 
-Interaction
+#### Interaction
 
 - The action of clicking Add files will trigger a browser-specific upload window.
 
@@ -24,11 +24,11 @@ Interaction
 
 - Any errors that may occur with the file should appear as an Inline Error Notification (LINK).
 
-Uploading Files
+#### Uploading Files
 
 Developers using File Uploader will be able to use JavaScript to inject a Loading component when selected files are actually being uploaded.
 
-Removing Files 
+#### Removing Files
 
 Developers will use JavaScript to inject a “Close” button on each file that is selected to be uploaded. It is up to the developer to code the logic for removing these files individually. However, keep in mind that this kind of editing isn’t supported natively in the browser.
 
@@ -44,4 +44,4 @@ Spec file should be here.
 
 For File Uploader
 
-Snippet of file-uploader
+Snippet of file-uploader html

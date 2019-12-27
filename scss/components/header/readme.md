@@ -1,8 +1,8 @@
-## Header
+## File Uploader
 
 The header spans the full width of the viewport and is the topmost element in the UI. Header elements are persistent within a product. 
 
-Use a header when: 
+#### Use a header when:
 
 - you want links to top level pages to be persistent on screen
 
@@ -20,8 +20,8 @@ Spec file should be here.
 
 ##### Triggers
 
-Snippet of header
+Snippet of header trigger
 
 ##### HTML
 
-Snippet of header
+Snippet of header html
