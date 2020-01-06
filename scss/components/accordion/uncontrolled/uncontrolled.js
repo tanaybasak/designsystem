@@ -1,3 +1,3 @@
 window.patron.accordion('#unc', {
-  uncontrolled: false
+  uncontrolled: true
 });
