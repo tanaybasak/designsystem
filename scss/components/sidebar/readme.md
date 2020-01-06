@@ -2,25 +2,27 @@
 
 The sidebar contains secondary navigation and fits below the header. It can be configured to be either fixed-width or flexible, with only one level of nested items allowed. Both links and category lists can be used in the Sidebar and may be present together.
 
-Use a sidebar when:
+Example of sidebar
 
-there are more than five secondary navigation items
+#### Use a sidebar when:
 
-you expect users to switch between secondary items frequently
+- there are more than five secondary navigation items
+
+- you expect users to switch between secondary items frequently
 
 ### General Guidelines
 
-Sidebar items
+#### Sidebar items
 
-Link: Links to different pages
+- _Link:_ Links to different pages
 
-Category: A category must contain at least two links. Categories can be either collapsible or fixed. The label of a category is never a link.
+- _Category:_ A category must contain at least two links. Categories can be either collapsible or fixed. The label of a category is never a link.
 
-Title bar (optional): contains the name of the section or page. It should link to the product's landing page or main console. This element can also include an optional L1 menu selector element, to enable context-switching.
+- _Title bar (optional):_ contains the name of the section or page. It should link to the product's landing page or main console. This element can also include an optional L1 menu selector element, to enable context-switching.
 
-If tabs are needed on a page when using a sidebar then then tabs are secondary in hierarchy to the sidebar. There should never be persistent tabs with a sidebar being nested under the tabs.
+- If tabs are needed on a page when using a sidebar then then tabs are secondary in hierarchy to the sidebar. There should never be persistent tabs with a sidebar being nested under the tabs.
 
-Flexible sidebar
+#### Flexible sidebar
 
 Use a flexible sidebar when on-page space is a priority. The flexible sidebar has both an expanded and collapsed state. The expanded state contains both icons and corresponding text, while the collapsed state shows only the icon. The sidebar expands on hover. It can also be expanded (to a fixed state) or collapsed by clicking on the chevron icon on the panel.
 
@@ -28,21 +30,21 @@ In a flexible sidebar, each link and category list has its own corresponding ico
 
 A flexible sidebar is more friendly to responsive designs than a fixed nav. Fixed nav is best for products in landscape orientation and mostly used from desktop or tablet screens. Consider using a flexible nav for a fully responsive solution.
 
-Use a flexible sidebar when:
+#### Use a flexible sidebar when:
 
-more space is needed for page content
+- more space is needed for page content
 
-a fully responsive solution is needed
+- a fully responsive solution is needed
 
-Fixed Sidebar
+#### Fixed Sidebar
 
 A fixed Sidebar contains only links and category lists (no icons) and cannot be collapsed.
 
-Use a fixed sidebar when:
+#### Use a fixed sidebar when:
 
-icons cannot clearly describe the categories
+- icons cannot clearly describe the categories
 
-designs are for desktop only
+- designs are for desktop only
 
 ### Spec file
 
@@ -52,8 +54,8 @@ Spec file should be here.
 
 ##### Triggers
 
-Snippet of dropdown trigger
+Snippet of sidebar trigger
 
 ##### HTML
 
-Snippet of dropdown html
+Snippet of sidebar html

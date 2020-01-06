@@ -1,22 +1,22 @@
-## Toast
+## content-switcher
 
-Descrription of component
+Content switcher manipulates the content shown based on an exclusive or “either/or” pattern. 
 
-### Danger Toast
+### default
 
-Example of danger
+Example of default
 
-### Info Toast
+### with-icons
 
-Example of info
+Example of with-icons
 
-### Success Toast
+### disabled
 
-Example of success
+Example of disabled
 
-### Warning Toast
+### disabled-with-icons
 
-Example of warning
+Example of disabled-with-icons
 
 ### General Guidelines
 
@@ -31,23 +31,41 @@ Spec file should be here.
 
 ### Documentaion
 
+##### Triggers
+
+For default
+
+Snippet of default trigger
+
+For with-icons
+
+Snippet of with-icons trigger
+
+For disabled
+
+Snippet of disabled trigger
+
+For disabled-with-icons
+
+Snippet of disabled-with-icons trigger
+
 ##### HTML
 
-For Danger Toast
+For default
 
-Snippet of danger html
+Snippet of default html
 
-For Info Toast
+For with-icons
 
-Snippet of info html
+Snippet of with-icons html
 
-For Success Toast
+For disabled
 
-Snippet of success html
+Snippet of disabled html
 
-For Warning Toast
+For disabled-with-icons
 
-Snippet of warning html
+Snippet of disabled-with-icons html
 
 #### Classes
 

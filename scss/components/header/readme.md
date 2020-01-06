@@ -1,8 +1,10 @@
 ## Header
 
-The header spans the full width of the viewport and is the topmost element in the UI. Header elements are persistent within a product. 
+The header spans the full width of the viewport and is the topmost element in the UI. Header elements are persistent within a product.
 
-Use a header when: 
+Example of header
+
+#### Use a header when:
 
 - you want links to top level pages to be persistent on screen
 
@@ -18,10 +20,6 @@ Spec file should be here.
 
 ### Documentaion
 
-##### Triggers
-
-Snippet of header
-
 ##### HTML
 
-Snippet of header
+Snippet of header html
