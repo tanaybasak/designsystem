@@ -26,11 +26,13 @@
     }
 
     &-left {
-        @include media-breakpoint-only(xs) {
-            padding-left: 0;
-        }
-
         padding: 0 1rem;
+        @include media-breakpoint-down(sm) {
+            flex-grow: 1;
+            flex-shrink: 1;
+            justify-content: flex-end;
+            padding-right: 0;
+        }
 
         .#{$prefix}-pagination-select-wrapper {
 
@@ -127,22 +129,32 @@
         margin-bottom: 0;
         font-weight: normal;
 
-        @include media-breakpoint-only(xs) {
+        @include media-breakpoint-down(sm) {
             display: none;
         }
     }
 
-    span.#{$prefix}-pagination-text {
+    .#{$prefix}-pagination-range {
         margin-left: hcl-rem(16px);
         color: $pagination-text-variant-2;
 
-        @include media-breakpoint-only(xs) {
+        @include media-breakpoint-down(sm) {
             display: none;
         }
     }
 
-    div.#{$prefix}-pagination-text {
+    .#{$prefix}-pagination-label {
         color: $pagination-text-variant-1;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 0.75rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        @include media-breakpoint-down(xs) {
+            max-width: calc(100% - 3rem);
+        }
     }
 
     &-select-wrapper {
