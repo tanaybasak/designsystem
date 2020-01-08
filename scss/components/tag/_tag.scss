@@ -20,6 +20,9 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        &:first-child {
+            margin-left:1.2%;
+        }
     }
 
     &-primary {
@@ -36,9 +39,9 @@
             border-color: #003D6B;
         }
 
-        >.#{$prefix}-close {
+        >.#{$prefix}-tag-icon {
             @include hcl-close-icon(18, $white, #3D70B2, true);
-            margin-left: .625rem;
+            margin-left: .5rem;
         }
     }
 
@@ -57,9 +60,9 @@
             border-color: #003D6B;
         }
 
-        >.#{$prefix}-close {
+        >.#{$prefix}-tag-icon {
             @include hcl-close-icon(18, $blue, $white, true);
-            margin-left: .625rem;
+            margin-left: .5rem;
         }
     }
 
@@ -68,7 +71,7 @@
         opacity: .5;
         cursor: not-allowed;
 
-        >.#{$prefix}-close {
+        >.#{$prefix}-tag-icon {
             pointer-events: none;
         }
     }
