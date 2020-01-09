@@ -1,6 +1,6 @@
 ## Toast
 
-Descrription of component
+Description of component
 
 ### Danger Toast
 

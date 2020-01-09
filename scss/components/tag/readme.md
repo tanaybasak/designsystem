@@ -1,6 +1,6 @@
 ## Tag
 
-Descrription of component
+Description of component
 
 ### Primary tag
 

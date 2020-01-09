@@ -1,15 +1,16 @@
-## Action Bar
+
+## Toolbar
 
 Description of component
 
-Example of action-bar
+Example of toolbar
 
 ### General Guidelines
 
+- _Bold Text:_ This is guidline information.
 - This is guidline information.
 - This is guidline information.
 - This is guidline information.
-
 
 ### Spec file
 
@@ -17,11 +18,6 @@ Spec file should be here.
 
 ### Documentaion
 
-##### Triggers
-
-Snippet of action-bar trigger
-
 ##### HTML
 
-Snippet of action-bar html
-
+Snippet of toolbar html

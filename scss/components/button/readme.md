@@ -1,6 +1,6 @@
 ## Button
 
-Descrription of component
+Description of component
 
 ### Primary Buttons
 

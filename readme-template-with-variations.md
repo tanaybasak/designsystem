@@ -1,6 +1,6 @@
 ## <component-name>
 
-Descrription of component
+Description of component
 
 ### <variation 1>
 
