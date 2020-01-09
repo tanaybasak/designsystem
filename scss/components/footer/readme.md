@@ -1,8 +1,8 @@
-## <component-name>
+## Footer
 
 Description of component
 
-Example of component-name
+Example of footer
 
 ### General Guidelines
 
@@ -17,28 +17,6 @@ Spec file should be here.
 
 ### Documentaion
 
-##### Triggers
-
-Snippet of component-name trigger
-
 ##### HTML
 
-Snippet of component-name html
-
-#### Classes
-
-| Name                          | Description                                |
-|-------------------------------|--------------------------------------------|
-| .hcl-temporary                | This is temporary description              |
-
-#### Modifiers
-
-| Default Selector            | Description                                |
-|-----------------------------|--------------------------------------------|
-| hcl-temporary               | This is temporary description              |
-
-#### Public Methods
-
-| Name    | Params | Description                   |
-|---------|--------|-------------------------------|
-| temp    |        | This is temporary description |
+Snippet of footer html
