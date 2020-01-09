@@ -1,4 +1,4 @@
-## pagination
+## Pagination
 
 Pagination is used for splitting up content or data into several pages, with a control for navigating to the next or previous page. Generally, Pagination is used if there are more than 25 items displayed in one view. The default number displayed will vary depending on the context.
 
@@ -18,6 +18,8 @@ Example of pagination
 
 - Pagination text should be set in set in sentence case with the first letter of each word capitalized. 
 - The Pagination bar is most commonly used in Data Tables. The width can vary depending on content and layout, but should span the entire width of the table it’s being paired with.
+
+Spec file should be here.
 
 ### Documentaion
 

@@ -48,6 +48,8 @@ Example of expandable
 
 Search text should be set in sentence case, with only the first letter of the first word capitalized.
 
+Spec file should be here.
+
 ### Documentaion
 
 ##### Triggers

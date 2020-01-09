@@ -1,16 +1,16 @@
-## textarea
+## Textarea
 
 Text Area enable the user to input more than one sentence of information. This component can be used for long and short form text entries.
 
-### default
+### Default
 
 Example of default
 
-### textarea-with-error
+### Textarea with error
 
 Example of textarea-with-error
 
-### textarea-with-helpertext
+### Textarea with helpertext
 
 Example of textarea-with-helpertext
 
@@ -52,6 +52,8 @@ Example of textarea-with-helpertext
 
 Text Input labels and placeholder text should be set in sentence case, with only the first word in a phrase and any proper nouns capitalized. Text Input labels should be three words or less. 
 
+Spec file should be here.
+
 ### Documentaion
 
 ##### HTML
@@ -60,16 +62,16 @@ For default
 
 Snippet of default html
 
-For textarea-with-error
+For textarea with error
 
 Snippet of textarea-with-error html
 
-For textarea-with-helpertext
+For textarea with helpertext
 
-Snippet of textarea-with-helpertext html
+Snippet of textarea with helpertext html
 
 #### Classes
 
-| Name              | Description                                                                                                                                                                                                                                                                           |
+| Name              | Description                     |
 | ----------------- | ------------------------------- |
 | .hcl-textarea     | Class used in &lt;textarea&gt;  |

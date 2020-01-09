@@ -1,5 +1,7 @@
 ## Loading State
 
+Description of component
+
 ### Normal
 
 Example of normal

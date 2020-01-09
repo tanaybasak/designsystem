@@ -6,7 +6,7 @@ Description of component
 
 Example of danger
 
-### Info Notification
+### Information Notification
 
 Example of info
 
@@ -37,7 +37,7 @@ For Danger Notification
 
 Snippet of danger html
 
-For Info Notification
+For Information Notification
 
 Snippet of info html
 

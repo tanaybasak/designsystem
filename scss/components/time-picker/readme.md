@@ -14,6 +14,8 @@ Example of time-picker
 
 - Labels and headings should be set in sentence case, with only the first word in a phrase and any proper nouns capitalized. 
 
+Spec file should be here.
+
 ### Documentaion
 
 ##### HTML

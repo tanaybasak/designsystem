@@ -1,4 +1,4 @@
-## textinput
+## Textinput
 
 Text Input enable the user to input a few words. If you expect the user to input more than a sentence, use the Textarea component.
 
@@ -6,11 +6,11 @@ Text Input enable the user to input a few words. If you expect the user to input
 
 Example of default
 
-### textinput-with-error
+### Textinput with error
 
 Example of textinput-with-error
 
-### textinput-with-helpertext
+### Textinput with helpertext
 
 Example of textinput-with-helpertext
 
@@ -52,6 +52,8 @@ Example of textinput-with-helpertext
 
 Text Input labels and placeholder text should be set in sentence case, with only the first word in a phrase and any proper nouns capitalized. Text Input labels should be three words or less. 
 
+Spec file should be here.
+
 ### Documentaion
 
 ##### HTML
@@ -60,11 +62,11 @@ For default
 
 Snippet of default html
 
-For textinput-with-error
+For textinput with error
 
 Snippet of textinput-with-error html
 
-For textinput-with-helpertext
+For textinput with helpertext
 
 Snippet of textinput-with-helpertext html
 
