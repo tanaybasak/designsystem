@@ -4,7 +4,7 @@
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
   "scripts": {
-    "start": "parcel index.html -d output --port 8000",
+    "start": "node importHTML.js && parcel index.html -d output --port 8000",
     "build": "npm run clean && parcel build js/index.js -o patron --no-source-maps ",
     "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss'; exit 0",
