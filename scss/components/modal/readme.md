@@ -80,21 +80,3 @@ Snippet of danger-action html
 For danger modal with label and action
 
 Snippet of danger-label-action html
-
-#### Classes
-
-| Name           | Description                   |
-| -------------- | ----------------------------- |
-| .hcl-temporary | This is temporary description |
-
-#### Modifiers
-
-| Default Selector | Description                   |
-| ---------------- | ----------------------------- |
-| hcl-temporary    | This is temporary description |
-
-#### Public Methods
-
-| Name | Params | Description                   |
-| ---- | ------ | ----------------------------- |
-| temp |        | This is temporary description |
