@@ -1,4 +1,4 @@
-## content-switcher
+## Content Switcher
 
 Content switcher manipulates the content shown based on an exclusive or “either/or” pattern. 
 
@@ -6,15 +6,15 @@ Content switcher manipulates the content shown based on an exclusive or “eit
 
 Example of default
 
-### with-icons
+### With icons
 
 Example of with-icons
 
-### disabled
+### Disabled
 
 Example of disabled
 
-### disabled-with-icons
+### Disabled with icons
 
 Example of disabled-with-icons
 
@@ -37,7 +37,7 @@ For default
 
 Snippet of default trigger
 
-For with-icons
+For with icons
 
 Snippet of with-icons trigger
 
@@ -45,7 +45,7 @@ For disabled
 
 Snippet of disabled trigger
 
-For disabled-with-icons
+For disabled with icons
 
 Snippet of disabled-with-icons trigger
 
@@ -55,7 +55,7 @@ For default
 
 Snippet of default html
 
-For with-icons
+For with icons
 
 Snippet of with-icons html
 
@@ -63,7 +63,7 @@ For disabled
 
 Snippet of disabled html
 
-For disabled-with-icons
+For disabled with icons
 
 Snippet of disabled-with-icons html
 
