@@ -161,7 +161,7 @@
             <!-- AVAILABLE COMPONENTS STARTS -->
 
             <!-- typography -->
-             <addHTML src="./scss/base/typography/typography.html" />
+            <addHTML src="./scss/base/typography/typography.html" />
 
             <!-- buttons -->
             <section class="m-1 p-2">
@@ -196,7 +196,7 @@
                 <addHTML src="./scss/components/button/ghost-small/ghost-small.html" />
             </section>
 
-              <!-- sidebar
+            <!-- sidebar
               <section class="m-1 p-2" style="position:unset">
                     <addHTML src="./scss/components/sidebar/sidebar.html" />
               </section> -->
@@ -538,96 +538,25 @@
                 <addHTML src="./scss/components/tab/tab.html" />
             </section>
 
-
             <!-- Overflow Menu -->
             <section id="overflowmenu" class="hcl-row m-0">
-                <section class="hcl-col-6 hcl-overflow">
-                    <!-- This paragragh tag is just for landing page, will not be part of design system -->
-                    <p style="float: left;">Left Overflow Menu</p>
-                    <div class="hcl-overflow-container">
-                        <!-- This input tag is just for landing page, will not be part of design system -->
-                        <input
-                            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
-                        <div class="hcl-ellipsis horizontal-ellipsis"></div>
-                        <div class="hcl-overflow-menu hcl-hidden">
-                            <ul class="hcl-overflow-list">
-                                <li class="hcl-overflow-option">
-                                    Option 1
-                                </li>
-                                <li class="hcl-overflow-option">
-                                    Option 2
-                                </li>
-                                <li class="hcl-overflow-option hcl-overflow-disable">
-                                    Option 3
-                                </li>
-                                <li class="hcl-overflow-optiondanger hcl-overflow-separator">
-                                    Danger
-                                </li>
-                            </ul>
-                            <div class="hcl-overflow-caret"></div>
-                        </div>
-                    </div>
-                </section>
-                <section class="hcl-col-6 hcl-overflow">
-                    <!-- This paragragh tag is just for landing page, will not be part of design system -->
-                    <p style="float: left;">Right Overflow Menu</p>
-                    <div class="hcl-overflow-container">
-                        <!-- This input tag is just for landing page, will not be part of design system -->
-                        <input
-                            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
-                        <div class="hcl-ellipsis"></div>
-                        <div class="hcl-overflow-menu hcl-overflow-right hcl-hidden">
-                            <ul class="hcl-overflow-list">
-                                <li class="hcl-overflow-option">
-                                    Option 1
-                                </li>
-                                <li class="hcl-overflow-option">
-                                    Option 2
-                                </li>
-                                <li class="hcl-overflow-option hcl-overflow-disable">
-                                    Option 3
-                                </li>
-                                <li class="hcl-overflow-optiondanger hcl-overflow-separator">
-                                    Danger
-                                </li>
-                            </ul>
-                            <div class="hcl-overflow-caret-right"></div>
-                        </div>
-                    </div>
-                </section>
+                <!-- Right Overflow Menu  -->
+                <addHTML src="./scss/components/overflow-menu/right/right.html" />
+                <!-- Left Overflow Menu  -->
+                <addHTML src="./scss/components/overflow-menu/left/left.html" />
             </section>
 
             <!-- List -->
             <section class="hcl-row m-0">
                 <!-- Ordered List -->
                 <div class="hcl-col-12 mb-4">
-                    <ol class="hcl-list-ordered">
-                        <li class="hcl-list-item">Ordered List level 1
-                            <ol class="hcl-list-nested">
-                                <li class="hcl-list-item">Ordered List level 2</li>
-                                <li class="hcl-list-item">Ordered List level 2</li>
-                            </ol>
-                        </li>
-                        <li class="hcl-list-item">Ordered List level 1</li>
-                        <li class="hcl-list-item">Ordered List level 1</li>
-                    </ol>
+                    <addHTML src="./scss/components/list/ordered/ordered.html" />
                 </div>
                 <!-- Unordered List -->
                 <div class="hcl-col-12 mb-4">
-                    <ul class="hcl-list-unordered">
-                        <li class="hcl-list-item">Unordered List level 1
-                            <ul class="hcl-list-nested">
-                                <li class="hcl-list-item">Unordered List level 2</li>
-                                <li class="hcl-list-item">Unordered List level 2</li>
-                            </ul>
-                        </li>
-                        <li class="hcl-list-item">Unordered List level 1</li>
-                        <li class="hcl-list-item">Unordered List level 1</li>
-                    </ul>
+                    <addHTML src="./scss/components/list/unordered/unordered.html" />
                 </div>
             </section>
-
-
 
             <!-- Content Switcher -->
             <section class="m-1 p-2">
@@ -654,16 +583,8 @@
             </section>
 
             <!-- Slider -->
-            <section class="hcl-row m-3">
-                <div class="hcl-col">
-                    <label>Slider Label</label>
-                    <div class="hcl-slider">
-                        <label class="hcl-slider-bottom-range">10</label>
-                        <input class="hcl-slider-input" type="range" value="50" min="10" max="100" />
-                        <label class="hcl-slider-top-range">100</label>
-                        <input class="hcl-form-control hcl-slider-text-input" type="number" />
-                    </div>
-                </div>
+            <section class="hcl-row m-1 p-2">
+                <addHTML src="./scss/components/slider/slider.html" />
             </section>
 
             <!-- Dropdown -->
@@ -719,21 +640,9 @@
                 <addHTML src="./scss/components/textarea/textarea-with-helpertext/textinput-with-helpertext.html" />
             </section>
 
-
-            <section id="formcomp" class="m-1 p-2 colBorder">
-                <form class="m-5">
-                    <div class="hcl-form-group">
-                        <input type="text" class="hcl-form-control" id="firstname" placeholder="Enter First Name" />
-                        <label for="firstname">First Name</label>
-                        <div class="hcl-helper-text">Optional Helper text goes here</div>
-                    </div>
-                    <div class="hcl-form-group">
-                        <textarea class="hcl-textarea" id="feedback11" rows="4" cols="50"
-                            placeholder="Please Feedback here"></textarea>
-                        <label for="feedback11">Feedback Form</label>
-                    </div>
-                    <button class="hcl-btn hcl-primary">Submit</button>
-                </form>
+            <!-- Form Group -->
+            <section class="m-1 p-2">
+                <addHTML src="./scss/components/form/form.html" />
             </section>
 
             <!-- Tooltip -->
