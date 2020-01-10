@@ -29,7 +29,7 @@ Example of disabled-with-icons
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

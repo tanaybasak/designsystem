@@ -22,7 +22,7 @@ Spinners may be scaled down if the loading experience is contextual to a certain
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

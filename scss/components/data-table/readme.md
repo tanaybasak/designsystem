@@ -47,7 +47,7 @@ There is no limit to the height of an open row; however, you must follow the pad
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

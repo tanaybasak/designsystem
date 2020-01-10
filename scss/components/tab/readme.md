@@ -28,7 +28,7 @@ Tab label should be set in sentence case, and should not exceed three words.
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

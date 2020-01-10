@@ -16,7 +16,7 @@ Example of toolbar
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

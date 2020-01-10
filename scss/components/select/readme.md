@@ -15,7 +15,7 @@ Example of select
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

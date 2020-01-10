@@ -21,7 +21,7 @@ Example of pagination
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

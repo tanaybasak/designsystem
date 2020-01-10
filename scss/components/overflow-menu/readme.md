@@ -21,7 +21,7 @@ Example of left
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

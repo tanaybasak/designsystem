@@ -50,7 +50,7 @@ Search text should be set in sentence case, with only the first letter of the fi
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

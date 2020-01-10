@@ -54,7 +54,7 @@ Error messages appear below the input field and are always present while invalid
 
 Disabled state should have a “.not-allowed” cursor on hover.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

@@ -45,7 +45,7 @@ Example of danger-label-action
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

@@ -54,7 +54,7 @@ Text Input labels and placeholder text should be set in sentence case, with only
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

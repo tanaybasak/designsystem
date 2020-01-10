@@ -21,7 +21,7 @@ Example of variation 2
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

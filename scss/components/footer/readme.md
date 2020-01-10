@@ -15,7 +15,7 @@ Example of footer
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

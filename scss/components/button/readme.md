@@ -53,7 +53,7 @@ Example of ghost-small
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

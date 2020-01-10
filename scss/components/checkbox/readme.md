@@ -32,7 +32,7 @@ Users can make a selection either by clicking on the checkbox directly or by cli
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

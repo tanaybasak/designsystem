@@ -24,7 +24,7 @@ Example of top
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

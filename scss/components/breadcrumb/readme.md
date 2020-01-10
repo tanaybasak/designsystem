@@ -26,7 +26,7 @@ Example of breadcrumb
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

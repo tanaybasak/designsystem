@@ -52,7 +52,7 @@ Example of interactive
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

@@ -15,7 +15,7 @@ Example of slider
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

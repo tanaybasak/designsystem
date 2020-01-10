@@ -28,7 +28,7 @@ Toggle labels should be set in sentence case, with only the first word in a phra
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

@@ -40,7 +40,7 @@ Example of dataTable
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

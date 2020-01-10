@@ -24,7 +24,7 @@ This widget allows the user choose a date with the visual aid of a calendar. Cal
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

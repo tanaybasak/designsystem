@@ -15,7 +15,7 @@ Example of action-bar
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

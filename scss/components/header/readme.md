@@ -18,7 +18,7 @@ Headers contain the logo, a global search box either static or expandable, and f
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

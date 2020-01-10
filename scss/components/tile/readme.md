@@ -38,7 +38,7 @@ Example of expandable
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

@@ -50,7 +50,7 @@ A fixed Sidebar contains only links and category lists (no icons) and cannot be 
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

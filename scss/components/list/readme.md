@@ -21,7 +21,7 @@ Example of unordered
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

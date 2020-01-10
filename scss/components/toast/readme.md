@@ -29,7 +29,7 @@ Example of warning
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

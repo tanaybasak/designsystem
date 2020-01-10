@@ -21,7 +21,7 @@ Example of secondary
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 

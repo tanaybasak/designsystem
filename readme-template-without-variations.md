@@ -15,7 +15,7 @@ Example of component-name
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### Triggers
 

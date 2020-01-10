@@ -16,7 +16,7 @@ Example of time-picker
 
 Spec file should be here.
 
-### Documentaion
+### Documentation
 
 ##### HTML
 
