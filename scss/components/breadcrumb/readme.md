@@ -6,7 +6,7 @@ Example of breadcrumb
 
 ### General Guidelines
 
-- Breadcrumbs are not a a replacement for primary navigation.
+- Breadcrumbs are not a replacement for primary navigation.
 
 - You can use just one breadcrumb to show that the user is one-level deep.
 
