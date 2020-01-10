@@ -17,10 +17,6 @@ Spec file should be here.
 
 ### Documentation
 
-##### Triggers
-
-Snippet of action-bar trigger
-
 ##### HTML
 
 Snippet of action-bar html
