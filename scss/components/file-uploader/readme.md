@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## File Uploader
 
 File Uploader allows the user to transfer a file or submit content of their own.
@@ -5,6 +7,8 @@ File Uploader allows the user to transfer a file or submit content of their ow
 ### File Uploader
 
 Example of file-uploader
+
+<div id="General-Guideline"></div>
 
 ### General Guidelines
 
@@ -32,6 +36,8 @@ Developers using File Uploader will be able to use JavaScript to inject a Loadin
 
 Developers will use JavaScript to inject a “Close” button on each file that is selected to be uploaded. It is up to the developer to code the logic for removing these files individually. However, keep in mind that this kind of editing isn’t supported natively in the browser.
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 The File Uploader label and instruction text should be set in sentence case, with only the first letter of the first word in the sentence capitalized. 
@@ -39,6 +45,10 @@ The File Uploader label and instruction text should be set in sentence case, wit
 The width of an uploaded file varies based on the content and layout of a design. Refer to the button (LINK) guidelines for styling and usage of the “Add files” button.
 
 Spec file should be here.
+
+<div id="Documentation"></div>
+
+### Documentaion
 
 ##### HTML
 

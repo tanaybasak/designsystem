@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Accordion
 
 Accordion helps you expand and collapse sections of content. Accordions are one of the key components that provide for progressive disclosure – to show users just the important information in a particular context first while giving them control over how much more they want to see.
@@ -10,6 +12,8 @@ Example of controlled
 
 Example of uncontrolled
 
+<div id="General-Guideline"></div>
+
 ### General Guidelines
 
 - Use accordions when you need to consume specific areas of content within a page or when vertical space is limited.
@@ -18,11 +22,15 @@ Example of uncontrolled
 - Users may have multiple accordions open at the same time.
 - The entire header area of each title is clickable which helps them expand or collapse the content below it.
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 There is no limit to the height of an open row; however, you must follow the padding specs given below. The width of an accordion varies based on the content, layout, and page design. The chevron icon is available on the iconography library page. Avoid any text within 16px / 1rem of the accordion's sides. Additionally, include padding between labels, body copy, and separation lines to allow breathing room between elements.
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

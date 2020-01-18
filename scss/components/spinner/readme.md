@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Spinner
 
 Spinners are used when retrieving data or performing slow computations, and help to notify users that loading is underway.
@@ -10,6 +12,8 @@ Example of inline
 
 Example of large
 
+<div id="General-Guideline"></div>
+
 ### General Guidelines
 
 The waiting experience is a crucial design opportunity. Although it may not be obvious what is occurring on the back-end, we can communicate clearly to reassure the user that progress is happening. It is a best practice to use a Spinner whenever the wait time is anticipated to be longer than three seconds.
@@ -18,9 +22,13 @@ The waiting experience is a crucial design opportunity. Although it may not be o
 
 Spinners may be scaled down if the loading experience is contextual to a certain item on the page.
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

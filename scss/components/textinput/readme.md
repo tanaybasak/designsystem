@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Textinput
 
 Text Input enable the user to input a few words. If you expect the user to input more than a sentence, use the Textarea component.
@@ -13,6 +15,8 @@ Example of textinput-with-error
 ### Textinput with helpertext
 
 Example of textinput-with-helpertext
+
+<div id="General-Guideline"></div>
 
 ### General Guidelines
 
@@ -48,11 +52,15 @@ Example of textinput-with-helpertext
 
 **Disabled state:** Textinput may appear in disabled state as per the workflow requirement. 
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 Text Input labels and placeholder text should be set in sentence case, with only the first word in a phrase and any proper nouns capitalized. Text Input labels should be three words or less. 
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

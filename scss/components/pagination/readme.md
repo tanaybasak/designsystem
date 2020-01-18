@@ -1,8 +1,12 @@
+<div id="Overview"></div>
+
 ## Pagination
 
 Pagination is used for splitting up content or data into several pages, with a control for navigating to the next or previous page. Generally, Pagination is used if there are more than 25 items displayed in one view. The default number displayed will vary depending on the context.
 
 Example of pagination
+
+<div id="General-Guideline"></div>
 
 ### General Guidelines
 
@@ -14,12 +18,16 @@ Example of pagination
 
 **Items per page:** Use an inline select within the pagination bar so the user can change the amount of data displayed per page. 
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 - Pagination text should be set in set in sentence case with the first letter of each word capitalized. 
 - The Pagination bar is most commonly used in Data Tables. The width can vary depending on content and layout, but should span the entire width of the table it’s being paired with.
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## checkbox
 
 Use checkboxes to present a list of options from which the user may select a few, all, or none. 
@@ -14,6 +16,8 @@ Example of horizontal-grouping
 
 Example of vertical-grouping
 
+<div id="General-Guideline"></div>
+
 ### General Guidelines
 
 **Headings**
@@ -28,9 +32,13 @@ Click target
 
 Users can make a selection either by clicking on the checkbox directly or by clicking on its label. 
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

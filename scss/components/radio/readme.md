@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Radio
 
 Radio buttons are used when a list of two or more options are mutually exclusive, meaning the user must select only one option. 
@@ -14,6 +16,8 @@ Example of horizontal-grouping
 
 Example of vertical-grouping
 
+<div id="General-Guideline"></div>
+
 ### General Guidelines
 
 **Headings**
@@ -28,9 +32,13 @@ Default selection
 
 A set of Radio Buttons should default to having one option selected. Never display them without a default selection.
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

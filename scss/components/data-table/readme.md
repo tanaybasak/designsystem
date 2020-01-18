@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Data Table
 
 A Data Table displays a list of information for the user to view or edit, while maintaining that the data is readable, scannable, and easily comparable. The basic data table is shipped with a base style, which includes borders, multi-select, hover state and sorting.
@@ -22,6 +24,8 @@ Example of tall
 
 Example of zebra
 
+<div id="General-Guideline"></div>
+
 ### General Guidelines
 
 The data table component is designed in a way for additional functionality to be added on to fit your team's needs.
@@ -41,11 +45,15 @@ All text within columns should be left-aligned, including headers. Variable nume
 
 Improve table usability by making data sortable. Clickable headers enable users to sort table data up or down. The specific attribute being sorted is accompanied by a caret icon. The caret will only appear on the column headers once that specific column is being sorted.
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 There is no limit to the height of an open row; however, you must follow the padding specs given below. The width of an accordion varies based on the content, layout, and page design. The chevron icon is available on the iconography library page. Avoid any text within 16px / 1rem of the accordion's sides. Additionally, include padding between labels, body copy, and separation lines to allow breathing room between elements.
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

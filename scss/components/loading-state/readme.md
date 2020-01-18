@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Loading State
 
 Description of component
@@ -34,11 +36,17 @@ Example of tab
 
 Example of dataTable
 
+<div id="General-Guideline"></div>
+
 ### General Guidelines
+
+<div id="Spec-file"></div>
 
 ### Spec file
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

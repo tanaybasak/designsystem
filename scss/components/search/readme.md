@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Search
 
 Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. Search can be used as the primary means of discovering content, or as a filter to aid the user in finding content.
@@ -9,6 +11,8 @@ Example of normal
 ### Expandable
 
 Example of expandable
+
+<div id="General-Guideline"></div>
 
 ### General Guidelines
 
@@ -44,11 +48,15 @@ Example of expandable
 
 - Highlight the search term in the results, where appropriate.
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 Search text should be set in sentence case, with only the first letter of the first word capitalized.
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

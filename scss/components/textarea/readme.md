@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Textarea
 
 Text Area enable the user to input more than one sentence of information. This component can be used for long and short form text entries.
@@ -13,6 +15,8 @@ Example of textarea-with-error
 ### Textarea with helpertext
 
 Example of textarea-with-helpertext
+
+<div id="General-Guideline"></div>
 
 ### General Guidelines
 
@@ -48,11 +52,15 @@ Example of textarea-with-helpertext
 
 **Disabled state:** Textarea may appear in disabled state as per the workflow requirement. 
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 Text Input labels and placeholder text should be set in sentence case, with only the first word in a phrase and any proper nouns capitalized. Text Input labels should be three words or less. 
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

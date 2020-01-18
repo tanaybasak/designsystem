@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Sidebar
 
 The sidebar contains secondary navigation and fits below the header. It can be configured to be either fixed-width or flexible, with only one level of nested items allowed. Both links and category lists can be used in the Sidebar and may be present together.
@@ -9,6 +11,8 @@ Example of sidebar
 - there are more than five secondary navigation items
 
 - you expect users to switch between secondary items frequently
+
+<div id="General-Guideline"></div>
 
 ### General Guidelines
 
@@ -46,9 +50,13 @@ A fixed Sidebar contains only links and category lists (no icons) and cannot be 
 
 - designs are for desktop only
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

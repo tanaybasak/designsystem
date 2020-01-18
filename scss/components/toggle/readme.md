@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Toggle
 
 Toggle is a control that is used to quickly switch between two possible states. Toggles are only used for these binary actions that occur immediately after the user “flips” the toggle switch. They are commonly used for “on/off” switches.
@@ -9,6 +11,8 @@ Example of default
 ### Small Toggle
 
 Example of small 
+
+<div id="General-Guideline"></div>
 
 ### General Guidelines
 
@@ -22,11 +26,16 @@ Example of small
 
 - Small toggles are more compact in size, therefore they can be used in use cases such as data tables.
 
+
+<div id="Spec-file"></div>
+
 ### Spec file
 
 Toggle labels should be set in sentence case, with only the first word in a phrase and any proper nouns capitalized, and no more than three words.
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Tooltip
 
 Tooltips provide additional information upon hover or focus. The information should be contextual, useful, and nonessential information. Keep tooltips short.
@@ -13,6 +15,8 @@ Example of definition
 ### Interactive
 
 Example of interactive
+
+<div id="General-Guideline"></div>
 
 ### General Guidelines
 
@@ -45,12 +49,16 @@ Example of interactive
 - Interactive tooltips appear when the user clicks on an info icon
 - They persistent until intentionally dismissed by clicking outside of the tooltip
 
+<div id="Spec-file"></div>
+
 ### Spec file
 
 - **Typography:** Tooltip labels and text should be set in sentence case.
 - **Structure:** All tooltip types have a varying height based on the amount of content they contain.
 
 Spec file should be here.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 

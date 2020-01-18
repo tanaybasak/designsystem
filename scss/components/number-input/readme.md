@@ -1,3 +1,5 @@
+<div id="Overview"></div>
+
 ## Number Input
 
 Number input are similar to text inputs, but contain controls used to increase or decrease an incremental value.
@@ -18,6 +20,8 @@ Example of validationNumberInput
 
 Example of disabledNumberInput
 
+<div id="General-Guideline"></div>
+
 ### General Guidelines
 
 - Do not use number inputs when large value changes are expected. They work best for making small, incremental changes that only require a few clicks.
@@ -31,6 +35,8 @@ Example of disabledNumberInput
 - Use sentence-style capitalization (only the first word in a phrase and any proper nouns capitalized) for the label.
 
 - For **label** and **validation** guidance refer to text input (LINK).
+
+<div id="Spec-file"></div>
 
 ### Spec file
 
@@ -53,6 +59,8 @@ Error messages appear below the input field and are always present while invalid
 **Disabled**
 
 Disabled state should have a “.not-allowed” cursor on hover.
+
+<div id="Documentation"></div>
 
 ### Documentaion
 
