@@ -1,5 +1,6 @@
 import '../scss/main.scss';
 import './modal';
+import './toast';
 import ContentSwitcher from './content-switcher';
 import Dropdown from './dropdown';
 import Navigation from './navigation';

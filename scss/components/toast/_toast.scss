@@ -37,6 +37,10 @@ $colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $w
         margin: 0 1rem;
     }
 
+    &-hide{
+        display: none;
+    }
+    
     &-title {
         font-size: .875rem;
         line-height: 1rem;
