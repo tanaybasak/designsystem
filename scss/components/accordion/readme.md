@@ -4,7 +4,7 @@
 
 Accordion helps you expand and collapse sections of content. Accordions are one of the key components that provide for progressive disclosure – to show users just the important information in a particular context first while giving them control over how much more they want to see.
 
-### Controlled Accrdion
+### Controlled Accordion
 
 Example of controlled
 

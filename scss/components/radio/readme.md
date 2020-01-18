@@ -38,9 +38,7 @@ A set of Radio Buttons should default to having one option selected. Never displ
 
 Spec file should be here.
 
-<div id="Documentation"></div>
-
-### Documentaion
+### Documentation
 
 ##### HTML
 

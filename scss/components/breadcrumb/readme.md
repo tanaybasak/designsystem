@@ -10,7 +10,7 @@ Example of breadcrumb
 
 ### General Guidelines
 
-- Breadcrumbs are not a a replacement for primary navigation.
+- Breadcrumbs are not a replacement for primary navigation.
 
 - You can use just one breadcrumb to show that the user is one-level deep.
 
@@ -24,7 +24,9 @@ Example of breadcrumb
 
 - Do not use breadcrumbs for representing a multi-step process (use a progress indicator instead).
 
-- _Multiple tires :_ If there are more than three levels, the home level and the last two levels are visible, with all the middle levels collapsed into ellipses and accessible from a dropdown.
+#### Multiple tiers 
+
+If there are more than three levels, the home level and the last two levels are visible, with all the middle levels collapsed into ellipses and accessible from a dropdown.
 
 <div id="Spec-file"></div>
 
