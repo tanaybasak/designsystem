@@ -1,0 +1,92 @@
+.#{$prefix}-tree {
+  font-size: 0.875rem;
+  @include getFontWeight(regular);
+  line-height: 1.5rem;
+  letter-spacing: 0.16px;
+
+  .tree-item {
+    padding: 0;
+    width: 100%;
+    display: block;
+    color: var(--dark-blue);
+    position: relative;
+    padding-top: 0.3125rem;
+
+    .tree-node {
+      cursor: pointer;
+      line-height: unset !important;
+
+      &:hover {
+        background-color: $treeview-hover;
+      }
+
+      i {
+        margin-right: 0.5rem;
+        width: 0.875rem;
+        height: 0.875rem;
+      }
+
+      .caret {
+        display: inline-block;
+      }
+
+      .caret::before {
+        content: ' ';
+        position: absolute;
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-top: 0.25rem;
+        border-right: 0.0625rem solid var(--dark-40);
+        border-bottom: 0.0625rem solid var(--dark-40);
+        transform: scale(1) rotate(-45deg);
+        transition: all 0.2s ease-in-out;
+        margin-left: 0.3125rem;
+      }
+
+      .caret-down::before {
+        transform: scale(1) rotate(45deg);
+        margin-top: 0.25rem;
+      }
+
+      span {
+        padding: 0.25rem 0.5rem;
+        margin-left: -0.5rem;
+
+        &.highlight {
+          background-color: var(--blue);
+          color: var(--white);
+        }
+      }
+    }
+
+    & > ul {
+      display: none;
+    }
+
+    &:not([aria-expanded]) > div .expanded {
+      display: none;
+    }
+
+    &[aria-expanded='false'] > ul {
+      display: none;
+    }
+
+    &[aria-expanded='true'] > ul {
+      display: block;
+    }
+
+    &[aria-expanded='false'] > div .expanded {
+      display: none;
+    }
+
+    &[aria-expanded='true'] > div .collapsed {
+      display: none;
+    }
+
+    .tree-nested {
+      margin-bottom: 0.25rem;
+      margin-left: 1.25rem;
+      font-size: 0.875rem;
+    }
+  }
+}

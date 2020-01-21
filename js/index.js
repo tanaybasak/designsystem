@@ -13,7 +13,7 @@ import Pagination from './pagination';
 import Accordion from './accordion';
 import Password from './password';
 import Slider from './slider';
-
+import Tree from './tree';
 const ComponentList = {
   dropdow: Dropdown,
   navigation: Navigation,
@@ -24,7 +24,8 @@ const ComponentList = {
   numberInput: NumberInput,
   pagination: Pagination,
   password: Password,
-  accordion: Accordion
+  accordion: Accordion,
+  tree: Tree
 };
 
 for (const componentName in ComponentList) {
@@ -80,6 +81,9 @@ export const components = {
   },
   slider: function(selector) {
     attachElements(selector, null, Slider);
+  },
+  tree: function(selector) {
+    attachElements(selector, null, Tree);
   }
 };
 
