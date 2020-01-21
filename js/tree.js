@@ -46,7 +46,6 @@ class Tree {
 
   attachEvents = () => {
     const nodeElements = this.element.getElementsByClassName('tree-node');
-
     for (let i = 0; i < nodeElements.length; i++) {
       const nodeElement = nodeElements[i];
       nodeElement.addEventListener('keydown', e => {
@@ -66,6 +65,8 @@ class Tree {
           nodeElement
             .getElementsByClassName('toggle-icon')[0]
             .classList.add(...classList);
+        } else {
+          nodeElement.classList.add('no-toggle-element');
         }
       }
       if (nodeElement.querySelector('.toggle-icon')) {
@@ -122,7 +123,9 @@ class Tree {
           if (nodeElement.parentElement.nextElementSibling) {
             this.focusNode(nodeElement.parentElement.nextElementSibling);
           } else {
-            const nextSiblingAncestor = this.findNextSiblingAncestor(nodeElement);
+            const nextSiblingAncestor = this.findNextSiblingAncestor(
+              nodeElement
+            );
             if (nextSiblingAncestor) {
               this.focusNode(nextSiblingAncestor);
             }
