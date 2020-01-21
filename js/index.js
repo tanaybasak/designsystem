@@ -14,6 +14,7 @@ import Accordion from './accordion';
 import Password from './password';
 import Slider from './slider';
 import Tree from './tree';
+import Tag from './tag';
 const ComponentList = {
   dropdow: Dropdown,
   navigation: Navigation,
@@ -25,7 +26,8 @@ const ComponentList = {
   pagination: Pagination,
   password: Password,
   accordion: Accordion,
-  tree: Tree
+  tree: Tree,
+  tag: Tag
 };
 
 for (const componentName in ComponentList) {
@@ -84,6 +86,9 @@ export const components = {
   },
   tree: function(selector) {
     attachElements(selector, null, Tree);
+  },
+  tag: function(selector) {
+    attachElements(selector, null, Tag);
   }
 };
 
