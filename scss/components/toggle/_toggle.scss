@@ -127,6 +127,13 @@
                 background-color: var(--disabled-blue);
             }
         }
+
+        &:focus~.#{$prefix}-toggle-label {
+            .#{$prefix}-switch {
+                border: .0625rem solid var(--grey-light);
+                box-shadow: 0 0 0 0.125rem $checkbox-focus-color;
+            }
+        }
     }
 
     .#{$prefix}-toggle-off,
@@ -205,6 +212,12 @@
         &:checked:disabled~.#{$prefix}-toggle-label {
             &::before {
                 background-color: var(--disabled-blue);
+            }
+        }
+
+        &:focus~.#{$prefix}-toggle-label {
+            &::before {
+                box-shadow: 0 0 0 0.125rem $checkbox-focus-color;
             }
         }
     }
