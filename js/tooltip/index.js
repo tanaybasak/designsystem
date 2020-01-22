@@ -1,4 +1,4 @@
-import '../scss/main.scss';
+import '../../scss/main.scss';
 import Tooltip from './tooltip';
 import { isElement } from '../utils/dom';
 
