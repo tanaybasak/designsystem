@@ -1,5 +1,5 @@
-import handleDataBinding from './utils/data-api';
-import getClosest from './utils/get-closest';
+import handleDataBinding from '../utils/data-api';
+import getClosest from '../utils/get-closest';
 
 class NumberInput {
   constructor(element, options) {

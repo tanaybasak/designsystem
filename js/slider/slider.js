@@ -1,4 +1,4 @@
-import { PREFIX } from './utils/config';
+import { PREFIX } from '../utils/config';
 
 const colors = {
   fill: '#0066b3',

@@ -1,4 +1,4 @@
-import { PREFIX } from './utils/config';
+import { PREFIX } from '../utils/config';
 
 class Accordion {
   constructor(element, options) {

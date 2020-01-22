@@ -1,6 +1,6 @@
-import { addListener, removeListeners } from './eventManager';
-import { PREFIX } from './utils/config';
-import { getRem } from './utils/dom';
+import { addListener, removeListeners } from '../eventManager';
+import { PREFIX } from '../utils/config';
+import { getRem } from '../utils/dom';
 let elementNo = 1;
 let tooltipElementRef = 1;
 const tooltipContents = {};

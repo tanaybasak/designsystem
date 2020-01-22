@@ -1,6 +1,6 @@
-import { PREFIX } from './utils/config';
-import handleDataBinding from './utils/data-api';
-import getClosest from './utils/get-closest';
+import { PREFIX } from '../utils/config';
+import handleDataBinding from '../utils/data-api';
+import getClosest from '../utils/get-closest';
 
 class Pagination {
   constructor(element, options) {

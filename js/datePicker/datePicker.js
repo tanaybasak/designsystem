@@ -1,6 +1,6 @@
-import { PREFIX, WEEKDAYS, MONTHS } from './utils/config';
-import { trackDocumentClick } from './utils/dom';
-import handleDataBinding from './utils/data-api';
+import { PREFIX, WEEKDAYS, MONTHS } from '../utils/config';
+import { trackDocumentClick } from '../utils/dom';
+import handleDataBinding from '../utils/data-api';
 
 class DatePicker {
   constructor(element) {
