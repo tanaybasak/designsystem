@@ -48,14 +48,12 @@ class Tree {
     const nodeElements = this.element.getElementsByClassName('tree-node');
     for (let i = 0; i < nodeElements.length; i++) {
       const nodeElement = nodeElements[i];
-      nodeElement.addEventListener('keydown', e => {
-        this.keyDownOnTree(e);
-      });
 
       let icon = this.collapsedIcon;
       if (nodeElement.parentElement.getAttribute('aria-expanded') === 'true') {
         icon = this.expandedIcon;
       }
+      let canProceed = true;
       if (icon) {
         const classList = icon.split(' ');
         if (
@@ -66,14 +64,22 @@ class Tree {
             .getElementsByClassName('toggle-icon')[0]
             .classList.add(...classList);
         } else {
-          nodeElement.classList.add('no-toggle-element');
+          const toggleIcon = document.createElement('i');
+          toggleIcon.className = 'toggle-icon caret';
+          toggleIcon.style.visibility = 'hidden';
+          nodeElement.insertBefore(toggleIcon, nodeElement.childNodes[0]);
+          canProceed = false;
         }
       }
-      if (nodeElement.querySelector('.toggle-icon')) {
+      if (nodeElement.querySelector('.toggle-icon') && canProceed) {
         nodeElement.addEventListener('click', e => {
           this.toggleTree(e.currentTarget.children[0]);
         });
       }
+
+      nodeElement.addEventListener('keydown', e => {
+        this.keyDownOnTree(e, canProceed);
+      });
 
       nodeElement.querySelector('span').addEventListener('click', e => {
         e.stopPropagation();
@@ -98,7 +104,7 @@ class Tree {
     }
   };
 
-  keyDownOnTree = e => {
+  keyDownOnTree = (e, isChildrenExist) => {
     var key = e.which || e.keyCode;
     const nodeElement = e.currentTarget;
 
@@ -151,14 +157,14 @@ class Tree {
         break;
       }
       case 39: {
-        if (nodeStatus === 'false') {
+        if (nodeStatus === 'false' && isChildrenExist) {
           this.toggleTree(nodeElement.children[0]);
         }
         e.preventDefault();
         break;
       }
       case 37: {
-        if (nodeStatus === 'true') {
+        if (nodeStatus === 'true' && isChildrenExist) {
           this.toggleTree(nodeElement.children[0]);
         } else {
           const parentNodeElement =
