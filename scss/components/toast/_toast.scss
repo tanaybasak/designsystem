@@ -59,8 +59,6 @@ $colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $w
     }
 
     &-close {
-        outline: .125rem solid transparent;
-        outline-offset: -.125rem;
         border: none;
         margin-left: auto;
         padding: 0;
