@@ -39,7 +39,7 @@ class Accordion {
       item.addEventListener('keypress', event => {
         event.preventDefault();
         if (event.keyCode === 13) {
-          event.currentTarget.click();
+          this.toggleContent(event);
         }
       });
     });
