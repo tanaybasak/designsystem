@@ -1474,8 +1474,12 @@
                         <div class="hcl-file-uploader">
                             <input type="file" class="hcl-file-input" id="hcl-file-uploader" tabIndex=0 multiple
                                 accept=".jpg,.png" />
-                            <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm"
-                                role="button">
+                            <label
+                                for="hcl-file-uploader"
+                                class="hcl-file-btn hcl-btn hcl-secondary hcl-sm"
+                                role="button"
+                                tabindex="0"
+                            >
                                 Add file
                             </label>
                         </div>
@@ -2638,6 +2642,8 @@
         patron.tree('.hcl-tree');
 
         patron.dataTable('.hcl-data-table');
+
+        patron.fileUploader('.hcl-file-uploader');
         
     </script>
 </body>
