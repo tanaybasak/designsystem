@@ -14,6 +14,7 @@ import Accordion from './accordion';
 import Password from './password';
 import Slider from './slider';
 import Tree from './tree';
+import DataTable from './dataTable';
 import FileUploader from './fileUploader';
 const ComponentList = {
   dropdow: Dropdown,
@@ -27,6 +28,7 @@ const ComponentList = {
   password: Password,
   accordion: Accordion,
   tree: Tree,
+  dataTable: DataTable,
   fileUploader: FileUploader
 };
 
@@ -86,6 +88,9 @@ export const components = {
   },
   tree: function(selector) {
     attachElements(selector, null, Tree);
+  },
+  dataTable: function(selector) {
+    attachElements(selector, null, DataTable);
   },
   fileUploader: function(selector) {
     attachElements(selector, null, FileUploader);

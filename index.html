@@ -31,7 +31,7 @@
 <body>
     <!-- HEADER LAYOUT -->
     <header class="hcl-header" data-withsidenav=true>
-        <a href="/" class="hcl-header-brand">
+        <a href="/" class="hcl-header-brand" tabindex="0">
             <img src="/logo.png" alt="Logo">
         </a>
         <div class="hcl-header-wrapper">
@@ -52,19 +52,19 @@
             </div>
             <ul class="hcl-header-icons">
                 <li class="hcl-header-icon">
-                    <span class="hcl-icon-1 bg-white"></span>
+                    <button class="hcl-icon-1 bg-white"></button>
                 </li>
                 <li class="hcl-header-icon">
-                    <span class="hcl-icon-1 bg-white"></span>
+                    <button class="hcl-icon-1 bg-white"></button>
                 </li>
                 <li class="hcl-header-icon">
-                    <span class="hcl-icon-1 bg-white"></span>
+                    <button class="hcl-icon-1 bg-white"></button>
                 </li>
                 <li class="hcl-header-icon">
-                    <span class="hcl-icon-1 bg-white"></span>
+                    <button class="hcl-icon-1 bg-white"></button>
                 </li>
                 <li class="hcl-header-icon">
-                    <span class="hcl-icon-1 bg-white"></span>
+                    <button class="hcl-icon-1 bg-white"></button>
                 </li>
             </ul>
         </div>
@@ -1755,7 +1755,7 @@
                                     <label for="hcl-checkbox-header" class="hcl-checkbox-label"></label>
                                 </div>
                             </th>
-                            <th class="sortable">Name</th>
+                            <th class="sortable" tabindex="0">Name</th>
                             <th>Protocol</th>
                             <th>Port</th>
                             <th>Rule</th>
@@ -1931,7 +1931,7 @@
             <section class="m-1 p-2 colBorder">
                 <ul class="hcl-accordion">
                     <li class="hcl-accordion-item">
-                        <h4 class="hcl-accordion-title">What is Lorem Ipsum ?</h4>
+                        <h4 class="hcl-accordion-title" tabindex="0">What is Lorem Ipsum ?</h4>
                         <p class="hcl-accordion-content">
                             Lorem Ipsum is simply dummy text of the printing and
                             typesetting industry. Lorem Ipsum
@@ -1944,7 +1944,7 @@
                         </p>
                     </li>
                     <li class="hcl-accordion-item">
-                        <h4 class="hcl-accordion-title">Why do we use it ?</h4>
+                        <h4 class="hcl-accordion-title" tabindex="0">Why do we use it ?</h4>
                         <p class="hcl-accordion-content">
                             It is a long established fact that a reader will be distracted
                             by the readable content of
@@ -1958,7 +1958,7 @@
                         </p>
                     </li>
                     <li class="hcl-accordion-item">
-                        <h4 class="hcl-accordion-title">Wher we can it ?</h4>
+                        <h4 class="hcl-accordion-title" tabindex="0">Wher we can it ?</h4>
                         <p class="hcl-accordion-content">
                             There are many variations of passages of Lorem Ipsum available,
                             but the majority have
@@ -2640,6 +2640,8 @@
         patron.slider('.hcl-slider');
 
         patron.tree('.hcl-tree');
+
+        patron.dataTable('.hcl-data-table');
 
         patron.fileUploader('.hcl-file-uploader');
         

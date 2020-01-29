@@ -41,6 +41,11 @@
                 transform: scale(1) rotate(-45deg);
                 transition: all .2s ease-in-out;
             }
+
+            &:focus, &:active {
+                outline: 1px solid var(--focus-outline-color);
+                outline-offset: 0.125rem;
+            }
         }
 
         .#{$prefix}-accordion-content {
