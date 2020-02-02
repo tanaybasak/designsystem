@@ -34,6 +34,10 @@
         &:focus,
         &:active {
             outline: none;
+            img {
+                outline: 1px solid var(--focus-outline-color);
+                outline-offset: 0.5rem;
+            }
         }
     }
 
@@ -71,6 +75,13 @@
             .#{$prefix}-header-icon {
                 display: inline-flex;
                 margin: 1rem .5rem;
+
+                input, button {
+                    &:focus, &:active {
+                        outline: 1px solid var(--focus-outline-color);
+                        outline-offset: 0.125rem;
+                    }
+                }
             }
 
             @include media-breakpoint-down(md) {

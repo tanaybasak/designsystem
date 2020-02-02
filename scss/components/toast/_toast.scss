@@ -42,6 +42,7 @@ $colorMap: ('info': $info, 'danger': $red-3, 'success': $success, 'warning': $wa
         line-height: 1rem;
         color: #132730;
         letter-spacing: 0;
+        word-break: break-word;
         @include getFontWeight('semibold');
     }
 
@@ -51,6 +52,7 @@ $colorMap: ('info': $info, 'danger': $red-3, 'success': $success, 'warning': $wa
         font-size: .75rem;
         color: #aaa;
         letter-spacing: 0;
+        word-break: break-word;
         @include getFontWeight('regular');
     }
 
@@ -59,8 +61,6 @@ $colorMap: ('info': $info, 'danger': $red-3, 'success': $success, 'warning': $wa
     }
 
     &-close {
-        outline: .125rem solid transparent;
-        outline-offset: -.125rem;
         border: none;
         margin-left: auto;
         padding: 0;

@@ -52,6 +52,10 @@
       color: $light-60;
       letter-spacing: 0;
       align-self: flex-end;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
 
       &:not(:last-child)::after {
         content: '|';

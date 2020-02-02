@@ -9,7 +9,9 @@ class Accordion {
       ...options
     };
 
-    this.elements = this.element.querySelectorAll(`.${PREFIX}-accordion-title`);
+    const chkClass = el => el.classList.contains(`${PREFIX}-accordion-title`);
+    const childs = ele => Array.from(ele.children);
+    this.elements = childs(this.element).flatMap(el => childs(el).filter(el => chkClass(el)));
   }
 
   toggleContent = event => {
@@ -34,6 +36,12 @@ class Accordion {
   attachEvents = () => {
     this.elements.forEach((item) => {
       item.addEventListener('click', this.toggleContent);
+      item.addEventListener('keypress', event => {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+          this.toggleContent(event);
+        }
+      });
     });
   };
 }
