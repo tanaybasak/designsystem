@@ -18,6 +18,7 @@ import FileUploader from '../../js/fileUploader';
 
 // Demo Scripts
 import '../../js/modal';
+import '../../js/toast';
 
 const ComponentList = {
   dropdow: Dropdown,
