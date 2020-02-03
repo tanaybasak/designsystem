@@ -1,9 +1,8 @@
 import '../../scss/main.scss';
 import ContentSwitcher from '../../js/content-switcher';
 import Dropdown from '../../js/dropdown';
-import Navigation from '../../js/navigation';
+import Sidebar from '../../js/sidebar';
 import Search from '../../js/search';
-import { isElement } from '../../js/utils/dom';
 import Tabs from '../../js/tabs';
 import Tooltip from '../../js/tooltip';
 import DatePicker from '../../js/datePicker';
@@ -16,13 +15,15 @@ import Tree from '../../js/tree';
 import DataTable from '../../js/dataTable';
 import FileUploader from '../../js/fileUploader';
 
+import { isElement } from '../../js/utils/dom';
+
 // Demo Scripts
 import '../../js/modal';
 import '../../js/toast';
 
 const ComponentList = {
   dropdow: Dropdown,
-  navigation: Navigation,
+  sidebar: Sidebar,
   search: Search,
   datepicker: DatePicker,
   tabs: Tabs,
@@ -69,8 +70,8 @@ export const components = {
   tooltip: function(selector, options) {
     attachElements(selector, options, Tooltip);
   },
-  navigation: function(selector, options) {
-    attachElements(selector, options, Navigation);
+  sidebar: function(selector, options) {
+    attachElements(selector, options, Sidebar);
   },
   search: function(selector, options) {
     attachElements(selector, options, Search);

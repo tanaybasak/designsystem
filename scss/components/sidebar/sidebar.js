@@ -1,1 +1,1 @@
-window.patron.navigation('.hcl-sidebar', {});
+window.patron.sidebar('.hcl-sidebar', {});

@@ -1,6 +1,6 @@
 import { PREFIX } from './utils/config';
 
-class Navigation {
+class Sidebar {
   constructor(element, options) {
     this.element = element;
 
@@ -97,4 +97,4 @@ class Navigation {
   };
 }
 
-export default Navigation;
+export default Sidebar;
