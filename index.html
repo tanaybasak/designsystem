@@ -31,7 +31,7 @@
 <body>
     <!-- HEADER LAYOUT -->
     <header class="hcl-header" data-withsidenav=true>
-    <a href="/" class="hcl-header-brand">
+    <a href="/" class="hcl-header-brand" tabindex="0">
         <img alt="Logo" src="https://www.hcl.com/sites/default/files/main-logo-wh.png" />
     </a>
     <div class="hcl-header-wrapper">
@@ -52,19 +52,19 @@
         </div>
         <ul class="hcl-header-icons">
             <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
+                <button class="hcl-icon-1 bg-white"></button>
             </li>
             <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
+                <button class="hcl-icon-1 bg-white"></button>
             </li>
             <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
+                <button class="hcl-icon-1 bg-white"></button>
             </li>
             <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
+                <button class="hcl-icon-1 bg-white"></button>
             </li>
             <li class="hcl-header-icon">
-                <span class="hcl-icon-1 bg-white"></span>
+                <button class="hcl-icon-1 bg-white"></button>
             </li>
         </ul>
     </div>
@@ -96,6 +96,11 @@
                     <li class="hcl-sidebar-item">
                         <a href="#typography" class="hcl-sidebar-link">
                             Typography
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#pagination" class="hcl-sidebar-link">
+                            Pagination
                         </a>
                     </li>
                     <li class="hcl-sidebar-item">
@@ -691,40 +696,42 @@
 
             <!-- Pagination -->
             <section class="m-1 p-2">
-                <div data-component="pagination" data-totalitems="373" data-itemstepper="20" class="hcl-pagination">
-    <div class="hcl-pagination-left">
-        <div class="hcl-pagination-text">Items per page:</div>
-        <div class="hcl-pagination-select-wrapper">
-        </div>
-        <span class="hcl-pagination-text">
+                <section id="pagination" class="hcl-container m-1 p-2">
+    <div data-component="pagination" data-totalitems="373" data-itemstepper="20" class="hcl-pagination">
+        <div class="hcl-pagination-left">
+            <div class="hcl-pagination-label">Items per page:</div>
+            <div class="hcl-pagination-select-wrapper">
+            </div>
             <span class="hcl-pagination-range">
                 <span class="hcl-range-start"></span>
                 <span class="hcl-range-separator">-</span>
                 <span class="hcl-range-end"></span>
-            </span>of
-            <span class="hcl-pagination-totalitems"></span>items
-        </span>
-    </div>
-    <div class="hcl-pagination-right">
-        <span class="hcl-pagination-text">
-            <span class="hcl-page-start"></span>of
-            <span class="hcl-page-end"></span>pages
-        </span>
-        <button disabled class="hcl-pagination-button-previous" aria-label="Previous page">
-            <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
-                <path fill-rule="nonzero" d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z">
-                </path>
-            </svg>
-        </button>
-        <div class="hcl-pagination-select-wrapper">
+                of
+                <span class="hcl-pagination-totalitems"></span>items
+            </span>
         </div>
-        <button class="hcl-pagination-button-next" aria-label="Next page">
-            <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
-                <path fill-rule="nonzero" d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"></path>
-            </svg>
-        </button>
+        <div class="hcl-pagination-right">
+            <span class="hcl-pagination-text">
+                <span class="hcl-page-start"></span>of
+                <span class="hcl-page-end"></span>pages
+            </span>
+            <button disabled class="hcl-pagination-button-previous" aria-label="Previous page">
+                <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
+                    <path fill-rule="nonzero" d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z">
+                    </path>
+                </svg>
+            </button>
+            <div class="hcl-pagination-select-wrapper">
+            </div>
+            <button class="hcl-pagination-button-next" aria-label="Next page">
+                <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
+                    <path fill-rule="nonzero"
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"></path>
+                </svg>
+            </button>
+        </div>
     </div>
-</div>
+</section>
             </section>
 
             <!-- Grid System -->
@@ -1706,19 +1713,32 @@
             <!-- File Uploader -->
             <section class="m-1 p-2">
                 <div class="hcl-form-item">
-    <span class="hcl-label">
-        Account photo
-    </span>
-    <p class="hcl-label-description">only .jpg and .png files. 500kb max file size.</p>
-    <div class="hcl-file-uploader">
-        <input type="file" class="hcl-file-input" id="hcl-file-uploader" tabIndex=0 multiple
-            accept=".jpg,.png" />
-        <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm"
-            role="button">
-            Add file
-        </label>
-    </div>
+  <span class="hcl-label">
+    Account photo
+  </span>
+  <p class="hcl-label-description">
+    only .jpg and .png files. 500kb max file size.
+  </p>
+  <div class="hcl-file-uploader">
+    <input
+      type="file"
+      class="hcl-file-input"
+      id="hcl-file-uploader"
+      tabIndex="0"
+      multiple
+      accept=".jpg,.png"
+    />
+    <label
+      for="hcl-file-uploader"
+      class="hcl-file-btn hcl-btn hcl-secondary hcl-sm"
+      role="button"
+      tabindex="0"
+    >
+      Add file
+    </label>
+  </div>
 </div>
+
             </section>
 
             <!-- Radio Components -->
@@ -2031,43 +2051,44 @@
             <section class="m-1 p-2">
                 <!-- borderless -->
                 <table class="hcl-data-table hcl-data-table-borderless">
-    <thead>
-        <tr>
-            <th >Name</th>
-            <th>Protocol</th>
-            <th>Port</th>
-            <th>Rule</th>
-            <th>Attached Groups</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Load Balancer 1</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 2</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 3</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Protocol</th>
+      <th>Port</th>
+      <th>Rule</th>
+      <th>Attached Groups</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Load Balancer 1</td>
+      <td>HTTP</td>
+      <td>80</td>
+      <td>Round Robin</td>
+      <td>Maureen&#x27;s VM Groups</td>
+      <td>Active</td>
+    </tr>
+    <tr>
+      <td>Load Balancer 2</td>
+      <td>HTTP</td>
+      <td>80</td>
+      <td>Round Robin</td>
+      <td>Maureen&#x27;s VM Groups</td>
+      <td>Active</td>
+    </tr>
+    <tr>
+      <td>Load Balancer 3</td>
+      <td>HTTP</td>
+      <td>80</td>
+      <td>Round Robin</td>
+      <td>Maureen&#x27;s VM Groups</td>
+      <td>Active</td>
+    </tr>
+  </tbody>
 </table>
+
                 <!-- compact -->
                 <table class="hcl-data-table hcl-data-table-compact">
     <thead>
@@ -2395,7 +2416,7 @@
                 <!-- controlled -->
                 <ul class="hcl-accordion" id="con">
     <li class="hcl-accordion-item">
-        <h4 class="hcl-accordion-title">What is Lorem Ipsum?</h4>
+        <h4 class="hcl-accordion-title" tabindex="0">What is Lorem Ipsum?</h4>
         <p class="hcl-accordion-content">
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum
@@ -2408,7 +2429,7 @@
         </p>
     </li>
     <li class="hcl-accordion-item">
-        <h4 class="hcl-accordion-title">Why do we use it?</h4>
+        <h4 class="hcl-accordion-title" tabindex="0">Why do we use it?</h4>
         <p class="hcl-accordion-content">
             It is a long established fact that a reader will be distracted
             by the readable content of
@@ -2422,7 +2443,7 @@
         </p>
     </li>
     <li class="hcl-accordion-item">
-        <h4 class="hcl-accordion-title">Where we can use it?</h4>
+        <h4 class="hcl-accordion-title" tabindex="0">Where we can use it?</h4>
         <p class="hcl-accordion-content">
             There are many variations of passages of Lorem Ipsum available,
             but the majority have
@@ -2440,7 +2461,7 @@
                 <!-- uncontrolled -->
                 <ul class="hcl-accordion" id="unc">
     <li class="hcl-accordion-item">
-        <h4 class="hcl-accordion-title">What is Lorem Ipsum ?</h4>
+        <h4 class="hcl-accordion-title" tabindex="0">What is Lorem Ipsum ?</h4>
         <p class="hcl-accordion-content">
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum   
@@ -2453,7 +2474,7 @@
         </p>
     </li>
     <li class="hcl-accordion-item">
-        <h4 class="hcl-accordion-title">Why do we use it ?</h4>
+        <h4 class="hcl-accordion-title" tabindex="0">Why do we use it ?</h4>
         <p class="hcl-accordion-content">
             It is a long established fact that a reader will be distracted
             by the readable content of
@@ -2467,7 +2488,7 @@
         </p>
     </li>
     <li class="hcl-accordion-item">
-        <h4 class="hcl-accordion-title">Wher we can it ?</h4>
+        <h4 class="hcl-accordion-title" tabindex="0">Wher we can it ?</h4>
         <p class="hcl-accordion-content">
             There are many variations of passages of Lorem Ipsum available,
             but the majority have
@@ -3071,6 +3092,98 @@
 </section>
             </section>
 
+             <!-- footer -->
+             <section class="m-1 p-2">
+                <section id="treeStructure" >
+  <div class="hcl-row">
+      <div class="hcl-col-4">
+          <ul role="tree" class="hcl-tree">
+              <li class="tree-item" role="treeitem" aria-expanded="false">
+                  <div class="tree-node" tabindex="0">
+                      <i class="toggle-icon"></i>
+                      <span>Main 1</span>
+                  </div>
+                  <ul role="group" class="tree-nested">
+                      <li class="tree-item" role="treeitem">
+                          <div class="tree-node pl-5" tabindex="0">
+                              <span>Sub Main 1.1</span>
+                          </div>
+                      </li>
+                      <li class="tree-item" role="treeitem">
+                          <div class="tree-node pl-5" tabindex="0">
+                              <span>Sub Main 1.2</span>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li class="tree-item" role="treeitem" aria-expanded="false">
+                  <div class="tree-node" tabindex="0">
+                      <i class="toggle-icon"></i>
+                      <span>Main 2</span>
+                  </div>
+                  <ul role="group" class="tree-nested">
+                      <li class="tree-item" role="treeitem" aria-expanded="false">
+                          <div class="tree-node" tabindex="0">
+                              <i class="toggle-icon"></i>
+                              <span>Sub Main 2.1</span>
+                          </div>
+                          <ul role="group" class="tree-nested">
+                              <li class="tree-item" role="treeitem">
+                                  <div class="tree-node pl-5" tabindex="0">
+                                      <span>Sub Main 2.1.1</span>
+                                  </div>
+                              </li>
+                              <li class="tree-item" role="treeitem">
+                                  <div class="tree-node pl-5" tabindex="0">
+                                      <span>Sub Main 2.1.2</span>
+                                  </div>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="tree-item" role="treeitem" aria-expanded="false">
+                          <div class="tree-node" tabindex="0">
+                              <i class="toggle-icon"></i>
+                              <span>Sub Main 2.2</span>
+                          </div>
+                          <ul role="group" class="tree-nested">
+                              <li class="tree-item" role="treeitem">
+                                  <div class="tree-node pl-5" tabindex="0">
+                                      <span>Sub Main 2.2.1</span>
+                                  </div>
+                              </li>
+                              <li class="tree-item" role="treeitem">
+                                  <div class="tree-node pl-5" tabindex="0">
+                                      <span>Sub Main 2.2.1</span>
+                                  </div>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+              </li>
+              <li class="tree-item" role="treeitem" aria-expanded="false">
+                  <div class="tree-node" tabindex="0">
+                      <i class="toggle-icon"></i>
+                      <span>Main 3</span>
+                  </div>
+                  <ul role="group" class="tree-nested">
+                      <li class="tree-item" role="treeitem">
+                          <div class="tree-node pl-5" tabindex="0">
+                              <span>Sub Main 3.1</span>
+                          </div>
+                      </li>
+                      <li class="tree-item" role="treeitem">
+                          <div class="tree-node pl-5" tabindex="0">
+                              <span>Sub Main 3.2</span>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+  </div>
+</section>
+            </section>
+
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
     </div>
@@ -3095,6 +3208,8 @@
     <script src="./scss/components/tooltip/definition/definition.js"></script>
     <script src="./scss/components/tooltip/icon/icon.js"></script>
     <script src="./scss/components/tooltip/interactive/interactive.js"></script>
+    <script src="./scss/components/file-uploader/file-uploader.js"></script>
+    <script src="./scss/components/tree/tree.js"></script>
 </body>
 
 </html>
