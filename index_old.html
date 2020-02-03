@@ -1,0 +1,2547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Patron CSS Framework</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="import" href="./scss/components/accordion/controlled/controlled.html" />
+    <!-- <link rel="import" href="./scss/components/accordion/uncontrolled.html" /> -->
+    <style>
+        .bgColor {
+            background-color: #eee;
+        }
+
+        .colBorder {
+            border: 1px solid #999;
+        }
+
+        .bigCol {
+            min-height: 5rem;
+            padding: 0.9375rem;
+        }
+
+        .darkBox {
+            background-color: #555;
+            color: #BBB;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER LAYOUT -->
+    <header class="hcl-header" data-withsidenav=true>
+        <a href="/" class="hcl-header-brand">
+            <img src="/logo.png" alt="Logo">
+        </a>
+        <div class="hcl-header-wrapper">
+            <div class="hcl-header-search">
+                <div class="hcl-search hcl-bg-white hcl-search-btn-only">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon white" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="text" id="header-search-input-full" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+            </div>
+            <ul class="hcl-header-icons">
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+                <li class="hcl-header-icon">
+                    <span class="hcl-icon-1 bg-white"></span>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <nav class="hcl-sidebar" data-component="navigation">
+        <button class="hcl-sidebar-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="hcl-sidebar-title">
+            <span class="hcl-sidebar-title-icon"></span>
+            <span class="hcl-sidebar-title-text">Section Title</span>
+            <span class="hcl-sidebar-title-toggle"></span>
+        </div>
+        <ul class="hcl-sidebar-list">
+            <li class="hcl-sidebar-category">
+                <span class="hcl-sidebar-category-title">
+                    <svg class="hcl-sidebar-icon" alt="alt" title="title">
+                        <rect rx="3" ry="3" width="100%" height="100%"
+                            style="fill: rgb(255, 255, 255); stroke: black; stroke-width: 2; opacity: 0.5;">
+                        </rect>
+                    </svg>
+                    <span class="hcl-sidebar-link">
+                        Atoms
+                    </span>
+                </span>
+                <ul class="hcl-sidebar-children">
+                    <li class="hcl-sidebar-item">
+                        <a href="#typography" class="hcl-sidebar-link">
+                            Typography
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#gridSystem" class="hcl-sidebar-link">
+                            Grid System
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#boxExamples" class="hcl-sidebar-link">
+                            Box Examples
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#spinner" class="hcl-sidebar-link">
+                            Spinner
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#breadcrumb" class="hcl-sidebar-link">
+                            Breadcrumb
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#toggle" class="hcl-sidebar-link">
+                            Toggle
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#notification" class="hcl-sidebar-link">
+                            Notification
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#cards" class="hcl-sidebar-link">
+                            Card
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#overflowmenu" class="hcl-sidebar-link">
+                            Overflow Menu
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#textinput" class="hcl-sidebar-link">
+                            Text Input
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#textarea" class="hcl-sidebar-link">
+                            Textarea
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#radio" class="hcl-sidebar-link">
+                            Radio
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#checkbox" class="hcl-sidebar-link">
+                            Checkbox
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="hcl-sidebar-category">
+                <span class="hcl-sidebar-category-title">
+                    <svg class="hcl-sidebar-icon" alt="alt" title="title">
+                        <rect rx="3" ry="3" width="100%" height="100%"
+                            style="fill: rgb(255, 255, 255); stroke: black; stroke-width: 2; opacity: 0.5;">
+                        </rect>
+                    </svg>
+                    <span class="hcl-sidebar-link">
+                        Molecules
+                    </span>
+                </span>
+                <ul class="hcl-sidebar-children">
+                    <li class="hcl-sidebar-item">
+                        <a href="#content-switcher" class="hcl-sidebar-link">
+                            Content Switcher
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#tabsexample" class="hcl-sidebar-link">
+                            Tabs
+                        </a>
+                    </li>
+                    <li class="hcl-sidebar-item">
+                        <a href="#formcomp" class="hcl-sidebar-link">
+                            Form
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- CONTENT LAYOUT -->
+    <div class="hcl-content" style="margin-top: 4rem" data-withsidenav=true>
+        <!-- SIDEBAR LAYOUT -->
+        <!-- MAIN CONTENT LAYOUT -->
+        <main class="hcl-content-main">
+            <!-- AVAILABLE COMPONENTS STARTS -->
+            <section id="typography" class="hcl-container">
+                <div class="hcl-row">
+                    <div class="hcl-col-12">
+                        <h1>This is the heading one</h1>
+                        <h2>This is the heading two</h2>
+                        <h3>This is the heading three</h3>
+                        <h4>This is the heading four</h4>
+                        <h5>This is the heading five</h5>
+                        <h6>This is the heading six</h6>
+                    </div>
+                </div>
+
+                <div class="hcl-row hcl-col-12 mt-4 mb-4">
+                    <p>
+                        This is the dummy text for the paragraph.This is the dummy text for
+                        the paragraph.This is the dummy text for the paragraph. This is the
+                        dummy text for the paragraph.This is the dummy text for the
+                        paragraph. This is the dummy text for the paragraph.This is the
+                        dummy text for the paragraph.This is the dummy text for the
+                        paragraph. This is the dummy text for the paragraph.This is the
+                        dummy text for the paragraph. This is the dummy text for the
+                        paragraph.This is the dummy text for the paragraph.This is the dummy
+                        text for the paragraph. This is the dummy text for the
+                        paragraph.This is the dummy text for the paragraph. This is the
+                        dummy text for the paragraph.This is the dummy text for the
+                        paragraph.This is th e dummy text for the paragraph. This is the
+                        dummy text for the paragraph.This is the dummy text for the
+                        paragraph.
+                    </p>
+                </div>
+                <div class="hcl-row col-12 mt-4 mb-4"> <a href="#" class="mr-4 disable" aria-disabled="true">Link
+                        example</a> <a href="#">Link Example</a></div>
+                <div>
+                    <h5>Default Button</h5>
+                    <button class="hcl-btn">Button</button>
+
+                    </br>
+                    <h5> Primary Buttons</h5>
+                    <button class="hcl-btn hcl-primary">Button</button>
+                    <button class="hcl-btn hcl-primary" disabled>Button</button>
+                    <button class="hcl-btn hcl-primary">
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-primary" disabled>
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    </br>
+                    <h5> Primary Small Buttons</h5>
+                    <button class="hcl-btn hcl-primary hcl-sm">Button</button>
+                    <button class="hcl-btn hcl-primary hcl-sm" disabled>Button</button>
+                    <button class="hcl-btn hcl-primary hcl-sm">
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-primary hcl-sm" disabled>
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    </br>
+                    <h5> Primary Danger Buttons</h5>
+                    <button class="hcl-btn hcl-primary hcl-danger">Button</button>
+                    <button class="hcl-btn hcl-primary hcl-danger" disabled>Button</button>
+                    <button class="hcl-btn hcl-primary hcl-danger">
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-primary hcl-danger" disabled>
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    </br>
+                    <h5> Primary Danger Small Buttons</h5>
+                    <button class="hcl-btn hcl-primary hcl-danger hcl-sm">Button</button>
+                    <button class="hcl-btn hcl-primary hcl-danger hcl-sm" disabled>Button</button>
+                    <button class="hcl-btn hcl-primary hcl-danger hcl-sm">
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-primary hcl-danger hcl-sm" disabled>
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    </br>
+                    <h5> Secondary Buttons</h5>
+                    <button class="hcl-btn hcl-secondary">Button</button>
+                    <button class="hcl-btn hcl-secondary" disabled>Button</button>
+                    <button class="hcl-btn hcl-secondary">
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-secondary" disabled>
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    </br>
+                    <h5> Secondary Small Buttons</h5>
+                    <button class="hcl-btn hcl-secondary hcl-sm">Button</button>
+                    <button class="hcl-btn hcl-secondary hcl-sm" disabled>Button</button>
+                    <button class="hcl-btn hcl-secondary hcl-sm">
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-secondary hcl-sm" disabled>
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    </br>
+                    <h5> Secondary Danger Buttons</h5>
+                    <button class="hcl-btn hcl-secondary hcl-danger">Button</button>
+                    <button class="hcl-btn hcl-secondary hcl-danger" disabled>Button</button>
+                    <button class="hcl-btn hcl-secondary hcl-danger">
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-secondary hcl-danger" disabled>
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+
+                    </br>
+                    <h5> Secondary Danger Small Buttons</h5>
+                    <button class="hcl-btn hcl-secondary hcl-danger hcl-sm">Button</button>
+                    <button class="hcl-btn hcl-secondary hcl-danger hcl-sm" disabled>Button</button>
+                    <button class="hcl-btn hcl-secondary hcl-danger hcl-sm">
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-secondary hcl-danger hcl-sm" disabled>
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    </br>
+                    <h5> Ghost Buttons</h5>
+                    <button class="hcl-btn hcl-ghost">Button</button>
+                    <button class="hcl-btn hcl-ghost" disabled>Button</button>
+                    <button class="hcl-btn hcl-ghost"><span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-ghost" disabled>Button
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    </br>
+                    <h5> Ghost Small Buttons</h5>
+                    <button class="hcl-btn hcl-ghost hcl-sm">Button</button>
+                    <button class="hcl-btn hcl-ghost hcl-sm" disabled>Button</button>
+                    <button class="hcl-btn hcl-ghost hcl-sm">
+                        <span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-ghost hcl-sm" disabled>Button
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+            <!-- Pagination -->
+            <section class="m-1 p-2">
+                <div data-component="pagination" data-totalitems="373" data-itemstepper="20" class="hcl-pagination">
+                    <div class="hcl-pagination-left">
+                        <div class="hcl-pagination-text">Items per page:</div>
+                        <div class="hcl-pagination-select-wrapper">
+                        </div>
+                        <span class="hcl-pagination-text">
+                            <span class="hcl-pagination-range">
+                                <span class="hcl-range-start"></span>
+                                <span class="hcl-range-separator">-</span>
+                                <span class="hcl-range-end"></span>
+                            </span>of
+                            <span class="hcl-pagination-totalitems"></span>items
+                        </span>
+                    </div>
+                    <div class="hcl-pagination-right">
+                        <span class="hcl-pagination-text">
+                            <span class="hcl-page-start"></span>of
+                            <span class="hcl-page-end"></span>pages
+                        </span>
+                        <button disabled class="hcl-pagination-button-previous" aria-label="Previous page">
+                            <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
+                                <path fill-rule="nonzero" d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z">
+                                </path>
+                            </svg>
+                        </button>
+                        <div class="hcl-pagination-select-wrapper">
+                        </div>
+                        <button class="hcl-pagination-button-next" aria-label="Next page">
+                            <svg class="bx--pagination__button-icon" width="7" height="12" viewBox="0 0 7 12">
+                                <path fill-rule="nonzero"
+                                    d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section id="gridSystem" class="hcl-container">
+                <div class="hcl-row">
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-11 colBorder  bgColor">11</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-2 colBorder bgColor">2</div>
+                    <div class="hcl-col-10 colBorder bgColor">10</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-3 colBorder bgColor">3</div>
+                    <div class="hcl-col-9 colBorder bgColor">9</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-4 colBorder bgColor">4</div>
+                    <div class="hcl-col-8 colBorder bgColor">8</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-5 colBorder bgColor">5</div>
+                    <div class="hcl-col-7 colBorder bgColor">7</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-6 colBorder bgColor">6</div>
+                    <div class="hcl-col-6 colBorder bgColor">6</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-7 colBorder bgColor">7</div>
+                    <div class="hcl-col-5 colBorder bgColor">5</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                    <div class="hcl-col-1 colBorder bgColor">1</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-12 colBorder bgColor">12</div>
+                </div>
+            </section>
+            <section id="boxExamples" class="hcl-container pt-5 m-0">
+                <div class="hcl-row">
+                    <div class="hcl-col-3 colBorder bgColor bigCol darkBox">Left Box</div>
+                    <div class="hcl-col-9 colBorder bgColor bigCol">Right Box</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Left Box</div>
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Center Box</div>
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Right Box</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-6 colBorder bgColor bigCol">Left Box</div>
+                    <div class="hcl-col-6 colBorder bgColor bigCol">Right Box</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Left Box</div>
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Center Box</div>
+                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Right Box</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-2 colBorder bgColor bigCol darkBox"></div>
+                    <div class="hcl-col-10 colBorder bgColor bigCol darkBox">Data</div>
+                </div>
+                <div class="hcl-row">
+                    <div class="hcl-col-2 colBorder bgColor bigCol darkBox">Values</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value One</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Two</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Three</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Four</div>
+                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Five</div>
+                </div>
+            </section>
+            <section>
+                <div class="hcl-spinner" title="loading">
+                    <svg viewBox="-75 -75 150 150">
+                        <circle cx="0" cy="0" r="67" />
+                    </svg>
+                </div>
+            </section>
+            <section id="breadcrumb" class="hcl-container pt-5 mb-5">
+                <ul class="hcl-breadcrumb" aria-label="breadcrumb">
+                    <li class="hcl-breadcrumb-item">
+                        <a href="#" class="hcl-link">Breadcrumb 1</a>
+                    </li>
+                    <li class="hcl-breadcrumb-item hcl-breadcrumb-item-active">
+                        <a href="#" class="hcl-link">Breadcrumb 2</a>
+                    </li>
+                    <li class="hcl-breadcrumb-item">
+                        <a href="#" class="hcl-link">Breadcrumb 3</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="hcl-container pt-5">
+                <span class="hcl-toggle">
+                    <input type="checkbox" id="simple-toggle" />
+                    <label class="hcl-toggle-label" for="simple-toggle">
+                        <span class="hcl-switch"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+                <span class="hcl-toggle">
+                    <input type="checkbox" id="disabled-checked-toggle" disabled checked />
+                    <label class="hcl-toggle-label" for="disabled-checked-toggle">
+                        <span class="hcl-switch"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+                <span class="hcl-toggle">
+                    <input type="checkbox" id="disabled-toggle" disabled />
+                    <label class="hcl-toggle-label" for="disabled-toggle">
+                        <span class="hcl-switch"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+            </section>
+            <section class="hcl-container pt-5">
+                <span class="hcl-toggle-small">
+                    <input type="checkbox" id="simple-small-toggle" />
+                    <label class="hcl-toggle-label" for="simple-small-toggle">
+                        <span class="hcl-switch"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+                <span class="hcl-toggle-small">
+                    <input type="checkbox" id="disabled-checked-small-toggle" disabled checked />
+                    <label class="hcl-toggle-label" for="disabled-checked-small-toggle">
+                        <span class="hcl-switch"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+                <span class="hcl-toggle-small">
+                    <input type="checkbox" id="disabled-small-toggle" disabled />
+                    <label class="hcl-toggle-label" for="disabled-small-toggle">
+                        <span class="hcl-switch"></span>
+                    </label>
+                    <label class="hcl-toggle-off">Off</label>
+                    <label class="hcl-toggle-on">On</label>
+                </span>
+            </section>
+            <!--- Notification -->
+            <section id="notification" class="hcl-row m-0">
+                <div class="hcl-col">
+                    <div data-notification="" class="hcl-notification hcl-success" role="alert">
+                        <div class="hcl-notification-body">
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" class="hcl-notification-icon" width="20" height="20"
+                                viewBox="0 0 32 32" aria-hidden="true">
+                                <path
+                                    d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
+                                </path>
+                            </svg>
+                            <div class="hcl-notification-text-wrapper">
+                                <h5 class="hcl-notification-title">Notification title</h5>
+                                <p class="hcl-notification-subtitle">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="hcl-notification-close" type="button" aria-label="close">
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!--- Notification ENDS -->
+            <!-- Tag -->
+            <section class="hcl-row m-0">
+                <div class="hcl-col">
+                    <button class="hcl-tag hcl-tag-primary" title="primary" tabindex="0">
+                        <span class="hcl-tag-text">
+                            primary
+                        </span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary" tabindex="0">
+                        <span class="hcl-tag-text">
+                            secondary
+                        </span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-primary" title="secondary" tabindex="0" disabled>
+                        <span class="hcl-tag-text">
+                            primary-disabled
+                        </span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary" tabindex="0" disabled>
+                        <span class="hcl-tag-text">
+                            secondary-disabled
+                        </span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0"
+                        disabled>
+                        <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
+                        <span class="hcl-tag-text">
+                            secondary-thumbnail-closeable-disabled
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                    <br />
+                    <button class="hcl-tag hcl-tag-primary" title="primary-closeable" tabindex="0">
+                        <span class="hcl-tag-text">
+                            primary-closeable
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary-closeable" tabindex="0">
+                        <span class="hcl-tag-text">
+                            secondary-closeable
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                    <br />
+                    <button class="hcl-tag hcl-tag-primary" title="primary-thumbnail-closeable" tabindex="0">
+                        <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
+                        <span class="hcl-tag-text">
+                            primary-thumbnail-closeable
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                    <button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0">
+                        <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
+                        <span class="hcl-tag-text">
+                            secondary-thumbnail-closeable
+                        </span>
+                        <span class="hcl-close" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Modals -->
+            <section id="hcl-modal">
+                <!-- This button is just for landing page, will not be part of design system -->
+                <button id="hcl-btn-modal-type1" data-modal-type="1" class="hcl-btn">Modal : type 1</button>
+                <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                <section id="hcl-modal-type1" data-modal-type="1" class="hcl-modal hcl-modal-hide row">
+                    <div class="hcl-modal-container hcl-modal-container-lg">
+                        <header class="hcl-modal-header hcl-modal-header-lg">
+                            <small class="hcl-modal-label">Optional label</small>
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content hcl-modal-content-lg">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type1" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type2" data-modal-type="2" class="hcl-btn">Modal : type 2</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type2" data-modal-type="2" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div class="hcl-modal-container hcl-modal-container-lg">
+                        <header class="hcl-modal-header hcl-modal-header-lg">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content hcl-modal-content-lg">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type2" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type3" data-modal-type="3" class="hcl-btn">Modal : type 3</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type3" data-modal-type="3" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div class="hcl-modal-container hcl-modal-container-lg">
+                        <header class="hcl-modal-header hcl-modal-header-lg">
+                            <small class="hcl-modal-label">Optional label</small>
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content hcl-modal-content-lg">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer hcl-modal-footer-lg ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type3"
+                                class="hcl-modal-btn hcl-btn hcl-primary hcl-secondary">Cancel</button>
+                            <button class="hcl-modal-btn hcl-btn hcl-primary">Save</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type3" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type4" data-modal-type="4" class="hcl-btn">Modal : type 4</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type4" data-modal-type="4" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type4" data-modal-type="4" class="hcl-modal-container hcl-modal-container-lg">
+                        <header class="hcl-modal-header hcl-modal-header-lg">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content hcl-modal-content-lg">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer hcl-modal-footer-lg ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type4"
+                                class="hcl-modal-btn hcl-btn hcl-primary hcl-secondary">Cancel</button>
+                            <button class="hcl-modal-btn hcl-btn hcl-primary">Save</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type4" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <!-- danger Modals -->
+                <button id="hcl-btn-modal-type5" data-modal-type="5" class="hcl-btn">Modal : type 5</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type5" data-modal-type="5" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type5" data-modal-type="5"
+                        class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                        <header class="hcl-modal-header hcl-modal-header-lg">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content hcl-modal-content-lg">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer hcl-modal-footer-lg ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type5"
+                                class="hcl-modal-btn hcl-btn hcl-primary hcl-secondary">Cancel</button>
+                            <button class="hcl-modal-btn hcl-btn hcl-primary hcl-danger">Delete</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type5" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type6" data-modal-type="6" class="hcl-btn">Modal : type 6</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type6" data-modal-type="6" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type6"
+                        class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                        <header class="hcl-modal-header hcl-modal-header-lg">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content hcl-modal-content-lg">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type6" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type7" data-modal-type="7" class="hcl-btn">Modal : type 7</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type7" data-modal-type="7" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type7"
+                        class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                        <header class="hcl-modal-header hcl-modal-header-lg">
+                            <small class="hcl-modal-label">Optional label</small>
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content hcl-modal-content-lg">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer hcl-modal-footer-lg ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type7"
+                                class="hcl-btn hcl-modal-btn hcl-secondary hcl-danger">Cancel</button>
+                            <button class="hcl-btn hcl-primary hcl-danger hcl-modal-btn">Delete</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type7" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+
+                <button id="hcl-btn-modal-type8" data-modal-type="8" class="hcl-btn">Modal : type 8</button>
+                <!-- This button is just for landing page, will not be part of design system -->
+                <section id="hcl-modal-type8" data-modal-type="8" class="hcl-modal hcl-modal-hide row">
+                    <!-- id, data-modal-type attributes are just for landing page, will not be part of design system  -->
+                    <div id="hcl-modal-type8"
+                        class="hcl-modal-container hcl-modal-container-danger hcl-modal-container-lg">
+                        <header class="hcl-modal-header hcl-modal-header-lg">
+                            <h5>Modal heading </h5>
+                        </header>
+                        <div class="hcl-modal-content hcl-modal-content-lg">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue.
+                                Phasellus
+                                consequat augue vitae tellus tincidunt posuere. </p>
+                        </div>
+                        <footer class="hcl-modal-footer hcl-modal-footer-lg ">
+                            <!-- id is just for landing page, will not be part of design system  -->
+                            <button id="hcl-modal-cancel-type8"
+                                class="hcl-btn hcl-secondary hcl-modal-btn">Cancel</button>
+                            <button class="hcl-btn hcl-primary hcl-danger hcl-modal-btn">Delete</button>
+                        </footer>
+                        <!-- id is just for landing page, will not be part of design system  -->
+                        <button id="hcl-modal-close-type8" class="hcl-modal-close"></button>
+                    </div>
+                </section>
+            </section>
+
+            <!-- <section class="hcl-lightbox" >
+            </section> -->
+
+            <section id="tabsexample" class="colBorder m-5 p-5">
+                <section class="hcl-tab" data-component="tabs">
+                    <nav data-tabs role="navigation">
+                        <ul role="tablist" class="hcl-tabs-nav">
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab1" data-target="tab1">
+                                <a class="hcl-tabs-nav-link" href="#tab1">Tab Label 1</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab2" aria-selected="true"
+                                data-target="tab2">
+                                <a class="hcl-tabs-nav-link" href="#tab2">Tab Label 2</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled active" aria-controls="tab3"
+                                data-target="tab3">
+                                <a class="hcl-tabs-nav-link" href="#tab3">Tab Label 3</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="hcl-tabcontent">
+                        <div role="tabpanel" aria-labelledby="tab1" id="tab1" class="hcl-tabs-panel">
+                            <p>Tabbable Content 1</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel">
+                            <p>Tabbable Content 2</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="hcl-tabs-panel active">
+                            <p>Tabbable Content 3</p>
+                        </div>
+                    </section>
+                </section>
+
+                <section class="hcl-tab" id="tabsjs">
+                    <nav data-tabs role="navigation">
+                        <ul role="tablist" class="hcl-tabs-nav">
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab4" data-target="tab4">
+                                <a class="hcl-tabs-nav-link" href="#tab4">Tab Label 4</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab5" aria-selected="true"
+                                data-target="tab5">
+                                <a class="hcl-tabs-nav-link" href="#tab5">Tab Label 5</a>
+                            </li>
+                            <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab6" data-target="tab6">
+                                <a class="hcl-tabs-nav-link" href="#tab6">Tab Label 6</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="hcl-tabcontent">
+                        <div role="tabpanel" aria-labelledby="tab4" id="tab4" class="hcl-tabs-panel">
+                            <p>Tabbable Content 4</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab5" id="tab5" class="hcl-tabs-panel">
+                            <p>Tabbable Content 5</p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="tab6" id="tab6" class="hcl-tabs-panel">
+                            <p>Tabbable Content 6</p>
+                        </div>
+                    </section>
+                </section>
+            </section>
+
+            <!-- <section class="hcl-lightbox" >    
+            </section>-->
+
+            <!-- Overflow Menu -->
+            <section id="overflowmenu" class="hcl-row m-0">
+                <section class="hcl-col-6 hcl-overflow">
+                    <!-- This paragragh tag is just for landing page, will not be part of design system -->
+                    <p style="float: left;">Left Overflow Menu</p>
+                    <div class="hcl-overflow-container">
+                        <!-- This input tag is just for landing page, will not be part of design system -->
+                        <input
+                            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
+                        <div class="hcl-ellipsis horizontal-ellipsis"></div>
+                        <div class="hcl-overflow-menu hcl-hidden">
+                            <ul class="hcl-overflow-list">
+                                <li class="hcl-overflow-option">
+                                    Option 1
+                                </li>
+                                <li class="hcl-overflow-option">
+                                    Option 2
+                                </li>
+                                <li class="hcl-overflow-option hcl-overflow-disable">
+                                    Option 3
+                                </li>
+                                <li class="hcl-overflow-optiondanger hcl-overflow-separator">
+                                    Danger
+                                </li>
+                            </ul>
+                            <div class="hcl-overflow-caret"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="hcl-col-6 hcl-overflow">
+                    <!-- This paragragh tag is just for landing page, will not be part of design system -->
+                    <p style="float: left;">Right Overflow Menu</p>
+                    <div class="hcl-overflow-container">
+                        <!-- This input tag is just for landing page, will not be part of design system -->
+                        <input
+                            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
+                        <div class="hcl-ellipsis"></div>
+                        <div class="hcl-overflow-menu hcl-overflow-right hcl-hidden">
+                            <ul class="hcl-overflow-list">
+                                <li class="hcl-overflow-option">
+                                    Option 1
+                                </li>
+                                <li class="hcl-overflow-option">
+                                    Option 2
+                                </li>
+                                <li class="hcl-overflow-option hcl-overflow-disable">
+                                    Option 3
+                                </li>
+                                <li class="hcl-overflow-optiondanger hcl-overflow-separator">
+                                    Danger
+                                </li>
+                            </ul>
+                            <div class="hcl-overflow-caret-right"></div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- List -->
+            <section class="hcl-row m-0">
+                <!-- Ordered List -->
+                <div class="hcl-col-12 mb-4">
+                    <ol class="hcl-list-ordered">
+                        <li class="hcl-list-item">Ordered List level 1
+                            <ol class="hcl-list-nested">
+                                <li class="hcl-list-item">Ordered List level 2</li>
+                                <li class="hcl-list-item">Ordered List level 2</li>
+                            </ol>
+                        </li>
+                        <li class="hcl-list-item">Ordered List level 1</li>
+                        <li class="hcl-list-item">Ordered List level 1</li>
+                    </ol>
+                </div>
+                <!-- Unordered List -->
+                <div class="hcl-col-12 mb-4">
+                    <ul class="hcl-list-unordered">
+                        <li class="hcl-list-item">Unordered List level 1
+                            <ul class="hcl-list-nested">
+                                <li class="hcl-list-item">Unordered List level 2</li>
+                                <li class="hcl-list-item">Unordered List level 2</li>
+                            </ul>
+                        </li>
+                        <li class="hcl-list-item">Unordered List level 1</li>
+                        <li class="hcl-list-item">Unordered List level 1</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Card -->
+            <section id="cards" class="hcl-row mb-8">
+                <div class="hcl-col">
+                    <div class="hcl-row mb-8">
+                        <h4 class="hcl-col hcl-offset-4 mb-5">Default Card with icon</h4>
+                        <div class="hcl-col hcl-offset-4">
+                            <!-- HTML usable in React components STARTS -->
+                            <div class="hcl-card">
+                                <div class="hcl-card-body">
+                                    <h4 class="hcl-card-title">
+                                        <!-- Do not copy .b-1 used with icon class, i.e. used only for demo purposes -->
+                                        <span class="hcl-card-icon b-1"></span>
+                                        <span class="hcl-card-text">Card Title</span>
+                                    </h4>
+                                    <p class="hcl-card-text">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aut voluptatibus
+                                        asperiores, est omnis accusantium officiis laboriosam, ab provident soluta nemo
+                                        natus iusto! Hic suscipit est, ratione porro laborum architecto!
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- HTML usable in React components ENDS -->
+                        </div>
+                    </div>
+                    <div class="hcl-row mb-8">
+                        <h4 class="hcl-col hcl-offset-4 mb-5">Default Card with image</h4>
+                        <div class="hcl-col hcl-offset-4">
+                            <!-- HTML usable in React components STARTS -->
+                            <div class="hcl-card">
+                                <img class="hcl-card-imgtop" src="./logo.png" />
+                                <div class="hcl-card-body">
+                                    <h4 class="hcl-card-title">
+                                        <span class="hcl-card-text">Card Title</span>
+                                    </h4>
+                                    <p class="hcl-card-text">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aut voluptatibus
+                                        asperiores, est omnis accusantium officiis laboriosam, ab provident soluta nemo
+                                        natus iusto! Hic suscipit est, ratione porro laborum architecto!
+                                    </p>
+                                    <a href="#" class="hcl-btn hcl-primary">Button</a>
+                                </div>
+                            </div>
+                            <!-- HTML usable in React components ENDS -->
+                        </div>
+                    </div>
+                    <div class="hcl-row mb-8">
+                        <h4 class="hcl-col hcl-offset-4 mb-5">Card with action icon</h4>
+                        <div class="hcl-col hcl-offset-4">
+                            <!-- HTML usable in React components STARTS -->
+                            <div class="hcl-card b-0">
+                                <div class="hcl-card-header">
+                                    <div class="hcl-card-icons">
+                                        <!-- Do not copy .b-1 used with icon class, i.e. used only for demo purposes -->
+                                        <span class="hcl-card-icon b-1"></span>
+                                        <span class="hcl-card-icon b-1"></span>
+                                        <span class="hcl-card-icon b-1"></span>
+                                    </div>
+                                </div>
+                                <div class="hcl-card-body hcl-card-cta">
+                                    <h4 class="hcl-card-title">
+                                        <span class="hcl-card-text">Card Title</span>
+                                    </h4>
+                                    <p class="hcl-card-text">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aut voluptatibus
+                                        asperiores, est omnis accusantium officiis laboriosam, ab provident soluta nemo
+                                        natus iusto! Hic suscipit est, ratione porro laborum architecto!
+                                    </p>
+                                    <a href="#" class="hcl-btn hcl-primary">Button</a>
+                                </div>
+                            </div>
+                            <!-- HTML usable in React components ENDS -->
+                        </div>
+                    </div>
+                    <div class="hcl-row">
+                        <h4 class="hcl-col hcl-offset-4 mb-5">Card with CTA</h4>
+                        <div class="hcl-col hcl-offset-4">
+                            <!-- HTML usable in React components STARTS -->
+                            <div class="hcl-card">
+                                <div class="hcl-card-header">
+                                    <span class="hcl-card-close">&#10005;</span>
+                                </div>
+                                <div class="hcl-card-body hcl-card-cta">
+                                    <h4 class="hcl-card-title">
+                                        <span class="hcl-card-text">Card Title</span>
+                                    </h4>
+                                    <p class="hcl-card-text">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aut voluptatibus
+                                        asperiores, est omnis accusantium officiis laboriosam, ab provident soluta nemo
+                                        natus iusto! Hic suscipit est, ratione porro laborum architecto!
+                                    </p>
+                                    <a href="#" class="hcl-btn hcl-primary">Button</a>
+                                </div>
+                            </div>
+                            <!-- HTML usable in React components ENDS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Switcher -->
+            <section id="content-switcher" class="hcl-row m-4 p-4 colBorder">
+                <h6 class="p-2">Content Switcher (default)</h6>
+                <div data-component="contentswitcher" class="hcl-content-switcher" role="tablist">
+                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".gate">
+                        <span>All</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".window">
+                        <span>Cybernetics</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".door">
+                        <span>Information & Communication</span>
+                    </button>
+                </div>
+                <section class="hcl-content-switcher-content">
+                    <div class="gate">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="window" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="door" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <section id="content-switcher2" class="hcl-row m-4 p-4 colBorder">
+                <h6 class="p-2">Content Switcher (disabled)</h6>
+                <div data-component="contentswitcher" class="hcl-content-switcher" role="tablist">
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".hello" disabled>
+                        <span>All</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".awesome" disabled>
+                        <span>Cybernetics</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn active" role="tab" data-target=".world" disabled>
+                        <span>Information & Communication</span>
+                    </button>
+                </div>
+                <section class="hcl-content-switcher-content">
+                    <div class="hello" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="awesome" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="world">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <section id="content-switcher3" class="hcl-row m-4 p-4 colBorder">
+                <h6 class="p-2">Content Switcher (with icons)</h6>
+                <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".vanilla">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
+                        <span>All</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".react">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
+                        <span>Cybernetics</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".angular">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
+                        <span>Information & Communication</span>
+                    </button>
+                </div>
+                <section class="hcl-content-switcher-content">
+                    <div class="vanilla">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="react">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="angular">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <section id="content-switcher4" class="hcl-row m-4 p-4 colBorder">
+                <h6 class="p-2">Content Switcher - with icons (disabled)</h6>
+                <div data-content-switcher class="hcl-content-switcher" role="tablist">
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target1">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
+                        <span>All</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target2">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
+                        <span>Cybernetics</span>
+                    </button>
+                    <button class="hcl-content-switcher-btn" role="tab" data-target=".target3">
+                        <div class="hcl-thumbnail-wrapper">
+                            <span class="hcl-thumbnail"></span>
+                        </div>
+                        <span>Information & Communication</span>
+                    </button>
+                </div>
+                <section class="hcl-content-switcher-content">
+                    <div class="target1">
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="target2" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Cybernetics
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Artifical Intelligence</li>
+                                    <li class="hcl-list-item">Bionics</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="target3" hidden>
+                        <ol class="hcl-list-ordered">
+                            <li class="hcl-list-item">Information & Communication technology
+                                <ul class="hcl-list-nested">
+                                    <li class="hcl-list-item">Cyber Infrastructure</li>
+                                    <li class="hcl-list-item">Digital Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <!-- Content Switcher Ends-->
+
+            <!-- Toast -->
+            <section class="hcl-row m-3">
+                <div class="hcl-toast hcl-toast-success" role="alert">
+                    <svg class="hcl-toast-icon" focusable="false" preserveAspectRatio="xMidYMid meet"
+                        style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 32 32" aria-hidden="true">
+                        <path
+                            d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
+                        </path>
+                    </svg>
+                    <div class="hcl-toast-details">
+                        <h3 class="hcl-toast-title">Notification title</h3>
+                        <p class="hcl-toast-subtitle">Subtitle text goes here.</p>
+                        <p class="hcl-toast-caption">Time stamp [00:00:00]</p>
+                    </div>
+                    <button class="hcl-toast-close" type="button" aria-label="close" />
+                </div>
+            </section>
+            <!-- Slider -->
+            <section class="hcl-row m-3">
+                <div class="hcl-col">
+                    <label>Slider Label</label>
+                    <div class="hcl-slider">
+                        <label class="hcl-slider-bottom-range">10</label>
+                        <input class="hcl-slider-input" type="range" value="50" min="10" max="100" />
+                        <label class="hcl-slider-top-range">100</label>
+                        <input class="hcl-form-control hcl-slider-text-input" type="number" />
+                    </div>
+                </div>
+            </section>
+            <!-- Dropdown -->
+            <section class="hcl-row m-3">
+                <div class="hcl-col">
+                    <section class="hcl-dropdown" data-component="dropdown">
+                        <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
+                            Dropdown Bottom
+                        </button>
+                        <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
+                            <li class="hcl-dropdown-item">A</li>
+                            <li class="hcl-dropdown-item">B</li>
+                            <li class="hcl-dropdown-item">C</li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="hcl-col">
+                    <section class="hcl-dropdown top" data-component="dropdown">
+                        <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
+                            Dropdown Top
+                        </button>
+                        <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton">
+                            <li class="hcl-dropdown-item">A</li>
+                            <li class="hcl-dropdown-item">B</li>
+                            <li class="hcl-dropdown-item">C</li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+            <!-- File Uploader -->
+            <section class="hcl-row m-3">
+                <div class="hcl-col">
+                    <div class="hcl-form-item">
+                        <span class="hcl-label">
+                            Account photo
+                        </span>
+                        <p class="hcl-label-description">only .jpg and .png files. 500kb max file size.</p>
+                        <div class="hcl-file-uploader">
+                            <input type="file" class="hcl-file-input" id="hcl-file-uploader" tabIndex=0 multiple
+                                accept=".jpg,.png" />
+                            <label for="hcl-file-uploader" class="hcl-file-btn hcl-btn hcl-secondary hcl-sm"
+                                role="button">
+                                Add file
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Inline Loader -->
+            <section class="hcl-spinner-inline" title="loading">
+                <svg viewBox="-75 -75 150 150 ">
+                    <circle cx="0" cy="0" r="63" />
+                </svg>
+                <span class="hcl-type-zeta">Loading...</span>
+            </section>
+            <!-- Radio Components -->
+            <article id="radio" class="m-1 p-2 colBorder">
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Horizontally arranged (default)</legend>
+                    <div class="hcl-radio-group">
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio1" type="radio" value="Option1" name="planets" />
+                            <label class="hcl-radio-label" for="radio1">1 (default)</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio2" type="radio" value="Option2" name="planets" checked />
+                            <label class="hcl-radio-label" for="radio2">2</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input disabled class="hcl-radio" id="radio3" type="radio" value="Option3" name="planets" />
+                            <label class="hcl-radio-label" for="radio3">3 (disabled)</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Vertically arranged</legend>
+                    <div class="hcl-radio-group hcl-stack-vertical">
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio4" type="radio" value="Option4" name="animals" />
+                            <label class="hcl-radio-label" for="radio4">1 (default)</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio5" type="radio" value="Option5" name="animals" checked />
+                            <label class="hcl-radio-label" for="radio5">2</label>
+                        </div>
+                        <div class="hcl-radio-item">
+                            <input class="hcl-radio" id="radio6" type="radio" value="Option6" name="animals" disabled />
+                            <label class="hcl-radio-label" for="radio6">3 (disabled)</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </article>
+            <!-- Checkbox Components -->
+            <article id="checkbox" class="m-1 p-2 colBorder">
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Horizontally arranged (default)</legend>
+                    <div class="hcl-checkbox-group">
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check1" type="checkbox" value="check1" />
+                            <label class="hcl-checkbox-label" for="check1">1 (default)</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check2" type="checkbox" value="check2" checked />
+                            <label class="hcl-checkbox-label" for="check2">2</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check3" type="checkbox" value="check3" disabled />
+                            <label class="hcl-checkbox-label" for="check3">3 (disabled)</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="hcl-fieldset">
+                    <legend class="hcl-legend">Vertically arranged</legend>
+                    <div class="hcl-checkbox-group hcl-stack-vertical">
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check4" type="checkbox" value="check4" />
+                            <label class="hcl-checkbox-label" for="check4">1 (default)</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check5" type="checkbox" value="check5" checked />
+                            <label class="hcl-checkbox-label" for="check5">2</label>
+                        </div>
+                        <div class="hcl-checkbox-item">
+                            <input class="hcl-checkbox" id="check6" type="checkbox" value="check6" disabled />
+                            <label class="hcl-checkbox-label" for="check6">3 (disabled)</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </article>
+            <!-- Input Components -->
+            <section id="textinput" class="m-1 p-2 colBorder">
+                <div class="hcl-form-group">
+                    <input type="text" class="hcl-form-control" id="firstname1" placeholder="Enter First Name" />
+                    <label for="firstname1">First Name</label>
+                </div>
+                <div class="hcl-form-group">
+                    <input type="password" class="hcl-form-control" data-invalid="true" id="password1"
+                        placeholder="Password" />
+                    <label for="password1">Password</label>
+                    <button class="hcl-password-visibility" aria-label="Show password" data-component="password">
+                        <svg class="hcl-icon-visibility-off" width="16" height="16" viewBox="0 0 16 16"
+                            data-tooltip="Show Password" data-direction="top">
+                            <path
+                                d="M11.846 3.45L15.293.007 16 .714l-3.284 3.281c1.261.902 2.377 2.212 3.347 3.93C14.02 11.642 11.333 13.5 8 13.5c-1.392 0-2.667-.324-3.822-.973L.703 16l-.706-.708 3.323-3.32C2.071 11.042.976 9.694.035 7.924 2.012 4.308 4.667 2.5 8 2.5c1.395 0 2.677.317 3.846.95zm-6.928 8.338c.944.477 1.97.712 3.082.712 2.795 0 5.076-1.483 6.907-4.568-.866-1.417-1.833-2.486-2.91-3.219l-1.55 1.55a3 3 0 0 1-4.185 4.182l-1.344 1.343zm-.882-.533l1.518-1.517A3 3 0 0 1 9.74 5.556l1.364-1.363A7.02 7.02 0 0 0 8 3.5c-2.798 0-5.047 1.439-6.819 4.432.842 1.465 1.792 2.568 2.855 3.323zm2.948-1.532a2 2 0 0 0 2.74-2.738l-2.74 2.738zm-.707-.707l2.74-2.738a2 2 0 0 0-2.74 2.738z">
+                            </path>
+                        </svg>
+                        <svg class="hcl-icon-visibility-on" width="16" height="16" viewBox="0 0 16 11"
+                            data-tooltip="Hide Password" data-direction="top">
+                            <path
+                                d="M8 7.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 1c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z">
+                            </path>
+                            <path
+                                d="M8 10c2.8 0 5.1-1.5 6.9-4.6C13.1 2.5 10.8 1 8 1 5.2 1 3 2.4 1.2 5.4 2.9 8.6 5.2 10 8 10zM8 0c3.3 0 6 1.8 8.1 5.4C14 9.2 11.3 11 8 11S2 9.2 0 5.5C2 1.9 4.6 0 8 0z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+                <div class="hcl-form-group">
+                    <input data-invalid="true" type="text" class="hcl-form-control" id="middlename"
+                        placeholder="Middle Name" />
+                    <label for="middlename">Middle Name</label>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+                <div class="hcl-form-group">
+                    <input type="text" class="hcl-form-control" id="error" placeholder="Enter Address Details" disabled
+                        aria-disabled="true" />
+                    <label for="error">Address</label>
+                </div>
+            </section>
+            <section id="textarea" class="m-1 p-5 colBorder">
+                <div class="hcl-form-group">
+                    <textarea class="hcl-textarea" id="feedback1" rows="4" cols="50" placeholder="Comments"></textarea>
+                    <label for="feedback1">Comments</label>
+                </div>
+                <div class="hcl-form-group">
+                    <textarea disabled aria-disabled="true" class="hcl-textarea" id="feedback2" rows="4"
+                        cols="50"></textarea>
+                    <label for="feedback2">Review Summary</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                </div>
+                <div class="hcl-form-group">
+                    <textarea data-invalid="true" aria-disabled="false" class="hcl-textarea" id="feedback3" rows="4"
+                        cols="50"></textarea>
+                    <label for="feedback3">Remarks</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+            </section>
+            <section id="formcomp" class="m-1 p-2 colBorder">
+                <form class="m-5">
+                    <div class="hcl-form-group">
+                        <input type="text" class="hcl-form-control" id="firstname" placeholder="Enter First Name" />
+                        <label for="firstname">First Name</label>
+                        <div class="hcl-helper-text">Optional Helper text goes here</div>
+                    </div>
+                    <div class="hcl-form-group">
+                        <textarea class="hcl-textarea" id="feedback11" rows="4" cols="50"
+                            placeholder="Please Feedback here"></textarea>
+                        <label for="feedback11">Feedback Form</label>
+                    </div>
+                    <button class="hcl-btn hcl-primary">Submit</button>
+                </form>
+            </section>
+            <!-- Tooltip -->
+            <section class="hcl-row pt-7 mb-7">
+                <div class="hcl-col">
+                    <div class="hcl-row">
+                        <div class="hcl-col-4">&nbsp;</div>
+                        <div class="hcl-col-1">
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="right" data-type="icon"
+                                focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="hcl-col-1">
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="top" focusable="false"
+                                data-type="icon" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="hcl-col-1">
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="bottom" focusable="false"
+                                data-type="icon" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="hcl-col-1">
+                            <svg tabindex="0" data-tooltip="Filter" data-direction="left" focusable="false"
+                                data-type="icon" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="hcl-col-4">&nbsp;</div>
+                    </div>
+                    <div class="hcl-row pt-7 m-7">
+                        <div class="hcl-col-3">
+                            <span tabindex="0" data-direction="top"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
+                                Definition Tooltip on Top
+                            </span>
+                        </div>
+                        <div class="hcl-col-3">
+                            <span tabindex="0" data-direction="right"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
+                                Definition Tooltip on Right
+                            </span>
+                        </div>
+                        <div class="hcl-col-3">
+                            <span tabindex="0" data-direction="bottom"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
+                                Definition on Bottom
+                            </span>
+                        </div>
+                        <div class="hcl-col-3">
+                            <span tabindex="0" data-direction="left"
+                                data-tooltip="Breif Definition of the dotted underlined word.">
+                                Definition Tooltip on Left
+                            </span>
+                        </div>
+                    </div>
+                    <div class="hcl-row m-7">
+                        <span> Interactive Tooltip Label
+                            <svg tabindex="0" data-direction="right" data-focus-on-click data-tooltip="#tooltipContent"
+                                focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                aria-hidden="true">
+                                <path
+                                    d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z">
+                                </path>
+                                <path
+                                    d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z">
+                                </path>
+                            </svg>
+                        </span>
+                        <div id="tooltipContent">
+                            <p>This is some tooltip text. This box shows the maximum amount of text that should appear
+                                inside. If more room is
+                                needed
+                                please use a modal instead.
+                            </p>
+                            <div>
+                                <a href="#">Learn More</a>
+                                <button type="button" class="hcl-btn hcl-primary">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Data table -->
+            <section class="m-1 p-2 colBorder hcl-data-table-responsive">
+                <table class="hcl-data-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-header" class="hcl-checkbox" type="checkbox" value="all">
+                                    <label for="hcl-checkbox-header" class="hcl-checkbox-label"></label>
+                                </div>
+                            </th>
+                            <th class="sortable">Name</th>
+                            <th>Protocol</th>
+                            <th>Port</th>
+                            <th>Rule</th>
+                            <th>Attached Groups</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-1" class="hcl-checkbox" type="checkbox" value="row-1" />
+                                    <label for="hcl-checkbox-1" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 1</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-2" class="hcl-checkbox" type="checkbox" value="row-2" />
+                                    <label for="hcl-checkbox-2" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 2</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hcl-checkbox-item">
+                                    <input id="hcl-checkbox-3" class="hcl-checkbox" type="checkbox" value="row-3" />
+                                    <label for="hcl-checkbox-3" class="hcl-checkbox-label"></label>
+                                </div>
+                            </td>
+                            <td>Load Balancer 3</td>
+                            <td>HTTP</td>
+                            <td>80</td>
+                            <td>Round Robin</td>
+                            <td>Maureen&#x27;s VM Groups</td>
+                            <td>Active</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!-- Date Picker -->
+            <div class="hcl-row m-3">
+                <div class="hcl-col">
+                    <section class="hcl-datePicker" data-component="datepicker">
+                        <label>Date picker label</label>
+                        <div class="hcl-datePicker-container">
+                            <input type="text" class="hcl-datePicker-input" placeholder="mm/dd/yyyy"
+                                autocomplete="off" />
+                            <svg class="hcl-datePicker-container-svg" width="14" height="16" viewBox="0 0 14 16">
+                                <path d=" M0 5h14v1H0V5zm3-5h1v4H3V0zm7 0h1v4h-1V0zM0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14
+                                             2.5v12a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 0 14.5v-12zm1 0v12a.5.5 0 0 0 .5.5h11a.5.5 0 0 0
+                                             .5-.5v-12a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5z" fill-rule="nonzero" />
+                            </svg>
+                            <div class="hcl-datePicker-panel hcl-datePicker-panel-below">
+                                <div class="hcl-datePicker-month">
+                                    <span class="hcl-datePicker-month-prev">
+                                        <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
+                                            <path d="M7.5 10.6L2.8 6l4.7-4.6L6.1 0 0 6l6.1 6z"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="hcl-datePicker-select">
+                                        <span class="hcl-datePicker-curMonth">March </span>
+                                        <div class="hcl-datePicker-year">
+                                            <input class="hcl-datePicker-year-input" type="text" tabindex="-1"
+                                                aria-label="Year" value="2019">
+                                            <div class="hcl-datePicker-arrows">
+                                                <span class="hcl-datePicker-up"></span>
+                                                <span class="hcl-datePicker-down"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="hcl-datePicker-month-next">
+                                        <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
+                                            <path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="hcl-datePicker-days"> </div>
+                                <div class="hcl-datePicker-dates"></div>
+                            </div>
+                        </div>
+                        <div class="hcl-datePicker-error">
+                            Invalid date format.
+                        </div>
+                    </section>
+                </div>
+                <div class="hcl-col">
+                    <section class="hcl-datePicker" data-component="datepicker">
+                        <label>Date picker label</label>
+                        <div class="hcl-datePicker-container">
+                            <input type="text" class="hcl-datePicker-input" placeholder="mm/dd/yyyy"
+                                autocomplete="off" />
+                            <svg class="hcl-datePicker-container-svg" width="14" height="16" viewBox="0 0 14 16">
+                                <path d=" M0 5h14v1H0V5zm3-5h1v4H3V0zm7 0h1v4h-1V0zM0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14
+                                             2.5v12a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 0 14.5v-12zm1 0v12a.5.5 0 0 0 .5.5h11a.5.5 0 0 0
+                                             .5-.5v-12a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5z" fill-rule="nonzero" />
+                            </svg>
+                            <div class="hcl-datePicker-panel hcl-datePicker-panel-above">
+                                <div class="hcl-datePicker-month">
+                                    <span class="hcl-datePicker-month-prev">
+                                        <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
+                                            <path d="M7.5 10.6L2.8 6l4.7-4.6L6.1 0 0 6l6.1 6z"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="hcl-datePicker-select">
+                                        <span class="hcl-datePicker-curMonth">March </span>
+                                        <div class="hcl-datePicker-year">
+                                            <input class="hcl-datePicker-year-input" type="text" tabindex="-1"
+                                                aria-label="Year" value="2019">
+                                            <div class="hcl-datePicker-arrows">
+                                                <span class="hcl-datePicker-up"></span>
+                                                <span class="hcl-datePicker-down"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="hcl-datePicker-month-next">
+                                        <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
+                                            <path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="hcl-datePicker-days"> </div>
+                                <div class="hcl-datePicker-dates"></div>
+                            </div>
+                        </div>
+                        <div class="hcl-datePicker-error">
+                            Invalid date format.
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- Time Picker -->
+            <section class="ml-4 mt-4">
+                <div class="hcl-timepicker">
+                    <div class="hcl-timepicker-input">
+                        <label for="hcl-timepicker-1">Select a time</label>
+                        <input id="hcl-timepicker-1" type="text" class="hcl-timepicker-input-field"
+                            pattern="(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)" placeholder="hh:mm" maxlength="5">
+                    </div>
+                    <select class="hcl-select">
+                        <option class="hcl-select-option" value="AM">AM</option>
+                        <option class="hcl-select-option" value="PM">PM</option>
+                    </select>
+                    <select class="hcl-select">
+                        <option class="hcl-select-option" value="option-1">Time zone 1</option>
+                        <option class="hcl-select-option" value="option-2">Time zone 2</option>
+                        <option class="hcl-select-option" value="option-3">Time zone 3</option>
+                    </select>
+                </div>
+            </section>
+            <section class="ml-4">
+                <!-- Select option -->
+                <label for="hcl-select-id-1">Select label</label>
+                <select id="hcl-select-id-1" class="hcl-select">
+                    <option class="hcl-select-option" value="option 1">option 1</option>
+                    <option class="hcl-select-option" value="option 2">option 2</option>
+                    <option class="hcl-select-option" value="option 3">option 3</option>
+                </select>
+            </section>
+            <section id="accordion-controlled" class="m-1 p-2 colBorder">
+                <!-- <ul class="hcl-accordion">
+                    <li class="hcl-accordion-item">
+                        <h4 class="hcl-accordion-title">What is Lorem Ipsum ?</h4>
+                        <p class="hcl-accordion-content">
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum
+                            has been the industry's standard dummy text ever since the 1500s, when an unknown
+                            printer took a galley of type and scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged. It was popularised in the 1960s with the release of
+                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </li>
+                    <li class="hcl-accordion-item">
+                        <h4 class="hcl-accordion-title">Why do we use it ?</h4>
+                        <p class="hcl-accordion-content">
+                            It is a long established fact that a reader will be distracted
+                            by the readable content of
+                            a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                            more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                            here', making it look like readable English. Many desktop publishing packages and web
+                            page editors now use Lorem Ipsum as their default model text, and a search for 'lorem
+                            ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+                            over the years, sometimes by accident, sometimes on purpose (injected humour and the
+                            like).
+                        </p>
+                    </li>
+                    <li class="hcl-accordion-item">
+                        <h4 class="hcl-accordion-title">Wher we can it ?</h4>
+                        <p class="hcl-accordion-content">
+                            There are many variations of passages of Lorem Ipsum available,
+                            but the majority have
+                            suffered alteration in some form, by injected humour, or randomised words which don't
+                            look even slightly believable. If you are going to use a passage of Lorem Ipsum, you
+                            need to be sure there isn't anything embarrassing hidden in the middle of text. All the
+                            Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
+                            making this the first true generator on the Internet. It uses a dictionary of over 200
+                            Latin words, combined with a handful of model sentence structures, to generate Lorem
+                            Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from
+                            repetition, injected humour, or non-characteristic words etc.
+                        </p>
+                    </li> -->
+                </ul>
+            </section>
+            <!-- Tile -->
+            <section class="hcl-offset-4">
+                <div class="mt-1 hcl-row">
+                    <!-- default tile -->
+                    <div class="hcl-tile ">
+                        <p>This is read only tile</p>
+                    </div>
+                </div>
+                <div class="mt-1 hcl-row">
+                    <!-- clickable  tile -->
+                    <div class="hcl-tile-clickable" tabindex="0">
+                        <a>
+                            <p>This is clickable tile</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-1 hcl-row">
+                    <!-- selectable tile -->
+                    <div>
+                        <label for="tile-id" class="hcl-tile-selectable" tabindex="0">
+                            <input id="tile-id" class="hcl-tile-input" type="checkbox" title="tile" />
+                            <svg class="hcl-tile-checkbox" width="16" height="16" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                            <p>Click to select tile</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-1 mb-4 hcl-row">
+                    <!-- expandable tile -->
+                    <div class="hcl-tile-expandable" tabindex="0">
+                        <input id="tile-id-expand" class="hcl-tile-input" type="checkbox" title="tile" />
+                        <label for="tile-id-expand" class="hcl-tile-arrow">
+                            <svg width="12" height="7" viewBox="0 0 12 7">
+                                <path fill-rule="nonzero" d="M6.002 5.55L11.27 0l.726.685L6.003 7 0 .685.726 0z"></path>
+                            </svg>
+                        </label>
+                        <p class="hcl-tile-content">Content shown prior expand </p>
+                        <p class="hcl-tile-hide">Content shown after expand </p>
+                    </div>
+                </div>
+            </section>
+            <!-- Number Input -->
+            <section class="m-1 p-2 colBorder">
+                <div class="hcl-number-input-wrapper hcl-form-group">
+                    <div class="hcl-form-control hcl-number-input">
+                        <input type="number" value="15" min="10" max="20" class="hcl-form-control" id="numbetInput1" />
+                        <div class="hcl-number-input-control">
+                            <button aria-label="increase number input" class="increment-btn" type="button"
+                                aria-live="polite" aria-atomic="true" tabindex="-1">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M0 4l4-4 4 4z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="decrease number input" class="decrement-btn" type="button"
+                                aria-live="polite" aria-atomic="true" tabindex="-1">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M8 0L4 4 0 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <label for="numbetInput1">Number Input</label>
+                    <div class="hcl-helper-text">Optional Helper text goes here (max 20 and min 10)</div>
+                </div>
+
+                <div data-invalid="true" data-component="numberInput" class="hcl-number-input-wrapper hcl-form-group">
+                    <div class="hcl-form-control hcl-number-input">
+                        <input type="number" value="10" data-invalid="true" class="hcl-form-control"
+                            id="numbetInput2" />
+                        <div class="hcl-number-input-control">
+                            <button aria-label="increase number input" class="increment-btn" type="button"
+                                aria-live="polite" aria-atomic="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M0 4l4-4 4 4z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="decrease number input" class="decrement-btn" type="button"
+                                aria-live="polite" aria-atomic="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M8 0L4 4 0 0z"></path>
+                                </svg>
+                            </button>
+
+                        </div>
+                    </div>
+                    <label for="numbetInput2">Number Input Validation</label>
+                    <div class="hcl-error-msg">Validation message here</div>
+                </div>
+
+                <div disabled class="hcl-number-input-wrapper hcl-form-group">
+                    <div class="hcl-form-control hcl-number-input">
+                        <input type="number" value="11" min="10" max="20" disabled="disabled" data-invalid="true"
+                            class="hcl-form-control" id="numbetInput3" />
+                        <div class="hcl-number-input-control">
+                            <button aria-label="increase number input" disabled="disabled" class="increment-btn"
+                                type="button" aria-live="polite" aria-atomic="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M0 4l4-4 4 4z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="decrease number input" disabled="disabled" class="decrement-btn"
+                                type="button" aria-live="polite" aria-atomic="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M8 0L4 4 0 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <label for="numbetInput3">Number Input Disabled</label>
+                </div>
+            </section>
+
+            <!-- Search -->
+            <section class="m-1 p-2 colBorder">
+                <div class="hcl-search mb-2">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="search" id="goal-input" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-btn-only mb-2">
+                    <button class="hcl-search-btn">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </button>
+                    <input type="search" id="goal-input1" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-sm mb-2">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="search" id="goal-input3" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-btn-only hcl-search-sm mb-2">
+                    <button class="hcl-search-btn">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </button>
+                    <input type="search" id="goal-input5" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+            </section>
+            <section class="m-1 p-2 colBorder" style="background: #F5F7FB">
+                <div class="hcl-search hcl-bg-white mb-2">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="search" id="goal-input" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-btn-only hcl-bg-white mb-2">
+                    <button class="hcl-search-btn">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </button>
+                    <input type="search" id="goal-input1" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-sm hcl-bg-white mb-2">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="search" id="goal-input3" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+
+                <div class="hcl-search hcl-search-btn-only hcl-search-sm hcl-bg-white mb-2">
+                    <button class="hcl-search-btn">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </button>
+                    <input type="search" id="goal-input5" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+            </section>
+            <!-- Loading -->
+            <section class="m-1 p-2 colBorder">
+                <h4>Loading State</h4>
+                <div class="hcl-rectagle hcl-loading"></div>
+                <div>
+                    <div class="hcl-slider hcl-loading">
+                        <label class="hcl-slider-bottom-range"></label>
+                        <input class="hcl-slider-input" type="range" min="0" max="100" />
+                        <label class="hcl-slider-top-range"></label>
+                        <input class="hcl-slider-text-input" type="text">
+                    </div>
+                </div>
+                <button class="hcl-tag hcl-tag-primary hcl-loading" title="primary" tabindex="0">
+                    <span class="hcl-tag-text"></span>
+                </button>
+                <div class="hcl-number-input-wrapper hcl-form-group hcl-loading">
+                    <div class="hcl-form-control hcl-number-input">
+                        <input type="number" value="15" min="10" max="20" class="hcl-form-control" id="numbetInput1" />
+                        <div class="hcl-number-input-control">
+                            <button aria-label="increase number input" class="increment-btn" type="button"
+                                aria-live="polite" aria-atomic="true" tabindex="-1">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M0 4l4-4 4 4z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="decrease number input" class="decrement-btn" type="button"
+                                aria-live="polite" aria-atomic="true" tabindex="-1">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4"
+                                    aria-hidden="true">
+                                    <path d="M8 0L4 4 0 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <label for="numbetInput1"></label>
+                </div>
+                <label class="hcl-loading"></label>
+                <div class="hcl-col">
+                    <section class="hcl-dropdown hcl-loading" data-component="dropdown">
+                        <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown"></button>
+                        <ul class="hcl-dropdown-container" aria-labelledby="dropdownMenuButton"></ul>
+                    </section>
+                </div>
+                <div class="hcl-col">
+                    <ul class="hcl-accordion hcl-loading">
+                        <li class="hcl-accordion-item expanded">
+                            <h4 class="hcl-accordion-title">
+                                <span></span>
+                            </h4>
+                            <p class="hcl-accordion-content"></p>
+                        </li>
+                        <li class="hcl-accordion-item">
+                            <h4 class="hcl-accordion-title">
+                                <span></span>
+                            </h4>
+                            <p class="hcl-accordion-content"></p>
+                        </li>
+                        <li class="hcl-accordion-item">
+                            <h4 class="hcl-accordion-title">
+                                <span></span>
+                            </h4>
+                            <p class="hcl-accordion-content"></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hcl-col">
+                    <section id="breadcrumb2" class="hcl-container pt-5 mb-5">
+                        <ul class="hcl-breadcrumb hcl-loading" aria-label="breadcrumb">
+                            <li class="hcl-breadcrumb-item">
+                                <a href="#" class="hcl-link"></a>
+                            </li>
+                            <li class="hcl-breadcrumb-item hcl-breadcrumb-item-active">
+                                <a href="#" class="hcl-link"></a>
+                            </li>
+                            <li class="hcl-breadcrumb-item">
+                                <a href="#" class="hcl-link"></a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="hcl-col">
+                    <section class="hcl-tab hcl-loading" data-component="tabs">
+                        <nav data-tabs role="navigation">
+                            <ul role="tablist" class="hcl-tabs-nav">
+                                <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab1" data-target="tab1">
+                                    <a class="hcl-tabs-nav-link" href="#tab1"></a>
+                                </li>
+                                <li role="tab" class="hcl-tabs-nav-item" aria-controls="tab2" aria-selected="true"
+                                    data-target="tab2">
+                                    <a class="hcl-tabs-nav-link" href="#tab2"></a>
+                                </li>
+                                <li role="tab" class="hcl-tabs-nav-item hcl-tabs-disabled active" aria-controls="tab3"
+                                    data-target="tab3">
+                                    <a class="hcl-tabs-nav-link" href="#tab3"></a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <section class="hcl-tabcontent">
+                            <div role="tabpanel" aria-labelledby="tab1" id="tab1" class="hcl-tabs-panel">
+                                <p></p>
+                            </div>
+                            <div role="tabpanel" aria-labelledby="tab2" id="tab2" class="hcl-tabs-panel">
+                                <p></p>
+                            </div>
+                            <div role="tabpanel" aria-labelledby="tab3" id="tab3" class="hcl-tabs-panel active">
+                                <p></p>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+                <div class="hcl-col">
+                    <table class="hcl-data-table hcl-loading">
+                        <thead>
+                            <tr>
+                                <th>
+                                    TEST
+                                </th>
+                                <th class="sortable">Name</th>
+                                <th>Protocol</th>
+                                <th>Port</th>
+                                <th>Rule</th>
+                                <th>Attached Groups</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                            </tr>
+                            <tr>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                            </tr>
+                            <tr>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                                <td><span></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- action bar -->
+            <section class="hcl-actionbar" aria-label="Table Action Bar">
+                <div class="hcl-actionbar-list">
+                    <button class="hcl-btn hcl-ghost hcl-sm"><span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-ghost hcl-sm"><span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-ghost hcl-sm"><span>Button</span>
+                        <svg class="hcl-btn-icon" width="16" height="16" viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hcl-actionbar-summary">
+                    <span class="mr-2 hcl-type-zeta">
+                        5
+                    </span>
+                    <span class="hcl-actionbar-text hcl-type-zeta">
+                        items selected
+                    </span>
+                    <button class="hcl-actionbar-cancel">Cancel</button>
+                </div>
+            </section>
+
+
+
+            <!-- toolbar -->
+            <section class="hcl-toolbar" aria-label="Tool Bar">
+                <div class="hcl-search hcl-search-sm hcl-bg-white hcl-toolbar-search">
+                    <span class="hcl-search-btn" tabindex="-1">
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                            xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon" width="16" height="16"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="search" id="goal-input3" class="hcl-search-input" placeholder="Search..." />
+                    <button class="hcl-search-reset" tabindex="-1"></button>
+                </div>
+                <div class="hcl-toolbar-content">
+                    <button class="hcl-toolbar-action" title="download" aria-label="Download" alt="Download">
+                        <svg class="hcl-toolbar-icon" fill-rule="evenodd" height="16" name="download" role="img"
+                            viewBox="0 0 14 16" width="14">
+                            <path
+                                d="M7.506 11.03l4.137-4.376.727.687-5.363 5.672-5.367-5.67.726-.687 4.14 4.374V0h1v11.03z">
+                            </path>
+                            <path d="M13 15v-2h1v2a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1v-2h1v2h12z"></path>
+                        </svg>
+                    </button>
+                    <button class="hcl-toolbar-action" title="edit" aria-label="Edit" alt="Edit">
+                        <svg class="hcl-toolbar-icon" fill-rule="evenodd" height="16" name="edit" role="img"
+                            viewBox="0 0 16 16" width="16">
+                            <path
+                                d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button class="hcl-toolbar-action" title="Settings" aria-label="Settings" alt="Settings">
+                        <svg class="hcl-toolbar-icon" fill-rule="evenodd" height="16" name="settings" role="img"
+                            viewBox="0 0 15 16" width="15">
+                            <path
+                                d="M7.53 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm0 1a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z">
+                            </path>
+                            <path
+                                d="M6.268 2.636l-.313.093c-.662.198-1.28.52-1.822.946l-.255.2-1.427-.754-1.214 1.735 1.186 1.073-.104.31a5.493 5.493 0 0 0-.198 2.759l.05.274L1 10.33l1.214 1.734 1.06-.56.262.275a5.5 5.5 0 0 0 2.42 1.491l.312.093L6.472 15H8.59l.204-1.636.313-.093a5.494 5.494 0 0 0 2.21-1.28l.26-.248 1.09.576 1.214-1.734-1.08-.977.071-.29a5.514 5.514 0 0 0-.073-2.905l-.091-.302 1.15-1.041-1.214-1.734-1.3.687-.257-.22a5.487 5.487 0 0 0-1.98-1.074l-.313-.093L8.59 1H6.472l-.204 1.636zM5.48.876A1 1 0 0 1 6.472 0H8.59a1 1 0 0 1 .992.876l.124.997a6.486 6.486 0 0 1 1.761.954l.71-.375a1 1 0 0 1 1.286.31l1.215 1.734a1 1 0 0 1-.149 1.316l-.688.622a6.514 6.514 0 0 1 .067 2.828l.644.581a1 1 0 0 1 .148 1.316l-1.214 1.734a1 1 0 0 1-1.287.31l-.464-.245c-.6.508-1.286.905-2.029 1.169l-.124.997A1 1 0 0 1 8.59 16H6.472a1 1 0 0 1-.992-.876l-.125-.997a6.499 6.499 0 0 1-2.274-1.389l-.399.211a1 1 0 0 1-1.287-.31L.181 10.904A1 1 0 0 1 .329 9.59l.764-.69a6.553 6.553 0 0 1 .18-2.662l-.707-.64a1 1 0 0 1-.148-1.315l1.214-1.734a1 1 0 0 1 1.287-.31l.86.454a6.482 6.482 0 0 1 1.576-.819L5.48.876z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button class="hcl-btn hcl-primary hcl-sm">Add new</button>
+                </div>
+            </section>
+            <!-- toolbar ends-->
+
+            <!-- footer -->
+            <footer class="hcl-footer">
+                <div class="hcl-footer-caption">
+                    Copyright © HCL Software. All rights reserved
+                </div>
+                <ul class="hcl-footer-navigation">
+                    <li class="hcl-navigation-item">
+                        <a href="#" class="hcl-link">Legal</a>
+                    </li>
+                    <li class="hcl-navigation-item">
+                        <a href="#" class="hcl-link">Disclaimer</a>
+                    </li>
+                    <li class="hcl-navigation-item">
+                        <a href="#" class="hcl-link">Privacy</a>
+                    </li>
+                    <li class="hcl-navigation-item">
+                        <a href="#" class="hcl-link">Terms of use</a>
+                    </li>
+                    <li class="hcl-navigation-item">
+                        <a href="#" class="hcl-link">Contact Us</a>
+                    </li>
+                </ul>
+            </footer>
+            <!-- footer ends -->
+
+            <!-- AVAILABLE COMPONENTS ENDS -->
+        </main>
+    </div>
+    <script src="./js/index.js"></script>
+    
+    <script>
+        var link = document.querySelector('link[rel="import"]');
+        var content = link.import;
+
+        // Grab DOM from warning.html's document.
+        var el = content.querySelector('.hcl-accordion');
+        document.getElementById('accordion-controlled').appendChild(el.cloneNode(true));
+        // document.body.appendChild(el.cloneNode(true));
+    </script>
+    <script src="./scss/components/accordion/controlled/controlled.js"></script>
+    <script>
+        patron.dropdown(".hcl-dropdown.top", {
+            position: "top", onChange: (element, value) => {
+                console.log(element, value);
+            }
+        })
+        patron.tooltip("[data-tooltip]");
+
+        patron.tabs("#tabsjs", {
+            selectedIndex: 2,
+            disabled: [2],
+            onChange: function (e) {
+                console.log(e);
+            }
+        });
+
+        patron.contentswitch("#content-switcher3", {
+            selectedIndex: 2,
+            disabled: [],
+            onChange: function (e) {
+                console.log(e);
+            }
+        });
+
+        patron.contentswitch("#content-switcher4", {
+            selectedIndex: 2,
+            disabled: [2],
+            onChange: function (e) {
+                console.log(e);
+            }
+        });
+
+        // patron.accordion(".hcl-accordion", {
+        //     uncontrolled: false
+        // });
+
+        //    window.patron.accordion('#con', {
+        //         uncontrolled: false
+        //     });
+
+
+        patron.navigation(".hcl-sidebar", {});
+
+        document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
+            console.log('Page Change', event);
+        });
+
+        document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageNumber', (event) => {
+            console.log('Page Number', event);
+        });
+
+        document.getElementsByClassName('hcl-pagination')[0].addEventListener('itemsPerPage', (event) => {
+            console.log('Items per Page', event);
+        });
+        patron.search(".hcl-search");
+        patron.numberInput(".hcl-number-input-wrapper");
+
+        // Slider
+        patron.slider('.hcl-slider');
+    </script>
+</body>
+
+</html>
