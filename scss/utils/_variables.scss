@@ -27,7 +27,7 @@ $base-margin: var(--base-margin);
 $base-padding: var(--base-padding);
 
 // COLOR GUIDE
-$red: #eb1946; 
+$red: #eb1946;
 $red-1: #c3143a;
 $red-2: #f8b2c1;
 $red-3: #e0182d;
@@ -73,14 +73,10 @@ $grey-8: #dfe3e6; //TODO datatable, overflow menu border
 
 // THEMES
 $theme-colors: () !default;
-$theme-colors: map-merge(
-  (
-    'primary': $primary,
+$theme-colors: map-merge(('primary': $primary,
     'danger': $red,
-    'tertiary': $tertiary
-  ),
-  $theme-colors
-);
+    'tertiary': $tertiary),
+  $theme-colors);
 
 // Forms
 $label-margin-bottom: 0.5rem;
@@ -98,7 +94,7 @@ $checkbox-border-width: 2px;
 // $error:var(--error);
 $success: #589d25;
 // $success:var(--success);
-$info: var(--info);
+$info:#4696D2;
 // $danger: var(--error);
 // $warning: var(--warning);
 $warning: #fac43b;
@@ -109,14 +105,12 @@ $gutter: 0.9375rem;
 $grid-columns: 12;
 $minHeight: 0.0625rem;
 // BREAKPOINTS
-$grid-breakpoints: (
-  xs: 0,
+$grid-breakpoints: (xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1600px
-) !default;
+  xxl: 1600px) !default;
 // TODO: Subject to be changed once the breakpoints are finalized
 $mobile-width: 640px;
 $tablet-width: 768px;

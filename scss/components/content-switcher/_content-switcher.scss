@@ -14,14 +14,14 @@
         }
 
         background-color: transparent;
-        color: blue-7;
+        color: $blue-7;
         display: flex;
         align-items: center;
         height: hcl-rem(40px);
         font-size: .875rem;
         margin: 0;
         padding: 0 2rem;
-        border: 1px solid blue-7;
+        border: 1px solid $blue-7;
         position: relative;
 
         &.active {
@@ -34,7 +34,7 @@
         }
 
         &:focus {
-            border-color: blue-7;
+            border-color: $blue-7;
         }
 
         &:hover {
@@ -88,7 +88,7 @@
     }
 
     &-btn:not(:first-of-type) {
-        border-left: 1px solid blue-7;
+        border-left: 1px solid $blue-7;
     }
 
     &-btn:disabled:not(:first-of-type) {
