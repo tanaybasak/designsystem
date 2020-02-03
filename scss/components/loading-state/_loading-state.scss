@@ -1,4 +1,5 @@
 @import '../../base';
+@import 'loading';
 
 button.#{$prefix}-loading {
     @include loading();
