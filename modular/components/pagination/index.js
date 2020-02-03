@@ -1,4 +1,6 @@
-import '../../../scss/main.scss';
+import '../../../scss/base.scss';
+import '../../../scss/components/pagination/pagination.scss';
+
 import Pagination from '../../../js/pagination';
 
 const ComponentList = {

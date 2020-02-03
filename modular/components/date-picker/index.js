@@ -1,4 +1,5 @@
-import '../../../scss/main.scss';
+import '../../../scss/base.scss';
+import '../../../scss/components/date-picker/date-picker.scss';
 import { isElement } from '../../../js/utils/dom';
 import DatePicker from '../../../js/datePicker';
 

@@ -1,4 +1,5 @@
-import '../../../scss/main.scss';
+import '../../../scss/base.scss';
+import '../../../scss/components/dropdown/dropdown.scss';
 import { isElement } from '../../../js/utils/dom';
 import Dropdown from '../../../js/dropdown';
 

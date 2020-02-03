@@ -1,4 +1,6 @@
-import '../../../scss/main.scss';
+import '../../../scss/base.scss';
+import '../../../scss/components/number-input/number-input.scss';
+
 import { isElement } from '../../../js/utils/dom';
 import NumberInput from '../../../js/numberInput';
 

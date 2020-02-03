@@ -1,4 +1,5 @@
-import '../../../scss/main.scss';
+import '../../../scss/base.scss';
+import '../../../scss/components/tab/tab.scss';
 import { isElement } from '../../../js/utils/dom';
 import Tabs from '../../../js/tabs';
 

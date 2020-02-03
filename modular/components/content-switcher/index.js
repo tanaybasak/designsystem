@@ -1,4 +1,5 @@
-import '../../../scss/main.scss';
+import '../../../scss/base.scss';
+import '../../../scss/components/content-switcher/content-switcher.scss';
 import ContentSwitcher from '../../../js/content-switcher';
 import { isElement } from '../../../js/utils/dom';
 

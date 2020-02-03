@@ -1,4 +1,5 @@
-import '../../../scss/main.scss';
+import '../../../scss/base.scss';
+import '../../../scss/components/accordion/accordion.scss';
 import { isElement } from '../../../js/utils/dom';
 import Accordion from '../../../js/accordion';
 

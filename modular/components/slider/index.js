@@ -1,4 +1,5 @@
-import '../../../scss/main.scss';
+import '../../../scss/base.scss';
+import '../../../scss/components/slider/slider.scss';
 import { isElement } from '../../../js/utils/dom';
 import Slider from '../../../js/slider';
 
