@@ -11,9 +11,9 @@
 $pagination-font-size:var(--body-font-size);
 $pagination-line-height: 1.125rem;
 $pagination-select-text-color: $blue;
-$pagination-bg-color: var(--white);
-$pagination-text-variant-1: var(--dark-10);
-$pagination-text-variant-2: var(--dark-20);
+$pagination-bg-color: $white;
+$pagination-text-variant-1: $dark-10;
+$pagination-text-variant-2: $dark-20;
 
 .#{$prefix}-pagination {
     font-size: $pagination-font-size;

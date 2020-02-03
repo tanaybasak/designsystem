@@ -30,7 +30,7 @@
         color: $black;
         height: 2.5rem;
         padding: 0 1rem;
-        box-shadow: 0 .0625rem 0 0 var(--grey-light);
+        box-shadow: 0 .0625rem 0 0 $lightGrey;
 
         &:focus {
             outline: none;

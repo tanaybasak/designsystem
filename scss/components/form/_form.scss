@@ -86,7 +86,7 @@ label {
         outline: none;
 
         &:focus {
-            outline: 1px solid var(--blue);
+            outline: 1px solid $blue;
         }
 
         svg.#{$prefix}-icon-visibility-on {

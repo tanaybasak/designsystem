@@ -16,7 +16,7 @@
         @else if ($size==inline) {
             height: 1.190625rem;
             width: 1.190625rem;
-            --spinner-color: var($dark-blue);
+            --spinner-color: $dark-blue;
             margin-left: 1rem;
         }
 

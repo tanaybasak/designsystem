@@ -59,7 +59,7 @@ $tooltip-box-shadow:rgba($black, 0.1);
 
     &[data-focus-on-click='true'] {
         background-color: $white;
-        color: var($dark-blue);
+        color: $dark-blue;
         max-width: $tooltip-interactive-max-width;
         border: .0625rem solid $grey-8;
         padding: 1rem;

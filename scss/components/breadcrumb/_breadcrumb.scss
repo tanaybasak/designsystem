@@ -32,7 +32,7 @@ $breadcrumb-margin: 1rem;
             transition: .25s;
 
             &:hover {
-                color: var($dark-blue);
+                color: $dark-blue;
                 @include getTextDecorationLine('underline');
             }
         }
@@ -40,7 +40,7 @@ $breadcrumb-margin: 1rem;
 
     &-item-active {
         .#{$prefix}-link {
-            color: var($dark-blue);
+            color: $dark-blue;
             @include getFontWeight('semibold');
             @include getTextDecorationLine('underline');
         }

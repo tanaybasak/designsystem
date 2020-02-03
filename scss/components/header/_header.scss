@@ -37,7 +37,7 @@
         &:active {
             outline: none;
             img {
-                outline: 1px solid var(--focus-outline-color);
+                outline: 1px solid $focus-outline-color;
                 outline-offset: 0.5rem;
             }
         }

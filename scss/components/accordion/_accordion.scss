@@ -44,7 +44,7 @@
             }
 
             &:focus, &:active {
-                outline: 1px solid var(--focus-outline-color);
+                outline: 1px solid $focus-outline-color;
                 outline-offset: 0.125rem;
             }
         }
