@@ -1,2 +1,2 @@
 import '../../../scss/base.scss';
-import '../../../scss/components/time-picker/time-picker.scss';
+import '../../../scss/components/time-picker/_time-picker.scss';

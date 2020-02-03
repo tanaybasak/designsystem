@@ -1,5 +1,5 @@
 import '../../../scss/base.scss';
-import '../../../scss/components/tree/tree.scss';
+import '../../../scss/components/tree/_tree.scss';
 import { isElement } from '../../../js/utils/dom';
 import Tree from '../../../js/tree';
 

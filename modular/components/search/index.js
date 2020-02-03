@@ -1,5 +1,5 @@
 import '../../../scss/base.scss';
-import '../../../scss/components/search/search.scss';
+import '../../../scss/components/search/_search.scss';
 import Search from '../../../js/search';
 
 const ComponentList = {

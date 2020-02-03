@@ -1,2 +1,2 @@
 import '../../../scss/base.scss';
-import '../../../scss/components/sidebar/sidebar.scss';
+import '../../../scss/components/sidebar/_sidebar.scss';

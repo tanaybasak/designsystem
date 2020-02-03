@@ -1,2 +1,2 @@
 import '../../../scss/base.scss';
-import '../../../scss/components/list/list.scss';
+import '../../../scss/components/list/_list.scss';

@@ -1,5 +1,5 @@
 import '../../../scss/base.scss';
-import '../../../scss/components/password/password.scss';
+import '../../../scss/components/password/_password.scss';
 import Password from '../../../js/password';
 
 const ComponentList = {
