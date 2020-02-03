@@ -6,6 +6,8 @@
  *******************************************************************
  */
 
+ @import '../../base';
+
 $pagination-font-size:var(--body-font-size);
 $pagination-line-height: 1.125rem;
 $pagination-select-text-color: $blue;

@@ -1,3 +1,5 @@
+@import '../../base';
+
 $colorMap: ('info': $info, 'danger': $red-3, 'success': $success, 'warning': $warning);
 
 .#{$prefix}-notification {

@@ -1,4 +1,3 @@
-import '../../../scss/base.scss';
 import '../../../scss/components/accordion/_accordion.scss';
 import { isElement } from '../../../js/utils/dom';
 import Accordion from '../../../js/accordion';

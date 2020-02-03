@@ -1,4 +1,3 @@
-import '../../../scss/base.scss';
 import '../../../scss/components/password/_password.scss';
 import Password from '../../../js/password';
 

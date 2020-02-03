@@ -1,3 +1,5 @@
+@import '../../base';
+
 @mixin option ($type) {
     width: inherit;
     padding: .5rem .625rem;

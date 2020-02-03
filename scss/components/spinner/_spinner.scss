@@ -1,3 +1,5 @@
+@import '../../base';
+
 @mixin spinner($size) {
     --spinner-color: #55c9d3;
     z-index: 989;

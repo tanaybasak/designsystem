@@ -1,4 +1,3 @@
-import '../../../scss/base.scss';
 import '../../../scss/components/pagination/_pagination.scss';
 import Pagination from '../../../js/pagination';
 

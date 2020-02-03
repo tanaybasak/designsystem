@@ -6,6 +6,8 @@
  *******************************************************************
  */
 
+ @import '../../base';
+
 .#{$prefix}-actionbar {
     display: flex;
     align-items: center;

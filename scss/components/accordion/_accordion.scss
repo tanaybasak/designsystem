@@ -5,7 +5,8 @@
  *
  *******************************************************************
  */
-
+ @import '../../base';
+ 
 .#{$prefix}-accordion {
     display: block;
     list-style: none;

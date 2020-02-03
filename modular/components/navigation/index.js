@@ -1,4 +1,3 @@
-import '../../../scss/main.scss';
 import { isElement } from '../../../js/utils/dom';
 import Navigation from '../../../js/navigation';
 
