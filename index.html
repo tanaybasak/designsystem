@@ -3075,77 +3075,26 @@
         </main>
     </div>
     <script src="./modular/patron/index.js"></script>
-
-    <script>
-        // var link = document.querySelector('link[rel="import"]');
-        // var content = link.import;
-
-        // Grab DOM from warning.html's document.
-        // var el = content.querySelector('.hcl-accordion');
-        // document.getElementById('accordion-controlled').appendChild(el.cloneNode(true));
-        // document.body.appendChild(el.cloneNode(true));
-    </script>
     <script src="./scss/components/accordion/controlled/controlled.js"></script>
-    <script>
-        patron.dropdown(".hcl-dropdown.top", {
-            position: "top", onChange: (element, value) => {
-                console.log(element, value);
-            }
-        })
-        patron.tooltip("[data-tooltip]");
-
-        patron.tabs("#tabsjs", {
-            selectedIndex: 2,
-            disabled: [2],
-            onChange: function (e) {
-                console.log(e);
-            }
-        });
-
-        patron.contentswitch("#content-switcher3", {
-            selectedIndex: 2,
-            disabled: [],
-            onChange: function (e) {
-                console.log(e);
-            }
-        });
-
-        patron.contentswitch("#content-switcher4", {
-            selectedIndex: 2,
-            disabled: [2],
-            onChange: function (e) {
-                console.log(e);
-            }
-        });
-
-        // patron.accordion(".hcl-accordion", {
-        //     uncontrolled: false
-        // });
-
-        //    window.patron.accordion('#con', {
-        //         uncontrolled: false
-        //     });
-
-
-        patron.navigation(".hcl-sidebar", {});
-
-        document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageChange', (event) => {
-            console.log('Page Change', event);
-        });
-
-        document.getElementsByClassName('hcl-pagination')[0].addEventListener('pageNumber', (event) => {
-            console.log('Page Number', event);
-        });
-
-        document.getElementsByClassName('hcl-pagination')[0].addEventListener('itemsPerPage', (event) => {
-            console.log('Items per Page', event);
-        });
-        patron.search(".hcl-search");
-        patron.numberInput(".hcl-number-input-wrapper");
-
-        // Slider
-        patron.slider('.hcl-slider');
-    </script>
+    <script src="./scss/components/accordion/uncontrolled/uncontrolled.js"></script>
+    <script src="./scss/components/dropdown/bottom/bottom.js"></script>
+    <script src="./scss/components/dropdown/top/top.js"></script>
+    <script src="./scss/components/tab/tab.js"></script>
+    <script src="./scss/components/content-switcher/default/default.js"></script>
+    <script src="./scss/components/content-switcher/disabled-with-icons/disabled-with-icons.js"></script>
+    <script src="./scss/components/content-switcher/disabled/disabled.js"></script>
+    <script src="./scss/components/content-switcher/with-icons/with-icons.js"></script>
+    <script src="./scss/components/sidebar/sidebar.js"></script>
+    <script src="./scss/components/search/expandable/expandable.js"></script>
+    <script src="./scss/components/search/normal/normal.js"></script>
+    <script src="./scss/components/number-input/disabledNumberInput/disabledNumberInput.js"></script>
+    <script src="./scss/components/number-input/numberInput/numberInput.js"></script>
+    <script src="./scss/components/number-input/optionalHelperNumberInput/optionalHelperNumberInput.js"></script>
+    <script src="./scss/components/number-input/validationNumberInput/validationNumberInput.js"></script>
+    <script src="./scss/components/slider/slider.js"></script>
+    <script src="./scss/components/tooltip/definition/definition.js"></script>
+    <script src="./scss/components/tooltip/icon/icon.js"></script>
+    <script src="./scss/components/tooltip/interactive/interactive.js"></script>
 </body>
 
 </html>
