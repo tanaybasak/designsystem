@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     width: 100%;
     padding: .5rem 1.5rem;
-    background-color: blue-7;
+    background-color: $blue-7;
 
     &-list {
         >.#{$prefix}-btn {
@@ -28,10 +28,10 @@
             &:hover,
             &:focus {
                 background-color: $white;
-                color: blue-7;
+                color: $blue-7;
 
                 >.#{$prefix}-btn-icon {
-                    fill: blue-7;
+                    fill: $blue-7;
                 }
             }
         }

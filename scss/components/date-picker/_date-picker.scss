@@ -10,7 +10,7 @@
       position: absolute;
       top: 0.75rem;
       left: 1rem;
-      fill: blue-7;
+      fill: $blue-7;
       z-index: 1;
       cursor: pointer;
     }
@@ -144,7 +144,7 @@
         height: 0.1875rem;
         width: 0.1875rem;
         border-radius: 50%;
-        background: blue-7;
+        background: $blue-7;
       }
     }
 
@@ -169,7 +169,7 @@
     }
 
     &-picked {
-      border: 0.125rem solid blue-7;
+      border: 0.125rem solid $blue-7;
     }
 
     &-fade {

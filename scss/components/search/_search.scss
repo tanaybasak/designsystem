@@ -39,7 +39,7 @@ $search-icon-size: 1rem;
     .#{$prefix}-search-icon {
       margin-left: ($search-height - $search-icon-size)/2;
       margin-top: ($search-height - $search-icon-size)/2;
-      fill: blue-7;
+      fill: $blue-7;
 
       &.white {
         fill: $white;

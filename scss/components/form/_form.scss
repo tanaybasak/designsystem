@@ -94,7 +94,7 @@ label {
         }
 
         svg {
-            fill: blue-7;
+            fill: $blue-7;
         }
     }
 }
@@ -146,8 +146,8 @@ label {
         }
 
         &:checked+.#{$prefix}-checkbox-label::before {
-            background-color: blue-7;
-            border-color: blue-7;
+            background-color: $blue-7;
+            border-color: $blue-7;
         }
 
         &:checked+.#{$prefix}-checkbox-label::after {

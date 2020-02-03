@@ -58,7 +58,7 @@
 
         &:checked+.#{$prefix}-tile-checkbox {
             visibility: visible;
-            fill: blue-7;
+            fill: $blue-7;
             background-color: $white;
         }
 
