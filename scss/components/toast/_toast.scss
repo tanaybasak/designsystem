@@ -75,4 +75,9 @@ $colorMap: ('info': $info, 'danger': $red-3, 'success': $success, 'warning': $wa
         transition: outline .11s, background-color .11s;
         @include hcl-close-icon(14);
     }
+
+    .#{$prefix}-toast-icon-container {
+        display: flex;
+        align-items: center;
+    }
 }
