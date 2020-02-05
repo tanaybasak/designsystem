@@ -157,7 +157,7 @@ label {
 
         &:focus+.#{$prefix}-checkbox-label::before {
             outline: 1px solid transparent;
-            box-shadow: 0 0 0 3px $checkbox-focus-color;
+            box-shadow: 0 0 0 2px $checkbox-focus-color;
         }
     }
 
@@ -230,7 +230,7 @@ label {
 
     &:focus+.#{$prefix}-radio-label::before {
         outline: 1px solid transparent;
-        box-shadow: 0 0 0 3px $checkbox-focus-color;
+        box-shadow: 0 0 0 2px $checkbox-focus-color;
     }
 
     &:disabled+.#{$prefix}-radio-label {
