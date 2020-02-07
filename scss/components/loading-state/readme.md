@@ -2,7 +2,7 @@
 
 ## Loading State
 
-Description of component
+Loading states or skeleton objects are the building blocks of skeleton screens that fill space for content till it is loaded.
 
 ### Normal
 
@@ -39,6 +39,10 @@ Example of dataTable
 <div id="General-Guideline"></div>
 
 ### General Guidelines
+
+- Loading states should not block gradual content loads, real content should replace skeleton objects immediately when the data is available.
+
+- Loading states themselves should not take time to load. They are better hardcoded into the initial page.
 
 <div id="Spec-file"></div>
 

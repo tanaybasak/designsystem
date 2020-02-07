@@ -29,7 +29,6 @@ $breadcrumb-margin: 1rem;
             white-space: nowrap;
             @include getTextDecorationLine('none');
             border-bottom: .0625rem solid transparent;
-            transition: .25s;
 
             &:hover {
                 color: $dark-blue;

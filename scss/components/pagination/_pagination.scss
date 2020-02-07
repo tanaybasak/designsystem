@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
- @import '../../base';
+@import '../../base';
 
 $pagination-font-size:var(--body-font-size);
 $pagination-line-height: 1.125rem;
@@ -36,6 +36,7 @@ $pagination-text-variant-2: $dark-20;
 
     &-left {
         padding: 0 1rem;
+
         @include media-breakpoint-down(sm) {
             flex-grow: 1;
             flex-shrink: 1;
@@ -47,12 +48,12 @@ $pagination-text-variant-2: $dark-20;
 
             select,
             .#{$prefix}-pagination-select {
-                padding-right: hcl-rem(20.8px);
+                padding-right: hcl-rem(32px);
             }
 
             svg,
             .#{$prefix}-select-arrow {
-                right: hcl-rem(8px);
+                right: hcl-rem(16px);
             }
 
             &::after {
@@ -161,6 +162,7 @@ $pagination-text-variant-2: $dark-20;
             text-overflow: ellipsis;
             overflow: hidden;
         }
+
         @include media-breakpoint-down(xs) {
             max-width: calc(100% - 3rem);
         }
