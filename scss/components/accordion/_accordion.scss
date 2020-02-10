@@ -5,8 +5,8 @@
  *
  *******************************************************************
  */
- @import '../../base';
- 
+@import '../../base';
+
 .#{$prefix}-accordion {
     display: block;
     list-style: none;
@@ -43,33 +43,27 @@
                 transition: all .2s ease-in-out;
             }
 
-            &:focus, &:active {
+            &:focus,
+            &:active {
                 outline: 1px solid $focus-outline-color;
                 outline-offset: 0.125rem;
             }
         }
 
         .#{$prefix}-accordion-content {
-            display: block;
-            position: absolute;
             overflow: hidden;
-            opacity: 0;
-            height: 0;
+            max-height: 0;
             font-size: .875rem;
             line-height: 1.5rem;
             color: $dark-10;
-            padding: .375rem .625rem 1.5rem 1.5rem;
-            transition: all .2s ease-in-out;
-            visibility: hidden;
+            margin: 0 .625rem 0 1.5rem;
+            transition: all .4s ease-in-out;
         }
 
         &.expanded {
             &>.#{$prefix}-accordion-content {
-                position: initial;
-                opacity: 1;
-                height: initial;
-                overflow: initial;
-                visibility: visible;
+                margin: .375rem .625rem 1.5rem 1.5rem;
+                max-height: 15rem;
             }
 
             &>.#{$prefix}-accordion-title::before {
