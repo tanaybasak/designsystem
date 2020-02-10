@@ -30,45 +30,65 @@
 
 <body>
     <!-- HEADER LAYOUT -->
-    <header class="hcl-header" data-withsidenav=true>
-    <a href="/" class="hcl-header-brand" tabindex="0">
-        <img alt="Logo" src="https://www.hcl.com/sites/default/files/main-logo-wh.png" />
-    </a>
-    <div class="hcl-header-wrapper">
-        <div class="hcl-header-search">
-            <div class="hcl-search hcl-bg-white hcl-search-btn-only">
-                <span class="hcl-search-btn" tabindex="-1">
-                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                        xmlns="http://www.w3.org/2000/svg" class="hcl-search-icon white" width="16" height="16"
-                        viewBox="0 0 16 16" aria-hidden="true">
-                        <path
-                            d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z">
-                        </path>
-                    </svg>
-                </span>
-                <input type="text" id="header-search-input-full" class="hcl-search-input" placeholder="Search..." />
-                <button class="hcl-search-reset" tabindex="-1"></button>
-            </div>
-        </div>
-        <ul class="hcl-header-icons">
-            <li class="hcl-header-icon">
-                <button class="hcl-icon-1 bg-white"></button>
-            </li>
-            <li class="hcl-header-icon">
-                <button class="hcl-icon-1 bg-white"></button>
-            </li>
-            <li class="hcl-header-icon">
-                <button class="hcl-icon-1 bg-white"></button>
-            </li>
-            <li class="hcl-header-icon">
-                <button class="hcl-icon-1 bg-white"></button>
-            </li>
-            <li class="hcl-header-icon">
-                <button class="hcl-icon-1 bg-white"></button>
-            </li>
-        </ul>
+    <header class="hcl-header" data-withsidenav="true">
+  <a href="/" class="hcl-header-brand" tabindex="0">
+    <img
+      alt="Logo"
+      src="https://www.hcl.com/sites/default/files/main-logo-wh.png"
+    />
+  </a>
+  <div class="hcl-header-wrapper">
+    <div class="hcl-header-search">
+      <div
+        id="header-search"
+        class="hcl-search hcl-bg-white hcl-search-btn-only"
+      >
+        <button class="hcl-search-btn">
+          <svg
+            focusable="false"
+            preserveAspectRatio="xMidYMid meet"
+            style="will-change: transform;"
+            xmlns="http://www.w3.org/2000/svg"
+            class="hcl-search-icon white"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+          >
+            <path
+              d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
+            ></path>
+          </svg>
+        </button>
+        <input
+          type="search"
+          id="goal-input1"
+          class="hcl-search-input"
+          placeholder="Search..."
+        />
+        <button class="hcl-search-reset" tabindex="-1"></button>
+      </div>
     </div>
+    <ul class="hcl-header-icons">
+      <li class="hcl-header-icon">
+        <button class="hcl-icon-1 bg-white"></button>
+      </li>
+      <li class="hcl-header-icon">
+        <button class="hcl-icon-1 bg-white"></button>
+      </li>
+      <li class="hcl-header-icon">
+        <button class="hcl-icon-1 bg-white"></button>
+      </li>
+      <li class="hcl-header-icon">
+        <button class="hcl-icon-1 bg-white"></button>
+      </li>
+      <li class="hcl-header-icon">
+        <button class="hcl-icon-1 bg-white"></button>
+      </li>
+    </ul>
+  </div>
 </header>
+
     <nav class="hcl-sidebar" data-component="navigation">
         <button class="hcl-sidebar-hamburger">
             <span></span>
@@ -907,108 +927,184 @@
             <section class="m-1 p-2">
                 <!-- danger -->
                 <section id="notification" class="hcl-row m-0">
-    <div class="hcl-col">
-        <div data-notification="" class="hcl-notification hcl-danger" role="alert">
-            <div class="hcl-notification-body">
-                <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                    xmlns="http://www.w3.org/2000/svg" class="hcl-notification-icon" width="20" height="20"
-                    viewBox="0 0 32 32" aria-hidden="true">
-                    <path
-                        d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
-                    </path>
-                </svg>
-                <div class="hcl-notification-text-wrapper">
-                    <h5 class="hcl-notification-title">Notification title</h5>
-                    <p class="hcl-notification-subtitle">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-            </div>
-            <button class="hcl-notification-close" type="button" aria-label="close">
-            </button>
+  <div class="hcl-col">
+    <div data-notification="" class="hcl-notification hcl-danger" role="alert">
+      <div class="hcl-notification-body">
+        <div class="hcl-notification-icon-container">
+          <svg
+            focusable="false"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            style="will-change: transform;fill: #e0182d"
+            class="hcl-notification-icon"
+          >
+            <path
+              d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm3.5 13.5l-8-8 1-1 8 8-1 1z"
+            />
+            <path
+              d="M13.5 14.5l-8-8 1-1 8 8-1 1z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
         </div>
+        <div class="hcl-notification-text-wrapper">
+          <h5 class="hcl-notification-title">Notification title</h5>
+          <p class="hcl-notification-subtitle">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+      <button
+        class="hcl-notification-close"
+        type="button"
+        aria-label="close"
+      ></button>
     </div>
+  </div>
 </section>
+
                 <!-- info -->
                 <section id="notification" class="hcl-row m-0">
-    <div class="hcl-col">
-        <div data-notification="" class="hcl-notification hcl-info" role="alert">
-            <div class="hcl-notification-body">
-                <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                    xmlns="http://www.w3.org/2000/svg" class="hcl-notification-icon" width="20" height="20"
-                    viewBox="0 0 32 32" aria-hidden="true">
-                    <path
-                        d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
-                    </path>
-                </svg>
-                <div class="hcl-notification-text-wrapper">
-                    <h5 class="hcl-notification-title">Notification title</h5>
-                    <p class="hcl-notification-subtitle">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-            </div>
-            <button class="hcl-notification-close" type="button" aria-label="close">
-            </button>
+  <div class="hcl-col">
+    <div data-notification="" class="hcl-notification hcl-info" role="alert">
+      <div class="hcl-notification-body">
+        <div class="hcl-notification-icon-container">
+          <svg
+            focusable="false"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+            style="will-change: transform;fill: #4696d2"
+            class="hcl-notification-icon"
+          >
+            <path
+              d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z"
+            />
+          </svg>
         </div>
+        <div class="hcl-notification-text-wrapper">
+          <h5 class="hcl-notification-title">Notification title</h5>
+          <p class="hcl-notification-subtitle">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+      <button
+        class="hcl-notification-close"
+        type="button"
+        aria-label="close"
+      ></button>
     </div>
+  </div>
 </section>
+
                 <!-- success -->
                 <section id="notification" class="hcl-row m-0">
-    <div class="hcl-col">
-        <div data-notification="" class="hcl-notification hcl-success" role="alert">
-            <div class="hcl-notification-body">
-                <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                    xmlns="http://www.w3.org/2000/svg" class="hcl-notification-icon" width="20" height="20"
-                    viewBox="0 0 32 32" aria-hidden="true">
-                    <path
-                        d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
-                    </path>
-                </svg>
-                <div class="hcl-notification-text-wrapper">
-                    <h5 class="hcl-notification-title">Notification title</h5>
-                    <p class="hcl-notification-subtitle">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-            </div>
-            <button class="hcl-notification-close" type="button" aria-label="close">
-            </button>
+  <div class="hcl-col">
+    <div data-notification="" class="hcl-notification hcl-success" role="alert">
+      <div class="hcl-notification-body">
+        <div class="hcl-notification-icon-container">
+          <svg
+            focusable="false"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            style="will-change: transform;fill: #589d25"
+            class="hcl-notification-icon"
+          >
+            <path
+              d="M10 1c-4.9 0-9 4.1-9 9s4.1 9 9 9 9-4 9-9-4-9-9-9zM8.7 13.5l-3.2-3.2 1-1 2.2 2.2 4.8-4.8 1 1-5.8 5.8z"
+            />
+            <path
+              fill="none"
+              d="M8.7 13.5l-3.2-3.2 1-1 2.2 2.2 4.8-4.8 1 1-5.8 5.8z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
         </div>
+        <div class="hcl-notification-text-wrapper">
+          <h5 class="hcl-notification-title">Notification title</h5>
+          <p class="hcl-notification-subtitle">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+      <button
+        class="hcl-notification-close"
+        type="button"
+        aria-label="close"
+      ></button>
     </div>
+  </div>
 </section>
+
                 <!-- warning -->
                 <section id="notification" class="hcl-row m-0">
-    <div class="hcl-col">
-        <div data-notification="" class="hcl-notification hcl-warning" role="alert">
-            <div class="hcl-notification-body">
-                <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                    xmlns="http://www.w3.org/2000/svg" class="hcl-notification-icon" width="20" height="20"
-                    viewBox="0 0 32 32" aria-hidden="true">
-                    <path
-                        d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
-                    </path>
-                </svg>
-                <div class="hcl-notification-text-wrapper">
-                    <h5 class="hcl-notification-title">Notification title</h5>
-                    <p class="hcl-notification-subtitle">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-            </div>
-            <button class="hcl-notification-close" type="button" aria-label="close">
-            </button>
+  <div class="hcl-col">
+    <div data-notification="" class="hcl-notification hcl-warning" role="alert">
+      <div class="hcl-notification-body">
+        <div class="hcl-notification-icon-container">
+          <svg
+            focusable="false"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            style="will-change: 'transform'; fill: '#fac43b'"
+            class="hcl-notification-icon"
+          >
+            <path
+              d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-.8 4h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+            />
+            <path
+              d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
         </div>
+        <div class="hcl-notification-text-wrapper">
+          <h5 class="hcl-notification-title">Notification title</h5>
+          <p class="hcl-notification-subtitle">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+      <button
+        class="hcl-notification-close"
+        type="button"
+        aria-label="close"
+      ></button>
     </div>
+  </div>
 </section>
+
             </section>
 
             <!-- Tag -->
@@ -1587,15 +1683,16 @@
             <section class="m-1 p-2">
                 <!-- danger -->
                 <div>
-    <button id="hcl-btn-toast-type1" data-toast-type="1" class="hcl-btn">click me</button>
+    <button id="hcl-btn-toast-type1" data-toast-type="1" class="hcl-btn">Danger</button>
     <div id="hcl-toast-type1" data-toast-type="1" class="hcl-toast hcl-toast-danger hcl-toast-hide" role="alert">
-        <svg class="hcl-toast-icon" focusable="false" preserveAspectRatio="xMidYMid meet"
-            style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            viewBox="0 0 32 32" aria-hidden="true">
-            <path
-                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
-            </path>
-        </svg>
+        <div class="hcl-toast-icon-container">
+            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" viewBox="0 0 20 20" aria-hidden="true" style="will-change: transform;fill: #e0182d"
+                class="hcl-notification-icon">
+                <path d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm3.5 13.5l-8-8 1-1 8 8-1 1z" />
+                <path d="M13.5 14.5l-8-8 1-1 8 8-1 1z" data-icon-path="inner-path" opacity="0" />
+            </svg>
+        </div>
         <div class="hcl-toast-details">
             <h3 class="hcl-toast-title">Toast title</h3>
             <p class="hcl-toast-subtitle">Subtitle text goes here.</p>
@@ -1606,15 +1703,16 @@
 </div>
                 <!-- info -->
                 <div>
-    <button id="hcl-btn-toast-type2" data-toast-type="2" class="hcl-btn">click me</button>
+    <button id="hcl-btn-toast-type2" data-toast-type="2" class="hcl-btn">Info</button>
     <div id="hcl-toast-type2" data-toast-type="2" class="hcl-toast hcl-toast-info hcl-toast-hide" role="alert">
-        <svg class="hcl-toast-icon" focusable="false" preserveAspectRatio="xMidYMid meet"
-            style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            viewBox="0 0 32 32" aria-hidden="true">
-            <path
-                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
-            </path>
-        </svg>
+        <div class="hcl-toast-icon-container">
+            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;fill: #4696d2"
+                class="hcl-notification-icon">
+                <path
+                    d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z" />
+            </svg>
+        </div>
         <div class="hcl-toast-details">
             <h3 class="hcl-toast-title">Toast title</h3>
             <p class="hcl-toast-subtitle">Subtitle text goes here.</p>
@@ -1625,15 +1723,18 @@
 </div>
                 <!-- success -->
                 <div>
-    <button id="hcl-btn-toast-type3" data-toast-type="3" class="hcl-btn">click me</button>
+    <button id="hcl-btn-toast-type3" data-toast-type="3" class="hcl-btn">Success</button>
     <div id="hcl-toast-type3" data-toast-type="3" class="hcl-toast hcl-toast-success hcl-toast-hide" role="alert">
-        <svg class="hcl-toast-icon" focusable="false" preserveAspectRatio="xMidYMid meet"
-            style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            viewBox="0 0 32 32" aria-hidden="true">
-            <path
-                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
-            </path>
-        </svg>
+        <div class="hcl-toast-icon-container">
+            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" viewBox="0 0 20 20" aria-hidden="true" style="will-change: transform;fill: #589d25"
+                class="hcl-notification-icon">
+                <path
+                    d="M10 1c-4.9 0-9 4.1-9 9s4.1 9 9 9 9-4 9-9-4-9-9-9zM8.7 13.5l-3.2-3.2 1-1 2.2 2.2 4.8-4.8 1 1-5.8 5.8z" />
+                <path fill="none" d="M8.7 13.5l-3.2-3.2 1-1 2.2 2.2 4.8-4.8 1 1-5.8 5.8z" data-icon-path="inner-path"
+                    opacity="0" />
+            </svg>
+        </div>
         <div class="hcl-toast-details">
             <h3 class="hcl-toast-title">Toast title</h3>
             <p class="hcl-toast-subtitle">Subtitle text goes here.</p>
@@ -1644,15 +1745,18 @@
 </div>
                 <!-- wanrning -->
                 <div>
-    <button id="hcl-btn-toast-type4" data-toast-type="4" class="hcl-btn">click me</button>
-    <div  id="hcl-toast-type4" data-toast-type="4" class="hcl-toast hcl-toast-warning hcl-toast-hide" role="alert">
-        <svg class="hcl-toast-icon" focusable="false" preserveAspectRatio="xMidYMid meet"
-            style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            viewBox="0 0 32 32" aria-hidden="true">
-            <path
-                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 5a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 16 7zm4 17.12h-8v-2.24h2.88v-6.76H13v-2.24h4.13v9H20z">
-            </path>
-        </svg>
+    <button id="hcl-btn-toast-type4" data-toast-type="4" class="hcl-btn">Warning</button>
+    <div id="hcl-toast-type4" data-toast-type="4" class="hcl-toast hcl-toast-warning hcl-toast-hide" role="alert">
+        <div class="hcl-toast-icon-container">
+            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" viewBox="0 0 20 20" aria-hidden="true" style="will-change: 'transform'; fill: '#fac43b'"
+                class="hcl-notification-icon">
+                <path
+                    d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-.8 4h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
+                <path d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+                    data-icon-path="inner-path" opacity="0" />
+            </svg>
+        </div>
         <div class="hcl-toast-details">
             <h3 class="hcl-toast-title">Toast title</h3>
             <p class="hcl-toast-subtitle">Subtitle text goes here.</p>
@@ -3208,6 +3312,7 @@
     <script src="./scss/components/tooltip/definition/definition.js"></script>
     <script src="./scss/components/file-uploader/file-uploader.js"></script>
     <script src="./scss/components/tree/tree.js"></script>
+    <script src="./scss/components/header/header.js"></script>
 </body>
 
 </html>
