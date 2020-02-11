@@ -1,10 +1,8 @@
-@import '../../base';
-
 @mixin option ($type) {
     width: inherit;
     padding: .5rem .625rem;
     font-size: .875rem;
-    color: $dark-blue;
+    color: var(--dark-blue);
     cursor: pointer;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -18,8 +16,8 @@
 
     @else if ($type==danger) {
         &:hover {
-            background-color: $red;
-            color: $white;
+            background-color:$red;
+            color: var(--white);
         }
     }
 }
@@ -57,7 +55,7 @@
     }
 
     @else if ($type==left) {
-        right: 1rem;
+        right: 0.8rem;
     }
 }
 
@@ -79,11 +77,6 @@
     &-container {
         position: relative;
         display: inline-block;
-
-
-        >input:focus~.#{$prefix}-overflow-menu {
-            display: block;
-        }
     }
 
     &-close {
@@ -109,6 +102,8 @@
 
     &-list {
         padding: .375rem 0;
+        position: relative;
+        z-index: 6;
     }
 
     &-option,
@@ -131,6 +126,10 @@
 
 .#{$prefix}-hidden {
     display: none;
+}
+
+.#{$prefix}-show {
+    display: block;
 }
 
 .#{$prefix}-ellipsis {

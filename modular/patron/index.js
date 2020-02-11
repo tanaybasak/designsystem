@@ -14,6 +14,7 @@ import Slider from '../../js/slider';
 import Tree from '../../js/tree';
 import DataTable from '../../js/dataTable';
 import FileUploader from '../../js/fileUploader';
+import Overflow from '../../js/overflow';
 
 import { isElement } from '../../js/utils/dom';
 
@@ -23,6 +24,7 @@ import '../../js/toast';
 
 const ComponentList = {
   dropdow: Dropdown,
+  overflow:Overflow,
   sidebar: Sidebar,
   search: Search,
   datepicker: DatePicker,
@@ -63,6 +65,9 @@ const attachElements = (selector, options, Plugin) => {
 export const components = {
   dropdown: function(selector, options) {
     attachElements(selector, options, Dropdown);
+  },
+  overflow: function(selector, options) {
+    attachElements(selector, options, Overflow);
   },
   tabs: function(selector, options) {
     attachElements(selector, options, Tabs);
