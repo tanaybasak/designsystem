@@ -1,3 +1,6 @@
+@import '../../base';
+@import 'loading';
+
 button.#{$prefix}-loading {
     @include loading();
     width: 16.88rem;

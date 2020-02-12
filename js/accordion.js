@@ -36,6 +36,12 @@ class Accordion {
   attachEvents = () => {
     this.elements.forEach((item) => {
       item.addEventListener('click', this.toggleContent);
+      item.addEventListener('keypress', event => {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+          this.toggleContent(event);
+        }
+      });
     });
   };
 }

@@ -5,7 +5,8 @@
  *
  *******************************************************************
  */
-
+ @import '../../base';
+ 
 .#{$prefix}-accordion {
     display: block;
     list-style: none;
@@ -14,17 +15,17 @@
     &-item {
         display: block;
         position: relative;
-        border-top: .0625rem solid var(--light-50);
+        border-top: .0625rem solid $grey-4;
 
         &:last-child {
-            border-bottom: .0625rem solid var(--light-50);
+            border-bottom: .0625rem solid $grey-4;
         }
 
         .#{$prefix}-accordion-title {
             display: inline-block;
             font-size: 1rem;
             line-height: 1.5rem;
-            color: var(--dark);
+            color: $dark-10;
             padding: .625rem .625rem .625rem 1.5rem;
             cursor: pointer;
             width: 100%;
@@ -36,10 +37,15 @@
                 width: .625rem;
                 margin-left: -1.625rem;
                 margin-top: .375rem;
-                border-right: .0625rem solid var(--dark-40);
-                border-bottom: .0625rem solid var(--dark-40);
+                border-right: .0625rem solid $black-2;
+                border-bottom: .0625rem solid $black-2;
                 transform: scale(1) rotate(-45deg);
                 transition: all .2s ease-in-out;
+            }
+
+            &:focus, &:active {
+                outline: 1px solid $focus-outline-color;
+                outline-offset: 0.125rem;
             }
         }
 
@@ -51,7 +57,7 @@
             height: 0;
             font-size: .875rem;
             line-height: 1.5rem;
-            color: var(--dark);
+            color: $dark-10;
             padding: .375rem .625rem 1.5rem 1.5rem;
             transition: all .2s ease-in-out;
             visibility: hidden;

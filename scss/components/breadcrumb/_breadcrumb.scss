@@ -6,6 +6,8 @@
  *******************************************************************
  */
 
+ @import '../../base';
+ 
 $breadcrumb-margin: 1rem;
 
 .#{$prefix}-breadcrumb {
@@ -15,7 +17,7 @@ $breadcrumb-margin: 1rem;
 
     &-item {
         margin-right: $breadcrumb-margin;
-        color: var(--blue);
+        color: $blue;
         font-size: .875rem;
 
         &:not(:last-child)::after {
@@ -27,10 +29,9 @@ $breadcrumb-margin: 1rem;
             white-space: nowrap;
             @include getTextDecorationLine('none');
             border-bottom: .0625rem solid transparent;
-            transition: .25s;
 
             &:hover {
-                color: var(--dark-blue);
+                color: $dark-blue;
                 @include getTextDecorationLine('underline');
             }
         }
@@ -38,7 +39,7 @@ $breadcrumb-margin: 1rem;
 
     &-item-active {
         .#{$prefix}-link {
-            color: var(--dark-blue);
+            color: $dark-blue;
             @include getFontWeight('semibold');
             @include getTextDecorationLine('underline');
         }
