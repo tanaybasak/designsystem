@@ -38,7 +38,7 @@
         }
 
         &:focus::-webkit-slider-thumb {
-            box-shadow: 0 0 0 3px #7CC7FF;
+            box-shadow: 0 0 0 3px $focus-outline-color;
         }
 
         &:active::-webkit-slider-thumb {
