@@ -1379,46 +1379,52 @@
             <!-- Overflow Menu -->
             <section id="overflowmenu" class="hcl-row m-0">
                 <!-- Right Overflow Menu  -->
-                <section class="hcl-col-6 hcl-overflow right" id="right-overflow-menu">
-  <p style="float: left;">Right Overflow Menu</p>
+                <section class="hcl-col-6 hcl-overflow">
   <div class="hcl-overflow-container">
-      <i class="hcl-ellipsis" tabindex="0"></i>
-      <div class="hcl-overflow-menu hcl-overflow-right ">
-          <ul class="hcl-overflow-list">
-              <li class="hcl-overflow-option" tabindex="0">
-                  Option 1
-              </li>
-              <li class="hcl-overflow-option" tabindex="0">
-                  Option 2
-              </li>
-              <li class="hcl-overflow-option hcl-overflow-disable">
-                  Option 3
-              </li>
-              <li class="hcl-overflow-optiondanger hcl-overflow-separator" tabindex="0">
-                  Danger
-              </li>
-          </ul>
-          <div class="hcl-overflow-caret-right"></div>
-      </div>
+    <!-- This input tag is just for landing page, will not be part of design system -->
+    <input
+      style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;"
+    />
+    <div class="hcl-ellipsis"></div>
+    <div class="hcl-overflow-menu hcl-overflow-right hcl-hidden">
+      <ul class="hcl-overflow-list">
+        <li class="hcl-overflow-option">
+          Option 1
+        </li>
+        <li class="hcl-overflow-option">
+          Option 2
+        </li>
+        <li class="hcl-overflow-option hcl-overflow-disable">
+          Option 3
+        </li>
+        <li class="hcl-overflow-optiondanger hcl-overflow-separator">
+          Danger
+        </li>
+      </ul>
+      <div class="hcl-overflow-caret-right"></div>
+    </div>
   </div>
 </section>
+
                 <!-- Left Overflow Menu  -->
-                <section class="hcl-col-6 hcl-overflow" id="left-overflow-menu">
-    <p style="float: left;">Left Overflow Menu</p>
+                <section class="hcl-col-6 hcl-overflow">
     <div class="hcl-overflow-container">
-      <i class="hcl-ellipsis horizontal-ellipsis" tabindex="0"></i>
+        <!-- This input tag is just for landing page, will not be part of design system -->
+        <input
+            style="width:1rem; position:absolute; background:transparent;outline: none; padding: 0 0.5rem; z-index: 2;">
+        <div class="hcl-ellipsis horizontal-ellipsis"></div>
         <div class="hcl-overflow-menu hcl-hidden">
             <ul class="hcl-overflow-list">
-                <li class="hcl-overflow-option" tabindex="0">
+                <li class="hcl-overflow-option">
                     Option 1
                 </li>
-                <li class="hcl-overflow-option" tabindex="0">
+                <li class="hcl-overflow-option">
                     Option 2
                 </li>
                 <li class="hcl-overflow-option hcl-overflow-disable">
                     Option 3
                 </li>
-                <li class="hcl-overflow-optiondanger hcl-overflow-separator" tabindex="0">
+                <li class="hcl-overflow-optiondanger hcl-overflow-separator">
                     Danger
                 </li>
             </ul>
@@ -3291,8 +3297,6 @@
     <script src="./scss/components/dropdown/bottom/bottom.js"></script>
     <script src="./scss/components/dropdown/top/top.js"></script>
     <script src="./scss/components/tab/tab.js"></script>
-    <script src="./scss/components/overflow-menu/left/left.js"></script>
-    <script src="./scss/components/overflow-menu/right/right.js"></script>
     <script src="./scss/components/content-switcher/default/default.js"></script>
     <script src="./scss/components/content-switcher/disabled-with-icons/disabled-with-icons.js"></script>
     <script src="./scss/components/content-switcher/disabled/disabled.js"></script>

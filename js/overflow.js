@@ -22,8 +22,7 @@ class Overflow {
       this.element.querySelector(".hcl-overflow-menu").classList.add(`${PREFIX}-hidden`);
     }
   };
-  
-  
+
   attachEvents = () => {
     const icon = this.element.querySelector('.hcl-ellipsis');
     trackDocumentClick(this.element, () => {
@@ -35,28 +34,34 @@ class Overflow {
 
     if (icon) {
       icon.addEventListener('keypress', function(event) {
-        const a = event.key;
-        console.log("key pressed : ",a);
         if (event.keyCode === 13) {
           event.preventDefault();
           icon.click();
         }
       });
     
-    
-    icon.addEventListener('click', event => {
-      event.stopPropagation();
-      trackDocumentClick(this.element, () => {
-        if (this.state.isOpen) {
-          this.state.isOpen = !this.state.isOpen;
-          this.toggleState(this.state.isOpen);   
-        }
+      icon.addEventListener('click', event => {
+        event.stopPropagation();
+        trackDocumentClick(this.element, () => {
+          if (this.state.isOpen) {
+            this.state.isOpen = !this.state.isOpen;
+            this.toggleState(this.state.isOpen);   
+          }
+        });
+        this.state.isOpen = !this.state.isOpen;
+        this.toggleState(this.state.isOpen);
+      }); 
+
+      this.element.querySelectorAll(`.${PREFIX}-overflow-option`)
+        .forEach((item, index) => {
+          item.addEventListener('click', event => {
+            if (typeof this.state.onChange === 'function') {
+              this.state.onChange(event, event.target.innerText);
+            }
+          });
       });
-      this.state.isOpen = !this.state.isOpen;
-      this.toggleState(this.state.isOpen);
-    }); 
-  };
-}
+    };
+  }
 }
 
 export default Overflow;

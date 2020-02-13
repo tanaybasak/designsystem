@@ -1,27 +1,35 @@
 @mixin option ($type) {
     width: inherit;
-    padding: .5rem .625rem;
     font-size: .875rem;
-    color: var(--dark-blue);
-    cursor: pointer;
+    color: $aqua-90;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
 
-    @if ($type==default) {
-        &:hover {
-            background-color: rgba(70, 150, 210, .1);
-        }
+@mixin btn ($type) {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: left;
+    outline-offset: -4px;
+    cursor: pointer;
+
+    &:hover {
+        background-color:rgba(70,150,210,.1);
     }
 
-    @else if ($type==danger) {
+    @if ($type==disable) {
+        outline-offset: 0px;
+        cursor:not-allowed;
+    }
+
+    @else if($type==danger) {
         &:hover {
             background-color:$red;
-            color: var(--white);
+            color: $white;   
         }
     }
 }
-
 
 @mixin wrap($type) {
 
@@ -63,7 +71,6 @@
 
     &-separator {
         border-top: .0625rem solid $grey-8;
-        padding-top: .375rem;
     }
 
     &-caret {
@@ -92,7 +99,15 @@
         border: .0625rem solid $grey-8;
         box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .1);
         list-style: none;
-        @include wrap(left)
+        @include wrap(left);
+
+        ul{
+            padding: .375rem 0;
+            position: relative;
+            z-index: 6;
+            max-height:8rem;
+            overflow:auto;
+        }
     }
 
 
@@ -100,22 +115,20 @@
         @include wrap(right)
     }
 
-    &-list {
-        padding: .375rem 0;
-        position: relative;
-        z-index: 6;
-    }
-
-    &-option,
-    &-option-danger {
+    &-option {
         @include option(default);
-    }
 
-
-
-    &-optiondanger,
-    .danger {
-        @include option(danger);
+        &-btn {
+            @include btn(default);
+        }
+    
+        &-disable-btn {
+            @include btn(disable);
+        }
+    
+        &-danger-btn {
+            @include btn(danger);
+        }
     }
 
     &-disable {
