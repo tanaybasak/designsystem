@@ -60,7 +60,9 @@ class Tooltip {
         this.show();
       });
       this.element.addEventListener('blur', () => {
-        this.hide();
+        if (!this.contentIn) {
+          this.hide();
+        }
       });
       this.element.addEventListener('mouseleave', e => {
         this.mouseOut = true;
