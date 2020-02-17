@@ -14,6 +14,7 @@ import Slider from '../../js/slider';
 import Tree from '../../js/tree';
 import DataTable from '../../js/dataTable';
 import FileUploader from '../../js/fileUploader';
+import Tag from '../../js/tag';
 
 import { isElement } from '../../js/utils/dom';
 
@@ -34,7 +35,8 @@ const ComponentList = {
   accordion: Accordion,
   tree: Tree,
   dataTable: DataTable,
-  fileUploader: FileUploader
+  fileUploader: FileUploader,
+  tag: Tag
 };
 
 for (const componentName in ComponentList) {
@@ -99,6 +101,9 @@ export const components = {
   },
   fileUploader: function(selector) {
     attachElements(selector, null, FileUploader);
+  },
+  tag: function(selector) {
+    attachElements(selector, null, Tag);
   }
 };
 
