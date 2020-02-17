@@ -1,3 +1,5 @@
+@import '../../base';
+
 .#{$prefix}-timepicker {
     display: flex;
     align-items: flex-end;
@@ -5,7 +7,7 @@
     &-label {
         font-family: inherit;
         font-size: .875rem;
-        color: var(--black);
+        color: $black;
         font-weight: 600;
         display: inline-block;
         vertical-align: baseline;
@@ -25,14 +27,14 @@
         background-color: rgba(70, 150, 210, .05);
         border: none;
         width: 5.25rem;
-        color: var(--black);
+        color: $black;
         height: 2.5rem;
         padding: 0 1rem;
-        box-shadow: 0 .0625rem 0 0 var(--grey-light);
+        box-shadow: 0 .0625rem 0 0 $lightGrey;
 
         &:focus {
             outline: none;
-            box-shadow: 0 .125rem 0 0 var(--blue-light);
+            box-shadow: 0 .125rem 0 0 $blue-7;
         }
     }
 
