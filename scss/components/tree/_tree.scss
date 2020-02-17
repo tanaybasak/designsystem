@@ -1,3 +1,7 @@
+@import '../../base';
+
+$treeview-hover:rgba(70, 150, 210, 0.1);
+
 .#{$prefix}-tree {
   font-size: 0.875rem;
   @include getFontWeight(regular);
@@ -36,8 +40,8 @@
         height: 0.5rem;
         width: 0.5rem;
         margin-top: 0.25rem;
-        border-right: 0.0625rem solid var(--dark-40);
-        border-bottom: 0.0625rem solid var(--dark-40);
+        border-right: 0.0625rem solid $black-2;
+        border-bottom: 0.0625rem solid $black-2;
         transform: scale(1) rotate(-45deg);
         transition: all 0.2s ease-in-out;
         margin-left: 0.3125rem;
@@ -50,40 +54,40 @@
 
       span {
         padding: 0.25rem 0.5rem;
-        margin-left: -0.5rem;
+        margin-left: -0.25rem;
 
         &.highlight {
-          background-color: var(--blue);
-          color: var(--white);
+          background-color: $blue;
+          color: $white;
         }
       }
 
-      &.no-toggle-element{
-          padding-left: 1.625rem;
+      &.no-toggle-element {
+        padding-left: 1.375rem;
       }
     }
 
-    & > ul {
+    &>ul {
       display: none;
     }
 
-    &:not([aria-expanded]) > div .expanded {
+    &:not([aria-expanded])>div .expanded {
       display: none;
     }
 
-    &[aria-expanded='false'] > ul {
+    &[aria-expanded='false']>ul {
       display: none;
     }
 
-    &[aria-expanded='true'] > ul {
+    &[aria-expanded='true']>ul {
       display: block;
     }
 
-    &[aria-expanded='false'] > div .expanded {
+    &[aria-expanded='false']>div .expanded {
       display: none;
     }
 
-    &[aria-expanded='true'] > div .collapsed {
+    &[aria-expanded='true']>div .collapsed {
       display: none;
     }
 

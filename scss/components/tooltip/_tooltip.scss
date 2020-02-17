@@ -1,3 +1,14 @@
+@import '../../base';
+
+$tooltip-default-max-width: 12.5rem;
+$tooltip-interactive-max-width: 15rem;
+$tooltip-arrow-size-default: .625rem;
+$tooltip-arrow-size-default-position: $tooltip-arrow-size-default/2;
+$tooltip-arrow-size-icon: .3125rem;
+$tooltip-arrow-size-icon-position: $tooltip-arrow-size-icon/2;
+$tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+.0625rem;
+$tooltip-box-shadow:rgba($black, 0.1);
+
 .#{$prefix}-tooltip {
     position: absolute;
     display: block;
@@ -6,20 +17,20 @@
     word-wrap: break-word;
     text-align: left;
     max-width: $tooltip-default-max-width;
-    background-color: var(--black-lighter);
-    color: var(--white);
+    background-color: $black-lighter;
+    color: $white;
     border-radius: .25rem;
     padding: .5rem;
     box-shadow: 0 0.25rem 0.5rem 0 $tooltip-box-shadow;
     z-index: $tooltip-zindex;
-    top:0;
+    top: 0;
     left: 0;
 
     &-arrow {
         position: absolute;
         width: $tooltip-arrow-size-default;
         height: $tooltip-arrow-size-default;
-        background: var(--black-lighter);
+        background: $black-lighter;
 
         &[data-direction='bottom'] {
             top: -($tooltip-arrow-size-default-position);
@@ -47,16 +58,16 @@
     }
 
     &[data-focus-on-click='true'] {
-        background-color: var(--white);
-        color: var(--dark-blue);
+        background-color: $white;
+        color: $dark-blue;
         max-width: $tooltip-interactive-max-width;
-        border: .0625rem solid var(--grey-lighter);
+        border: .0625rem solid $grey-8;
         padding: 1rem;
 
         .#{$prefix}-tooltip-arrow {
-            background: var(--white);
-            border-top: .0625rem solid var(--grey-lighter);
-            border-right: .0625rem solid var(--grey-lighter);
+            background: $white;
+            border-top: .0625rem solid $grey-8;
+            border-right: .0625rem solid $grey-8;
 
             &[data-direction='bottom'] {
                 top: -($tooltip-arrow-size-interactive-position);
