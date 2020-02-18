@@ -22,8 +22,9 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
         &:first-child {
-            margin-left:1.2%;
+            margin-left: 1.2%;
         }
     }
 
@@ -41,7 +42,12 @@
             border-color: #003D6B;
         }
 
-        >.#{$prefix}-tag-icon {
+        >.#{$prefix}-close {
+            @include hcl-close-icon(18, $white, #3D70B2, true);
+            margin-left: .5rem;
+        }
+
+        >span.#{$prefix}-icon:not(.#{$prefix}-close):not(.#{$prefix}-tag-text) {
             @include hcl-close-icon(18, $white, #3D70B2, true);
             margin-left: .5rem;
         }
@@ -62,7 +68,12 @@
             border-color: #003D6B;
         }
 
-        >.#{$prefix}-tag-icon {
+        >.#{$prefix}-close {
+            @include hcl-close-icon(18, $blue, $white, true);
+            margin-left: .5rem;
+        }
+
+        >span.#{$prefix}-icon:not(.#{$prefix}-close):not(.#{$prefix}-tag-text) {
             @include hcl-close-icon(18, $blue, $white, true);
             margin-left: .5rem;
         }
@@ -73,7 +84,11 @@
         opacity: .5;
         cursor: not-allowed;
 
-        >.#{$prefix}-tag-icon {
+        >.#{$prefix}-close {
+            pointer-events: none;
+        }
+
+        >span.#{$prefix}-icon:not(.#{$prefix}-close):not(.#{$prefix}-tag-text) {
             pointer-events: none;
         }
     }
