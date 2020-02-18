@@ -47,8 +47,19 @@
             margin-left: .5rem;
         }
 
-        >span.#{$prefix}-icon:not(.#{$prefix}-close):not(.#{$prefix}-tag-text) {
-            @include hcl-close-icon(18, $white, #3D70B2, true);
+        >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            display: -webkit-inline-box;
+            display: inline-flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            background-color: #ffffff;
+            cursor: pointer;
+            border-radius: 50%;
             margin-left: .5rem;
         }
     }
@@ -73,8 +84,19 @@
             margin-left: .5rem;
         }
 
-        >span.#{$prefix}-icon {
-            @include hcl-close-icon(18, $blue, $white, true);
+        >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            display: -webkit-inline-box;
+            display: inline-flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            background-color: #0066b3;
+            cursor: pointer;
+            border-radius: 50%;
             margin-left: .5rem;
         }
     }
