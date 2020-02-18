@@ -77,8 +77,17 @@ class Overflow {
   }
 
   attachEvents = () => {
-    const icon = this.element.querySelector('.hcl-ellipsis');
-    const overflowMenu = this.element.querySelector('.hcl-overflow-menu');
+    const icon = this.element.children[0].children[0];
+    const overflowMenu = this.element.children[0].children[1];
+    let caretPosition;
+    if(overflowMenu.classList.contains('hcl-overflow-right')){
+      caretPosition = ((icon.offsetWidth/2) - 22).toString();
+      overflowMenu.style.left = caretPosition.concat("px");
+    }
+    else if(overflowMenu.classList.contains('hcl-overflow-left')){
+      caretPosition = ((icon.offsetWidth/2) - 18).toString();
+      overflowMenu.style.right = caretPosition.concat("px");
+    }
 
     trackDocumentClick(this.element, () => {
       if (this.state.isOpen) {
@@ -111,6 +120,7 @@ class Overflow {
         this.toggleState(this.state.isOpen);
         this.focusNode(overflowMenu.children[0].children[0]);
       }); 
+      
 
       this.element.querySelectorAll(`.${PREFIX}-overflow-option`)
         .forEach((item, index) => {
