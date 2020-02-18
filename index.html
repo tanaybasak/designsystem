@@ -1061,50 +1061,33 @@
 
                 <!-- warning -->
                 <section id="notification" class="hcl-row m-0">
-  <div class="hcl-col">
-    <div data-notification="" class="hcl-notification hcl-warning" role="alert">
-      <div class="hcl-notification-body">
-        <div class="hcl-notification-icon-container">
-          <svg
-            focusable="false"
-            preserveAspectRatio="xMidYMid meet"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            style="will-change: 'transform'; fill: '#fac43b'"
-            class="hcl-notification-icon"
-          >
-            <path
-              d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-.8 4h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
-            />
-            <path
-              d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
-              data-icon-path="inner-path"
-              opacity="0"
-            />
-          </svg>
+    <div class="hcl-col">
+        <div data-notification="" class="hcl-notification hcl-warning" role="alert">
+            <div class="hcl-notification-body">
+                <div class="hcl-notification-icon-container">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"
+                        style="will-change: transform;fill: #fac43b" class="hcl-notification-icon">
+                        <path
+                            d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-.8 4h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
+                        <path d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+                            data-icon-path="inner-path" opacity="0" />
+                    </svg>
+                </div>
+                <div class="hcl-notification-text-wrapper">
+                    <h5 class="hcl-notification-title">Notification title</h5>
+                    <p class="hcl-notification-subtitle">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry.
+                    </p>
+                </div>
+            </div>
+            <button class="hcl-notification-close" type="button" aria-label="close"></button>
         </div>
-        <div class="hcl-notification-text-wrapper">
-          <h5 class="hcl-notification-title">Notification title</h5>
-          <p class="hcl-notification-subtitle">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry.
-          </p>
-        </div>
-      </div>
-      <button
-        class="hcl-notification-close"
-        type="button"
-        aria-label="close"
-      ></button>
     </div>
-  </div>
 </section>
-
             </section>
 
             <!-- Tag -->
@@ -1125,14 +1108,14 @@
     <span class="hcl-tag-text">
         primary-closeable
     </span>
-    <span class="hcl-close" aria-hidden="true"></span>
+    <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
 <button class="hcl-tag hcl-tag-primary" title="primary-thumbnail-closeable" tabindex="0">
     <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
     <span class="hcl-tag-text">
         primary-thumbnail-closeable
     </span>
-    <span class="hcl-close" aria-hidden="true"></span>
+    <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
                 <!-- secondary -->
                 <button class="hcl-tag hcl-tag-secondary" title="secondary" tabindex="0">
@@ -1158,7 +1141,7 @@
     <span class="hcl-tag-text">
         secondary-closeable
     </span>
-    <span class="hcl-close" aria-hidden="true"></span>
+    <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
 <br />
 <button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0">
@@ -1166,7 +1149,7 @@
     <span class="hcl-tag-text">
         secondary-thumbnail-closeable
     </span>
-    <span class="hcl-close" aria-hidden="true"></span>
+    <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
             </section>
 
@@ -1552,7 +1535,7 @@
     <span class="hcl-tag-text">
         secondary-closeable
     </span>
-    <span class="hcl-close" aria-hidden="true"></span>
+    <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
 <br />
 <button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0">
@@ -1560,7 +1543,7 @@
     <span class="hcl-tag-text">
         secondary-thumbnail-closeable
     </span>
-    <span class="hcl-close" aria-hidden="true"></span>
+    <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
                 <!-- disabled -->
                 <section id="content-switcher3" class="hcl-row m-4 p-4 colBorder">
@@ -1748,13 +1731,12 @@
     <button id="hcl-btn-toast-type4" data-toast-type="4" class="hcl-btn">Warning</button>
     <div id="hcl-toast-type4" data-toast-type="4" class="hcl-toast hcl-toast-warning hcl-toast-hide" role="alert">
         <div class="hcl-toast-icon-container">
-            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20"
-                height="20" viewBox="0 0 20 20" aria-hidden="true" style="will-change: 'transform'; fill: '#fac43b'"
-                class="hcl-notification-icon">
+            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                viewBox="0 0 20 20" aria-hidden="true" style="will-change: transform;fill: #fac43b" class="hcl-notification-icon">
                 <path
                     d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-.8 4h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
-                <path d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
-                    data-icon-path="inner-path" opacity="0" />
+                <path d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" data-icon-path="inner-path"
+                    opacity="0" />
             </svg>
         </div>
         <div class="hcl-toast-details">
@@ -2592,7 +2574,7 @@
         </p>
     </li>
     <li class="hcl-accordion-item">
-        <h4 class="hcl-accordion-title" tabindex="0">Wher we can it ?</h4>
+        <h4 class="hcl-accordion-title" tabindex="0">Where we can use it?</h4>
         <p class="hcl-accordion-content">
             There are many variations of passages of Lorem Ipsum available,
             but the majority have
@@ -3209,12 +3191,12 @@
                   </div>
                   <ul role="group" class="tree-nested">
                       <li class="tree-item" role="treeitem">
-                          <div class="tree-node pl-5" tabindex="0">
+                          <div class="tree-node" tabindex="0">
                               <span>Sub Main 1.1</span>
                           </div>
                       </li>
                       <li class="tree-item" role="treeitem">
-                          <div class="tree-node pl-5" tabindex="0">
+                          <div class="tree-node" tabindex="0">
                               <span>Sub Main 1.2</span>
                           </div>
                       </li>
@@ -3233,12 +3215,12 @@
                           </div>
                           <ul role="group" class="tree-nested">
                               <li class="tree-item" role="treeitem">
-                                  <div class="tree-node pl-5" tabindex="0">
+                                  <div class="tree-node" tabindex="0">
                                       <span>Sub Main 2.1.1</span>
                                   </div>
                               </li>
                               <li class="tree-item" role="treeitem">
-                                  <div class="tree-node pl-5" tabindex="0">
+                                  <div class="tree-node" tabindex="0">
                                       <span>Sub Main 2.1.2</span>
                                   </div>
                               </li>
@@ -3251,12 +3233,12 @@
                           </div>
                           <ul role="group" class="tree-nested">
                               <li class="tree-item" role="treeitem">
-                                  <div class="tree-node pl-5" tabindex="0">
+                                  <div class="tree-node" tabindex="0">
                                       <span>Sub Main 2.2.1</span>
                                   </div>
                               </li>
                               <li class="tree-item" role="treeitem">
-                                  <div class="tree-node pl-5" tabindex="0">
+                                  <div class="tree-node" tabindex="0">
                                       <span>Sub Main 2.2.1</span>
                                   </div>
                               </li>
@@ -3271,12 +3253,12 @@
                   </div>
                   <ul role="group" class="tree-nested">
                       <li class="tree-item" role="treeitem">
-                          <div class="tree-node pl-5" tabindex="0">
+                          <div class="tree-node" tabindex="0">
                               <span>Sub Main 3.1</span>
                           </div>
                       </li>
                       <li class="tree-item" role="treeitem">
-                          <div class="tree-node pl-5" tabindex="0">
+                          <div class="tree-node" tabindex="0">
                               <span>Sub Main 3.2</span>
                           </div>
                       </li>
@@ -3313,6 +3295,7 @@
     <script src="./scss/components/file-uploader/file-uploader.js"></script>
     <script src="./scss/components/tree/tree.js"></script>
     <script src="./scss/components/header/header.js"></script>
+    <script src="./scss/components/tag/tag.js"></script>
 </body>
 
 </html>
