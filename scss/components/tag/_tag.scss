@@ -48,14 +48,11 @@
         }
 
         >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
-            width: 18px;
-            height: 18px;
+            width: hcl-rem(18px);
+            height: hcl-rem(18px);
             position: relative;
-            display: -webkit-inline-box;
             display: inline-flex;
-            -webkit-box-align: center;
             align-items: center;
-            -webkit-box-pack: center;
             justify-content: center;
             background-color: #ffffff;
             cursor: pointer;
@@ -85,14 +82,11 @@
         }
 
         >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
-            width: 18px;
-            height: 18px;
+            width: hcl-rem(18px);
+            height: hcl-rem(18px);
             position: relative;
-            display: -webkit-inline-box;
             display: inline-flex;
-            -webkit-box-align: center;
             align-items: center;
-            -webkit-box-pack: center;
             justify-content: center;
             background-color: #0066b3;
             cursor: pointer;
