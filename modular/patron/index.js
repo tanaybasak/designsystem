@@ -15,11 +15,11 @@ import Tree from '../../js/tree';
 import DataTable from '../../js/dataTable';
 import FileUploader from '../../js/fileUploader';
 import Tag from '../../js/tag';
+import Modal from '../../js/modal';
 
 import { isElement } from '../../js/utils/dom';
 
 // Demo Scripts
-import '../../js/modal';
 import '../../js/toast';
 
 const ComponentList = {
@@ -36,7 +36,8 @@ const ComponentList = {
   tree: Tree,
   dataTable: DataTable,
   fileUploader: FileUploader,
-  tag: Tag
+  tag: Tag,
+  modal:Modal
 };
 
 for (const componentName in ComponentList) {
@@ -104,7 +105,10 @@ export const components = {
   },
   tag: function(selector) {
     attachElements(selector, null, Tag);
-  }
+  },
+  modal: function(selector,options) {
+    attachElements(selector, options, Modal);
+  },
 };
 
 if (window) {

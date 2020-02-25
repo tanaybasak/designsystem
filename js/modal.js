@@ -1,54 +1,82 @@
-// This javascript function is for demonstation demonstration purpose of modal in landing page
-// This function will not be part package created for design system
+import handleDataBinding from './utils/data-api';
+class Modal {
+  constructor(element,options) {
+    this.element = element;
+   
+    this.state = {
+        isOpen: false,
+        ...options
+      };       
+  }
 
-const modal = (function() {
-  const DOMStrings = {
-    modalContainer: 'hcl-modal-type',
-    modalButton: 'hcl-btn-modal-type'
+  focusTrap = (e) => {
+        let modal = document.getElementById(this.element.getAttribute('data-target').slice(1));
+        let focusableEls = modal.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+        let firstFocusableEl = focusableEls[0];  
+        let lastFocusableEl = focusableEls[focusableEls.length - 1];
+        
+        if (event.keyCode == 27){
+            event.preventDefault();
+            this.hideModal(modal);
+        }
+    
+        let isTabPressed = (e.key === 'Tab' || e.keyCode === "9");
+
+        if (!isTabPressed) { 
+            return; 
+        }
+
+        if ( e.shiftKey ){
+            if (document.activeElement === firstFocusableEl) {
+                lastFocusableEl.focus();
+                e.preventDefault();
+            }
+        } else {
+            if (document.activeElement === lastFocusableEl) {
+                firstFocusableEl.focus();
+                e.preventDefault();
+            }
+        }
+    };
+
+  showModal = (modal) => { 
+    if(modal ==null)return
+    modal.classList.remove('hcl-modal-hide');
+    modal.focus();
   };
 
-  const classNames = {
-    modalDisable: 'hcl-modal-hide'
+  hideModal = (modal) => {
+    if(modal ==null)return
+    modal.classList.add('hcl-modal-hide');
   };
 
-  const showModal = function(event) {
-    const modalType = event.target.getAttribute('data-modal-type');
-    document
-      .getElementById(`${DOMStrings.modalContainer}${modalType}`)
-      .classList.remove(classNames.modalDisable);
-  };
+  attachEvents = () => {
+    let modal = document.getElementById(this.element.getAttribute('data-target').slice(1));
+    const closeModalBtn = modal.querySelectorAll('[data-dismiss-btn]');
 
-  const hideModal = function(event) {
-    const modalType = event.target
-      .closest('section[data-modal-type]')
-      .getAttribute('data-modal-type');
-    document
-      .getElementById(`${DOMStrings.modalContainer}${modalType}`)
-      .classList.add(classNames.modalDisable);
-  };
-
-  const setupEventListeners = function() {
-    for (let type = 1; type <= 8; type++) {
-      let elm = document.getElementById(`hcl-btn-modal-type${type}`);
-      if (elm) {
-        elm.addEventListener('click', showModal);
-      }
-      elm = document.getElementById(`hcl-modal-close-type${type}`);
-      if (elm) {
-        elm.addEventListener('click', hideModal);
-      }
-      elm = document.getElementById(`hcl-modal-cancel-type${type}`);
-      if (elm) {
-        elm.addEventListener('click', hideModal);
-      }
+    if(this.state.isOpen){
+        //this.state.isOpen = !this.state.isOpen;
+        this.showModal(modal);
     }
+
+    modal.addEventListener('keydown', this.focusTrap);
+
+    this.element.addEventListener('click', () => {
+        this.showModal(modal);  
+    })  
+    
+    closeModalBtn.forEach(button => {
+        button.addEventListener('click', () => {
+           let modal = button.closest('.hcl-modal');
+           this.hideModal(modal);    
+        })      
+     });
   };
 
-  return {
-    setUpHeplerEvent: function() {
-      setupEventListeners();
-    }
+  static handleDataAPI = () => {
+    handleDataBinding('modal', function(element) {
+      return new Modal(element, { isOpen: true });
+    });
   };
-})();
-
-modal.setUpHeplerEvent();
+}
+export default Modal;
