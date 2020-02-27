@@ -13,7 +13,7 @@ class Overflow {
   }
 
   toggleState = state => {
-    let overflowMenu = this.element.querySelector(".hcl-overflow-menu");
+    const overflowMenu = this.element.querySelector(`.${PREFIX}-overflow-menu`);
     if (state) {
       overflowMenu.classList.add(`${PREFIX}-show`);
       overflowMenu.classList.remove(`${PREFIX}-hidden`);
@@ -29,11 +29,11 @@ class Overflow {
     }
   };
 
-  keyDownOnTree = (e) => {
-    let key = e.which || e.keyCode;
+  keyDownOnTree = e => {
+    const key = e.which || e.keyCode;
     const nodeElement = e.currentTarget;
     const listItem = e.target.parentElement;
-    const nodeStatus = nodeElement.classList.contains("hcl-show");
+    let nodeStatus = nodeElement.classList.contains('hcl-show');
 
     if (nodeStatus === undefined || nodeStatus === null) {
       nodeStatus = 'false';
@@ -43,7 +43,9 @@ class Overflow {
         case 40: {
           if (!listItem.nextElementSibling) {
             this.focusNode(listItem.parentElement.firstElementChild);
-          } else if (listItem.nextElementSibling.children[0].disabled === true) {
+          } else if (
+            listItem.nextElementSibling.children[0].disabled === true
+          ) {
             this.focusNode(listItem.nextElementSibling.nextElementSibling);
           } else {
             this.focusNode(listItem.nextElementSibling);
@@ -54,10 +56,14 @@ class Overflow {
         case 38: {
           if (!listItem.previousElementSibling) {
             this.focusNode(listItem.parentElement.lastElementChild);
-          } else if (listItem.previousElementSibling.children[0].disabled === true) {
-            this.focusNode(listItem.previousElementSibling.previousElementSibling);
+          } else if (
+            listItem.previousElementSibling.children[0].disabled === true
+          ) {
+            this.focusNode(
+              listItem.previousElementSibling.previousElementSibling
+            );
           } else {
-            this.focusNode(listItem.previousElementSibling)
+            this.focusNode(listItem.previousElementSibling);
           }
           e.preventDefault();
           break;
@@ -71,18 +77,18 @@ class Overflow {
           break;
       }
     }
-  }
+  };
 
   attachEvents = () => {
     const icon = this.element.children[0];
-    let overflowMenu = this.element.children[1];
+    const overflowMenu = this.element.children[1];
     let caretPosition;
     if (overflowMenu.classList.contains('hcl-overflow-right')) {
-      caretPosition = ((icon.offsetWidth / 2) - 22).toString();
-      overflowMenu.style.left = caretPosition.concat("px");
+      caretPosition = (icon.offsetWidth / 2 - 22).toString();
+      overflowMenu.style.left = caretPosition.concat('px');
     } else if (overflowMenu.classList.contains('hcl-overflow-left')) {
-      caretPosition = ((icon.offsetWidth / 2) - 18).toString();
-      overflowMenu.style.right = caretPosition.concat("px");
+      caretPosition = (icon.offsetWidth / 2 - 18).toString();
+      overflowMenu.style.right = caretPosition.concat('px');
     }
 
     trackDocumentClick(this.element, () => {
@@ -93,7 +99,7 @@ class Overflow {
     });
 
     if (icon) {
-      icon.addEventListener('keypress', function (event) {
+      icon.addEventListener('keypress', function(event) {
         if (event.keyCode === 13) {
           event.preventDefault();
           icon.click();
@@ -101,7 +107,7 @@ class Overflow {
       });
 
       overflowMenu.addEventListener('keydown', e => {
-        this.keyDownOnTree(e, "true");
+        this.keyDownOnTree(e, 'true');
       });
 
       icon.addEventListener('click', event => {
@@ -117,17 +123,17 @@ class Overflow {
         this.focusNode(overflowMenu.children[0].children[0]);
       });
 
-
-      this.element.querySelectorAll(`.${PREFIX}-overflow-option`)
-        .forEach((item, index) => {
+      this.element
+        .querySelectorAll(`.${PREFIX}-overflow-option`)
+        .forEach(item => {
           item.addEventListener('click', event => {
             if (typeof this.state.onChange === 'function') {
               this.state.onChange(event, event.target.innerText);
             }
           });
         });
-    };
-  }
+    }
+  };
 }
 
 export default Overflow;
