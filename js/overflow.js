@@ -104,7 +104,7 @@ class Overflow {
       });
 
       overflowMenu.addEventListener('keydown', e => {
-        this.keyDownOnTree(e, 'true');
+        this.keyDownOnTree(e);
       });
 
       icon.addEventListener('click', event => {
