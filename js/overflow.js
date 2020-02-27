@@ -24,7 +24,7 @@ class Overflow {
   };
 
   focusNode = node => {
-    if (node.classList.contains('hcl-overflow-option')) {
+    if (node.classList.contains(`${PREFIX}-overflow-option`)) {
       node.children[0].focus();
     }
   };
@@ -33,7 +33,7 @@ class Overflow {
     const key = e.which || e.keyCode;
     const nodeElement = e.currentTarget;
     const listItem = e.target.parentElement;
-    const nodeStatus = nodeElement.classList.contains('hcl-show');
+    const nodeStatus = nodeElement.classList.contains(`${PREFIX}-show`);
 
     if (nodeStatus) {
       switch (key) {
@@ -80,10 +80,10 @@ class Overflow {
     const icon = this.element.children[0];
     const overflowMenu = this.element.children[1];
     let caretPosition;
-    if (overflowMenu.classList.contains('hcl-overflow-right')) {
+    if (overflowMenu.classList.contains(`${PREFIX}-overflow-right`)) {
       caretPosition = (icon.offsetWidth / 2 - 22).toString();
       overflowMenu.style.left = caretPosition.concat('px');
-    } else if (overflowMenu.classList.contains('hcl-overflow-left')) {
+    } else if (overflowMenu.classList.contains(`${PREFIX}-overflow-left`)) {
       caretPosition = (icon.offsetWidth / 2 - 18).toString();
       overflowMenu.style.right = caretPosition.concat('px');
     }
