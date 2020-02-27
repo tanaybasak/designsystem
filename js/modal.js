@@ -1,4 +1,5 @@
 import handleDataBinding from './utils/data-api';
+import { PREFIX } from './utils/config';
 class Modal {
   constructor(element, options) {
     this.element = element;
@@ -45,13 +46,13 @@ class Modal {
 
   showModal = modal => {
     if (modal == null) return;
-    modal.classList.remove('hcl-modal-hide');
+    modal.classList.remove(`${PREFIX}-modal-hide`);
     modal.focus();
   };
 
   hideModal = modal => {
     if (modal == null) return;
-    modal.classList.add('hcl-modal-hide');
+    modal.classList.add(`${PREFIX}-modal-hide`);
   };
 
   attachEvents = () => {
@@ -72,7 +73,7 @@ class Modal {
 
     closeModalBtn.forEach(button => {
       button.addEventListener('click', () => {
-        const modal = button.closest('.hcl-modal');
+        const modal = button.closest(`${PREFIX}-modal`);
         this.hideModal(modal);
       });
     });
