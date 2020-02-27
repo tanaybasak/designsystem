@@ -33,11 +33,8 @@ class Overflow {
     const key = e.which || e.keyCode;
     const nodeElement = e.currentTarget;
     const listItem = e.target.parentElement;
-    let nodeStatus = nodeElement.classList.contains('hcl-show');
+    const nodeStatus = nodeElement.classList.contains('hcl-show');
 
-    if (nodeStatus === undefined || nodeStatus === null) {
-      nodeStatus = 'false';
-    }
     if (nodeStatus) {
       switch (key) {
         case 40: {
