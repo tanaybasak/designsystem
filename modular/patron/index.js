@@ -15,6 +15,7 @@ import Tree from '../../js/tree';
 import DataTable from '../../js/dataTable';
 import FileUploader from '../../js/fileUploader';
 import Overflow from '../../js/overflow';
+import Tag from '../../js/tag';
 
 import { isElement } from '../../js/utils/dom';
 
@@ -24,7 +25,7 @@ import '../../js/toast';
 
 const ComponentList = {
   dropdow: Dropdown,
-  overflow:Overflow,
+  overflow: Overflow,
   sidebar: Sidebar,
   search: Search,
   datepicker: DatePicker,
@@ -36,7 +37,8 @@ const ComponentList = {
   accordion: Accordion,
   tree: Tree,
   dataTable: DataTable,
-  fileUploader: FileUploader
+  fileUploader: FileUploader,
+  tag: Tag
 };
 
 for (const componentName in ComponentList) {
@@ -104,6 +106,9 @@ export const components = {
   },
   fileUploader: function(selector) {
     attachElements(selector, null, FileUploader);
+  },
+  tag: function(selector) {
+    attachElements(selector, null, Tag);
   }
 };
 

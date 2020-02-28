@@ -8,7 +8,7 @@ Tiles are a highly flexible component for displaying a wide variety of content, 
 
 Example of readable
 
-### clickable
+### Clickable
 
 Example of clickable
 
