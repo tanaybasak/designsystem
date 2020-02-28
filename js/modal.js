@@ -73,7 +73,7 @@ class Modal {
 
     closeModalBtn.forEach(button => {
       button.addEventListener('click', () => {
-        const modal = button.closest(`${PREFIX}-modal`);
+        const modal = button.closest(`.${PREFIX}-modal`);
         this.hideModal(modal);
       });
     });
