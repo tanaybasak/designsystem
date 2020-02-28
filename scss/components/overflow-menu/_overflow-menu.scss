@@ -1,141 +1,143 @@
-@mixin option ($type) {
-    width: inherit;
-    padding: .5rem .625rem;
-    font-size: .875rem;
-    color: var(--dark-blue);
-    cursor: pointer;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-
-    @if ($type==default) {
-        &:hover {
-            background-color: rgba(70, 150, 210, .1);
-        }
-    }
-
-    @else if ($type==danger) {
-        &:hover {
-            background-color:$red;
-            color: var(--white);
-        }
-    }
+@mixin option($type) {
+  width: inherit;
+  font-size: 0.875rem;
+  color: $aqua-90;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
+@mixin btn($type) {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
 
-@mixin wrap($type) {
+  &:hover {
+    background-color: rgba(70, 150, 210, 0.1);
+  }
 
-    top: 1.4375rem;
+  &:focus {
+    outline-offset: -1px;
+    outline: 1px solid $blue;
+  }
 
-    @if($type==right) {
-
-        left: -1.125rem
+  @if ($type==disable) {
+    outline-offset: 0px;
+    cursor: not-allowed;
+  } @else if($type==danger) {
+    &:hover {
+      background-color: $red;
+      color: $white;
     }
-
-    @else if($type==left) {
-
-        left: -9.5625rem
+    &:focus {
+      outline-offset: -1px;
+      outline: 1px solid $blue;
+      background-color: $red;
+      color: $white;
     }
+  }
 }
 
 @mixin caret($type) {
-    position: absolute;
-    top: -.3125rem;
-    width: .65625rem;
-    height: .65625rem;
-    transform: rotate(-45deg);
-    background: $white;
-    border-top: .0625rem solid $grey-8;
-    border-right: .0625rem solid $grey-8;
-    z-index: 5;
-    box-shadow: .5rem 0 .625rem -.375rem rgba(0, 0, 0, .1);
+  position: absolute;
+  top: -0.3125rem;
+  width: 0.65625rem;
+  height: 0.65625rem;
+  transform: rotate(-45deg);
+  background: $white;
+  border-top: 0.0625rem solid $grey-8;
+  border-right: 0.0625rem solid $grey-8;
+  z-index: 5;
+  box-shadow: 0.5rem 0 0.625rem -0.375rem rgba(0, 0, 0, 0.1);
 
-    @if ($type==right) {
-        left: 1rem;
-    }
-
-    @else if ($type==left) {
-        right: 0.8rem;
-    }
+  @if ($type==right) {
+    left: 1rem;
+  } @else if ($type==left) {
+    right: 0.8rem;
+  }
 }
 
 .#{$prefix}-overflow {
+  &-separator {
+    border-top: 0.0625rem solid $grey-8;
+  }
 
-    &-separator {
-        border-top: .0625rem solid $grey-8;
-        padding-top: .375rem;
-    }
-
-    &-caret {
-        @include caret(left);
-
-        &-right {
-            @include caret(right)
-        }
-    }
-
-    &-container {
-        position: relative;
-        display: inline-block;
-    }
-
-    &-close {
-        display: none;
-    }
-
-    &-menu {
-        position: absolute;
-        z-index: 9;
-        height: auto;
-        width: 11.25rem;
-        background-color: $white;
-        border: .0625rem solid $grey-8;
-        box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .1);
-        list-style: none;
-        @include wrap(left)
-    }
-
+  &-caret {
+    @include caret(left);
 
     &-right {
-        @include wrap(right)
+      @include caret(right);
+    }
+  }
+
+  &-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  &-close {
+    display: none;
+  }
+
+  &-menu {
+    position: absolute;
+    z-index: 9;
+    height: auto;
+    width: 11.25rem;
+    background-color: $white;
+    border: 0.0625rem solid $grey-8;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+    list-style: none;
+    top: 1.4375rem;
+
+    ul {
+      padding: 0.375rem 0;
+      position: relative;
+      z-index: 6;
+      max-height: 12rem;
+      overflow: auto;
+    }
+  }
+
+  &-option {
+    @include option(default);
+
+    &-btn {
+      @include btn(default);
+    }
+    button::-moz-focus-inner {
+      border: 0;
     }
 
-    &-list {
-        padding: .375rem 0;
-        position: relative;
-        z-index: 6;
+    &-disable-btn {
+      @include btn(disable);
     }
 
-    &-option,
-    &-option-danger {
-        @include option(default);
+    &-danger-btn {
+      @include btn(danger);
     }
+  }
 
-
-
-    &-optiondanger,
-    .danger {
-        @include option(danger);
-    }
-
-    &-disable {
-        cursor: not-allowed;
-        opacity: .3;
-    }
+  &-disable {
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
 }
 
 .#{$prefix}-hidden {
-    display: none;
+  display: none;
 }
 
 .#{$prefix}-show {
-    display: block;
+  display: block;
 }
 
 .#{$prefix}-ellipsis {
-    width: .5rem;
+  width: 0.5rem;
 
-    &.horizontal-ellipsis {
-        width: 1rem;
-    }
+  &.horizontal-ellipsis {
+    width: 1rem;
+  }
 }

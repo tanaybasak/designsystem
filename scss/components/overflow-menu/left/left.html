@@ -1,23 +1,21 @@
-<section class="hcl-col-6 hcl-overflow" id="left-overflow-menu">
-    <p style="float: left;">Left Overflow Menu</p>
-    <div class="hcl-overflow-container">
-      <i class="hcl-ellipsis horizontal-ellipsis" tabindex="0"></i>
-        <div class="hcl-overflow-menu hcl-hidden">
-            <ul class="hcl-overflow-list">
-                <li class="hcl-overflow-option" tabindex="0">
-                    Option 1
-                </li>
-                <li class="hcl-overflow-option" tabindex="0">
-                    Option 2
-                </li>
-                <li class="hcl-overflow-option hcl-overflow-disable">
-                    Option 3
-                </li>
-                <li class="hcl-overflow-optiondanger hcl-overflow-separator" tabindex="0">
-                    Danger
-                </li>
-            </ul>
-            <div class="hcl-overflow-caret"></div>
-        </div>
+<div id="left-overflow-menu" class="hcl-overflow-container">
+    <button class="hcl-ellipsis horizontal-ellipsis" aria-label="Left Overflow Menu" role="Overflow Menu"></button>
+    <div class="hcl-overflow-menu hcl-overflow-left">
+        <ul aria-labelledby="Right Overflow Menu">
+            <li class="hcl-overflow-option">
+                <button class="hcl-overflow-option-btn" aria-label="option 1">Option 1</button>
+            </li>
+            <li class="hcl-overflow-option">
+                <button class="hcl-overflow-option-btn" aria-label="option 2">Option 2</button>
+            </li>
+            <li class="hcl-overflow-option">
+                <button class="hcl-overflow-option-disable-btn" disabled="disabled" tabindex="-1"
+                    aria-label="option 3">Option 3</button>
+            </li>
+            <li class="hcl-overflow-option hcl-overflow-separator">
+                <button class="hcl-overflow-option-danger-btn" aria-label="Danger">Danger</button>
+            </li>
+        </ul>
+        <div class="hcl-overflow-caret"></div>
     </div>
-</section>
+</div>
