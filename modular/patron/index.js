@@ -25,7 +25,7 @@ import '../../js/toast';
 
 const ComponentList = {
   dropdow: Dropdown,
-  overflow:Overflow,
+  overflow: Overflow,
   sidebar: Sidebar,
   search: Search,
   datepicker: DatePicker,
