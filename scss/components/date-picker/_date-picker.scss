@@ -87,6 +87,7 @@
   &-select {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &-month > span,
@@ -157,8 +158,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0;
-      border: none;
       position: relative;
     }
   }
