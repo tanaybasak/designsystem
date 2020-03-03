@@ -21,13 +21,13 @@ class Overflow {
       overflowMenu.classList.add(`${PREFIX}-show`);
       overflowMenu.classList.remove(`${PREFIX}-hidden`);
       if (this.isInViewport(overflowMenu)) {
-        this.updateCaretPos(overflowMenu, icon, caret, outOfBound);
+        this.updateOverflowMenuPos(overflowMenu, icon, caret, outOfBound);
       } else {
         outOfBound = true;
-        this.updateCaretPos(overflowMenu, icon, caret, outOfBound);
+        this.updateOverflowMenuPos(overflowMenu, icon, caret, outOfBound);
       }
     } else {
-      this.updateCaretPos(overflowMenu, icon, caret, outOfBound);
+      this.updateOverflowMenuPos(overflowMenu, icon, caret, outOfBound);
       overflowMenu.classList.remove(`${PREFIX}-show`);
       overflowMenu.classList.add(`${PREFIX}-hidden`);
     }
@@ -98,7 +98,7 @@ class Overflow {
     }
   };
 
-  updateCaretPos = (overflowMenu, icon, caret, outOfBound) => {
+  updateOverflowMenuPos = (overflowMenu, icon, caret, outOfBound) => {
     let caretPosition;
     if (overflowMenu.classList.contains(`${PREFIX}-overflow-right`)) {
       if (outOfBound) {
