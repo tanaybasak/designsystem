@@ -14,13 +14,35 @@ class Overflow {
 
   toggleState = state => {
     const overflowMenu = this.element.querySelector(`.${PREFIX}-overflow-menu`);
+    const icon = this.element.children[0];
+    const caret = overflowMenu.children[1];
+    let outOfBound = false;
     if (state) {
       overflowMenu.classList.add(`${PREFIX}-show`);
       overflowMenu.classList.remove(`${PREFIX}-hidden`);
+      if (this.isInViewport(overflowMenu)) {
+        this.updateCaretPos(overflowMenu, icon, caret, outOfBound);
+      } else {
+        outOfBound = true;
+        this.updateCaretPos(overflowMenu, icon, caret, outOfBound);
+      }
     } else {
+      this.updateCaretPos(overflowMenu, icon, caret, outOfBound);
       overflowMenu.classList.remove(`${PREFIX}-show`);
       overflowMenu.classList.add(`${PREFIX}-hidden`);
     }
+  };
+
+  isInViewport = elem => {
+    const bounding = elem.getBoundingClientRect();
+    return (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <=
+        (window.innerWidth || document.documentElement.clientWidth)
+    );
   };
 
   focusNode = node => {
@@ -76,17 +98,38 @@ class Overflow {
     }
   };
 
+  updateCaretPos = (overflowMenu, icon, caret, outOfBound) => {
+    let caretPosition;
+    if (overflowMenu.classList.contains(`${PREFIX}-overflow-right`)) {
+      if (outOfBound) {
+        caretPosition = (icon.offsetWidth / 2 - 18).toString();
+        overflowMenu.style.left = null;
+        overflowMenu.style.right = caretPosition.concat('px');
+        caret.style.left = '10rem';
+      } else {
+        caretPosition = (icon.offsetWidth / 2 - 22).toString();
+        overflowMenu.style.left = caretPosition.concat('px');
+        overflowMenu.style.right = null;
+        caret.style.left = null;
+      }
+    } else if (overflowMenu.classList.contains(`${PREFIX}-overflow-left`)) {
+      if (outOfBound) {
+        caretPosition = (icon.offsetWidth / 2 - 22).toString();
+        overflowMenu.style.right = null;
+        overflowMenu.style.left = caretPosition.concat('px');
+        caret.style.left = '1rem';
+      } else {
+        caretPosition = (icon.offsetWidth / 2 - 18).toString();
+        overflowMenu.style.right = caretPosition.concat('px');
+        overflowMenu.style.left = null;
+        caret.style.left = null;
+      }
+    }
+  };
+
   attachEvents = () => {
     const icon = this.element.children[0];
     const overflowMenu = this.element.children[1];
-    let caretPosition;
-    if (overflowMenu.classList.contains(`${PREFIX}-overflow-right`)) {
-      caretPosition = (icon.offsetWidth / 2 - 22).toString();
-      overflowMenu.style.left = caretPosition.concat('px');
-    } else if (overflowMenu.classList.contains(`${PREFIX}-overflow-left`)) {
-      caretPosition = (icon.offsetWidth / 2 - 18).toString();
-      overflowMenu.style.right = caretPosition.concat('px');
-    }
 
     trackDocumentClick(this.element, () => {
       if (this.state.isOpen) {
