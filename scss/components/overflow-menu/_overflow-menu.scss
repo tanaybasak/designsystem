@@ -12,7 +12,10 @@
   padding: 0.5rem;
   text-align: left;
   cursor: pointer;
+  overflow:hidden;
   background: transparent;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   &:hover {
     background-color: rgba(70, 150, 210, 0.1);
@@ -111,11 +114,11 @@
       border: 0;
     }
 
-    &-disableBtn {
+    &-disablebtn {
       @include btn(disable);
     }
 
-    &-dangerBtn {
+    &-dangerbtn {
       @include btn(danger);
     }
   }
