@@ -1,4 +1,4 @@
-@mixin option($type) {
+@mixin option() {
   width: inherit;
   font-size: 0.875rem;
   color: $aqua-90;
@@ -102,7 +102,7 @@
   }
 
   &-option {
-    @include option(default);
+    @include option();
 
     &-btn {
       @include btn(default);
@@ -111,11 +111,11 @@
       border: 0;
     }
 
-    &-disable-btn {
+    &-disableBtn {
       @include btn(disable);
     }
 
-    &-danger-btn {
+    &-dangerBtn {
       @include btn(danger);
     }
   }
