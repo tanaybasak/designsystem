@@ -1,4 +1,6 @@
-$colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $warning);
+@import '../../base';
+
+$colorMap: ('info': $info, 'danger': $red-3, 'success': $success, 'warning': $warning);
 
 .#{$prefix}-notification {
     display: inline-flex;
@@ -20,11 +22,14 @@ $colorMap: ('info': $info, 'danger': $danger, 'success': $success, 'warning': $w
         display: flex;
         margin: 0 1rem;
 
+        .#{$prefix}-notification-icon-container {
+            display: flex;
+            align-items: center;
+        }
 
         .#{$prefix}-notification-icon {
             flex-shrink: 0;
             margin-right: 1rem;
-            margin-top: .75rem;
         }
 
         .#{$prefix}-notification-text-wrapper {

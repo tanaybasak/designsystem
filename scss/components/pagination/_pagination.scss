@@ -6,17 +6,26 @@
  *******************************************************************
  */
 
+@import '../../base';
+
+$pagination-font-size:var(--body-font-size);
+$pagination-line-height: 1.125rem;
+$pagination-select-text-color: $blue;
+$pagination-bg-color: $white;
+$pagination-text-variant-1: $dark-10;
+$pagination-text-variant-2: $dark-20;
+
 .#{$prefix}-pagination {
     font-size: $pagination-font-size;
     @include getFontWeight('regular');
     line-height: $pagination-line-height;
     width: 100%;
-    background-color: $pagination-bg-color;
+    background-color: $white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: hcl-rem(40px);
-    border: 1px solid var(--grey-4);
+    border: 1px solid $grey-4;
 
     &-left,
     &-right {
@@ -27,6 +36,7 @@
 
     &-left {
         padding: 0 1rem;
+
         @include media-breakpoint-down(sm) {
             flex-grow: 1;
             flex-shrink: 1;
@@ -38,17 +48,17 @@
 
             select,
             .#{$prefix}-pagination-select {
-                padding-right: hcl-rem(20.8px);
+                padding-right: hcl-rem(32px);
             }
 
             svg,
             .#{$prefix}-select-arrow {
-                right: hcl-rem(8px);
+                right: hcl-rem(16px);
             }
 
             &::after {
                 content: '';
-                border-right: 1px solid var(--grey-4);
+                border-right: 1px solid $grey-4;
                 height: 100%;
             }
         }
@@ -74,12 +84,12 @@
             margin: 0;
             border-width: 0 1px 0 1px;
             border-style: solid;
-            border-color: var(--grey-4);
+            border-color: $grey-4;
             padding: 0 1rem;
             cursor: pointer;
 
             &:focus {
-                outline: 1px solid var(--blue);
+                outline: 1px solid $blue;
                 outline-offset: -1px;
             }
 
@@ -136,7 +146,7 @@
 
     .#{$prefix}-pagination-range {
         margin-left: hcl-rem(16px);
-        color: $pagination-text-variant-2;
+        color: $dark-20;
 
         @include media-breakpoint-down(sm) {
             display: none;
@@ -152,6 +162,7 @@
             text-overflow: ellipsis;
             overflow: hidden;
         }
+
         @include media-breakpoint-down(xs) {
             max-width: calc(100% - 3rem);
         }
@@ -180,7 +191,7 @@
         svg,
         .#{$prefix}-select-arrow {
             pointer-events: none;
-            fill: var(--blue-light);
+            fill: $blue-7;
             position: relative;
             top: auto;
             bottom: auto;

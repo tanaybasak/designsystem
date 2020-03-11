@@ -1,7 +1,7 @@
 import { PREFIX } from './utils/config';
 import { NOOP } from './utils/functions';
 import { trackDocumentClick } from './utils/dom';
-import getCloset from './utils/get-closest';
+import getClosest from './utils/get-closest';
 import handleDataBinding from './utils/data-api';
 
 class Dropdown {
@@ -39,7 +39,7 @@ class Dropdown {
   };
 
   setSelection = (subElement, className) => {
-    const selected = getCloset(subElement, className);
+    const selected = getClosest(subElement, className);
     if (selected) {
       selected.classList.remove(className);
     }

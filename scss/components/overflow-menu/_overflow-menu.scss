@@ -1,0 +1,148 @@
+@import '../../base';
+
+@mixin option() {
+  width: inherit;
+  font-size: 0.875rem;
+  color: $aqua-90;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin btn($type) {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: left;
+  cursor: pointer;
+  overflow:hidden;
+  background: transparent;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:hover {
+    background-color: rgba(70, 150, 210, 0.1);
+  }
+
+  &:focus {
+    outline-offset: -1px;
+    outline: 1px solid $blue;
+  }
+
+  @if ($type==disable) {
+    outline-offset: 0px;
+    cursor: not-allowed;
+  } @else if($type==danger) {
+    &:hover {
+      background-color: $red;
+      color: $white;
+    }
+    &:focus {
+      outline-offset: -1px;
+      outline: 1px solid $blue;
+      background-color: $red;
+      color: $white;
+    }
+  }
+}
+
+@mixin caret($type) {
+  position: absolute;
+  top: -0.3125rem;
+  width: 0.65625rem;
+  height: 0.65625rem;
+  transform: rotate(-45deg);
+  background: $white;
+  border-top: 0.0625rem solid $grey-8;
+  border-right: 0.0625rem solid $grey-8;
+  z-index: 5;
+  box-shadow: 0.5rem 0 0.625rem -0.375rem rgba(0, 0, 0, 0.1);
+
+  @if ($type==right) {
+    left: 1rem;
+  } @else if ($type==left) {
+    right: 0.8rem;
+  }
+}
+
+.#{$prefix}-overflow {
+  &-separator {
+    border-top: 0.0625rem solid $grey-8;
+  }
+
+  &-caret {
+    @include caret(left);
+
+    &-right {
+      @include caret(right);
+    }
+  }
+
+  &-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  &-close {
+    display: none;
+  }
+
+  &-menu {
+    position: absolute;
+    z-index: 9;
+    height: auto;
+    width: 11.25rem;
+    background-color: $white;
+    border: 0.0625rem solid $grey-8;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+    list-style: none;
+    top: 1.4375rem;
+
+    ul {
+      padding: 0.375rem 0;
+      position: relative;
+      z-index: 6;
+      max-height: 12rem;
+      overflow: auto;
+    }
+  }
+
+  &-option {
+    @include option();
+
+    &-btn {
+      @include btn(default);
+    }
+    button::-moz-focus-inner {
+      border: 0;
+    }
+
+    &-disablebtn {
+      @include btn(disable);
+    }
+
+    &-dangerbtn {
+      @include btn(danger);
+    }
+  }
+
+  &-disable {
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
+}
+
+.#{$prefix}-hidden {
+  display: none;
+}
+
+.#{$prefix}-show {
+  display: block;
+}
+
+.#{$prefix}-ellipsis {
+  width: 0.5rem;
+
+  &.horizontal-ellipsis {
+    width: 1rem;
+  }
+}

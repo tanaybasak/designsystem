@@ -6,10 +6,12 @@
  *******************************************************************
  */
 
+ @import '../../base';
+
 .#{$prefix}-header {
     display: flex;
     justify-content: flex-start;
-    background-color: var(--blue);
+    background-color: $blue;
     position: fixed;
     top: 0;
     left: 0;
@@ -34,6 +36,10 @@
         &:focus,
         &:active {
             outline: none;
+            img {
+                outline: 1px solid $focus-outline-color;
+                outline-offset: 0.5rem;
+            }
         }
     }
 
@@ -71,6 +77,13 @@
             .#{$prefix}-header-icon {
                 display: inline-flex;
                 margin: 1rem .5rem;
+
+                input, button {
+                    &:focus, &:active {
+                        outline: 1px solid $focus-outline-color;
+                        outline-offset: 0.125rem;
+                    }
+                }
             }
 
             @include media-breakpoint-down(md) {
