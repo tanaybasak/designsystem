@@ -9,8 +9,22 @@ class Accordion {
       ...options
     };
 
-    this.elements = this.element.querySelectorAll(`.${PREFIX}-accordion-title`);
+    const chkClass = el => el.classList.contains(`${PREFIX}-accordion-title`);
+    const childs = ele => Array.from(ele.children);
+    this.elements = childs(this.element).flatMap(el =>
+      childs(el).filter(el => chkClass(el))
+    );
   }
+
+  toggleHeight = (item, status) => {
+    const collapseElement = item.children[1];
+    if (!status) {
+      collapseElement.style.height = 0;
+    } else {
+      const content = item.children[1].children[0];
+      collapseElement.style.height = content.clientHeight + 'px';
+    }
+  };
 
   toggleContent = event => {
     const comp = event.currentTarget;
@@ -19,21 +33,30 @@ class Accordion {
     if (this.state.uncontrolled) {
       if (expanded) {
         item.classList.remove('expanded');
+        this.toggleHeight(item, false);
       }
     } else {
       this.elements.forEach(element => {
         const itm = element.parentNode;
         itm.classList.remove('expanded');
+        this.toggleHeight(itm, false);
       });
     }
     if (!expanded) {
       item.classList.add('expanded');
+      this.toggleHeight(item, true);
     }
   };
 
   attachEvents = () => {
-    this.elements.forEach((item) => {
+    this.elements.forEach(item => {
       item.addEventListener('click', this.toggleContent);
+      item.addEventListener('keypress', event => {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+          this.toggleContent(event);
+        }
+      });
     });
   };
 }

@@ -10,7 +10,7 @@ class Tooltip {
     this.element = element;
     this.eventName = element.hasAttribute('data-focus-on-click')
       ? 'click'
-      : 'mouseover';
+      : 'mouseenter';
     this.type = element.getAttribute('data-type') || 'definition';
     this.dataValue = element.getAttribute('data-tooltip');
     this.direction = element.getAttribute('data-direction') || 'bottom';
@@ -19,6 +19,7 @@ class Tooltip {
     this.diff = 0;
     this.targetTooltipContent = null;
     this.tooltipId = tooltipElementRef++;
+    this.mouseOut = false;
   }
 
   attachEvents() {
@@ -50,6 +51,7 @@ class Tooltip {
       }
     }
     this.element.addEventListener(this.eventName, () => {
+      this.mouseOut = false;
       this.show();
     });
 
@@ -58,10 +60,19 @@ class Tooltip {
         this.show();
       });
       this.element.addEventListener('blur', () => {
-        this.hide();
+        if (!this.contentIn) {
+          this.hide();
+        }
       });
-      this.element.addEventListener('mouseout', () => {
-        this.hide();
+      this.element.addEventListener('mouseleave', e => {
+        this.mouseOut = true;
+        setTimeout(() => {
+          if (this.mouseOut) {
+            this.mouseOut = false;
+            this.contentIn = false;
+            this.hide();
+          }
+        }, 200);
       });
     } else {
       this.element.addEventListener('keypress', e => {
@@ -122,6 +133,18 @@ class Tooltip {
       tooltip.appendChild(icon);
       tooltip.appendChild(content);
       document.body.appendChild(tooltip);
+      tooltip.addEventListener('mouseenter', () => {
+        this.mouseOut = false;
+        this.contentIn = true;
+      });
+      tooltip.addEventListener('mouseleave', () => {
+        this.mouseOut = true;
+
+        if (this.contentIn) {
+          this.contentIn = false;
+          this.hide();
+        }
+      });
     }
     if (this.eventName === 'click') {
       addListener(

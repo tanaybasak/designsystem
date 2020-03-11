@@ -6,6 +6,11 @@
  *******************************************************************
  */
 
+@import '../utils/variables';
+@import '../utils/breakpoints';
+@import '../utils/mixins';
+@import '../utils/placeholders';
+
 // Grid Container
 .#{$prefix}-container {
     @include generate-container();
@@ -17,4 +22,3 @@
 }
 
 @include generate-cols();
-

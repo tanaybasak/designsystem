@@ -1,10 +1,15 @@
 import { PREFIX, WEEKDAYS, MONTHS } from './utils/config';
 import { trackDocumentClick } from './utils/dom';
 import handleDataBinding from './utils/data-api';
+import { NOOP } from './utils/functions';
 
 class DatePicker {
-  constructor(element) {
+  constructor(element, options) {
     this.datePickerElm = element;
+    this.state = {
+      onChange: NOOP,
+      ...options
+    };
   }
 
   // DatePicker Controller
@@ -252,6 +257,9 @@ class DatePicker {
         hideErrorInvalidDate();
         setInputDate(event.target.getAttribute('date'));
         hideDateContainer();
+        if (typeof this.state.onChange === 'function') {
+          this.state.onChange(event, event.target.getAttribute('date'));
+        }
       }
     };
 
@@ -483,7 +491,7 @@ class DatePicker {
   attachEvents = () => {
     const UICtrl = this.UIController();
     this.controller(this.datePickerController(), UICtrl).init();
-    UICtrl.showDateContainer();
+    // UICtrl.showDateContainer();
   };
 
   static handleDataAPI = () => {

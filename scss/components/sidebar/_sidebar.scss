@@ -5,14 +5,15 @@
  *
  *******************************************************************
  */
+ @import '../../base';
 
 %arrow {
     content: '';
     height: 0.625rem;
     width: 0.625rem;
     position: absolute;
-    border-left: 0.125rem solid var(--white);
-    border-bottom: 0.125rem solid var(--white);
+    border-left: 0.125rem solid $white;
+    border-bottom: 0.125rem solid $white;
     top: 50%;
     transition: all 220ms ease-in-out;
 
@@ -23,7 +24,7 @@
 }
 
 .#{$prefix}-sidebar {
-    background-color: var(--dark-50);
+    background-color: $dark-50;
     display: flex;
     flex-direction: column;
     height: calc(100vh - 3.125rem);
@@ -79,7 +80,7 @@
             display: block;
             width: 1.5rem;
             height: 0.125rem;
-            background-color: var(--white);
+            background-color: $white;
             margin-top: 0.3125rem;
 
             &:first-of-type {
@@ -110,7 +111,7 @@
         justify-content: space-between;
         align-items: center;
         height: 3.125rem;
-        border-bottom: 0.0625rem solid var(--dark-20);
+        border-bottom: 0.0625rem solid $dark-20;
         position: relative;
         transition: all 220ms ease-in-out;
 
@@ -126,7 +127,7 @@
             width: 0;
             margin: 0;
             border-radius: 50%;
-            background-color: var(--light-50);
+            background-color: $grey-4;
             transition: all 220ms ease-in-out;
 
             @include media-breakpoint-down(md) {
@@ -138,7 +139,7 @@
         &-text {
             display: inline-flex;
             font-size: 0.75rem;
-            color: var(--white);
+            color: $white;
             line-height: 1.125rem;
             width: 0;
             transition: all 220ms ease-in-out;
@@ -198,7 +199,7 @@
 
             >.#{$prefix}-sidebar-link {
                 font-size: 0.75rem;
-                color: var(--white);
+                color: $white;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
@@ -393,14 +394,14 @@
 
                         &-active,
                         &:hover {
-                            background-color: var(--grey-7);
+                            background-color: $grey-7;
                             position: relative;
                         }
 
                         &-active {
                             &::before {
                                 content: '';
-                                background-color: var(--blue);
+                                background-color: $blue;
                                 position: absolute;
                                 height: 100%;
                                 width: 0.375rem;
@@ -427,14 +428,14 @@
 
                 &-active,
                 &:hover {
-                    background-color: var(--grey-7);
+                    background-color: $grey-7;
                     position: relative;
                 }
 
                 &-active {
                     &::before {
                         content: '';
-                        background-color: var(--blue);
+                        background-color: $blue;
                         position: absolute;
                         height: 100%;
                         width: 0.375rem;

@@ -1,3 +1,5 @@
+@import '../../base';
+
 .#{$prefix}-tag {
     font-size: .75rem;
     @include getFontWeight(regular);
@@ -20,6 +22,10 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        &:first-child {
+            padding-left: 1.2%;
+        }
     }
 
     &-primary {
@@ -38,7 +44,20 @@
 
         >.#{$prefix}-close {
             @include hcl-close-icon(18, $white, #3D70B2, true);
-            margin-left: .625rem;
+            margin-left: .5rem;
+        }
+
+        >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
+            width: hcl-rem(18px);
+            height: hcl-rem(18px);
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            cursor: pointer;
+            border-radius: 50%;
+            margin-left: .5rem;
         }
     }
 
@@ -59,7 +78,20 @@
 
         >.#{$prefix}-close {
             @include hcl-close-icon(18, $blue, $white, true);
-            margin-left: .625rem;
+            margin-left: .5rem;
+        }
+
+        >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
+            width: hcl-rem(18px);
+            height: hcl-rem(18px);
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0066b3;
+            cursor: pointer;
+            border-radius: 50%;
+            margin-left: .5rem;
         }
     }
 
@@ -69,6 +101,10 @@
         cursor: not-allowed;
 
         >.#{$prefix}-close {
+            pointer-events: none;
+        }
+
+        >span.#{$prefix}-icon {
             pointer-events: none;
         }
     }
