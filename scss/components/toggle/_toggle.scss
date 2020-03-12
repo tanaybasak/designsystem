@@ -5,6 +5,9 @@
  *
  *******************************************************************
  */
+
+ @import '../../base';
+ 
 %basic-toggle {
     display: inline-block;
 
@@ -49,7 +52,7 @@
 
         &:disabled~.#{$prefix}-toggle-off,
         &:disabled~.#{$prefix}-toggle-on {
-            color: var(--disabled-grey);
+            color: rgba($dark-10,0.5);
         }
     }
 
@@ -79,14 +82,14 @@
         &::before {
             height: .375rem;
             width: 3rem;
-            background-color: var(--enabled-grey);
+            background-color: $dark-10;
         }
 
         .#{$prefix}-switch {
             height: 1.5rem;
             width: 1.5rem;
-            border: .0625rem solid var(--enabled-grey);
-            background-color: var(--white);
+            border: .0625rem solid $dark-10;
+            background-color: $white;
             transform: translate(0, -50%);
         }
     }
@@ -94,24 +97,24 @@
     input[type='checkbox'] {
         &:checked+.#{$prefix}-toggle-label {
             &::before {
-                background-color: var(--blue);
+                background-color: $blue;
             }
 
             .#{$prefix}-switch {
                 top: 50%;
                 transform: translate(1.5rem, -50%);
-                background-color: var(--blue);
+                background-color: $blue;
                 border: none;
             }
         }
 
         &:not(:checked):disabled~.#{$prefix}-toggle-label {
             &::before {
-                background-color: var(--disabled-grey);
+                background-color: rgba($dark-10,0.5);
             }
 
             .#{$prefix}-switch {
-                border: .0625rem solid var(--disabled-grey);
+                border: .0625rem solid rgba($dark-10,0.5);
             }
         }
 
@@ -120,11 +123,18 @@
             margin-right: 1.938rem;
             &::before {
                 width: 1.5rem;
-                background-color: var(--disabled-blue);
+                background-color: rgba($blue,0.5);
             }
 
             .#{$prefix}-switch {
-                background-color: var(--disabled-blue);
+                background-color: rgba($blue,0.5);
+            }
+        }
+
+        &:focus~.#{$prefix}-toggle-label {
+            .#{$prefix}-switch {
+                border: .0625rem solid var(--grey-light);
+                box-shadow: 0 0 0 0.125rem $checkbox-focus-color;
             }
         }
     }
@@ -134,7 +144,7 @@
         font-size: .875rem;
         line-height: 1.5rem;
         letter-spacing: .01rem;
-        color: var(--enabled-grey);
+        color: $dark-10;
     }
 }
 
@@ -150,15 +160,15 @@
         &::before {
             height: 1rem;
             width: 2rem;
-            background-color: var(--white);
-            border: .0625rem solid var(--enabled-grey);
+            background-color: $white;
+            border: .0625rem solid $dark-10;
             border-radius: 6.25rem;
         }
 
         .#{$prefix}-switch {
             height: .625rem;
             width: .625rem;
-            background-color: var(--enabled-grey);
+            background-color: $dark-10;
             border: none;
             transform: translate(.1875rem, -50%);
         }
@@ -167,14 +177,14 @@
     input[type='checkbox'] {
         &:checked+.#{$prefix}-toggle-label {
             &::before {
-                background-color: var(--blue);
+                background-color: $blue;
                 border: none;
             }
 
             .#{$prefix}-switch {
                 top: 50%;
                 transform: translate(1.125rem, -50%);
-                background-color: var(--white);
+                background-color: $white;
                 border: none;
 
                 &::after {
@@ -194,17 +204,23 @@
 
         &:not(:checked):disabled~.#{$prefix}-toggle-label {
             &::before {
-                border: .0625rem solid var(--disabled-grey);
+                border: .0625rem solid rgba($dark-10,0.5);
             }
 
             .#{$prefix}-switch {
-                background-color: var(--disabled-grey);
+                background-color: rgba($dark-10,0.5);
             }
         }
 
         &:checked:disabled~.#{$prefix}-toggle-label {
             &::before {
-                background-color: var(--disabled-blue);
+                background-color: rgba($blue,0.5);
+            }
+        }
+
+        &:focus~.#{$prefix}-toggle-label {
+            &::before {
+                box-shadow: 0 0 0 0.125rem $checkbox-focus-color;
             }
         }
     }
@@ -214,6 +230,6 @@
         font-size: .875rem;
         line-height: 1rem;
         letter-spacing: .01rem;
-        color: var(--enabled-grey);
+        color: $dark-10;
     }
 }

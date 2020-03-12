@@ -20,7 +20,7 @@
 }
 
 // Margin and Padding
-@for $i from 0 to 10 {
+@for $i from 0 to 11 {
     .mt-#{$i} {
         margin-top: $i * 4px;
     }
@@ -86,7 +86,7 @@
 }
 
 .b-1 {
-    border: 1px solid $card-border-color;
+    border: 1px solid $light-40;
 }
 
 /* 
@@ -121,7 +121,7 @@ $value in $iconSizesMap {
 }
 
 .bg-white {
-    background-color: var(--white);
+    background-color: $white;
 }
 
 // Display

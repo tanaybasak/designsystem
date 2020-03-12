@@ -1,3 +1,6 @@
+@import '../../base';
+@import 'loading';
+
 button.#{$prefix}-loading {
     @include loading();
     width: 16.88rem;
@@ -19,6 +22,8 @@ p.#{$prefix}-loading {
 }
 
 .#{$prefix}-breadcrumb {
+    width: 100%;
+
     &.#{$prefix}-loading {
         .#{$prefix}-breadcrumb-item {
             width: calc(33% - 1rem);
@@ -34,6 +39,8 @@ p.#{$prefix}-loading {
 }
 
 .#{$prefix}-tab {
+    width: 100%;
+
     &.#{$prefix}-loading {
         .#{$prefix}-tabs-nav-item {
             border-bottom: none;
@@ -60,9 +67,9 @@ p.#{$prefix}-loading {
                 .#{$prefix}-accordion-content {
                     @include loading();
                     height: 6.25rem;
-                    margin-left: 25px;
-                    margin-right: 10px;
-                    margin-bottom: 10px;
+                    margin-left: 1.563rem;
+                    margin-right: 0.625rem;
+                    margin-bottom: 0.625rem;
                 }
             }
 

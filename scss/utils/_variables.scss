@@ -8,164 +8,127 @@
 
 // GLOBAL VARIABLES
 :root {
-    --ff-roboto: 'Roboto', sans-serif;
-    --base-font-size: 1rem;
-    --base-font-size-px: 16px;
-    --body-font-size: .875rem;
-    --small-font-size: .75rem;
-    --base-margin: .5rem;
-    --base-padding: .2rem;
-    --black: #000;
-    --grey: #707070;
-    --grey-secondary: #f3f3f3;
-    --grey-light: #5A6872;
-    --grey-3: #E5E5E5;
-    --grey-4: #D2D2D2;
-    --grey-5: #1C1C1C;
-    --grey-6: #f5f5f5;
-    --grey-7: #6D6E70;
-    --white: #fff;
-    --blue: #0066b3; 
-    --sky-blue: #E4F5FC;
-    --dark-blue: #132730; 
-    --dark-secondary: #4696D2; 
-    --blue-4: #152934;
-    --primary-background-focus: #00578F;
-    --primary-disabled: #8CD7FA;
-    --primary-hover: #4696D2;
-    --red: #EB1946; 
-    --danger-secondary: #C3143A;
-    --danger-focus: #C3143A;
-    --danger-disabled: #F8B2C1;
-    --black-secondary: #555;
-    --error: #E0182D;
-    --grey-lighter: #DFE3E6; 
-    --success: #589D25;
-    --info: #4696D2;
-    --warning: #FAC43B;
-    --blue-light: #3d70b2;
-    --black-light: #3B5060;
-    --black-lighter: #272D33;
-    --light-50: #d2d2d2;
-    --dark-10: #4b4b4b;
-    --dark-20: #717171;
-    --dark-40: #555555;
-    --dark-50: #383838;
-    --disabled-grey: rgba(75, 75, 75, .5);
-    --enabled-grey: rgb(75, 75, 75);
-    --disabled-blue: rgba(0, 102, 179, .5);
-    --light-20: #efefef;
-    --light-50: #d2d2d2;
-    --light-60: #aaa;
-    --light-70: #8d8d8d;
-    --dark: rgba(75, 75, 75);
-    --dark-40: rgb(85, 85, 85);
+  --ff-roboto: 'Roboto', sans-serif;
+  --base-font-size: 1rem;
+  --base-font-size-px: 16px;
+  --body-font-size: 0.875rem;
+  --small-font-size: 0.75rem;
+  --base-margin: 0.5rem;
+  --base-padding: 0.2rem;
 }
 
 // SASS VARIABLES
 $prefix: 'hcl';
 $base-font-size: var(--base-font-size) !default;
-$base-font-size-px: 16px; 
+$base-font-size-px: 16px;
 $font-size-base: 1rem !default;
 $small-font-size: var(--small-font-size);
 $base-margin: var(--base-margin);
 $base-padding: var(--base-padding);
+
 // COLOR GUIDE
-$red: var(--red);
-$black: #000;
-$white: #fff;
-$blue: #0066b3;
-$orange: var(--orange);
-$grey: var(--grey);
-$primary: $blue !default;
-$secondary: $black !default;
+$red: #eb1946;
+$red-1: #c3143a;
+$red-2: #f8b2c1;
+$red-3: #e0182d;
 $tertiary: $red !default;
-$link-hover-color: var(--dark-secondary);
-$dark-blue: var(--dark-blue);
+
+$black: #000000; //TODO  not part of color palette
+$black-2: #555555;
+$black-light: #3b5060; //TODO typography not part of color palette
+$black-lighter: #272d33;
+$dark-10: #4b4b4b;
+$dark-20: #717171;
+$dark-50: #383838;
+$secondary: $black !default;
+
+$white: #ffffff; //TODO not part of color palette
+$light-20: #efefef;
+$light-40: #e2e2e2;
+$light-60: #aaaaaa;
+$light-70: #8d8d8d;
+
+$blue: #0066b3;
+$blue-secondary: #4696d2;
+$blue-4: #152934; //TODO datepicker text color
+$sky-blue: #e4f5fc;
+$blue-5: #00578f; //TODO button background color on focus
+$blue-6: #8cd7fa;
+$blue-7: #3d70b2;
+// $blue-light: #3d70b2;
+$dark-blue: #132730;
+$primary: $blue !default;
+$checkbox-focus-color: #7cc7ff; //TODO checkbox focus color
+
+// $grey: #707070;
 $grey-2: #8c8c8c;
-$grey-3: #565656;
-$lightGrey: #5A6872;
-$grey-secondary: var(--grey-secondary);
+$grey-4: #d2d2d2;
+// $grey-3: #565656;
+$grey-5: #1c1c1c;
+$lightGrey: #5a6872; //TODO modal close icon & checkbox border
+// $grey-secondary: #f3f3f3;
+$grey-6: #f5f5f5;
+$grey-7: #6d6e70;
+$grey-8: #dfe3e6; //TODO datatable, overflow menu border
+
 // THEMES
 $theme-colors: () !default;
-$theme-colors: map-merge(('primary': $primary, 'danger': $red, 'tertiary': $tertiary), $theme-colors);
+$theme-colors: map-merge(('primary': $primary,
+    'danger': $red,
+    'tertiary': $tertiary),
+  $theme-colors);
+
 // Forms
-$label-margin-bottom: .5rem;
+$label-margin-bottom: 0.5rem;
 $input-padding-y: 0;
 $input-padding-x: 1rem;
 $input-height: 2.5rem !default;
 $input-label-weight: 600;
-$background-disabled: rgba(70, 150, 210, .05);
+$background-disabled: rgba(70, 150, 210, 0.05);
+
 // Checkbox
 $checkbox-border-width: 2px;
-$checkbox-border-color: #5a6872;
-$checkbox-background-color: $white;
-$checkbox-border-color-checked: var(--blue-light);
-$checkbox-background-color-checked: var(--blue-light);
-$checkbox-focus-color: #7cc7ff;
+
+//Alerts
 // Errors
-$error:var(--error);
-$success:var(--success);
-$info: var(--info);
-$danger: var(--error);
-$warning: var(--warning);
+// $error:var(--error);
+$success: #589d25;
+// $success:var(--success);
+$info:#4696D2;
+// $danger: var(--error);
+// $warning: var(--warning);
+$warning: #fac43b;
+
 // GRIDS GUTTER
 $total-gutter-width: 1.875rem !default;
-$gutter: .9375rem;
+$gutter: 0.9375rem;
 $grid-columns: 12;
-$minHeight: .0625rem;
+$minHeight: 0.0625rem;
 // BREAKPOINTS
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px) !default;
+$grid-breakpoints: (xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px) !default;
 // TODO: Subject to be changed once the breakpoints are finalized
 $mobile-width: 640px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
-// Cards
-$card-width: 31.25rem !default;
-$card-spacing-y: 1.5rem !default;
-$card-spacing-x: 3rem !default;
-$card-border-width: 1px !default;
-$card-border-radius: .25rem !default;
-$card-border-color: #e2e2e2 !default;
-$card-color: #5A6872 !default;
-$card-color-text: #152935 !default;
-$card-line-height: 1.25rem !default;
-$card-bg: $white !default;
-$card-box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .1) !default;
-$card-imgtop-height: 12.5rem !default;
-$card-imgtop-bg: #d2d2d2 !default;
+
 // BORDER
 $border-width: 1px !default;
-$border-radius: .25rem !default;
+$border-radius: 0.25rem !default;
 $line-height-base: 1.5 !default;
 $spacer: 1rem !default;
-// Navbar
-$nav-link-padding-y: .5rem !default;
-$navbar-padding-y: $spacer / 2 !default;
-$navbar-padding-x: $spacer !default;
-$navbar-brand-font-size: $font-size-base * 1.25 !default;
-$nav-link-height: $font-size-base * $line-height-base+$nav-link-padding-y * 2 !default;
-$navbar-brand-height: $navbar-brand-font-size * $line-height-base !default;
-$navbar-brand-padding-y: ($nav-link-height - $navbar-brand-height) / 2 !default;
-$navbar-hamburger-font-size: $font-size-base * 1.25 !default;
+
+$focus-outline-color: rgb(175, 224, 247);
 //Tooltip
-$tooltip-default-max-width: 12.5rem;
-$tooltip-interactive-max-width: 15rem;
-$tooltip-arrow-size-default: .625rem;
-$tooltip-arrow-size-default-position: $tooltip-arrow-size-default/2;
-$tooltip-arrow-size-icon: .3125rem;
-$tooltip-arrow-size-icon-position: $tooltip-arrow-size-icon/2;
-$tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+.0625rem;
-$tooltip-box-shadow:rgba(0, 0, 0, .1);
-$tooltip-zindex:10;
+
+$tooltip-zindex: 10; //TODO zindex common place
+
 //Pagination
-$pagination-font-size:var(--body-font-size);
-$pagination-line-height: 1.125rem;
-$pagination-bg-color: var(--white);
-$pagination-text-variant-1: var(--dark-10);
-$pagination-text-variant-2: var(--dark-20);
-$pagination-select-text-color: var(--blue);
+
 //Search
-$search-height: 2.5rem;
-$search-height-sm: 2rem;
-$search-icon-size : 1rem;
+
+//Treeview

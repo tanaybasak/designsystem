@@ -5,11 +5,12 @@
  *
  *******************************************************************
  */
+ @import '../../base';
 
 .#{$prefix}-footer {
   min-height: 2.5rem;
   width: 100%;
-  background-color: var(--light-20);
+  background-color: $light-20;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -24,7 +25,7 @@
   &-caption {
     display: inline-flex;
     font-size: 0.75rem;
-    color: var(--light-70);
+    color: $light-70;
     letter-spacing: 0;
     align-self: center;
     padding: 0 1rem;
@@ -49,9 +50,13 @@
     .#{$prefix}-navigation-item {
       margin-right: 0.5rem;
       font-size: 0.75rem;
-      color: var(--light-60);
+      color: $light-60;
       letter-spacing: 0;
       align-self: flex-end;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
 
       &:not(:last-child)::after {
         content: '|';
@@ -64,7 +69,7 @@
         border-bottom: 0.0625rem solid transparent;
         transition: 0.25s;
         font-size: 0.75rem;
-        color: var(--light-60);
+        color: $light-60;
         letter-spacing: 0;
         line-height: 0.75rem;
 
