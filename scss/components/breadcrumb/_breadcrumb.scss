@@ -34,10 +34,6 @@ $breadcrumb-margin: 1rem;
                 color: $dark-blue;
                 @include getTextDecorationLine('underline');
             }
-            &:focus {
-                outline: none;
-                text-decoration-line: none;
-            }
         }
     }
 

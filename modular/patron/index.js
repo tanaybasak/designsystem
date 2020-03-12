@@ -17,6 +17,7 @@ import FileUploader from '../../js/fileUploader';
 import Overflow from '../../js/overflow';
 import Tag from '../../js/tag';
 import Modal from '../../js/modal';
+import Breadcrumb from '../../js/breadcrumb';
 
 import { isElement } from '../../js/utils/dom';
 
@@ -39,7 +40,8 @@ const ComponentList = {
   dataTable: DataTable,
   fileUploader: FileUploader,
   tag: Tag,
-  modal:Modal
+  modal: Modal,
+  breadcrumb: Breadcrumb
 };
 
 for (const componentName in ComponentList) {
@@ -111,9 +113,12 @@ export const components = {
   tag: function(selector) {
     attachElements(selector, null, Tag);
   },
-  modal: function(selector,options) {
+  modal: function(selector, options) {
     attachElements(selector, options, Modal);
   },
+  breadcrumb: function(selector) {
+    attachElements(selector, null, Breadcrumb);
+  }
 };
 
 if (window) {
