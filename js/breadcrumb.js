@@ -26,6 +26,7 @@ class Breadcrumb {
 
   clickListener = event => {
     event.preventDefault();
+    event.stopPropagation();
     this.selectNewActiveItem(event.currentTarget);
   };
 
