@@ -106,6 +106,7 @@ $pagination-text-variant-2: $dark-20;
 
         .#{$prefix}-pagination-text {
             margin-right: hcl-rem(16px);
+            color: $pagination-text-variant-2;
         }
 
         .#{$prefix}-pagination-select-wrapper {
