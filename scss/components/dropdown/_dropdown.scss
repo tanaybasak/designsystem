@@ -30,6 +30,11 @@
             right: .875rem;
             transform: translate(-50%, -50%);
         }
+
+        &:focus {
+            outline-offset: -1px;
+            outline: 1px solid $blue;
+          }
     }
 
     &-container {
@@ -59,7 +64,6 @@
         font-size: .875rem;
         color: $dark-blue;
         border: 1px solid transparent;
-        padding: .8125rem 1rem;
         max-width: 100%;
         white-space: nowrap;
         overflow: hidden;
@@ -68,6 +72,30 @@
 
         &:hover {
             background: rgba(70, 150, 210, .1);
+        }
+    }
+
+    &-wrapper {
+        display: block;
+        width: 100%;
+        padding: 3px 20px;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0.5125rem 1rem;
+        color: $black;
+        text-decoration: none;
+    
+        text-overflow: ellipsis;
+    
+        &:hover {
+          text-decoration: none;
+        }
+    
+        &:focus {
+          text-decoration: none;
+          outline-offset: -1px;
+          outline: 1px solid $blue;
         }
     }
 
