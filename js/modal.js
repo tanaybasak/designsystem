@@ -6,6 +6,7 @@ class Modal {
 
     this.state = {
       isOpen: false,
+      datakeyboard: true,
       ...options
     };
   }
@@ -21,8 +22,10 @@ class Modal {
     const lastFocusableEl = focusableEls[focusableEls.length - 1];
 
     if (event.keyCode === 27) {
-      event.preventDefault();
-      this.hideModal(modal);
+      if (this.state.datakeyboard) {
+        event.preventDefault();
+        this.hideModal(modal);
+      }
     }
 
     const isTabPressed = e.key === 'Tab' || e.keyCode === '9';

@@ -37,7 +37,7 @@ const ComponentList = {
   dataTable: DataTable,
   fileUploader: FileUploader,
   tag: Tag,
-  modal:Modal
+  modal: Modal
 };
 
 for (const componentName in ComponentList) {
@@ -106,9 +106,9 @@ export const components = {
   tag: function(selector) {
     attachElements(selector, null, Tag);
   },
-  modal: function(selector,options) {
+  modal: function(selector, options) {
     attachElements(selector, options, Modal);
-  },
+  }
 };
 
 if (window) {
