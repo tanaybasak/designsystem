@@ -3,10 +3,9 @@ import { PREFIX } from './utils/config';
 class Modal {
   constructor(element, options) {
     this.element = element;
-
     this.state = {
       isOpen: false,
-      datakeyboard: true,
+      keyboard: element.getAttribute('data-keyboard') === 'true',
       ...options
     };
   }
@@ -20,9 +19,8 @@ class Modal {
     );
     const firstFocusableEl = focusableEls[0];
     const lastFocusableEl = focusableEls[focusableEls.length - 1];
-
     if (event.keyCode === 27) {
-      if (this.state.datakeyboard) {
+      if (this.state.keyboard) {
         event.preventDefault();
         this.hideModal(modal);
       }
@@ -84,7 +82,10 @@ class Modal {
 
   static handleDataAPI = () => {
     handleDataBinding('modal', function(element) {
-      return new Modal(element, { isOpen: true });
+      return new Modal(element, {
+        isOpen: true,
+        keyboard: element.getAttribute('data-keyboard') === 'true'
+      });
     });
   };
 }
