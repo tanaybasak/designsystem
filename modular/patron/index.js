@@ -14,8 +14,10 @@ import Slider from '../../js/slider';
 import Tree from '../../js/tree';
 import DataTable from '../../js/dataTable';
 import FileUploader from '../../js/fileUploader';
+import Overflow from '../../js/overflow';
 import Tag from '../../js/tag';
 import Modal from '../../js/modal';
+import Breadcrumb from '../../js/breadcrumb';
 
 import { isElement } from '../../js/utils/dom';
 
@@ -24,6 +26,7 @@ import '../../js/toast';
 
 const ComponentList = {
   dropdow: Dropdown,
+  overflow: Overflow,
   sidebar: Sidebar,
   search: Search,
   datepicker: DatePicker,
@@ -37,7 +40,8 @@ const ComponentList = {
   dataTable: DataTable,
   fileUploader: FileUploader,
   tag: Tag,
-  modal: Modal
+  modal: Modal,
+  breadcrumb: Breadcrumb
 };
 
 for (const componentName in ComponentList) {
@@ -66,6 +70,9 @@ const attachElements = (selector, options, Plugin) => {
 export const components = {
   dropdown: function(selector, options) {
     attachElements(selector, options, Dropdown);
+  },
+  overflow: function(selector, options) {
+    attachElements(selector, options, Overflow);
   },
   tabs: function(selector, options) {
     attachElements(selector, options, Tabs);
@@ -108,6 +115,9 @@ export const components = {
   },
   modal: function(selector, options) {
     attachElements(selector, options, Modal);
+  },
+  breadcrumb: function(selector) {
+    attachElements(selector, null, Breadcrumb);
   }
 };
 

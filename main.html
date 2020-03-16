@@ -365,9 +365,16 @@
             <!-- Overflow Menu -->
             <section id="overflowmenu" class="hcl-row m-0">
                 <!-- Right Overflow Menu  -->
-                <addHTML src="./scss/components/overflow-menu/right/right.html" />
+                <div class="hcl-col-6">
+                    <p style="float: left;">Right Overflow Menu</p>
+                    <addHTML src="./scss/components/overflow-menu/right/right.html" />
+                </div>
+
                 <!-- Left Overflow Menu  -->
-                <addHTML src="./scss/components/overflow-menu/left/left.html" />
+                <div class="hcl-col-6">
+                    <p style="float: left;">Left Overflow Menu</p>
+                    <addHTML src="./scss/components/overflow-menu/left/left.html" />
+                </div>
             </section>
 
             <!-- List -->
@@ -414,9 +421,17 @@
             <!-- Dropdown -->
             <section class="m-1 p-2">
                 <!-- Top -->
-                <addHTML src="./scss/components/dropdown/top/top.html" />
+                <div class="hcl-row m-3">
+                    <div class="hcl-col">
+                        <addHTML src="./scss/components/dropdown/top/top.html" />
+                    </div>
+                </div>
                 <!-- Bottom -->
-                <addHTML src="./scss/components/dropdown/bottom/bottom.html" />
+                <div class="hcl-row m-3">
+                    <div class="hcl-col">
+                        <addHTML src="./scss/components/dropdown/bottom/bottom.html" />
+                    </div>
+                </div>
             </section>
 
             <!-- File Uploader -->
@@ -618,6 +633,8 @@
     <script src="./scss/components/date-picker/bottom/bottom.js"></script>
     <script src="./scss/components/date-picker/top/top.js"></script>
     <script src="./scss/components/tab/tab.js"></script>
+    <script src="./scss/components/overflow-menu/left/left.js"></script>
+    <script src="./scss/components/overflow-menu/right/right.js"></script>
     <script src="./scss/components/content-switcher/default/default.js"></script>
     <script src="./scss/components/content-switcher/disabled-with-icons/disabled-with-icons.js"></script>
     <script src="./scss/components/content-switcher/disabled/disabled.js"></script>
@@ -635,6 +652,7 @@
     <script src="./scss/components/tree/tree.js"></script>
     <script src="./scss/components/header/header.js"></script>
     <script src="./scss/components/tag/tag.js"></script>
+    <script src="./scss/components/breadcrumb/breadcrumb.js"></script>
 </body>
 
 </html>
