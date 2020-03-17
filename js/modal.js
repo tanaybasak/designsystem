@@ -3,9 +3,10 @@ import { PREFIX } from './utils/config';
 class Modal {
   constructor(element, options) {
     this.element = element;
+
     this.state = {
       isOpen: false,
-      keyboard: element.getAttribute('data-keyboard') === 'true',
+      keyboard: !(element.getAttribute('data-keyboard') === 'false'),
       ...options
     };
   }
@@ -84,7 +85,7 @@ class Modal {
     handleDataBinding('modal', function(element) {
       return new Modal(element, {
         isOpen: true,
-        keyboard: element.getAttribute('data-keyboard') === 'true'
+        keyboard: !(element.getAttribute('data-keyboard') === 'false')
       });
     });
   };
