@@ -1,15 +1,21 @@
-import { PREFIX } from './utils/config';
-
 class Toggle {
-  constructor(element, options) {
+  constructor(element) {
     this.element = element;
-    this.state = {
-      ...options
-    };
   }
 
+  keyDownOnToggle = e => {
+    const key = e.which || e.keyCode;
+    if (key === 13 || key === 37 || key === 38 || key === 39 || key === 40) {
+      e.preventDefault();
+      e.target.click();
+    }
+  };
+
   attachEvents = () => {
-    console.log(this.element);
+    const checkbox = this.element.querySelector('input[type="checkbox"]');
+    checkbox.addEventListener('keydown', e => {
+      this.keyDownOnToggle(e);
+    });
   };
 }
 
