@@ -6,6 +6,7 @@ class Modal {
 
     this.state = {
       isOpen: false,
+      keyboard: !(element.getAttribute('data-keyboard') === 'false'),
       ...options
     };
   }
@@ -19,10 +20,11 @@ class Modal {
     );
     const firstFocusableEl = focusableEls[0];
     const lastFocusableEl = focusableEls[focusableEls.length - 1];
-
     if (event.keyCode === 27) {
-      event.preventDefault();
-      this.hideModal(modal);
+      if (this.state.keyboard) {
+        event.preventDefault();
+        this.hideModal(modal);
+      }
     }
 
     const isTabPressed = e.key === 'Tab' || e.keyCode === '9';
@@ -81,7 +83,10 @@ class Modal {
 
   static handleDataAPI = () => {
     handleDataBinding('modal', function(element) {
-      return new Modal(element, { isOpen: true });
+      return new Modal(element, {
+        isOpen: true,
+        keyboard: !(element.getAttribute('data-keyboard') === 'false')
+      });
     });
   };
 }
