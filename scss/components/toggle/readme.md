@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Toggle
 
@@ -12,7 +11,7 @@ Example of default
 
 Example of small 
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -27,7 +26,7 @@ Example of small
 - Small toggles are more compact in size, therefore they can be used in use cases such as data tables.
 
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -35,7 +34,7 @@ Toggle labels should be set in sentence case, with only the first word in a phra
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

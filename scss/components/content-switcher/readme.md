@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Content Switcher
 
@@ -20,7 +19,7 @@ Example of disabled
 
 Example of disabled-with-icons
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -28,7 +27,7 @@ Example of disabled-with-icons
 * **Default selection:** The default selection is based on the usage and it  is always the first option in a switcher. 
 * **Content Switcher vs. Toggle:** The Content Switcher is used for large groups of content, as opposed to the Toggle which is meant for a “yes/no” or “on/off” binary decision. 
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -38,7 +37,7 @@ Example of disabled-with-icons
 * The text should not exceed three words. 
 * Content Switchers must have at least two options for the user to choose from. Each container that makes up the content switcher is equal in size. The width of a container is determined by the length of the longest container option text plus the 16 px / 1rem on both sides of the text.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

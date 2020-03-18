@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Modal
 
@@ -36,7 +35,7 @@ Example of danger-action
 
 Example of danger-label-action
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -58,14 +57,14 @@ Example of danger-label-action
 
 - **Modal Footer:** The footer area of a Modal typically contains either one or two buttons. Do not include three buttons in the footer of a Modal. If you need to include a “help” or other non-primary action, include it as a link in the Modal’s body.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 - Modal titles and labels should be set in sentence case. Keep all titles and labels concise and to the point. Modal labels are optional.  
   Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

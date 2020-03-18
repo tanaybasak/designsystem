@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Sidebar
 
@@ -12,7 +11,7 @@ Example of sidebar
 
 - you expect users to switch between secondary items frequently
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -50,13 +49,13 @@ A fixed Sidebar contains only links and category lists (no icons) and cannot be 
 
 - designs are for desktop only
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

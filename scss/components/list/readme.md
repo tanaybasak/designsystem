@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## List
 
@@ -12,7 +11,7 @@ Example of ordered
 
 Example of unordered
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -28,13 +27,13 @@ Arrange list items in a logical way. For example, if the list is about resource 
 
 Use list items that are grammatically parallel. For example, do not mix passive voice with active voice or declarative sentences (statements) with imperative sentences (direct command).
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

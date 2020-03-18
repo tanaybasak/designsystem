@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Data Table
 
@@ -24,7 +23,7 @@ Example of tall
 
 Example of zebra
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -45,7 +44,7 @@ All text within columns should be left-aligned, including headers. Variable nume
 
 Improve table usability by making data sortable. Clickable headers enable users to sort table data up or down. The specific attribute being sorted is accompanied by a caret icon. The caret will only appear on the column headers once that specific column is being sorted.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -53,7 +52,7 @@ There is no limit to the height of an open row; however, you must follow the pad
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

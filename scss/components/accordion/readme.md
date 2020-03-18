@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Accordion
 
@@ -12,7 +11,7 @@ Example of controlled
 
 Example of uncontrolled
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -22,7 +21,7 @@ Example of uncontrolled
 - Users may have multiple accordions open at the same time.
 - The entire header area of each title is clickable which helps them expand or collapse the content below it.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -30,7 +29,7 @@ There is no limit to the height of an open row; however, you must follow the pad
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

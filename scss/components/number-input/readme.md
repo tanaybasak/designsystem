@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Number Input
 
@@ -20,7 +19,7 @@ Example of validationNumberInput
 
 Example of disabledNumberInput
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -36,7 +35,7 @@ Example of disabledNumberInput
 
 - For **label** and **validation** guidance refer to text input (LINK).
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -60,7 +59,7 @@ Error messages appear below the input field and are always present while invalid
 
 Disabled state should have a “.not-allowed” cursor on hover.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

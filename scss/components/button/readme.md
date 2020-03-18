@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Button
 
@@ -44,7 +43,7 @@ Example of ghost
 
 Example of ghost-small
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -55,13 +54,13 @@ Example of ghost-small
 - Button labels should clearly indicate the action of the button. Use active verbs, such as **Add** or **Delete**. Use sentence-style capitalization (only the first word in a phrase and any proper nouns capitalized) and no more than three words for button labels. 
 - For sets of buttons, use specific labels, such as **Save** or **Discard**, instead of using **OK** and **Cancel**. This is particularly helpful when the user is confirming an action. 
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

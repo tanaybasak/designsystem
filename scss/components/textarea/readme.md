@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Textarea
 
@@ -16,7 +15,7 @@ Example of textarea-with-error
 
 Example of textarea-with-helpertext
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -52,7 +51,7 @@ Example of textarea-with-helpertext
 
 **Disabled state:** Textarea may appear in disabled state as per the workflow requirement.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -60,7 +59,7 @@ Text Input labels and placeholder text should be set in sentence case, with only
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

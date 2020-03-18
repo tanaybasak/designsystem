@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Radio
 
@@ -16,7 +15,7 @@ Example of horizontal-grouping
 
 Example of vertical-grouping
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -32,7 +31,7 @@ Default selection
 
 A set of Radio Buttons should default to having one option selected. Never display them without a default selection.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 

@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Pagination
 
@@ -6,7 +5,7 @@ Pagination is used for splitting up content or data into several pages, with a
 
 Example of pagination
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -18,7 +17,7 @@ Example of pagination
 
 **Items per page:** Use an inline select within the pagination bar so the user can change the amount of data displayed per page. 
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -27,7 +26,7 @@ Example of pagination
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

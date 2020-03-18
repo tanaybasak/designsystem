@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Footer
 
@@ -6,7 +5,7 @@ The purpose of a footer is to help users by adding information and navigation op
 
 Example of footer
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -20,13 +19,13 @@ Designers choose many different types of content for their footers for various r
 - Brands within the organization.
 - Customer engagement (email newsletters and social media).
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

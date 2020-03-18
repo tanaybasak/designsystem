@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Time Picker 
 
@@ -6,7 +5,7 @@ Time pickers allow users to select a single or a range of times.
 
 Example of time-picker
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -14,7 +13,7 @@ Example of time-picker
 
 - _Heading:_ If necessary, a heading can accompany a Time Picker to provide further clarity for the user. Use sentence-style capitalization (only the first word in a phrase and any proper nouns capitalized). 
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -22,7 +21,7 @@ Example of time-picker
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

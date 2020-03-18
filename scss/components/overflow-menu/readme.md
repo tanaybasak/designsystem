@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Overflow Menu
 
@@ -12,7 +11,7 @@ Example of right
 
 Example of left
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -26,7 +25,7 @@ Example of left
 
 Depending on where the Overflow Menu appears within the UI, the menu be left or right aligned so the Overflow Menu is clearly visible.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -34,7 +33,7 @@ Overflow menu text should be set in sentence case with the first letter of the f
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

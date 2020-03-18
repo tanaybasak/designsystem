@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Loading State
 
@@ -36,7 +35,7 @@ Example of tab
 
 Example of dataTable
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -44,13 +43,13 @@ Example of dataTable
 
 - Loading states themselves should not take time to load. They are better hardcoded into the initial page.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

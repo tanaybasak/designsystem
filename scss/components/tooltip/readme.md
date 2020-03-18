@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Tooltip
 
@@ -16,7 +15,7 @@ Example of definition
 
 Example of interactive
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -49,7 +48,7 @@ Example of interactive
 - Interactive tooltips appear when the user clicks on an info icon
 - They persistent until intentionally dismissed by clicking outside of the tooltip
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -58,7 +57,7 @@ Example of interactive
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

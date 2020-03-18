@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Breadcrumb
 
@@ -6,7 +5,7 @@ Breadcrumbs help you view the path of navigation or contextual relationship betw
 
 Example of breadcrumb
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -28,13 +27,13 @@ Example of breadcrumb
 
 If there are more than three levels, the home level and the last two levels are visible, with all the middle levels collapsed into ellipses and accessible from a dropdown.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

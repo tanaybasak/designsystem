@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Date Picker
 
@@ -12,7 +11,7 @@ Example of top
 
 Example of bottom
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -24,13 +23,13 @@ Example of bottom
 
 This widget allows the user choose a date with the visual aid of a calendar. Calendar widget is opened when the user clicks on the input or calendar icon (:focus) 
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

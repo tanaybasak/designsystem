@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Dropdown
 
@@ -13,7 +12,7 @@ Example of bottom
 
 Example of top
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -25,13 +24,13 @@ Example of top
 - Selecting an item from the dropdown will close the drawer and the selected option will replace the label.
 
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

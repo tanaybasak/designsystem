@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Search
 
@@ -12,7 +11,7 @@ Example of normal
 
 Example of expandable
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -48,7 +47,7 @@ Example of expandable
 
 - Highlight the search term in the results, where appropriate.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -56,7 +55,7 @@ Search text should be set in sentence case, with only the first letter of the fi
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

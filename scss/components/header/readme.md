@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Header
 
@@ -12,19 +11,19 @@ Example of header
 
 - you expect users to switch between top level pages frequently
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
 Headers contain the logo, a global search box either static or expandable, and further icons only.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

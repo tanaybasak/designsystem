@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## checkbox
 
@@ -16,7 +15,7 @@ Example of horizontal-grouping
 
 Example of vertical-grouping
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -32,13 +31,13 @@ Use clear and concise labels for checkboxes. Be explicit about the action that f
 
 Users can make a selection either by clicking on the checkbox directly or by clicking on its label.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

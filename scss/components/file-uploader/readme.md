@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## File Uploader
 
@@ -8,7 +7,7 @@ File Uploader allows the user to transfer a file or submit content of their ow
 
 Example of file-uploader
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -36,7 +35,7 @@ Developers using File Uploader will be able to use JavaScript to inject a Loadin
 
 Developers will use JavaScript to inject a “Close” button on each file that is selected to be uploaded. It is up to the developer to code the logic for removing these files individually. However, keep in mind that this kind of editing isn’t supported natively in the browser.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
@@ -46,7 +45,7 @@ The width of an uploaded file varies based on the content and layout of a design
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 

@@ -1,4 +1,3 @@
-<div id="Overview"></div>
 
 ## Spinner
 
@@ -12,7 +11,7 @@ Example of inline
 
 Example of large
 
-<div id="General-Guideline"></div>
+
 
 ### General Guidelines
 
@@ -22,13 +21,13 @@ The waiting experience is a crucial design opportunity. Although it may not be o
 
 Spinners may be scaled down if the loading experience is contextual to a certain item on the page.
 
-<div id="Spec-file"></div>
+
 
 ### Spec file
 
 Spec file should be here.
 
-<div id="Documentation"></div>
+
 
 ### Documentaion
 
