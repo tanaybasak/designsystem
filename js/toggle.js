@@ -5,9 +5,12 @@ class Toggle {
 
   keyDownOnToggle = e => {
     const key = e.which || e.keyCode;
-    if (key === 39 || key === 37) {
+    if (key === 39) {
       e.preventDefault();
-      e.target.click();
+      e.target.checked = true;
+    } else if (key === 37) {
+      e.preventDefault();
+      e.target.checked = false;
     }
   };
 
