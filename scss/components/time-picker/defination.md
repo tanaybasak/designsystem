@@ -1,0 +1,1 @@
+Time pickers allow users to select a single or a range of times. 

@@ -1,0 +1,2 @@
+- **Typography:** Tooltip labels and text should be set in sentence case.
+- **Structure:** All tooltip types have a varying height based on the amount of content they contain.
