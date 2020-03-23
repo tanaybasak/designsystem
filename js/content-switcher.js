@@ -105,6 +105,10 @@ class ContentSwitcher {
       return element.isEqualNode(item);
     });
 
+    if (ev.target.matches('button')) {
+      ev.target.focus();
+    }
+
     this.toggleSwitch(selectedIndex);
     if (this.state.onChange) {
       this.state.onChange(ev);
