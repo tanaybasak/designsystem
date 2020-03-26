@@ -38,7 +38,7 @@
         }
 
         &:focus{
-            outline: 2px solid #1E90FF;
+            outline: 2px solid $blue-7;
             outline-offset: 3px;
             z-index: 1;
         }
@@ -48,7 +48,7 @@
         }
 
         &:hover:not(:disabled) {
-            background-color: #00518F;
+            background-color: $blue-5;
             color: $white;
 
             .#{$prefix}-thumbnail {
