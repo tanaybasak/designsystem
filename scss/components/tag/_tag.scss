@@ -109,9 +109,7 @@
         }
 
         >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
-            &:hover {
-                pointer-events: none;
-            }
+            pointer-events: none;
         }
     }
 
