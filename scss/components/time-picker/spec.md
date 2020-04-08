@@ -1,0 +1,1 @@
+- Labels and headings should be set in sentence case, with only the first word in a phrase and any proper nouns capitalized. 
