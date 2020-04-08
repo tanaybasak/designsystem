@@ -4,6 +4,10 @@
     display: inline-block;
     position: relative;
     width: 100%;
+    
+    button::-moz-focus-inner {
+        border: 0;
+    }
 
     &-toggle {
         background: #efefef;
@@ -74,6 +78,7 @@
             background: rgba(70, 150, 210, .1);
         }
     }
+   
 
     &-wrapper {
         display: block;
