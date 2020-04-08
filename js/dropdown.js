@@ -128,8 +128,6 @@ class Dropdown {
         case 40: {
           if (!listItem.nextElementSibling) {
             this.focusNode(listItem.parentElement.firstElementChild);
-          } else if (listItem.nextElementSibling.disabled === true) {
-            this.focusNode(listItem.nextElementSibling.nextElementSibling);
           } else {
             this.focusNode(listItem.nextElementSibling);
           }
@@ -139,10 +137,6 @@ class Dropdown {
         case 38: {
           if (!listItem.previousElementSibling) {
             this.focusNode(listItem.parentElement.lastElementChild);
-          } else if (listItem.previousElementSibling.disabled === true) {
-            this.focusNode(
-              listItem.previousElementSibling.previousElementSibling
-            );
           } else {
             this.focusNode(listItem.previousElementSibling);
           }
@@ -213,6 +207,7 @@ class Dropdown {
             );
             this.setValue(event.target.innerText);
             this.state.selected = index;
+            dropdownBtn.focus();
             if (typeof this.state.onChange === 'function') {
               this.state.onChange(event, event.target.innerText);
               this.state.isOpen = !this.state.isOpen;
