@@ -1,0 +1,3 @@
+There is no limit to the height of an open row; however, you must follow the padding specs given below. The width of an accordion varies based on the content, layout, and page design. The chevron icon is available on the iconography library page. Avoid any text within 16px / 1rem of the accordion's sides. Additionally, include padding between labels, body copy, and separation lines to allow breathing room between elements.
+
+Spec file should be here.
