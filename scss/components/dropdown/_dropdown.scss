@@ -1,126 +1,162 @@
 @import '../../base';
 
 .#{$prefix}-dropdown {
-    display: inline-block;
-    position: relative;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+
+  button::-moz-focus-inner {
+    border: 0;
+  }
+
+  .#{$prefix}-checkbox-item {
+    &:focus {
+      text-decoration: none;
+      outline-offset: 0.7rem;
+      outline: 1px solid $blue;
+    }
+  }
+
+  &-toggle {
+    background: #efefef;
+    font-size: 0.875rem;
+    color: $dark-blue;
+    line-height: 1.125rem;
+    outline: none;
     width: 100%;
-    
-    button::-moz-focus-inner {
-        border: 0;
+    text-align: left;
+    margin: 0;
+    border-bottom: 1px solid $grey-2;
+    padding-right: 2.5rem;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 0.3rem solid $blue;
+      border-right: 0.3rem solid transparent;
+      border-bottom: 0;
+      border-left: 0.3rem solid transparent;
+      position: absolute;
+      top: 50%;
+      right: 0.875rem;
+      transform: translate(-50%, -50%);
     }
 
-    &-toggle {
-        background: #efefef;
-        font-size: .875rem;
-        color: $dark-blue;
-        line-height: 1.125rem;
-        outline: none;
-        width: 100%;
-        text-align: left;
-        margin: 0;
-        border-bottom: 1px solid $grey-2;
-        padding-right: 2.5rem;
+    &:focus {
+      outline-offset: -1px;
+      outline: 1px solid $blue;
+    }
+  }
 
-        &::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-top: .3rem solid $blue;
-            border-right: .3rem solid transparent;
-            border-bottom: 0;
-            border-left: .3rem solid transparent;
-            position: absolute;
-            top: 50%;
-            right: .875rem;
-            transform: translate(-50%, -50%);
-        }
+  &-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-        &:focus {
-            outline-offset: -1px;
-            outline: 1px solid $blue;
-          }
+  &-container {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    will-change: transform;
+    z-index: 2;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: $white;
+    background-clip: padding-box;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid $grey-2;
+    width: 100%;
+    display: none;
+  }
+
+  &-item {
+    height: 2.5rem;
+    @include getFontWeight('regular');
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    font-size: 0.875rem;
+    color: $dark-blue;
+    border: 1px solid transparent;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1;
+
+    &:hover {
+      background: rgba(70, 150, 210, 0.1);
+    }
+  }
+
+  &-wrapper {
+    display: block;
+    width: 100%;
+    padding: 3px 20px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.5125rem 1rem;
+    color: $black;
+    text-decoration: none;
+
+    text-overflow: ellipsis;
+
+    &:hover {
+      text-decoration: none;
     }
 
-    &-container {
-        position: absolute;
-        top: 2.5rem;
-        left: 0;
-        will-change: transform;
-        z-index: 2;
-        font-size: 1rem;
-        color: #212529;
-        text-align: left;
-        list-style: none;
-        background-color: $white;
-        background-clip: padding-box;
-        box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .1);
-        border-bottom: 1px solid $grey-2;
-        width: 100%;
-        display: none;
+    &:focus {
+      text-decoration: none;
+      outline-offset: -1px;
+      outline: 1px solid $blue;
+    }
+  }
+
+  &-option {
+    display: block;
+    width: 100%;
+    padding: 3px 20px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.7625rem 1rem;
+    color: $black;
+    text-decoration: none;
+
+    text-overflow: ellipsis;
+
+    &:hover {
+      text-decoration: none;
     }
 
-    &-item {
-        height: 2.5rem;
-        @include getFontWeight('regular');
-        white-space: nowrap;
-        background-color: transparent;
-        border: 0;
-        font-size: .875rem;
-        color: $dark-blue;
-        border: 1px solid transparent;
-        max-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1;
-
-        &:hover {
-            background: rgba(70, 150, 210, .1);
-        }
+    &:focus {
+      text-decoration: none;
+      outline-offset: -1px;
+      outline: 1px solid $blue;
     }
-   
+  }
 
-    &-wrapper {
-        display: block;
-        width: 100%;
-        padding: 3px 20px;
-        cursor: pointer;
-        overflow: hidden;
-        white-space: nowrap;
-        padding: 0.5125rem 1rem;
-        color: $black;
-        text-decoration: none;
-    
-        text-overflow: ellipsis;
-    
-        &:hover {
-          text-decoration: none;
-        }
-    
-        &:focus {
-          text-decoration: none;
-          outline-offset: -1px;
-          outline: 1px solid $blue;
-        }
+  &-item-selected {
+    display: none;
+  }
+
+  &-open {
+    .#{$prefix}-dropdown-container {
+      display: block;
     }
+  }
 
-    &-item-selected {
-        display: none;
+  &.#{$prefix}-dropdown-top {
+    .#{$prefix}-dropdown-container {
+      bottom: 2.5rem;
+      top: inherit;
+      border: 0;
+      border-top: 1px solid #8c8c8c;
     }
-
-    &-open {
-        .#{$prefix}-dropdown-container {
-            display: block;
-        }
-    }
-
-    &.#{$prefix}-dropdown-top {
-        .#{$prefix}-dropdown-container {
-            bottom: 2.5rem;
-            top: inherit;
-            border: 0;
-            border-top: 1px solid #8c8c8c;
-        }
-    }
-
+  }
 }

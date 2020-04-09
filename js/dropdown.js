@@ -13,6 +13,7 @@ class Dropdown {
       isOpen: false,
       position: 'bottom',
       selected: 0,
+      type: 'singleselect',
       onChange: NOOP,
       ...options
     };
@@ -22,6 +23,10 @@ class Dropdown {
 
   setValue = value => {
     this.toggle.innerText = value;
+  };
+
+  setMultiSelectVal = value => {
+    this.element.querySelector(`.${PREFIX}-tag-text`).innerText = value;
   };
 
   toggleState = state => {
@@ -174,6 +179,8 @@ class Dropdown {
       `.${PREFIX}-dropdown-container`
     );
 
+    const tag = this.element.querySelector(`.${PREFIX}-tag-primary`);
+
     if (dropdownBtn) {
       dropdownBtn.addEventListener('keypress', function(event) {
         if (event.keyCode === 13) {
@@ -197,6 +204,19 @@ class Dropdown {
         dropdownBtn.focus();
       });
 
+      if (tag) {
+        this.element
+          .querySelector(`.${PREFIX}-close`)
+          .addEventListener('click', event => {
+            event.stopPropagation();
+            tag.classList.add(`hidden`);
+            const list = dropdownMenu.querySelectorAll('input:checked');
+            list.forEach(item => {
+              item.checked = false;
+            });
+          });
+      }
+
       this.element
         .querySelectorAll(`.${PREFIX}-dropdown-item`)
         .forEach((item, index) => {
@@ -205,13 +225,27 @@ class Dropdown {
               event.target,
               `.${PREFIX}-dropdown-item-selected`
             );
-            this.setValue(event.target.innerText);
             this.state.selected = index;
             dropdownBtn.focus();
+            const input = item.querySelector('input');
+            if (this.state.type === 'multiselect') {
+              input.checked = !input.checked;
+              const list = dropdownMenu.querySelectorAll('input:checked');
+              if (list.length) {
+                this.setMultiSelectVal(list.length);
+                tag.classList.remove(`hidden`);
+              } else {
+                tag.classList.add(`hidden`);
+              }
+            } else {
+              this.setValue(event.target.innerText);
+            }
             if (typeof this.state.onChange === 'function') {
               this.state.onChange(event, event.target.innerText);
-              this.state.isOpen = !this.state.isOpen;
-              this.toggleState(this.state.isOpen);
+              if (this.state.type === 'singleselect') {
+                this.state.isOpen = !this.state.isOpen;
+                this.toggleState(this.state.isOpen);
+              }
             }
           });
         });
@@ -220,7 +254,10 @@ class Dropdown {
 
   static handleDataAPI = () => {
     handleDataBinding('dropdown', function(element) {
-      return new Dropdown(element, { isOpen: true });
+      return new Dropdown(element, {
+        isOpen: true,
+        type: element.getAttribute('data-type')
+      });
     });
   };
 }
