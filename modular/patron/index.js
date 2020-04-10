@@ -1,4 +1,5 @@
 import '../../scss/main.scss';
+import 'patron-icon/dist/patron-font.css';
 import ContentSwitcher from '../../js/content-switcher';
 import Dropdown from '../../js/dropdown';
 import Sidebar from '../../js/sidebar';
