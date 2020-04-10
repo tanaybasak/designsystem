@@ -19,9 +19,9 @@
       flex-direction: row;
       align-items: center;
 
-      &:hover {
-        background-color: rgba(70, 150, 210, 0.1);
-      }
+      //   &:hover {
+      //     background-color: rgba(70, 150, 210, 0.1);
+      //   }
 
       & > i {
         margin-right: 0.5rem;
@@ -70,7 +70,13 @@
         width: 100%;
 
         .treenode-overflow {
-          padding: 0 10px;
+          .hcl-overflow-container > span {
+            padding: 0 10px;
+          }
+
+          &:hover {
+            background-color: rgba(70, 150, 210, 0.1);
+          }
         }
 
         .treenode-content-wrapper {
@@ -138,6 +144,10 @@
               height: 24px;
               justify-content: center;
             }
+          }
+
+          &:hover {
+            background-color: rgba(70, 150, 210, 0.1);
           }
         }
       }
