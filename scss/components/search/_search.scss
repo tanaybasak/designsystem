@@ -11,6 +11,14 @@ $search-icon-size: 1rem;
     padding: 0;
     height: $search-height;
 
+    >* {
+        &:disabled {
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+    }
+
     &.show {
         direction: rtl;
 
@@ -45,12 +53,6 @@ $search-icon-size: 1rem;
                 fill: $white;
             }
         }
-
-        &:disabled {
-            &:hover {
-                cursor: not-allowed;
-            }
-        }
     }
 
     .#{$prefix}-search-input {
@@ -69,12 +71,6 @@ $search-icon-size: 1rem;
         &:focus {
             outline: 0.0625rem solid $blue;
             outline-offset: -1px;
-        }
-
-        &:disabled {
-            &:hover {
-                cursor: not-allowed;
-            }
         }
 
         &::-ms-clear,
