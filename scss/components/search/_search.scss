@@ -45,6 +45,12 @@ $search-icon-size: 1rem;
                 fill: $white;
             }
         }
+
+        &:disabled {
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
     }
 
     .#{$prefix}-search-input {
