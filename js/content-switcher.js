@@ -115,30 +115,61 @@ class ContentSwitcher {
     }
   };
 
-  keyDownOnContextSwitch = e => {
-    const key = e.which || e.keyCode;
-    const nodeElement = e.currentTarget;
+  focusNode(currentItem, direction = 'next') {
+    const nextElem = currentItem.nextElementSibling;
+    const prevElem = currentItem.previousElementSibling;
+    if (direction === 'next') {
+      if (!nextElem) {
+        if (
+          currentItem.parentElement.firstElementChild.hasAttribute(
+            'disabled'
+          )
+        ) {
+          this.focusNode(currentItem.parentElement.firstElementChild);
+        } else {
+          currentItem.parentElement.firstElementChild.focus();
+        }
+      } else if (nextElem && nextElem.hasAttribute('disabled')) {
+        this.focusNode(nextElem);
+      } else {
+        if (nextElem) {
+          nextElem.focus();
+          return false;
+        }
+      }
+    } else if (direction === 'previous') {
+      if (!prevElem) {
+        if (
+          currentItem.parentElement.lastElementChild.hasAttribute(
+            'disabled'
+          )
+        ) {
+          this.focusNode(currentItem.parentElement.lastElementChild, 'previous');
+        } else {
+          currentItem.parentElement.lastElementChild.focus();
+        }
+      } else if (prevElem && prevElem.hasAttribute('disabled')) {
+        this.focusNode(prevElem, 'previous');
+      } else {
+        if (prevElem) {
+          prevElem.focus();
+          return false;
+        }
+      }
+    }
+  }
 
+  keyDownOnContextSwitch = (e) => {
+    const key = e.which || e.keyCode;
+    const currentElem = e.currentTarget;
     switch (key) {
       case 39: {
-        if (!nodeElement.nextElementSibling) {
-          nodeElement.parentElement.firstElementChild.focus();
-        } else if (nodeElement.nextElementSibling.disabled === true) {
-          nodeElement.nextElementSibling.nextElementSibling.focus();
-        } else {
-          nodeElement.nextElementSibling.focus();
-        }
+        this.focusNode(currentElem, 'next');
         e.preventDefault();
         break;
       }
       case 37: {
-        if (!nodeElement.previousElementSibling) {
-          nodeElement.parentElement.lastElementChild.focus();
-        } else if (nodeElement.previousElementSibling.disabled === true) {
-          nodeElement.previousElementSibling.previousElementSibling.focus();
-        } else {
-          nodeElement.previousElementSibling.focus();
-        }
+        this.focusNode(currentElem, 'previous');
         e.preventDefault();
         break;
       }
