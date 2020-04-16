@@ -1,0 +1,1 @@
+The purpose of a footer is to help users by adding information and navigation options relevant to all pages common at the bottom of web pages.
