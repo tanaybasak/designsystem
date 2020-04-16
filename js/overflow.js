@@ -99,7 +99,7 @@ class Overflow {
         } else {
           listItem.parentElement.lastElementChild.children[0].focus();
         }
-      } else if (prevElem && prevElem.hasAttribute('disabled')) {
+      } else if (prevElem && prevElem.children[0].hasAttribute('disabled')) {
         this.focusNode(prevElem, 'previous');
       } else {
         if (prevElem) {
@@ -191,6 +191,7 @@ class Overflow {
             if (typeof this.state.onChange === 'function') {
               this.state.isOpen = !this.state.isOpen;
               this.toggleState(this.state.isOpen);
+              icon.focus();
               this.state.onChange(event, event.target.innerText);
             }
           });
