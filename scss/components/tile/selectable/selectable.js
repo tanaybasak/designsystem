@@ -1,1 +1,1 @@
-window.patron.tile('.hcl-tile-selectable');
+window.patron.tile('#hcl-tile-select');

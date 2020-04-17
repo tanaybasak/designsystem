@@ -7,6 +7,7 @@ class Tile {
 
   attachEvents = () => {
     this.element.addEventListener('keydown', e => {
+      e.preventDefault();
       const input = this.element.querySelector('input[type="checkbox"]');
       const clickTag = this.element.querySelector(`#${PREFIX}-tile-clickTag`);
       const key = e.which || e.keyCode;
