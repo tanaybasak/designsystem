@@ -1,0 +1,2 @@
+* data-content-switcher for wrapper Content switcher elements. Role can also be specified accepting value as &#34;tablist&#34;. 
+* data-target must be specified for each Tab with a selector as string.<br /> **Example:** data-target=&#34;.filtered-items&#34; 

@@ -1,0 +1,1 @@
+A Data Table displays a list of information for the user to view or edit, while maintaining that the data is readable, scannable, and easily comparable. The basic data table is shipped with a base style, which includes borders, multi-select, hover state and sorting.

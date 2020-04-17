@@ -19,7 +19,7 @@ import Tag from '../../js/tag';
 import Modal from '../../js/modal';
 import Breadcrumb from '../../js/breadcrumb';
 import Tile from '../../js/tile';
-
+import Toggle from '../../js/toggle';
 import { isElement } from '../../js/utils/dom';
 
 // Demo Scripts
@@ -43,7 +43,8 @@ const ComponentList = {
   tag: Tag,
   modal: Modal,
   breadcrumb: Breadcrumb,
-  tile: Tile
+  tile: Tile,
+  toggle: Toggle
 };
 
 for (const componentName in ComponentList) {
@@ -123,6 +124,9 @@ export const components = {
   },
   tile: function(selector) {
     attachElements(selector, null, Tile);
+  },
+  toggle: function(selector) {
+    attachElements(selector, null, Toggle);
   }
 };
 
