@@ -66,7 +66,12 @@ class Tabs {
       e.preventDefault();
       this.focusNode(e.target, 'next');
     }
-  };
+
+    if (e.keyCode === 13 || e.keyCode === 32) { // space or Enter
+      e.preventDefault();
+      e.target.click();
+    }
+  }
 
   focusNode(node, direction = 'next') {
     if (direction === 'next') {
