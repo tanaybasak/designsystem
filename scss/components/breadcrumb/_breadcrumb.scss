@@ -64,6 +64,9 @@ $breadcrumb-margin: 1rem;
                 text-align: left;
                 display: inline-block;
             }
+            &:hover {
+                background: rgba(70,150,210,0.10);
+            }
         }
 
         .#{$prefix}-ellipsis {
