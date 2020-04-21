@@ -54,6 +54,18 @@ $breadcrumb-margin: 1rem;
             color: var(--dark-20);
         }
 
+        .#{$prefix}-overflow-option {
+            >.#{$prefix}-link {
+                padding: 0.5rem;
+                width: 100%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                text-align: left;
+                display: inline-block;
+            }
+        }
+
         .#{$prefix}-ellipsis {
             width: 1.5rem;
             color: var(--blue);

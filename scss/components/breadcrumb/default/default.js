@@ -1,1 +1,1 @@
-window.patron.breadcrumb('.hcl-breadcrumb');
+window.patron.breadcrumb('#breadcrumb');
