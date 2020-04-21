@@ -6,8 +6,8 @@
  *******************************************************************
  */
 
- @import '../../base';
- 
+@import '../../base';
+
 $breadcrumb-margin: 1rem;
 
 .#{$prefix}-breadcrumb {
@@ -42,6 +42,33 @@ $breadcrumb-margin: 1rem;
             color: $dark-blue;
             @include getFontWeight('semibold');
             @include getTextDecorationLine('underline');
+        }
+    }
+
+    .#{$prefix}-overflow {
+        margin-right: 1rem;
+
+        &::after {
+            content: '/';
+            margin-left: 0.5rem;
+            color: var(--dark-20);
+        }
+
+        .#{$prefix}-ellipsis {
+            width: 1.5rem;
+            color: var(--blue);
+
+            &::after {
+                letter-spacing: 0.2rem;
+            }
+        }
+
+        .#{$prefix}-overflow-menu {
+            left: -0.72rem;
+        }
+
+        :hover {
+            cursor: pointer;
         }
     }
 }
