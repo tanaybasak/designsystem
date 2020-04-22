@@ -7,9 +7,11 @@ class Breadcrumb {
     this.element = element;
     this.selectors = {
       items: `.${PREFIX}-breadcrumb-item>.${PREFIX}-link`,
-      activeItems: `.${PREFIX}-breadcrumb-item.${PREFIX}-breadcrumb-item-active>.${PREFIX}-link`,
+      activeItems: `.${PREFIX}-breadcrumb-item.${PREFIX}-breadcrumb-item-active>.${PREFIX}-link,
+       .${PREFIX}-overflow-option.${PREFIX}-breadcrumb-item-active>.${PREFIX}-link`,
       overflowContainer: `.${PREFIX}-ellipsis`,
-      overflowMenu: `.${PREFIX}-overflow-menu`
+      overflowMenu: `.${PREFIX}-overflow-menu`,
+      overflowMenuItems: `.${PREFIX}-overflow-menu .${PREFIX}-link`
     };
     this.state = {
       isOpen: false
@@ -30,12 +32,15 @@ class Breadcrumb {
         `${PREFIX}-breadcrumb-item-active`
       );
     }
+    this.state.isOpen = false;
+    this.toggleState(this.state.isOpen);
   };
 
   clickListener = event => {
+    const { currentTarget } = event;
     event.preventDefault();
     event.stopPropagation();
-    this.selectNewActiveItem(event.currentTarget);
+    this.selectNewActiveItem(currentTarget);
   };
 
   clickOverflowListener = event => {
@@ -45,7 +50,7 @@ class Breadcrumb {
     overflowmenu.classList.toggle(`${PREFIX}-hidden`);
     this.state.isOpen = !(Array.from(overflowmenu.classList).indexOf(`${PREFIX}-hidden`) > -1);
     this.toggleState(this.state.isOpen);
-    this.element.querySelector(`.${PREFIX}-overflow-option .${PREFIX}-link`).focus();
+    // this.element.querySelector(`.${PREFIX}-overflow-option .${PREFIX}-link`).focus();
   }
 
   keydownOverflowListener = event => {
@@ -87,6 +92,7 @@ class Breadcrumb {
   attachEvents = () => {
     const items = this.element.querySelectorAll(this.selectors.items);
     const ellipsisHandle = this.element.querySelector(this.selectors.overflowContainer);
+    const overflowmenuItems = Array.from(this.element.querySelectorAll(this.selectors.overflowMenuItems));
     (items || []).forEach(item => {
       item.addEventListener('click', this.clickListener.bind(this));
     });
@@ -94,6 +100,9 @@ class Breadcrumb {
       ellipsisHandle.addEventListener('click', this.clickOverflowListener.bind(this));
       ellipsisHandle.addEventListener('keydown', this.keydownOverflowListener.bind(this));
     }
+    (overflowmenuItems || []).forEach(item => {
+      item.addEventListener('click', this.clickListener.bind(this));
+    });
   };
 }
 export default Breadcrumb;
