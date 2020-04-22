@@ -79,11 +79,8 @@ class Breadcrumb {
     }
   }
 
-  handleClick = e => {
+  handleClick = () => {
     if (this.element) {
-      if (e && this.element.contains(e.target)) {
-        return;
-      }
       this.state.isOpen = !this.state.isOpen;
       this.toggleState(this.state.isOpen);
     }
