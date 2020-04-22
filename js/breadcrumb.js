@@ -86,13 +86,13 @@ class Breadcrumb {
 
   attachEvents = () => {
     const items = this.element.querySelectorAll(this.selectors.items);
-    const overflowItem = this.element.querySelector(this.selectors.overflowContainer);
+    const ellipsisHandle = this.element.querySelector(this.selectors.overflowContainer);
     (items || []).forEach(item => {
       item.addEventListener('click', this.clickListener.bind(this));
     });
-    if (overflowItem) {
-      overflowItem.addEventListener('click', this.clickOverflowListener.bind(this));
-      overflowItem.addEventListener('keydown', this.keydownOverflowListener.bind(this));
+    if (ellipsisHandle) {
+      ellipsisHandle.addEventListener('click', this.clickOverflowListener.bind(this));
+      ellipsisHandle.addEventListener('keydown', this.keydownOverflowListener.bind(this));
     }
   };
 }
