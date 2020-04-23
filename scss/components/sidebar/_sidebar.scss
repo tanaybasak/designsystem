@@ -66,7 +66,7 @@ $active-link-bd: #0066b3;
       width: 0;
       margin: 0;
       //border-radius: 50%;
-      font-size: 30px;
+      
       color: white;
       transition: all 220ms ease-in-out;
     }
@@ -190,6 +190,7 @@ $active-link-bd: #0066b3;
     .hcl-sidebar-title {
       &-icon {
         width: 30px;
+        font-size: 30px;
         margin: 10px;
       }
 
