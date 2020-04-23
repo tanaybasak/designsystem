@@ -66,7 +66,8 @@ $active-link-bd: #0066b3;
       width: 0;
       margin: 0;
       //border-radius: 50%;
-      background-color: $title-icon-bg;
+      font-size: 30px;
+      color: white;
       transition: all 220ms ease-in-out;
     }
 
@@ -90,6 +91,7 @@ $active-link-bd: #0066b3;
       width: 1.5rem;
     margin: 13px 10px;
     transition: transform 220ms ease-in-out;
+    fill: white;
     //   position: relative;
       display: flex;
     //   justify-content: center;
@@ -121,7 +123,9 @@ $active-link-bd: #0066b3;
         .hcl-sidebar-icon {
           width: 14px;
           height: 14px;
+          font-size: 14px;
           margin: 13px 15px;
+          color: white;
         }
 
         .hcl-sidebar-link {
@@ -331,6 +335,8 @@ $active-link-bd: #0066b3;
             .hcl-sidebar-icon {
               width: 18px;
               height: 18px;
+              font-size: 18px;
+              
               margin: 21px 0 21px 15px;
             }
 
