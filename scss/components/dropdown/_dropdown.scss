@@ -57,6 +57,8 @@
         border-bottom: 1px solid $grey-2;
         width: 100%;
         display: none;
+        max-height: 12rem;
+        overflow:auto;
     }
 
     &-item {
@@ -111,6 +113,10 @@
     &-open {
         .#{$prefix}-dropdown-container {
             display: block;
+        }
+        &>.#{$prefix}-dropdown-toggle::after {
+          border-bottom: 0.3rem solid $blue;
+          border-top: 0;
         }
     }
 
