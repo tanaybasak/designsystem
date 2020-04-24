@@ -198,6 +198,33 @@ class Pagination {
     }
   };
 
+  handleKeydown = e => {
+    const { target } = e;
+    const keycode = e.keycode || e.which;
+    const optionsLen = target.options.length;
+    if (keycode === 37) { // PREVIOUS
+      e.preventDefault();
+      const selIndex = target.selectedIndex;
+      if (selIndex === 0) { // FIRST ELEMENT
+        target.selectedIndex = optionsLen - 1;
+      } else { // OTHERS
+        target.selectedIndex--;
+      }
+      this.handleChange(e);
+    } else if (keycode === 39) { // NEXT
+      e.preventDefault();
+      if (target.options) {
+        const selIndex = target.selectedIndex;
+        if ((optionsLen - 1) === selIndex) { // LAST ELEMENT
+          target.selectedIndex = 0;
+        } else { // OTHERS
+          target.selectedIndex++;
+        }
+        this.handleChange(e);
+      }
+    }
+  }
+
   handleChange = e => {
     // Drop-Down Change
     const { target } = e;
@@ -387,7 +414,9 @@ class Pagination {
     pageForward.addEventListener('click', this.handleNavigation);
     PageBackward.addEventListener('click', this.handleNavigation);
     pageNumber.addEventListener('change', this.handleChange);
+    pageNumber.addEventListener('keydown', this.handleKeydown);
     pageItems.addEventListener('change', this.handleChange);
+    pageItems.addEventListener('keydown', this.handleKeydown);
   };
 
   static handleDataAPI = () => {
