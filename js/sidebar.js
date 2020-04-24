@@ -78,7 +78,7 @@ class Sidebar {
       const sidebarLink = getClosest(event.target, 'a');
       if (
         !this.isDescendant(this.element, event.target) ||
-        (sidebarLink && sidebarLink.classList.contains('hcl-sidebar-item'))
+        (sidebarLink && sidebarLink.classList.contains(`${PREFIX}-sidebar-item`))
       ) {
         document.removeEventListener('click', handler);
         if (this.state.expanded) {
@@ -126,7 +126,7 @@ class Sidebar {
   };
 
   focusNode = node => {
-    if (node.classList.contains('hcl-sidebar-category')) {
+    if (node.classList.contains(`${PREFIX}-sidebar-category`)) {
       node.firstElementChild.focus();
     }
   };
