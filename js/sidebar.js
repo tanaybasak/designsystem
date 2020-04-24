@@ -1,4 +1,5 @@
 import { PREFIX } from './utils/config';
+import getClosest from './utils/get-closest';
 
 class Sidebar {
   constructor(element, options) {
@@ -74,7 +75,11 @@ class Sidebar {
 
   hideSidebarDocumentClick = () => {
     const handler = event => {
-      if (!this.isDescendant(this.element, event.target)) {
+      const sidebarLink = getClosest(event.target, 'a');
+      if (
+        !this.isDescendant(this.element, event.target) ||
+        (sidebarLink && sidebarLink.classList.contains('hcl-sidebar-item'))
+      ) {
         document.removeEventListener('click', handler);
         if (this.state.expanded) {
           this.element.classList.remove('expanded');
