@@ -13,7 +13,7 @@ class Dropdown {
       isOpen: false,
       position: 'bottom',
       selected: 0,
-      type: 'singleselect',
+      type: 'single',
       onChange: NOOP,
       ...options
     };
@@ -226,9 +226,8 @@ class Dropdown {
               `.${PREFIX}-dropdown-item-selected`
             );
             this.state.selected = index;
-            dropdownBtn.focus();
             const input = item.querySelector('input');
-            if (this.state.type === 'multiselect') {
+            if (this.state.type === 'multi') {
               input.checked = !input.checked;
               const list = dropdownMenu.querySelectorAll('input:checked');
               if (list.length) {
@@ -238,6 +237,7 @@ class Dropdown {
                 tag.classList.add(`hidden`);
               }
             } else {
+              dropdownBtn.focus();
               this.setValue(event.target.innerText);
             }
             if (typeof this.state.onChange === 'function') {

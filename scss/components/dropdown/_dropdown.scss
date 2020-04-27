@@ -17,6 +17,10 @@
     }
   }
 
+  .#{$prefix}-tag-primary {
+    margin-right: 1rem;
+  }
+
   &-toggle {
     background: #efefef;
     font-size: 0.875rem;
@@ -24,7 +28,7 @@
     line-height: 1.125rem;
     outline: none;
     width: 100%;
-    text-align: left;
+    justify-content: left;
     margin: 0;
     border-bottom: 1px solid $grey-2;
     padding-right: 2.5rem;
@@ -148,6 +152,9 @@
   &-open {
     .#{$prefix}-dropdown-container {
       display: block;
+    }
+    &>.#{$prefix}-dropdown-toggle {
+      border-bottom:0;
     }
   }
 
