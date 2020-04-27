@@ -2,8 +2,7 @@
 
 .#{$prefix}-timepicker {
     display: flex;
-    align-items: flex-end;
-
+    flex-direction: column;
     &-label {
         font-family: inherit;
         font-size: .875rem;
@@ -16,7 +15,7 @@
 
     &-input {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         border-bottom: .0625rem solid transparent;
     }
 
