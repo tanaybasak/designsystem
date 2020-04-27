@@ -2,6 +2,7 @@ import { PREFIX } from './utils/config';
 import { NOOP } from './utils/functions';
 import handleDataBinding from './utils/data-api';
 import getClosest from './utils/get-closest';
+import focusNode from './utils/traverse-focus';
 
 class ContentSwitcher {
   constructor(element, options) {
@@ -115,61 +116,17 @@ class ContentSwitcher {
     }
   };
 
-  focusNode(currentItem, direction = 'next') {
-    const nextElem = currentItem.nextElementSibling;
-    const prevElem = currentItem.previousElementSibling;
-    if (direction === 'next') {
-      if (!nextElem) {
-        if (
-          currentItem.parentElement.firstElementChild.hasAttribute(
-            'disabled'
-          )
-        ) {
-          this.focusNode(currentItem.parentElement.firstElementChild);
-        } else {
-          currentItem.parentElement.firstElementChild.focus();
-        }
-      } else if (nextElem && nextElem.hasAttribute('disabled')) {
-        this.focusNode(nextElem);
-      } else {
-        if (nextElem) {
-          nextElem.focus();
-          return false;
-        }
-      }
-    } else if (direction === 'previous') {
-      if (!prevElem) {
-        if (
-          currentItem.parentElement.lastElementChild.hasAttribute(
-            'disabled'
-          )
-        ) {
-          this.focusNode(currentItem.parentElement.lastElementChild, 'previous');
-        } else {
-          currentItem.parentElement.lastElementChild.focus();
-        }
-      } else if (prevElem && prevElem.hasAttribute('disabled')) {
-        this.focusNode(prevElem, 'previous');
-      } else {
-        if (prevElem) {
-          prevElem.focus();
-          return false;
-        }
-      }
-    }
-  }
-
   keyDownOnContextSwitch = (e) => {
     const key = e.which || e.keyCode;
     const currentElem = e.currentTarget;
     switch (key) {
       case 39: {
-        this.focusNode(currentElem, 'next');
+        focusNode(currentElem, 'next');
         e.preventDefault();
         break;
       }
       case 37: {
-        this.focusNode(currentElem, 'previous');
+        focusNode(currentElem, 'previous');
         e.preventDefault();
         break;
       }
