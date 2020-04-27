@@ -242,7 +242,7 @@ class Dropdown {
             }
             if (typeof this.state.onChange === 'function') {
               this.state.onChange(event, event.target.innerText);
-              if (this.state.type === 'singleselect') {
+              if (this.state.type === 'single') {
                 this.state.isOpen = !this.state.isOpen;
                 this.toggleState(this.state.isOpen);
               }
