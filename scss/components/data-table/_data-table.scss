@@ -76,6 +76,12 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
     tbody tr:hover {
       background-color: $table-header-bg;
       border: 0.0625rem solid #0066b3;
+
+      .overflow-onhover {
+        .hcl-overflow-container {
+          visibility: visible;
+        }
+      }
     }
 
     .header-text-wrapper,
@@ -88,13 +94,14 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       align-items: center;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
-    .hcl-sorting {
+    .#{$prefix}-sorting {
       margin-left: 0.625rem;
     }
 
-    .hcl-overflow-container {
+    .#{$prefix}-overflow-container {
       position: absolute;
     }
 
@@ -109,23 +116,33 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       align-items: center;
     }
 
+    .overflow-onhover {
+      .hcl-overflow-container {
+        visibility: hidden;
+      }
+
+      .hcl-overflow-container.hcl-active {
+        visibility: visible;
+      }
+    }
+
     .header-text-wrapper.desc {
-      .hcl-sorting {
+      .#{$prefix}-sorting {
         transform: rotate(180deg);
         transition: all 0.3s ease-in-out;
       }
     }
 
-    .hcl-expand-row {
+    .#{$prefix}-expand-row {
       transform: rotate(270deg);
       transition: all 0.3s ease-in-out;
     }
 
-    .hcl-collapse-row {
+    .#{$prefix}-collapse-row {
       transition: all 0.3s ease-in-out;
     }
 
-    .hcl-sorting {
+    .#{$prefix}-sorting {
       transition: all 0.3s ease-in-out;
     }
 
@@ -134,7 +151,7 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       border: 0.0625rem solid $primary !important;
     }
 
-    .hcl-expanded-row td {
+    .#{$prefix}-expanded-row td {
       height: auto;
       padding: 1rem;
     }
@@ -174,10 +191,10 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
     }
   }
 
-  &.hcl-data-table-borderless {
+  &.#{$prefix}-data-table-borderless {
     border: 0.0625rem solid transparent;
 
-    .hcl-data-table-zebra tr {
+    .#{$prefix}-data-table-zebra tr {
       border-bottom-color: transparent;
     }
 
