@@ -1130,8 +1130,7 @@
         secondary-disabled
     </span>
 </button>
-<button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0"
-    disabled>
+<button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0" disabled>
     <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
     <span class="hcl-tag-text">
         secondary-thumbnail-closeable-disabled
@@ -1523,8 +1522,7 @@
         secondary-disabled
     </span>
 </button>
-<button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0"
-    disabled>
+<button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0" disabled>
     <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
     <span class="hcl-tag-text">
         secondary-thumbnail-closeable-disabled
@@ -2073,202 +2071,271 @@
 
             <!-- Data table -->
             <section class="m-1 p-2">
-                <!-- borderless -->
-                <table class="hcl-data-table hcl-data-table-borderless">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Protocol</th>
-      <th>Port</th>
-      <th>Rule</th>
-      <th>Attached Groups</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Load Balancer 1</td>
-      <td>HTTP</td>
-      <td>80</td>
-      <td>Round Robin</td>
-      <td>Maureen&#x27;s VM Groups</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>Load Balancer 2</td>
-      <td>HTTP</td>
-      <td>80</td>
-      <td>Round Robin</td>
-      <td>Maureen&#x27;s VM Groups</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>Load Balancer 3</td>
-      <td>HTTP</td>
-      <td>80</td>
-      <td>Round Robin</td>
-      <td>Maureen&#x27;s VM Groups</td>
-      <td>Active</td>
-    </tr>
-  </tbody>
-</table>
+                <div class="hcl-col-12 mb-4">
+                    <!-- borderless -->
+                    <div class="hcl-table-wrapper hcl-data-table-borderless">
+  <table class="hcl-data-table">
+    <thead>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 1</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 2</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 3</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-                <!-- compact -->
-                <table class="hcl-data-table hcl-data-table-compact">
+                </div>
+                <div class="hcl-col-12 mb-4">
+                    <!-- compact -->
+                    <div class="hcl-table-wrapper">
+  <table class="hcl-data-table hcl-data-table-compact">
     <thead>
-        <tr>
-            <th >Name</th>
-            <th>Protocol</th>
-            <th>Port</th>
-            <th>Rule</th>
-            <th>Attached Groups</th>
-            <th>Status</th>
-        </tr>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Load Balancer 1</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 2</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 3</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 1</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 2</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 3</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
     </tbody>
-</table>
-                <!-- default -->
-                <table class="hcl-data-table">
+  </table>
+</div>
+
+                </div>
+                <div class="hcl-col-12 mb-4">
+                    <!-- default -->
+                    <div class="hcl-table-wrapper">
+  <table class="hcl-data-table">
     <thead>
-        <tr>
-            <th >Name</th>
-            <th>Protocol</th>
-            <th>Port</th>
-            <th>Rule</th>
-            <th>Attached Groups</th>
-            <th>Status</th>
-        </tr>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Load Balancer 1</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 2</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 3</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 1</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 2</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 3</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
     </tbody>
-</table>
-                <!-- tall -->
-                <table class="hcl-data-table hcl-data-table-tall">
+  </table>
+</div>
+
+                </div>
+                <div class="hcl-col-12 mb-4">
+                    <!-- tall -->
+                    <div class="hcl-table-wrapper">
+  <table class="hcl-data-table hcl-data-table-tall">
     <thead>
-        <tr>
-            <th >Name</th>
-            <th>Protocol</th>
-            <th>Port</th>
-            <th>Rule</th>
-            <th>Attached Groups</th>
-            <th>Status</th>
-        </tr>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Load Balancer 1</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 2</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 3</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
+      <tr>
+        <td>
+          <div class="table-body-content-wrapper">
+            <p>Load Balancer 1</p>
+            <span>Secondary Information</span>
+          </div>
+        </td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="table-body-content-wrapper">
+            <p>Load Balancer 2</p>
+            <span>Secondary Information</span>
+          </div>
+        </td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="table-body-content-wrapper">
+            <p>Load Balancer 3</p>
+            <span>Secondary Information</span>
+          </div>
+        </td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
     </tbody>
-</table>
-                <!-- zebra -->
-                <table class="hcl-data-table hcl-data-table-zebra">
+  </table>
+</div>
+
+                </div>
+                <div class="hcl-col-12 mb-4">
+                    <!-- zebra -->
+                    <div class="hcl-table-wrapper">
+  <table class="hcl-data-table hcl-data-table-zebra">
     <thead>
-        <tr>
-            <th >Name</th>
-            <th>Protocol</th>
-            <th>Port</th>
-            <th>Rule</th>
-            <th>Attached Groups</th>
-            <th>Status</th>
-        </tr>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Load Balancer 1</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 2</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 3</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-    </tbody> 
-</table>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 1</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 2</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="table-body-content-wrapper">Load Balancer 3</div></td>
+        <td><div class="table-body-content-wrapper">HTTP</div></td>
+        <td><div class="table-body-content-wrapper">80</div></td>
+        <td><div class="table-body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="table-body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="table-body-content-wrapper">Active</div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+                </div>
             </section>
 
             <!-- Date Picker -->
@@ -2404,8 +2471,8 @@
             <!-- Time Picker -->
             <section class="m-1 p-2">
                 <div class="hcl-timepicker">
+  <label for="hcl-timepicker-1">Select a time</label>
   <div class="hcl-timepicker-input">
-    <label for="hcl-timepicker-1">Select a time</label>
     <input
       id="hcl-timepicker-1"
       type="text"
@@ -2414,16 +2481,16 @@
       placeholder="hh:mm"
       maxlength="5"
     />
+    <select class="hcl-select">
+      <option class="hcl-select-option" value="AM">AM</option>
+      <option class="hcl-select-option" value="PM">PM</option>
+    </select>
+    <select class="hcl-select">
+      <option class="hcl-select-option" value="option-1">Time zone 1</option>
+      <option class="hcl-select-option" value="option-2">Time zone 2</option>
+      <option class="hcl-select-option" value="option-3">Time zone 3</option>
+    </select>
   </div>
-  <select class="hcl-select">
-    <option class="hcl-select-option" value="AM">AM</option>
-    <option class="hcl-select-option" value="PM">PM</option>
-  </select>
-  <select class="hcl-select">
-    <option class="hcl-select-option" value="option-1">Time zone 1</option>
-    <option class="hcl-select-option" value="option-2">Time zone 2</option>
-    <option class="hcl-select-option" value="option-3">Time zone 3</option>
-  </select>
 </div>
 
             </section>
@@ -3246,6 +3313,8 @@
     <script src="./scss/components/modal/success-action/success-action.js"></script>
     <script src="./scss/components/modal/success-label/success-label.js"></script>
     <script src="./scss/components/modal/success-label-action/sucess-label-action.js"></script>
+    <script src="./scss/components/toggle/default/default.js"></script>
+    <script src="./scss/components/toggle/small/small.js"></script>
     <script src="./scss/components/date-picker/bottom/bottom.js"></script>
     <script src="./scss/components/date-picker/top/top.js"></script>
     <script src="./scss/components/tab/tab.js"></script>
