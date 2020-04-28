@@ -45,45 +45,13 @@ $breadcrumb-margin: 1rem;
         }
     }
 
-    .#{$prefix}-overflow {
+    .#{$prefix}-overflow-container {
         margin-right: 1rem;
 
         &::after {
             content: '/';
             margin-left: 0.5rem;
-            color: var(--dark-20);
-        }
-
-        .#{$prefix}-overflow-option {
-            >.#{$prefix}-link {
-                padding: 0.5rem;
-                width: 100%;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                text-align: left;
-                display: inline-block;
-            }
-            &:hover {
-                background: rgba(70,150,210,0.10);
-            }
-        }
-
-        .#{$prefix}-ellipsis {
-            width: 1.5rem;
-            color: var(--blue);
-
-            &::after {
-                letter-spacing: 0.2rem;
-            }
-        }
-
-        .#{$prefix}-overflow-menu {
-            left: -0.72rem;
-        }
-
-        :hover {
-            cursor: pointer;
+            color: $blue;
         }
     }
 }
