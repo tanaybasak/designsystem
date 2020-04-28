@@ -32,6 +32,6 @@ function focusNode(currentItem, direction = 'next') {
       }
     }
   }
-};
+}
 
 export default focusNode;
