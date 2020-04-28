@@ -36,7 +36,7 @@ class Dropdown {
       );
       let outOfBound = false;
       addListener(
-        'overflow-' + this.overflowId,
+        'dropdown-' + this.dropDownId,
         'click',
         e => {
           this.handleClick(e);
@@ -51,7 +51,7 @@ class Dropdown {
         this.updatePos(outOfBound);
       }
     } else {
-      removeListeners('overflow-' + this.overflowId, 'click');
+      removeListeners('dropdown-' + this.dropDownId, 'click');
       this.element.classList.remove(`${PREFIX}-dropdown-open`);
       this.element.classList.add(`${PREFIX}-dropdown-close`);
     }
