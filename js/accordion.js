@@ -16,13 +16,22 @@ class Accordion {
     );
   }
 
-  toggleHeight = (item, status) => {
+  toggleHeight = (item, status, isChanged) => {
     const collapseElement = item.children[1];
     if (!status) {
-      collapseElement.style.height = 0;
+      if (isChanged) {
+        const content = item.children[1].children[0];
+        collapseElement.style.height = content.clientHeight + 'px';
+        setTimeout(() => {
+          collapseElement.style.height = 0;
+        });
+      }
     } else {
       const content = item.children[1].children[0];
       collapseElement.style.height = content.clientHeight + 'px';
+      setTimeout(() => {
+        collapseElement.style.height = 'auto';
+      }, 300);
     }
   };
 
@@ -33,18 +42,19 @@ class Accordion {
     if (this.state.uncontrolled) {
       if (expanded) {
         item.classList.remove('expanded');
-        this.toggleHeight(item, false);
+        this.toggleHeight(item, false, expanded);
       }
     } else {
       this.elements.forEach(element => {
         const itm = element.parentNode;
+        const isChanged = itm.classList.contains('expanded');
         itm.classList.remove('expanded');
-        this.toggleHeight(itm, false);
+        this.toggleHeight(itm, false, isChanged);
       });
     }
     if (!expanded) {
       item.classList.add('expanded');
-      this.toggleHeight(item, true);
+      this.toggleHeight(item, true, false);
     }
   };
 

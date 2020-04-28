@@ -18,6 +18,7 @@ import Overflow from '../../js/overflow';
 import Tag from '../../js/tag';
 import Modal from '../../js/modal';
 import Breadcrumb from '../../js/breadcrumb';
+import Toggle from '../../js/toggle';
 
 import { isElement } from '../../js/utils/dom';
 
@@ -41,7 +42,8 @@ const ComponentList = {
   fileUploader: FileUploader,
   tag: Tag,
   modal: Modal,
-  breadcrumb: Breadcrumb
+  breadcrumb: Breadcrumb,
+  toggle: Toggle
 };
 
 for (const componentName in ComponentList) {
@@ -118,6 +120,9 @@ export const components = {
   },
   breadcrumb: function(selector) {
     attachElements(selector, null, Breadcrumb);
+  },
+  toggle: function(selector) {
+    attachElements(selector, null, Toggle);
   }
 };
 
