@@ -30,10 +30,12 @@ class Tile {
         this.keyDownOnTile(e);
       });
     } else {
-      const link = this.element.querySelector(`#${PREFIX}-tile-clickTag`);
-      this.element.addEventListener('keydown', () => {
-        link.click();
-      });
+      const anchor = this.element.querySelector('a');
+      if (anchor) {
+        this.element.addEventListener('keydown', () => {
+          anchor.click();
+        });
+      }
     }
   };
 }
