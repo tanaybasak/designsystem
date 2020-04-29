@@ -98,6 +98,11 @@
     &:hover {
       background: rgba(70, 150, 210, 0.1);
     }
+
+    &:focus {
+      outline-offset: -1px;
+      outline: 1px solid $blue;
+    }
   }
 
   &-wrapper {
@@ -118,7 +123,6 @@
     }
 
     &:focus {
-      text-decoration: none;
       outline-offset: -1px;
       outline: 1px solid $blue;
     }
