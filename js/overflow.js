@@ -85,7 +85,6 @@ class Overflow {
       } else {
         if (nextElem) {
           nextElem.children[0].focus();
-          return false;
         }
       }
     } else if (direction === 'previous') {
@@ -104,7 +103,6 @@ class Overflow {
       } else {
         if (prevElem) {
           prevElem.children[0].focus();
-          return false;
         }
       }
     }
