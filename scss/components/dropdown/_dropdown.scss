@@ -49,11 +49,6 @@
       right: 0.875rem;
       transform: translate(-50%, -50%);
     }
-
-    &:focus {
-      outline-offset: -1px;
-      outline: 1px solid $blue;
-    }
   }
 
   &-text {
@@ -78,6 +73,8 @@
     border-bottom: 1px solid $grey-2;
     width: 100%;
     display: none;
+    max-height: 20rem;
+    overflow:auto;
   }
 
   &-item {
@@ -97,6 +94,11 @@
 
     &:hover {
       background: rgba(70, 150, 210, 0.1);
+    }
+
+    &:focus {
+      outline-offset: -1px;
+      outline: 1px solid $blue;
     }
   }
 
@@ -134,17 +136,10 @@
     padding: 0.7625rem 1rem;
     color: $black;
     text-decoration: none;
-
     text-overflow: ellipsis;
 
     &:hover {
       text-decoration: none;
-    }
-
-    &:focus {
-      text-decoration: none;
-      outline-offset: -1px;
-      outline: 1px solid $blue;
     }
   }
 
@@ -152,12 +147,13 @@
     display: none;
   }
 
-  &-open {
+  &-open {  
     .#{$prefix}-dropdown-container {
-      display: block;
+        display: block;
     }
-    &>.#{$prefix}-dropdown-toggle {
-      border-bottom:0;
+    &>.#{$prefix}-dropdown-toggle::after {
+      right: 1.2rem;
+      transform: rotate(180deg);
     }
   }
 
