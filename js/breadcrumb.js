@@ -40,13 +40,6 @@ class Breadcrumb {
     this.selectNewActiveItem(currentTarget);
   };
 
-  handleClick = () => {
-    if (this.element) {
-      this.state.isOpen = !this.state.isOpen;
-      this.toggleState(this.state.isOpen);
-    }
-  }
-
   attachEvents = () => {
     const items = this.element.querySelectorAll(this.selectors.items);
     (items || []).forEach(item => {
