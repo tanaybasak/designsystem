@@ -24,7 +24,7 @@ $animation-duration:220ms;
     left: 0;
     top: 3.125rem;
     overflow: hidden;
-    transition: all $animation-duration ease-in-out;
+    transition: width $animation-duration ease-in-out;
     z-index: 9;
 
     .#{$prefix}-sidebar-hamburger {
@@ -51,13 +51,11 @@ $animation-duration:220ms;
 
     .#{$prefix}-sidebar-title {
         display: flex;
-        cursor: pointer;
         justify-content: space-between;
         align-items: center;
         height: 3.125rem;
         border-bottom: 0.0625rem solid $title-icon-bd;
         position: relative;
-        transition: all $animation-duration ease-in-out;
         width: 100%;
 
         .#{$prefix}-sidebar-title-icon {
@@ -66,7 +64,6 @@ $animation-duration:220ms;
             width: 0;
             margin: 0;
             color: $white;
-            transition: all $animation-duration ease-in-out;
         }
 
         .#{$prefix}-sidebar-title-text {
@@ -75,7 +72,6 @@ $animation-duration:220ms;
             color: $white;
             line-height: 1.125rem;
             width: 0;
-            transition: all $animation-duration ease-in-out;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
@@ -83,12 +79,19 @@ $animation-duration:220ms;
 
         .#{$prefix}-sidebar-title-toggle {
             cursor: pointer;
-            height: 1.5rem;
-            width: 1.5rem;
-            margin: 0.8125rem 0.625rem;
+            height: 3.0625rem;
+            width: 2.75rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             transition: transform $animation-duration ease-in-out;
             fill: $white;
             display: flex;
+
+            &:hover, &:focus{
+                background-color: $active-link-bg;
+                outline: none;
+            }
         }
     }
 
@@ -97,7 +100,6 @@ $animation-duration:220ms;
         overflow-x: hidden;
         width: 100%;
         height: calc(100% - 3.125rem);
-        transition: all $animation-duration ease-in-out;
 
         .#{$prefix}-sidebar-category {
             position: relative;
@@ -147,7 +149,6 @@ $animation-duration:220ms;
                 width: 100%;
                 transform: scaleY(0);
                 transform-origin: top;
-                transition: transform $animation-duration ease-in-out;
 
                 .#{$prefix}-sidebar-link {
                     &.no-icon {
@@ -172,7 +173,7 @@ $animation-duration:220ms;
 
     &.expanded {
         width: 12.5rem;
-
+        transition: width $animation-duration ease-in-out;
         .#{$prefix}-sidebar-title {
             .#{$prefix}-sidebar-title-icon {
                 width: 1.875rem;
@@ -186,7 +187,6 @@ $animation-duration:220ms;
 
             .#{$prefix}-sidebar-title-toggle {
                 transform: rotate(180deg);
-                transition: transform $animation-duration ease-in-out;
             }
         }
 
@@ -196,12 +196,11 @@ $animation-duration:220ms;
                     height: auto;
                     display: flex;
                     transform: scaleY(1);
-                    transition: transform $animation-duration ease-in-out;
+                     transition: all $animation-duration ease-in-out;
                 }
 
                 .toggleIcon {
                     transform: rotate(270deg);
-                    transition: transform $animation-duration ease-in-out;
                 }
             }
 
@@ -245,7 +244,8 @@ $animation-duration:220ms;
         height: 4rem;
         top: 0;
         background: transparent;
-
+        transition: height $animation-duration ease-in-out,width $animation-duration ease-in-out,background $animation-duration ease-in-out $animation-duration;
+        position: fixed;
         .#{$prefix}-sidebar-title {
             display: none;
         }
@@ -260,21 +260,17 @@ $animation-duration:220ms;
             display: block;
             position: fixed;
             opacity: 1;
-            transition-delay: $animation-duration;
-            transition-duration: 0ms;
-            transition-property: all;
-            transition-timing-function: ease-in;
         }
 
         &.expanded {
             width: 75vw;
             height: 100vh;
             background: $sidebar-bg;
-            position: fixed;
+            
             left: 0;
             top: 0;
             display: flex;
-
+            transition: width $animation-duration ease-in-out;
             .#{$prefix}-sidebar-hamburger {
                 display: none;
             }
@@ -312,7 +308,6 @@ $animation-duration:220ms;
                             width: 1.125rem;
                             height: 1.125rem;
                             font-size: 1.125rem;
-
                             margin: 1.3125rem 0 1.3125rem 0.9375rem;
                         }
 
