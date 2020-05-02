@@ -39,6 +39,9 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       width: 100%;
       align-items: center;
       border: 0.0625rem solid transparent;
+
+      overflow: hidden;
+      flex: 1 1 auto;
     }
 
     tbody tr:last-child td {
@@ -78,7 +81,7 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       border: 0.0625rem solid #0066b3;
 
       .overflow-onhover {
-        .hcl-overflow-container {
+        .#{$prefix}-overflow-container {
           visibility: visible;
         }
       }
@@ -117,11 +120,13 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
     }
 
     .overflow-onhover {
-      .hcl-overflow-container {
+      .#{$prefix}-overflow-container {
         visibility: hidden;
+        width: 100%;
+        justify-content: center;
       }
 
-      .hcl-overflow-container.hcl-active {
+      .#{$prefix}-overflow-container.#{$prefix}-active {
         visibility: visible;
       }
     }
