@@ -86,18 +86,21 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       white-space: nowrap;
     }
 
-    .#{$prefix}-sorting {
-      transition: all 0.3s ease-in-out;
+    .body-content-html-wrapper {
+      display: flex;
+      height: inherit;
     }
 
-    .#{$prefix}-sorting {
-      margin-left: 0.625rem;
-    }
+    .header-text-wrapper.sortable {
+      display: flex;
 
-    .header-text-wrapper.desc {
       .#{$prefix}-sorting {
-        transform: rotate(180deg);
-        transition: all 0.3s ease-in-out;
+        margin-left: 0.625rem;
+
+        &.desc {
+          transform: rotate(180deg);
+          transition: rotate 0.3s ease-in-out;
+        }
       }
     }
 
