@@ -11,9 +11,10 @@
 $table-header-bg: #e8eff8;
 $zebra-bg: rgba(0, 102, 179, 0.04);
 
-.#{$prefix}-table-wrapper {
+.#{$prefix}-data-table-wrapper {
   border: 0.0625rem solid $grey-8;
   border-bottom: transparent;
+  width: 100%;
 
   .#{$prefix}-data-table {
     width: 100%;
@@ -39,7 +40,6 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       width: 100%;
       align-items: center;
       border: 0.0625rem solid transparent;
-
       overflow: hidden;
       flex: 1 1 auto;
     }
@@ -62,20 +62,6 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       z-index: 5;
     }
 
-    .sticky-div {
-      position: sticky;
-      background: inherit;
-      z-index: 1;
-    }
-
-    .sticky-left-div {
-      left: 0;
-    }
-
-    .sticky-right-div {
-      right: 0;
-    }
-
     tbody tr:hover {
       background-color: $table-header-bg;
       border: 0.0625rem solid #0066b3;
@@ -88,7 +74,7 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
     }
 
     .header-text-wrapper,
-    .table-body-content-wrapper {
+    .body-content-wrapper {
       padding-left: 0.75rem;
       font-size: 0.875rem;
       color: $dark-blue;
@@ -101,7 +87,18 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
     }
 
     .#{$prefix}-sorting {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .#{$prefix}-sorting {
       margin-left: 0.625rem;
+    }
+
+    .header-text-wrapper.desc {
+      .#{$prefix}-sorting {
+        transform: rotate(180deg);
+        transition: all 0.3s ease-in-out;
+      }
     }
 
     .#{$prefix}-overflow-container {
@@ -114,7 +111,7 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       justify-content: center;
     }
 
-    .overflow-container {
+    .overflow-wrapper {
       display: flex;
       align-items: center;
     }
@@ -131,34 +128,9 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
       }
     }
 
-    .header-text-wrapper.desc {
-      .#{$prefix}-sorting {
-        transform: rotate(180deg);
-        transition: all 0.3s ease-in-out;
-      }
-    }
-
-    .#{$prefix}-expand-row {
-      transform: rotate(270deg);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .#{$prefix}-collapse-row {
-      transition: all 0.3s ease-in-out;
-    }
-
-    .#{$prefix}-sorting {
-      transition: all 0.3s ease-in-out;
-    }
-
     td:focus {
       outline: none;
       border: 0.0625rem solid $primary !important;
-    }
-
-    .#{$prefix}-expanded-row td {
-      height: auto;
-      padding: 1rem;
     }
 
     &-zebra {
@@ -206,5 +178,33 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
     tbody tr:hover {
       border-bottom-color: $blue;
     }
+  }
+
+  .sticky-div {
+    position: sticky;
+    background: inherit;
+    z-index: 1;
+  }
+
+  .sticky-left-div {
+    left: 0;
+  }
+
+  .sticky-right-div {
+    right: 0;
+  }
+
+  .#{$prefix}-expanded-row td {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .#{$prefix}-expand-row {
+    transform: rotate(270deg);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .#{$prefix}-collapse-row {
+    transition: all 0.3s ease-in-out;
   }
 }
