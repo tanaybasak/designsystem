@@ -8,140 +8,206 @@
 
 @import '../../base';
 
-.#{$prefix}-data-table {
-  width: 100%;
+$table-header-bg: #e8eff8;
+$zebra-bg: rgba(0, 102, 179, 0.04);
+
+.#{$prefix}-data-table-wrapper {
   border: 0.0625rem solid $grey-8;
-
-  thead,
-  tbody {
-    tr {
-      th,
-      td {
-        background-color: transparent;
-        border-top: 0.0625rem solid $grey-8;
-        padding: 0 0 0 0.75rem;
-        text-align: left;
-        height: 3rem;
-        vertical-align: middle;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-    }
-  }
-
-  thead {
-    tr {
-      background-color: rgba(0, 102, 179, 0.1);
-
-      th,
-      td {
-        font-size: 0.875rem;
-        color: $dark-blue;
-        letter-spacing: 0;
-        line-height: 1rem;
-
-        &.sortable {
-          position: relative;
-          padding-right: 2rem;
-
-          &::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-top: 0.3rem solid $blue;
-            border-right: 0.3rem solid transparent;
-            border-bottom: 0;
-            border-left: 0.3rem solid transparent;
-            margin-left: 1rem;
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-          }
-
-          &.desc {
-            &::after {
-              transform: rotate(180deg);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      background-color: $white;
-
-      &:hover {
-        td {
-          background-color: rgba(0, 102, 179, 0.1);
-          border-top: 0.0625rem solid $blue;
-          border-bottom: 0.0625rem solid $blue;
-
-          &:first-of-type {
-            border-left: 0.0625rem solid $blue;
-          }
-
-          &:last-of-type {
-            border-right: 0.0625rem solid $blue;
-          }
-        }
-      }
-
-      td {
-        padding-left: 0.75rem;
-        font-size: 0.875rem;
-        color: $dark-blue;
-        line-height: 1rem;
-        height: 3rem;
-        vertical-align: middle;
-      }
-    }
-  }
-
-  &-zebra {
-    tbody {
-      tr {
-        &:nth-child(even) {
-          background-color: $white;
-        }
-
-        &:nth-child(odd) {
-          background-color: rgba(0, 102, 179, 0.04);
-        }
-      }
-    }
-  }
-
-  &-compact {
-    tbody {
-      tr {
-        td {
-          height: 1.5rem;
-        }
-      }
-    }
-  }
-
-  &-tall {
-    tbody {
-      tr {
-        td {
-          height: 4rem;
-        }
-      }
-    }
-  }
-
-  &-borderless {
-    border: 0.0625rem solid transparent;
-  }
-}
-
-.#{$prefix}-data-table-responsive {
-  display: block;
+  border-bottom: transparent;
   width: 100%;
-  overflow-x: auto;
+
+  .#{$prefix}-data-table {
+    width: 100%;
+    border-spacing: 0;
+    position: relative;
+
+    tbody,
+    thead {
+      display: flex;
+      flex-direction: column;
+    }
+
+    tr {
+      display: flex;
+      border: 0.0625rem solid transparent;
+      border-bottom: 0.0625rem solid $grey-8;
+    }
+
+    th,
+    td {
+      display: flex;
+      height: 3rem;
+      width: 100%;
+      align-items: center;
+      border: 0.0625rem solid transparent;
+      overflow: hidden;
+      flex: 1 1 auto;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    thead tr {
+      background-color: $table-header-bg;
+    }
+
+    tbody tr {
+      background: $white;
+    }
+
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    tbody tr:hover {
+      background-color: $table-header-bg;
+      border: 0.0625rem solid #0066b3;
+
+      .overflow-onhover {
+        .#{$prefix}-overflow-container {
+          visibility: visible;
+        }
+      }
+    }
+
+    .header-text-wrapper,
+    .body-content-wrapper {
+      padding-left: 0.75rem;
+      font-size: 0.875rem;
+      color: $dark-blue;
+      letter-spacing: 0;
+      line-height: 1rem;
+      align-items: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .body-content-html-wrapper {
+      display: flex;
+      height: inherit;
+    }
+
+    .header-text-wrapper.sortable {
+      display: flex;
+
+      .#{$prefix}-sorting {
+        margin-left: 0.625rem;
+
+        &.desc {
+          transform: rotate(180deg);
+          transition: rotate 0.3s ease-in-out;
+        }
+      }
+    }
+
+    .#{$prefix}-overflow-container {
+      position: absolute;
+    }
+
+    .checkbox-wrapper {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .overflow-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .overflow-onhover {
+      .#{$prefix}-overflow-container {
+        visibility: hidden;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .#{$prefix}-overflow-container.#{$prefix}-active {
+        visibility: visible;
+      }
+    }
+
+    td:focus {
+      outline: none;
+      border: 0.0625rem solid $primary !important;
+    }
+
+    &-zebra {
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: $white;
+          }
+
+          &:nth-child(odd) {
+            background-color: $zebra-bg;
+          }
+        }
+      }
+    }
+
+    &-compact {
+      tbody {
+        tr {
+          td {
+            height: 1.5rem;
+          }
+        }
+      }
+    }
+
+    &-tall {
+      tbody {
+        tr {
+          td {
+            height: 4rem;
+          }
+        }
+      }
+    }
+  }
+
+  &.#{$prefix}-data-table-borderless {
+    border: 0.0625rem solid transparent;
+
+    .#{$prefix}-data-table-zebra tr {
+      border-bottom-color: transparent;
+    }
+
+    tbody tr:hover {
+      border-bottom-color: $blue;
+    }
+  }
+
+  .sticky-div {
+    position: sticky;
+    background: inherit;
+    z-index: 1;
+  }
+
+  .sticky-left-div {
+    left: 0;
+  }
+
+  .sticky-right-div {
+    right: 0;
+  }
+
+  .#{$prefix}-expanded-row td {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .#{$prefix}-expand-row {
+    transform: rotate(270deg);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .#{$prefix}-collapse-row {
+    transition: all 0.3s ease-in-out;
+  }
 }
