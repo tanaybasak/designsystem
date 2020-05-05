@@ -33,133 +33,8 @@
 <body>
     <!-- HEADER LAYOUT -->
     <addHTML src="./scss/components/header/header.html" />
-    <nav class="hcl-sidebar" data-component="navigation">
-        <button class="hcl-sidebar-hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="hcl-sidebar-title">
-            <span class="hcl-sidebar-title-icon"></span>
-            <span class="hcl-sidebar-title-text">Section Title</span>
-            <span class="hcl-sidebar-title-toggle"></span>
-        </div>
-        <ul class="hcl-sidebar-list">
-            <li class="hcl-sidebar-category">
-                <span class="hcl-sidebar-category-title">
-                    <svg class="hcl-sidebar-icon" alt="alt" title="title">
-                        <rect rx="3" ry="3" width="100%" height="100%"
-                            style="fill: rgb(255, 255, 255); stroke: black; stroke-width: 2; opacity: 0.5;">
-                        </rect>
-                    </svg>
-                    <span class="hcl-sidebar-link">
-                        Atoms
-                    </span>
-                </span>
-                <ul class="hcl-sidebar-children">
-                    <li class="hcl-sidebar-item">
-                        <a href="#typography" class="hcl-sidebar-link">
-                            Typography
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#pagination" class="hcl-sidebar-link">
-                            Pagination
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#gridSystem" class="hcl-sidebar-link">
-                            Grid System
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#boxExamples" class="hcl-sidebar-link">
-                            Box Examples
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#spinner" class="hcl-sidebar-link">
-                            Spinner
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#breadcrumb" class="hcl-sidebar-link">
-                            Breadcrumb
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#toggle" class="hcl-sidebar-link">
-                            Toggle
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#notification" class="hcl-sidebar-link">
-                            Notification
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#cards" class="hcl-sidebar-link">
-                            Card
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#overflowmenu" class="hcl-sidebar-link">
-                            Overflow Menu
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#textinput" class="hcl-sidebar-link">
-                            Text Input
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#textarea" class="hcl-sidebar-link">
-                            Textarea
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#radio" class="hcl-sidebar-link">
-                            Radio
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#checkbox" class="hcl-sidebar-link">
-                            Checkbox
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="hcl-sidebar-category">
-                <span class="hcl-sidebar-category-title">
-                    <svg class="hcl-sidebar-icon" alt="alt" title="title">
-                        <rect rx="3" ry="3" width="100%" height="100%"
-                            style="fill: rgb(255, 255, 255); stroke: black; stroke-width: 2; opacity: 0.5;">
-                        </rect>
-                    </svg>
-                    <span class="hcl-sidebar-link">
-                        Molecules
-                    </span>
-                </span>
-                <ul class="hcl-sidebar-children">
-                    <li class="hcl-sidebar-item">
-                        <a href="#content-switcher" class="hcl-sidebar-link">
-                            Content Switcher
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#tabsexample" class="hcl-sidebar-link">
-                            Tabs
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#formcomp" class="hcl-sidebar-link">
-                            Form
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+    <addHTML src="./scss/components/sidebar/sidebar.html" />
+    
     <!-- CONTENT LAYOUT -->
     <div class="hcl-content" style="margin-top: 4rem" data-withsidenav=true>
         <!-- SIDEBAR LAYOUT -->
@@ -424,18 +299,24 @@
             <section class="m-1 p-2">
                 <!-- Top -->
                 <div class="hcl-row m-3">
-                    <div class="hcl-col">
+                    <div class="hcl-col-3">
                         <addHTML src="./scss/components/dropdown/top/top.html" />
                     </div>
                 </div>
                 <!-- Bottom -->
                 <div class="hcl-row m-3">
-                    <div class="hcl-col">
+                    <div class="hcl-col-3">
                         <addHTML src="./scss/components/dropdown/bottom/bottom.html" />
                     </div>
                 </div>
+                <!-- multiselect -->
+                <div class="hcl-row m-3">
+                    <div class="hcl-col-3">
+                        <addHTML src="./scss/components/dropdown/multiselect/multiselect.html" />
+                    </div>
+                </div>
             </section>
-
+            
             <!-- File Uploader -->
             <section class="m-1 p-2">
                 <addHTML src="./scss/components/file-uploader/file-uploader.html" />
@@ -529,8 +410,12 @@
 
             <!-- Select option -->
             <section class="m-1 p-2">
-                <addHTML src="./scss/components/select/select.html" />
+                <addHTML src="./scss/components/select/default/select.html" />
             </section>
+            <section class="m-1 p-2">
+                <addHTML src="./scss/components/select/group/selectOptGroup.html" />
+            </section>
+
 
             <!-- Accordion -->
             <section class="m-1 p-2">
@@ -624,6 +509,7 @@
     <script src="./scss/components/accordion/uncontrolled/uncontrolled.js"></script>
     <script src="./scss/components/dropdown/bottom/bottom.js"></script>
     <script src="./scss/components/dropdown/top/top.js"></script>
+    <script src="./scss/components/dropdown/multiSelect/multiSelect.js"></script>
     <script src="./scss/components/modal/danger/danger.js"></script>
     <script src="./scss/components/modal/danger-action/danger-action.js"></script>
     <script src="./scss/components/modal/danger-label/danger-label.js"></script>
