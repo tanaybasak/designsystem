@@ -6,6 +6,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
+    <link href="./node_modules/patron-icon/dist/patron-font.css" rel="stylesheet">
+    
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <style>
         .bgColor {
@@ -90,132 +92,106 @@
 </header>
 
     <nav class="hcl-sidebar" data-component="navigation">
-        <button class="hcl-sidebar-hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="hcl-sidebar-title">
-            <span class="hcl-sidebar-title-icon"></span>
-            <span class="hcl-sidebar-title-text">Section Title</span>
-            <span class="hcl-sidebar-title-toggle"></span>
-        </div>
-        <ul class="hcl-sidebar-list">
-            <li class="hcl-sidebar-category">
-                <span class="hcl-sidebar-category-title">
-                    <svg class="hcl-sidebar-icon" alt="alt" title="title">
-                        <rect rx="3" ry="3" width="100%" height="100%"
-                            style="fill: rgb(255, 255, 255); stroke: black; stroke-width: 2; opacity: 0.5;">
-                        </rect>
-                    </svg>
-                    <span class="hcl-sidebar-link">
-                        Atoms
-                    </span>
+    <button class="hcl-sidebar-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="hcl-sidebar-title">
+        <img class="hcl-sidebar-title-icon" src="https://randomuser.me/api/portraits/women/44.jpg" />
+        <span class="hcl-sidebar-title-text">Section Title</span>
+        <span class="hcl-sidebar-title-toggle" tabindex="0">
+            <svg height="24px" style="enable-background:new 0 0 512 512;fill:white;" version="1.1" viewbox="0 0 512 512"
+                width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <polygon points="160,128.4 192.3,96 352,256 352,256 352,256 192.3,416 160,383.6 287.3,256 " />
+            </svg>
+        </span>
+    </div>
+    <ul class="hcl-sidebar-list">
+        <li class="hcl-sidebar-category" aria-expanded="false">
+            <a tabindex="0" title="Atoms" class="hcl-sidebar-toggle-node">
+                <svg class="hcl-sidebar-icon" style="enable-background:new 0 0 24 24;fill:white;" version="1.1"
+                    viewbox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="info" />
+                    <g id="icons">
+                        <path
+                            d="M22.2,14.4L21,13.7c-1.3-0.8-1.3-2.7,0-3.5l1.2-0.7c1-0.6,1.3-1.8,0.7-2.7l-1-1.7c-0.6-1-1.8-1.3-2.7-0.7   L18,5.1c-1.3,0.8-3-0.2-3-1.7V2c0-1.1-0.9-2-2-2h-2C9.9,0,9,0.9,9,2v1.3c0,1.5-1.7,2.5-3,1.7L4.8,4.4c-1-0.6-2.2-0.2-2.7,0.7   l-1,1.7C0.6,7.8,0.9,9,1.8,9.6L3,10.3C4.3,11,4.3,13,3,13.7l-1.2,0.7c-1,0.6-1.3,1.8-0.7,2.7l1,1.7c0.6,1,1.8,1.3,2.7,0.7L6,18.9   c1.3-0.8,3,0.2,3,1.7V22c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2v-1.3c0-1.5,1.7-2.5,3-1.7l1.2,0.7c1,0.6,2.2,0.2,2.7-0.7l1-1.7   C23.4,16.2,23.1,15,22.2,14.4z M12,16c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4s4,1.8,4,4C16,14.2,14.2,16,12,16z"
+                            id="settings" />
+                    </g>
+                </svg>
+                <span class="hcl-sidebar-link">
+                    Atoms
                 </span>
-                <ul class="hcl-sidebar-children">
-                    <li class="hcl-sidebar-item">
-                        <a href="#typography" class="hcl-sidebar-link">
+                <svg class="toggleIcon" height="512px" style="enable-background:new 0 0 512 512;fill:white;"
+                    version="1.1" viewbox="0 0 512 512" width="512px" xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <polygon points="160,128.4 192.3,96 352,256 352,256 352,256 192.3,416 160,383.6 287.3,256 " />
+                </svg>
+            </a>
+            <ul class="hcl-sidebar-children">
+                <li class="hcl-sidebar-category">
+                    <a href="#typography" tabindex="0" title="Typography" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
                             Typography
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#pagination" class="hcl-sidebar-link">
+                        </span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-category">
+                    <a href="#pagination" tabindex="0" title="Pagination" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
                             Pagination
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#gridSystem" class="hcl-sidebar-link">
+                        </span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-category">
+                    <a href="#gridSystem" tabindex="0" title="Grid System" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
                             Grid System
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#boxExamples" class="hcl-sidebar-link">
-                            Box Examples
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#spinner" class="hcl-sidebar-link">
-                            Spinner
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#breadcrumb" class="hcl-sidebar-link">
-                            Breadcrumb
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#toggle" class="hcl-sidebar-link">
-                            Toggle
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#notification" class="hcl-sidebar-link">
-                            Notification
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#cards" class="hcl-sidebar-link">
-                            Card
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#overflowmenu" class="hcl-sidebar-link">
-                            Overflow Menu
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#textinput" class="hcl-sidebar-link">
-                            Text Input
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#textarea" class="hcl-sidebar-link">
-                            Textarea
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#radio" class="hcl-sidebar-link">
-                            Radio
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#checkbox" class="hcl-sidebar-link">
-                            Checkbox
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="hcl-sidebar-category">
-                <span class="hcl-sidebar-category-title">
-                    <svg class="hcl-sidebar-icon" alt="alt" title="title">
-                        <rect rx="3" ry="3" width="100%" height="100%"
-                            style="fill: rgb(255, 255, 255); stroke: black; stroke-width: 2; opacity: 0.5;">
-                        </rect>
-                    </svg>
-                    <span class="hcl-sidebar-link">
-                        Molecules
-                    </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="hcl-sidebar-category" aria-expanded="false">
+            <a tabindex="0" title="Molecules" class="hcl-sidebar-toggle-node">
+                <svg class="hcl-sidebar-icon" style="enable-background:new 0 0 56.69 56.69;" version="1.1"
+                    viewbox="0 0 56.69 56.69" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path style="fill:white"
+                        d="M28.3455,3.7902c-13.5996,0-24.625,11.0234-24.625,24.623  c0,13.5997,11.0254,24.625,24.625,24.625c13.5986,0,24.624-11.0253,24.624-24.625C52.9695,14.8136,41.9441,3.7902,28.3455,3.7902z   M16.9061,33.189c-0.5219-0.0181-0.9963-0.3329-1.2642-0.843c-0.167-0.3179-0.2905-0.8262-0.367-1.5118  c-0.1932-1.8694,0.0351-4.6715,0.6296-5.6271c0.3148-0.4958,0.7966-0.7702,1.3245-0.7459c0.3257,0.0037,0.353,0.0043,6.0107,2.3386  l-0.0022,0.005c0.149,0.0529,0.5207,0.2047,1.5759,0.6345c0.6849,0.2563,1.1213,0.9749,1.0778,1.7849  c-0.047,0.7944-0.5208,1.4203-1.2069,1.5958c-0.1322,0.0442-0.5764,0.186-2.221,0.7111c-4.7484,1.5255-5.1882,1.6611-5.4738,1.6611  C16.9615,33.1921,16.935,33.1908,16.9061,33.189z M28.6587,36.2417c-0.0156,5.4636-0.0239,5.4884-0.1291,5.7958  c-0.1907,0.5089-0.614,0.8417-1.1951,0.9475c-0.1014,0.0174-0.2174,0.0255-0.3453,0.0255c-1.6884,0-5.489-1.4464-6.3668-2.4891  c-0.2199-0.2651-0.3503-0.5618-0.3782-0.8598c-0.0234-0.2053,0.0031-0.4168,0.079-0.6227c0.1067-0.3086,0.1207-0.349,4.0806-4.9963  l0.0952-0.1119c0.2644-0.3123,1.0048-1.1914,1.0048-1.1914c0.4551-0.5699,1.271-0.7621,2.0266-0.4703  c0.7385,0.2843,1.1867,0.9282,1.1416,1.64C28.6708,33.9772,28.6587,36.2417,28.6587,36.2417z M27.5267,25.5306  c-0.1608,0.051-0.3201,0.0759-0.4778,0.0759c-0.7083,0-1.3818-0.5095-2.007-1.5223c-0.7034-1.1068-6.8957-10.8511-7.0605-11.1902  c-0.15-0.55,0.0121-1.0906,0.4116-1.5062c1.0983-1.1335,6.7877-2.7336,8.3445-2.3467c0.5842,0.1456,1.0026,0.5344,1.1484,1.0663  l0.0066,0.0298c0.0871,0.5027,0.7636,10.5593,0.8616,12.8109C28.8242,24.3896,28.4111,25.2587,27.5267,25.5306z M30.6962,25.5648  c0.0613-0.079,1.3839-1.8807,1.3839-1.8807c3.1754-4.3431,3.241-4.4296,3.5129-4.6069c0.4454-0.3005,0.9873-0.3247,1.5211-0.0659  c1.2931,0.6302,3.8239,4.3648,3.9828,5.8766l0.0028,0.0249l-0.0009,0.0585c0.0349,0.5693-0.1876,1.0582-0.6274,1.3575  c-0.2722,0.1767-0.3278,0.2128-6.243,1.6455c0,0-1.6656,0.5128-2.4537,0.4025c-0.4336-0.1082-0.8364-0.3944-1.1133-0.8187  C30.2296,26.8962,30.2433,26.1142,30.6962,25.5648z M41.2789,34.7767c-0.2119,1.4551-3.063,5.0778-4.4218,5.6203  c-0.2159,0.0865-0.4293,0.1288-0.6346,0.1288c-0.3163,0-0.6131-0.1008-0.8685-0.3011c-0.2634-0.2059-0.3962-0.3969-3.4913-5.4243  l-0.8847-1.4396c-0.4059-0.6184-0.3381-1.4583,0.1742-2.0829c0.4962-0.611,1.2459-0.8392,1.909-0.5848  c0.0943,0.0361,1.374,0.4591,2.212,0.7354c5.2013,1.7096,5.2222,1.7252,5.4763,1.9149  C41.1682,33.678,41.3582,34.1981,41.2789,34.7767z"
+                        id="XMLID_17_" />
+                </svg>
+                <span class="hcl-sidebar-link">
+                    Molecules
                 </span>
-                <ul class="hcl-sidebar-children">
-                    <li class="hcl-sidebar-item">
-                        <a href="#content-switcher" class="hcl-sidebar-link">
+                <svg class="toggleIcon" height="512px" style="enable-background:new 0 0 512 512;fill:white;"
+                    version="1.1" viewbox="0 0 512 512" width="512px" xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <polygon points="160,128.4 192.3,96 352,256 352,256 352,256 192.3,416 160,383.6 287.3,256 " />
+                </svg>
+            </a>
+            <ul class="hcl-sidebar-children">
+                <li class="hcl-sidebar-category">
+                    <a href="#content-switcher" tabindex="0" title="Content Switcher" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
                             Content Switcher
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#tabsexample" class="hcl-sidebar-link">
+                        </span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-category">
+                    <a href="#tabs" tabindex="0" title="Tabs" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
                             Tabs
-                        </a>
-                    </li>
-                    <li class="hcl-sidebar-item">
-                        <a href="#formcomp" class="hcl-sidebar-link">
-                            Form
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+    
     <!-- CONTENT LAYOUT -->
     <div class="hcl-content" style="margin-top: 4rem" data-withsidenav=true>
         <!-- SIDEBAR LAYOUT -->
@@ -659,58 +635,105 @@
             <!-- sidebar
               <section class="m-1 p-2" style="position:unset">
                     <nav class="hcl-sidebar" data-component="navigation">
-  <button class="hcl-sidebar-hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  <div class="hcl-sidebar-title">
-    <span class="hcl-sidebar-title-icon"></span>
-    <span class="hcl-sidebar-title-text">Section Title</span>
-    <span class="hcl-sidebar-title-toggle"></span>
-  </div>
-  <ul class="hcl-sidebar-list">
-    <li class="hcl-sidebar-category">
-      <span class="hcl-sidebar-category-title">
-        <svg class="hcl-sidebar-icon" alt="alt" title="title">
-          <rect
-            rx="3"
-            ry="3"
-            width="100%"
-            height="100%"
-            style="fill: rgb(255, 255, 255); stroke: black; stroke-width: 2; opacity: 0.5;"
-          ></rect>
-        </svg>
-        <span class="hcl-sidebar-link">
-          Category
+    <button class="hcl-sidebar-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="hcl-sidebar-title">
+        <img class="hcl-sidebar-title-icon" src="https://randomuser.me/api/portraits/women/44.jpg" />
+        <span class="hcl-sidebar-title-text">Section Title</span>
+        <span class="hcl-sidebar-title-toggle" tabindex="0">
+            <svg height="24px" style="enable-background:new 0 0 512 512;fill:white;" version="1.1" viewbox="0 0 512 512"
+                width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <polygon points="160,128.4 192.3,96 352,256 352,256 352,256 192.3,416 160,383.6 287.3,256 " />
+            </svg>
         </span>
-      </span>
-      <ul class="hcl-sidebar-children">
-        <li class="hcl-sidebar-item">
-          <a href="#" class="hcl-sidebar-link">
-            About
-          </a>
+    </div>
+    <ul class="hcl-sidebar-list">
+        <li class="hcl-sidebar-category" aria-expanded="false">
+            <a tabindex="0" title="Atoms" class="hcl-sidebar-toggle-node">
+                <svg class="hcl-sidebar-icon" style="enable-background:new 0 0 24 24;fill:white;" version="1.1"
+                    viewbox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="info" />
+                    <g id="icons">
+                        <path
+                            d="M22.2,14.4L21,13.7c-1.3-0.8-1.3-2.7,0-3.5l1.2-0.7c1-0.6,1.3-1.8,0.7-2.7l-1-1.7c-0.6-1-1.8-1.3-2.7-0.7   L18,5.1c-1.3,0.8-3-0.2-3-1.7V2c0-1.1-0.9-2-2-2h-2C9.9,0,9,0.9,9,2v1.3c0,1.5-1.7,2.5-3,1.7L4.8,4.4c-1-0.6-2.2-0.2-2.7,0.7   l-1,1.7C0.6,7.8,0.9,9,1.8,9.6L3,10.3C4.3,11,4.3,13,3,13.7l-1.2,0.7c-1,0.6-1.3,1.8-0.7,2.7l1,1.7c0.6,1,1.8,1.3,2.7,0.7L6,18.9   c1.3-0.8,3,0.2,3,1.7V22c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2v-1.3c0-1.5,1.7-2.5,3-1.7l1.2,0.7c1,0.6,2.2,0.2,2.7-0.7l1-1.7   C23.4,16.2,23.1,15,22.2,14.4z M12,16c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4s4,1.8,4,4C16,14.2,14.2,16,12,16z"
+                            id="settings" />
+                    </g>
+                </svg>
+                <span class="hcl-sidebar-link">
+                    Atoms
+                </span>
+                <svg class="toggleIcon" height="512px" style="enable-background:new 0 0 512 512;fill:white;"
+                    version="1.1" viewbox="0 0 512 512" width="512px" xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <polygon points="160,128.4 192.3,96 352,256 352,256 352,256 192.3,416 160,383.6 287.3,256 " />
+                </svg>
+            </a>
+            <ul class="hcl-sidebar-children">
+                <li class="hcl-sidebar-category">
+                    <a href="#typography" tabindex="0" title="Typography" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
+                            Typography
+                        </span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-category">
+                    <a href="#pagination" tabindex="0" title="Pagination" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
+                            Pagination
+                        </span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-category">
+                    <a href="#gridSystem" tabindex="0" title="Grid System" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
+                            Grid System
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </li>
-        <li class="hcl-sidebar-item">
-          <a href="#" class="hcl-sidebar-link">
-            Clients
-          </a>
+        <li class="hcl-sidebar-category" aria-expanded="false">
+            <a tabindex="0" title="Molecules" class="hcl-sidebar-toggle-node">
+                <svg class="hcl-sidebar-icon" style="enable-background:new 0 0 56.69 56.69;" version="1.1"
+                    viewbox="0 0 56.69 56.69" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path style="fill:white"
+                        d="M28.3455,3.7902c-13.5996,0-24.625,11.0234-24.625,24.623  c0,13.5997,11.0254,24.625,24.625,24.625c13.5986,0,24.624-11.0253,24.624-24.625C52.9695,14.8136,41.9441,3.7902,28.3455,3.7902z   M16.9061,33.189c-0.5219-0.0181-0.9963-0.3329-1.2642-0.843c-0.167-0.3179-0.2905-0.8262-0.367-1.5118  c-0.1932-1.8694,0.0351-4.6715,0.6296-5.6271c0.3148-0.4958,0.7966-0.7702,1.3245-0.7459c0.3257,0.0037,0.353,0.0043,6.0107,2.3386  l-0.0022,0.005c0.149,0.0529,0.5207,0.2047,1.5759,0.6345c0.6849,0.2563,1.1213,0.9749,1.0778,1.7849  c-0.047,0.7944-0.5208,1.4203-1.2069,1.5958c-0.1322,0.0442-0.5764,0.186-2.221,0.7111c-4.7484,1.5255-5.1882,1.6611-5.4738,1.6611  C16.9615,33.1921,16.935,33.1908,16.9061,33.189z M28.6587,36.2417c-0.0156,5.4636-0.0239,5.4884-0.1291,5.7958  c-0.1907,0.5089-0.614,0.8417-1.1951,0.9475c-0.1014,0.0174-0.2174,0.0255-0.3453,0.0255c-1.6884,0-5.489-1.4464-6.3668-2.4891  c-0.2199-0.2651-0.3503-0.5618-0.3782-0.8598c-0.0234-0.2053,0.0031-0.4168,0.079-0.6227c0.1067-0.3086,0.1207-0.349,4.0806-4.9963  l0.0952-0.1119c0.2644-0.3123,1.0048-1.1914,1.0048-1.1914c0.4551-0.5699,1.271-0.7621,2.0266-0.4703  c0.7385,0.2843,1.1867,0.9282,1.1416,1.64C28.6708,33.9772,28.6587,36.2417,28.6587,36.2417z M27.5267,25.5306  c-0.1608,0.051-0.3201,0.0759-0.4778,0.0759c-0.7083,0-1.3818-0.5095-2.007-1.5223c-0.7034-1.1068-6.8957-10.8511-7.0605-11.1902  c-0.15-0.55,0.0121-1.0906,0.4116-1.5062c1.0983-1.1335,6.7877-2.7336,8.3445-2.3467c0.5842,0.1456,1.0026,0.5344,1.1484,1.0663  l0.0066,0.0298c0.0871,0.5027,0.7636,10.5593,0.8616,12.8109C28.8242,24.3896,28.4111,25.2587,27.5267,25.5306z M30.6962,25.5648  c0.0613-0.079,1.3839-1.8807,1.3839-1.8807c3.1754-4.3431,3.241-4.4296,3.5129-4.6069c0.4454-0.3005,0.9873-0.3247,1.5211-0.0659  c1.2931,0.6302,3.8239,4.3648,3.9828,5.8766l0.0028,0.0249l-0.0009,0.0585c0.0349,0.5693-0.1876,1.0582-0.6274,1.3575  c-0.2722,0.1767-0.3278,0.2128-6.243,1.6455c0,0-1.6656,0.5128-2.4537,0.4025c-0.4336-0.1082-0.8364-0.3944-1.1133-0.8187  C30.2296,26.8962,30.2433,26.1142,30.6962,25.5648z M41.2789,34.7767c-0.2119,1.4551-3.063,5.0778-4.4218,5.6203  c-0.2159,0.0865-0.4293,0.1288-0.6346,0.1288c-0.3163,0-0.6131-0.1008-0.8685-0.3011c-0.2634-0.2059-0.3962-0.3969-3.4913-5.4243  l-0.8847-1.4396c-0.4059-0.6184-0.3381-1.4583,0.1742-2.0829c0.4962-0.611,1.2459-0.8392,1.909-0.5848  c0.0943,0.0361,1.374,0.4591,2.212,0.7354c5.2013,1.7096,5.2222,1.7252,5.4763,1.9149  C41.1682,33.678,41.3582,34.1981,41.2789,34.7767z"
+                        id="XMLID_17_" />
+                </svg>
+                <span class="hcl-sidebar-link">
+                    Molecules
+                </span>
+                <svg class="toggleIcon" height="512px" style="enable-background:new 0 0 512 512;fill:white;"
+                    version="1.1" viewbox="0 0 512 512" width="512px" xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <polygon points="160,128.4 192.3,96 352,256 352,256 352,256 192.3,416 160,383.6 287.3,256 " />
+                </svg>
+            </a>
+            <ul class="hcl-sidebar-children">
+                <li class="hcl-sidebar-category">
+                    <a href="#content-switcher" tabindex="0" title="Content Switcher" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
+                            Content Switcher
+                        </span>
+                    </a>
+                </li>
+                <li class="hcl-sidebar-category">
+                    <a href="#tabs" tabindex="0" title="Tabs" class="hcl-sidebar-item">
+                        <span class="hcl-sidebar-link no-icon">
+                            Tabs
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </li>
-        <li class="hcl-sidebar-item">
-          <a href="#" class="hcl-sidebar-link">
-            Services
-          </a>
-        </li>
-        <li class="hcl-sidebar-item">
-          <a href="#" class="hcl-sidebar-link">
-            Contact
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
+    </ul>
 </nav>
-
               </section> -->
 
 
@@ -1093,25 +1116,25 @@
             <!-- Tag -->
             <section class="m-1 p-2">
                 <!-- primary -->
-                <button class="hcl-tag hcl-tag-primary" title="primary" tabindex="0">
+                <button class="hcl-tag hcl-tag-primary" id="hcl-primary" title="primary" tabindex="0">
     <span class="hcl-tag-text">
         primary
     </span>
 </button>
-<button class="hcl-tag hcl-tag-primary" title="secondary" tabindex="0" disabled>
+<button class="hcl-tag hcl-tag-primary" id="hcl-primary-disabled" title="secondary" tabindex="0" disabled>
     <span class="hcl-tag-text">
         primary-disabled
     </span>
 </button>
 <br />
-<button class="hcl-tag hcl-tag-primary" title="primary-closeable" tabindex="0">
+<button class="hcl-tag hcl-tag-primary" id="hcl-primary-closeable" title="primary-closeable" tabindex="0">
     <span class="hcl-tag-text">
         primary-closeable
     </span>
     <span aria-hidden="true" tabindex="0"></span>
     <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
-<button class="hcl-tag hcl-tag-primary" title="primary-thumbnail-closeable" tabindex="0">
+<button class="hcl-tag hcl-tag-primary" id="hcl-primary-thumbnail-closeable" title="primary-thumbnail-closeable" tabindex="0">
     <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
     <span class="hcl-tag-text">
         primary-thumbnail-closeable
@@ -1120,17 +1143,17 @@
     <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
                 <!-- secondary -->
-                <button class="hcl-tag hcl-tag-secondary" title="secondary" tabindex="0">
+                <button class="hcl-tag hcl-tag-secondary"  id="hcl-secondary" title="secondary" tabindex="0">
     <span class="hcl-tag-text">
         secondary
     </span>
 </button>
-<button class="hcl-tag hcl-tag-secondary" title="secondary" tabindex="0" disabled>
+<button class="hcl-tag hcl-tag-secondary" id="hcl-secondary-disabled" title="secondary" tabindex="0" disabled>
     <span class="hcl-tag-text">
         secondary-disabled
     </span>
 </button>
-<button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0" disabled>
+<button class="hcl-tag hcl-tag-secondary" id="hcl-secondary-thumbnail-closeable-disabled" title="secondary-thumbnail-closeable" tabindex="0" disabled>
     <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
     <span class="hcl-tag-text">
         secondary-thumbnail-closeable-disabled
@@ -1139,7 +1162,7 @@
     <span class="hcl-close" aria-hidden="true"></span>
 </button>
 <br />
-<button class="hcl-tag hcl-tag-secondary" title="secondary-closeable" tabindex="0">
+<button class="hcl-tag hcl-tag-secondary" id="hcl-secondary-closeable" title="secondary-closeable" tabindex="0">
     <span class="hcl-tag-text">
         secondary-closeable
     </span>
@@ -1147,7 +1170,7 @@
     <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
 <br />
-<button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0">
+<button class="hcl-tag hcl-tag-secondary" id="hcl-secondary-thumbnail-closeable" title="secondary-thumbnail-closeable" tabindex="0">
     <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
     <span class="hcl-tag-text">
         secondary-thumbnail-closeable
@@ -1512,17 +1535,17 @@
         </section>
     </section>
                 <!-- with icons -->
-                <button class="hcl-tag hcl-tag-secondary" title="secondary" tabindex="0">
+                <button class="hcl-tag hcl-tag-secondary"  id="hcl-secondary" title="secondary" tabindex="0">
     <span class="hcl-tag-text">
         secondary
     </span>
 </button>
-<button class="hcl-tag hcl-tag-secondary" title="secondary" tabindex="0" disabled>
+<button class="hcl-tag hcl-tag-secondary" id="hcl-secondary-disabled" title="secondary" tabindex="0" disabled>
     <span class="hcl-tag-text">
         secondary-disabled
     </span>
 </button>
-<button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0" disabled>
+<button class="hcl-tag hcl-tag-secondary" id="hcl-secondary-thumbnail-closeable-disabled" title="secondary-thumbnail-closeable" tabindex="0" disabled>
     <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
     <span class="hcl-tag-text">
         secondary-thumbnail-closeable-disabled
@@ -1531,7 +1554,7 @@
     <span class="hcl-close" aria-hidden="true"></span>
 </button>
 <br />
-<button class="hcl-tag hcl-tag-secondary" title="secondary-closeable" tabindex="0">
+<button class="hcl-tag hcl-tag-secondary" id="hcl-secondary-closeable" title="secondary-closeable" tabindex="0">
     <span class="hcl-tag-text">
         secondary-closeable
     </span>
@@ -1539,7 +1562,7 @@
     <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
 </button>
 <br />
-<button class="hcl-tag hcl-tag-secondary" title="secondary-thumbnail-closeable" tabindex="0">
+<button class="hcl-tag hcl-tag-secondary" id="hcl-secondary-thumbnail-closeable" title="secondary-thumbnail-closeable" tabindex="0">
     <span class="hcl-tag-thumbnail" aria-hidden="true"></span>
     <span class="hcl-tag-text">
         secondary-thumbnail-closeable
@@ -1768,7 +1791,7 @@
             <section class="m-1 p-2">
                 <!-- Top -->
                 <div class="hcl-row m-3">
-                    <div class="hcl-col">
+                    <div class="hcl-col-3">
                         <section class="hcl-dropdown top" id="top-dropdown">
     <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
         Dropdown Top
@@ -1786,7 +1809,7 @@
                 </div>
                 <!-- Bottom -->
                 <div class="hcl-row m-3">
-                    <div class="hcl-col">
+                    <div class="hcl-col-3">
                         <section class="hcl-dropdown" id="bottom-dropdown">
     <button class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown">
         Dropdown Bottom
@@ -1802,8 +1825,42 @@
 </section>
                     </div>
                 </div>
+                <!-- multiselect -->
+                <div class="hcl-row m-3">
+                    <div class="hcl-col-3">
+                        <section class="hcl-dropdown hcl-dropdown-multiSelect" id="multi-dropdown">
+    <div class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown" tabindex="0">
+        <button class="hcl-tag hcl-tag-primary hidden" title="primary-closeable" tabindex="0">
+            <span class="hcl-tag-text"></span>
+            <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
+        </button>
+        <span class="hcl-dropdown-text">MultiSelect Dropdown</span>
+    </div>
+    <ul class="hcl-dropdown-container" role="dropdownMenu" aria-labelledby="dropdownMenuButton">
+        <li class="hcl-dropdown-item">
+            <div class="hcl-checkbox-item" tabindex="0">
+                <input class="hcl-checkbox" id="check0" type="checkbox" value="check0">
+                <label class="hcl-checkbox-label" for="check0">A</label>
+            </div>
+        </li>
+        <li class="hcl-dropdown-item">
+            <div class="hcl-checkbox-item" tabindex="0">
+                <input class="hcl-checkbox" id="check1" type="checkbox" value="check1">
+                <label class="hcl-checkbox-label" for="check0">B</label>
+            </div>
+        </li>
+        <li class="hcl-dropdown-item">
+            <div class="hcl-checkbox-item" tabindex="0">
+                <input class="hcl-checkbox" id="check2" type="checkbox" value="check2">
+                <label class="hcl-checkbox-label" for="check0">C</label>
+            </div>
+        </li>
+    </ul>
+</section>
+                    </div>
+                </div>
             </section>
-
+            
             <!-- File Uploader -->
             <section class="m-1 p-2">
                 <div class="hcl-form-item">
@@ -2071,202 +2128,392 @@
 
             <!-- Data table -->
             <section class="m-1 p-2">
-                <!-- borderless -->
-                <table class="hcl-data-table hcl-data-table-borderless">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Protocol</th>
-      <th>Port</th>
-      <th>Rule</th>
-      <th>Attached Groups</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Load Balancer 1</td>
-      <td>HTTP</td>
-      <td>80</td>
-      <td>Round Robin</td>
-      <td>Maureen&#x27;s VM Groups</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>Load Balancer 2</td>
-      <td>HTTP</td>
-      <td>80</td>
-      <td>Round Robin</td>
-      <td>Maureen&#x27;s VM Groups</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>Load Balancer 3</td>
-      <td>HTTP</td>
-      <td>80</td>
-      <td>Round Robin</td>
-      <td>Maureen&#x27;s VM Groups</td>
-      <td>Active</td>
-    </tr>
-  </tbody>
-</table>
+                <div class="hcl-col-12 mb-4">
+                    <!-- borderless -->
+                    <div class="hcl-data-table-wrapper hcl-data-table-borderless">
+  <table class="hcl-data-table">
+    <thead>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 1</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 2</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 3</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-                <!-- compact -->
-                <table class="hcl-data-table hcl-data-table-compact">
+                </div>
+                <div class="hcl-col-12 mb-4">
+                    <!-- compact -->
+                    <div class="hcl-data-table-wrapper">
+  <table class="hcl-data-table hcl-data-table-compact">
     <thead>
-        <tr>
-            <th >Name</th>
-            <th>Protocol</th>
-            <th>Port</th>
-            <th>Rule</th>
-            <th>Attached Groups</th>
-            <th>Status</th>
-        </tr>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Load Balancer 1</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 2</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 3</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 1</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 2</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 3</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
     </tbody>
-</table>
-                <!-- default -->
-                <table class="hcl-data-table">
+  </table>
+</div>
+
+                </div>
+                <div class="hcl-col-12 mb-4">
+                    <!-- default -->
+                    <div class="hcl-data-table-wrapper">
+  <table class="hcl-data-table">
     <thead>
-        <tr>
-            <th >Name</th>
-            <th>Protocol</th>
-            <th>Port</th>
-            <th>Rule</th>
-            <th>Attached Groups</th>
-            <th>Status</th>
-        </tr>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Load Balancer 1</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 2</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 3</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 1</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 2</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 3</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
     </tbody>
-</table>
-                <!-- tall -->
-                <table class="hcl-data-table hcl-data-table-tall">
+  </table>
+</div>
+
+                </div>
+                <div class="hcl-col-12 mb-4">
+                    <!-- tall -->
+                    <div class="hcl-data-table-wrapper">
+  <table class="hcl-data-table hcl-data-table-tall">
     <thead>
-        <tr>
-            <th >Name</th>
-            <th>Protocol</th>
-            <th>Port</th>
-            <th>Rule</th>
-            <th>Attached Groups</th>
-            <th>Status</th>
-        </tr>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Load Balancer 1</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 2</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 3</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
+      <tr>
+        <td>
+          <div class="body-content-wrapper">
+            <p>Load Balancer 1</p>
+            <span>Secondary Information</span>
+          </div>
+        </td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="body-content-wrapper">
+            <p>Load Balancer 2</p>
+            <span>Secondary Information</span>
+          </div>
+        </td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="body-content-wrapper">
+            <p>Load Balancer 3</p>
+            <span>Secondary Information</span>
+          </div>
+        </td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
     </tbody>
-</table>
-                <!-- zebra -->
-                <table class="hcl-data-table hcl-data-table-zebra">
+  </table>
+</div>
+
+                </div>
+                <div class="hcl-col-12 mb-4">
+                    <!-- zebra -->
+                    <div class="hcl-data-table-wrapper">
+  <table class="hcl-data-table hcl-data-table-zebra">
     <thead>
-        <tr>
-            <th >Name</th>
-            <th>Protocol</th>
-            <th>Port</th>
-            <th>Rule</th>
-            <th>Attached Groups</th>
-            <th>Status</th>
-        </tr>
+      <tr>
+        <th><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Load Balancer 1</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 2</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Load Balancer 3</td>
-            <td>HTTP</td>
-            <td>80</td>
-            <td>Round Robin</td>
-            <td>Maureen&#x27;s VM Groups</td>
-            <td>Active</td>
-        </tr>
-    </tbody> 
-</table>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 1</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 2</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+      <tr>
+        <td><div class="body-content-wrapper">Load Balancer 3</div></td>
+        <td><div class="body-content-wrapper">HTTP</div></td>
+        <td><div class="body-content-wrapper">80</div></td>
+        <td><div class="body-content-wrapper">Round Robin</div></td>
+        <td>
+          <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+        </td>
+        <td><div class="body-content-wrapper">Active</div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+                </div>
+                <div class="hcl-col-12 mb-4">
+                    <!-- overflow -->
+                    <div class="hcl-data-table-wrapper">
+    <table class="hcl-data-table">
+        <thead>
+            <tr>
+                <th>
+                    <div class="header-text-wrapper">Name</div>
+                </th>
+                <th>
+                    <div class="header-text-wrapper">Protocol</div>
+                </th>
+                <th>
+                    <div class="header-text-wrapper">Port</div>
+                </th>
+                <th>
+                    <div class="header-text-wrapper">Rule</div>
+                </th>
+                <th>
+                    <div class="header-text-wrapper">Attached Groups</div>
+                </th>
+                <th>
+                    <div class="header-text-wrapper"></div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="body-content-wrapper">On Hover Overflow</div>
+                </td>
+                <td>
+                    <div class="body-content-wrapper">HTTP</div>
+                </td>
+                <td>
+                    <div class="body-content-wrapper">80</div>
+                </td>
+                <td>
+                    <div class="body-content-wrapper">Round Robin</div>
+                </td>
+                <td>
+                    <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+                </td>
+                <td>
+                    <div class="header-text-wrapper overflow-wrapper overflow-onhover">
+                        <div id="dataTableOverflow" class="hcl-overflow-container">
+                            <button class="hcl-ellipsis" aria-label="Right Overflow Menu" role="Overflow Menu"></button>
+                            <div class="hcl-overflow-menu hcl-overflow-right">
+                                <ul aria-labelledby="Right Overflow Menu">
+                                    <li class="hcl-overflow-option">
+                                        <button class="hcl-overflow-option-btn" aria-label="Option 1">Option 1</button>
+                                    </li>
+                                    <li class="hcl-overflow-option">
+                                        <button class="hcl-overflow-option-btn" aria-label="option 2">Option 2</button>
+                                    </li>
+                                    <li class="hcl-overflow-option">
+                                        <button class="hcl-overflow-option-disablebtn" disabled="disabled" tabindex="-1"
+                                            aria-label="option 3">Option
+                                            3</button>
+                                    </li>
+                                    <li class="hcl-overflow-option hcl-overflow-separator">
+                                        <button class="hcl-overflow-option-dangerbtn"
+                                            aria-label="Danger">Danger</button>
+                                    </li>
+                                </ul>
+                                <div class="hcl-overflow-caret-right"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="body-content-wrapper">Fixed Overflow</div>
+                </td>
+                <td>
+                    <div class="body-content-wrapper">HTTP</div>
+                </td>
+                <td>
+                    <div class="body-content-wrapper">80</div>
+                </td>
+                <td>
+                    <div class="body-content-wrapper">Round Robin</div>
+                </td>
+                <td>
+                    <div class="body-content-wrapper">Maureen&#x27;s VM Groups</div>
+                </td>
+                <td>
+                    <div class="header-text-wrapper overflow-wrapper">
+                        <div id="dataTableOverflow2" class="hcl-overflow-container">
+                            <button class="hcl-ellipsis" aria-label="Right Overflow Menu" role="Overflow Menu"></button>
+                            <div class="hcl-overflow-menu hcl-overflow-right">
+                                <ul aria-labelledby="Right Overflow Menu">
+                                    <li class="hcl-overflow-option">
+                                        <button class="hcl-overflow-option-btn" aria-label="Option 1">Option 1</button>
+                                    </li>
+                                    <li class="hcl-overflow-option">
+                                        <button class="hcl-overflow-option-btn" aria-label="option 2">Option 2</button>
+                                    </li>
+                                    <li class="hcl-overflow-option">
+                                        <button class="hcl-overflow-option-disablebtn" disabled="disabled" tabindex="-1"
+                                            aria-label="option 3">Option
+                                            3</button>
+                                    </li>
+                                    <li class="hcl-overflow-option hcl-overflow-separator">
+                                        <button class="hcl-overflow-option-dangerbtn"
+                                            aria-label="Danger">Danger</button>
+                                    </li>
+                                </ul>
+                                <div class="hcl-overflow-caret-right"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+                </div>
             </section>
 
             <!-- Date Picker -->
@@ -2436,6 +2683,20 @@
 </select>
 
             </section>
+            <section class="m-1 p-2">
+                <select class="hcl-select">
+  <option class="hcl-select-option" value="placeholder-item">choose an option</option>
+  <optgroup class="hcl-select-optgroup" label="Category 1">
+    <option class="hcl-select-option" value="option 1">option 1</option>
+    <option class="hcl-select-option" value="option 2">option 2</option>
+  </optgroup>
+  <optgroup class="hcl-select-optgroup" label="Category 2">
+    <option class="hcl-select-option" value="option 3">option 3</option>
+    <option class="hcl-select-option" value="option 4">option 4</option>
+  </optgroup>
+</select>
+            </section>
+
 
             <!-- Accordion -->
             <section class="m-1 p-2">
@@ -2874,50 +3135,50 @@
 </section>
 
                 <!-- dataTable -->
-                <table class="hcl-data-table hcl-loading">
-  <thead>
-    <tr>
-      <th>
-        TEST
-      </th>
-      <th class="sortable">Name</th>
-      <th>Protocol</th>
-      <th>Port</th>
-      <th>Rule</th>
-      <th>Attached Groups</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-    </tr>
-    <tr>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-    </tr>
-    <tr>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-      <td><span></span></td>
-    </tr>
-  </tbody>
-</table>
+                <div class="hcl-data-table-wrapper">
+  <table class="hcl-data-table hcl-loading">
+    <thead>
+      <tr>
+        <th><div class="header-text-wrapper">Id</div></th>
+        <th class="sortable"><div class="header-text-wrapper">Name</div></th>
+        <th><div class="header-text-wrapper">Protocol</div></th>
+        <th><div class="header-text-wrapper">Port</div></th>
+        <th><div class="header-text-wrapper">Rule</div></th>
+        <th><div class="header-text-wrapper">Attached Groups</div></th>
+        <th><div class="header-text-wrapper">Status</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
                 <!-- normal -->
                 <div class="hcl-rectagle hcl-loading"></div>
@@ -3138,93 +3399,207 @@
 
             <!-- footer -->
             <section class="m-1 p-2">
-                <section id="treeStructure" >
-  <div class="hcl-row">
-      <div class="hcl-col-4">
-          <ul role="tree" class="hcl-tree">
-              <li class="tree-item" role="treeitem" aria-expanded="false">
-                  <div class="tree-node" tabindex="0">
-                      <i class="toggle-icon"></i>
-                      <span>Main 1</span>
-                  </div>
-                  <ul role="group" class="tree-nested">
-                      <li class="tree-item" role="treeitem">
-                          <div class="tree-node" tabindex="0">
-                              <span>Sub Main 1.1</span>
-                          </div>
-                      </li>
-                      <li class="tree-item" role="treeitem">
-                          <div class="tree-node" tabindex="0">
-                              <span>Sub Main 1.2</span>
-                          </div>
-                      </li>
-                  </ul>
-              </li>
-              <li class="tree-item" role="treeitem" aria-expanded="false">
-                  <div class="tree-node" tabindex="0">
-                      <i class="toggle-icon"></i>
-                      <span>Main 2</span>
-                  </div>
-                  <ul role="group" class="tree-nested">
-                      <li class="tree-item" role="treeitem" aria-expanded="false">
-                          <div class="tree-node" tabindex="0">
-                              <i class="toggle-icon"></i>
-                              <span>Sub Main 2.1</span>
-                          </div>
-                          <ul role="group" class="tree-nested">
-                              <li class="tree-item" role="treeitem">
-                                  <div class="tree-node" tabindex="0">
-                                      <span>Sub Main 2.1.1</span>
-                                  </div>
-                              </li>
-                              <li class="tree-item" role="treeitem">
-                                  <div class="tree-node" tabindex="0">
-                                      <span>Sub Main 2.1.2</span>
-                                  </div>
-                              </li>
-                          </ul>
-                      </li>
-                      <li class="tree-item" role="treeitem" aria-expanded="false">
-                          <div class="tree-node" tabindex="0">
-                              <i class="toggle-icon"></i>
-                              <span>Sub Main 2.2</span>
-                          </div>
-                          <ul role="group" class="tree-nested">
-                              <li class="tree-item" role="treeitem">
-                                  <div class="tree-node" tabindex="0">
-                                      <span>Sub Main 2.2.1</span>
-                                  </div>
-                              </li>
-                              <li class="tree-item" role="treeitem">
-                                  <div class="tree-node" tabindex="0">
-                                      <span>Sub Main 2.2.1</span>
-                                  </div>
-                              </li>
-                          </ul>
-                      </li>
-                  </ul>
-              </li>
-              <li class="tree-item" role="treeitem" aria-expanded="false">
-                  <div class="tree-node" tabindex="0">
-                      <i class="toggle-icon"></i>
-                      <span>Main 3</span>
-                  </div>
-                  <ul role="group" class="tree-nested">
-                      <li class="tree-item" role="treeitem">
-                          <div class="tree-node" tabindex="0">
-                              <span>Sub Main 3.1</span>
-                          </div>
-                      </li>
-                      <li class="tree-item" role="treeitem">
-                          <div class="tree-node" tabindex="0">
-                              <span>Sub Main 3.2</span>
-                          </div>
-                      </li>
-                  </ul>
-              </li>
-          </ul>
-      </div>
-  </div>
+                <section id="treeStructure">
+    <div class="hcl-row">
+        <div class="hcl-col-4">
+            <ul role="tree" class="hcl-tree">
+                <li class="tree-item" role="treeitem" aria-expanded="false">
+                    <div class="tree-node " tabindex="0">
+                        <i class="toggle-icon"></i>
+                        <div class="treenode-action-wrapper">
+                            <div class="treenode-content-wrapper">
+                                <i class="pi pi-export expanded"></i>
+                                <i class="pi pi-folder collapsed"></i>
+                                <span class="tree-text-node " title="Main">
+                                    <div>Main</div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul role="group" class="tree-nested">
+                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                            <div class="tree-node no-children-exist " tabindex="0">
+                                <div class="treenode-action-wrapper">
+                                    <div class="treenode-content-wrapper">
+                                        <i class="pi pi-folder"></i><span class="tree-text-node " title="1">
+                                            <div>1</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                            <div class="tree-node no-children-exist " tabindex="0">
+                                <div class="treenode-action-wrapper">
+                                    <div class="treenode-content-wrapper">
+                                        <i class="pi pi-document"></i><span class="tree-text-node " title="2">
+                                            <div>2</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                            <div class="tree-node no-children-exist " tabindex="0">
+                                <div class="treenode-action-wrapper">
+                                    <div class="treenode-content-wrapper">
+                                        <i class="pi pi-document"></i><span class="tree-text-node " title="3">
+                                            <div>3</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                            <div class="tree-node no-children-exist " tabindex="0">
+                                <div class="treenode-action-wrapper">
+                                    <div class="treenode-content-wrapper">
+                                        <i class="pi pi-document"></i><span class="tree-text-node " title="4">
+                                            <div>4</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tree-item" role="treeitem" aria-expanded="false">
+                    <div class="tree-node " tabindex="0">
+                        <i class="toggle-icon"></i>
+                        <div class="treenode-action-wrapper">
+                            <div class="treenode-content-wrapper">
+                                <i class="pi pi-export expanded"></i>
+                                <i class="pi pi-folder collapsed"></i><span class="tree-text-node " title="Folder 2">
+                                    <div>Folder 2</div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul role="group" class="tree-nested">
+                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                            <div class="tree-node " tabindex="0">
+                                <i class="toggle-icon"></i>
+                                <div class="treenode-action-wrapper">
+                                    <div class="treenode-content-wrapper">
+                                        <i class="pi pi-export expanded"></i>
+                                        <i class="pi pi-folder collapsed"></i><span class="tree-text-node "
+                                            title="Folder 2.1">
+                                            <div>Folder 2.1</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul role="group" class="tree-nested">
+                                <li class="tree-item" role="treeitem" aria-expanded="false">
+                                    <div class="tree-node no-children-exist " tabindex="0">
+                                        <div class="treenode-action-wrapper">
+                                            <div class="treenode-content-wrapper">
+                                                <i class="pi pi-document"></i><span class="tree-text-node "
+                                                    title="File 2.1.1">
+                                                    <div>File 2.1.1</div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="tree-item" role="treeitem" aria-expanded="false">
+                                    <div class="tree-node no-children-exist " tabindex="0">
+                                        <div class="treenode-action-wrapper">
+                                            <div class="treenode-content-wrapper">
+                                                <i class="pi pi-folder"></i><span class="tree-text-node "
+                                                    title="Folder 2.1.2">
+                                                    <div>Folder 2.1.2</div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                            <div class="tree-node " tabindex="0">
+                                <i class="toggle-icon"></i>
+                                <div class="treenode-action-wrapper">
+                                    <div class="treenode-content-wrapper">
+                                        <i class="pi pi-export expanded"></i>
+                                        <i class="pi pi-folder collapsed"></i><span class="tree-text-node "
+                                            title="Folder 2.2">
+                                            <div>Folder 2.2</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul role="group" class="tree-nested">
+                                <li class="tree-item" role="treeitem" aria-expanded="false">
+                                    <div class="tree-node " tabindex="0">
+                                        <i class="toggle-icon"></i>
+                                        <div class="treenode-action-wrapper">
+                                            <div class="treenode-content-wrapper">
+                                                <i class="pi pi-export expanded"></i>
+                                                <i class="pi pi-folder collapsed"></i><span class="tree-text-node "
+                                                    title="Folder 2.2.1">
+                                                    <div>Folder 2.2.1</div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul role="group" class="tree-nested">
+                                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                                            <div class="tree-node no-children-exist " tabindex="0">
+                                                <div class="treenode-action-wrapper">
+                                                    <div class="treenode-content-wrapper">
+                                                        <i class="pi pi-document"></i><span class="tree-text-node "
+                                                            title="File 2.2.1.1">
+                                                            <div>File 2.2.1.1</div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="tree-item" role="treeitem" aria-expanded="false">
+                                            <div class="tree-node no-children-exist " tabindex="0">
+                                                <div class="treenode-action-wrapper">
+                                                    <div class="treenode-content-wrapper">
+                                                        <i class="pi pi-document"></i><span class="tree-text-node "
+                                                            title="File 2.2.1.2">
+                                                            <div>File 2.2.1.2</div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="tree-item" role="treeitem" aria-expanded="false">
+                                    <div class="tree-node no-children-exist " tabindex="0">
+                                        <div class="treenode-action-wrapper">
+                                            <div class="treenode-content-wrapper">
+                                                <i class="pi pi-document"></i><span class="tree-text-node "
+                                                    title="File 2.2.2">
+                                                    <div>File 2.2.2</div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tree-item" role="treeitem" aria-expanded="false">
+                    <div class="tree-node no-children-exist " tabindex="0">
+                        <div class="treenode-action-wrapper">
+                            <div class="treenode-content-wrapper">
+                                <i class="pi pi-document"></i><span class="tree-text-node " title="File 3">
+                                    <div>File 3</div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>
             </section>
 
@@ -3236,6 +3611,7 @@
     <script src="./scss/components/accordion/uncontrolled/uncontrolled.js"></script>
     <script src="./scss/components/dropdown/bottom/bottom.js"></script>
     <script src="./scss/components/dropdown/top/top.js"></script>
+    <script src="./scss/components/dropdown/multiSelect/multiSelect.js"></script>
     <script src="./scss/components/modal/danger/danger.js"></script>
     <script src="./scss/components/modal/danger-action/danger-action.js"></script>
     <script src="./scss/components/modal/danger-label/danger-label.js"></script>
@@ -3270,6 +3646,7 @@
     <script src="./scss/components/tag/tag.js"></script>
     <script src="./scss/components/breadcrumb/breadcrumb.js"></script>
     <script src="./scss/components/pagination/pagination.js"></script>
+    <script src="./scss/components/data-table/overflow/overflow.js"></script>
 </body>
 
 </html>

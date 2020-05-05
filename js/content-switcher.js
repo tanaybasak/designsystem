@@ -2,6 +2,7 @@ import { PREFIX } from './utils/config';
 import { NOOP } from './utils/functions';
 import handleDataBinding from './utils/data-api';
 import getClosest from './utils/get-closest';
+import focusNode from './utils/traverse-focus';
 
 class ContentSwitcher {
   constructor(element, options) {
@@ -105,9 +106,32 @@ class ContentSwitcher {
       return element.isEqualNode(item);
     });
 
+    if (ev.target.matches('button')) {
+      ev.target.focus();
+    }
+
     this.toggleSwitch(selectedIndex);
     if (this.state.onChange) {
       this.state.onChange(ev);
+    }
+  };
+
+  keyDownOnContextSwitch = (e) => {
+    const key = e.which || e.keyCode;
+    const currentElem = e.currentTarget;
+    switch (key) {
+      case 39: {
+        focusNode(currentElem, 'next');
+        e.preventDefault();
+        break;
+      }
+      case 37: {
+        focusNode(currentElem, 'previous');
+        e.preventDefault();
+        break;
+      }
+      default:
+        break;
     }
   };
 
@@ -121,6 +145,10 @@ class ContentSwitcher {
         'click',
         this.clickEventListener.bind(this)
       );
+
+      contentswitcher[i].addEventListener('keydown', e => {
+        this.keyDownOnContextSwitch(e);
+      });
     }
   };
 
