@@ -54,6 +54,8 @@ class Pagination {
       totalItems: 0,
       ...options
     };
+    // eslint-disable-next-line dot-notation
+    options['itemStepper'] ? this.state.pageItems.value = options.itemStepper : (() => {})();
     this.init();
     this.toggleState(this.state);
   }
