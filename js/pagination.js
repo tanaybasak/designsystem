@@ -205,8 +205,7 @@ class Pagination {
     if (keycode === 37) { // PREVIOUS
       e.preventDefault();
       const selIndex = target.selectedIndex;
-      if (selIndex === 0) { // FIRST ELEMENT
-      } else { // OTHERS
+      if (selIndex > 0) { // OTHER THAN FIRST ELEMENT
         target.selectedIndex--;
       }
       this.handleChange(e);
@@ -214,8 +213,7 @@ class Pagination {
       e.preventDefault();
       if (target.options) {
         const selIndex = target.selectedIndex;
-        if ((optionsLen - 1) === selIndex) { // LAST ELEMENT
-        } else { // OTHERS
+        if ((optionsLen - 1) !== selIndex) { // OTHER THAN LAST ELEMENT
           target.selectedIndex++;
         }
         this.handleChange(e);
