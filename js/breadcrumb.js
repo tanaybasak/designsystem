@@ -1,6 +1,5 @@
 import { PREFIX } from './utils/config';
 
-let breadcrumbINC = 0;
 class Breadcrumb {
   constructor(element) {
     this.element = element;
@@ -15,7 +14,6 @@ class Breadcrumb {
     this.state = {
       isOpen: false
     };
-    this.breadcrumbId = breadcrumbINC++;
   }
 
   selectNewActiveItem = newActiveItem => {
