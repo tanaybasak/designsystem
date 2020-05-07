@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
     <link href="./node_modules/patron-icon/dist/patron-font.css" rel="stylesheet">
-    
+
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <style>
         .bgColor {
@@ -34,7 +34,7 @@
     <!-- HEADER LAYOUT -->
     <addHTML src="./scss/components/header/header.html" />
     <addHTML src="./scss/components/sidebar/sidebar.html" />
-    
+
     <!-- CONTENT LAYOUT -->
     <div class="hcl-content" style="margin-top: 4rem" data-withsidenav=true>
         <!-- SIDEBAR LAYOUT -->
@@ -180,7 +180,10 @@
 
             <!-- Breadcrumb -->
             <section class="m-1 p-2">
-                <addHTML src="./scss/components/breadcrumb/breadcrumb.html" />
+                <addHTML src="./scss/components/breadcrumb/default/default.html" />
+            </section>
+            <section class="m-1 p-2">
+                <addHTML src="./scss/components/breadcrumb/withoverflow/withoverflow.html" />
             </section>
 
             <!-- Toggle -->
@@ -316,7 +319,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <!-- File Uploader -->
             <section class="m-1 p-2">
                 <addHTML src="./scss/components/file-uploader/file-uploader.html" />
@@ -556,7 +559,8 @@
     <script src="./scss/components/tree/tree.js"></script>
     <script src="./scss/components/header/header.js"></script>
     <script src="./scss/components/tag/tag.js"></script>
-    <script src="./scss/components/breadcrumb/breadcrumb.js"></script>
+    <script src="./scss/components/breadcrumb/default/default.js"></script>
+    <script src="./scss/components/breadcrumb/withoverflow/withoverflow.js"></script>
     <script src="./scss/components/pagination/pagination.js"></script>
     <script src="./scss/components/data-table/overflow/overflow.js"></script>
 </body>
