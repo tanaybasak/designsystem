@@ -93,12 +93,15 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
 
     .header-text-wrapper.sortable {
       display: flex;
+      cursor: pointer;
 
       .#{$prefix}-sorting {
         margin-left: 0.625rem;
+        transform: rotate(180deg);
+        transition: rotate 0.3s ease-in-out;
 
         &.desc {
-          transform: rotate(180deg);
+          transform: rotate(0);
           transition: rotate 0.3s ease-in-out;
         }
       }
@@ -145,6 +148,10 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
 
           &:nth-child(odd) {
             background-color: $zebra-bg;
+          }
+
+          &:hover {
+            background-color: $table-header-bg;
           }
         }
       }
