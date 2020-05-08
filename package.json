@@ -31,7 +31,8 @@
     "postcss-cli": "^6.1.2",
     "rimraf": "^3.0.0",
     "sass": "^1.23.3",
-    "stylelint": "^10.1.0"
+    "stylelint": "^10.1.0",
+    "patron-icon": "git+https://github01.hclpnp.com/UXUIAssets/patron-icon.git"
   },
   "browserslist": [
     "> .1%",

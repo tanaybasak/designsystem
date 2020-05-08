@@ -10,7 +10,7 @@ class Sidebar {
       ...options
     };
 
-    this.title = this.element.querySelector(`.${PREFIX}-sidebar-title`);
+    this.title = this.element.querySelector(`.${PREFIX}-sidebar-title-toggle`);
     this.hamburger = this.element.querySelector(`.${PREFIX}-sidebar-hamburger`);
     this.categories = this.element.querySelectorAll(
       `.${PREFIX}-sidebar-toggle-node`
@@ -78,7 +78,8 @@ class Sidebar {
       const sidebarLink = getClosest(event.target, 'a');
       if (
         !this.isDescendant(this.element, event.target) ||
-        (sidebarLink && sidebarLink.classList.contains(`${PREFIX}-sidebar-item`))
+        (sidebarLink &&
+          sidebarLink.classList.contains(`${PREFIX}-sidebar-item`))
       ) {
         document.removeEventListener('click', handler);
         if (this.state.expanded) {
@@ -102,6 +103,13 @@ class Sidebar {
     }
 
     this.state.expanded = !this.state.expanded;
+  };
+
+  toggleSidebarOnEnter = e => {
+    var key = e.which || e.keyCode;
+    if (key === 13) {
+      this.toggleSidebar();
+    }
   };
 
   toggleCategory = event => {
@@ -219,7 +227,9 @@ class Sidebar {
 
   attachEvents = () => {
     this.title.addEventListener('click', this.toggleSidebar);
+    this.title.addEventListener('keydown', this.toggleSidebarOnEnter);
     this.hamburger.addEventListener('click', this.toggleSidebar);
+    this.hamburger.addEventListener('keydown', this.toggleSidebarOnEnter);
     this.categories.forEach(category => {
       category.addEventListener('click', this.toggleCategory);
       category.addEventListener('keydown', this.keyDownOnTree);

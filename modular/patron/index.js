@@ -123,6 +123,9 @@ export const components = {
   },
   toggle: function(selector) {
     attachElements(selector, null, Toggle);
+  },
+  pagination: function(selector, options) {
+    attachElements(selector, options, Pagination);
   }
 };
 
