@@ -14,7 +14,7 @@ class FileUploader {
       ...options
     };
     this.fileContainer = this.element.querySelector(this.selectors.container);
-    this.fileNames = [];
+    this.fileList = [];
   }
 
   keyListener = (event) => {
@@ -26,7 +26,7 @@ class FileUploader {
 
   fileNameHTML = (name) => {
     return `<div class="${PREFIX}-file-container-item">
-    <span class="${PREFIX}-file-selected-file">
+    <span title="${name}" class="${PREFIX}-file-selected-file">
       <p class="${PREFIX}-file-filename">${name}</p>
     </span>
     <button type='button' value="${name}" class='${PREFIX}-file-close'></button>
@@ -41,24 +41,25 @@ class FileUploader {
       for (let i = 0; i < length; i++) {
         const string = this.fileNameHTML(files[i].name);
         this.fileContainer.insertAdjacentHTML('beforeend', string);
-        this.fileNames.push(files[i].name);
       }
-      this.fileNames = [...new Set(this.fileNames)];
+      this.fileList = [...new Set(files)];
     }
     if (typeof this.state.onChange === 'function') {
-      this.state.onChange(this.fileNames);
+      this.state.onChange(this.fileList);
     }
   };
 
   removeFile = (event) => {
     if (event.target.type === 'button') {
       this.fileContainer.removeChild(event.target.parentNode);
-      const index = this.fileNames.indexOf(event.target.value);
+      const index = this.fileList.findIndex(
+        (file) => file.name === event.target.value
+      );
       if (index !== -1) {
-        this.fileNames.splice(index, 1);
+        this.fileList.splice(index, 1);
       }
       if (typeof this.state.onChange === 'function') {
-        this.state.onChange(this.fileNames);
+        this.state.onChange(this.fileList);
       }
     }
   };
