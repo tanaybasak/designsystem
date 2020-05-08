@@ -6,8 +6,8 @@
  *******************************************************************
  */
 
- @import '../../base';
- 
+@import '../../base';
+
 $breadcrumb-margin: 1rem;
 
 .#{$prefix}-breadcrumb {
@@ -42,6 +42,16 @@ $breadcrumb-margin: 1rem;
             color: $dark-blue;
             @include getFontWeight('semibold');
             @include getTextDecorationLine('underline');
+        }
+    }
+
+    .#{$prefix}-overflow-container {
+        margin-right: 1rem;
+
+        &::after {
+            content: '/';
+            margin-left: 0.5rem;
+            color: $blue;
         }
     }
 }
