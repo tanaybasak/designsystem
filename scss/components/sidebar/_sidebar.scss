@@ -244,7 +244,7 @@ $animation-duration:220ms;
         height: 4rem;
         top: 0;
         background: transparent;
-        transition: height $animation-duration ease-in-out,width $animation-duration ease-in-out,background $animation-duration ease-in-out $animation-duration;
+        transition: width $animation-duration ease-in-out,height $animation-duration ease-in-out $animation-duration,background $animation-duration ease-in-out $animation-duration;
         position: fixed;
         .#{$prefix}-sidebar-title {
             display: none;
