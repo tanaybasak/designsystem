@@ -94,6 +94,8 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
     .header-text-wrapper.sortable {
       display: flex;
       cursor: pointer;
+      height: 100%;
+      width: 100%;
 
       .#{$prefix}-sorting {
         margin-left: 0.625rem;
@@ -104,6 +106,11 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
           transform: rotate(0);
           transition: rotate 0.3s ease-in-out;
         }
+      }
+
+      &:focus {
+        outline: 1px solid $primary;
+        outline-offset: -1px;
       }
     }
 
@@ -135,8 +142,7 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
     }
 
     td:focus {
-      outline: none;
-      border: 0.0625rem solid $primary !important;
+      outline: 0.0625rem solid $primary;
     }
 
     &-zebra {
