@@ -6,30 +6,59 @@
  *******************************************************************
  */
 
- @import '../../base';
+@import '../../base';
 
 .#{$prefix}-form-item {
-    .#{$prefix}-label {
-        font-size: .875rem;
-        @include getInputColor('color-1', 'color');
-        letter-spacing: 0;
-        line-height: 1.125rem;
+  .#{$prefix}-label {
+    font-size: 0.875rem;
+    @include getInputColor('color-1', 'color');
+    letter-spacing: 0;
+    line-height: 1.125rem;
+  }
+
+  .#{$prefix}-label-description {
+    font-size: 0.875rem;
+    color: #aaa;
+    line-height: 1.313rem;
+  }
+
+  .#{$prefix}-file-uploader {
+    .#{$prefix}-file-btn {
+      display: inline-flex;
     }
 
-    .#{$prefix}-label-description {
-        font-size: .875rem;
-        color: #aaa;
-        line-height: 1.313rem;
+    .#{$prefix}-file-input {
+      display: none;
     }
 
-    .#{$prefix}-file-uploader {
-
-        .#{$prefix}-file-btn {
-            display: inline-flex;
+    .#{$prefix}-file-container {
+      .#{$prefix}-file-selected-file {
+        display: inline-flex;
+        border: 1px solid $grey-2;
+        width: 25rem;
+        padding: 0.6925rem 1rem;
+        padding-right: 3rem;
+      }
+      .#{$prefix}-file-filename {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .#{$prefix}-file-close {
+        @include hcl-close-icon(10, $white, $lightGrey);
+        min-width: 2.75rem;
+        max-width: 2.75rem;
+        min-height: 2.75rem;
+        max-height: 2.75rem;
+        width: 14px;
+        height: 14px;
+        top: 1.05rem;
+        right: 3.05rem;
+        &:focus {
+          outline: 1px solid $blue;
         }
-
-        .#{$prefix}-file-input {
-            display: none;
-        }
+      }
     }
+  }
 }

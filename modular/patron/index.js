@@ -110,8 +110,8 @@ export const components = {
   dataTable: function(selector) {
     attachElements(selector, null, DataTable);
   },
-  fileUploader: function(selector) {
-    attachElements(selector, null, FileUploader);
+  fileUploader: function(selector, options) {
+    attachElements(selector, options, FileUploader);
   },
   tag: function(selector) {
     attachElements(selector, null, Tag);
