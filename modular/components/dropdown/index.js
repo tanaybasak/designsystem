@@ -36,7 +36,7 @@ export const components = {
 };
 
 if (window) {
-  window.patron = components;
+  window.patron = { ...components };
 }
 
 // eslint-disable-next-line no-undef
