@@ -42,7 +42,7 @@ class FileUploader {
         const string = this.fileNameHTML(files[i].name);
         this.fileContainer.insertAdjacentHTML('beforeend', string);
       }
-      this.fileList = [...new Set(files)];
+      this.fileList = [...files, ...this.fileList];
     }
     if (typeof this.state.onChange === 'function') {
       this.state.onChange(this.fileList);
