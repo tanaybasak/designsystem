@@ -47,6 +47,7 @@ class FileUploader {
     if (typeof this.state.onChange === 'function') {
       this.state.onChange(this.fileList);
     }
+    event.target.value = null;
   };
 
   removeFile = (event) => {
