@@ -18,8 +18,8 @@ import Overflow from '../../js/overflow';
 import Tag from '../../js/tag';
 import Modal from '../../js/modal';
 import Breadcrumb from '../../js/breadcrumb';
+import Tile from '../../js/tile';
 import Toggle from '../../js/toggle';
-
 import { isElement } from '../../js/utils/dom';
 
 // Demo Scripts
@@ -43,6 +43,7 @@ const ComponentList = {
   tag: Tag,
   modal: Modal,
   breadcrumb: Breadcrumb,
+  tile: Tile,
   toggle: Toggle
 };
 
@@ -120,6 +121,9 @@ export const components = {
   },
   breadcrumb: function(selector) {
     attachElements(selector, null, Breadcrumb);
+  },
+  tile: function(selector) {
+    attachElements(selector, null, Tile);
   },
   toggle: function(selector) {
     attachElements(selector, null, Toggle);
