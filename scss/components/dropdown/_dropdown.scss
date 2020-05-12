@@ -49,6 +49,10 @@
       right: 0.875rem;
       transform: translate(-50%, -50%);
     }
+    &:focus {
+      outline-offset: -1px;
+      outline: 1px solid $blue;
+    }
   }
 
   &-text {
