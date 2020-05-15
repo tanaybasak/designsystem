@@ -1,9 +1,52 @@
-<div class="hcl-col">
-    <label>Slider Label</label>
-    <div class="hcl-slider">
-        <label class="hcl-slider-bottom-range">10</label>
-        <input class="hcl-slider-input" type="range" value="50" min="10" max="100" />
-        <label class="hcl-slider-top-range">100</label>
-        <input class="hcl-form-control hcl-slider-text-input" type="number" />
+<div class="hcl-slider-wrapper" style="width:100%">
+  <label for="feedback11">Feedback Form</label>
+  <div class="hcl-slider" style="order:1">
+    <label class="hcl-slider-bottom-range">0</label>
+    <div class="hcl-slider-input-wrapper">
+      <div class="range-value">
+        <span></span>
+      </div>
+      <input
+        class="hcl-slider-input"
+        type="range"
+        value="300"
+        min="0"
+        max="10000"
+        step="100"
+      />
     </div>
+
+    <label class="hcl-slider-top-range">10000</label>
+    <input
+      class="hcl-form-control hcl-slider-text-input"
+      min="0"
+      max="10000"
+      step="100"
+      type="number"
+    />
+  </div>
+  <div class="hcl-error-msg" id="hcl-error-msg" style="order:5"></div>
 </div>
+
+<!-- <div class="hcl-col">
+  <label>Slider Label</label>
+  <div class="hcl-slider">
+    <label class="hcl-slider-bottom-range">10</label>
+    <div class="hcl-slider-input-wrapper">
+      <div class="range-value">
+        <span>12</span>
+      </div>
+      <input
+        class="hcl-slider-input"
+        type="range"
+        value="50"
+        min="10"
+        max="100"
+      />
+    </div>
+
+    <label class="hcl-slider-top-range">100</label>
+    <input class="hcl-form-control hcl-slider-text-input" type="number" />
+    <label class="hcl-slider-error-message">Error Message</label>
+  </div>
+</div> -->
