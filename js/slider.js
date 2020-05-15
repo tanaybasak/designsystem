@@ -114,8 +114,8 @@ class Slider {
       event.currentTarget.value !== ''
     ) {
       debounceFunction(this.updateSliderValue.bind(this), 500);
-    }else{
-        debounceFunction(this.updateSliderValue.bind(this), 1500);
+    } else {
+      debounceFunction(this.updateSliderValue.bind(this), 1500);
     }
   }
 
