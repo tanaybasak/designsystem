@@ -13,36 +13,30 @@
     display: flex;
     flex-direction: column;
 
-    input[data-invalid=true],
-    textarea[data-invalid=true]{
-        box-shadow: 0 1px 0 0 $red-3;
-    }
+    // input[data-invalid=true]~.#{$prefix}-error-msg,
+    // textarea[data-invalid=true]~.#{$prefix}-error-msg {
+    //     order: 4;
+    // }
 
-    input[data-invalid=true]:focus, 
-    textarea[data-invalid=true]:focus{
-        box-shadow: 0 3px 0 0 $red-3;
-    }
-
-    input[data-invalid=true]~.#{$prefix}-error-msg,
-    textarea[data-invalid=true]~.#{$prefix}-error-msg {
-        order: 4;
-        color: $red-3;
-    }
-
-    input[data-invalid=false]~.#{$prefix}-error-msg {
+    input.#{$prefix}-form-control[data-invalid=false]~.#{$prefix}-error-msg,
+    input.#{$prefix}-form-control:not([data-invalid])~.#{$prefix}-error-msg {
         display: none;
     }
 
-    label {
-        display: block;
-        order: 1;
+    // label.#{$prefix}-label {
+    //     // display: block;
+    //     order: 1;
+    // }
+
+    & > .#{$prefix}-form-control {
+        order: 3;
     }
 
-    .#{$prefix}-helper-text {
+    & > .#{$prefix}-helper-text {
         order: 2;
     }
 
-    .#{$prefix}-textarea {
+    & > .#{$prefix}-textarea {
         order: 3;
     }
 
@@ -52,6 +46,22 @@
     }
 }
 
+input.#{$prefix}-form-control[data-invalid=true],
+textarea.#{$prefix}-textarea[data-invalid=true]{
+    box-shadow: 0 1px 0 0 $red-3;
+}
+
+input.#{$prefix}-form-control[data-invalid=true]:focus, 
+textarea.#{$prefix}-textarea[data-invalid=true]:focus{
+    box-shadow: 0 3px 0 0 $red-3;
+}
+
+input.#{$prefix}-form-control[data-invalid=true]~.#{$prefix}-error-msg,
+textarea.#{$prefix}-textarea[data-invalid=true]~.#{$prefix}-error-msg {
+    order: 4;
+    margin-top: 0.25rem;
+}
+
 .#{$prefix}-helper-text {
     @include getInputColor('color-2', 'color');
     margin-bottom: .5rem;
@@ -59,15 +69,20 @@
     line-height: getLineHeight(.75rem)
 }
 
-label {
+label.#{$prefix}-label {
     @include getInputColor('color-1', 'color');
     font-weight: $input-label-weight;
     margin-bottom: $label-margin-bottom;
 }
 
+@include getErrorMarkup('inputcontrol');
+
 .#{$prefix}-form-control {
     @include getFormControl('inputcontrol');
-    @include getErrorMarkup('inputcontrol');
+
+    &~label.#{$prefix}-label {
+        order: 1;
+    }
 
     &~button.#{$prefix}-password-visibility,
     &~[data-component='password'] {
@@ -102,21 +117,18 @@ label {
     }
 }
 
+// .#{$prefix}-error-msg {
+//     color: $red-3;
+// }
+
 .#{$prefix}-textarea {
     @include getFormControl('inputcontrol');
     resize: vertical;
     padding: 1rem;
     height: auto;
 
-    &[data-invalid=true]~.#{$prefix}-error-msg {
-        color: $red-3;
-        @include getFontWeight('regular');
-        font-size: .75rem;
-        line-height: getLineHeight(.75rem);
-        margin-top: .25rem;
-    }
-
     &[data-invalid=false]~.#{$prefix}-error-msg {
+        color: inherit;
         display: none;
     }
 }
