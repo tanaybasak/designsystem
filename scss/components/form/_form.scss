@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
- @import '../../base';
+@import '../../base';
 
 .#{$prefix}-form-group {
     margin-bottom: 1.5rem;
@@ -28,15 +28,11 @@
     //     order: 1;
     // }
 
-    & > .#{$prefix}-form-control {
+    &>.#{$prefix}-form-control {
         order: 3;
     }
 
-    & > .#{$prefix}-helper-text {
-        order: 2;
-    }
-
-    & > .#{$prefix}-textarea {
+    &>.#{$prefix}-textarea {
         order: 3;
     }
 
@@ -47,12 +43,12 @@
 }
 
 input.#{$prefix}-form-control[data-invalid=true],
-textarea.#{$prefix}-textarea[data-invalid=true]{
+textarea.#{$prefix}-textarea[data-invalid=true] {
     box-shadow: 0 1px 0 0 $red-3;
 }
 
-input.#{$prefix}-form-control[data-invalid=true]:focus, 
-textarea.#{$prefix}-textarea[data-invalid=true]:focus{
+input.#{$prefix}-form-control[data-invalid=true]:focus,
+textarea.#{$prefix}-textarea[data-invalid=true]:focus {
     box-shadow: 0 3px 0 0 $red-3;
 }
 
@@ -82,6 +78,10 @@ label.#{$prefix}-label {
 
     &~label.#{$prefix}-label {
         order: 1;
+    }
+
+    &~.#{$prefix}-helper-text {
+        order: 2;
     }
 
     &~button.#{$prefix}-password-visibility,
