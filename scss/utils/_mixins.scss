@@ -285,7 +285,7 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
 
         &:focus {
             outline: none;
-            box-shadow: 0 2px 0 0 $blue-7;
+            box-shadow: 0 3px 0 0 $blue-7;
 
             &~label {
                 color: $blue-7;

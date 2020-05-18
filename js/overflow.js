@@ -1,10 +1,11 @@
 import { PREFIX } from './utils/config';
-import { trackDocumentClick } from './utils/dom';
+import { addListener, removeListeners } from './eventManager';
 
+let overflowIdRef = 0;
 class Overflow {
   constructor(element, options) {
     this.element = element;
-
+    this.overflowId = overflowIdRef++;
     this.state = {
       isOpen: false,
       ...options
@@ -18,78 +19,112 @@ class Overflow {
     const caret = overflowMenu.children[1];
     let outOfBound = false;
     if (state) {
+      addListener(
+        'overflow-' + this.overflowId,
+        'click',
+        e => {
+          this.handleClick(e);
+        },
+        true
+      );
+      this.element.classList.add(`${PREFIX}-active`);
       overflowMenu.classList.add(`${PREFIX}-show`);
       overflowMenu.classList.remove(`${PREFIX}-hidden`);
-      if (this.isInViewport(overflowMenu)) {
-        this.updateOverflowMenuPos(overflowMenu, icon, caret, outOfBound);
-      } else {
+      const parentHeight = (
+        overflowMenu.parentElement.offsetHeight +
+        8 -
+        parseInt(getComputedStyle(icon).marginBottom)
+      ).toString();
+      overflowMenu.style.top = parentHeight.concat('px');
+      this.updateOverflowMenuPos(overflowMenu, icon, caret, outOfBound);
+      if (!this.isInViewport(overflowMenu)) {
         outOfBound = true;
         this.updateOverflowMenuPos(overflowMenu, icon, caret, outOfBound);
       }
     } else {
-      this.updateOverflowMenuPos(overflowMenu, icon, caret, outOfBound);
+      removeListeners('overflow-' + this.overflowId, 'click');
       overflowMenu.classList.remove(`${PREFIX}-show`);
+      this.element.classList.remove(`${PREFIX}-active`);
       overflowMenu.classList.add(`${PREFIX}-hidden`);
+    }
+  };
+
+  handleClick = e => {
+    if (this.element) {
+      if (e && this.element.contains(e.target)) {
+        return;
+      }
+      this.state.isOpen = !this.state.isOpen;
+      this.toggleState(this.state.isOpen);
     }
   };
 
   isInViewport = elem => {
     const bounding = elem.getBoundingClientRect();
     return (
-      bounding.top >= 0 &&
       bounding.left >= 0 &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
       bounding.right <=
         (window.innerWidth || document.documentElement.clientWidth)
     );
   };
 
-  focusNode = node => {
-    if (node.classList.contains(`${PREFIX}-overflow-option`)) {
-      node.children[0].focus();
+  focusNode(listItem, direction = 'next') {
+    const nextElem = listItem.nextElementSibling;
+    const prevElem = listItem.previousElementSibling;
+    if (direction === 'next') {
+      if (!nextElem) {
+        if (
+          listItem.parentElement.firstElementChild.children[0].hasAttribute(
+            'disabled'
+          )
+        ) {
+          this.focusNode(listItem.parentElement.firstElementChild);
+        } else {
+          listItem.parentElement.firstElementChild.children[0].focus();
+        }
+      } else if (nextElem && nextElem.children[0].hasAttribute('disabled')) {
+        this.focusNode(nextElem);
+      } else {
+        if (nextElem) {
+          nextElem.children[0].focus();
+        }
+      }
+    } else if (direction === 'previous') {
+      if (!prevElem) {
+        if (
+          listItem.parentElement.lastElementChild.children[0].hasAttribute(
+            'disabled'
+          )
+        ) {
+          this.focusNode(listItem.parentElement.lastElementChild, 'previous');
+        } else {
+          listItem.parentElement.lastElementChild.children[0].focus();
+        }
+      } else if (prevElem && prevElem.children[0].hasAttribute('disabled')) {
+        this.focusNode(prevElem, 'previous');
+      } else {
+        if (prevElem) {
+          prevElem.children[0].focus();
+        }
+      }
     }
-  };
+  }
 
   keyDownOnTree = e => {
     const key = e.which || e.keyCode;
     const nodeElement = e.currentTarget;
     const listItem = e.target.parentElement;
     const nodeStatus = nodeElement.classList.contains(`${PREFIX}-show`);
-
     if (nodeStatus) {
       switch (key) {
         case 40: {
-          if (!listItem.nextElementSibling) {
-            this.focusNode(listItem.parentElement.firstElementChild);
-          } else if (
-            listItem.nextElementSibling.children[0].disabled === true
-          ) {
-            this.focusNode(listItem.nextElementSibling.nextElementSibling);
-          } else {
-            this.focusNode(listItem.nextElementSibling);
-          }
+          this.focusNode(listItem, 'next');
           e.preventDefault();
           break;
         }
         case 38: {
-          if (!listItem.previousElementSibling) {
-            this.focusNode(listItem.parentElement.lastElementChild);
-          } else if (
-            listItem.previousElementSibling.children[0].disabled === true
-          ) {
-            this.focusNode(
-              listItem.previousElementSibling.previousElementSibling
-            );
-          } else {
-            this.focusNode(listItem.previousElementSibling);
-          }
+          this.focusNode(listItem, 'previous');
           e.preventDefault();
-          break;
-        }
-        case 13: {
-          e.preventDefault();
-          e.target.click();
           break;
         }
         default:
@@ -130,14 +165,6 @@ class Overflow {
   attachEvents = () => {
     const icon = this.element.children[0];
     const overflowMenu = this.element.children[1];
-
-    trackDocumentClick(this.element, () => {
-      if (this.state.isOpen) {
-        this.state.isOpen = !this.state.isOpen;
-        this.toggleState(this.state.isOpen);
-      }
-    });
-
     if (icon) {
       icon.addEventListener('keypress', function(event) {
         if (event.keyCode === 13) {
@@ -152,15 +179,9 @@ class Overflow {
 
       icon.addEventListener('click', event => {
         event.stopPropagation();
-        trackDocumentClick(this.element, () => {
-          if (this.state.isOpen) {
-            this.state.isOpen = !this.state.isOpen;
-            this.toggleState(this.state.isOpen);
-          }
-        });
         this.state.isOpen = !this.state.isOpen;
         this.toggleState(this.state.isOpen);
-        this.focusNode(overflowMenu.children[0].children[0]);
+        overflowMenu.querySelector('ul li button:not(:disabled)').focus();
       });
 
       this.element
@@ -168,6 +189,9 @@ class Overflow {
         .forEach(item => {
           item.addEventListener('click', event => {
             if (typeof this.state.onChange === 'function') {
+              this.state.isOpen = !this.state.isOpen;
+              this.toggleState(this.state.isOpen);
+              icon.focus();
               this.state.onChange(event, event.target.innerText);
             }
           });

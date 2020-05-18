@@ -18,7 +18,8 @@ import Overflow from '../../js/overflow';
 import Tag from '../../js/tag';
 import Modal from '../../js/modal';
 import Breadcrumb from '../../js/breadcrumb';
-
+import Tile from '../../js/tile';
+import Toggle from '../../js/toggle';
 import { isElement } from '../../js/utils/dom';
 
 // Demo Scripts
@@ -41,7 +42,9 @@ const ComponentList = {
   fileUploader: FileUploader,
   tag: Tag,
   modal: Modal,
-  breadcrumb: Breadcrumb
+  breadcrumb: Breadcrumb,
+  tile: Tile,
+  toggle: Toggle
 };
 
 for (const componentName in ComponentList) {
@@ -107,8 +110,8 @@ export const components = {
   dataTable: function(selector) {
     attachElements(selector, null, DataTable);
   },
-  fileUploader: function(selector) {
-    attachElements(selector, null, FileUploader);
+  fileUploader: function(selector, options) {
+    attachElements(selector, options, FileUploader);
   },
   tag: function(selector) {
     attachElements(selector, null, Tag);
@@ -118,11 +121,20 @@ export const components = {
   },
   breadcrumb: function(selector) {
     attachElements(selector, null, Breadcrumb);
+  },
+  tile: function(selector) {
+    attachElements(selector, null, Tile);
+  },
+  toggle: function(selector) {
+    attachElements(selector, null, Toggle);
+  },
+  pagination: function(selector, options) {
+    attachElements(selector, options, Pagination);
   }
 };
 
 if (window) {
-  window.patron = components;
+  window.patron = { ...window.patron, ...components };
 }
 
 // eslint-disable-next-line no-undef

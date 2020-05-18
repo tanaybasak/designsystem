@@ -10,10 +10,11 @@ class Tabs {
       tabItem: `li`,
       selectableTabs: `li.${PREFIX}-tabs-nav-item:not(.${PREFIX}-tabs-disabled)`,
       selectableTabsAll: `li.${PREFIX}-tabs-nav-item`,
+      selectorAnchor: `a.${PREFIX}-tabs-nav-link`,
       tabContent: `.${PREFIX}-tabcontent`,
-      tabPanel: `.${PREFIX}-tabcontent > div.${PREFIX}-tabs-panel`,
-      tabs: Array.from(element.querySelectorAll(`li.${PREFIX}-tabs-nav-item`))
+      tabPanel: `.${PREFIX}-tabcontent > div.${PREFIX}-tabs-panel`
     };
+
     this.state = {
       selectedIndex: 0,
       onChange: NOOP,
@@ -22,216 +23,207 @@ class Tabs {
       ...options
     };
 
-    this.direction = {
-      37: -1,
-      39: 1
-    };
-
     if (this.state.selectedIndex > -1) {
       this.toggleTab(this.state.selectedIndex);
       this.toggleTabPanel(this.state.selectedIndex);
     }
   }
 
-    clickEventListener = e => {
+  clickEventListener = e => {
+    e.preventDefault();
+    const { currentTarget, target } = e;
+    const isLi = currentTarget === target;
+    let tabItem = null;
+    if (isLi) {
+      tabItem = currentTarget;
+    } else {
+      tabItem = target.parentElement;
+    }
+
+    if (tabItem && tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
+      return false;
+    }
+
+    const tabId = Array.from(
+      this.element.querySelectorAll(this.selectors.selectableTabsAll)
+    ).findIndex(item => {
+      return item.isEqualNode(tabItem);
+    });
+
+    if (tabId > -1 && !tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
+      this.toggleTab(tabId);
+      this.toggleTabPanel(tabId);
+    }
+  };
+
+  keydownListener = e => {
+    const keycode = e.keycode || e.which;
+
+    if (keycode === 37) { // previous
       e.preventDefault();
-      const { currentTarget, target } = e;
-      const isLi = currentTarget === target;
-      let tabItem = null;
-      if (isLi) {
-        tabItem = currentTarget;
-      } else {
-        tabItem = target.parentElement;
-      }
+      this.focusNode(e.target, 'previous');
+    } else if (e.keyCode === 39) { // next
+      e.preventDefault();
+      this.focusNode(e.target, 'next');
+    }
 
-      if (tabItem && tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
-        return false;
-      }
+    if (e.keyCode === 13 || e.keyCode === 32) { // space or Enter
+      e.preventDefault();
+      e.target.click();
+    }
+  }
 
-      const tabId = Array.from(
-        this.element.querySelectorAll(this.selectors.selectableTabsAll)
-      ).findIndex(item => {
-        return item.isEqualNode(tabItem);
-      });
-
-      if (tabId > -1 && !tabItem.classList.contains(`${PREFIX}-tabs-disabled`)) {
-        this.toggleTab(tabId);
-        this.toggleTabPanel(tabId);
-      }
-    };
-
-    keydownEventListener = e => {
-      const key = e.keyCode;
-      if (key === 37 || key === 39) {
-        const targetIndex = this.selectors.tabs.indexOf(e.target.parentElement);
-        const destTargetEle = this.selectors.tabs[targetIndex + this.direction[key]];
-        if (destTargetEle && !this.isDisabled(destTargetEle)) {
-          this.toggleTab(targetIndex + this.direction[key]);
-          this.toggleTabPanel(targetIndex + this.direction[key]);
+  focusNode(node, direction = 'next') {
+    if (direction === 'next') {
+      if (!node.parentElement.nextElementSibling) { // last
+        if (node.parentElement.parentElement.firstElementChild.classList.contains(`${PREFIX}-tabs-disabled`)) {
+          this.focusNode(node.parentElement.parentElement.firstElementChild.firstElementChild);
         } else {
-          let ele;
-          debugger;
-          if (this.selectors.tabs.indexOf(this.selectors.tabs[targetIndex]) === 0) { // first element
-            ele = this.selectors.tabs[this.selectors.tabs.length - 1];
-          } else if (this.selectors.tabs.indexOf(this.selectors.tabs[targetIndex]) === (this.selectors.tabs.length - 1)) { // last element
-            ele = this.selectors.tabs[0];
-          } else {
-            ele = destTargetEle;
-          }
-
-          const toggleEle = this.findElementToFocus(ele, this.direction[key]);
-          if (toggleEle) {
-            const idx = this.selectors.tabs.indexOf(toggleEle);
-            this.toggleTab(idx);
-            this.toggleTabPanel(idx);
-          }
+          (node.parentElement.parentElement.firstElementChild.firstElementChild).focus();
+        }
+      } else if (node.parentElement.nextElementSibling && node.parentElement.nextElementSibling.classList.contains(`${PREFIX}-tabs-disabled`)) { // disabled
+        this.focusNode(node.parentElement.nextElementSibling.firstElementChild);
+      } else { // focus next respective element.
+        if (node.parentElement.nextElementSibling) {
+          (node.parentElement.nextElementSibling.firstElementChild).focus();
+          return false;
+        }
+      }
+    } else if (direction === 'previous') {
+      if (!node.parentElement.previousElementSibling) { // first
+        if (node.parentElement.parentElement.lastElementChild.classList.contains(`${PREFIX}-tabs-disabled`)) {
+          this.focusNode(node.parentElement.parentElement.lastElementChild.firstElementChild, 'previous');
+        } else {
+          (node.parentElement.parentElement.lastElementChild.firstElementChild).focus();
+        }
+      } else if (node.parentElement.previousElementSibling && node.parentElement.previousElementSibling.classList.contains(`${PREFIX}-tabs-disabled`)) { // disabled
+        this.focusNode(node.parentElement.previousElementSibling.firstElementChild, 'previous');
+      } else { // focus next respective element.
+        if (node.parentElement.previousElementSibling) {
+          (node.parentElement.previousElementSibling.firstElementChild).focus();
+          return false;
         }
       }
     }
+  }
 
-    findElementToFocus = (ele, direction) => {
-      if (ele && !ele.classList.contains(`${PREFIX}-tabs-disabled`)) { // not disabled
-        return ele;
-      } else {
-        if (this.selectors.tabs.indexOf(ele) === 0) { // first element
-          if (direction === -1) {
-            ele = this.selectors.tabs[this.selectors.tabs.length - 1];
-          } else {
-            ele = ele.nextElementSibling;
-          }
-        } else if (this.selectors.tabs.indexOf(ele) === (this.selectors.tabs.length - 1)) { // last element
-          if (direction === -1) {
-            ele = ele.previousElementSibling;
-          } else {
-            ele = this.selectors.tabs[0];
-          }
-        }
-        return this.findElementToFocus(ele, direction);
+  toggleTab = target => {
+    Array.from(
+      this.element.querySelectorAll(this.selectors.selectableTabsAll)
+    ).forEach(item => {
+      if (item) {
+        item.classList.remove('active');
+        item.setAttribute('aria-selected', false);
       }
+    });
+    this.selectTab(target);
+  };
+
+  selectTab = target => {
+    const tabItem = Array.from(
+      this.element.querySelectorAll(this.selectors.selectableTabsAll)
+    ).find((item, index) => {
+      return target === index;
+    });
+
+    if (this.element.contains(tabItem)) {
+      tabItem.classList.add('active');
+      tabItem.setAttribute('aria-selected', true);
     }
 
-    isDisabled = (ele) => {
-      if (ele.classList.contains(`${PREFIX}-tabs-disabled`)) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-    toggleTab = target => {
+    if (this.state.disabled && this.state.disabled.length > 0) {
       Array.from(
         this.element.querySelectorAll(this.selectors.selectableTabsAll)
-      ).forEach(item => {
+      ).forEach((item, index) => {
+        if (this.state.disabled.indexOf(index) > -1) {
+          item.classList.add(`${PREFIX}-tabs-disabled`);
+        }
+      });
+    }
+    this.changeState();
+  };
+
+  toggleTabPanel = tabId => {
+    Array.from(this.element.querySelectorAll(this.selectors.tabPanel)).forEach(
+      item => {
         if (item) {
           item.classList.remove('active');
-          item.setAttribute('aria-selected', false);
-          item.setAttribute('tabindex', '-1');
         }
-      });
-      this.selectTab(target);
-    };
-
-    selectTab = target => {
-      const tabItem = Array.from(
-        this.element.querySelectorAll(this.selectors.selectableTabsAll)
-      ).find((item, index) => {
-        return target === index;
-      });
-
-      if (this.element.contains(tabItem)) {
-        tabItem.classList.add('active');
-        tabItem.setAttribute('aria-selected', true);
-        tabItem.removeAttribute('tabindex');
-        tabItem.querySelector('a').focus();
       }
+    );
+    this.selectTabPanel(tabId);
+  };
 
-      if (this.state.disabled && this.state.disabled.length > 0) {
-        Array.from(
-          this.element.querySelectorAll(this.selectors.selectableTabsAll)
-        ).forEach((item, index) => {
-          if (this.state.disabled.indexOf(index) > -1) {
-            item.classList.add(`${PREFIX}-tabs-disabled`);
-          }
-        });
-      }
-      this.changeState();
-    };
+  selectTabPanel = tabId => {
+    const tabPanel = Array.from(
+      this.element.querySelectorAll(this.selectors.tabPanel)
+    ).find((item, index) => {
+      return tabId === index;
+    });
 
-    toggleTabPanel = tabId => {
-      Array.from(this.element.querySelectorAll(this.selectors.tabPanel)).forEach(
-        item => {
-          if (item) {
-            item.classList.remove('active');
-          }
+    if (tabPanel) {
+      tabPanel.classList.add('active');
+    }
+  };
+
+  changeState = () => {
+    this.state.selectedIndex = Array.from(
+      this.element.querySelectorAll(this.selectors.selectableTabsAll)
+    ).findIndex(item => {
+      return item.classList.contains('active');
+    });
+  };
+
+  attachEvents = () => {
+    const tabs = Array.from(
+      this.element.querySelectorAll(this.selectors.selectableTabsAll)
+    );
+    const anchorEle = Array.from(
+      this.element.querySelectorAll(this.selectors.selectorAnchor)
+    );
+    const len = tabs.length;
+    const anchorLen = anchorEle.length;
+    for (let i = 0; i < len; i++) {
+      tabs[i].addEventListener('click', this.clickEventListener.bind(this));
+    }
+    for (let i = 0; i < anchorLen; i++) {
+      anchorEle[i].addEventListener('keydown', this.keydownListener.bind(this));
+    }
+  };
+
+  static handleDataAPI = () => {
+    handleDataBinding('tabs', function(element, target) {
+      const defaultTabOption = { selectedIndex: 0, disabled: [] };
+      if (element && target) {
+        const tabItems = Array.from(
+          element.querySelectorAll(`li.${PREFIX}-tabs-nav-item`)
+        );
+        if (!getClosest(target, `li.${PREFIX}-tabs-nav-item`)) {
+          const tabPanel = getClosest(target, `.${PREFIX}-tabs-panel`);
+          defaultTabOption.selectedIndex = Array.from(
+            element.querySelectorAll(`div.${PREFIX}-tabs-panel`)
+          ).findIndex(item => {
+            return item.isEqualNode(tabPanel);
+          });
+        } else {
+          target = getClosest(target, `li.${PREFIX}-tabs-nav-item`);
+          defaultTabOption.selectedIndex = tabItems.findIndex(item => {
+            return item.isEqualNode(target);
+          });
         }
-      );
-      this.selectTabPanel(tabId);
-    };
-
-    selectTabPanel = tabId => {
-      const tabPanel = Array.from(
-        this.element.querySelectorAll(this.selectors.tabPanel)
-      ).find((item, index) => {
-        return tabId === index;
-      });
-
-      if (tabPanel) {
-        tabPanel.classList.add('active');
-      }
-    };
-
-    changeState = () => {
-      this.state.selectedIndex = Array.from(
-        this.element.querySelectorAll(this.selectors.selectableTabsAll)
-      ).findIndex(item => {
-        return item.classList.contains('active');
-      });
-    };
-
-    attachEvents = () => {
-      const tabs = Array.from(
-        this.element.querySelectorAll(this.selectors.selectableTabsAll)
-      );
-      const len = tabs.length;
-      for (let i = 0; i < len; i++) {
-        tabs[i].addEventListener('click', this.clickEventListener.bind(this));
-        tabs[i].addEventListener('keydown', this.keydownEventListener.bind(this));
-      }
-    };
-
-    static handleDataAPI = () => {
-      handleDataBinding('tabs', function(element, target) {
-        const defaultTabOption = { selectedIndex: 0, disabled: [] };
-        if (element && target) {
-          const tabItems = Array.from(
-            element.querySelectorAll(`li.${PREFIX}-tabs-nav-item`)
-          );
-          if (!getClosest(target, `li.${PREFIX}-tabs-nav-item`)) {
-            const tabPanel = getClosest(target, `.${PREFIX}-tabs-panel`);
-            defaultTabOption.selectedIndex = Array.from(
-              element.querySelectorAll(`div.${PREFIX}-tabs-panel`)
-            ).findIndex(item => {
-              return item.isEqualNode(tabPanel);
-            });
-          } else {
-            target = getClosest(target, `li.${PREFIX}-tabs-nav-item`);
-            defaultTabOption.selectedIndex = tabItems.findIndex(item => {
-              return item.isEqualNode(target);
-            });
-          }
-          const len = tabItems.length || 0;
-          for (let i = 0; i < len; i++) {
-            if (tabItems[i].classList.contains(`${PREFIX}-tabs-disabled`)) {
-              defaultTabOption.disabled.push(i);
-            }
+        const len = tabItems.length || 0;
+        for (let i = 0; i < len; i++) {
+          if (tabItems[i].classList.contains(`${PREFIX}-tabs-disabled`)) {
+            defaultTabOption.disabled.push(i);
           }
         }
-        return new Tabs(element, {
-          selectedIndex: 0,
-          disabled: [],
-          ...defaultTabOption
-        });
+      }
+      return new Tabs(element, {
+        selectedIndex: 0,
+        disabled: [],
+        ...defaultTabOption
       });
-    };
+    });
+  };
 }
 export default Tabs;

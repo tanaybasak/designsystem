@@ -6,89 +6,99 @@
  *******************************************************************
  */
 
- @import '../../base';
+@import '../../base';
 
 .#{$prefix}-header {
-    display: flex;
-    justify-content: flex-start;
-    background-color: $blue;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    padding: 0 1rem;
-    z-index: 8;
-    height: 3.125rem;
+  display: flex;
+  justify-content: flex-start;
+  background-color: $blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0 1rem;
+  z-index: 8;
+  height: 3.125rem;
 
-    @include media-breakpoint-down(md) {
-        height: 4rem;
+  @include media-breakpoint-down(md) {
+    height: 4rem;
+  }
+
+  &-brand {
+    display: inline-flex;
+    width: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+    line-height: initial;
+
+    &:focus,
+    &:active {
+      outline: none;
+
+      img {
+        outline: 1px solid $focus-outline-color;
+        outline-offset: 0.5rem;
+      }
     }
+  }
 
+  &-wrapper {
+    display: inline-flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-shrink: 1;
 
-    &-brand {
-        display: inline-flex;
+    .#{$prefix}-header-search {
+      display: inline-flex;
+      margin: 0.3125rem;
+      width: 23.13rem;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      .#{$prefix}-search {
+        width: 100%;
+
+        .#{$prefix}-search-btn:focus {
+          outline: 1px solid $focus-outline-color;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        margin: 0.75rem;
+      }
+
+      @include media-breakpoint-down(sm) {
         width: auto;
-        flex-grow: 0;
-        flex-shrink: 0;
-        align-items: center;
-        line-height: initial;
-
-        &:focus,
-        &:active {
-            outline: none;
-            img {
-                outline: 1px solid $focus-outline-color;
-                outline-offset: 0.5rem;
-            }
-        }
+      }
     }
 
-    &-wrapper {
+    .#{$prefix}-header-icons {
+      display: flex;
+      margin: 0 0 0 1rem;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      .#{$prefix}-header-icon {
         display: inline-flex;
-        justify-content: flex-end;
-        flex-grow: 1;
-        flex-shrink: 1;
+        margin: 1rem 0.5rem;
 
-        .#{$prefix}-header-search {
-            display: inline-flex;
-            margin: .3125rem;
-            width: 23.13rem;
-            flex-grow: 0;
-            flex-shrink: 0;
+        input,
+        button {
+          background: transparent;
+          color: $white;
 
-            .#{$prefix}-search {
-                width: 100%;
-            }
-
-            @include media-breakpoint-down(md) {
-                margin: .75rem;
-            }
-            @include media-breakpoint-down(sm) {
-                width: auto;
-            }
+          &:focus,
+          &:active {
+            outline: 1px solid $focus-outline-color;
+            outline-offset: 0.125rem;
+          }
         }
+      }
 
-        .#{$prefix}-header-icons {
-            display: flex;
-            margin: 0 0 0 1rem;
-            flex-grow: 0;
-            flex-shrink: 0;
-
-            .#{$prefix}-header-icon {
-                display: inline-flex;
-                margin: 1rem .5rem;
-
-                input, button {
-                    &:focus, &:active {
-                        outline: 1px solid $focus-outline-color;
-                        outline-offset: 0.125rem;
-                    }
-                }
-            }
-
-            @include media-breakpoint-down(md) {
-                display: none;
-            }
-        }
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
     }
+  }
 }

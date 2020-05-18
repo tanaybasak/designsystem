@@ -1,63 +1,63 @@
 @import '../../base';
 
 @mixin spinner($size) {
-    --spinner-color: #55c9d3;
-    z-index: 989;
+  z-index: 989;
+  display: flex;
+  justify-content: center;
 
-    display: flex;
-    justify-content: center;
-
-    >svg {
-        @if($size==default) {
-            height: 5.8771875rem;
-            width: 5.8771875rem;
-        }
-
-        @else if ($size==inline) {
-            height: 1.190625rem;
-            width: 1.190625rem;
-            --spinner-color: $dark-blue;
-            margin-left: 1rem;
-        }
-
-        animation-name: infinite-spinning;
-        animation-duration: .7s;
-        animation-timing-function: linear;
-        animation-delay: 0s;
-        animation-iteration-count: infinite;
-
-        >circle {
-            stroke: var(--spinner-color);
-            stroke-dasharray: 480;
-            stroke-dashoffset: 120;
-
-            @if($size=='default') {
-                stroke-width: 8;
-            }
-
-            @else if ($size=='inline') {
-                stroke-width: 12;
-            }
-
-            fill: transparent;
-        }
+  > svg {
+    @if ($size==default) {
+      height: 5.8771875rem;
+      width: 5.8771875rem;
+    } @else if ($size==inline) {
+      height: 1.190625rem;
+      width: 1.190625rem;
+      margin-left: 1rem;
     }
+
+    animation-name: infinite-spinning;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+
+    > circle {
+      stroke-dasharray: 480;
+      stroke-dashoffset: 120;
+
+      @if ($size== 'default') {
+        stroke-width: 8;
+      } @else if ($size== 'inline') {
+        stroke-width: 12;
+      }
+
+      fill: transparent;
+    }
+  }
 }
 
 .#{$prefix}-spinner {
-    @include spinner(default);
+  @include spinner(default);
+
+  circle {
+    stroke: $teal-40;
+  }
 }
 
 .#{$prefix}-spinner-inline {
-    @include spinner(inline);
+  @include spinner(inline);
+
+  circle {
+    stroke: $dark-blue;
+  }
 }
 
 @keyframes infinite-spinning {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }

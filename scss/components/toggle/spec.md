@@ -1,0 +1,1 @@
+Toggle labels should be set in sentence case, with only the first word in a phrase and any proper nouns capitalized, and no more than three words.

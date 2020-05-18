@@ -87,10 +87,16 @@
     }
 
     &-arrow {
-        bottom: hcl-rem(5px);
-        right: hcl-rem(14px);
+        bottom: hcl-rem(0px);
+        right: hcl-rem(0px);
         position: absolute;
         cursor: pointer;
+        padding:14px 16px;
+
+        &:focus {
+            outline: 1px solid $blue;
+            outline-offset: -6px;
+        }
 
         >svg {
             border-radius: 50%;
