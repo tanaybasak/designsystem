@@ -55,7 +55,6 @@ textarea.#{$prefix}-textarea[data-invalid=true]:focus {
 input.#{$prefix}-form-control[data-invalid=true]~.#{$prefix}-error-msg,
 textarea.#{$prefix}-textarea[data-invalid=true]~.#{$prefix}-error-msg {
     order: 4;
-    margin-top: 0.25rem;
 }
 
 .#{$prefix}-helper-text {
