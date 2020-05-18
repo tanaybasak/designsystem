@@ -1,52 +1,19 @@
 <div class="hcl-slider-wrapper">
-  <label for="feedback11">Feedback Form</label>
-  <div class="hcl-slider">
-    <label class="hcl-slider-bottom-range">0</label>
-    <div class="hcl-slider-input-wrapper">
-      <div class="range-value">
-        <span></span>
-      </div>
-      <input
-        class="hcl-slider-input"
-        type="range"
-        value="300"
-        min="0"
-        max="10000"
-        step="100"
-      />
+    <label for="sliderElement" class="hcl-label">Normal Slider</label>
+    <div class="hcl-helper-text">
+        Optional Helper text goes here (max 100 and min 0)
     </div>
+    <div class="hcl-slider">
+        <label class="hcl-slider-bottom-range">0</label>
+        <div class="hcl-slider-input-wrapper">
+            <div class="range-value">
+                <span></span>
+            </div>
+            <input id="sliderElement" class="hcl-slider-input" type="range" value="10" min="0" max="100" step="5" />
+        </div>
 
-    <label class="hcl-slider-top-range">10000</label>
-    <input
-      class="hcl-form-control hcl-slider-text-input"
-      min="0"
-      max="10000"
-      step="100"
-      type="number"
-    />
-  </div>
-  <div class="hcl-error-msg" id="hcl-error-msg"></div>
+        <label class="hcl-slider-top-range">100</label>
+        <input class="hcl-form-control hcl-slider-text-input" min="0" max="100" step="5" type="number" />
+    </div>
+    <div class="hcl-error-msg"></div>
 </div>
-
-<!-- <div class="hcl-col">
-  <label>Slider Label</label>
-  <div class="hcl-slider">
-    <label class="hcl-slider-bottom-range">10</label>
-    <div class="hcl-slider-input-wrapper">
-      <div class="range-value">
-        <span>12</span>
-      </div>
-      <input
-        class="hcl-slider-input"
-        type="range"
-        value="50"
-        min="10"
-        max="100"
-      />
-    </div>
-
-    <label class="hcl-slider-top-range">100</label>
-    <input class="hcl-form-control hcl-slider-text-input" type="number" />
-    <label class="hcl-slider-error-message">Error Message</label>
-  </div>
-</div> -->

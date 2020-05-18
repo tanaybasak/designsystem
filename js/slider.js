@@ -1,6 +1,7 @@
 import { PREFIX } from './utils/config';
 import debounceFunction from './utils/debounce';
 import { NOOP } from './utils/functions';
+import { findMinMax, isInAP } from './utils/number';
 class Slider {
   constructor(element, options) {
     this.element = element;
@@ -48,22 +49,6 @@ class Slider {
     this.returnError(null);
   }
 
-  isInAP(a, d, x) {
-    if (d === 0) {
-      return x === a;
-    } else {
-      return (x - a) % d === 0 && (x - a) / d >= 0;
-    }
-  }
-
-  findMinMax(a, d, x) {
-    const number = x / d + 1;
-    const minV = Math.floor(number);
-    const maxV = Math.ceil(number);
-
-    return [a + (minV - 1) * d, a + (maxV - 1) * d];
-  }
-
   returnError(key, message) {
     if (typeof this.state.onError === 'function') {
       this.state.onError(key, message);
@@ -82,41 +67,44 @@ class Slider {
   }
 
   updateSliderValue() {
-    const value = Number(this.textInput.value);
-    if (value < this.min) {
-      this.returnError('min', {
-        message: 'Please enter value greater than ' + this.min
-      });
-    } else if (value > this.max) {
-      this.returnError('max', {
-        message: 'Please enter value less than ' + this.max
+    if (
+      isNaN(this.textInput.value) ||
+      this.textInput.value === '' ||
+      this.textInput.value === null
+    ) {
+      this.returnError('invalid', {
+        message: 'Please Enter a valid value'
       });
     } else {
-      if (this.isInAP(this.min, this.step, value)) {
-        this.sliderInput.value = value;
-        this._setRange();
-        this._setTooltipPosition();
-        this.returnError(null);
-      } else {
-        const nearestValue = this.findMinMax(this.min, this.step, value);
-        this.returnError('max', {
-          message:
-            'Please Enter a valid value. Nearest values are ' + nearestValue,
-          nearestValue: nearestValue
+      const value = Number(this.textInput.value);
+      if (value < this.min) {
+        this.returnError('min', {
+          message: 'Please enter value greater than ' + this.min
         });
+      } else if (value > this.max) {
+        this.returnError('max', {
+          message: 'Please enter value less than ' + this.max
+        });
+      } else {
+        if (isInAP(this.min, this.step, value)) {
+          this.sliderInput.value = value;
+          this._setRange();
+          this._setTooltipPosition();
+          this.returnError(null);
+        } else {
+          const nearestValue = findMinMax(this.min, this.step, value);
+          this.returnError('invalid', {
+            message:
+              'Please Enter a valid value. Nearest values are ' + nearestValue,
+            nearestValue: nearestValue
+          });
+        }
       }
     }
   }
 
   _handleTextChange() {
-    if (
-      event.currentTarget.value !== null &&
-      event.currentTarget.value !== ''
-    ) {
-      debounceFunction(this.updateSliderValue.bind(this), 500);
-    } else {
-      debounceFunction(this.updateSliderValue.bind(this), 1500);
-    }
+    debounceFunction(this.updateSliderValue.bind(this), 500);
   }
 
   _setRange() {
