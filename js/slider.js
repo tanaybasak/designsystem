@@ -73,17 +73,17 @@ class Slider {
       this.textInput.value === null
     ) {
       this.returnError('invalid', {
-        message: 'Please Enter a valid value'
+        message: 'Please enter a valid value'
       });
     } else {
       const value = Number(this.textInput.value);
       if (value < this.min) {
         this.returnError('min', {
-          message: 'Please enter value greater than ' + this.min
+          message: 'Value must be greater than or equal to ' + this.min
         });
       } else if (value > this.max) {
         this.returnError('max', {
-          message: 'Please enter value less than ' + this.max
+          message: 'Value must be less than or equal to ' + this.max
         });
       } else {
         if (isInAP(this.min, this.step, value)) {
@@ -95,7 +95,7 @@ class Slider {
           const nearestValue = findMinMax(this.min, this.step, value);
           this.returnError('invalid', {
             message:
-              'Please Enter a valid value. Nearest values are ' + nearestValue,
+              'Please enter a valid value. The two nearest valid values are ' + nearestValue.join(' and '),
             nearestValue: nearestValue
           });
         }
