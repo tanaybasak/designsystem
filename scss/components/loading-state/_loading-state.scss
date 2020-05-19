@@ -91,12 +91,14 @@ p.#{$prefix}-loading {
 
         tbody {
             td {
+                .body-content-wrapper {
+                    width: 100%;
+                }
                 span {
                     @include loading();
                     display: block;
                     width: 75%;
                     height: 1rem;
-                    margin-left: 0.625rem;
                 }
             }
         }
