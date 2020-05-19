@@ -96,6 +96,7 @@ p.#{$prefix}-loading {
                     display: block;
                     width: 75%;
                     height: 1rem;
+                    margin-left: 0.625rem;
                 }
             }
         }
@@ -121,6 +122,7 @@ p.#{$prefix}-loading {
         }
 
         .#{$prefix}-number-input {
+            height: 2.5rem;
             @include loading();
 
             &>* {
@@ -144,11 +146,10 @@ p.#{$prefix}-loading {
     }
 }
 
-.#{$prefix}-slider {
+.#{$prefix}-slider-wrapper {
     &.#{$prefix}-loading {
         &>* {
             pointer-events: none;
-
         }
 
         label {
