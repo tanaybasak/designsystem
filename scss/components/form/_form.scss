@@ -13,20 +13,10 @@
     display: flex;
     flex-direction: column;
 
-    // input[data-invalid=true]~.#{$prefix}-error-msg,
-    // textarea[data-invalid=true]~.#{$prefix}-error-msg {
-    //     order: 4;
-    // }
-
     input.#{$prefix}-form-control[data-invalid=false]~.#{$prefix}-error-msg,
     input.#{$prefix}-form-control:not([data-invalid])~.#{$prefix}-error-msg {
         display: none;
     }
-
-    // label.#{$prefix}-label {
-    //     // display: block;
-    //     order: 1;
-    // }
 
     &>.#{$prefix}-form-control {
         order: 3;
@@ -115,10 +105,6 @@ label.#{$prefix}-label {
         }
     }
 }
-
-// .#{$prefix}-error-msg {
-//     color: $red-3;
-// }
 
 .#{$prefix}-textarea {
     @include getFormControl('inputcontrol');
