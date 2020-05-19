@@ -281,7 +281,6 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
         border: none;
         box-shadow: 0 1px 0 0 #5a6872;
         border-bottom: 1px solid transparent;
-        // order: 3;
 
         &:focus {
             outline: none;
@@ -319,10 +318,6 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
             line-height: getLineHeight(.75rem);
             color: $red-3;
             margin-top: 0.25rem;
-
-            // order: 4;
-            // margin-top: .25rem;
-            // max-height: 12.5rem;
         }
     }
 
