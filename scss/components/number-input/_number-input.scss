@@ -55,9 +55,4 @@
     &[disabled] {
         opacity: .5;
     }
-
-    &[data-invalid=true] .#{$prefix}-error-msg {
-        order: 4;
-        color: $red-3;
-    }
 }
