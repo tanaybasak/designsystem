@@ -130,6 +130,9 @@ export const components = {
   },
   pagination: function(selector, options) {
     attachElements(selector, options, Pagination);
+  },
+  password: function(selector, options) {
+    attachElements(selector, options, Password);
   }
 };
 
