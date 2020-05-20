@@ -3,38 +3,14 @@
 .#{$prefix}-timepicker {
     display: flex;
     flex-direction: column;
-    &-label {
-        font-family: inherit;
-        font-size: .875rem;
-        color: $black;
-        font-weight: 600;
-        display: inline-block;
-        vertical-align: baseline;
-        margin-bottom: .5rem;
-    }
 
     &-input {
         display: flex;
         flex-direction: row;
         border-bottom: .0625rem solid transparent;
-    }
 
-    &-input-field {
-        font-size: .875rem;
-        display: flex;
-        align-items: center;
-        background-color: rgba(70, 150, 210, .05);
-        border: none;
-        width: 5.25rem;
-        color: $black;
-        height: 2.5rem;
-        padding: 0 1rem;
-        box-shadow: 0 .0625rem 0 0 $lightGrey;
-
-        &:focus {
-            outline: none;
-            box-shadow: 0 .125rem 0 0 $blue-7;
+        input{
+            width: 5.25rem;
         }
     }
-
 }
