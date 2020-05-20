@@ -46,21 +46,21 @@
         color: $white;
 
         &:hover:not([disabled]) {
-            background-color: #00518F;
-            border-color: #00518F;
+            background-color: $blue-60;
+            border-color: $blue-60;
         }
 
         &:active:not([disabled]) {
-            background-color: #003D6B;
-            border-color: #003D6B;
+            background-color: $blue-70;
+            border-color: $blue-70;
         }
 
         >.#{$prefix}-tag-icon {
-            background-color: #ffffff;
+            background-color: $white;
         }
 
         >.#{$prefix}-close {
-            @include hcl-close-icon(18, $white, #3D70B2, true);
+            @include hcl-close-icon(18, $white, $blue-70 , true);
             margin-left: .5rem;
         }
     }
@@ -71,13 +71,13 @@
         color: $blue;
 
         &:hover:not([disabled]) {
-            background-color: #e5eff7;
-            border-color: #00518F;
+            background-color: $aqua-10;
+            border-color: $blue-60;
         }
 
         &:active:not([disabled]) {
             background: rgba(0, 102, 179, .18);
-            border-color: #003D6B;
+            border-color: $blue-70;
         }
 
         >.#{$prefix}-close {
@@ -86,7 +86,7 @@
         }
 
         >.#{$prefix}-tag-icon {
-            background-color: #0066b3;
+            background-color: $blue;
         }
         
     }
@@ -113,7 +113,7 @@
         width: 1.375rem;
         height: 1.375rem;
         border-radius: 50%;
-        background-color: #efefef;
+        background-color: $light-20;
         position: absolute;
         left: .625rem;
 
