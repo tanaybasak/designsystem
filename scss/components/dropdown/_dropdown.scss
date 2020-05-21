@@ -95,6 +95,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1;
+    cursor: pointer;
 
     &:hover {
       background: rgba(70, 150, 210, 0.1);
