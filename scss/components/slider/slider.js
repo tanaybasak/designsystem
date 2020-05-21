@@ -1,1 +1,1 @@
-window.patron.slider('.hcl-slider');
+window.patron.slider('.hcl-slider-wrapper');

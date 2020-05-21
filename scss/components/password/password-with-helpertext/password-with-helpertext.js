@@ -1,0 +1,1 @@
+window.patron.password('#passwordwithhelpertext');

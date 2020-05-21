@@ -13,11 +13,10 @@ class Password {
 
     this.state = {
       button: {
-        clicked: false
-      },
-      ...options
+        visible: false
+      }
     };
-
+    this.state.button = { ...options };
     this.toggleState();
   }
 
@@ -26,7 +25,7 @@ class Password {
     const svgOff = this.element.querySelector(this.selectors.visibilityoff);
     const svgOn = this.element.querySelector(this.selectors.visibilityon);
 
-    if (this.state.button.clicked && inputTag && svgOff && svgOn) {
+    if (this.state.button.visible && inputTag && svgOff && svgOn) {
       this.toggle(inputTag, svgOff, svgOn);
     }
   };
@@ -70,11 +69,11 @@ class Password {
       if (element && target) {
         const defaultOption = {
           button: {
-            clicked: false
+            visible: false
           }
         };
         if (getClosest(target, `.${PREFIX}-password-visibility`)) {
-          defaultOption.button = { clicked: true };
+          defaultOption.button = { visible: true };
         }
 
         return new Password(element, {

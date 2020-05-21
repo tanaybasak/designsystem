@@ -281,13 +281,12 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
         border: none;
         box-shadow: 0 1px 0 0 #5a6872;
         border-bottom: 1px solid transparent;
-        order: 3;
 
         &:focus {
             outline: none;
             box-shadow: 0 3px 0 0 $blue-7;
 
-            &~label {
+            &~label.#{$prefix}-label {
                 color: $blue-7;
             }
         }
@@ -313,13 +312,12 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
 // getErrorMarkup(<control>)
 @mixin getErrorMarkup($which) {
     @if ($which=='inputcontrol') {
-        ~.#{$prefix}-error-msg {
+        .#{$prefix}-error-msg {
             @include getFontWeight('regular');
             font-size: .75rem;
             line-height: getLineHeight(.75rem);
-            order: 4;
-            margin-top: .25rem;
-            max-height: 12.5rem;
+            color: $red-3;
+            margin-top: 0.25rem;
         }
     }
 

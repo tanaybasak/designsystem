@@ -8,7 +8,7 @@ class Tile {
   keyDownOnTile = (e) => {
     const key = e.which || e.keyCode;
     const input = this.element.querySelector('input[type="checkbox"]');
-    if (key === 13) {
+    if (key === 13 || key === 32) {
       e.preventDefault();
       if (input) {
         input.checked = !input.checked;

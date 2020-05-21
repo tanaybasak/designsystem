@@ -101,8 +101,8 @@ export const components = {
   accordion: function(selector, options) {
     attachElements(selector, options, Accordion);
   },
-  slider: function(selector) {
-    attachElements(selector, null, Slider);
+  slider: function(selector, options) {
+    attachElements(selector, options, Slider);
   },
   tree: function(selector) {
     attachElements(selector, null, Tree);
@@ -130,6 +130,9 @@ export const components = {
   },
   pagination: function(selector, options) {
     attachElements(selector, options, Pagination);
+  },
+  password: function(selector, options) {
+    attachElements(selector, options, Password);
   }
 };
 

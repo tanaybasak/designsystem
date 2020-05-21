@@ -91,6 +91,9 @@ p.#{$prefix}-loading {
 
         tbody {
             td {
+                .body-content-wrapper {
+                    width: 100%;
+                }
                 span {
                     @include loading();
                     display: block;
@@ -121,6 +124,7 @@ p.#{$prefix}-loading {
         }
 
         .#{$prefix}-number-input {
+            height: 2.5rem;
             @include loading();
 
             &>* {
@@ -144,11 +148,10 @@ p.#{$prefix}-loading {
     }
 }
 
-.#{$prefix}-slider {
+.#{$prefix}-slider-wrapper {
     &.#{$prefix}-loading {
         &>* {
             pointer-events: none;
-
         }
 
         label {
