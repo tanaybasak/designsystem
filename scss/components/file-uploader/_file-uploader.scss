@@ -31,30 +31,29 @@
       display: none;
     }
 
-    .#{$prefix}-file-container {
+    .#{$prefix}-file-container-item {
+      width: 27.5rem;
+      height: 2.5rem;
+      display:flex;
+      border: 1px solid $grey-2;
+      margin-bottom: 1rem;
       .#{$prefix}-file-selected-file {
-        display: inline-flex;
-        border: 1px solid $grey-2;
         width: 25rem;
-        padding: 0.6925rem 1rem;
-        padding-right: 3rem;
+        height: inherit;
       }
       .#{$prefix}-file-filename {
         display: block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        padding: 0.5rem;
       }
       .#{$prefix}-file-close {
         @include hcl-close-icon(10, $white, $lightGrey);
-        min-width: 2.75rem;
-        max-width: 2.75rem;
-        min-height: 2.75rem;
-        max-height: 2.75rem;
-        width: 14px;
-        height: 14px;
-        top: 1.05rem;
-        right: 3.05rem;
+        height: 2.375rem;
+        width: 2.5rem;
+        border:1px solid transparent;
+
         &:focus {
           outline: 1px solid $blue;
         }
