@@ -1,3 +1,3 @@
 window.patron.password('#passwordwitherror', {
-  visible: true
+  visible: false
 });
