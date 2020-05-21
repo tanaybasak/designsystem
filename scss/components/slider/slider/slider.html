@@ -1,15 +1,15 @@
-<div class="hcl-slider-wrapper">
-    <label for="sliderElement" class="hcl-label">Normal Slider</label>
+<div class="hcl-slider-wrapper" id="basic-slider">
+    <label for="sliderElement" class="hcl-label">Basic Slider</label>
     <div class="hcl-helper-text">
         Optional Helper text goes here (max 100 and min 0)
     </div>
     <div class="hcl-slider">
         <label class="hcl-slider-bottom-range">0</label>
         <div class="hcl-slider-input-wrapper">
+            <input id="sliderElement" class="hcl-slider-input" type="range" value="10" min="0" max="100" step="5" />
             <div class="range-value">
                 <span></span>
             </div>
-            <input id="sliderElement" class="hcl-slider-input" type="range" value="10" min="0" max="100" step="5" />
         </div>
 
         <label class="hcl-slider-top-range">100</label>
