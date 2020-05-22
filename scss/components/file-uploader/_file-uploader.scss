@@ -29,12 +29,47 @@
 
     .#{$prefix}-file-input {
       display: none;
+
+      &:disabled ~ .#{$prefix}-file-btn {
+        @extend %disable;
+
+        &.#{$prefix}-primary {
+          background: $blue-6;
+        }
+
+        &.#{$prefix}-secondary {
+          color: $blue-6;
+          border: 0.0625rem solid $blue-6;
+          cursor: not-allowed;
+        }
+        &.#{$prefix}-ghost {
+          color: $blue-6;
+        }
+        &.#{$prefix}-secondary.#{$prefix}-danger {
+          border: 0.0625rem solid $red-2;
+          color: $red-2;
+        }
+
+        &.#{$prefix}-primary.#{$prefix}-danger {
+          background: $red-2;
+        }
+        &:hover.#{$prefix}-secondary {
+          background: unset;
+        }
+        &:hover.#{$prefix}-ghost {
+          background: transparent;
+          color: $blue-6;
+        }
+        &:hover.#{$prefix}-secondary.#{$prefix}-danger {
+          background: transparent;
+        }
+      }
     }
 
     .#{$prefix}-file-container-item {
       width: 27.5rem;
       height: 2.5rem;
-      display:flex;
+      display: flex;
       border: 1px solid $grey-2;
       margin-bottom: 1rem;
       .#{$prefix}-file-selected-file {
@@ -52,7 +87,7 @@
         @include hcl-close-icon(10, $white, $lightGrey);
         height: 2.375rem;
         width: 2.5rem;
-        border:1px solid transparent;
+        border: 1px solid transparent;
 
         &:focus {
           outline: 1px solid $blue;
