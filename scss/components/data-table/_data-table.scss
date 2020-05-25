@@ -84,7 +84,7 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
             td {
                 border-top: 0.0625rem solid transparent;
                 border-bottom: 0.0625rem solid $grey-8;
-
+                background-color: $white;
                 .overflow-onhover {
                     visibility: hidden;
                 }
@@ -167,6 +167,19 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
                     }
                 }
             }
+        }
+
+        .sticky-left-div {
+            left: 0;
+        }
+
+        .sticky-right-div {
+            right: 0;
+        }
+
+        thead tr th.sticky-div, tbody tr td.sticky-div {
+            position: sticky;
+            z-index: 3;
         }
     }
 
