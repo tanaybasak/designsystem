@@ -85,6 +85,7 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
                 border-top: 0.0625rem solid transparent;
                 border-bottom: 0.0625rem solid $grey-8;
                 background-color: $white;
+
                 .overflow-onhover {
                     visibility: hidden;
                 }
@@ -128,21 +129,21 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
                 tr {
                     &:nth-child(even) {
                         td {
-                        background-color: rgba(0, 102, 179, 0.04);
+                            background-color: rgba(0, 102, 179, 0.04);
                         }
                     }
 
                     &:nth-child(odd) {
                         td {
-                        background-color: $white;
+                            background-color: $white;
                         }
                     }
 
                     &:hover {
-                        td{
+                        td {
                             background-color: rgba(0, 102, 179, 0.1);
                         }
-                        
+
                     }
 
                     // &:hover {
@@ -180,10 +181,11 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
             right: 0;
         }
 
-        thead tr th.sticky-div{
+        thead tr th.sticky-div {
             position: sticky;
             z-index: 3;
         }
+
         tbody tr td.sticky-div {
             position: sticky;
             z-index: 1;
@@ -192,6 +194,10 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
 
     &.data-table-sticky-header {
         overflow-x: auto;
+
+        &.overflow-unset {
+            overflow-x: unset;
+        }
 
         .hcl-data-table {
             border-collapse: separate;
