@@ -1,4 +1,4 @@
-##### Sidebar items
+##### Sidebar items:
 
 - _Link:_ Links to different pages
 
@@ -8,7 +8,7 @@
 
 - If tabs are needed on a page when using a sidebar then then tabs are secondary in hierarchy to the sidebar. There should never be persistent tabs with a sidebar being nested under the tabs.
 
-##### Flexible sidebar
+##### Flexible sidebar:
 
 Use a flexible sidebar when on-page space is a priority. The flexible sidebar has both an expanded and collapsed state. The expanded state contains both icons and corresponding text, while the collapsed state shows only the icon. The sidebar expands on hover. It can also be expanded (to a fixed state) or collapsed by clicking on the chevron icon on the panel.
 
@@ -22,7 +22,7 @@ A flexible sidebar is more friendly to responsive designs than a fixed nav. Fixe
 
 - a fully responsive solution is needed
 
-##### Fixed Sidebar
+##### Fixed Sidebar:
 
 A fixed Sidebar contains only links and category lists (no icons) and cannot be collapsed.
 
