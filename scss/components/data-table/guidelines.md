@@ -7,10 +7,10 @@ The basic data table is shipped with a base style, which includes:
 - No Pagination, search or table toolbar.
 - Multiple content densities, compact, default, tall.
 
-#### Horizontal alignment of columns
+##### Horizontal alignment of columns: 
 
 All text within columns should be left-aligned, including headers. Variable numerical values (e.g. prices, percentages, etc.) and their column headers should be right aligned. Some numbers, such as port numbers, are left-aligned, as they represent discrete values that remain consistent over time.
 
-#### Sorting
+##### Sorting:
 
 Improve table usability by making data sortable. Clickable headers enable users to sort table data up or down. The specific attribute being sorted is accompanied by a caret icon. The caret will only appear on the column headers once that specific column is being sorted.
