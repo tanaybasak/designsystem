@@ -98,9 +98,9 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
             //     border-bottom: none;
             // }
             tr:hover {
-                background-color: rgba(0, 102, 179, 0.1);
 
                 td {
+                    background-color: rgba(0, 102, 179, 0.1);
                     border-top: 0.0625rem solid $blue;
                     border-bottom: 0.0625rem solid $blue;
                 }
@@ -127,19 +127,22 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
             tbody {
                 tr {
                     &:nth-child(even) {
-                        //td {
+                        td {
                         background-color: rgba(0, 102, 179, 0.04);
-                        //}
+                        }
                     }
 
                     &:nth-child(odd) {
-                        //td {
+                        td {
                         background-color: $white;
-                        //}
+                        }
                     }
 
                     &:hover {
-                        background-color: rgba(0, 102, 179, 0.1);
+                        td{
+                            background-color: rgba(0, 102, 179, 0.1);
+                        }
+                        
                     }
 
                     // &:hover {
