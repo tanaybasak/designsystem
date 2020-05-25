@@ -177,9 +177,13 @@ $zebra-bg: rgba(0, 102, 179, 0.04);
             right: 0;
         }
 
-        thead tr th.sticky-div, tbody tr td.sticky-div {
+        thead tr th.sticky-div{
             position: sticky;
             z-index: 3;
+        }
+        tbody tr td.sticky-div {
+            position: sticky;
+            z-index: 1;
         }
     }
 
