@@ -4,7 +4,7 @@ window.patron.overflow('#dataTableOverflow', {
   }
 });
 window.patron.overflow('#dataTableOverflow2', {
-    onChange: (element, value) => {
-      console.log(element, value);
-    }
-  });
+  onChange: (element, value) => {
+    console.log(element, value);
+  }
+});
