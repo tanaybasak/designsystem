@@ -41,7 +41,7 @@ $drag: #092b51;
       .caret {
         display: inline-block;
 
-        &:before {
+        &::before {
           content: ' ';
           position: absolute;
           height: 0.5rem;
@@ -55,7 +55,7 @@ $drag: #092b51;
         }
       }
 
-      .caret-down:before {
+      .caret-down::before {
         transform: scale(1) rotate(45deg);
         margin-top: 0;
       }

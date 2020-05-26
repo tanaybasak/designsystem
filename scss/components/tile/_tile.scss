@@ -87,8 +87,8 @@
     }
 
     &-arrow {
-        bottom: hcl-rem(0px);
-        right: hcl-rem(0px);
+        bottom: 0;
+        right: 0;
         position: absolute;
         cursor: pointer;
         padding:14px 16px;

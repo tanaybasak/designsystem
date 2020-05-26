@@ -45,7 +45,7 @@ $slider-thumb-hover: #00518f;
         border: 1px solid $black-lighter;
       }
 
-      .range-value span:before {
+      .range-value span::before {
         content: '';
         position: absolute;
         width: 0;
@@ -59,7 +59,7 @@ $slider-thumb-hover: #00518f;
         margin-top: 1px;
       }
 
-      .range-value span:after {
+      .range-value span::after {
         content: '';
         position: absolute;
         width: 0;
@@ -188,7 +188,7 @@ $slider-thumb-hover: #00518f;
           border-radius: 50%;
           background-color: $blue;
 
-          margin-top: 0px;
+          margin-top: 0;
 
           &:hover {
             background: $slider-thumb-hover;
