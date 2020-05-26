@@ -7,7 +7,7 @@ class Slider {
     this.element = element;
     this.sliderInput = element.querySelector(`.${PREFIX}-slider-input`);
     this.textInput = element.querySelector(`.${PREFIX}-slider-text-input`);
-    this.sliderTooltip = element.querySelector(`.range-value`);
+    this.sliderTooltip = element.querySelector(`.${PREFIX}-range-value`);
     this.errorElement = element.querySelector(`.${PREFIX}-error-msg`);
     this.min = Number(this.sliderInput.min || 0);
     this.max = Number(this.sliderInput.max || 100);
