@@ -8,219 +8,213 @@
 
 @import '../../base';
 
-$table-header-bg: #e8eff8;
+$table-header-bg: #f4f7fb;
+$table-hover-bg: rgba(0, 102, 179, 0.1);
 $zebra-bg: rgba(0, 102, 179, 0.04);
 
 .#{$prefix}-data-table-wrapper {
-  border: 0.0625rem solid $grey-8;
-  border-bottom: transparent;
-  width: 100%;
-
-  .#{$prefix}-data-table {
     width: 100%;
-    border-spacing: 0;
-    position: relative;
+    border: 0.0625rem solid $grey-8;
+    border-bottom: transparent;
+    color: $dark-blue;
 
-    tbody,
-    thead {
-      display: flex;
-      flex-direction: column;
-    }
-
-    tr {
-      display: flex;
-      border: 0.0625rem solid transparent;
-      border-bottom: 0.0625rem solid $grey-8;
-    }
-
-    th,
-    td {
-      display: flex;
-      height: 3rem;
-      width: 100%;
-      align-items: center;
-      border: 0.0625rem solid transparent;
-      overflow: hidden;
-      flex: 1 1 auto;
-    }
-
-    tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    thead tr {
-      background-color: $table-header-bg;
-    }
-
-    tbody tr {
-      background: $white;
-    }
-
-    thead {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
-
-    tbody tr:hover {
-      background-color: $table-header-bg;
-      border: 0.0625rem solid #0066b3;
-
-      .overflow-onhover {
-        .#{$prefix}-overflow-container {
-          visibility: visible;
-        }
-      }
-    }
-
-    .header-text-wrapper,
-    .body-content-wrapper {
-      padding-left: 0.75rem;
-      font-size: 0.875rem;
-      color: $dark-blue;
-      letter-spacing: 0;
-      line-height: 1rem;
-      align-items: center;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .body-content-html-wrapper {
-      display: flex;
-      height: 100%;
-    }
-
-    .header-text-wrapper.sortable {
-      display: flex;
-      cursor: pointer;
-      height: 100%;
-      width: 100%;
-
-      .#{$prefix}-sorting {
-        margin-left: 0.625rem;
-        transform: rotate(180deg);
-        transition: rotate 0.3s ease-in-out;
-
-        &.desc {
-          transform: rotate(0);
-          transition: rotate 0.3s ease-in-out;
-        }
-      }
-
-      &:focus {
-        outline: 1px solid $primary;
-        outline-offset: -1px;
-      }
-    }
-
-    .#{$prefix}-overflow-container {
-      position: absolute;
-    }
-
-    .checkbox-wrapper {
-      display: flex;
-      width: 100%;
-      padding-left: 0.75rem;
-    }
-
-    .overflow-wrapper {
-      display: flex;
-      align-items: center;
-    }
-
-    .overflow-onhover {
-      .#{$prefix}-overflow-container {
-        visibility: hidden;
+    .#{$prefix}-data-table {
         width: 100%;
-        justify-content: center;
-      }
+        display: table;
+        border-spacing: 0;
+        border-collapse: collapse;
 
-      .#{$prefix}-overflow-container.#{$prefix}-active {
-        visibility: visible;
-      }
-    }
-
-    td:focus {
-      outline: 0.0625rem solid $primary;
-    }
-
-    &-zebra {
-      tbody {
-        tr {
-          &:nth-child(even) {
-            background-color: $white;
-          }
-
-          &:nth-child(odd) {
-            background-color: $zebra-bg;
-          }
-
-          &:hover {
-            background-color: $table-header-bg;
-          }
+        thead {
+            display: table-header-group;
         }
-      }
-    }
 
-    &-compact {
-      tbody {
         tr {
-          td {
-            height: 1.5rem;
-          }
+            display: table-row;
+            outline: 0;
+            vertical-align: middle;
+
+            th,
+            td {
+                display: table-cell;
+                padding-left: 0.625rem;
+                font-size: 0.875rem;
+                text-align: left;
+                font-weight: 400;
+                vertical-align: inherit;
+                height: 3.125rem;
+
+                &:focus {
+                    outline: 0.0625rem solid $blue;
+                    outline-offset: -0.0625rem;
+                }
+            }
+
+            td:first-child {
+                border-left: 0.0625rem solid transparent;
+            }
+
+            td:last-child {
+                border-right: 0.0625rem solid transparent;
+            }
+
+            th {
+                line-height: 1.5rem;
+                background-color: $table-header-bg;
+
+                .#{$prefix}-sorting {
+                    vertical-align: middle;
+                    margin-left: 0.625rem;
+                    transform: rotate(180deg);
+                    transition: rotate 0.3s ease-in-out;
+
+                    &.desc {
+                        transform: rotate(0);
+                        transition: rotate 0.3s ease-in-out;
+                    }
+                }
+
+                &.sortable {
+                    cursor: pointer;
+                }
+            }
+
+            td {
+                border-top: 0.0625rem solid transparent;
+                border-bottom: 0.0625rem solid $grey-8;
+                background-color: $white;
+
+                .overflow-onhover {
+                    visibility: hidden;
+
+                    &.#{$prefix}-active {
+                        visibility: visible;
+                    }
+
+                }
+            }
         }
-      }
-    }
 
-    &-tall {
-      tbody {
-        tr {
-          td {
-            height: 4rem;
-          }
+        tbody {
+            display: table-row-group;
+
+            tr:hover {
+
+                td {
+                    background-color: $table-hover-bg;
+                    border-top: 0.0625rem solid $blue;
+                    border-bottom: 0.0625rem solid $blue;
+                }
+
+                td:first-child {
+                    border-left: 0.0625rem solid $blue;
+                }
+
+                td:last-child {
+                    border-right: 0.0625rem solid $blue;
+                }
+
+                .overflow-onhover {
+                    visibility: visible;
+                }
+            }
         }
-      }
+
+        &.#{$prefix}-data-table-zebra {
+            tbody {
+                tr {
+                    &:nth-child(even) {
+                        td {
+                            background-color: $zebra-bg;
+                        }
+                    }
+
+                    &:nth-child(odd) {
+                        td {
+                            background-color: $white;
+                        }
+                    }
+
+                    &:hover {
+                        td {
+                            background-color: $table-hover-bg;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        &.#{$prefix}-data-table-compact {
+            tbody {
+                tr {
+                    td {
+                        height: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &.#{$prefix}-data-table-tall {
+            tbody {
+                tr {
+                    td {
+                        height: 4rem;
+                    }
+                }
+            }
+        }
+
+        .sticky-left-div {
+            left: 0;
+        }
+
+        .sticky-right-div {
+            right: 0;
+        }
+
+        thead tr th.sticky-div {
+            position: sticky;
+            z-index: 3;
+        }
+
+        tbody tr td.sticky-div {
+            position: sticky;
+            z-index: 1;
+        }
     }
-  }
 
-  &.#{$prefix}-data-table-borderless {
-    border: 0.0625rem solid transparent;
+    &.data-table-sticky-header {
+        overflow-x: auto;
 
-    .#{$prefix}-data-table-zebra tr {
-      border-bottom-color: transparent;
+        &.overflow-unset {
+            overflow-x: unset;
+        }
+
+        .#{$prefix}-data-table {
+            border-collapse: separate;
+
+            th {
+                top: 0;
+                z-index: 2;
+                position: sticky;
+            }
+        }
     }
 
-    tbody tr:hover {
-      border-bottom-color: $blue;
+    &.#{$prefix}-data-table-borderless {
+        border: 0.0625rem solid transparent;
+
+        .#{$prefix}-data-table-zebra tr td {
+            border-bottom-color: transparent;
+        }
     }
-  }
 
-  .sticky-div {
-    position: sticky;
-    background: inherit;
-    z-index: 1;
-  }
+    .#{$prefix}-expand-row {
+        transform: rotate(270deg);
+        transition: all 0.3s ease-in-out;
+    }
 
-  .sticky-left-div {
-    left: 0;
-  }
-
-  .sticky-right-div {
-    right: 0;
-  }
-
-  .#{$prefix}-expanded-row td {
-    height: auto;
-    padding: 1rem;
-  }
-
-  .#{$prefix}-expand-row {
-    transform: rotate(270deg);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .#{$prefix}-collapse-row {
-    transition: all 0.3s ease-in-out;
-  }
+    .#{$prefix}-collapse-row {
+        transition: all 0.3s ease-in-out;
+    }
 }

@@ -21,15 +21,15 @@ class Dropdown {
     this.toggleState(this.state.isOpen);
   }
 
-  setValue = value => {
+  setValue = (value) => {
     this.toggle.innerText = value;
   };
 
-  setMultiSelectVal = value => {
+  setMultiSelectVal = (value) => {
     this.element.querySelector(`.${PREFIX}-tag-text`).innerText = value;
   };
 
-  toggleState = state => {
+  toggleState = (state) => {
     if (state) {
       const dropdownMenu = this.element.querySelector(
         `.${PREFIX}-dropdown-container`
@@ -38,7 +38,7 @@ class Dropdown {
       addListener(
         'dropdown-' + this.dropDownId,
         'click',
-        e => {
+        (e) => {
           this.handleClick(e);
         },
         true
@@ -57,7 +57,7 @@ class Dropdown {
     }
   };
 
-  updatePos = outOfBound => {
+  updatePos = (outOfBound) => {
     let setPosition;
     let removePosition;
     if (!outOfBound) {
@@ -85,7 +85,7 @@ class Dropdown {
     this.element.classList.remove(removePosition);
   };
 
-  handleClick = e => {
+  handleClick = (e) => {
     if (this.element) {
       if (e && this.element.contains(e.target)) {
         return;
@@ -95,7 +95,7 @@ class Dropdown {
     }
   };
 
-  isInViewport = elem => {
+  isInViewport = (elem) => {
     const bounding = elem.getBoundingClientRect();
     return (
       bounding.top >= 0 &&
@@ -115,59 +115,52 @@ class Dropdown {
     subElement.classList.add(className);
   };
 
-  focusNode = node => {
+  focusNode = (node) => {
     if (node.classList.contains(`${PREFIX}-dropdown-item`)) {
       node.children[0].focus();
     }
   };
 
-  keyDownOnDropdown = e => {
+  keyDownOnDropdown = (e) => {
     const key = e.which || e.keyCode;
     const listItem = e.target.parentElement;
-    const nodeStatus = this.element.classList.contains(
-      `${PREFIX}-dropdown-open`
-    );
 
-    if (nodeStatus) {
-      switch (key) {
-        case 40: {
-          if (!listItem.nextElementSibling) {
-            this.focusNode(listItem.parentElement.firstElementChild);
-          } else {
-            this.focusNode(listItem.nextElementSibling);
-          }
-          e.preventDefault();
-          break;
-        }
-        case 38: {
-          if (!listItem.previousElementSibling) {
-            this.focusNode(listItem.parentElement.lastElementChild);
-          } else {
-            this.focusNode(listItem.previousElementSibling);
-          }
-          e.preventDefault();
-          break;
-        }
-        case 13: {
-          e.preventDefault();
-          e.target.click();
-          break;
-        }
-        default:
-          break;
+    if (key === 40) {
+      e.preventDefault();
+      if (!listItem.nextElementSibling) {
+        this.focusNode(listItem.parentElement.firstElementChild);
+      } else {
+        this.focusNode(listItem.nextElementSibling);
       }
+    } else if (key === 38) {
+      e.preventDefault();
+      if (!listItem.previousElementSibling) {
+        this.focusNode(listItem.parentElement.lastElementChild);
+      } else {
+        this.focusNode(listItem.previousElementSibling);
+      }
+    } else if (key === 13 || key === 32) {
+      e.preventDefault();
+      e.target.click();
     }
   };
 
-  keydownButton = e => {
+  keydownButton = (e) => {
     const key = e.which || e.keyCode;
     const listItems = e.target.nextElementSibling;
-    if (key === 40) {
-      e.preventDefault();
-      this.focusNode(listItems.firstElementChild);
-    } else if (key === 38) {
-      e.preventDefault();
-      this.focusNode(listItems.lastElementChild);
+    if (this.state.isOpen) {
+      if (key === 40) {
+        e.preventDefault();
+        this.focusNode(listItems.firstElementChild);
+      } else if (key === 38) {
+        e.preventDefault();
+        this.focusNode(listItems.lastElementChild);
+      }
+    } else {
+      if (key === 38 || key === 40) {
+        e.preventDefault();
+        e.target.click();
+      }
     }
   };
 
@@ -189,15 +182,15 @@ class Dropdown {
         }
       });
 
-      dropdownBtn.addEventListener('keydown', e => {
+      dropdownBtn.addEventListener('keydown', (e) => {
         this.keydownButton(e);
       });
 
-      dropdownMenu.addEventListener('keydown', e => {
+      dropdownMenu.addEventListener('keydown', (e) => {
         this.keyDownOnDropdown(e);
       });
 
-      dropdownBtn.addEventListener('click', event => {
+      dropdownBtn.addEventListener('click', (event) => {
         event.stopPropagation();
         this.state.isOpen = !this.state.isOpen;
         this.toggleState(this.state.isOpen);
@@ -207,11 +200,11 @@ class Dropdown {
       if (tag) {
         this.element
           .querySelector(`.${PREFIX}-close`)
-          .addEventListener('click', event => {
+          .addEventListener('click', (event) => {
             event.stopPropagation();
             tag.classList.add(`hidden`);
             const list = dropdownMenu.querySelectorAll('input:checked');
-            list.forEach(item => {
+            list.forEach((item) => {
               item.checked = false;
             });
           });
@@ -220,7 +213,7 @@ class Dropdown {
       this.element
         .querySelectorAll(`.${PREFIX}-dropdown-item`)
         .forEach((item, index) => {
-          item.addEventListener('click', event => {
+          item.addEventListener('click', (event) => {
             this.setSelection(
               event.target,
               `.${PREFIX}-dropdown-item-selected`
