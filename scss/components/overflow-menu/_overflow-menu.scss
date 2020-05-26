@@ -29,7 +29,7 @@
   }
 
   @if ($type==disable) {
-    outline-offset: 0px;
+    outline-offset: 0;
     cursor: not-allowed;
   } @else if($type==danger) {
     &:hover {

@@ -64,7 +64,7 @@ class Tooltip {
           this.hide();
         }
       });
-      this.element.addEventListener('mouseleave', e => {
+      this.element.addEventListener('mouseleave', () => {
         this.mouseOut = true;
         setTimeout(() => {
           if (this.mouseOut) {
