@@ -68,7 +68,7 @@ $slider-thumb-hover: #00518f;
         border: 1px solid $black-lighter;
       }
 
-      .#{$prefix}-range-value span:before {
+      .#{$prefix}-range-value span::before {
         content: '';
         position: absolute;
         width: 0;
@@ -82,7 +82,7 @@ $slider-thumb-hover: #00518f;
         margin-top: 1px;
       }
 
-      .#{$prefix}-range-value span:after {
+      .#{$prefix}-range-value span::after {
         content: '';
         position: absolute;
         width: 0;
