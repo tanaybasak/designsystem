@@ -11,6 +11,7 @@ $slider-thumb-hover: #00518f;
     justify-content: center;
     align-items: center;
     height: 2.75rem;
+    margin-top: 1.625rem;
 
     .#{$prefix}-slider-bottom-range,
     .#{$prefix}-slider-top-range {
@@ -18,16 +19,38 @@ $slider-thumb-hover: #00518f;
       margin: 0 0.5rem;
     }
 
+    &.on-hover {
+      margin-top: 0;
+
+      .#{$prefix}-range-value {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.3s ease-in-out 0.4s,
+          opacity 0.3s ease-in-out 0.4s;
+      }
+
+      input[type='range'].#{$prefix}-slider-input {
+        &:hover,
+        &:focus {
+          + .#{$prefix}-range-value {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0s, opacity 0s;
+          }
+        }
+      }
+    }
+
     .#{$prefix}-slider-input-wrapper {
       width: 100%;
       position: relative;
 
-      .range-value {
+      .#{$prefix}-range-value {
         position: absolute;
         top: -1.625rem;
       }
 
-      .range-value span {
+      .#{$prefix}-range-value span {
         min-width: 1.875rem;
         height: 1.5rem;
         line-height: 1.5rem;
@@ -45,7 +68,7 @@ $slider-thumb-hover: #00518f;
         border: 1px solid $black-lighter;
       }
 
-      .range-value span::before {
+      .#{$prefix}-range-value span::before {
         content: '';
         position: absolute;
         width: 0;
@@ -59,7 +82,7 @@ $slider-thumb-hover: #00518f;
         margin-top: 1px;
       }
 
-      .range-value span::after {
+      .#{$prefix}-range-value span::after {
         content: '';
         position: absolute;
         width: 0;
@@ -215,6 +238,6 @@ $slider-thumb-hover: #00518f;
 
   .#{$prefix}-error-msg {
     text-align: right;
-    padding-right: 10px;
+    padding-right: 0.625rem;
   }
 }
