@@ -19,6 +19,9 @@
                 color: $blue;
                 outline: none;
             }
+            >a:focus {
+                outline: 1px solid $blue;
+            }
 
             border-bottom: 2px solid $blue;
         }
