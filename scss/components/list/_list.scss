@@ -33,7 +33,7 @@ ol.#{$prefix}-list-nested {
   }
 
   &.#{$prefix}-upper-roman {
-    list-style-type: lower-roman;
+    list-style-type: upper-roman;
   }
 }
 
@@ -48,6 +48,6 @@ ul.#{$prefix}-list-nested {
   }
 
   &.#{$prefix}-disc {
-    list-style-type: square;
+    list-style-type: disc;
   }
 }
