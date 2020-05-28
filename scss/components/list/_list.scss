@@ -1,25 +1,5 @@
 @import '../../base';
 
-ol[type='lower-alpha'] {
-		list-style-type: lower-alpha;
-}
-
-ol[type='i'] {
-  list-style-type: lower-roman;
-}
-
-ol[type='I'] {
-  list-style-type: upper-roman;
-}
- 
-ol[type='upper-alpha'] {
-  list-style-type: upper-alpha;
-}
-
-ol[type='1'] {
-  list-style-type: decimal;
-}
-
 .#{$prefix}-list-ordered,
 .#{$prefix}-list-unordered {
   font-size: 0.875rem;
@@ -32,5 +12,42 @@ ol[type='1'] {
     margin-bottom: 0.25rem;
     margin-left: 2rem;
     font-size: 0.875rem;
+  }
+  &.#{$prefix}-decimal {
+    list-style-type: decimal;
+  }
+}
+
+ol.#{$prefix}-list-ordered,
+ol.#{$prefix}-list-nested {
+  &.#{$prefix}-upper-alpha {
+    list-style-type: upper-alpha;
+  }
+
+  &.#{$prefix}-lower-alpha {
+    list-style-type: lower-alpha;
+  }
+
+  &.#{$prefix}-lower-roman {
+    list-style-type: lower-roman;
+  }
+
+  &.#{$prefix}-upper-roman {
+    list-style-type: lower-roman;
+  }
+}
+
+.#{$prefix}-list-unordered,
+ul.#{$prefix}-list-nested { 
+  &.#{$prefix}-circle {
+    list-style-type: circle;
+  }
+
+  &.#{$prefix}-square {
+    list-style-type: square;
+  }
+
+  &.#{$prefix}-disc {
+    list-style-type: square;
   }
 }
