@@ -12,6 +12,11 @@
     margin-bottom: 0.25rem;
     margin-left: 2rem;
     font-size: 0.875rem;
+
+    .#{$prefix}-list-item::before {
+      content: '-';
+      padding-right: .25rem;
+  }
   }
   &.#{$prefix}-decimal {
     list-style-type: decimal;
