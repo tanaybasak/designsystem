@@ -15,16 +15,15 @@
 
     .#{$prefix}-list-item::before {
       content: '-';
-      padding-right: .25rem;
-  }
+      padding-right: 0.25rem;
+    }
   }
   &.#{$prefix}-decimal {
     list-style-type: decimal;
   }
 }
 
-ol.#{$prefix}-list-ordered,
-ol.#{$prefix}-list-nested {
+ol.#{$prefix}-list-ordered {
   &.#{$prefix}-upper-alpha {
     list-style-type: upper-alpha;
   }
@@ -42,8 +41,7 @@ ol.#{$prefix}-list-nested {
   }
 }
 
-.#{$prefix}-list-unordered,
-ul.#{$prefix}-list-nested { 
+ul.#{$prefix}-list-unordered {
   &.#{$prefix}-circle {
     list-style-type: circle;
   }
