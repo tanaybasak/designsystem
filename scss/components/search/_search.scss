@@ -3,6 +3,7 @@
 $search-height: 2.5rem;
 $search-height-sm: 2rem;
 $search-icon-size: 1rem;
+$interactive_bg_hover: #d9f9ff;
 
 .#{$prefix}-search {
     display: flex;
@@ -32,6 +33,14 @@ $search-icon-size: 1rem;
 
         .#{$prefix}-search-btn {
             display: none;
+        }
+    }
+
+    button.#{$prefix}-search-btn:hover {
+        background-color: $interactive_bg_hover;
+        cursor: pointer;
+        .#{$prefix}-search-icon {
+            fill: $blue-7;
         }
     }
 
