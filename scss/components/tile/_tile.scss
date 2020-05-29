@@ -53,8 +53,8 @@
         @include tile(expandable);
         &.arrow-top-left {
             .#{$prefix}-tile-arrow {
-                top: hcl-rem(12px);
-                left: hcl-rem(14px);
+                top: 0rem;
+                left: 0rem;
                 bottom: unset;
                 right: unset;
             }
