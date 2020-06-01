@@ -73,18 +73,22 @@ label.#{$prefix}-label {
         order: 2;
     }
 
+    &[type='password'], input[type='password'] {
+        padding-right: 0;
+    }
+
     &~button.#{$prefix}-password-visibility,
     &~[data-component='password'] {
         position: relative;
-        top: -1.75rem;
-        right: .75rem;
+        top: -2.45rem;
+        right: 0rem;
         display: flex;
         justify-content: center;
         align-self: flex-end;
         align-items: center;
         order: 3;
-        height: 1rem;
-        width: 1rem;
+        height: 2.41rem;
+        width: 2.4rem;
         padding: 0;
         margin-bottom: -1rem;
         border: 0;
