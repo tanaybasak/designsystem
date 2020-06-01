@@ -21,16 +21,18 @@ class Accordion {
     if (!status) {
       if (isChanged) {
         const content = item.children[1].children[0];
-        collapseElement.style.height = content.clientHeight + 'px';
+        collapseElement.style.height = content.offsetHeight + 'px';
         setTimeout(() => {
           collapseElement.style.height = 0;
+          collapseElement.style.overflow = 'hidden';
         });
       }
     } else {
       const content = item.children[1].children[0];
-      collapseElement.style.height = content.clientHeight + 'px';
+      collapseElement.style.height = content.offsetHeight + 'px';
       setTimeout(() => {
         collapseElement.style.height = 'auto';
+        collapseElement.style.overflow = 'visible';
       }, 300);
     }
   };

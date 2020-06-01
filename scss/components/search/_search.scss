@@ -35,6 +35,14 @@ $search-icon-size: 1rem;
         }
     }
 
+    button.#{$prefix}-search-btn:hover {
+        background-color: $interactive_bg_hover;
+        cursor: pointer;
+        .#{$prefix}-search-icon {
+            fill: $blue-7;
+        }
+    }
+
     .#{$prefix}-search-btn {
         height: $search-height;
         width: $search-height;

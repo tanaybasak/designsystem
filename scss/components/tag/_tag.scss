@@ -14,7 +14,6 @@
     justify-content: center;
     min-width: 2.75rem;
     cursor: pointer;
-    // outline: none;
     position: relative;
 
     &-text {
@@ -28,37 +27,40 @@
         }
     }
 
+    .#{$prefix}-tag-icon {
+        width: hcl-rem(18px);
+        height: hcl-rem(18px);
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 50%;
+        margin-left: .5rem;
+    }
+
     &-primary {
         background-color: $blue;
         color: $white;
 
         &:hover:not([disabled]) {
-            background-color: #00518F;
-            border-color: #00518F;
+            background-color: $blue-60;
+            border-color: $blue-60;
         }
 
         &:active:not([disabled]) {
-            background-color: #003D6B;
-            border-color: #003D6B;
+            background-color: $blue-70;
+            border-color: $blue-70;
+        }
+
+        >.#{$prefix}-tag-icon {
+            background-color: $white;
+            color: $black;
         }
 
         >.#{$prefix}-close {
-            @include hcl-close-icon(18, $white, #3D70B2, true);
+            @include hcl-close-icon(18, $white, $blue-70 , true);
             margin-left: .5rem;
-        }
-
-        >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
-            width: hcl-rem(18px);
-            height: hcl-rem(18px);
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ffffff;
-            cursor: pointer;
-            border-radius: 50%;
-            margin-left: .5rem;
-            color: $black;
         }
     }
 
@@ -68,13 +70,13 @@
         color: $blue;
 
         &:hover:not([disabled]) {
-            background-color: #e5eff7;
-            border-color: #00518F;
+            background-color: $aqua-10;
+            border-color: $blue-60;
         }
 
         &:active:not([disabled]) {
             background: rgba(0, 102, 179, .18);
-            border-color: #003D6B;
+            border-color: $blue-70;
         }
 
         >.#{$prefix}-close {
@@ -82,19 +84,11 @@
             margin-left: .5rem;
         }
 
-        >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
-            width: hcl-rem(18px);
-            height: hcl-rem(18px);
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #0066b3;
-            cursor: pointer;
-            border-radius: 50%;
-            margin-left: .5rem;
-            color: $black;
+        >.#{$prefix}-tag-icon {
+            background-color: $blue;
+            color: $white;
         }
+        
     }
 
     &:disabled,
@@ -110,7 +104,7 @@
             pointer-events: none;
         }
 
-        >span:not(.#{$prefix}-close):not(.#{$prefix}-tag-text):not(.#{$prefix}-tag-thumbnail) {
+        >.#{$prefix}-tag-icon {
             pointer-events: none;
         }
     }
@@ -119,7 +113,7 @@
         width: 1.375rem;
         height: 1.375rem;
         border-radius: 50%;
-        background-color: #efefef;
+        background-color: $light-20;
         position: absolute;
         left: .625rem;
 
