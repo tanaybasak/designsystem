@@ -1,6 +1,6 @@
 Number input labels should use sentence case, with only the first word in a phrase and any proper nouns capitalized.
 
-#### States
+##### States
 
 **Active**
 

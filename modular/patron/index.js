@@ -20,6 +20,7 @@ import Modal from '../../js/modal';
 import Breadcrumb from '../../js/breadcrumb';
 import Tile from '../../js/tile';
 import Toggle from '../../js/toggle';
+import TimePicker from '../../js/timePicker';
 import { isElement } from '../../js/utils/dom';
 
 // Demo Scripts
@@ -44,7 +45,8 @@ const ComponentList = {
   modal: Modal,
   breadcrumb: Breadcrumb,
   tile: Tile,
-  toggle: Toggle
+  toggle: Toggle,
+  timePicker: TimePicker
 };
 
 for (const componentName in ComponentList) {
@@ -101,8 +103,8 @@ export const components = {
   accordion: function(selector, options) {
     attachElements(selector, options, Accordion);
   },
-  slider: function(selector) {
-    attachElements(selector, null, Slider);
+  slider: function(selector, options) {
+    attachElements(selector, options, Slider);
   },
   tree: function(selector) {
     attachElements(selector, null, Tree);
@@ -130,6 +132,12 @@ export const components = {
   },
   pagination: function(selector, options) {
     attachElements(selector, options, Pagination);
+  },
+  password: function(selector, options) {
+    attachElements(selector, options, Password);
+  },
+  timePicker: function(selector) {
+    attachElements(selector, null, TimePicker);
   }
 };
 

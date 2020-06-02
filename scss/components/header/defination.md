@@ -2,7 +2,7 @@ The header spans the full width of the viewport and is the topmost element in th
 
 Example of header
 
-#### Use a header when:
+##### Use a header when:
 
 - you want links to top level pages to be persistent on screen
 
