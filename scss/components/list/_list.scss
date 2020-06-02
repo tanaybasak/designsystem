@@ -18,9 +18,6 @@
       padding-right: 0.25rem;
     }
   }
-  &.#{$prefix}-decimal {
-    list-style-type: decimal;
-  }
 }
 
 ol.#{$prefix}-list-ordered {
@@ -38,6 +35,10 @@ ol.#{$prefix}-list-ordered {
 
   &.#{$prefix}-upper-roman {
     list-style-type: upper-roman;
+  }
+
+  &.#{$prefix}-decimal {
+    list-style-type: decimal;
   }
 }
 
