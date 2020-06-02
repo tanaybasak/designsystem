@@ -81,16 +81,16 @@ bug-UICoE-[ID]
   | Forms | XX | 
   
  # How to use? 
-  1) Install parceljs 
+  1) Install parceljs:
   npm install -g parcel-bundler
 
-  2) Install rest of the dependecies by running the following command at the root of the folder
+  2) Install rest of the dependecies by running the following command at the root of the folder:
   npm install 
 
-  3) Run Localhost by
+  3) Run Localhost by:
   parcel index.html or npm run dev
 
-  4) Build
+  4) Build:
   npm run build 
 
 # Guidelines for writting SCSS
