@@ -1,4 +1,4 @@
-#### Sidebar items
+##### Sidebar items:
 
 - _Link:_ Links to different pages
 
@@ -8,7 +8,7 @@
 
 - If tabs are needed on a page when using a sidebar then then tabs are secondary in hierarchy to the sidebar. There should never be persistent tabs with a sidebar being nested under the tabs.
 
-#### Flexible sidebar
+##### Flexible sidebar:
 
 Use a flexible sidebar when on-page space is a priority. The flexible sidebar has both an expanded and collapsed state. The expanded state contains both icons and corresponding text, while the collapsed state shows only the icon. The sidebar expands on hover. It can also be expanded (to a fixed state) or collapsed by clicking on the chevron icon on the panel.
 
@@ -16,17 +16,17 @@ In a flexible sidebar, each link and category list has its own corresponding ico
 
 A flexible sidebar is more friendly to responsive designs than a fixed nav. Fixed nav is best for products in landscape orientation and mostly used from desktop or tablet screens. Consider using a flexible nav for a fully responsive solution.
 
-#### Use a flexible sidebar when:
+##### Use a flexible sidebar when:
 
 - more space is needed for page content
 
 - a fully responsive solution is needed
 
-#### Fixed Sidebar
+##### Fixed Sidebar:
 
 A fixed Sidebar contains only links and category lists (no icons) and cannot be collapsed.
 
-#### Use a fixed sidebar when:
+##### Use a fixed sidebar when:
 
 - icons cannot clearly describe the categories
 

@@ -12,6 +12,6 @@
 
 - Do not use breadcrumbs for representing a multi-step process (use a progress indicator instead).
 
-#### Multiple tiers 
+##### Multiple tiers: 
 
 If there are more than three levels, the home level and the last two levels are visible, with all the middle levels collapsed into ellipses and accessible from a dropdown.
