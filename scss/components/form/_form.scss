@@ -81,7 +81,7 @@ label.#{$prefix}-label {
     &~[data-component='password'] {
         position: relative;
         top: -2.45rem;
-        right: 0rem;
+        right: 0;
         display: flex;
         justify-content: center;
         align-self: flex-end;
