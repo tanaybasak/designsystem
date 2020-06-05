@@ -1,4 +1,4 @@
 window.patron.datepicker('#bottom-datepicker', {
-  position: 'top',
+  position: 'bottom',
   onChange: () => {}
 });
