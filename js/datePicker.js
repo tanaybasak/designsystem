@@ -345,7 +345,7 @@ class DatePicker {
         .addEventListener('change', dateChangeHandler);
       this.datePickerElm
         .querySelector(DOMstrings.inputCalSVG)
-        .addEventListener('click', toggleDateContainer);
+        .addEventListener('click', onClickInputCalSVG);
       this.datePickerElm
         .querySelector(DOMstrings.yearInput)
         .addEventListener('change', yearChangeHandler);
@@ -353,6 +353,14 @@ class DatePicker {
         .querySelector(DOMstrings.dateContainer)
         .addEventListener('click', datePanelClickHandler);
       bindDateEvent();
+    };
+
+    const onClickInputCalSVG = event => {
+      event.stopPropagation();
+      event.preventDefault();
+      if (!event.currentTarget.previousElementSibling.disabled) {
+        toggleDateContainer(event);
+      }
     };
 
     const checkErrorBox = value => {
@@ -365,6 +373,8 @@ class DatePicker {
     };
 
     const toggleDateContainer = event => {
+      event.stopPropagation();
+      event.preventDefault();
       checkErrorBox(event.target.value);
       if (
         this.datePickerElm
@@ -442,11 +452,11 @@ class DatePicker {
     };
 
     const dateChangeHandler = event => {
+      event.stopPropagation();
+      event.preventDefault();
       checkErrorBox(event.target.value);
       UICtrl.hideDateContainer();
       if (isValidDate(event.target.value)) {
-        // let date = event.target.value;
-        // date = date.split('/');
         eventHandler(dateCtrl.setDateObject(event.target.value));
         UICtrl.hightlightSelectedDate(event.target.value);
         UICtrl.hideErrorInvalidDate();
