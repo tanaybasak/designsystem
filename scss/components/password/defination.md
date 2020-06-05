@@ -1,1 +1,1 @@
-Text Input enable the user to input a few words. If you expect the user to input more than a sentence, use the Textarea component.
+Password input fields provide a way for the user to securely enter a password. The element is presented as a one-line plain text input component in which the text is obscured so that it cannot be read by replacing each character with a symbol when typed. There is a reveal icon in the field to reveal the password in case the user wishes to ascertain the correctness of the password. 
