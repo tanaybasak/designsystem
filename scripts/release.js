@@ -6,39 +6,37 @@ const git = require('simple-git')(root);
 const packageFile = path.join(__dirname, '../', 'package.json');
 const child_process = require('child_process');
 
-
-let BRANCH_NAME = `master`;
+const BRANCH_NAME = `master`;
 let DESCRIPTION = `dev description`;
 
-let PROCESS_DESC = "";
-let PROCESS_VER = "";
+const PROCESS_DESC = '';
 
-const dummy = () => {
-    let deferred = q.defer();
-    child_process.exec(`echo $TEST_FRIDAY`, (err, stdout, stderr) => {
-        if (!err) {
-            console.log(`--- Result ---`);
-            console.log(stdout.trim());
-            process.exit(0);
-            deferred.resolve();
-        } else {
-            console.log(`--- EXIT ---`);
-            process.exit(0);
-            deferred.reject();
-        }
-    });
+// const dummy = () => {
+//     let deferred = q.defer();
+//     child_process.exec(`echo $TEST_FRIDAY`, (err, stdout, stderr) => {
+//         if (!err) {
+//             console.log(`--- Result ---`);
+//             console.log(stdout.trim());
+//             process.exit(0);
+//             deferred.resolve();
+//         } else {
+//             console.log(`--- EXIT ---`);
+//             process.exit(0);
+//             deferred.reject();
+//         }
+//     });
 
-    return deferred.promise;
-}
+//     return deferred.promise;
+// }
 
-const getVersion = () => {
-    let PROCESS_VER = process.env.version;
-    let PROCESS_DESC = process.env.desc;
-    PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
+// const getVersion = () => {
+//     let PROCESS_VER = process.env.version;
+//     let PROCESS_DESC = process.env.desc;
+//     PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
 
-    console.log(`Version To Update: ${PROCESS_VER}`);
-    return q.when(PROCESS_VER);
-}
+//   console.log(`Version To Update: ${PROCESS_VER}`);
+//     return q.when(PROCESS_VER);
+// }
 
 
 const bump = (version) => {
