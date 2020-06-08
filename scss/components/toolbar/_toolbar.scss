@@ -16,36 +16,28 @@
   width: 100%;
   background: transparent;
 
-  &-content {
+  &-action {
     margin-left: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    > .#{$prefix}-btn {
-      margin: 0 0.75rem;
-    }
-  }
+    button {
 
-  &-action {
-    width: 2rem;
-    height: 2rem;
-    background: transparent;
+      &:not(:last-child) {
+        margin: 0;
 
-    &:hover,
-    &:focus {
-      background: $blue;
-      color: $white;
-
-      > .#{$prefix}-toolbar-icon {
-        fill: $white;
+        &:hover,
+        &:focus {
+          svg {
+            fill: $white;
+          }
+        }
       }
-    }
-  }
 
-  &-icon {
-    &:hover {
-      cursor: pointer;
+      &:last-child {
+        margin: 0 0 0 1rem;
+      }
     }
   }
 }
