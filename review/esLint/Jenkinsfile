@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    tools {nodejs "nodejs-path"}
+    stages {
+        stage('Clean') {
+            steps {
+                sh "npm install rimraf"
+                sh 'npm run clean'
+            }
+        }
+        stage('Install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+        stage('git commit') {
+            steps {
+                sh 'git add .'
+                sh 'git commit -m "compile components"'
+            }
+        }
+        stage('git push') {
+            steps {
+                sh 'git pull origin master'
+                sh 'git push origin HEAD:refs/heads/master'
+            }
+        }
+    }
+}

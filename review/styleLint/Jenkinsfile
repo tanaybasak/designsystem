@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    tools {nodejs "nodejs-path"}
+    stages {
+        stage('Install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm run stylelint'
+            }
+        }
+    }
+    post {
+        failure {
+            sh 'echo "failed"'
+        }
+        success {
+            sh 'echo "success"'
+        }
+    }
+}
