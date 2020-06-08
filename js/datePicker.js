@@ -437,6 +437,7 @@ class DatePicker {
         const d = new Date(s[2], s[0] - 1, s[1]);
         if (
           d &&
+          // eslint-disable-next-line eqeqeq
           d.getMonth() + 1 == s[0] &&
           regex.test(s.join('/')) &&
           s[2] > 999
