@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    environment {
+        GITHUB_STATUS_URL = "https://9b947fb028b139f35f93a9e3e296f9b90ce27356:x-oauth-basic@github01.hclpnp.com/api/v3/repos/UXUIAssets/patron-css-dev/statuses"
+        STATUS_NAME = "ci-eslint/jenkins"
+    }
+    tools {nodejs "nodejs-path"}
+    stages {
+        stage('Install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm run pretest'
+            }
+        }
+    }
+    post {
+        failure {
+            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$GIT_COMMIT" \\
+  -H "Content-Type: application/json" \\
+  -X POST \\
+  -d "{\\"state\\": \\"failure\\",\\"context\\": \\"$STATUS_NAME\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"$BUILD_URL/console\\"}"'''
+        }
+        success {
+            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$GIT_COMMIT" \\
+  -H "Content-Type: application/json" \\
+  -X POST \\
+  -d "{\\"state\\": \\"success\\",\\"context\\": \\"$STATUS_NAME\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"$BUILD_URL/console\\"}"'''
+        }
+    }
+}
