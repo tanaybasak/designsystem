@@ -19,28 +19,12 @@ pipeline {
     }
     post {
         failure {
-            echo "${GIT_COMMIT}"
-            echo "${JOB_NAME}"
-            echo "${BUILD_NUMBER}"
-            echo "${JENKINS_URL}"
-            echo "${BUILD_URL}"
-            echo "${JOB_URL}"
-            echo "${GITHUB_STATUS_URL}"
-            echo "${STATUS_NAME}"
             sh label: '', script: '''curl "$GITHUB_STATUS_URL/$GIT_COMMIT" \\
   -H "Content-Type: application/json" \\
   -X POST \\
   -d "{\\"state\\": \\"failure\\",\\"context\\": \\"$STATUS_NAME\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"$BUILD_URL/console\\"}"'''
         }
         success {
-            echo "${GIT_COMMIT}"
-            echo "${JOB_NAME}"
-            echo "${BUILD_NUMBER}"
-            echo "${JENKINS_URL}"
-            echo "${BUILD_URL}"
-            echo "${JOB_URL}"
-            echo "${GITHUB_STATUS_URL}"
-            echo "${STATUS_NAME}"
             sh label: '', script: '''curl "$GITHUB_STATUS_URL/$GIT_COMMIT" \\
   -H "Content-Type: application/json" \\
   -X POST \\
