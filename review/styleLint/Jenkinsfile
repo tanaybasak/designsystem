@@ -6,18 +6,6 @@ pipeline {
     }
     tools {nodejs "nodejs-path"}
     stages {
-        stage('Clean') {
-            steps {
-                script {
-                    cleanWs()
-                }
-            }
-        }
-        stage('Checkout') {
-            steps {
-                sh "git checkout $Commit_ID"
-            }
-        }
         stage('Install') {
             steps {
                 echo "$Commit_ID"
