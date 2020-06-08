@@ -6,8 +6,32 @@ pipeline {
     }
     tools {nodejs "nodejs-path"}
     stages {
+        stage('Checkout') {
+            steps {
+                script{
+                    sh "echo ${Commit_ID}"
+                    cleanWs()
+                    checkout(
+                        [
+                            $class: 'GitSCM', 
+                            branches: [[name: "${Commit_ID}"]], 
+                            extensions: [[$class: 'WipeWorkspace']],
+                            submoduleCfg: [], 
+                            userRemoteConfigs: [
+                                [
+                                    credentialsId: 'gupta-ma', 
+                                    url: 'https://github01.hclpnp.com/UXUIAssets/patron-css-dev.git'
+                                ]
+                            ]
+                        ]
+                    )
+                }
+            }
+        }
         stage('Install') {
             steps {
+                echo "$Commit_ID"
+                echo "$GIT_COMMIT"
                 sh 'npm install'
             }
         }
@@ -19,13 +43,13 @@ pipeline {
     }
     post {
         failure {
-            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$GIT_COMMIT" \\
+            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$Commit_ID" \\
   -H "Content-Type: application/json" \\
   -X POST \\
   -d "{\\"state\\": \\"failure\\",\\"context\\": \\"$STATUS_NAME\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"$BUILD_URL/console\\"}"'''
         }
         success {
-            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$GIT_COMMIT" \\
+            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$Commit_ID" \\
   -H "Content-Type: application/json" \\
   -X POST \\
   -d "{\\"state\\": \\"success\\",\\"context\\": \\"$STATUS_NAME\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"$BUILD_URL/console\\"}"'''
