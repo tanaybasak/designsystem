@@ -6,7 +6,7 @@ const git = require('simple-git')(root);
 const packageFile = path.join(__dirname, '../', 'package.json');
 const child_process = require('child_process');
 
-const BRANCH_NAME = `master`;
+const BRANCH_NAME = `feature-uicoe-865`;
 let DESCRIPTION = `dev description`;
 
 const PROCESS_DESC = '';
