@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        GITHUB_STATUS_URL = "https://9b947fb028b139f35f93a9e3e296f9b90ce27356:x-oauth-basic@github01.hclpnp.com/api/v3/repos/UXUIAssets/patron-css-dev/statuses"
+        STATUS_NAME = "ci-stylelint/jenkins"
+    }
     tools {nodejs "nodejs-path"}
     stages {
         stage('Install') {
@@ -17,12 +21,22 @@ pipeline {
         failure {
             echo "${GIT_COMMIT}"
             echo "${JOB_NAME}"
-            echo "${$BUILD_NUMBER}"
+            echo "${BUILD_NUMBER}"
+            echo "${JENKINS_URL}"
+            echo "${BUILD_URL}"
+            echo "${JOB_URL}"
+            echo "${GITHUB_STATUS_URL}"
+            echo "${STATUS_NAME}"
         }
         success {
             echo "${GIT_COMMIT}"
             echo "${JOB_NAME}"
-            echo "${$BUILD_NUMBER}"
+            echo "${BUILD_NUMBER}"
+            echo "${JENKINS_URL}"
+            echo "${BUILD_URL}"
+            echo "${JOB_URL}"
+            echo "${GITHUB_STATUS_URL}"
+            echo "${STATUS_NAME}"
         }
     }
 }
