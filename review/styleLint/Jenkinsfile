@@ -15,10 +15,13 @@ pipeline {
     }
     post {
         failure {
-            sh 'curl "https://9b947fb028b139f35f93a9e3e296f9b90ce27356:x-oauth-basic@github01.hclpnp.com/api/v3/repos/UXUIAssets/patron-css-dev/statuses/$GIT_COMMIT" \ -H "Content-Type: application/json" \ -X POST \ -d "{\"state\": \"failure\",\"context\": \"ci-stylelint/jenkins\", \"description\": \"Jenkins\", \"target_url\": \"http://10.115.95.40:8080/job/$JOB_NAME/$BUILD_NUMBER/console\"}"'
+            echo "${GIT_COMMIT}"
+            echo "${JOB_NAME}"
+            echo "${$BUILD_NUMBER}"
+            #sh 'curl "https://9b947fb028b139f35f93a9e3e296f9b90ce27356:x-oauth-basic@github01.hclpnp.com/api/v3/repos/UXUIAssets/patron-css-dev/statuses/$GIT_COMMIT" \ -H "Content-Type: application/json" \ -X POST \ -d "{\"state\": \"failure\",\"context\": \"ci-stylelint/jenkins\", \"description\": \"Jenkins\", \"target_url\": \"http://10.115.95.40:8080/job/$JOB_NAME/$BUILD_NUMBER/console\"}"'
         }
         success {
-            sh 'curl "https://9b947fb028b139f35f93a9e3e296f9b90ce27356:x-oauth-basic@github01.hclpnp.com/api/v3/repos/UXUIAssets/patron-css-dev/statuses/$GIT_COMMIT" \ -H "Content-Type: application/json" \ -X POST \ -d "{\"state\": \"success\",\"context\": \"ci-stylelint/jenkins\", \"description\": \"Jenkins\", \"target_url\": \"http://10.115.95.40:8080/job/$JOB_NAME/$BUILD_NUMBER/console\"}"'
+            #sh 'curl "https://9b947fb028b139f35f93a9e3e296f9b90ce27356:x-oauth-basic@github01.hclpnp.com/api/v3/repos/UXUIAssets/patron-css-dev/statuses/$GIT_COMMIT" \ -H "Content-Type: application/json" \ -X POST \ -d "{\"state\": \"success\",\"context\": \"ci-stylelint/jenkins\", \"description\": \"Jenkins\", \"target_url\": \"http://10.115.95.40:8080/job/$JOB_NAME/$BUILD_NUMBER/console\"}"'
         }
     }
 }
