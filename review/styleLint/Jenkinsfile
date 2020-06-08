@@ -43,13 +43,13 @@ pipeline {
     }
     post {
         failure {
-            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$GIT_COMMIT" \\
+            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$Commit_ID" \\
   -H "Content-Type: application/json" \\
   -X POST \\
   -d "{\\"state\\": \\"failure\\",\\"context\\": \\"$STATUS_NAME\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"$BUILD_URL/console\\"}"'''
         }
         success {
-            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$GIT_COMMIT" \\
+            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$Commit_ID" \\
   -H "Content-Type: application/json" \\
   -X POST \\
   -d "{\\"state\\": \\"success\\",\\"context\\": \\"$STATUS_NAME\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"$BUILD_URL/console\\"}"'''
