@@ -7,23 +7,25 @@ pipeline {
     tools {nodejs "nodejs-path"}
     stages {
         stage('Checkout') {
-            script{
-                sh "echo ${Commit_ID}"
-                cleanWs()
-                checkout(
-                    [
-                        $class: 'GitSCM', 
-                        branches: [[name: "${Commit_ID}"]], 
-                        extensions: [[$class: 'WipeWorkspace']],
-                        submoduleCfg: [], 
-                        userRemoteConfigs: [
-                            [
-                                credentialsId: 'gupta-ma', 
-                                url: 'https://github01.hclpnp.com/UXUIAssets/patron-css-dev.git'
+            steps {
+                script{
+                    sh "echo ${Commit_ID}"
+                    cleanWs()
+                    checkout(
+                        [
+                            $class: 'GitSCM', 
+                            branches: [[name: "${Commit_ID}"]], 
+                            extensions: [[$class: 'WipeWorkspace']],
+                            submoduleCfg: [], 
+                            userRemoteConfigs: [
+                                [
+                                    credentialsId: 'gupta-ma', 
+                                    url: 'https://github01.hclpnp.com/UXUIAssets/patron-css-dev.git'
+                                ]
                             ]
                         ]
-                    ]
-                )
+                    )
+                }
             }
         }
         stage('Install') {
