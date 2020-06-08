@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
- @import '../../base';
+@import '../../base';
 
 .#{$prefix}-actionbar {
     display: flex;
@@ -43,6 +43,18 @@
         align-items: center;
         flex-wrap: wrap;
         color: $white;
+
+        button {
+            color: $white;
+            padding: 0;
+            margin: 0;
+
+            &:hover,
+            &:focus {
+                border-bottom: .0625rem solid $white;
+                outline: none;
+            }
+        }
     }
 
     &-text {
@@ -52,23 +64,5 @@
 
     &-hide {
         display: none
-    }
-
-    &-cancel {
-        display: inline-block;
-        background: none;
-        outline: none;
-        border: 0;
-        padding: 0;
-        font-size: .875rem;
-        color: $white;
-        border-bottom: .0625rem solid transparent;
-        font-weight: 600;
-        cursor: pointer;
-
-        &:hover,
-        &:focus {
-            border-bottom: .0625rem solid $white;
-        }
     }
 }
