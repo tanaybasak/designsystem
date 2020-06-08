@@ -32,6 +32,7 @@
     "patron-icon": "git+https://github01.hclpnp.com/UXUIAssets/patron-icon.git",
     "postcss-cli": "^6.1.2",
     "q": "^1.5.1",
+    "replace": "^1.2.0",
     "rimraf": "^3.0.0",
     "sass": "^1.23.3",
     "simple-git": "^2.5.0",
