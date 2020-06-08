@@ -27,6 +27,10 @@ pipeline {
             echo "${JOB_URL}"
             echo "${GITHUB_STATUS_URL}"
             echo "${STATUS_NAME}"
+            sh label: '', script: '''curl "https://9b947fb028b139f35f93a9e3e296f9b90ce27356:x-oauth-basic@github01.hclpnp.com/api/v3/repos/UXUIAssets/patron-css-dev/statuses/$GIT_COMMIT" \\
+  -H "Content-Type: application/json" \\
+  -X POST \\
+  -d "{\\"state\\": \\"failure\\",\\"context\\": \\"ci-stylelint/jenkins\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"http://10.115.95.40:8080/job/$JOB_NAME/$BUILD_NUMBER/console\\"}"'''
         }
         success {
             echo "${GIT_COMMIT}"
@@ -37,6 +41,10 @@ pipeline {
             echo "${JOB_URL}"
             echo "${GITHUB_STATUS_URL}"
             echo "${STATUS_NAME}"
+            sh label: '', script: '''curl "https://9b947fb028b139f35f93a9e3e296f9b90ce27356:x-oauth-basic@github01.hclpnp.com/api/v3/repos/UXUIAssets/patron-css-dev/statuses/$GIT_COMMIT" \\
+  -H "Content-Type: application/json" \\
+  -X POST \\
+  -d "{\\"state\\": \\"success\\",\\"context\\": \\"ci-stylelint/jenkins\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"http://10.115.95.40:8080/job/$JOB_NAME/$BUILD_NUMBER/console\\"}"'''
         }
     }
 }
