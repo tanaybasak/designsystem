@@ -36,7 +36,8 @@ const getVersion = () => {
   PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
 
   console.log(`Version To Update: ${PROCESS_VER}`);
-//   process.exit(0);
+  console.log(`Branch name is : ${process.env.BRANCH_NAME}`);
+  process.exit(0);
   return q.when(PROCESS_VER);
 }
 
