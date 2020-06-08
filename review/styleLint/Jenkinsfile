@@ -8,6 +8,11 @@ pipeline {
     stages {
         stage('Install') {
             steps {
+                sh 'git checkout $Commit_ID'
+            }
+        }
+        stage('Install') {
+            steps {
                 sh 'npm install'
             }
         }
