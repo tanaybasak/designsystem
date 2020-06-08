@@ -27,6 +27,8 @@ pipeline {
         }
         stage('Install') {
             steps {
+                echo '$Commit_ID'
+                echo '$GIT_COMMIT'
                 sh 'npm install'
             }
         }
