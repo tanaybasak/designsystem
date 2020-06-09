@@ -1,6 +1,8 @@
 @import '../../base';
 
 .#{$prefix}-datePicker {
+  width: 9.4375rem;
+
   &-container {
     position: relative;
     display: flex;
@@ -22,7 +24,6 @@
     >input {
       padding: 0 1rem 0 3rem;
       border: none;
-      width: 9.4375rem;
       height: 2.5rem;
       border-bottom: 0.0625rem solid $dark-blue;
       background-color: rgba(70, 150, 210, 0.05);
