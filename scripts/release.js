@@ -23,7 +23,7 @@ const getVersion = () => {
   console.log(`Version To Update: ${PROCESS_VER}`);
   console.log(`Description To Update: ${PROCESS_DESC}`);
   console.log(`Branch name is : ${BRANCH_NAME}`);
-  process.exit(0);
+  // process.exit(0);
   return q.when(PROCESS_VER);
 };
 
