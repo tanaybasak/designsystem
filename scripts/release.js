@@ -14,7 +14,8 @@ let PROCESS_DESC = '';
 
 PROCESS_VER = process.argv[2].split('=')[1];
 PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
-PROCESS_DESC = process.argv[3].split('=')[1];
+// PROCESS_DESC = process.argv[3].split('=')[1];
+PROCESS_DESC = process.env.desc;
 
 // const dummy = () => {
 //     let deferred = q.defer();
