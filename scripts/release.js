@@ -6,11 +6,15 @@ const root = require('app-root-path').path;
 const git = require('simple-git')(root);
 const packageFile = path.join(__dirname, '../', 'package.json');
 
-const BRANCH_NAME = process.argv[2].split('=')[1] || 'feature-uicoe-865';
+const BRANCH_NAME = process.argv[4].split('=')[1] || 'feature-uicoe-865';
 let DESCRIPTION = `dev description`;
 
-let PROCESS_DESC = '';
 let PROCESS_VER = '';
+let PROCESS_DESC = '';
+
+PROCESS_VER = process.argv[2].split('=')[1];
+PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
+PROCESS_DESC = process.argv[3].split('=')[1];
 
 // const dummy = () => {
 //     let deferred = q.defer();
@@ -31,12 +35,12 @@ let PROCESS_VER = '';
 // }
 
 const getVersion = () => {
-  PROCESS_VER = process.env.version;
-  PROCESS_DESC = process.env.desc;
-  PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
-
+  if (PROCESS_VER === '' || PROCESS_DESC === '' || BRANCH_NAME === '') {
+    process.exit(0);
+  }
   console.log(`Version To Update: ${PROCESS_VER}`);
-  console.log(`Branch name is : ${process.env.BRANCH_NAME}`);
+  console.log(`Description To Update: ${PROCESS_DESC}`);
+  console.log(`Branch name is : ${BRANCH_NAME}`);
   process.exit(0);
   return q.when(PROCESS_VER);
 };
