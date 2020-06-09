@@ -12,28 +12,9 @@ let DESCRIPTION = `dev description`;
 let PROCESS_VER = '';
 let PROCESS_DESC = '';
 
-PROCESS_VER = process.argv[2].split('=')[1];
+PROCESS_VER = process.env.version;
 PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
-// PROCESS_DESC = process.argv[3].split('=')[1];
 PROCESS_DESC = process.env.desc;
-
-// const dummy = () => {
-//     let deferred = q.defer();
-//     child_process.exec(`echo $TEST_FRIDAY`, (err, stdout, stderr) => {
-//         if (!err) {
-//             console.log(`--- Result ---`);
-//             console.log(stdout.trim());
-//             process.exit(0);
-//             deferred.resolve();
-//         } else {
-//             console.log(`--- EXIT ---`);
-//             process.exit(0);
-//             deferred.reject();
-//         }
-//     });
-
-//     return deferred.promise;
-// }
 
 const getVersion = () => {
   if (PROCESS_VER === '' || PROCESS_DESC === '' || BRANCH_NAME === '') {
