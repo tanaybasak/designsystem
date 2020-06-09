@@ -1,5 +1,5 @@
 {
-  "name": "patron-css-dev",
+  "name": "@patron/patron-css-dev",
   "version": "1.0.135",
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
@@ -7,7 +7,7 @@
     "start": "node importHTML.js && parcel index.html -d output --port 8000",
     "build": "npm run clean && parcel build js/index.js -o patron --no-source-maps ",
     "clean": "rimraf dist",
-    "stylelint": "stylelint '**/*.scss'; exit 0",
+    "stylelint": "stylelint '**/*.scss';",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js .",
     "import-html": "node importHTML.js"
   },
