@@ -26,14 +26,14 @@
 
       &:not(:last-child) {
         margin: 0;
-        padding: 0.5rem 0.563rem; 
+        padding: 0.5rem 0.563rem;
 
         &:hover,
         &:focus {
-          background: transparent;
+          background-color: $blue-8;
 
           svg {
-            fill: $blue;
+            fill: $white;
           }
         }
       }
