@@ -6,7 +6,7 @@ const root = require('app-root-path').path;
 const git = require('simple-git')(root);
 const packageFile = path.join(__dirname, '../', 'package.json');
 
-const BRANCH_NAME = process.argv[4].split('=')[1] || 'feature-uicoe-865';
+const BRANCH_NAME = process.argv[2].split('=')[1] || 'feature-uicoe-865';
 let DESCRIPTION = `dev description`;
 
 let PROCESS_VER = '';
