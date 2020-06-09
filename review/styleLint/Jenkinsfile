@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+    environment {
+        GITHUB_STATUS_URL = "https://9b947fb028b139f35f93a9e3e296f9b90ce27356:x-oauth-basic@github01.hclpnp.com/api/v3/repos/UXUIAssets/patron-css-dev/statuses"
+        STATUS_NAME = "ci-stylelint/jenkins"
+    }
+    tools {nodejs "nodejs-path"}
+    stages {
+        stage('Checkout') {
+            steps {
+                script{
+                    sh "echo ${Commit_ID}"
+                    cleanWs()
+                    checkout(
+                        [
+                            $class: 'GitSCM', 
+                            branches: [[name: "${Commit_ID}"]], 
+                            extensions: [[$class: 'WipeWorkspace']],
+                            submoduleCfg: [], 
+                            userRemoteConfigs: [
+                                [
+                                    credentialsId: 'gupta-ma', 
+                                    url: 'https://github01.hclpnp.com/UXUIAssets/patron-css-dev.git'
+                                ]
+                            ]
+                        ]
+                    )
+                }
+            }
+        }
+        stage('Install') {
+            steps {
+                echo "$Commit_ID"
+                echo "$GIT_COMMIT"
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm run stylelint'
+            }
+        }
+    }
+    post {
+        failure {
+            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$Commit_ID" \\
+  -H "Content-Type: application/json" \\
+  -X POST \\
+  -d "{\\"state\\": \\"failure\\",\\"context\\": \\"$STATUS_NAME\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"$BUILD_URL/console\\"}"'''
+        }
+        success {
+            sh label: '', script: '''curl "$GITHUB_STATUS_URL/$Commit_ID" \\
+  -H "Content-Type: application/json" \\
+  -X POST \\
+  -d "{\\"state\\": \\"success\\",\\"context\\": \\"$STATUS_NAME\\", \\"description\\": \\"Jenkins\\", \\"target_url\\": \\"$BUILD_URL/console\\"}"'''
+        }
+    }
+}
