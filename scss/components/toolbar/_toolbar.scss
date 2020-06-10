@@ -12,41 +12,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.25rem 0;
   width: 100%;
   background: transparent;
 
-  &-content {
+  &-action {
     margin-left: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    > .#{$prefix}-btn {
-      margin: 0 0.75rem;
-    }
-  }
+    button {
 
-  &-action {
-    width: 2.5rem;
-    height: 2.5rem;
-    background: transparent;
+      &:not(:last-child) {
+        margin: 0;
+        padding: 0.5rem 0.563rem;
 
-    &:hover,
-    &:focus {
-      background: $blue;
-      color: $white;
+        &:hover,
+        &:focus {
+          background-color: $blue-8;
 
-      > .#{$prefix}-toolbar-icon {
-        fill: $white;
+          svg {
+            fill: $white;
+          }
+        }
       }
-    }
-  }
 
-  &-icon {
-    &:hover {
-      cursor: pointer;
+      &:last-child {
+        margin: 0 0 0 1rem;
+      }
     }
   }
 }
