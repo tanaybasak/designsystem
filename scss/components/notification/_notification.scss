@@ -1,67 +1,71 @@
 @import '../../base';
 
-$colorMap: ('info': $info, 'danger': $red-3, 'success': $success, 'warning': $warning);
+$colorMap: (
+  'info': $info,
+  'danger': $red-3,
+  'success': $success,
+  'warning': $warning,
+);
 
 .#{$prefix}-notification {
-    display: inline-flex;
-    max-width: 52rem;
-    margin: 1rem 0;
-    background-color: #eee;
-    z-index: 999;
+  display: inline-flex;
+  max-width: 52rem;
+  margin: 1rem 0;
+  background-color: #eee;
+  z-index: 999;
 
-    @each $key,
-    $value in $colorMap {
-        &.#{$prefix}-#{$key} {
-            border: 1px solid $value;
-            border-left: .3125rem solid $value;
-            background-color: $white;
-        }
+  @each $key, $value in $colorMap {
+    &.#{$prefix}-#{$key} {
+      border: 1px solid $value;
+      border-left: 0.3125rem solid $value;
+      background-color: $white;
+    }
+  }
+
+  &-body {
+    display: flex;
+    margin: 0 1rem;
+
+    .#{$prefix}-notification-icon-container {
+      display: flex;
+      align-items: center;
     }
 
-    &-body {
-        display: flex;
-        margin: 0 1rem;
-
-        .#{$prefix}-notification-icon-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .#{$prefix}-notification-icon {
-            flex-shrink: 0;
-            margin-right: 1rem;
-        }
-
-        .#{$prefix}-notification-text-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            padding: .75rem 0;
-
-            .#{$prefix}-notification-title {
-                font-size: .875rem;
-                line-height: getLineHeight(.875rem);
-                letter-spacing: 0;
-                color: #132730;
-                margin-right: .5rem;
-                font-weight: 600;
-            }
-
-            .#{$prefix}-notification-subtitle {
-                font-size: .875rem;
-                line-height: getLineHeight(.875rem);
-                @include getFontWeight('regular');
-                word-break: break-word;
-                color: #aaa;
-            }
-        }
+    .#{$prefix}-notification-icon {
+      flex-shrink: 0;
+      margin-right: 1rem;
     }
 
-    &-close {
-        min-width: 2.75rem;
-        max-width: 2.75rem;
-        min-height: 2.75rem;
-        max-height: 2.75rem;
-        @include hcl-close-icon(14);
+    .#{$prefix}-notification-text-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0.75rem 0;
+
+      .#{$prefix}-notification-title {
+        font-size: 0.875rem;
+        line-height: getLineHeight(0.875rem);
+        letter-spacing: 0;
+        color: #132730;
+        margin-right: 0.5rem;
+        font-weight: 600;
+      }
+
+      .#{$prefix}-notification-subtitle {
+        font-size: 0.875rem;
+        line-height: getLineHeight(0.875rem);
+        @include getFontWeight('regular');
+        word-break: break-word;
+        color: #aaa;
+      }
     }
+  }
+
+  &-close {
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    min-height: 2.5rem;
+    max-height: 2.5rem;
+    @include hcl-close-icon(12.15);
+  }
 }
