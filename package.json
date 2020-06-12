@@ -1,6 +1,6 @@
 {
-  "name": "patron-css-dev",
-  "version": "1.0.133",
+  "name": "@patron/patron-css-dev",
+  "version": "1.0.140",
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
   "scripts": {
@@ -35,7 +35,8 @@
     "replace": "^1.2.0",
     "rimraf": "^3.0.0",
     "sass": "^1.23.3",
-    "simple-git": "^2.5.0",
+    "semver": "^7.3.2",
+    "simple-git": "^2.6.0",
     "stylelint": "^10.1.0"
   },
   "browserslist": [
