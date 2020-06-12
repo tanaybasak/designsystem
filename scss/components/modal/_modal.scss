@@ -63,8 +63,11 @@
   &-close {
     right: 0;
     top: 0;
-    margin: 1rem;
-    @include hcl-close-icon(10, $white, $lightGrey);
+    min-width: 2.75rem;
+    max-width: 2.75rem;
+    min-height: 2.75rem;
+    max-height: 2.75rem;
+    @include hcl-close-icon(12.15, $white, $lightGrey);
     position: absolute;
   }
 
@@ -118,11 +121,11 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, 0.3);
   opacity: 1;
   z-index: 959;
 
   &-disable {
-      opacity: 0;
+    opacity: 0;
   }
 }
