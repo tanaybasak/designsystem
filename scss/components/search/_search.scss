@@ -2,7 +2,8 @@
 
 $search-height: 2.5rem;
 $search-height-sm: 2rem;
-$search-icon-size: 0.759rem;
+$search-icon-size: 1rem;
+$search-reset-size: 0.759rem;
 
 .#{$prefix}-search {
     display: flex;
@@ -121,7 +122,7 @@ $search-icon-size: 0.759rem;
             position: absolute;
             width: 0.125rem;
             background-color: $grey-7;
-            height: $search-icon-size;
+            height: $search-reset-size;
         }
 
         &::before {
