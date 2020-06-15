@@ -64,12 +64,9 @@ $zebra-bg: #F5F9FC;
                 .#{$prefix}-sorting {
                     vertical-align: middle;
                     margin-left: 0.625rem;
-                    transform: rotate(180deg);
-                    transition: rotate 0.3s ease-in-out;
-
+                    transition: transform 0.3s ease-in-out;
                     &.desc {
-                        transform: rotate(0);
-                        transition: rotate 0.3s ease-in-out;
+                        transform: rotate(180deg);
                     }
                 }
 
