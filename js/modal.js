@@ -20,9 +20,9 @@ class Modal {
     );
     const firstFocusableEl = focusableEls[0];
     const lastFocusableEl = focusableEls[focusableEls.length - 1];
-    if (event.keyCode === 27) {
+    if (e.keyCode === 27) {
       if (this.state.keyboard) {
-        event.preventDefault();
+        e.preventDefault();
         this.hideModal(modal);
       }
     }
