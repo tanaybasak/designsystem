@@ -25,8 +25,10 @@ class Tooltip {
   attachEvents() {
     if (this.dataValue.startsWith('#')) {
       if (!tooltipContents[this.dataValue.substr(1)]) {
-        const element = document.getElementById(this.dataValue.substr(1));
+        let element = document.getElementById(this.dataValue.substr(1));
         if (element) {
+          element = element.cloneNode(true);
+          document.getElementById(this.dataValue.substr(1)).remove();
           const elementId = 'tooltip-' + elementNo++;
           this.element.setAttribute('aria-describedby', elementId);
           const tooltip = document.createElement('div');
