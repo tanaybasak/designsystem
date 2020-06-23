@@ -44,6 +44,9 @@ class Tooltip {
         }
       } else {
         this.targetTooltipContent = tooltipContents[this.dataValue.substr(1)];
+        if (document.getElementById(this.dataValue.substr(1))) {
+          document.getElementById(this.dataValue.substr(1)).remove();
+        }
         this.element.setAttribute(
           'aria-describedby',
           this.targetTooltipContent.id
