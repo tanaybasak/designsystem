@@ -1,1 +1,1 @@
-window.patron.numberInput('.hcl-number-input-wrapper');
+window.patron.numberInput('#hcl-valid-number-input');

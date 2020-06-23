@@ -1,1 +1,1 @@
-window.patron.tooltip('[data-tooltip]');
+window.patron.tooltip('.hcl-def-tooltip');
