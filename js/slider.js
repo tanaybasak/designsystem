@@ -46,7 +46,9 @@ class Slider {
     event.stopPropagation(event);
     this._setRange();
     this._setTooltipPosition();
-    this.returnError(null);
+    if (this.textInput) {
+      this.returnError(null);
+    }
   }
 
   returnError(key, message) {
