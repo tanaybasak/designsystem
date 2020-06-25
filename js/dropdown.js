@@ -27,6 +27,9 @@ class Dropdown {
 
   setMultiSelectVal = (value) => {
     this.element.querySelector(`.${PREFIX}-tag-text`).innerText = value;
+    this.element
+      .querySelector(`.${PREFIX}-tag-text`)
+      .setAttribute('aria-label', `${value}-selected options`);
   };
 
   toggleState = (state) => {
@@ -220,8 +223,10 @@ class Dropdown {
             );
             this.state.selected = index;
             const input = item.querySelector('input');
+            const multiItem = item.querySelector(`.${PREFIX}-checkbox-item`);
             if (this.state.type === 'multi') {
               input.checked = !input.checked;
+              multiItem.setAttribute('aria-checked', input.checked);
               const list = dropdownMenu.querySelectorAll('input:checked');
               if (list.length) {
                 this.setMultiSelectVal(list.length);
@@ -249,7 +254,7 @@ class Dropdown {
     handleDataBinding('dropdown', function(element) {
       return new Dropdown(element, {
         isOpen: true,
-        type: element.getAttribute('data-type')
+        type: element.getAttribute('data-type'),
       });
     });
   };
