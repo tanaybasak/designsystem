@@ -1,3 +1,8 @@
+/******************************************************************
+ * Warning: This file is old one; needs to be updated
+ *******************************************************************
+ */
+
 @import '../../base';
 
 .#{$prefix}-tab {
@@ -9,6 +14,11 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    // color: $default_text;
+
+    @include themify($themes) {
+        color: themed('default_text');
+      }
 
     &-item {
         background: transparent;
@@ -16,14 +26,16 @@
 
         &.active {
             >a {
-                color: $blue;
                 outline: none;
             }
-            >a:focus {
-                outline: 1px solid $blue;
-            }
 
-            border-bottom: 2px solid $blue;
+            // border-bottom: 2px solid $selected_border;
+            // color: $default_text_high;
+            @include themify($themes) {
+                border-bottom: 2px solid themed('selected_border');
+                color: themed('default_text_high');
+            }
+           
         }
 
         &.#{$prefix}-tabs-disabled {
@@ -34,6 +46,13 @@
 
         &:hover {
             cursor: pointer;
+            >a {
+                // color: $interactive_text_hover;
+                @include themify($themes) {
+                    color: themed('interactive_text_hover');
+                  }
+                outline: none;
+            }
         }
     }
 
@@ -44,7 +63,10 @@
     &-link {
         text-decoration: none;
         display: inline-block;
-        color: $black;
+        // color: $default_text;
+        @include themify($themes) {
+            color: themed('default_text');
+          }
 
         &:hover,
         &:active,
@@ -54,7 +76,10 @@
         }
 
         &:hover {
-            color: $blue-secondary;
+            // color: $interactive_text_hover;
+            @include themify($themes) {
+                color: themed('interactive_text_hover');
+              }
         }
     }
 }
@@ -62,6 +87,9 @@
 .#{$prefix}-tabs-panel {
     padding-top: hcl-rem(10px);
     display: none;
+    @include themify($themes) {
+        color: themed('default_text');
+      }
 
     &.active {
         display: block;
@@ -78,14 +106,16 @@
     >a,
     .#{$prefix}-tabs-nav-link {
         cursor: not-allowed;
-        color: $black;
 
         &:focus {
             outline: none;
         }
 
         &:hover {
-            color: $black;
+            // color: $default_text;
+            @include themify($themes) {
+                color: themed('default_text');
+              }
         }
     }
 
@@ -98,7 +128,10 @@
             }
 
             &:hover {
-                color: $blue;
+                // color: $interactive_text_hover;
+                @include themify($themes) {
+                    color: themed('interactive_text_hover');
+                  }
             }
         }
     }
