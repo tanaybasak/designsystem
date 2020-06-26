@@ -1,2 +1,2 @@
 window.patron.password('#defaultpassword');
-// window.patron.tooltip('[data-tooltip]');
+window.patron.tooltip('.default');
