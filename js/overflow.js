@@ -193,6 +193,10 @@ class Overflow {
               this.toggleState(this.state.isOpen);
               icon.focus();
               this.state.onChange(event, event.target.innerText);
+              const anchor = item.querySelector('a');
+              if (anchor) {
+                window.open(anchor.href);
+              }
             }
           });
         });
