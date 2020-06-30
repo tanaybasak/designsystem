@@ -195,7 +195,7 @@ class Overflow {
               this.state.onChange(event, event.target.innerText);
               const anchor = item.querySelector('a');
               if (anchor) {
-                window.open(anchor.href);
+                window.open(anchor.href, event.metaKey ? '' : '_self');
               }
             }
           });
