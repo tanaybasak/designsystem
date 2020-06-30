@@ -100,6 +100,10 @@ label.#{$prefix}-label {
             outline: 1px solid $blue;
         }
 
+        &:disabled {
+            cursor: not-allowed;
+        }
+
         svg.#{$prefix}-icon-visibility-on {
             display: none;
         }
