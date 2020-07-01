@@ -1,0 +1,1 @@
+The toast component appears floating on the screen whose content usually is not directly relevant to the temporary information that is being displayed.  
