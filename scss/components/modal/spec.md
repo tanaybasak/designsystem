@@ -1,1 +1,0 @@
-- Modal titles and labels should be set in sentence case. Keep all titles and labels concise and to the point. Modal labels are optional.  

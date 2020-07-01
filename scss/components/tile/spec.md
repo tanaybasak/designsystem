@@ -1,1 +1,0 @@
-- Since tiles are basic containers, height and width may vary with content. Padding may depend on content type.

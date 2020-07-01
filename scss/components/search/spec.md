@@ -1,1 +1,0 @@
-Search text should be set in sentence case, with only the first letter of the first word capitalized.
