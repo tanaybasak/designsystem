@@ -1,4 +1,4 @@
-- Select vs dropdown: While the Dropdown and Select components look similar, they have different functions.
+- **Select vs dropdown:** While the Dropdown and Select components look similar, they have different functions.
 - Use the Dropdown component to filter or sort content on a page.
 - Use the Select component inside a form where users are selecting from a list of options and submitting data.
 - Another important difference between the two components is the underlying code. The dropdown component can be styled as needed, while the select component’s appearance will be determined by the browser being used.
