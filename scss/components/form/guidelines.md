@@ -19,8 +19,8 @@ All forms are comprised of six elements:
 - The action buttons are placed usually at the bottom of the inputs, they are usually to the right if the form is in a container (modal/dialog/card etc.) or else if inline they might be at the left.
 
 - When there is a secondary action button, the ordering of the buttons are:  
-  Secondary to the left, Primary to the right.
-  Negative to the left, Positive to the right.  
+  - Secondary to the left, Primary to the right.
+  - Negative to the left, Positive to the right.  
   (If the primary action is negative, e.g. Delete, then it should go to the right, but must use the danger button)
 
 - Generally avoid Cancel/OK button pairs, use actual action verbs instead of OK, (Agree, Delete, Send, Submit, etc.)
