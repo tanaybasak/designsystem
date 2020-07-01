@@ -22,6 +22,7 @@ All forms are comprised of six elements:
 
   - Secondary to the left, Primary to the right.
   - Negative to the left, Positive to the right.  
+  
     (If the primary action is negative, e.g. Delete, then it should go to the right, but must use the danger button)
 
 - Generally avoid Cancel/OK button pairs, use actual action verbs instead of OK, (Agree, Delete, Send, Submit, etc.)
