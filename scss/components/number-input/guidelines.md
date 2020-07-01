@@ -8,4 +8,4 @@
 
 - Use sentence-style capitalization (only the first word in a phrase and any proper nouns capitalized) for the label.
 
-- For **label** and **validation** guidance refer to text input (LINK).
+- For **label** and **validation** guidance refer to text input.

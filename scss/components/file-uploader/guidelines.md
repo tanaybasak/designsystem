@@ -12,7 +12,7 @@
 
 - User clicks Submit or Upload to submit their data.
 
-- Any errors that may occur with the file should appear as an Inline Error Notification (LINK).
+- Any errors that may occur with the file should appear as an Inline Error Notification.
 
 ##### Uploading Files:
 
