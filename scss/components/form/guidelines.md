@@ -1,4 +1,4 @@
-##### Formattting
+##### Formatting
 
 All forms are comprised of six elements:
 
