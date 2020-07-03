@@ -340,6 +340,7 @@ class Pagination {
     // Create select and append options
     const select = document.createElement('select');
     select.classList.add(`${PREFIX}-pagination-select`, `${PREFIX}-page-items`);
+    select.setAttribute('aria-label', 'page-items');
 
     for (let i = 0; i < arrayItems.length; i++) {
       const option = document.createElement('option');
@@ -372,6 +373,7 @@ class Pagination {
         `${PREFIX}-pagination-select`,
         `${PREFIX}-page-number`
       );
+      select.setAttribute('aria-label', 'page-number');
       wrapper.appendChild(select);
       wrapper.insertAdjacentHTML('beforeend', this.string.dropdownsvg);
     }
