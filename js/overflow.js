@@ -27,7 +27,7 @@ class Overflow {
         },
         true
       );
-      this.element.classList.add(`${PREFIX}-active`);
+      this.element.classList.add(`${PREFIX}-overflow-active`);
       overflowMenu.classList.add(`${PREFIX}-show`);
       overflowMenu.classList.remove(`${PREFIX}-hidden`);
       const parentHeight = (
@@ -44,7 +44,7 @@ class Overflow {
     } else {
       removeListeners('overflow-' + this.overflowId, 'click');
       overflowMenu.classList.remove(`${PREFIX}-show`);
-      this.element.classList.remove(`${PREFIX}-active`);
+      this.element.classList.remove(`${PREFIX}-overflow-active`);
       overflowMenu.classList.add(`${PREFIX}-hidden`);
     }
   };
