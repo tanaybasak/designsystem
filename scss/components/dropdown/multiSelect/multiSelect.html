@@ -1,27 +1,29 @@
 <section class="hcl-dropdown hcl-dropdown-multiSelect" id="multi-dropdown">
-    <div class="hcl-btn hcl-dropdown-toggle" data-toggle="dropdown" tabindex="0">
+    <div role="button" class="hcl-btn hcl-dropdown-toggle" id="multiselect-dropdown-btn" aria-haspopup="true"
+        aria-controls="multiselect-container" data-toggle="dropdown" tabindex="0">
         <button class="hcl-tag hcl-tag-primary hidden" title="primary-closeable" tabindex="0">
             <span class="hcl-tag-text"></span>
-            <span class="hcl-close" aria-hidden="true" tabindex="0"></span>
+            <span aria-label="close-icon" class="hcl-close" aria-hidden="true" tabindex="0"></span>
         </button>
         <span class="hcl-dropdown-text">MultiSelect Dropdown</span>
     </div>
-    <ul class="hcl-dropdown-container" role="dropdownMenu" aria-labelledby="dropdownMenuButton">
+    <ul class="hcl-dropdown-container" role="menu" id="multiselect-container"
+        aria-labelledby="multiselect-dropdown-btn">
         <li class="hcl-dropdown-item">
-            <div class="hcl-checkbox-item" tabindex="0">
+            <div class="hcl-checkbox-item" role="checkbox" aria-label="A" tabindex="0">
                 <input class="hcl-checkbox" id="check0" type="checkbox" tabindex="-1" value="check0">
                 <label class="hcl-checkbox-label" for="check0">A</label>
             </div>
         </li>
         <li class="hcl-dropdown-item">
-            <div class="hcl-checkbox-item" tabindex="0">
+            <div class="hcl-checkbox-item" aria-label="B" role="checkbox" tabindex="0">
                 <input class="hcl-checkbox" id="check1" type="checkbox" tabindex="-1" value="check1">
                 <label class="hcl-checkbox-label" for="check0">B</label>
             </div>
         </li>
         <li class="hcl-dropdown-item">
-            <div class="hcl-checkbox-item" tabindex="0">
-                <input class="hcl-checkbox" id="check2" type="checkbox"tabindex="-1"  value="check2">
+            <div class="hcl-checkbox-item" aria-label="C" role="checkbox" tabindex="0">
+                <input class="hcl-checkbox" id="check2" type="checkbox" tabindex="-1" value="check2">
                 <label class="hcl-checkbox-label" for="check0">C</label>
             </div>
         </li>

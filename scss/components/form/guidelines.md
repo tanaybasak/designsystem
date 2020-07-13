@@ -1,23 +1,36 @@
-- Add file is the default text that appears with the File Uploader.
+##### Formatting
 
-- A File Uploader should always be accompanied by Submit or Upload, which is to be styled as a Primary Button. User clicks Submit or Upload to submit their data.
+All forms are comprised of six elements:
 
-- Use an ellipsis (…) if the filename extends beyond the width of its parent element.
+- **Labels:** Inform users what the corresponding input fields mean.
 
-##### Interaction:
+- **Input fields:** Enable users to provide information. Information can be entered through a variety of different input fields ranging from text fields, checkboxes, and many other types.
 
-- The action of clicking Add files will trigger a browser-specific upload window.
+- **Help text:** Provides guidance on how to fill out a field. Help text is optional.
 
-- Once the user chooses files to upload, the browser-specific upload window closes and the files will appear below the Add files button.
+- **Placeholder text:** Hints at what goes into a field. Placeholder text is optional.
 
-- User clicks Submit or Upload to submit their data.
+- **Validation:** Ensures the data submitted by the user conforms to acceptable parameters.
 
-- Any errors that may occur with the file should appear as an Inline Error Notification (LINK).
+- **Actions:** Allow users to submit a form.
 
-##### Uploading Files:
+##### Action Buttons
 
-Developers using File Uploader will be able to use JavaScript to inject a Loading component when selected files are actually being uploaded.
+- The action buttons are placed usually at the bottom of the inputs, they are usually to the right if the form is in a container (modal/dialog/card etc.) or else if inline they might be at the left.
 
-##### Removing Files:
+- When there is a secondary action button, the ordering of the buttons are:
 
-Developers will use JavaScript to inject a “Close” button on each file that is selected to be uploaded. It is up to the developer to code the logic for removing these files individually. However, keep in mind that this kind of editing isn’t supported natively in the browser.
+  - Secondary to the left, Primary to the right.
+  - Negative to the left, Positive to the right.  
+  
+    (If the primary action is negative, e.g. Delete, then it should go to the right, but must use the danger button)
+
+- Generally avoid Cancel/OK button pairs, use actual action verbs instead of OK, (Agree, Delete, Send, Submit, etc.)
+
+##### Required and optional fields
+
+- If all fields are required, indicated that on red help text on top. Asterisks are not mandatory in that case.
+
+- If you’re using an asterisk for a required field label, the asterisk comes first and is red in color e.g. \*First Name
+
+- If only a few fields are optional, labeling them (optional) in the help text may be useful.

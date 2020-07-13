@@ -27,7 +27,7 @@ class Overflow {
         },
         true
       );
-      this.element.classList.add(`${PREFIX}-active`);
+      this.element.classList.add(`${PREFIX}-overflow-active`);
       overflowMenu.classList.add(`${PREFIX}-show`);
       overflowMenu.classList.remove(`${PREFIX}-hidden`);
       const parentHeight = (
@@ -44,7 +44,7 @@ class Overflow {
     } else {
       removeListeners('overflow-' + this.overflowId, 'click');
       overflowMenu.classList.remove(`${PREFIX}-show`);
-      this.element.classList.remove(`${PREFIX}-active`);
+      this.element.classList.remove(`${PREFIX}-overflow-active`);
       overflowMenu.classList.add(`${PREFIX}-hidden`);
     }
   };
@@ -193,6 +193,10 @@ class Overflow {
               this.toggleState(this.state.isOpen);
               icon.focus();
               this.state.onChange(event, event.target.innerText);
+              const anchor = item.querySelector('a');
+              if (anchor) {
+                window.open(anchor.href, event.metaKey ? '' : '_self');
+              }
             }
           });
         });

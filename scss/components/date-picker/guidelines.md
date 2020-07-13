@@ -1,6 +1,6 @@
 - Use placeholder text for the proper date format.
 
-- For label and validation guidance refer to text input (LINK).
+- For label and validation guidance refer to text input.
 
 ##### Calendar widget:
 

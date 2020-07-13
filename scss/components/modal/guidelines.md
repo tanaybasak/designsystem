@@ -6,7 +6,7 @@
   - Pressing the ESC key
   - Clicking or touching outside of a Modal
 
-- A Modal is composed of three distinct zones: A header, the body, and a footer. Components (e.g., data table, form, progress indicator) can occupy the full width of the modal.
+- **A Modal is composed of three distinct zones:** A header, the body, and a footer. Components (e.g., data table, form, progress indicator) can occupy the full width of the modal.
 
 - **Modal Header:** The header of your Modal should mirror the action that launched it. Headers must include a close button “✕” in the upper right-hand corner of the Modal.
 

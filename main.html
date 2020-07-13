@@ -39,9 +39,9 @@
         <main class="hcl-content-main">
             <!-- AVAILABLE COMPONENTS STARTS -->
 
-          <div style="display:flex;
-          justify-content: flex-end;">
-          <div>
+          <!-- <div style="display:flex;
+          justify-content: flex-end;"> -->
+          <!-- <div>
             <h4>Theme</h4>
             <span class="hcl-toggle">
                 <input type="checkbox" id="theme-gbl" />
@@ -52,19 +52,26 @@
                 <label class="hcl-toggle-on">Dark Mode</label>
             </span>
           </div>
-          </div>
+          </div> -->
 
 
             <!-- Tabs -->
-            <h5 class="mt-10">Tabs</h5>
-            <span class="hcl-toggle">
+            <!-- <h5 class="mt-10">Tabs</h5> -->
+            <!-- <span class="hcl-toggle">
                 <input type="checkbox" id="Tabs-input" />
                 <label class="hcl-toggle-label" for="Tabs-input">
                     <span class="hcl-switch"></span>
                 </label>
                 <label class="hcl-toggle-off">Light Mode</label>
                 <label class="hcl-toggle-on">Dark Mode</label>
-            </span>
+            </span> -->
+
+
+            <section id="theme-tab" class="m-1 p-2 theme-light body-dark">
+                <addHTML src="./scss/components/tab/tab.html" />
+            </section>
+
+
             <section id="theme-tab" class="m-1 p-2 theme-dark">
                 <addHTML src="./scss/components/tab/tab.html" />
             </section>
@@ -72,16 +79,23 @@
 
             <!-- Data table -->
 
-            <h5 class="mt-10">Data Table</h5>
-            <span class="hcl-toggle">
+            <!-- <h5 class="mt-10">Data Table</h5> -->
+            <!-- <span class="hcl-toggle">
                 <input type="checkbox" id="data-table-input" />
                 <label class="hcl-toggle-label" for="data-table-input">
                     <span class="hcl-switch"></span>
                 </label>
                 <label class="hcl-toggle-off">Light Mode</label>
                 <label class="hcl-toggle-on">Dark Mode</label>
-            </span>
-            <section id="theme-datatable" class="m-1 p-2 theme-dark">
+            </span> -->
+
+            <section id="theme-datatable" class="m-1 p-2 theme-light body-dark">
+                <!-- borderless -->
+                <addHTML src="./scss/components/data-table/borderless/borderless.html" />
+                <!-- compact -->
+            </section>
+
+            <section id="theme-datatable" class="m-1 p-2 theme-dark ">
                 <!-- borderless -->
                 <addHTML src="./scss/components/data-table/borderless/borderless.html" />
                 <!-- compact -->
