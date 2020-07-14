@@ -1,8 +1,13 @@
 @import '../../base';
 
 .#{$prefix}-select {
-    background-color: transparent;
-    color: $blue-7;
+    // background-color: transparent;
+    // color: $blue-7;
+    @include themify($themes) { 
+        color: themed('input_text');
+        background-color: themed('input_bg');
+        border-bottom: 1px solid themed('input_border');
+    }
     font-weight: 600;
     height: 2.5rem;
     -webkit-appearance: none;
@@ -18,12 +23,27 @@
     background-size: .3125rem .3125rem, .3125rem .3125rem, 2.5rem 2.5rem;
     background-repeat: no-repeat;
 
+    &-option {
+        @include themify($themes) { 
+            color: themed('input_text_low');
+        }
+    }
     &:focus {
-        outline: 1px solid $blue-7;
+        @include themify($themes) { 
+            outline:  1px solid themed('interactive_border');
+            border-bottom: 0.0625rem solid themed('interactive_border');
+        }
     }
 
     &-container {
         position: relative;
         display: inline-block;
     }
+    &:disabled {
+        cursor: not-allowed;
+        @include themify($themes) { 
+            opacity: themed('disabled_all');
+        }
+    }
+
 }

@@ -159,6 +159,7 @@ label.#{$prefix}-label {
         top: 0;
         left: 0;
         position: absolute;
+   
 
         &[disabled]~.#{$prefix}-checkbox-label {
             opacity: .5;
@@ -166,18 +167,26 @@ label.#{$prefix}-label {
         }
 
         &:checked+.#{$prefix}-checkbox-label::before {
-            background-color: $blue-7;
-            border-color: $blue-7;
+           
+            @include themify($themes) { 
+                border-color: themed('interactive_border');
+                background-color: themed('interactive_icon');
+              }
         }
 
         &:checked+.#{$prefix}-checkbox-label::after {
             opacity: 1;
             transform: scale(1) rotate(-45deg);
+           
         }
 
         &:focus+.#{$prefix}-checkbox-label::before {
             outline: 1px solid transparent;
             box-shadow: 0 0 0 2px $checkbox-focus-color;
+            @include themify($themes) { 
+                border-color: themed('interactive_border');
+              }
+
         }
     }
 
@@ -189,7 +198,9 @@ label.#{$prefix}-label {
         margin-bottom: 0;
         padding-left: 1.5rem;
         position: relative;
-
+        @include themify($themes) { 
+            color: themed('default_text_high');
+          }
         &::before {
             box-sizing: border-box;
             content: '';
@@ -198,7 +209,10 @@ label.#{$prefix}-label {
             top: calc(50% - 0.5625rem);
             height: 1.125rem;
             width: 1.125rem;
-            border: $checkbox-border-width solid $lightGrey;
+            // border: $checkbox-border-width solid $lightGrey;
+            @include themify($themes) { 
+                border: $checkbox-border-width solid themed('default_icon_high');
+              }
             background-color: $white;
         }
 
@@ -250,7 +264,8 @@ label.#{$prefix}-label {
 
     &:focus+.#{$prefix}-radio-label::before {
         outline: 1px solid transparent;
-        box-shadow: 0 0 0 2px $checkbox-focus-color;
+       box-shadow: 0 0 0 2px $checkbox-focus-color;
+       
     }
 
     &:disabled+.#{$prefix}-radio-label {
@@ -307,10 +322,21 @@ label.#{$prefix}-label {
         background-color: $white;
         border-radius: 50%;
         border: 2px solid #5a6872;
+
         height: 1.125rem;
         width: 1.125rem;
+        @include themify($themes) { 
+            color: themed('default_icon_high');
+            border: 2px solid themed('selected_icon');
+          }
+        
     }
 }
+
+
+
+
+   
 
 .#{$prefix}-radio-group {
     @include groupOption('radio');

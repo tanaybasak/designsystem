@@ -3,14 +3,26 @@
 .#{$prefix}-timepicker {
     display: flex;
     flex-direction: column;
-
+    &-label {
+        @include themify($themes) {
+            color: themed('default_text');
+        }
+    }
     &-input {
         display: flex;
         flex-direction: row;
-        border-bottom: .0625rem solid transparent;
-
+        // border-bottom: .0625rem solid transparent;
+        @include themify($themes) {
+            color: themed('input_text_low');
+        }
+        @include themify($themes) {
+            border-bottom: themed('interactive_border');
+        }
         input{
             width: 5.25rem;
+            @include themify($themes) {
+                background-color: themed('input_bg');
+            }
         }
     }
 }
