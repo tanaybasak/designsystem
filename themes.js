@@ -8,6 +8,16 @@ document.getElementById('accordion').addEventListener('change', (event) => {
   }
 });
 
+document.getElementById('toggle').addEventListener('change', (event) => {
+  if (event.target.checked) {
+    document.getElementById('theme-toggle').classList.remove('theme-dark');
+    document.getElementById('theme-toggle').classList.add('theme-light');
+  } else {
+    document.getElementById('theme-toggle').classList.remove('theme-light');
+    document.getElementById('theme-toggle').classList.add('theme-dark');
+  }
+});
+
 document.getElementById('overflow').addEventListener('change', (event) => {
   if (event.target.checked) {
     document.getElementById('theme-overflow').classList.remove('theme-dark');
