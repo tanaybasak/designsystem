@@ -18,29 +18,50 @@
   background: transparent;
   white-space: nowrap;
   text-overflow: ellipsis;
-
+  @include themify($themes) {
+    color: themed('default_text_high');
+  }
   &:hover {
-    background-color: rgba(70, 150, 210, 0.1);
+   // background-color: rgba(70, 150, 210, 0.1);
+    @include themify($themes) {
+      background-color: themed('interactive_bg_hover');
+     }
   }
 
   &:focus {
     outline-offset: -1px;
-    outline: 1px solid $blue;
+    //outline: 1px solid $blue;
+    @include themify($themes) {
+      outline: 1px solid themed('interactive_border');
+     }
   }
 
   @if ($type==disable) {
     outline-offset: 0;
     cursor: not-allowed;
+    @include themify($themes) {
+      opacity: themed('disabled_all');
+     }
   } @else if($type==danger) {
     &:hover {
-      background-color: $red;
-      color: $white;
+      // background-color: $red;
+      // color: $white;
+      @include themify($themes) {
+        color: themed('default_text_inverse');
+        background-color: themed('danger_bg_inverse');
+       }
     }
     &:focus {
       outline-offset: -1px;
-      outline: 1px solid $blue;
-      background-color: $red;
-      color: $white;
+     // outline: 1px solid $blue;
+      // background-color: $red;
+      // color: $white;
+
+      @include themify($themes) {
+        outline: 1px solid themed('interactive_border');
+        color: themed('default_text_inverse');
+        background-color: themed('danger_bg_inverse');
+       }
     }
   }
 }
@@ -51,9 +72,14 @@
   width: 0.65625rem;
   height: 0.65625rem;
   transform: rotate(-45deg);
-  background: $white;
-  border-top: 0.0625rem solid $grey-8;
-  border-right: 0.0625rem solid $grey-8;
+  //background: $white;
+  //border-top: 0.0625rem solid $grey-8;
+  //border-right: 0.0625rem solid $grey-8;
+  @include themify($themes) {
+    border-top: 0.0625rem solid themed('default_border_xlow');
+    border-right: 0.0625rem solid themed('default_border_xlow');
+    background-color: themed('default_bg');
+  }
   z-index: 5;
   box-shadow: 0.5rem 0 0.625rem -0.375rem rgba(0, 0, 0, 0.1);
 
@@ -91,8 +117,13 @@
     z-index: 9;
     height: auto;
     width: 11.25rem;
-    background-color: $white;
-    border: 0.0625rem solid $grey-8;
+   // background-color: $white;
+    //border: 0.0625rem solid $grey-8;
+   
+    @include themify($themes) {
+    border: 0.0625rem solid  themed('default_border_xlow');
+      background-color: themed('default_bg');
+    }
     box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
     list-style: none;
     top: 1.4375rem;
@@ -142,6 +173,9 @@
 
 .#{$prefix}-ellipsis {
   width: 0.5rem;
+  // @include themify($themes) {
+  //   background-color: themed('interactive_bg');
+  //  }
 
   &.horizontal-ellipsis {
     width: 1rem;
