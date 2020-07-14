@@ -10,7 +10,7 @@
     "stylelint": "stylelint '**/*.scss';",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js .",
     "import-html": "node importHTML.js",
-    "prettier:dev": "npx prettier --config prettier.config.js --ignore-path .gitignore \"./**/*.{js,html,scss}\""
+    "prettier:dev": "npx prettier --config prettier.config.js --ignore-path .gitignore --write \"./**/*.{js,html,scss}\""
   },
   "author": "HCL Software",
   "license": "ISC",
