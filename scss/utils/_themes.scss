@@ -69,7 +69,7 @@ $themes: (
     input_text_low: $grey-60,
     input_text: $white,
     overlay_bg: $white 40%,
-    disabled_all: Opacity 50%
+    disabled_all:  0.5
   ),
   dark: (
     primary_bg: $blue-70,
@@ -135,7 +135,7 @@ $themes: (
     input_text_low: $grey-40,
     input_text: $black,
     overlay_bg: $black 40%,
-    disabled_all: Opacity 50%
+    disabled_all: 0.5
   )
 );
 

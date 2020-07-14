@@ -1,110 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Patron CSS Framework</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <style>
-        .bgColor {
-            background-color: #eee;
-        }
+      .bgColor {
+        background-color: #eee;
+      }
 
-        .colBorder {
-            border: 1px solid #999;
-        }
+      .colBorder {
+        border: 1px solid #999;
+      }
 
-        .bigCol {
-            min-height: 5rem;
-            padding: 0.9375rem;
-        }
+      .bigCol {
+        min-height: 5rem;
+        padding: 0.9375rem;
+      }
 
-        .darkBox {
-            background-color: #555;
-            color: #BBB;
-        }
+      .darkBox {
+        background-color: #555;
+        color: #bbb;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- HEADER LAYOUT -->
 
-
     <!-- CONTENT LAYOUT -->
-    <div id="main-wrapper" style="padding:1rem"  data-withsidenav=true>
-        <!-- SIDEBAR LAYOUT -->
-        <!-- MAIN CONTENT LAYOUT -->
-        <main class="hcl-content-main">
-            <!-- AVAILABLE COMPONENTS STARTS -->
+    <div id="main-wrapper" style="padding: 1rem;" data-withsidenav="true">
+      <!-- SIDEBAR LAYOUT -->
+      <!-- MAIN CONTENT LAYOUT -->
+      <main class="hcl-content-main">
+        <!-- AVAILABLE COMPONENTS STARTS -->
 
-          <!-- <div style="display:flex;
-          justify-content: flex-end;"> -->
-          <!-- <div>
+        <div style="display: flex; justify-content: flex-end;">
+          <div>
             <h4>Theme</h4>
             <span class="hcl-toggle">
-                <input type="checkbox" id="theme-gbl" />
-                <label class="hcl-toggle-label" for="theme-gbl">
-                    <span class="hcl-switch"></span>
-                </label>
-                <label class="hcl-toggle-off">Light Mode</label>
-                <label class="hcl-toggle-on">Dark Mode</label>
+              <input type="checkbox" id="theme-gbl" />
+              <label class="hcl-toggle-label" for="theme-gbl">
+                <span class="hcl-switch"></span>
+              </label>
+              <label class="hcl-toggle-off">Light Mode</label>
+              <label class="hcl-toggle-on">Dark Mode</label>
             </span>
           </div>
-          </div> -->
+        </div>
 
+        <!-- Overflow menu -->
+        <h5 class="mt-10">Overflow Menu</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="overflow" />
+          <label class="hcl-toggle-label" for="overflow">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-overflow" class="m-1 p-2 theme-dark">
+          <addHTML src="./scss/components/overflow-menu/custom/custom.html" />
+          <br />
+          <addHTML src="./scss/components/overflow-menu/left/left.html" />
+          <br />
+          <addHTML src="./scss/components/overflow-menu/right/right.html" />
+        </section>
 
-            <!-- Tabs -->
-            <!-- <h5 class="mt-10">Tabs</h5> -->
-            <!-- <span class="hcl-toggle">
-                <input type="checkbox" id="Tabs-input" />
-                <label class="hcl-toggle-label" for="Tabs-input">
-                    <span class="hcl-switch"></span>
-                </label>
-                <label class="hcl-toggle-off">Light Mode</label>
-                <label class="hcl-toggle-on">Dark Mode</label>
-            </span> -->
+        <!-- Modal -->
+        <h5 class="mt-10">Modal</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="modal" />
+          <label class="hcl-toggle-label" for="modal">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-modal" class="m-1 p-2 theme-dark">
+          <addHTML src="./scss/components/modal/danger/danger.html" />
+          <br />
+          <addHTML
+            src="./scss/components/modal/danger-action/danger-action.html"
+          />
+          <br />
+          <addHTML
+            src="./scss/components/modal/danger-label/danger-label.html"
+          />
+          <br />
+          <addHTML
+            src="./scss/components/modal/danger-label-action/danger-label-action.html"
+          />
+          <br />
+          <addHTML src="./scss/components/modal/success/success.html" />
+          <br />
+          <addHTML
+            src="./scss/components/modal/success-action/success-action.html"
+          />
+          <br />
+          <addHTML
+            src="./scss/components/modal/success-label/success-label.html"
+          />
+          <br />
+          <addHTML
+            src="./scss/components/modal/success-label-action/success-label-action.html"
+          />
+        </section>
 
+        <!-- Accordion -->
+        <h5 class="mt-10">Accordion</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="accordion" />
+          <label class="hcl-toggle-label" for="accordion">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-accordion" class="m-1 p-2 theme-dark">
+          <addHTML
+            src="./scss/components/accordion/controlled/controlled.html"
+          />
+          <br />
+          <addHTML
+            src="./scss/components/accordion/uncontrolled/uncontrolled.html"
+          />
+        </section>
 
-            <section id="theme-tab" class="m-1 p-2 theme-light body-dark">
-                <addHTML src="./scss/components/tab/tab.html" />
-            </section>
+        <!-- File uploader -->
+        <h5 class="mt-10">File uploader</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="file-input" />
+          <label class="hcl-toggle-label" for="file-input">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-fileUploader" class="m-1 p-2 theme-dark">
+          <addHTML src="./scss/components/file-uploader/file-uploader.html" />
+        </section>
 
+        <!--  Spinner -->
+        <h5 class="mt-10">Spinner</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="spinner" />
+          <label class="hcl-toggle-label" for="spinner">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-spinner" class="m-1 p-2 theme-dark">
+          <addHTML src="./scss/components/spinner/inline/inline.html" />
+          <addHTML src="./scss/components/spinner/large/large.html" />
+        </section>
 
-            <section id="theme-tab" class="m-1 p-2 theme-dark">
-                <addHTML src="./scss/components/tab/tab.html" />
-            </section>
+        <!-- Radio Button -->
+        <h5 class="mt-10">Radio Button</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="radio" />
+          <label class="hcl-toggle-label" for="radio">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-radio" class="m-1 p-2 theme-dark">
+          <addHTML src="./scss/components/radio/default/default.html" />
+          <addHTML
+            src="./scss/components/radio/horizontal-grouping/horizontal-grouping.html"
+          />
+          <addHTML
+            src="./scss/components/radio/vertical-grouping/vertical-grouping.html"
+          />
+        </section>
 
+        <!-- Text Area -->
+        <h5 class="mt-10">Text Area</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="textArea" />
+          <label class="hcl-toggle-label" for="textArea">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-textArea" class="m-1 p-2 theme-dark">
+          <addHTML src="./scss/components/textarea/default/default.html" />
+          <addHTML
+            src="./scss/components/textarea/textarea-with-error/textinput-with-error.html"
+          />
+          <addHTML
+            src="./scss/components/textarea/textarea-with-helpertext/textinput-with-helpertext.html"
+          />
+        </section>
 
-            <!-- Data table -->
+        <!-- Dropdown -->
+        <h5 class="mt-10">Dropdown</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="dropdown" />
+          <label class="hcl-toggle-label" for="dropdown">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-dropdown" class="m-1 p-2 theme-dark">
+          <!--Bottom Dropdown -->
+          <addHTML src="./scss/components/dropdown/bottom/bottom.html" />
+            <p class="mb-2"></p>
+          <!--Top Dropdown -->
+          <addHTML src="./scss/components/dropdown/top/top.html" />
+          <br>
+          <!--Multiselect Dropdown -->
+          <!-- <addHTML src="./scss/components/dropdown/multiSelect/multiSelect.html" /> -->
+        </section>
 
-            <!-- <h5 class="mt-10">Data Table</h5> -->
-            <!-- <span class="hcl-toggle">
-                <input type="checkbox" id="data-table-input" />
-                <label class="hcl-toggle-label" for="data-table-input">
-                    <span class="hcl-switch"></span>
-                </label>
-                <label class="hcl-toggle-off">Light Mode</label>
-                <label class="hcl-toggle-on">Dark Mode</label>
-            </span> -->
+        <!-- Tabs -->
+        <h5 class="mt-10">Tabs</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="Tabs-input" />
+          <label class="hcl-toggle-label" for="Tabs-input">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-tab" class="m-1 p-2 theme-dark">
+          <addHTML src="./scss/components/tab/tab.html" />
+        </section>
 
-            <section id="theme-datatable" class="m-1 p-2 theme-light body-dark">
-                <!-- borderless -->
-                <addHTML src="./scss/components/data-table/borderless/borderless.html" />
-                <!-- compact -->
-            </section>
+        <!-- Data table -->
 
-            <section id="theme-datatable" class="m-1 p-2 theme-dark ">
-                <!-- borderless -->
-                <addHTML src="./scss/components/data-table/borderless/borderless.html" />
-                <!-- compact -->
-            </section>
+        <h5 class="mt-10">Data Table</h5>
+        <span class="hcl-toggle">
+          <input type="checkbox" id="data-table-input" />
+          <label class="hcl-toggle-label" for="data-table-input">
+            <span class="hcl-switch"></span>
+          </label>
+          <label class="hcl-toggle-off">Light Mode</label>
+          <label class="hcl-toggle-on">Dark Mode</label>
+        </span>
+        <section id="theme-datatable" class="m-1 p-2 theme-dark">
+          <!-- borderless -->
+          <addHTML
+            src="./scss/components/data-table/borderless/borderless.html"
+          />
+          <!-- compact -->
+        </section>
 
-
-
-            <!-- AVAILABLE COMPONENTS ENDS -->
-        </main>
+        <!-- AVAILABLE COMPONENTS ENDS -->
+      </main>
     </div>
     <script src="./modular/patron/index.js"></script>
     <script src="./scss/components/accordion/controlled/controlled.js"></script>
@@ -143,6 +298,5 @@
     <script src="./scss/components/tag/tag.js"></script>
     <script src="./scss/components/tag/tag.js"></script>
     <script src="themes.js"></script>
-</body>
-
+  </body>
 </html>
