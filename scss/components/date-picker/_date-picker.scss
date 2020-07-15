@@ -11,7 +11,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-
+  
     >svg {
       position: absolute;
       top: 0.75rem;
@@ -25,7 +25,10 @@
     }
 
     &-error {
-      border: 0.0625rem solid $red-3;
+      // border: 0.0625rem solid $red-3;
+      @include themify($themes) {
+        border-bottom: 0.0625rem solid themed('danger_text');
+        }
     }
 
     >input {
@@ -43,6 +46,12 @@
         border-bottom:  0.0625rem solid themed('input_border');
         background-color: themed('input_bg');
     }
+
+      &:focus {
+        @include themify($themes) {
+          border-bottom: 0.0625rem solid themed('interactive_border');
+          }
+      }
       &[disabled] {
         opacity: 0.5;
         cursor: not-allowed;
@@ -122,6 +131,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include themify($themes) {
+      color: themed('default_text_xhigh');
+  }
   }
 
   &-month {
@@ -151,7 +163,9 @@
       border-radius: 0;
       border: none;
       margin: 0.125rem;
-      
+   @include themify($themes) {
+      color: themed('default_text_xhigh');
+  }
     }
   }
 
