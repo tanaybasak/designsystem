@@ -115,15 +115,31 @@ a.#{$prefix}-primary {
 }
 
 .#{$prefix}-secondary {
-    background: transparent;
-    color: $blue;
-    border: 0.0625rem solid $blue;
+    //background: transparent;
+    @include themify($themes) { 
+        background-color: themed('secondary_bg');
+        color: themed('secondary_text');
+        border: 0.0625rem solid themed('secondary_border');
+    }
+    // color: $blue;
+    // border: 0.0625rem solid $blue;
 
-    &:hover,
+    &:hover,&:focus  {
+        @include themify($themes) { 
+            background-color: themed('secondary_bg_hover');
+            color: themed('secondary_text');
+            border: 0.0625rem solid themed('secondary_border');
+        }
+
+        >.#{$prefix}-btn-icon {
+            fill: $white;
+        }
+    }
     &:focus {
-        background: $blue;
-        color: $white;
-        border: 0.0625rem solid $blue;
+        @include themify($themes) { 
+            
+            border: 0.0625rem solid themed('interactive_border');
+        }
 
         >.#{$prefix}-btn-icon {
             fill: $white;
@@ -134,6 +150,9 @@ a.#{$prefix}-primary {
     &[disabled=disabled] {
         color: $blue-6;
         border: 0.0625rem solid $blue-6;
+        @include themify($themes) { 
+            opacity: themed('disabled_all');
+        }
         cursor: not-allowed;
 
         &:hover {
