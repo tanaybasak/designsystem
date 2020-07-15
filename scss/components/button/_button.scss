@@ -54,8 +54,10 @@ a.#{$prefix}-primary {
 
     &:focus {
         // background: $blue-5;
+        outline-offset: 2px;
         @include themify($themes) { 
-            outline: 2px solid themed('primary_bg_hover');
+            outline: 0.0625rem solid themed('primary_bg_hover');
+            
         }
     }
 
@@ -87,8 +89,9 @@ a.#{$prefix}-primary {
 
         &:focus {
             // background: $red-1;
+            outline-offset: 2px;
             @include themify($themes) { 
-                outline: 2px solid themed('interactive_border');
+                outline: 0.0625rem solid themed('interactive_border');
             }
             >.#{$prefix}-btn-icon {
                 fill: $white;
