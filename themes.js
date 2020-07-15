@@ -8,15 +8,15 @@ document.getElementById('breadcrumb').addEventListener('change', (event) => {
   }
 });
 
-document.getElementById('overflow').addEventListener('change', (event) => {
-  if (event.target.checked) {
-    document.getElementById('theme-overflow').classList.remove('theme-dark');
-    document.getElementById('theme-overflow').classList.add('theme-light');
-  } else {
-    document.getElementById('theme-overflow').classList.remove('theme-light');
-    document.getElementById('theme-overflow').classList.add('theme-dark');
-  }
-});
+// document.getElementById('overflow').addEventListener('change', (event) => {
+//   if (event.target.checked) {
+//     document.getElementById('theme-overflow').classList.remove('theme-dark');
+//     document.getElementById('theme-overflow').classList.add('theme-light');
+//   } else {
+//     document.getElementById('theme-overflow').classList.remove('theme-light');
+//     document.getElementById('theme-overflow').classList.add('theme-dark');
+//   }
+// });
 
 document.getElementById('modal').addEventListener('change', (event) => {
   if (event.target.checked) {
