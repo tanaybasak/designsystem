@@ -15,6 +15,12 @@ $themes: (
     secondary_icon: $blue-60,
     secondary_icon_hover: $blue-50,
     secondary_text: $blue-40,
+
+    active_bg: $orange-100,
+    active_bg_high: $orange-90,
+    active_border: $orange-70,
+    active_icon: $orange-60,
+    active_text: $orange-50,
     interactive_bg: (
       Transparent
     ),
@@ -86,6 +92,11 @@ $themes: (
     secondary_icon: $blue-70,
     secondary_icon_hover: $blue-80,
     secondary_text: $blue-70,
+    active_bg: $orange-10,
+    active_bg_high: $orange-20,
+    active_border: $orange-60,
+    active_icon: $orange-70,
+    active_text: $orange-80,
     interactive_bg: transparent,
     interactive_bg_hover: $blue-10,
     interactive_border: $blue-70,
