@@ -1,10 +1,10 @@
-document.getElementById('accordion').addEventListener('change', (event) => {
+document.getElementById('breadcrumb').addEventListener('change', (event) => {
   if (event.target.checked) {
-    document.getElementById('theme-accordion').classList.remove('theme-dark');
-    document.getElementById('theme-accordion').classList.add('theme-light');
+    document.getElementById('theme-breadcrumb').classList.remove('theme-dark');
+    document.getElementById('theme-breadcrumb').classList.add('theme-light');
   } else {
-    document.getElementById('theme-accordion').classList.remove('theme-light');
-    document.getElementById('theme-accordion').classList.add('theme-dark');
+    document.getElementById('theme-breadcrumb').classList.remove('theme-light');
+    document.getElementById('theme-breadcrumb').classList.add('theme-dark');
   }
 });
 
