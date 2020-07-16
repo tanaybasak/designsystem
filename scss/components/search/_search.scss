@@ -11,7 +11,12 @@ $search-reset-size: 0.759rem;
     position: relative;
     padding: 0;
     height: $search-height;
-
+    &:focus {
+        outline: 0;
+        @include themify($themes) { 
+            border-bottom: 1px solid themed('interactive_border');  
+        }
+    }
     >* {
         &:disabled {
             &:hover {
@@ -40,7 +45,10 @@ $search-reset-size: 0.759rem;
         background-color: $interactive_bg_hover;
         cursor: pointer;
         .#{$prefix}-search-icon {
-            fill: $blue-7;
+            // fill: $blue-7;
+            @include themify($themes) { 
+                fill: themed('input-icon');  
+            }
         }
     }
 
@@ -53,11 +61,15 @@ $search-reset-size: 0.759rem;
         background: none;
         pointer-events: none;
 
+      
         .#{$prefix}-search-icon {
             margin-left: ($search-height - $search-icon-size)/2;
             margin-top: ($search-height - $search-icon-size)/2;
-            fill: $blue-7;
-
+            //fill: $blue-7;
+            @include themify($themes) { 
+                fill: themed('input-icon');
+               
+            }
             &.white {
                 fill: $white;
             }
@@ -70,9 +82,15 @@ $search-reset-size: 0.759rem;
         width: 100%;
         height: $search-height;
         padding: 0 $search-height;
-        color: $grey-5;
-        background-color: $grey-6;
-        border: none;
+        // color: $grey-5;
+        @include themify($themes) { 
+            border-bottom: 0.0625rem solid themed('input_border');
+            color: themed('input_text');
+            background-color: themed('input_bg');
+
+        }
+        // background-color: $grey-6;
+        // border: none;
         right: 0;
         position: unset;
         transition: width 0.15s ease-out;
