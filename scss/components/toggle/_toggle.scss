@@ -164,8 +164,10 @@
 
         &:focus~.#{$prefix}-toggle-label {
             .#{$prefix}-switch {
-                border: .0625rem solid var(--grey-light);
-                box-shadow: 0 0 0 0.125rem $checkbox-focus-color;
+                @include themify($themes) {
+                    box-shadow: 0 0 0 0.125rem themed('interactive_border');
+                    border: .0625rem solid themed('default_bg');
+                }
             }
         }
     }
@@ -210,7 +212,7 @@
             border: none;
             transform: translate(.1875rem, -50%);
             @include themify($themes) {
-                background-color: themed('default_bg') ;
+                background-color: themed('default_icon') ;
             }
         }
     }
@@ -286,7 +288,11 @@
 
         &:focus~.#{$prefix}-toggle-label {
             &::before {
-                box-shadow: 0 0 0 0.125rem $checkbox-focus-color;
+               // box-shadow: 0 0 0 0.125rem yellow;
+                @include themify($themes) {
+                    box-shadow: 0 0 0 0.125rem themed('interactive_border');
+                    border: .0625rem solid themed('default_bg');
+                }
             }
         }
     }
