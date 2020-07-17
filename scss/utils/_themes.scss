@@ -1,5 +1,5 @@
 $themes: (
-  light: (
+  dark: (
     primary_bg: $blue-70,
     primary_bg_hover: $blue-60,
     primary_border: $blue-70,
@@ -78,7 +78,7 @@ $themes: (
     overlay_bg: $white 40%,
     disabled_all:  0.5
   ),
-  dark: (
+  light: (
     primary_bg: $blue-70,
     primary_bg_hover: $blue-80,
     primary_border: $blue-70,
@@ -178,6 +178,7 @@ $themes: (
 }
 
 
-.body-dark{
+.theme-dark{
   background-color: #121212;
+  color: white
 }

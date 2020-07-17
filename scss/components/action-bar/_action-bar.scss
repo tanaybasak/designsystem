@@ -38,6 +38,7 @@
         // background-color: $white;
         @include themify($themes) { 
           border: 0.0625rem solid themed('interactive_focus');
+          background-color: themed('primary_bg');
               }
         
         outline: none;
@@ -85,6 +86,7 @@
       }
     }
   }
+
 
   &-text {
     margin-right: 1.5rem;
