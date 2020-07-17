@@ -51,8 +51,8 @@
      // border-left: 0.3rem solid transparent;
       @include themify($themes) {
         border-top: 0.3rem solid themed('input_icon');
-        border-right: 0.3rem solid themed('default_bg');
-        border-left: 0.3rem solid themed('default_bg');
+        border-right: 0.3rem solid transparent;
+        border-left: 0.3rem solid transparent;
       }
       position: absolute;
       top: 50%;
