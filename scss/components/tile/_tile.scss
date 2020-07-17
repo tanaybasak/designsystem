@@ -4,7 +4,10 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
     display: inline-block;
     background-color: $white;
-    border: 1px solid transparent;
+    @include themify($themes) {
+        border: 1px solid themed('default_border_xlow');
+        background-color: themed('default_bg');
+      }
     position: relative;
     padding: 1rem;
     cursor: default;
@@ -14,11 +17,16 @@
         outline: none;
 
         &:focus {
-            border: 1px solid $blue;
+            @include themify($themes) {
+                border: 1px solid themed('interactive_border');
+              }
         }
 
         &:hover .#{$prefix}-tile-checkbox {
             visibility: visible;
+            @include themify($themes) {
+                opacity: themed('disabled_all');
+              }
         }
     }
 
@@ -66,8 +74,10 @@
 
         &:checked+.#{$prefix}-tile-checkbox {
             visibility: visible;
-            fill: $blue-7;
-            background-color: $white;
+            @include themify($themes) {
+                fill: themed('active_icon');
+              }
+            background-color: transparent;
         }
 
         &:checked+.#{$prefix}-tile-arrow>svg {
@@ -82,8 +92,10 @@
         right: 1rem;
         position: absolute;
         border-radius: 50%;
-        background-color: hsla(0, 0%, 100%, .25);
-        fill: rgba(61, 112, 178, .25);
+        background-color: transparent;
+        @include themify($themes) {
+            fill: themed('interactive_icon');
+          }
     }
 
     &-arrow {
@@ -100,11 +112,15 @@
 
         >svg {
             border-radius: 50%;
-            background-color: hsla(0, 0%, 100%, .25);
-            fill: $black-2;
+            background-color: transparent;
+            @include themify($themes) {
+                fill: themed('interactive_icon');
+              }
 
             &:hover {
-                fill: $blue;
+                @include themify($themes) {
+                    fill: themed('interactive_icon');
+                  }
             }
         }
     }
