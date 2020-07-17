@@ -76,6 +76,7 @@ $themes: (
     active_border: $orange-70,
     active_icon: $orange-60,
     active_text: $orange-50,
+    default_shadow: black
   ),
   light: (
     primary_bg: $blue-70,
@@ -148,6 +149,7 @@ $themes: (
     active_border: $orange-60,
     active_icon: $orange-70,
     active_text: $orange-80,
+    default_shadow: black
   )
 );
 

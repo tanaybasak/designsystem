@@ -29,13 +29,11 @@
 
         &:hover,
         &:focus {
-          //background-color: $blue-8;
           @include themify($themes) {
             fill: themed('interactive_bg_hover');
           }
         }
         svg {
-          //fill: $white;
           @include themify($themes) {
             fill: themed('interactive_icon');
           }
