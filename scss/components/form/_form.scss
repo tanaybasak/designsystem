@@ -34,7 +34,6 @@
 
 input.#{$prefix}-form-control[data-invalid=true],
 textarea.#{$prefix}-textarea[data-invalid=true] {
-    // box-shadow: 0 1px 0 0 $red-3;
     @include themify($themes) {
         border-bottom: 1px solid themed('danger_border');
       }
@@ -42,7 +41,6 @@ textarea.#{$prefix}-textarea[data-invalid=true] {
 
 input.#{$prefix}-form-control[data-invalid=true]:focus,
 textarea.#{$prefix}-textarea[data-invalid=true]:focus {
-    // box-shadow: 0 3px 0 0 $red-3;
     @include themify($themes) {
         border-bottom: 1px solid themed('danger_border');
       }
@@ -54,7 +52,6 @@ textarea.#{$prefix}-textarea[data-invalid=true]~.#{$prefix}-error-msg {
 }
 
 .#{$prefix}-helper-text {
-    //@include getInputColor('color-2', 'color');
     @include themify($themes) {
         color: themed('default_text_low');
       }
@@ -64,7 +61,6 @@ textarea.#{$prefix}-textarea[data-invalid=true]~.#{$prefix}-error-msg {
 }
 
 label.#{$prefix}-label {
-   // @include getInputColor('color-1', 'color');
     @include themify($themes) {
         color: themed('default_text');
       }
@@ -209,7 +205,6 @@ label.#{$prefix}-label {
             top: calc(50% - 0.5625rem);
             height: 1.125rem;
             width: 1.125rem;
-            // border: $checkbox-border-width solid $lightGrey;
             @include themify($themes) { 
                 border: $checkbox-border-width solid themed('default_icon_high');
               }
@@ -272,7 +267,6 @@ label.#{$prefix}-label {
     }
 
     &:disabled+.#{$prefix}-radio-label {
-       // opacity: .5;
        @include themify($themes) {
         opacity: themed('disabled_all');
       }
@@ -289,14 +283,12 @@ label.#{$prefix}-label {
         width: .5rem;
         height: .5rem;
         border-radius: 50%;
-        //@include getInputColor('color-5', 'background-color');
         @include themify($themes) {
             background-color: themed('selected_icon');
           }
     }
 
     &:checked+.#{$prefix}-radio-label::before {
-       // @include getInputColor('color-5', 'border-color');
         @include themify($themes) {
             border: 2px solid themed('selected_icon');
           }
@@ -322,9 +314,7 @@ label.#{$prefix}-label {
         position: absolute;
         top: -1px;
         left: 0;
-        background-color: $white;
         border-radius: 50%;
-        border: 2px solid #5a6872;
 
         height: 1.125rem;
         width: 1.125rem;

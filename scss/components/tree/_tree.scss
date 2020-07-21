@@ -1,10 +1,5 @@
 @import '../../base';
 
-$caret-icon: #555;
-$node-hover-bg: rgba(70, 150, 210, 0.1);
-$node-selection-bg: #0066b0;
-$drag: #092b51;
-
 .#{$prefix}-tree {
   font-size: 0.875rem;
   @include getFontWeight(regular);
@@ -59,8 +54,6 @@ $drag: #092b51;
           height: 0.5rem;
           width: 0.5rem;
           margin-top: 0.125rem;
-          // border-right: 0.0625rem solid $caret-icon;
-          // border-bottom: 0.0625rem solid $caret-icon;
           @include themify($themes) {
             border-right: 0.0625rem solid themed('default_icon');
             border-bottom: 0.0625rem solid themed('default_icon');
@@ -91,9 +84,6 @@ $drag: #092b51;
             padding: 0 0.625rem;
           }
 
-          &:hover {
-            background-color: $node-hover-bg;
-          }
         }
 
         .treenode-content-wrapper {
@@ -127,18 +117,19 @@ $drag: #092b51;
                 color: themed('default_text_high');
               }
             }
-
             &.highlight {
-              // background-color: $node-selection-bg;
-              // color: $white;
+              @include themify($themes) {
+                color: themed('default_text');
+                background-color: themed('active_bg');
+              }
             }
 
             &.highlight-row {
-              background: $drag;
-              color: $white;
-             
+              @include themify($themes) {
+                color: themed('default_text');
+                background: themed('active_bg');
+              }
             }
-
             &.#{$prefix}-cut-node {
               opacity: 0.5;
             }
@@ -176,11 +167,15 @@ $drag: #092b51;
       }
 
       &.add-border {
-        border-top: 0.125rem solid $drag;
+        @include themify($themes) {
+          border-top: 0.125rem solid themed('interactive_border');
+        }
       }
 
       &.add-border-bottom {
-        border-bottom: 0.125rem solid $drag;
+        @include themify($themes) {
+          border-bottom: 0.125rem solid themed('interactive_border');
+        }
       }
     }
 

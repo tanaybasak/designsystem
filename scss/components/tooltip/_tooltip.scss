@@ -10,6 +10,12 @@ $tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+.
 $tooltip-box-shadow:rgba($black, 0.1);
 
 .#{$prefix}-tooltip {
+    @include themify($themes) { 
+        color: themed('default_text');
+    }
+}
+
+.#{$prefix}-tooltip {
     position: absolute;
     display: block;
     visibility: hidden;
@@ -17,11 +23,14 @@ $tooltip-box-shadow:rgba($black, 0.1);
     word-wrap: break-word;
     text-align: left;
     max-width: $tooltip-default-max-width;
-    background-color: $black-lighter;
-    color: $white;
+    @include themify($themes) { 
+        color: themed('default_text_high');
+        background-color:themed('default_bg_low');
+        box-shadow: 0 0.25rem 0.5rem 0 themed('default_shadow');
+    }
     border-radius: .25rem;
     padding: .5rem;
-    box-shadow: 0 0.25rem 0.5rem 0 $tooltip-box-shadow;
+    
     z-index: $tooltip-zindex;
     top: 0;
     left: 0;
@@ -30,7 +39,9 @@ $tooltip-box-shadow:rgba($black, 0.1);
         position: absolute;
         width: $tooltip-arrow-size-default;
         height: $tooltip-arrow-size-default;
-        background: $black-lighter;
+        @include themify($themes) { 
+            background-color:themed('default_bg_low');
+        }
 
         &[data-direction='bottom'] {
             top: -($tooltip-arrow-size-default-position);
@@ -58,16 +69,17 @@ $tooltip-box-shadow:rgba($black, 0.1);
     }
 
     &[data-focus-on-click='true'] {
-        background-color: $white;
-        color: $dark-blue;
+        @include themify($themes) { 
+            color: themed('default_text_high');
+            background-color:themed('default_bg_low');
+        }
         max-width: $tooltip-interactive-max-width;
-        border: .0625rem solid $grey-8;
         padding: 1rem;
 
         .#{$prefix}-tooltip-arrow {
-            background: $white;
-            border-top: .0625rem solid $grey-8;
-            border-right: .0625rem solid $grey-8;
+            @include themify($themes) { 
+                background-color:themed('default_bg_low');
+            }
 
             &[data-direction='bottom'] {
                 top: -($tooltip-arrow-size-interactive-position);
@@ -114,5 +126,7 @@ $tooltip-box-shadow:rgba($black, 0.1);
 }
 
 .#{$prefix}-tooltip-dottedline {
-    border-bottom: 1px dotted black;
+    @include themify($themes) { 
+        border-bottom: 1px dotted themed('interactive_border');
+    }
 }
