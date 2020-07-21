@@ -1,5 +1,5 @@
 $themes: (
-  light: (
+  dark: (
     primary_bg: $blue-70,
     primary_bg_hover: $blue-60,
     primary_border: $blue-70,
@@ -70,9 +70,15 @@ $themes: (
     input_text_low: $grey-60,
     input_text: $white,
     overlay_bg: $white 40%,
-    disabled_all:  0.5
+    disabled_all:  0.5,
+    active_bg: $orange-100,
+    active_bg_high: $orange-90,
+    active_border: $orange-70,
+    active_icon: $orange-60,
+    active_text: $orange-50,
+    default_shadow: black
   ),
-  dark: (
+  light: (
     primary_bg: $blue-70,
     primary_bg_hover: $blue-80,
     primary_border: $blue-70,
@@ -137,7 +143,13 @@ $themes: (
     input_text_low: $grey-40,
     input_text: $black,
     overlay_bg: $black 40%,
-    disabled_all: 0.5
+    disabled_all: 0.5,
+    active_bg: $orange-10,
+    active_bg_high: $orange-20,
+    active_border: $orange-60,
+    active_icon: $orange-70,
+    active_text: $orange-80,
+    default_shadow: black
   )
 );
 
@@ -167,6 +179,7 @@ $themes: (
 }
 
 
-.body-dark{
+.theme-dark{
   background-color: #121212;
+  color: white
 }

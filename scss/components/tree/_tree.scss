@@ -17,6 +17,12 @@ $drag: #092b51;
     position: relative;
     padding: 0.3125rem 0 0;
 
+    &:focus {
+      @include themify($themes) {
+        border: themed('interactive_border');
+      }
+    }
+
     .tree-node {
       cursor: pointer;
       line-height: unset;
@@ -24,6 +30,12 @@ $drag: #092b51;
       flex-direction: row;
       align-items: center;
       border: 0.125rem solid transparent;
+
+      &:hover {
+        @include themify($themes) {
+          background-color: themed('interactive_bg_hover');
+        }
+      }
 
       & > i {
         margin-right: 0.5rem;
@@ -47,8 +59,12 @@ $drag: #092b51;
           height: 0.5rem;
           width: 0.5rem;
           margin-top: 0.125rem;
-          border-right: 0.0625rem solid $caret-icon;
-          border-bottom: 0.0625rem solid $caret-icon;
+          // border-right: 0.0625rem solid $caret-icon;
+          // border-bottom: 0.0625rem solid $caret-icon;
+          @include themify($themes) {
+            border-right: 0.0625rem solid themed('default_icon');
+            border-bottom: 0.0625rem solid themed('default_icon');
+          }
           transform: scale(1) rotate(-45deg);
           transition: all 0.2s ease-in-out;
           margin-left: 0.3125rem;
@@ -101,15 +117,26 @@ $drag: #092b51;
           .tree-text-node {
             display: inline-flex;
             max-width: 100%;
+           
+            @include themify($themes) {
+              color: themed('default_text');
+            }
+
+            &:hover{
+              @include themify($themes) {
+                color: themed('default_text_high');
+              }
+            }
 
             &.highlight {
-              background-color: $node-selection-bg;
-              color: $white;
+              // background-color: $node-selection-bg;
+              // color: $white;
             }
 
             &.highlight-row {
               background: $drag;
               color: $white;
+             
             }
 
             &.#{$prefix}-cut-node {
@@ -145,9 +172,6 @@ $drag: #092b51;
             }
           }
 
-          &:hover {
-            background-color: $node-hover-bg;
-          }
         }
       }
 

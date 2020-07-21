@@ -15,7 +15,6 @@
     &-item {
         display: block;
         position: relative;
-       // border-top: .0625rem solid $grey-4;
        @include themify($themes) {
         border-top: .0625rem solid themed('default_border_xlow');
       }
@@ -31,7 +30,6 @@
             display: inline-block;
             font-size: 1rem;
             line-height: 1.5rem;
-           // color: $dark-10;
             @include themify($themes) {
                 color: themed('default_text_high');
               }
@@ -46,8 +44,6 @@
                 width: .625rem;
                 margin-left: -1.625rem;
                 margin-top: .375rem;
-                // border-right: .0625rem solid $black-2;
-                // border-bottom: .0625rem solid $black-2;
                 @include themify($themes) {
                     border-right: .0625rem solid themed('default_icon_high');
                     border-bottom: .0625rem solid themed('default_icon_high');
@@ -58,7 +54,9 @@
 
             &:focus,
             &:active {
-                outline: 1px solid $focus-outline-color;
+                @include themify($themes) {
+                    outline: 1px solid themed('interactive_border');
+                }
                 outline-offset: 0.125rem;
             }
         }
@@ -71,7 +69,6 @@
             .#{$prefix}-accordion-content {
                 font-size: .875rem;
                 line-height: 1.5rem;
-                //color: $dark-10;
                 @include themify($themes) {
                     color: themed('default_text_high');
                   }
