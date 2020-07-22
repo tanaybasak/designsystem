@@ -44,6 +44,7 @@ $themes: (
     default_text_xhigh: $white,
     default_text_inverse: $black,
 
+    // changed to active 
     selected_bg: $orange-100,
     selected_border: $orange-60,
     selected_icon: $orange-60,
@@ -163,7 +164,7 @@ $themes: (
     input_icon: $grey-90,
     input_text_low: $grey-40,
     input_text: $black,
-    
+
     overlay_bg: $black 40%,
     disabled_all: 0.5,
 
