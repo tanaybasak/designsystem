@@ -38,30 +38,45 @@
     .#{$prefix}-file-input {
       display: none;
 
-      &:disabled~.#{$prefix}-file-btn {
+      &:disabled ~ .#{$prefix}-file-btn {
         @extend %disable;
 
         &.#{$prefix}-primary {
-          background: $blue-6;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            background-color: themed('primary_bg');
+          }
         }
 
         &.#{$prefix}-secondary {
-          color: $blue-6;
-          border: 0.0625rem solid $blue-6;
           cursor: not-allowed;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            color: themed('secondary_text');
+            border: 0.0625rem solid themed('secondary_border');
+          }
         }
 
         &.#{$prefix}-ghost {
-          color: $blue-6;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            color: themed('interactive_text');
+          }
         }
 
         &.#{$prefix}-secondary.#{$prefix}-danger {
-          border: 0.0625rem solid $red-2;
-          color: $red-2;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            color: themed('danger_text');
+            border: 0.0625rem solid themed('danger_border');
+          }
         }
 
         &.#{$prefix}-primary.#{$prefix}-danger {
-          background: $red-2;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            background: themed('danger_bg_inverse');
+          }
         }
 
         &:hover.#{$prefix}-secondary {
@@ -70,7 +85,10 @@
 
         &:hover.#{$prefix}-ghost {
           background: transparent;
-          color: $blue-6;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            color: themed('interactive_text');
+          }
         }
 
         &:hover.#{$prefix}-secondary.#{$prefix}-danger {
