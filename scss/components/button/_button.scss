@@ -94,7 +94,7 @@ a.#{$prefix}-primary {
 
         &:hover {
             @include themify($themes) { 
-                background-color: themed('danger_bg_inverse_hover');
+                background-color: themed('danger_bg_inverse');
                 color:  themed('default_text_inverse');
             }
             >.#{$prefix}-btn-icon {
@@ -176,7 +176,9 @@ a.#{$prefix}-primary {
             @include themify($themes) { 
                 background-color: themed('secondary_bg');
             }
-
+            >.#{$prefix}-btn-icon {
+                fill: $blue-6;
+            }
         }
 
         >.#{$prefix}-btn-icon {
@@ -211,9 +213,7 @@ a.#{$prefix}-primary {
                 border: 0.0625rem solid themed('danger_border');
             }
 
-            >.#{$prefix}-btn-icon {
-                fill:  $blue-6;
-            }
+           
         }
 
         &:focus {
@@ -236,15 +236,19 @@ a.#{$prefix}-primary {
             // color: $red-2;
             // @extend %disable;
 
-            // &:hover {
-            //     background: transparent;
-            //     border: 0.0625rem solid $red-2;
-            //     color: $red-2;
+            &:hover {
+                @include themify($themes) { 
+                    background-color: themed('secondary_bg');
+                    opacity: themed('disabled_all');
 
-            //     >.#{$prefix}-btn-icon {
-            //         fill: $red;
-            //     }
-            // }
+                }
+                // border: 0.0625rem solid $red-2;
+                // color: $red-2;
+
+                >.#{$prefix}-btn-icon {
+                    fill: $red;
+                }
+            }
               // @extend %disable;
         @include themify($themes) { 
             opacity: themed('disabled_all');
