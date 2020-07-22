@@ -11,7 +11,7 @@
     &-input {
         display: flex;
         flex-direction: row;
-        // border-bottom: .0625rem solid transparent;
+        /// border-bottom: .0625rem solid transparent;
         @include themify($themes) {
             color: themed('input_text_low');
         }

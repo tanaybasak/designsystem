@@ -63,11 +63,26 @@ a.#{$prefix}-primary {
 
     &:disabled,
     &[disabled=disabled] {
-        // background: $blue-6;
+         background: $blue-6;
         // @extend %disable;
         @include themify($themes) { 
+            // background-color: themed('interactive_bg');
+            // color: themed('interactive_text');
            opacity: themed('disabled_all');
         }
+        cursor: not-allowed;
+        &:hover {
+            background-color: $blue-6;
+          
+        }
+     
+        // &:focus {
+        //     @include themify($themes) {  
+        //         border: 3px solid themed('interactive_border');
+        //     }
+
+        // }
+
     }
 
     &.#{$prefix}-danger {
@@ -132,7 +147,7 @@ a.#{$prefix}-primary {
         }
 
         >.#{$prefix}-btn-icon {
-            fill: $white;
+            fill:  $blue-6;
         }
     }
     &:focus {
@@ -142,7 +157,7 @@ a.#{$prefix}-primary {
         }
 
         >.#{$prefix}-btn-icon {
-            fill: $white;
+            fill:  $blue-6;
         }
     }
 
@@ -156,9 +171,12 @@ a.#{$prefix}-primary {
         cursor: not-allowed;
 
         &:hover {
-            background: transparent;
             color: $blue-6;
             border: 0.0625rem solid $blue-6;
+            @include themify($themes) { 
+                background-color: themed('secondary_bg');
+            }
+
         }
 
         >.#{$prefix}-btn-icon {
@@ -194,7 +212,7 @@ a.#{$prefix}-primary {
             }
 
             >.#{$prefix}-btn-icon {
-                fill: $white;
+                fill:  $blue-6;
             }
         }
 
@@ -208,7 +226,7 @@ a.#{$prefix}-primary {
             }
 
             >.#{$prefix}-btn-icon {
-                fill: $white;
+                fill:  $blue-6;
             }
         }
 
@@ -232,10 +250,14 @@ a.#{$prefix}-primary {
             opacity: themed('disabled_all');
         }
         cursor: not-allowed;
+        >.#{$prefix}-btn-icon {
+            fill: $blue;
+        }
+
         }
 
         >.#{$prefix}-btn-icon {
-            fill: $red;
+            fill: $blue;
         }
     }
 }
