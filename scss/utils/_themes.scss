@@ -70,7 +70,7 @@ $themes: (
     input_text_low: $grey-60,
     input_text: $white,
     overlay_bg: $white 40%,
-    disabled_all:  0.5,
+    disabled_all: 0.5,
     active_bg: $orange-100,
     active_bg_high: $orange-90,
     active_border: $orange-70,
@@ -153,33 +153,11 @@ $themes: (
   )
 );
 
-@mixin themify($themes: $themes) {
-  @each $theme, $map in $themes {
-    .theme-#{$theme} & {
-      $theme-map: () !global;
+// $theme-map: null;
 
-      @each $key, $submap in $map { 
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge(
-          $theme-map,
-          (
-            $key: $value
-          )
-        ) !global;
-      }
-
-      @content;
-      $theme-map: null !global;
-    }
-  }
-}
-
-@function themed($key) {
-  @return map-get($theme-map, $key);
-}
-
-
-.theme-dark{
-  background-color: #121212;
-  color: white
-}
+// .theme-dark {
+//   @include themify($themes) {
+//     background-color: themed('default_bg');
+//     color: themed('default_text');
+//   }
+// }

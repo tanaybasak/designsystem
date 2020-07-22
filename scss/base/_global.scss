@@ -8,40 +8,50 @@
 
 // Global styling for Patron CSS framework
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font: {
-        family: 'Roboto', sans-serif;
-    }
+  font: {
+    family: "Roboto", sans-serif;
+  }
 
-    color: $black;
-    font-size: 1rem;
+  color: $black;
+  font-size: 1rem;
 }
 
 ul,
 ol {
-    &.no-style {
-        list-style: none;
-    }
+  &.no-style {
+    list-style: none;
+  }
 
-    li {
-        color: inherit;
-        font-size: inherit;
-        line-height: inherit;
-    }
+  li {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
 }
 
 dd,
 dt,
 dl {
-    color: inherit;
-    font-size: inherit;
-    line-height: inherit;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 //clear icon removed from input for edge browser.
 input::-ms-clear {
-    display: none;
+  display: none;
+}
+
+// dark theme
+.theme-dark {
+    background-color: #121212;
+    color: white;
+//   @include themify($themes) {
+//     background-color: themed("default_bg");
+//     color: themed("default_text");
+//   }
 }
