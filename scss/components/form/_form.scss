@@ -280,13 +280,13 @@ label.#{$prefix}-label {
     height: 0.5rem;
     border-radius: 50%;
     @include themify($themes) {
-      background-color: themed('selected_icon');
+      background-color: themed('active_icon');
     }
   }
 
   &:checked + .#{$prefix}-radio-label::before {
     @include themify($themes) {
-      border: 2px solid themed('selected_icon');
+      border: 2px solid themed('active_icon');
     }
   }
 }

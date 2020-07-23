@@ -45,10 +45,10 @@ $themes: (
     default_text_inverse: $black,
 
     // changed to active 
-    selected_bg: $orange-100,
-    selected_border: $orange-60,
-    selected_icon: $orange-60,
-    selected_text: $orange-50,
+    // selected_bg: $orange-100,
+    // selected_border: $orange-60,
+    // selected_icon: $orange-60,
+    // selected_text: $orange-50,
 
     info_bg: $blue-100,
     info_border: $blue-60,
@@ -86,7 +86,7 @@ $themes: (
     active_border: $orange-70,
     active_icon: $orange-60,
     active_text: $orange-50,
-    default_shadow: black
+    default_shadow: $black
   ),
   light: (
     primary_bg: $blue-70,
@@ -132,10 +132,11 @@ $themes: (
     default_text_xhigh: $black,
     default_text_inverse: $white,
 
-    selected_bg: $orange-20,
-    selected_border: $orange-60,
-    selected_icon: $orange-60,
-    selected_text: $orange-80,
+    //changed to active
+    // selected_bg: $orange-20,
+    // selected_border: $orange-60,
+    // selected_icon: $orange-60,
+    // selected_text: $orange-80,
 
     info_bg: $blue-10,
     info_border: $blue-60,
@@ -173,7 +174,7 @@ $themes: (
     active_border: $orange-60,
     active_icon: $orange-70,
     active_text: $orange-80,
-    default_shadow: black
+    default_shadow: $black
   )
 );
 
