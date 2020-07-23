@@ -13,7 +13,7 @@ html {
 
 body {
   font: {
-    family: "Roboto", sans-serif;
+    family: 'Roboto', sans-serif;
   }
 
   color: $black;
@@ -48,10 +48,10 @@ input::-ms-clear {
 
 // dark theme
 .theme-dark {
-    background-color: #121212;
-    color: white;
-//   @include themify($themes) {
-//     background-color: themed("default_bg");
-//     color: themed("default_text");
-//   }
+  background-color: #121212;
+  color: white;
+  //   @include themify($themes) {
+  //     background-color: themed("default_bg");
+  //     color: themed("default_text");
+  //   }
 }
