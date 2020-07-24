@@ -11,7 +11,7 @@ $colorMap: (
   display: inline-flex;
   max-width: 52rem;
   margin: 1rem 0;
-  background-color: #eee;
+  // background-color: #eee;
   z-index: 999;
 
   @each $key, $value in $colorMap {
@@ -46,7 +46,10 @@ $colorMap: (
         font-size: 0.875rem;
         line-height: getLineHeight(0.875rem);
         letter-spacing: 0;
-        color: #132730;
+        // color: #132730;
+        @include themify($themes) {  
+          color: themed('default_text');
+        }
         margin-right: 0.5rem;
         font-weight: 600;
       }
@@ -56,7 +59,10 @@ $colorMap: (
         line-height: getLineHeight(0.875rem);
         @include getFontWeight('regular');
         word-break: break-word;
-        color: #aaa;
+        // color: #aaa;
+        @include themify($themes) {  
+          color: themed('default_text');
+        }
       }
     }
   }

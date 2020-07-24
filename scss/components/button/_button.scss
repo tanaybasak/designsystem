@@ -8,14 +8,16 @@
     border: 1px solid transparent;
     margin-top: .5rem;
     margin-bottom: .5rem;
-    background: transparent;
-    color: $black;
+    // background: transparent;
+    // color: $black;
 }
 
 .#{$prefix}-btn {
     @extend %button;
-    color: $white;
-    background: $blue;
+    // color: $white;
+    // background: $blue;
+
+
     padding: .625rem 1rem;
     height: 2.5rem;
     display: inline-flex;
@@ -32,14 +34,13 @@
 
 a.#{$prefix}-primary {
     &:hover {
-        color: $white;
+    @include themify($themes) { 
+        color: themed('primary_text');
+    }
     }
 }
 
 .#{$prefix}-primary {
-    // background: $blue;
-    // color: $white;
-
     @include themify($themes) { 
         background-color: themed('primary_bg');
         color: themed('primary_text');
@@ -63,25 +64,16 @@ a.#{$prefix}-primary {
 
     &:disabled,
     &[disabled=disabled] {
-         background: $blue-6;
-        // @extend %disable;
         @include themify($themes) { 
-            // background-color: themed('interactive_bg');
-            // color: themed('interactive_text');
            opacity: themed('disabled_all');
         }
         cursor: not-allowed;
         &:hover {
-            background-color: $blue-6;
-          
+            @include themify($themes) { 
+                background-color: themed('primary_bg');
         }
+    }
      
-        // &:focus {
-        //     @include themify($themes) {  
-        //         border: 3px solid themed('interactive_border');
-        //     }
-
-        // }
 
     }
 
@@ -94,7 +86,7 @@ a.#{$prefix}-primary {
 
         &:hover {
             @include themify($themes) { 
-                background-color: themed('danger_bg_inverse');
+                background-color: themed('danger_bg_inverse_hover');
                 color:  themed('default_text_inverse');
             }
             >.#{$prefix}-btn-icon {
@@ -118,9 +110,11 @@ a.#{$prefix}-primary {
             // @extend %disable;
             // background: $red-2;
 
-            // &:hover {
-            //     background: $red-2;
-            // }
+            &:hover {
+                @include themify($themes) { 
+                    background-color: themed('danger_bg_inverse');
+                }
+            }
             @include themify($themes) { 
                 opacity: themed('disabled_all');
             }
@@ -163,23 +157,16 @@ a.#{$prefix}-primary {
 
     &:disabled,
     &[disabled=disabled] {
-        color: $blue-6;
-        border: 0.0625rem solid $blue-6;
+        
+        &:hover {
+            @include themify($themes) { 
+                background-color: themed('secondary_bg');
+            }
+        }
         @include themify($themes) { 
             opacity: themed('disabled_all');
         }
         cursor: not-allowed;
-
-        &:hover {
-            color: $blue-6;
-            border: 0.0625rem solid $blue-6;
-            @include themify($themes) { 
-                background-color: themed('secondary_bg');
-            }
-            >.#{$prefix}-btn-icon {
-                fill: $blue-6;
-            }
-        }
 
         >.#{$prefix}-btn-icon {
             fill: $blue-6;
@@ -188,7 +175,7 @@ a.#{$prefix}-primary {
 
 
     >.#{$prefix}-btn-icon {
-        fill: $blue;
+        fill: $blue-6;
     }
 
     &.#{$prefix}-danger {
@@ -246,7 +233,7 @@ a.#{$prefix}-primary {
                 // color: $red-2;
 
                 >.#{$prefix}-btn-icon {
-                    fill: $red;
+                    fill: $blue-6;
                 }
             }
               // @extend %disable;
@@ -255,7 +242,7 @@ a.#{$prefix}-primary {
         }
         cursor: not-allowed;
         >.#{$prefix}-btn-icon {
-            fill: $blue;
+            fill: $blue-6;
         }
 
         }
@@ -323,7 +310,9 @@ a.#{$prefix}-primary {
         
 
         &:hover {
-            background: transparent;
+            @include themify($themes) { 
+                background-color: themed('interactive_bg');
+            }
            // color: $blue-6;
 
             // >.#{$prefix}-btn-icon {
