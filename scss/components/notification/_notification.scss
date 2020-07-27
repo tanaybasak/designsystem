@@ -22,39 +22,8 @@ $colorMap: (
       background-color: themed($value + '_bg');
       }
     }
-    >.#{$prefix}-notification-icon {
-          @include themify($themes) { 
-            fill: themed($value + '_icon');
-        }
-  }
+ 
 }
-
-  // &.#{$prefix}-danger {
-  //   @include themify($themes) { 
-  //     background-color: themed('danger_bg');
-  //     border: 1px solid themed('danger_border');
-  //     border-left: 0.3125rem solid themed('danger_border');
-  //   }
-  //   >.#{$prefix}-notification-icon {
-  //     @include themify($themes) { 
-  //       fill: themed('danger_icon');
-  //   }
-  //   }
-  // }
-
-  // &.#{$prefix}-info {
-  //   @include themify($themes) { 
-  //     background-color: themed('info_bg');
-  //     border: 1px solid themed('info_border');
-  //     border-left: 0.3125rem solid themed('info_border');
-  //   }
-  //   >.#{$prefix}-notification-icon {
-  //     @include themify($themes) { 
-  //       fill: themed('info_icon');
-  //   }
-  //   }
-  // }
-  
 
 
 
@@ -65,7 +34,14 @@ $colorMap: (
     .#{$prefix}-notification-icon-container {
       display: flex;
       align-items: center;
+      @each $key, $value in $colorMap {
+      >.#{$prefix}-notification-icon {
+        @include themify($themes) { 
+          fill: themed($value + '_icon');
+      }
     }
+  }
+}
 
     .#{$prefix}-notification-icon {
       flex-shrink: 0;
