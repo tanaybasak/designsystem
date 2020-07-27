@@ -21,8 +21,16 @@ $colorMap: (
       @include themify($themes) { 
       border-left: 0.3125rem solid themed($value + '_border');
       }
+    
+    .#{$prefix}-toast-icon-container {
+      >.#{$prefix}-notification-icon {
+      @include themify($themes) { 
+        fill: themed($value + '_icon');
+      }
+    }
     }
   }
+}
 }
 
 .#{$prefix}-toast {
@@ -98,12 +106,6 @@ $colorMap: (
   .#{$prefix}-toast-icon-container {
     display: flex;
     align-items: center;
-    @each $key, $value in $colorMap {
-    >.#{$prefix}-notification-icon {
-      @include themify($themes) { 
-        fill: themed($value + '_icon');
-      }
-    }
-  }
+   
   }
 }
