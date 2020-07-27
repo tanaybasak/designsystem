@@ -21,6 +21,18 @@ $colorMap: (
       border-left: 0.3125rem solid themed($value + '_border');
       background-color: themed($value + '_bg');
       }
+
+      >.#{$prefix}-notification-body {
+        >.#{$prefix}-notification-icon-container {
+          >.#{$prefix}-notification-icon {
+          @include themify($themes) { 
+            fill: themed($value + '_icon');
+          }
+        }
+        }
+      }
+    
+
     }
  
 }
