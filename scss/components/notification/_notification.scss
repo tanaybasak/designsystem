@@ -1,10 +1,10 @@
 @import '../../base';
 
 $colorMap: (
-  'info': $info,
-  'danger': $red-3,
-  'success': $success,
-  'warning': $warning,
+  'info': info,
+  'danger': danger,
+  'success': success,
+  'warning': warning,
 );
 
 .#{$prefix}-notification {
@@ -16,11 +16,47 @@ $colorMap: (
 
   @each $key, $value in $colorMap {
     &.#{$prefix}-#{$key} {
-      border: 1px solid $value;
-      border-left: 0.3125rem solid $value;
-      background-color: $white;
+      @include themify($themes) { 
+      border: 1px solid themed($value + '_border');
+      border-left: 0.3125rem solid themed($value + '_border');
+      background-color: themed($value + '_bg');
+      }
     }
+    >.#{$prefix}-notification-icon {
+          @include themify($themes) { 
+            fill: themed($value + '_icon');
+        }
   }
+}
+
+  // &.#{$prefix}-danger {
+  //   @include themify($themes) { 
+  //     background-color: themed('danger_bg');
+  //     border: 1px solid themed('danger_border');
+  //     border-left: 0.3125rem solid themed('danger_border');
+  //   }
+  //   >.#{$prefix}-notification-icon {
+  //     @include themify($themes) { 
+  //       fill: themed('danger_icon');
+  //   }
+  //   }
+  // }
+
+  // &.#{$prefix}-info {
+  //   @include themify($themes) { 
+  //     background-color: themed('info_bg');
+  //     border: 1px solid themed('info_border');
+  //     border-left: 0.3125rem solid themed('info_border');
+  //   }
+  //   >.#{$prefix}-notification-icon {
+  //     @include themify($themes) { 
+  //       fill: themed('info_icon');
+  //   }
+  //   }
+  // }
+  
+
+
 
   &-body {
     display: flex;
