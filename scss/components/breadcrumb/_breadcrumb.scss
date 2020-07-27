@@ -28,7 +28,7 @@ $breadcrumb-margin: 1rem;
             content: '/';
             margin-left: $breadcrumb-margin;
             @include themify($themes) { 
-                color: themed('interactive_text');
+                color: themed('default_text_high');
                 
             }
         }
@@ -43,14 +43,14 @@ $breadcrumb-margin: 1rem;
             &:hover {
                 // color: $dark-blue;
                 @include themify($themes) { 
-                    color: themed('interactive_text');
+                    color: themed('interactive_text_hover');
                 }
                 @include getTextDecorationLine('underline');
             }
 
             &:focus {
                 @include themify($themes) { 
-                    outline: 2px solid themed('interactive_text');
+                    outline: 2px solid themed('interactive_border');
                 }
             }
         }
