@@ -9,16 +9,18 @@
 @import '../../base';
 
 $colorMap: (
-  'info': $info,
-  'danger': $red-3,
-  'success': $success,
-  'warning': $warning,
+  'info': info,
+  'danger': danger,
+  'success': success,
+  'warning': warning,
 );
 
 @mixin getToastThemes() {
   @each $key, $value in $colorMap {
     &-#{$key} {
-      border-left: 0.3125rem solid $value;
+      @include themify($themes) { 
+      border-left: 0.3125rem solid themed($value + '_border');
+      }
     }
   }
 }
@@ -96,5 +98,12 @@ $colorMap: (
   .#{$prefix}-toast-icon-container {
     display: flex;
     align-items: center;
+    @each $key, $value in $colorMap {
+    >.#{$prefix}-notification-icon {
+      @include themify($themes) { 
+        fill: themed($value + '_icon');
+      }
+    }
+  }
   }
 }
