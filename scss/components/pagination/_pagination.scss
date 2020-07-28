@@ -108,8 +108,11 @@ $pagination-text-variant-2: $dark-20;
             }
 
             &:disabled {
-                opacity: .3;
-                background-color: #e6e6e6;
+                // opacity: .3;
+                // background-color: #e6e6e6;
+                @include themify($themes) { 
+                    opacity: themed('disabled_all');
+                }
                 cursor: not-allowed;
             }
         }
