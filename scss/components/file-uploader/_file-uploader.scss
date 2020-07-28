@@ -11,17 +11,18 @@
 .#{$prefix}-form-item {
   .#{$prefix}-label {
     font-size: 0.875rem;
-    // @include getInputColor('color-1', 'color');
+
     @include themify($themes) {
       color: themed('default_text_high');
     }
+
     letter-spacing: 0;
     line-height: 1.125rem;
   }
 
   .#{$prefix}-label-description {
     font-size: 0.875rem;
-    // color: #aaa;
+
     @include themify($themes) {
       color: themed('default_text');
     }
@@ -41,32 +42,55 @@
         @extend %disable;
 
         &.#{$prefix}-primary {
-          background: $blue-6;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            background-color: themed('primary_bg');
+          }
         }
 
         &.#{$prefix}-secondary {
-          color: $blue-6;
-          border: 0.0625rem solid $blue-6;
           cursor: not-allowed;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            color: themed('secondary_text');
+            border: 0.0625rem solid themed('secondary_border');
+          }
         }
+
         &.#{$prefix}-ghost {
-          color: $blue-6;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            color: themed('interactive_text');
+          }
         }
+
         &.#{$prefix}-secondary.#{$prefix}-danger {
-          border: 0.0625rem solid $red-2;
-          color: $red-2;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            color: themed('danger_text');
+            border: 0.0625rem solid themed('danger_border');
+          }
         }
 
         &.#{$prefix}-primary.#{$prefix}-danger {
-          background: $red-2;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            background: themed('danger_bg_inverse');
+          }
         }
+
         &:hover.#{$prefix}-secondary {
           background: unset;
         }
+
         &:hover.#{$prefix}-ghost {
           background: transparent;
-          color: $blue-6;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+            color: themed('interactive_text');
+          }
         }
+
         &:hover.#{$prefix}-secondary.#{$prefix}-danger {
           background: transparent;
         }
@@ -77,34 +101,37 @@
       width: 27.5rem;
       height: 2.5rem;
       display: flex;
-      //border: 1px solid $grey-2;
+
       @include themify($themes) {
         border: 1px solid themed('default_border_xlow');
         background-color: themed('default_bg');
       }
 
       margin-bottom: 1rem;
+
       .#{$prefix}-file-selected-file {
         width: 25rem;
         height: inherit;
       }
+
       .#{$prefix}-file-filename {
         display: block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         padding: 0.5rem;
+
         @include themify($themes) {
           color: themed('default_text_high');
         }
       }
+
       .#{$prefix}-file-close {
-        // @include hcl-close-icon(10, $white, $grey-2);
-        
         @include themify($themes) {
           background-color: themed('default_bg');
           @include hcl-close-icon(10, transparent, themed('default_icon_high'));
         }
+
         height: 2.375rem !important;
         width: 2.5rem !important;
 
