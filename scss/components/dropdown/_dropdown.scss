@@ -25,25 +25,35 @@
   }
 
   &-toggle {
-    background: #efefef;
+   // background: #efefef;
     font-size: 0.875rem;
-    color: $dark-blue;
+   // color: $dark-blue;
     line-height: 1.125rem;
     outline: none;
     width: 100%;
     justify-content: left;
     margin: 0;
-    border-bottom: 1px solid $grey-2;
+  //  border-bottom: 1px solid $grey-2;
     padding-right: 2.5rem;
+    @include themify($themes) {
+      background-color: themed('input_bg');
+      color: themed('input_text');
+      border-bottom: 1px solid themed('input_border');
+    }
 
     &::after {
       content: '';
       width: 0;
       height: 0;
-      border-top: 0.3rem solid $blue;
-      border-right: 0.3rem solid transparent;
+      // border-top: 0.3rem solid $blue;
+     // border-right: 0.3rem solid transparent;
       border-bottom: 0;
-      border-left: 0.3rem solid transparent;
+     // border-left: 0.3rem solid transparent;
+      @include themify($themes) {
+        border-top: 0.3rem solid themed('input_icon');
+        border-right: 0.3rem solid themed('default_bg');
+        border-left: 0.3rem solid themed('default_bg');
+      }
       position: absolute;
       top: 50%;
       right: 0.875rem;
@@ -85,7 +95,7 @@
     height: 2.5rem;
     @include getFontWeight('regular');
     white-space: nowrap;
-    background-color: transparent;
+   // background-color: transparent;
     border: 0;
     font-size: 0.875rem;
     color: $dark-blue;
@@ -96,9 +106,15 @@
     text-overflow: ellipsis;
     line-height: 1;
     cursor: pointer;
+    @include themify($themes) {
+      background: themed('default_bg');
+    }
 
     &:hover {
-      background: rgba(70, 150, 210, 0.1);
+     // background: rgba(70, 150, 210, 0.1);
+      @include themify($themes) {
+        background: themed('interactive_bg_hover');
+      }
     }
 
     &:focus {
@@ -116,13 +132,20 @@
     overflow: hidden;
     white-space: nowrap;
     padding: 0.5125rem 1rem;
-    color: $black;
+    //color: $black;
     text-decoration: none;
 
     text-overflow: ellipsis;
-
+    @include themify($themes) {
+      color: themed('input_text');
+    }
     &:hover {
       text-decoration: none;
+   // background: rgba(70, 150, 210, 0.1);
+   
+         @include themify($themes) {
+           background: themed('interactive_bg_hover');
+         }
     }
 
     &:focus {

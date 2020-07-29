@@ -10,6 +10,7 @@
 
 $breadcrumb-margin: 1rem;
 
+
 .#{$prefix}-breadcrumb {
     display: flex;
     flex-wrap: wrap;
@@ -17,13 +18,22 @@ $breadcrumb-margin: 1rem;
 
     &-item {
         margin-right: $breadcrumb-margin;
-        color: $blue;
+        //color: $blue;
+        
+        @include themify($themes) { 
+            color: themed('interactive_text');
+          }
         font-size: .875rem;
-
         &:not(:last-child)::after {
             content: '/';
             margin-left: $breadcrumb-margin;
+            @include themify($themes) { 
+                color: themed('default_text_high');
+                
+            }
         }
+
+        
 
         .#{$prefix}-link {
             white-space: nowrap;
@@ -31,17 +41,40 @@ $breadcrumb-margin: 1rem;
             border-bottom: .0625rem solid transparent;
 
             &:hover {
-                color: $dark-blue;
+                // color: $dark-blue;
+                @include themify($themes) { 
+                    color: themed('interactive_text_hover');
+                }
                 @include getTextDecorationLine('underline');
+            }
+
+            &:focus {
+                @include themify($themes) { 
+                    outline: 2px solid themed('interactive_border');
+                }
             }
         }
     }
 
     &-item-active {
         .#{$prefix}-link {
-            color: $dark-blue;
+            // color: $dark-blue;
             @include getFontWeight('semibold');
             @include getTextDecorationLine('underline');
+            @include themify($themes) { 
+                color: themed('default_text_high');
+            }
         }
     }
+}
+
+.#{$prefix}-ellipsis.horizontal-ellipsis::after {
+cursor: pointer;
+
+}
+
+.#{$prefix}-ellipsis.horizontal-ellipsis {
+&:hover {
+    @include getTextDecorationLine('underline');
+}
 }

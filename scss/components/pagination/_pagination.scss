@@ -20,12 +20,17 @@ $pagination-text-variant-2: $dark-20;
     @include getFontWeight('regular');
     line-height: $pagination-line-height;
     width: 100%;
-    background-color: $white;
+    // background-color: $white;
+    @include themify($themes) { 
+        background-color: themed('default_bg');
+        border: 1px solid themed('default_border_xlow');
+      }
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: hcl-rem(40px);
-    border: 1px solid $grey-4;
+    // border: 1px solid $grey-4;
+    
 
     &-left,
     &-right {
@@ -91,6 +96,15 @@ $pagination-text-variant-2: $dark-20;
             &:focus {
                 outline: 1px solid $blue;
                 outline-offset: -1px;
+                @include themify($themes) { 
+                    outline: 1px solid themed('interactive_border');
+                }
+            }
+
+            &:hover {
+                @include themify($themes) { 
+                    background-color: themed('interactive_bg_hover');
+                }
             }
 
             &:disabled {
@@ -106,7 +120,10 @@ $pagination-text-variant-2: $dark-20;
 
         .#{$prefix}-pagination-text {
             margin-right: hcl-rem(16px);
-            color: $pagination-text-variant-2;
+            // color: $pagination-text-variant-2;
+            @include themify($themes) { 
+                color: themed('default_text');
+              }
         }
 
         .#{$prefix}-pagination-select-wrapper {
@@ -147,7 +164,10 @@ $pagination-text-variant-2: $dark-20;
 
     .#{$prefix}-pagination-range {
         margin-left: hcl-rem(16px);
-        color: $dark-20;
+        // color: $dark-20;
+        @include themify($themes) { 
+            color: themed('default_text');
+          }
 
         @include media-breakpoint-down(sm) {
             display: none;
@@ -156,7 +176,9 @@ $pagination-text-variant-2: $dark-20;
 
     .#{$prefix}-pagination-label {
         color: $pagination-text-variant-1;
-
+        @include themify($themes) { 
+            color: themed('default_text');
+          }
         @include media-breakpoint-down(sm) {
             font-size: 0.75rem;
             white-space: nowrap;
@@ -192,7 +214,10 @@ $pagination-text-variant-2: $dark-20;
         svg,
         .#{$prefix}-select-arrow {
             pointer-events: none;
-            fill: $blue-7;
+            // fill: $blue-7;
+            @include themify($themes) { 
+                fill: themed('interactive_icon');
+            }
             position: relative;
             top: auto;
             bottom: auto;

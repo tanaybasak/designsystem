@@ -1,26 +1,43 @@
 @import '../../base';
 
 $colorMap: (
-  'info': $info,
-  'danger': $red-3,
-  'success': $success,
-  'warning': $warning,
+  'info': info,
+  'danger': danger,
+  'success': success,
+  'warning': warning,
 );
 
 .#{$prefix}-notification {
   display: inline-flex;
   max-width: 52rem;
   margin: 1rem 0;
-  background-color: #eee;
+  // background-color: #eee;
   z-index: 999;
 
   @each $key, $value in $colorMap {
     &.#{$prefix}-#{$key} {
-      border: 1px solid $value;
-      border-left: 0.3125rem solid $value;
-      background-color: $white;
+      @include themify($themes) { 
+      border: 1px solid themed($value + '_border');
+      border-left: 0.3125rem solid themed($value + '_border');
+      background-color: themed($value + '_bg');
+      }
+
+      >.#{$prefix}-notification-body {
+        >.#{$prefix}-notification-icon-container {
+          >.#{$prefix}-notification-icon {
+          @include themify($themes) { 
+            fill: themed($value + '_icon');
+          }
+        }
+        }
+      }
+    
+
     }
-  }
+ 
+}
+
+
 
   &-body {
     display: flex;
@@ -29,7 +46,14 @@ $colorMap: (
     .#{$prefix}-notification-icon-container {
       display: flex;
       align-items: center;
+      @each $key, $value in $colorMap {
+      >.#{$prefix}-notification-icon {
+        @include themify($themes) { 
+          fill: themed($value + '_icon');
+      }
     }
+  }
+}
 
     .#{$prefix}-notification-icon {
       flex-shrink: 0;
@@ -46,7 +70,10 @@ $colorMap: (
         font-size: 0.875rem;
         line-height: getLineHeight(0.875rem);
         letter-spacing: 0;
-        color: #132730;
+        // color: #132730;
+        @include themify($themes) {  
+          color: themed('default_text');
+        }
         margin-right: 0.5rem;
         font-weight: 600;
       }
@@ -56,7 +83,10 @@ $colorMap: (
         line-height: getLineHeight(0.875rem);
         @include getFontWeight('regular');
         word-break: break-word;
-        color: #aaa;
+        // color: #aaa;
+        @include themify($themes) {  
+          color: themed('default_text');
+        }
       }
     }
   }
