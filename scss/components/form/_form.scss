@@ -34,18 +34,12 @@
 
 input.#{$prefix}-form-control[data-invalid=true],
 textarea.#{$prefix}-textarea[data-invalid=true] {
-    // box-shadow: 0 1px 0 0 $red-3;
-    @include themify($themes) {
-        border-bottom: 1px solid themed('danger_border');
-      }
+    box-shadow: 0 1px 0 0 $red-3;
 }
 
 input.#{$prefix}-form-control[data-invalid=true]:focus,
 textarea.#{$prefix}-textarea[data-invalid=true]:focus {
-    // box-shadow: 0 3px 0 0 $red-3;
-    @include themify($themes) {
-        border-bottom: 1px solid themed('danger_border');
-      }
+    box-shadow: 0 3px 0 0 $red-3;
 }
 
 input.#{$prefix}-form-control[data-invalid=true]~.#{$prefix}-error-msg,
@@ -54,20 +48,14 @@ textarea.#{$prefix}-textarea[data-invalid=true]~.#{$prefix}-error-msg {
 }
 
 .#{$prefix}-helper-text {
-    //@include getInputColor('color-2', 'color');
-    @include themify($themes) {
-        color: themed('default_text_low');
-      }
+    @include getInputColor('color-2', 'color');
     margin-bottom: .5rem;
     font-size: .75rem;
     line-height: getLineHeight(.75rem)
 }
 
 label.#{$prefix}-label {
-   // @include getInputColor('color-1', 'color');
-    @include themify($themes) {
-        color: themed('default_text');
-      }
+    @include getInputColor('color-1', 'color');
     font-weight: $input-label-weight;
     margin-bottom: $label-margin-bottom;
 }
@@ -159,7 +147,6 @@ label.#{$prefix}-label {
         top: 0;
         left: 0;
         position: absolute;
-   
 
         &[disabled]~.#{$prefix}-checkbox-label {
             opacity: .5;
@@ -167,26 +154,18 @@ label.#{$prefix}-label {
         }
 
         &:checked+.#{$prefix}-checkbox-label::before {
-           
-            @include themify($themes) { 
-                border-color: themed('interactive_border');
-                background-color: themed('interactive_icon');
-              }
+            background-color: $blue-7;
+            border-color: $blue-7;
         }
 
         &:checked+.#{$prefix}-checkbox-label::after {
             opacity: 1;
             transform: scale(1) rotate(-45deg);
-           
         }
 
         &:focus+.#{$prefix}-checkbox-label::before {
             outline: 1px solid transparent;
             box-shadow: 0 0 0 2px $checkbox-focus-color;
-            @include themify($themes) { 
-                border-color: themed('interactive_border');
-              }
-
         }
     }
 
@@ -198,9 +177,7 @@ label.#{$prefix}-label {
         margin-bottom: 0;
         padding-left: 1.5rem;
         position: relative;
-        @include themify($themes) { 
-            color: themed('default_text_high');
-          }
+
         &::before {
             box-sizing: border-box;
             content: '';
@@ -209,10 +186,7 @@ label.#{$prefix}-label {
             top: calc(50% - 0.5625rem);
             height: 1.125rem;
             width: 1.125rem;
-            // border: $checkbox-border-width solid $lightGrey;
-            @include themify($themes) { 
-                border: $checkbox-border-width solid themed('default_icon_high');
-              }
+            border: $checkbox-border-width solid $lightGrey;
             background-color: $white;
         }
 
@@ -264,16 +238,11 @@ label.#{$prefix}-label {
 
     &:focus+.#{$prefix}-radio-label::before {
         outline: 1px solid transparent;
-       box-shadow: 0 0 0 2px $checkbox-focus-color;
-       
+        box-shadow: 0 0 0 2px $checkbox-focus-color;
     }
 
     &:disabled+.#{$prefix}-radio-label {
-       // opacity: .5;
-       @include themify($themes) {
-        opacity: themed('disabled_all');
-      }
-       
+        opacity: .5;
         cursor: not-allowed;
     }
 
@@ -286,17 +255,11 @@ label.#{$prefix}-label {
         width: .5rem;
         height: .5rem;
         border-radius: 50%;
-        //@include getInputColor('color-5', 'background-color');
-        @include themify($themes) {
-            background-color: themed('selected_icon');
-          }
+        @include getInputColor('color-5', 'background-color');
     }
 
     &:checked+.#{$prefix}-radio-label::before {
-       // @include getInputColor('color-5', 'border-color');
-        @include themify($themes) {
-            border-color: themed('interactive_border');
-          }
+        @include getInputColor('color-5', 'border-color');
     }
 }
 
@@ -308,9 +271,6 @@ label.#{$prefix}-label {
     margin-bottom: 0;
     position: relative;
     padding-left: 1.5rem;
-    @include themify($themes) {
-        color: themed('default_text_high');
-      }
 
 
     &::before {
@@ -322,21 +282,10 @@ label.#{$prefix}-label {
         background-color: $white;
         border-radius: 50%;
         border: 2px solid #5a6872;
-
         height: 1.125rem;
         width: 1.125rem;
-        @include themify($themes) { 
-            color: themed('default_icon_high');
-            border: 2px solid themed('selected_icon');
-          }
-        
     }
 }
-
-
-
-
-   
 
 .#{$prefix}-radio-group {
     @include groupOption('radio');

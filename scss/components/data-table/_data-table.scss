@@ -1,4 +1,3 @@
-  
 /******************************************************************
  * HCL Confidential
  *
@@ -7,212 +6,212 @@
  *******************************************************************
  */
 
- @import '../../base';
+@import '../../base';
 
- $table-header-bg: #f4f7fb;
- $table-hover-bg: rgba(0, 102, 179, 0.1);
- $zebra-bg: #F5F9FC;
- 
- .#{$prefix}-data-table-wrapper {
-     width: 100%;
-     border: 0.0625rem solid $grey-8;
-     border-bottom: transparent;
-     color: $dark-blue;
- 
-     .#{$prefix}-data-table {
-         width: 100%;
-         display: table;
-         border-spacing: 0;
-         border-collapse: collapse;
- 
-         thead {
-             display: table-header-group;
-         }
- 
-         tr {
-             display: table-row;
-             outline: 0;
-             vertical-align: middle;
- 
-             th,
-             td {
-                 display: table-cell;
-                 padding: 0 0.625rem;
-                 font-size: 0.875rem;
-                 text-align: left;
-                 font-weight: 400;
-                 vertical-align: inherit;
-                 height: 3.125rem;
- 
-                 &:focus {
-                     outline: 0.0625rem solid $blue;
-                     outline-offset: -0.0625rem;
-                 }
-             }
- 
-             td:first-child {
-                 border-left: 0.0625rem solid transparent;
-             }
- 
-             td:last-child {
-                 border-right: 0.0625rem solid transparent;
-             }
- 
-             th {
-                 line-height: 1.5rem;
-                 background-color: $table-header-bg;
- 
-                 .#{$prefix}-sorting {
-                     vertical-align: middle;
-                     margin-left: 0.625rem;
-                     transition: transform 0.3s ease-in-out;
-                     &.desc {
-                         transform: rotate(180deg);
-                     }
-                 }
- 
-                 &.sortable {
-                     cursor: pointer;
-                 }
-             }
- 
-             td {
-                 border-top: 0.0625rem solid transparent;
-                 border-bottom: 0.0625rem solid $grey-8;
-                 background-color: $white;
- 
-                 .overflow-onhover {
-                     visibility: hidden;
- 
-                     &.#{$prefix}-overflow-active {
-                         visibility: visible;
-                     }
- 
-                 }
-             }
-         }
- 
-         tbody {
-             display: table-row-group;
- 
-             tr:hover {
- 
-                 td {
-                     background-color: $table-hover-bg;
-                     border-top: 0.0625rem solid $blue;
-                     border-bottom: 0.0625rem solid $blue;
-                 }
- 
-                 td:first-child {
-                     border-left: 0.0625rem solid $blue;
-                 }
- 
-                 td:last-child {
-                     border-right: 0.0625rem solid $blue;
-                 }
- 
-                 .overflow-onhover {
-                     visibility: visible;
-                 }
-             }
-         }
- 
-         &.#{$prefix}-data-table-zebra {
-             tbody {
-                 tr {
-                     &:nth-child(even) {
-                         td {
-                             background-color: $zebra-bg;
-                         }
-                     }
- 
-                     &:nth-child(odd) {
-                         td {
-                             background-color: $white;
-                         }
-                     }
- 
-                     &:hover {
-                         td {
-                             background-color: $table-hover-bg;
-                         }
- 
-                     }
-                 }
-             }
-         }
- 
-         &.#{$prefix}-data-table-compact {
-             tbody {
-                 tr {
-                     td {
-                         height: 1.5rem;
-                     }
-                 }
-             }
-         }
- 
-         &.#{$prefix}-data-table-tall {
-             tbody {
-                 tr {
-                     td {
-                         height: 4rem;
-                     }
-                 }
-             }
-         }
- 
-         .sticky-left-div {
-             left: 0;
-         }
- 
-         .sticky-right-div {
-             right: 0;
-         }
- 
-         thead tr th.sticky-div {
-             position: sticky;
-             z-index: 3;
-         }
- 
-         tbody tr td.sticky-div {
-             position: sticky;
-             z-index: 1;
-         }
-     }
- 
-     &.data-table-sticky-header {
-         overflow-x: auto;
- 
-         &.overflow-unset {
-             overflow-x: unset;
-         }
- 
-         .#{$prefix}-data-table {
-             border-collapse: separate;
- 
-             th {
-                 top: 0;
-                 z-index: 2;
-                 position: sticky;
-             }
-         }
-     }
- 
-     &.#{$prefix}-data-table-borderless {
-         border: 0.0625rem solid transparent;
- 
-         .#{$prefix}-data-table-zebra tr td {
-             border-bottom-color: transparent;
-         }
-     }
- 
-     .#{$prefix}-expand-row {
-         transform: rotate(270deg);
-         transition: all 0.3s ease-in-out;
-     }
- 
-     .#{$prefix}-collapse-row {
-         transition: all 0.3s ease-in-out;
-     }
- }
+$table-header-bg: #f4f7fb;
+$table-hover-bg: rgba(0, 102, 179, 0.1);
+$zebra-bg: #F5F9FC;
+
+.#{$prefix}-data-table-wrapper {
+    width: 100%;
+    border: 0.0625rem solid $grey-8;
+    border-bottom: transparent;
+    color: $dark-blue;
+
+    .#{$prefix}-data-table {
+        width: 100%;
+        display: table;
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        thead {
+            display: table-header-group;
+        }
+
+        tr {
+            display: table-row;
+            outline: 0;
+            vertical-align: middle;
+
+            th,
+            td {
+                display: table-cell;
+                padding: 0 0.625rem;
+                font-size: 0.875rem;
+                text-align: left;
+                font-weight: 400;
+                vertical-align: inherit;
+                height: 3.125rem;
+
+                &:focus {
+                    outline: 0.0625rem solid $blue;
+                    outline-offset: -0.0625rem;
+                }
+            }
+
+            td:first-child {
+                border-left: 0.0625rem solid transparent;
+            }
+
+            td:last-child {
+                border-right: 0.0625rem solid transparent;
+            }
+
+            th {
+                line-height: 1.5rem;
+                background-color: $table-header-bg;
+
+                .#{$prefix}-sorting {
+                    vertical-align: middle;
+                    margin-left: 0.625rem;
+                    transition: transform 0.3s ease-in-out;
+                    &.desc {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &.sortable {
+                    cursor: pointer;
+                }
+            }
+
+            td {
+                border-top: 0.0625rem solid transparent;
+                border-bottom: 0.0625rem solid $grey-8;
+                background-color: $white;
+
+                .overflow-onhover {
+                    visibility: hidden;
+
+                    &.#{$prefix}-overflow-active {
+                        visibility: visible;
+                    }
+
+                }
+            }
+        }
+
+        tbody {
+            display: table-row-group;
+
+            tr:hover {
+
+                td {
+                    background-color: $table-hover-bg;
+                    border-top: 0.0625rem solid $blue;
+                    border-bottom: 0.0625rem solid $blue;
+                }
+
+                td:first-child {
+                    border-left: 0.0625rem solid $blue;
+                }
+
+                td:last-child {
+                    border-right: 0.0625rem solid $blue;
+                }
+
+                .overflow-onhover {
+                    visibility: visible;
+                }
+            }
+        }
+
+        &.#{$prefix}-data-table-zebra {
+            tbody {
+                tr {
+                    &:nth-child(even) {
+                        td {
+                            background-color: $zebra-bg;
+                        }
+                    }
+
+                    &:nth-child(odd) {
+                        td {
+                            background-color: $white;
+                        }
+                    }
+
+                    &:hover {
+                        td {
+                            background-color: $table-hover-bg;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        &.#{$prefix}-data-table-compact {
+            tbody {
+                tr {
+                    td {
+                        height: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &.#{$prefix}-data-table-tall {
+            tbody {
+                tr {
+                    td {
+                        height: 4rem;
+                    }
+                }
+            }
+        }
+
+        .sticky-left-div {
+            left: 0;
+        }
+
+        .sticky-right-div {
+            right: 0;
+        }
+
+        thead tr th.sticky-div {
+            position: sticky;
+            z-index: 3;
+        }
+
+        tbody tr td.sticky-div {
+            position: sticky;
+            z-index: 1;
+        }
+    }
+
+    &.data-table-sticky-header {
+        overflow-x: auto;
+
+        &.overflow-unset {
+            overflow-x: unset;
+        }
+
+        .#{$prefix}-data-table {
+            border-collapse: separate;
+
+            th {
+                top: 0;
+                z-index: 2;
+                position: sticky;
+            }
+        }
+    }
+
+    &.#{$prefix}-data-table-borderless {
+        border: 0.0625rem solid transparent;
+
+        .#{$prefix}-data-table-zebra tr td {
+            border-bottom-color: transparent;
+        }
+    }
+
+    .#{$prefix}-expand-row {
+        transform: rotate(270deg);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .#{$prefix}-collapse-row {
+        transition: all 0.3s ease-in-out;
+    }
+}
