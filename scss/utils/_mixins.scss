@@ -276,34 +276,26 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
         width: 100%;
         height: $input-height;
         padding: $input-padding-y $input-padding-x;
-        // @include getInputColor('color-1', 'color');
-        // @include getInputColor('color-3', 'background-color');
-        @include themify($themes) {
-            color: themed('input_text');
-            background-color: themed('input_bg');
-            border-bottom: 1px solid themed('input_border');
-          }
+        @include getInputColor('color-1', 'color');
+        @include getInputColor('color-3', 'background-color');
         border: none;
-       // box-shadow: 0 1px 0 0 #5a6872;
-        
+        box-shadow: 0 1px 0 0 #5a6872;
+        border-bottom: 1px solid transparent;
 
         &:focus {
             outline: none;
-            @include themify($themes) {
-                box-shadow: 0 1px 0 0 themed('interactive_border');
-              }
+            box-shadow: 0 3px 0 0 $blue-7;
+
             &~label.#{$prefix}-label {
                 color: $blue-7;
             }
         }
 
         &[disabled] {
-           // opacity: .5;
+            opacity: .5;
             cursor: not-allowed;
-           // background-color: rgba($blue-secondary, 0.5);
-            @include themify($themes) {
-                background-color: rgba($blue-secondary, themed('disabled_all'));
-              }
+            background-color: rgba($blue-secondary, 0.5);
+
             &~label,
             &~.#{$prefix}-error-msg,
             &~.#{$prefix}-helper-text {
@@ -324,10 +316,7 @@ $inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'c
             @include getFontWeight('regular');
             font-size: .75rem;
             line-height: getLineHeight(.75rem);
-           // color: $red-3;
-           @include themify($themes) {
-            color: themed('danger_text');
-          }
+            color: $red-3;
             margin-top: 0.25rem;
         }
     }

@@ -2,11 +2,7 @@
 
 .#{$prefix}-datePicker {
   width: 9.4375rem;
-  &-label {
-    @include themify($themes) {
-      color: themed('default_text');
-  }
-  }
+
   &-container {
     position: relative;
     display: flex;
@@ -16,10 +12,7 @@
       position: absolute;
       top: 0.75rem;
       left: 1rem;
-     // fill: $blue-7;
-     @include themify($themes) {
-      fill: themed('input_icon');
-      }
+      fill: $blue-7;
       z-index: 1;
       cursor: pointer;
     }
@@ -32,23 +25,17 @@
       padding: 0 1rem 0 3rem;
       border: none;
       height: 2.5rem;
-      // border-bottom: 0.0625rem solid $dark-blue;
-    //  background-color: rgba(70, 150, 210, 0.05);
+      border-bottom: 0.0625rem solid $dark-blue;
+      background-color: rgba(70, 150, 210, 0.05);
       outline: none;
       font-size: 0.875rem;
       line-height: 1.125rem;
       cursor: pointer;
-      @include themify($themes) {
-        color: themed('input_text');
-        border-bottom:  0.0625rem solid themed('input_border');
-        background-color: themed('input_bg');
-    }
+
       &[disabled] {
         opacity: 0.5;
         cursor: not-allowed;
-        @include themify($themes) { 
-          background-color: themed('disabled_all');
-        }
+        background-color: rgba(70, 150, 210, 0.5);
 
         &~svg {
           cursor: not-allowed;
@@ -151,7 +138,6 @@
       border-radius: 0;
       border: none;
       margin: 0.125rem;
-      
     }
   }
 
@@ -185,16 +171,12 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      @include themify($themes) {
-        color: themed('active_text');
-    }
     }
   }
 
   &-date {
     &:hover {
       background-color: rgba(85, 150, 230, 0.1);
-      
     }
 
     &-picked {
@@ -233,10 +215,7 @@
 
   &-error {
     display: none;
-    @include themify($themes) {
-      color: themed('danger_text');
-      border-bottom: themed('danger_bottom');
-  }
+    color: $red-3;
     margin-top: 0.25rem;
     font-size: 0.75rem;
     letter-spacing: 0;

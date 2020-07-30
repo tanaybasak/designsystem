@@ -14,45 +14,26 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 0.5rem 1.5rem;
-  // background-color: $blue;
-  @include themify($themes) { 
-    background-color: themed('primary_bg');
-}
+  background-color: $blue;
 
   &-list {
     > .#{$prefix}-btn {
-      // color: $white;
-      @include themify($themes) { 
-        color: themed('primary_text');
-    }
+      color: $white;
       margin: 0;
 
       > .#{$prefix}-btn-icon {
-        @include themify($themes) { 
-          fill: themed('primary_icon');
+        fill: $white;
       }
-      }
-      
-      // &:hover,
+
+      &:hover,
       &:focus {
-        // background-color: $white;
-        @include themify($themes) { 
-          border: 0.0625rem solid themed('interactive_focus');
-              }
-        
-        outline: none;
+        background-color: $white;
+        color: $blue;
 
         > .#{$prefix}-btn-icon {
-          @include themify($themes) { 
-            fill: themed('primary_icon');
-        }
+          fill: $blue;
         }
       }
-      &:hover {
-        @include themify($themes) { 
-          background-color: themed('primary_bg_hover');
-      }
-    }
     }
   }
 
@@ -61,26 +42,17 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    @include themify($themes) { 
-      color: themed('primary_text');
-  }
+    color: $white;
 
     button {
       color: $white;
-      padding: 10;
+      padding: 0;
       margin: 0;
       border-bottom: 0.0625rem solid transparent;
-      &:hover {
-        @include themify($themes) { 
-          background-color: themed('primary_bg_hover');
-      }
-      }
-     // &:hover,
+
+      &:hover,
       &:focus {
-        @include themify($themes) { 
-          border: 0.0625rem solid themed('interactive_focus');
-              }
-        
+        border-bottom: 0.0625rem solid $white;
         outline: none;
       }
     }
@@ -88,9 +60,7 @@
 
   &-text {
     margin-right: 1.5rem;
-    @include themify($themes) { 
-      color: themed('primary_text');
-  }
+    color: $white;
   }
 
   &-hide {

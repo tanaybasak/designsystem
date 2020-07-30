@@ -8,16 +8,14 @@
     border: 1px solid transparent;
     margin-top: .5rem;
     margin-bottom: .5rem;
-    // background: transparent;
-    // color: $black;
+    background: transparent;
+    color: $black;
 }
 
 .#{$prefix}-btn {
     @extend %button;
-    // color: $white;
-    // background: $blue;
-
-
+    color: $white;
+    background: $blue;
     padding: .625rem 1rem;
     height: 2.5rem;
     display: inline-flex;
@@ -34,139 +32,79 @@
 
 a.#{$prefix}-primary {
     &:hover {
-    @include themify($themes) { 
-        color: themed('primary_text');
-    }
+        color: $white;
     }
 }
 
 .#{$prefix}-primary {
-    @include themify($themes) { 
-        background-color: themed('primary_bg');
-        color: themed('primary_text');
-    }
+    background: $blue;
+    color: $white;
 
     &:hover {
-        // background: $blue-secondary;
-        @include themify($themes) { 
-            background-color: themed('primary_bg_hover');
-        }
+        background: $blue-secondary;
     }
 
     &:focus {
-        // background: $blue-5;
-        outline-offset: 2px;
-        @include themify($themes) { 
-            outline: 0.0625rem solid themed('primary_bg_hover');
-            
-        }
+        background: $blue-5;
     }
 
     &:disabled,
     &[disabled=disabled] {
-        @include themify($themes) { 
-           opacity: themed('disabled_all');
-        }
-        cursor: not-allowed;
-        &:hover {
-            @include themify($themes) { 
-                background-color: themed('primary_bg');
-        }
-    }
-     
-
+        background: $blue-6;
+        @extend %disable;
     }
 
     &.#{$prefix}-danger {
-        // background: $red;
-        @include themify($themes) { 
-            background-color: themed('danger_bg_inverse');
-            color:  themed('default_text_inverse');
-        }
+        background: $red;
 
         &:hover {
-            @include themify($themes) { 
-                background-color: themed('danger_bg_inverse_hover');
-                color:  themed('default_text_inverse');
-            }
-            >.#{$prefix}-btn-icon {
-                fill: $white;
-            }
+            background: $red-1;
+            color: $white;
         }
 
         &:focus {
-            // background: $red-1;
-            outline-offset: 2px;
-            @include themify($themes) { 
-                outline: 0.0625rem solid themed('interactive_border');
-            }
-            >.#{$prefix}-btn-icon {
-                fill: $white;
-            }
+            background: $red-1;
         }
 
         &:disabled,
         &[disabled=disabled] {
-            // @extend %disable;
-            // background: $red-2;
+            @extend %disable;
+            background: $red-2;
 
             &:hover {
-                @include themify($themes) { 
-                    background-color: themed('danger_bg_inverse');
-                }
+                background: $red-2;
             }
-            @include themify($themes) { 
-                opacity: themed('disabled_all');
-            }
-            cursor: not-allowed;
         }
     }
 }
 
 .#{$prefix}-secondary {
-    //background: transparent;
-    @include themify($themes) { 
-        background-color: themed('secondary_bg');
-        color: themed('secondary_text');
-        border: 0.0625rem solid themed('secondary_border');
-    }
-    // color: $blue;
-    // border: 0.0625rem solid $blue;
+    background: transparent;
+    color: $blue;
+    border: 0.0625rem solid $blue;
 
-    &:hover,&:focus  {
-        @include themify($themes) { 
-            background-color: themed('secondary_bg_hover');
-            color: themed('secondary_text');
-            border: 0.0625rem solid themed('secondary_border');
-        }
-
-        >.#{$prefix}-btn-icon {
-            fill:  $blue-6;
-        }
-    }
+    &:hover,
     &:focus {
-        @include themify($themes) { 
-            
-            border: 0.0625rem solid themed('interactive_border');
-        }
+        background: $blue;
+        color: $white;
+        border: 0.0625rem solid $blue;
 
         >.#{$prefix}-btn-icon {
-            fill:  $blue-6;
+            fill: $white;
         }
     }
 
     &:disabled,
     &[disabled=disabled] {
-        
-        &:hover {
-            @include themify($themes) { 
-                background-color: themed('secondary_bg');
-            }
-        }
-        @include themify($themes) { 
-            opacity: themed('disabled_all');
-        }
+        color: $blue-6;
+        border: 0.0625rem solid $blue-6;
         cursor: not-allowed;
+
+        &:hover {
+            background: transparent;
+            color: $blue-6;
+            border: 0.0625rem solid $blue-6;
+        }
 
         >.#{$prefix}-btn-icon {
             fill: $blue-6;
@@ -175,149 +113,74 @@ a.#{$prefix}-primary {
 
 
     >.#{$prefix}-btn-icon {
-        fill: $blue-6;
+        fill: $blue;
     }
 
     &.#{$prefix}-danger {
         background: transparent;
-        @include themify($themes) { 
-            border: 0.0625rem solid themed('danger_border');
-            color: themed('danger_text');
-        }
-        // color: $red;
-        // border: 0.0625rem solid $red;
+        color: $red;
+        border: 0.0625rem solid $red;
 
-
-
-
-        &:hover{
-            // background: $red-1;
-            // color: $white;
-
-            @include themify($themes) { 
-                background-color: themed('danger_bg');
-                color: themed('danger_text');
-                border: 0.0625rem solid themed('danger_border');
-            }
-
-           
-        }
-
+        &:hover,
         &:focus {
-            // background: $red-1;
-            // color: $white;
-            @include themify($themes) { 
-                background-color: themed('danger_bg');
-                color: themed('danger_text');
-                border: 0.0625rem solid themed('interactive_border');
-            }
+            background: $red-1;
+            color: $white;
 
             >.#{$prefix}-btn-icon {
-                fill:  $blue-6;
+                fill: $white;
             }
         }
 
         &:disabled,
         &[disabled=disabled] {
-            // border: 0.0625rem solid $red-2;
-            // color: $red-2;
-            // @extend %disable;
+            border: 0.0625rem solid $red-2;
+            color: $red-2;
+            @extend %disable;
 
             &:hover {
-                @include themify($themes) { 
-                    background-color: themed('secondary_bg');
-                    opacity: themed('disabled_all');
-
-                }
-                // border: 0.0625rem solid $red-2;
-                // color: $red-2;
+                background: transparent;
+                border: 0.0625rem solid $red-2;
+                color: $red-2;
 
                 >.#{$prefix}-btn-icon {
-                    fill: $blue-6;
+                    fill: $red;
                 }
             }
-              // @extend %disable;
-        @include themify($themes) { 
-            opacity: themed('disabled_all');
-        }
-        cursor: not-allowed;
-        >.#{$prefix}-btn-icon {
-            fill: $blue-6;
-        }
-
         }
 
         >.#{$prefix}-btn-icon {
-            fill: $blue;
+            fill: $red;
         }
     }
 }
 
 .#{$prefix}-ghost {
-    // background: transparent;
-    @include themify($themes) { 
-        background-color: themed('interactive_bg');
-        color: themed('interactive_text');
-    }
-    // color: $blue;
+    background: transparent;
+    color: $blue;
     border: none;
-   
-    &:hover{
-        // background: $blue;
-        // color: $white;
-        @include themify($themes) { 
-            background-color: themed('interactive_bg_hover');
-            color: themed('interactive_text');
-        }
 
-        >.#{$prefix}-btn-icon {
-            // fill: $white;
-            @include themify($themes) { 
-                fill: themed('interactive_icon');
-            }
-        }
-    }
-
-
-    
-
-
+    &:hover,
     &:focus {
-        // background: $blue;
-        // color: $white;
-        @include themify($themes) { 
-            background-color: themed('interactive_bg_hover');
-            color: themed('interactive_text');
-           border: 0.0625rem solid themed('interactive_border');
-        }
+        background: $blue;
+        color: $white;
 
         >.#{$prefix}-btn-icon {
-            @include themify($themes) { 
-                fill: themed('interactive_icon');
-            }
+            fill: $white;
         }
     }
-    
 
     &:disabled,
     &[disabled] {
-        // color: $blue-6;
-        // @extend %disable;
-        @include themify($themes) { 
-            opacity: themed('disabled_all');
-        }
-        cursor: not-allowed;
-        
+        color: $blue-6;
+        @extend %disable;
 
         &:hover {
-            @include themify($themes) { 
-                background-color: themed('interactive_bg');
-            }
-           // color: $blue-6;
+            background: transparent;
+            color: $blue-6;
 
-            // >.#{$prefix}-btn-icon {
-            //     fill: $blue;
-            // }
+            >.#{$prefix}-btn-icon {
+                fill: $blue;
+            }
         }
     }
 

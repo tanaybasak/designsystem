@@ -40,10 +40,7 @@
   @include spinner(default);
 
   circle {
-    //stroke: $teal-40;
-    @include themify($themes) {
-      stroke: themed('default_border');;
-    }
+    stroke: $teal-40;
   }
 }
 
@@ -51,9 +48,7 @@
   @include spinner(inline);
 
   circle {
-    @include themify($themes) {
-      stroke: themed('default_border');;
-    }
+    stroke: $dark-blue;
   }
 }
 
