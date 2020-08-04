@@ -63,7 +63,6 @@
     }
 
     button {
-      color: $white;
       padding: 10;
       margin: 0;
       border-bottom: 0.0625rem solid transparent;
@@ -73,7 +72,8 @@
       }
       &:hover {
         @include themify($themes) {
-          background-color: themed('primary_bg_hover');
+          color: themed('primary_text');
+          background-color: themed('primary_bg_hover')!important;
         }
       }
 
