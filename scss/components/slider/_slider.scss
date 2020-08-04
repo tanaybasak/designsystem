@@ -1,7 +1,5 @@
 @import '../../base';
 
-$slider-thumb-hover: #00518f;
-
 .#{$prefix}-slider-wrapper {
   width: 100%;
   --progressPercent: 0%;
@@ -17,6 +15,9 @@ $slider-thumb-hover: #00518f;
     .#{$prefix}-slider-top-range {
       display: inline-flex;
       margin: 0 0.5rem;
+      @include themify($themes) {
+        color: themed('default_text_high');
+      }
     }
 
     &.on-hover {
@@ -56,6 +57,10 @@ $slider-thumb-hover: #00518f;
         line-height: 1.5rem;
         text-align: center;
         background: $white;
+        // @include themify($themes) {
+        //   background: themed('interactive_text');
+        //   border: 1px solid themed('interactive_text');
+        // }
         color: $black;
         font-size: 0.75rem;
         display: block;
@@ -106,19 +111,12 @@ $slider-thumb-hover: #00518f;
 
         &::-webkit-slider-runnable-track {
           height: 0.25rem;
-          background-color: $light-60;
 
-          background: linear-gradient(
-            90deg,
-            $blue var(--progressPercent),
-            $light-60 var(--progressPercent)
-          );
-
-          &:hover {
+          @include themify($themes) {
             background: linear-gradient(
               90deg,
-              $slider-thumb-hover var(--progressPercent),
-              $light-60 var(--progressPercent)
+              themed('primary_border') var(--progressPercent),
+              themed('default_border_low') var(--progressPercent)
             );
           }
         }
@@ -127,39 +125,46 @@ $slider-thumb-hover: #00518f;
           width: 1.5rem;
           height: 1.5rem;
           border-radius: 50%;
-          background-color: $blue;
           appearance: none;
           margin-top: -0.625rem;
-
-          &:hover {
-            background: $slider-thumb-hover;
+          @include themify($themes) {
+            background-color: themed('primary_bg');
           }
         }
 
         &:focus::-webkit-slider-thumb {
-          box-shadow: 0 0 0 0.1875rem $focus-outline-color;
+          @include themify($themes) {
+            box-shadow: 0 0 0 0.1875rem themed('interactive_border');
+            border: 0.0625rem solid themed('default_bg');
+          }
         }
 
         &:focus::-moz-range-thumb {
-          box-shadow: 0 0 0 0.1875rem $focus-outline-color;
+          @include themify($themes) {
+            box-shadow: 0 0 0 0.1875rem themed('interactive_border');
+            border: 0.0625rem solid themed('default_bg');
+          }
         }
 
         &::-moz-range-track {
           height: 0.25rem;
-          background-color: $light-60;
-
-          background: linear-gradient(
-            90deg,
-            $blue var(--progressPercent),
-            $light-60 var(--progressPercent)
-          );
-
-          &:hover {
+          @include themify($themes) {
+            background-color: themed('primary_border');
             background: linear-gradient(
               90deg,
-              $slider-thumb-hover var(--progressPercent),
-              $light-60 var(--progressPercent)
+              themed('primary_border') var(--progressPercent),
+              themed('default_border_low') var(--progressPercent)
             );
+          }
+
+          &:hover {
+            @include themify($themes) {
+              background: linear-gradient(
+                90deg,
+                themed('primary_border') var(--progressPercent),
+                themed('default_border_low') var(--progressPercent)
+              );
+            }
           }
         }
 
@@ -167,13 +172,11 @@ $slider-thumb-hover: #00518f;
           width: 1.5rem;
           height: 1.5rem;
           border-radius: 50%;
-          background-color: $blue;
+          @include themify($themes) {
+            background-color: themed('primary_bg');
+          }
           margin-top: 0;
           border: 0;
-
-          &:hover {
-            background: $slider-thumb-hover;
-          }
         }
 
         &:disabled {
@@ -188,20 +191,23 @@ $slider-thumb-hover: #00518f;
 
         &::-ms-track {
           height: 0.25rem;
-          background-color: $light-60;
-
-          background: linear-gradient(
-            90deg,
-            $blue var(--progressPercent),
-            $light-60 var(--progressPercent)
-          );
-
-          &:hover {
+          @include themify($themes) {
+            background-color: themed('primary_border');
             background: linear-gradient(
               90deg,
-              $slider-thumb-hover var(--progressPercent),
-              $light-60 var(--progressPercent)
+              themed('primary_border') var(--progressPercent),
+              themed('default_border_low') var(--progressPercent)
             );
+          }
+
+          &:hover {
+            @include themify($themes) {
+              background: linear-gradient(
+                90deg,
+                themed('primary_border') var(--progressPercent),
+                themed('default_border_low') var(--progressPercent)
+              );
+            }
           }
         }
 
@@ -209,13 +215,11 @@ $slider-thumb-hover: #00518f;
           width: 1.5rem;
           height: 1.5rem;
           border-radius: 50%;
-          background-color: $blue;
+          @include themify($themes) {
+            background-color: themed('primary_bg');
+          }
 
           margin-top: 0;
-
-          &:hover {
-            background: $slider-thumb-hover;
-          }
         }
       }
     }
