@@ -1,0 +1,29 @@
+@import '../../base';
+
+.hcl-overlay-container {
+  position: absolute;
+  border: 0.0625rem solid #dfe3e6;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 999;
+  background: white;
+}
+
+.hcl-overlay-container.hcl-overlay-container-show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hcl-overlay-container.hcl-overlay-container-scroll {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.hcl-overlay-container.hcl-overlay-container-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
