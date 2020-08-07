@@ -1,3 +1,6 @@
 window.patron.overflow('#custom-overflow-menu', {
-  onChange: () => {}
+  attachElementToBody: true,
+  onChange: e => {
+    console.log(e.currentTarget);
+  }
 });

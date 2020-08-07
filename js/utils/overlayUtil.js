@@ -1,5 +1,9 @@
 const overlayAdjustment = 2;
-export const changeOverlayPosition = (overlayContainerRef, direction, targetEl) => {
+export const changeOverlayPosition = (
+  overlayContainerRef,
+  direction,
+  targetEl
+) => {
   const elementInfo = overlayContainerRef.getBoundingClientRect();
 
   const positions = getPositions(
@@ -95,7 +99,13 @@ export const getDirection = (
   return newDirection;
 };
 
-export const getPositions = (propsDirection, width, height, targetEl) => {
+export const getPositions = (
+  propsDirection,
+  width,
+  height,
+  targetEl,
+  attachElementToBody
+) => {
   console.log(width);
   const parentElementPosition = targetEl.getBoundingClientRect();
 
@@ -106,37 +116,88 @@ export const getPositions = (propsDirection, width, height, targetEl) => {
     parentElementPosition
   );
   console.log(propsDirection, 'New Direction', direction);
+
   let left = 0;
   let top = 0;
-  switch (direction) {
-    case 'bottom-left': {
-      left = parentElementPosition.left;
-      top = parentElementPosition.bottom;
-      break;
-    }
-    case 'bottom-right': {
-      left = parentElementPosition.right - width;
-      top = parentElementPosition.bottom;
+  if (attachElementToBody) {
+    switch (direction) {
+      case 'bottom-left': {
+        left = parentElementPosition.left;
+        top = parentElementPosition.bottom;
+        break;
+      }
+      case 'bottom-right': {
+        left = parentElementPosition.right - width;
+        top = parentElementPosition.bottom;
 
-      break;
-    }
-    case 'top-left': {
-      left = parentElementPosition.left;
-      top = parentElementPosition.top - height;
+        break;
+      }
+      case 'top-left': {
+        left = parentElementPosition.left;
+        top = parentElementPosition.top - height;
 
-      break;
-    }
-    case 'top-right': {
-      left = parentElementPosition.right - width;
-      top = parentElementPosition.top - height;
+        break;
+      }
+      case 'top-right': {
+        left = parentElementPosition.right - width;
+        top = parentElementPosition.top - height;
 
-      break;
+        break;
+      }
     }
+
+    return {
+      left: left + window.pageXOffset + 'px',
+      top: top + window.pageYOffset + 'px',
+      direction
+    };
+  } else {
+    switch (direction) {
+      case 'bottom-left': {
+        left = '0px';
+        top =
+          parentElementPosition.height +
+          (parentElementPosition.top -
+            targetEl.parentElement.getBoundingClientRect().top) +
+          'px';
+        break;
+      }
+      case 'bottom-right': {
+        left = parentElementPosition.width - width + 'px';
+        top =
+          parentElementPosition.height +
+          (parentElementPosition.top -
+            targetEl.parentElement.getBoundingClientRect().top) +
+          'px';
+
+        break;
+      }
+      case 'top-left': {
+        left = '0px';
+        top =
+          -height +
+          (parentElementPosition.top -
+            targetEl.parentElement.getBoundingClientRect().top) +
+          'px';
+
+        break;
+      }
+      case 'top-right': {
+        left = parentElementPosition.width - width + 'px';
+        top =
+          -height +
+          (parentElementPosition.top -
+            targetEl.parentElement.getBoundingClientRect().top) +
+          'px';
+
+        break;
+      }
+    }
+
+    return {
+      left: left,
+      top: top,
+      direction
+    };
   }
-
-  return {
-    left: left + window.pageXOffset + 'px',
-    top: top + window.pageYOffset + 'px',
-    direction
-  };
 };

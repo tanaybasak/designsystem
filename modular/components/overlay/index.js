@@ -30,8 +30,8 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  overlay: function(selector) {
-    attachElements(selector, null, Overlay);
+  overlay: function(selector, options) {
+    attachElements(selector, options, Overlay);
   }
 };
 
