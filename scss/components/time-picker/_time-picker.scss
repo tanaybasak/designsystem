@@ -22,7 +22,42 @@
             width: 5.25rem;
             @include themify($themes) {
                 background-color: themed('input_bg');
+                border-bottom: 1px solid themed('input_border');
+                color: themed('inout_text_low');
             }
+
+            &:focus {
+                @include themify($themes) {
+                   
+                    border-bottom: 1px solid themed('interactive_border');
+                    color: themed('inout_text_low');
+                }
+            }
+            &:active {
+                @include themify($themes) {
+                   
+                    border-bottom: 1px solid themed('input_border');
+                    color: themed('input_text');
+                }
+            }
+
+            &:disabled,
+            &[disabled=disabled] { 
+                @include themify($themes) {
+                   cursor: not-allowed;
+                    opacity: themed('disabled_all');
+                }
+            }
+        }
+
+       
+    }
+
+    &:disabled,
+    &[disabled=disabled] { 
+        @include themify($themes) {
+           cursor: not-allowed;
+            opacity: themed('disabled_all');
         }
     }
 }
