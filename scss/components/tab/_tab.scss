@@ -6,133 +6,135 @@
 @import '../../base';
 
 .#{$prefix}-tab {
-    margin-top: hcl-rem(5px);
+  margin-top: hcl-rem(5px);
 }
 
 .#{$prefix}-tabs-nav {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    // color: $default_text;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
-    @include themify($themes) {
-        color: themed('default_text');
+  &-item {
+    background: transparent;
+    padding: 0.75rem 0;
+
+    &.#{$prefix}-tabs-disabled {
+      cursor: not-allowed;
+      > a {
+        outline: none;
+        cursor: not-allowed;
       }
 
-    &-item {
-        background: transparent;
-        padding: .75rem 0;
-
-        &.active {
-            >a {
-                outline: none;
-            }
-
-            // border-bottom: 2px solid $selected_border;
-            // color: $default_text_high;
-            @include themify($themes) {
-                border-bottom: 2px solid themed('active_border');
-                color: themed('default_text_high');
-            }
-           
-        }
-
-        &.#{$prefix}-tabs-disabled {
-            >a:focus {
-                outline: none;
-            }
-        }
-
-        &:hover {
-            cursor: pointer;
-            >a {
-                // color: $interactive_text_hover;
-                @include themify($themes) {
-                    color: themed('interactive_text_hover');
-                  }
-                outline: none;
-            }
-        }
-    }
-
-    &-item+&-item {
-        margin-left: 3.125rem;
-    }
-
-    &-link {
-        text-decoration: none;
-        display: inline-block;
-        // color: $default_text;
+      @include themify($themes) {
+        opacity: themed('disabled_all');
+      }
+      &:focus {
+        outline: none;
+      }
+      &:hover {
         @include themify($themes) {
-            color: themed('default_text');
-          }
-
-        &:hover,
-        &:active,
-        &:visited,
-        &:focus {
-            text-decoration: none;
+          border-bottom: transparent;
         }
-
-        &:hover {
-            // color: $interactive_text_hover;
-            @include themify($themes) {
-                color: themed('interactive_text_hover');
-              }
-        }
+      }
     }
+
+    &.active {
+      > a {
+        outline: none;
+        @include themify($themes) {
+          color: themed('default_text_high');
+        }
+      }
+      @include themify($themes) {
+        border-bottom: 2px solid themed('active_border');
+      }
+      &:focus {
+        border-bottom: none;
+      }
+    }
+
+    &:focus {
+      @include themify($themes) {
+        outline: 2px solid themed('interactive_border');
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      > a {
+        outline: none;
+        @include themify($themes) {
+          color: themed('interactive_text');
+        }
+      }
+      @include themify($themes) {
+        border-bottom: 2px solid themed('interactive_border');
+      }
+    }
+  }
+
+  &-item + &-item {
+    margin-left: 3.125rem;
+  }
+
+  &-link {
+    text-decoration: none;
+    display: inline-block;
+    @include themify($themes) {
+      color: themed('interactive_text');
+    }
+
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 .#{$prefix}-tabs-panel {
-    padding-top: hcl-rem(10px);
-    display: none;
-    @include themify($themes) {
-        color: themed('default_text');
-      }
+  padding-top: hcl-rem(10px);
+  display: none;
+  @include themify($themes) {
+    color: themed('default_text');
+  }
 
-    &.active {
-        display: block;
-    }
+  &.active {
+    display: block;
+  }
 }
 
 .#{$prefix}-tabcontent {
-    margin: hcl-rem(10px) 0 hcl-rem(10px);
+  margin: hcl-rem(10px) 0 hcl-rem(10px);
 }
 
 .#{$prefix}-tabs-disabled {
-    opacity: .5;
-
-    >a,
-    .#{$prefix}-tabs-nav-link {
-        cursor: not-allowed;
-
-        &:focus {
-            outline: none;
-        }
-
-        &:hover {
-            // color: $default_text;
-            @include themify($themes) {
-                color: themed('default_text');
-              }
-        }
+  &.active {
+    cursor: not-allowed;
+    > a {
+      outline: none;
     }
 
-    &.active {
-
-        >a,
-        .#{$prefix}-tabs-nav-link {
-            &:focus {
-                outline: none;
-            }
-
-            &:hover {
-                // color: $interactive_text_hover;
-                @include themify($themes) {
-                    color: themed('interactive_text_hover');
-                  }
-            }
-        }
+    @include themify($themes) {
+      opacity: themed('disabled_all');
     }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      > a {
+        outline: none;
+        @include themify($themes) {
+          color: themed('default_text_high');
+        }
+      }
+      @include themify($themes) {
+        border-bottom: 2px solid themed('active_border');
+      }
+    }
+  }
 }
