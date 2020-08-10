@@ -41,8 +41,10 @@
         height: 3.125rem;
 
         &:focus {
-          outline: 0.0625rem solid blue;
-          outline-offset: -0.0625rem;
+          @include themify($themes) {
+            outline-offset: -0.0625rem;
+            outline: 0.0625rem solid themed('interactive_border');
+          }
         }
       }
 
