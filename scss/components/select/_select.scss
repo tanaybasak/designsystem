@@ -1,8 +1,6 @@
 @import '../../base';
 
 .#{$prefix}-select {
-  // background-color: transparent;
-  // color: $blue-7;
   @include themify($themes) {
     color: themed('interactive_text');
     background-color: themed('interactive_bg');

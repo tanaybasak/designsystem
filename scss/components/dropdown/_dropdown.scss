@@ -58,7 +58,7 @@
     &:focus {
       outline-offset: -1px;
       @include themify($themes) {
-        outline: 1px solid themed('interactive_border');
+        border-bottom: 2px solid themed('interactive_border');
       }
     }
   }
