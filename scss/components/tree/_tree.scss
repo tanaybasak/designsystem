@@ -168,7 +168,8 @@ $drag: #092b51;
         }
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         .overflow-onhover {
           visibility: visible;
         }
