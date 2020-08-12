@@ -22,15 +22,16 @@
         <td>
           <div
             id="dataTableOverflow"
-            class="hcl-overflow-container overflow-onhover"
+            class="hcl-overlay-wrapper overflow-onhover"
           >
             <button
               class="hcl-ellipsis"
               aria-label="Right Overflow Menu"
               role="Overflow Menu"
+              data-target="#table-overflow1"
             ></button>
-            <div class="hcl-overflow-menu hcl-overflow-right">
-              <ul aria-labelledby="Right Overflow Menu">
+            <div class="hcl-overlay-container" id="table-overflow1">
+              <ul aria-labelledby="Right Overflow Menu" class="hcl-overflow-menu">
                 <li class="hcl-overflow-option">
                   <button class="hcl-overflow-option-btn" aria-label="Option 1">
                     Option 1
@@ -73,14 +74,15 @@
         <td>Maureen's VM Groups</td>
         <td>Active</td>
         <td>
-          <div id="dataTableOverflow2" class="hcl-overflow-container">
+          <div id="dataTableOverflow2" class="hcl-overlay-wrapper">
             <button
               class="hcl-ellipsis"
               aria-label="Right Overflow Menu"
               role="Overflow Menu"
+              data-target="#table-overflow2"
             ></button>
-            <div class="hcl-overflow-menu hcl-overflow-right">
-              <ul aria-labelledby="Right Overflow Menu">
+            <div class="hcl-overlay-container" id="table-overflow2">
+              <ul aria-labelledby="Right Overflow Menu" class="hcl-overflow-menu">
                 <li class="hcl-overflow-option">
                   <button class="hcl-overflow-option-btn" aria-label="Option 1">
                     Option 1
@@ -110,7 +112,6 @@
                   </button>
                 </li>
               </ul>
-              <div class="hcl-overflow-caret-right"></div>
             </div>
           </div>
         </td>

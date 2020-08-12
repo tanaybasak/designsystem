@@ -1,6 +1,14 @@
 window.patron.overflow('#dataTableOverflow', {
-  onChange: () => {}
+  attachElementToBody: true,
+  scrollListner: true,
+  onChange: e => {
+    console.log(e.currentTarget);
+  }
 });
 window.patron.overflow('#dataTableOverflow2', {
-  onChange: () => {}
+  attachElementToBody: true,
+  scrollListner: true,
+  onChange: e => {
+    console.log(e.currentTarget);
+  }
 });
