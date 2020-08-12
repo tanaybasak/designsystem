@@ -46,9 +46,10 @@ input::-ms-clear {
   display: none;
 }
 
-// dark theme
-.theme-dark {
-  background-color: #121212;
+// dark themes
+.theme-blue_active_orange_dark,
+.theme-blue_active_blue_dark {
+  background-color: $grey-100;
   color: white;
   //   @include themify($themes) {
   //     background-color: themed("default_bg");
