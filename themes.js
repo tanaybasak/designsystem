@@ -7,7 +7,6 @@ Array.from(
 });
 
 const themeChangeHandler = event => {
-  console.log('themeChangeHandler',event);
   document.getElementById('main-wrapper').removeAttribute('class');
   document.getElementById('main-wrapper').classList.add(event.currentTarget.getAttribute('value'));
 };
