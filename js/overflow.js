@@ -12,6 +12,7 @@ class Overflow {
       onChange: NOOP,
       attachElementToBody: false,
       scrollListner: false,
+      direction: 'bottom-left',
       ...options
     };
   }
@@ -81,7 +82,7 @@ class Overflow {
 
   attachEvents = () => {
     const icon = this.element.children[0];
-    const overflowMenu = this.element.querySelector('.hcl-overflow-menu');
+    const overflowMenu = this.element.querySelector(`.${PREFIX}-overflow-menu`);
     if (icon) {
       //   icon.addEventListener('keypress', function(event) {
       //     if (event.keyCode === 13) {
@@ -97,6 +98,7 @@ class Overflow {
       this.overlay = new Overlay(this.element.firstElementChild, {
         attachElementToBody: this.state.attachElementToBody,
         scrollListner: this.state.scrollListner,
+        direction: this.state.direction,
         closeOnEscape: true,
         onToggle: (status, type) => {
           this.state.isOpen = status;
@@ -109,6 +111,7 @@ class Overflow {
           }
         }
       });
+      this.overlay.setTargetElement(this.element.lastElementChild);
       this.overlay.attachEvents();
 
       this.element

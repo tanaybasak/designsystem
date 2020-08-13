@@ -83,7 +83,7 @@ $zebra-bg: #F5F9FC;
                 .overflow-onhover {
                     visibility: hidden;
 
-                    &.#{$prefix}-overflow-active {
+                    &.#{$prefix}-overlay-wrapper-active {
                         visibility: visible;
                     }
 

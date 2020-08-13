@@ -1,14 +1,8 @@
-window.patron.overflow('#dataTableOverflow', {
+window.patron.overflow('#data-table-overflow-menu', {
   attachElementToBody: true,
-  scrollListner: true,
-  onChange: e => {
-    console.log(e.currentTarget);
-  }
+  scrollListner: true
 });
-window.patron.overflow('#dataTableOverflow2', {
+window.patron.overflow('#data-table-onhover-overflow-menu', {
   attachElementToBody: true,
-  scrollListner: true,
-  onChange: e => {
-    console.log(e.currentTarget);
-  }
+  scrollListner: true
 });
