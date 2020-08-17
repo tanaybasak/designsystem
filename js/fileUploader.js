@@ -7,11 +7,11 @@ class FileUploader {
     this.selectors = {
       input: `.${PREFIX}-file-input`,
       button: `.${PREFIX}-file-btn`,
-      container: `.${PREFIX}-file-container`
+      container: `.${PREFIX}-file-container`,
     };
     this.state = {
       onChange: NOOP,
-      ...options
+      ...options,
     };
     this.fileContainer = this.element.querySelector(this.selectors.container);
     this.fileList = [];
@@ -35,26 +35,27 @@ class FileUploader {
   };
 
   getList = (event) => {
-    if (this.state.hideFile) {
-      const files = event.target.files;
-      const length = event.target.files.length;
-      const multiple = this.element.querySelector(this.selectors.input)
-        .multiple;
-      if (!multiple) {
-        this.fileContainer.innerHTML = '';
-      }
-      if (files) {
+    const files = event.target.files;
+    const length = event.target.files.length;
+    const multiple = this.element.querySelector(this.selectors.input).multiple;
+
+    if (!multiple) {
+      this.fileContainer.innerHTML = '';
+    }
+
+    if (files) {
+      if (!this.state.hideFile) {
         for (let i = 0; i < length; i++) {
           const string = this.fileNameHTML(files[i].name);
           this.fileContainer.insertAdjacentHTML('beforeend', string);
         }
-        this.fileList = multiple ? [...files, ...this.fileList] : [...files];
       }
-      if (typeof this.state.onChange === 'function') {
-        this.state.onChange(this.fileList, event);
-      }
-      event.target.value = null;
+      this.fileList = multiple ? [...files, ...this.fileList] : [...files];
     }
+    if (typeof this.state.onChange === 'function') {
+      this.state.onChange(this.fileList, event);
+    }
+    event.target.value = null;
   };
 
   removeFile = (event) => {
