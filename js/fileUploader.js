@@ -7,11 +7,11 @@ class FileUploader {
     this.selectors = {
       input: `.${PREFIX}-file-input`,
       button: `.${PREFIX}-file-btn`,
-      container: `.${PREFIX}-file-container`,
+      container: `.${PREFIX}-file-container`
     };
     this.state = {
       onChange: NOOP,
-      ...options,
+      ...options
     };
     this.fileContainer = this.element.querySelector(this.selectors.container);
     this.fileList = [];
