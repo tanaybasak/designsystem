@@ -1,4 +1,4 @@
 window.patron.fileUploader('.hcl-file-uploader', {
-  hideFile: true,
+  hideFile: false,
   onChange: () => {}
 });
