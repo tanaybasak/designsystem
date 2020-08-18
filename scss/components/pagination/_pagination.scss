@@ -8,219 +8,247 @@
 
 @import '../../base';
 
-$pagination-font-size:var(--body-font-size);
+$pagination-font-size: var(--body-font-size);
 $pagination-line-height: 1.125rem;
-$pagination-select-text-color: $blue;
-$pagination-bg-color: $white;
-$pagination-text-variant-1: $dark-10;
-$pagination-text-variant-2: $dark-20;
 
 .#{$prefix}-pagination {
-    font-size: $pagination-font-size;
-    @include getFontWeight('regular');
-    line-height: $pagination-line-height;
-    width: 100%;
-    // background-color: $white;
-    @include themify($themes) { 
-        background-color: themed('default_bg');
-        border: 1px solid themed('default_border_xlow');
-      }
+  font-size: $pagination-font-size;
+  @include getFontWeight('regular');
+  line-height: $pagination-line-height;
+  width: 100%;
+  @include themify($themes) {
+    background-color: themed('default_bg');
+    border: 1px solid themed('default_border_xlow');
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: hcl-rem(40px);
+
+  &-left,
+  &-right {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: hcl-rem(40px);
-    // border: 1px solid $grey-4;
-    
+    height: 100%;
+  }
 
-    &-left,
-    &-right {
-        display: flex;
-        align-items: center;
+  &-left {
+    padding: 0 1rem;
+
+    @include media-breakpoint-down(sm) {
+      flex-grow: 1;
+      flex-shrink: 1;
+      justify-content: flex-end;
+      padding-right: 0;
+    }
+
+    .#{$prefix}-pagination-select-wrapper {
+      select,
+      .#{$prefix}-pagination-select {
+        padding-right: hcl-rem(32px);
+      }
+
+      svg,
+      .#{$prefix}-select-arrow {
+        right: hcl-rem(16px);
+      }
+
+      &::after {
+        content: '';
+        @include themify($themes) {
+          border-right: 1px solid themed('default_border_xlow');
+        }
         height: 100%;
+      }
     }
 
-    &-left {
-        padding: 0 1rem;
-
-        @include media-breakpoint-down(sm) {
-            flex-grow: 1;
-            flex-shrink: 1;
-            justify-content: flex-end;
-            padding-right: 0;
-        }
-
-        .#{$prefix}-pagination-select-wrapper {
-
-            select,
-            .#{$prefix}-pagination-select {
-                padding-right: hcl-rem(32px);
-            }
-
-            svg,
-            .#{$prefix}-select-arrow {
-                right: hcl-rem(16px);
-            }
-
-            &::after {
-                content: '';
-                border-right: 1px solid $grey-4;
-                height: 100%;
-            }
-        }
-
-        .#{$prefix}-range-separator {
-            margin: 0 hcl-rem(2px) 0;
-        }
-
-        .#{$prefix}-pagination-range {
-            margin-right: hcl-rem(2px);
-        }
-
-        .#{$prefix}-pagination-totalitems {
-            margin: 0 hcl-rem(2px) 0;
-        }
-    }
-
-    &-right {
-
-        button.#{$prefix}-pagination-button-previous,
-        button.#{$prefix}-pagination-button-next {
-            height: 100%;
-            margin: 0;
-            border-width: 0 1px 0 1px;
-            border-style: solid;
-            border-color: $grey-4;
-            padding: 0 1rem;
-            cursor: pointer;
-
-            &:focus {
-                outline: 1px solid $blue;
-                outline-offset: -1px;
-                @include themify($themes) { 
-                    outline: 1px solid themed('interactive_border');
-                }
-            }
-
-            &:hover {
-                @include themify($themes) { 
-                    background-color: themed('interactive_bg_hover');
-                }
-            }
-
-            &:disabled {
-                opacity: .3;
-                background-color: #e6e6e6;
-                cursor: not-allowed;
-            }
-        }
-
-        button.#{$prefix}-pagination-button-next {
-            border-right-width: 0;
-        }
-
-        .#{$prefix}-pagination-text {
-            margin-right: hcl-rem(16px);
-            // color: $pagination-text-variant-2;
-            @include themify($themes) { 
-                color: themed('default_text');
-              }
-        }
-
-        .#{$prefix}-pagination-select-wrapper {
-
-            select,
-            .#{$prefix}-pagination-select {
-                padding-right: 2rem;
-            }
-
-            &::after {
-                margin-left: 0;
-            }
-
-            svg,
-            .#{$prefix}-select-arrow {
-                right: hcl-rem(16px);
-            }
-        }
-
-        .#{$prefix}-page-start {
-            margin-right: hcl-rem(2px);
-        }
-
-        .#{$prefix}-page-end {
-            margin: 0 hcl-rem(2px) 0;
-        }
-    }
-
-    label,
-    &-text {
-        margin-bottom: 0;
-        font-weight: normal;
-
-        @include media-breakpoint-down(sm) {
-            display: none;
-        }
+    .#{$prefix}-range-separator {
+      margin: 0 hcl-rem(2px) 0;
     }
 
     .#{$prefix}-pagination-range {
-        margin-left: hcl-rem(16px);
-        // color: $dark-20;
-        @include themify($themes) { 
-            color: themed('default_text');
-          }
-
-        @include media-breakpoint-down(sm) {
-            display: none;
-        }
+      margin-right: hcl-rem(2px);
     }
 
-    .#{$prefix}-pagination-label {
-        color: $pagination-text-variant-1;
-        @include themify($themes) { 
-            color: themed('default_text');
-          }
-        @include media-breakpoint-down(sm) {
-            font-size: 0.75rem;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
+    .#{$prefix}-pagination-totalitems {
+      margin: 0 hcl-rem(2px) 0;
+    }
+  }
 
-        @include media-breakpoint-down(xs) {
-            max-width: calc(100% - 3rem);
+  &-right {
+    button.#{$prefix}-pagination-button-previous,
+    button.#{$prefix}-pagination-button-next {
+      height: 100%;
+      margin: 0;
+      border-width: 0 1px 0 1px;
+      border-style: solid;
+      @include themify($themes) {
+        background-color: themed('default_bg');
+        border-right: 1px solid themed('default_border_xlow');
+        border-left: 1px solid themed('default_border_xlow');
+      }
+      padding: 0 1rem;
+      cursor: pointer;
+
+      &:focus {
+        outline-offset: -1px;
+        @include themify($themes) {
+          outline: 1px solid themed('interactive_border');
         }
+      }
+
+      &:hover {
+        @include themify($themes) {
+          background-color: themed('interactive_bg_hover');
+        }
+      }
+
+      &:disabled {
+        @include themify($themes) {
+          opacity: themed('disabled_all');
+        }
+        cursor: not-allowed;
+      }
+
+      svg,
+      .#{$prefix}-pagination__button-icon {
+        @include themify($themes) {
+          fill: themed('interactive_icon');
+        }
+      }
     }
 
-    &-select-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 100%;
-        border: none;
+    button.#{$prefix}-pagination-button-next {
+      border-right-width: 0;
 
-        select,
-        .#{$prefix}-pagination-select {
-            width: auto;
-            height: 100%;
-            padding: 0 1rem 0 1rem;
-            appearance: none;
-            background-color: $white;
-            margin-right: -.65rem;
-            cursor: pointer;
-            text-align-last: center;
-            color: $pagination-select-text-color;
+      &:hover {
+        @include themify($themes) {
+          background-color: themed('interactive_bg_hover');
         }
+      }
 
-        svg,
-        .#{$prefix}-select-arrow {
-            pointer-events: none;
-            // fill: $blue-7;
-            @include themify($themes) { 
-                fill: themed('interactive_icon');
-            }
-            position: relative;
-            top: auto;
-            bottom: auto;
+      svg,
+      .#{$prefix}-pagination__button-icon {
+        @include themify($themes) {
+          fill: themed('interactive_icon');
         }
+      }
     }
+
+    .#{$prefix}-pagination-text {
+      margin-right: hcl-rem(16px);
+      @include themify($themes) {
+        color: themed('default_text');
+      }
+    }
+
+    .#{$prefix}-pagination-select-wrapper {
+      select,
+      .#{$prefix}-pagination-select {
+        padding-right: 2rem;
+      }
+
+      &::after {
+        margin-left: 0;
+      }
+
+      svg,
+      .#{$prefix}-select-arrow {
+        right: hcl-rem(16px);
+        @include themify($themes) {
+          fill: themed('interactive_icon');
+        }
+      }
+    }
+
+    .#{$prefix}-page-start {
+      margin-right: hcl-rem(2px);
+    }
+
+    .#{$prefix}-page-end {
+      margin: 0 hcl-rem(2px) 0;
+    }
+  }
+
+  label,
+  &-text {
+    margin-bottom: 0;
+    font-weight: normal;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .#{$prefix}-pagination-range {
+    margin-left: hcl-rem(16px);
+    @include themify($themes) {
+      color: themed('default_text');
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .#{$prefix}-pagination-label {
+    @include themify($themes) {
+      color: themed('default_text');
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 0.75rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    @include media-breakpoint-down(xs) {
+      max-width: calc(100% - 3rem);
+    }
+  }
+
+  &-select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: none;
+
+    select,
+    .#{$prefix}-pagination-select {
+      width: auto;
+      height: 100%;
+      padding: 0 1rem 0 1rem;
+      appearance: none;
+      margin-right: -0.65rem;
+      cursor: pointer;
+      text-align-last: center;
+      @include themify($themes) {
+        background-color: themed('interactive_bg');
+        color: themed('interactive_text');
+      }
+      &:hover {
+        @include themify($themes) {
+          background-color: themed('interactive_bg_hover');
+        }
+      }
+
+      &:focus {
+        @include themify($themes) {
+          outline: 2px solid themed('interactive_border');
+        }
+      }
+    }
+
+    svg,
+    .#{$prefix}-select-arrow {
+      pointer-events: none;
+      @include themify($themes) {
+        fill: themed('interactive_icon');
+      }
+      position: relative;
+      top: auto;
+      bottom: auto;
+    }
+  }
 }

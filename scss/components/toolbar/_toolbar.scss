@@ -23,17 +23,19 @@
     justify-content: center;
 
     button {
-
       &:not(:last-child) {
         margin: 0;
         padding: 0.5rem 0.563rem;
 
         &:hover,
         &:focus {
-          background-color: $blue-8;
-
-          svg {
-            fill: $white;
+          @include themify($themes) {
+            fill: themed('interactive_bg_hover');
+          }
+        }
+        svg {
+          @include themify($themes) {
+            fill: themed('interactive_icon');
           }
         }
       }
