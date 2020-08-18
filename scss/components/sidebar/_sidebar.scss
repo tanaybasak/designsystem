@@ -51,10 +51,6 @@ $animation-duration: 220ms;
     justify-content: space-between;
     align-items: center;
     height: 3.125rem;
-    // @include themify($themes) {
-    //   border: 0.0625rem solid themed('primary_border_xlow');
-    //   background-color: themed('primary_bg');
-    // }
     position: relative;
     width: 100%;
 
@@ -64,7 +60,6 @@ $animation-duration: 220ms;
       width: 0;
       margin: 0;
       @include themify($themes) {
-       // color: themed('primary_icon');
         color: themed('default_icon');
       }
     }
@@ -73,7 +68,6 @@ $animation-duration: 220ms;
       display: block;
       font-size: 0.875rem;
       @include themify($themes) {
-       // color: themed('primary_text');
         color: themed('default_text');
       }
       line-height: 1.125rem;
