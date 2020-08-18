@@ -5,15 +5,14 @@
  *
  *******************************************************************
  */
- @import '../../base';
+@import '../../base';
 
 .#{$prefix}-footer {
   min-height: 2.5rem;
   width: 100%;
-  // background-color: $light-20;
   @include themify($themes) {
     background-color: themed('default_bg_low');
-}
+  }
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -28,10 +27,9 @@
   &-caption {
     display: inline-flex;
     font-size: 0.75rem;
-    // color: $light-70;
     @include themify($themes) {
       color: themed('default_text_low');
-  }
+    }
     letter-spacing: 0;
     align-self: center;
     padding: 0 1rem;
@@ -56,7 +54,6 @@
     .#{$prefix}-navigation-item {
       margin-right: 0.5rem;
       font-size: 0.75rem;
-      color: $light-60;
       letter-spacing: 0;
       align-self: flex-end;
       cursor: pointer;
@@ -69,7 +66,7 @@
         margin-left: 0.5rem;
         @include themify($themes) {
           color: themed('default_border_xlow');
-      }
+        }
       }
 
       .#{$prefix}-link {
@@ -78,23 +75,32 @@
         border-bottom: 0.0625rem solid transparent;
         transition: 0.25s;
         font-size: 0.75rem;
-        // color: $light-60;
         @include themify($themes) {
           color: themed('default_text');
-      }
+        }
         letter-spacing: 0;
         line-height: 0.75rem;
 
         &:hover {
           @include getTextDecorationLine('underline');
-        }
-        &[disabled] {
-          opacity: 0.5;
-          cursor: not-allowed;
-          @include themify($themes) { 
-            background-color: themed('disabled_all');
+          @include themify($themes) {
+            color: themed('default_text_high');
           }
-      }
+        }
+
+        &:focus {
+          @include getTextDecorationLine('underline');
+          @include themify($themes) {
+            outline: 1px solid themed('interactive_border');
+          }
+        }
+
+        &[disabled] {
+          cursor: not-allowed;
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+          }
+        }
       }
     }
   }

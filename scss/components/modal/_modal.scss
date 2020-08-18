@@ -10,7 +10,9 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: hsla(0, 0%, 9%, 0.5);
+  @include themify($themes) {
+    background-color: themed('default_bg'); 
+  }
   z-index: 969;
   display: flex;
   align-items: center;
@@ -18,20 +20,17 @@
 
   .#{$prefix}-modal-container {
     &-danger {
-     // border-top: 0.25rem solid $red-3;
      @include themify($themes) {
       border-top: 0.25rem solid themed('danger_border') !important; 
     }
     }
 
     position: relative;
-   // background-color: $white;
-   // border-top: 0.25rem solid $blue;
     @include themify($themes) {
       border-top: 0.25rem solid themed('primary_border');
       background-color: themed('default_bg');
+      box-shadow: 0 0.75rem 1.5rem 0 themed('default_shadow');
     }
-    box-shadow: 0 0.75rem 1.5rem 0 rgba(0, 0, 0, 0.1);
     width: 100%;
     height: 100%;
     display: flex;
@@ -66,7 +65,6 @@
     &-hide {
       display: none;
     }
-
     margin-bottom: 0.25rem;
   }
 
@@ -77,7 +75,6 @@
     max-width: 2.75rem;
     min-height: 2.75rem;
     max-height: 2.75rem;
-   // @include hcl-close-icon(12.15, $white, $lightGrey);
     @include themify($themes) {
       @include hcl-close-icon(12.15, transparent, themed('default_icon_high'));
     }
@@ -107,7 +104,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-   // background-color: $grey-15;
     justify-content: flex-end;
     padding: 1rem 1.5rem;
     align-items: center;
@@ -134,17 +130,4 @@
   }
 }
 
-.#{$prefix}-lightbox {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  opacity: 1;
-  z-index: 959;
 
-  &-disable {
-    opacity: 0;
-  }
-}

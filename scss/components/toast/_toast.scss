@@ -1,4 +1,4 @@
-/******************************************************************
+/*******************************************************************
  * HCL Confidential
  *
  * Copyright HCL Technologies Ltd. 2019 All rights reserved.
@@ -9,18 +9,28 @@
 @import '../../base';
 
 $colorMap: (
-  'info': $info,
-  'danger': $red-3,
-  'success': $success,
-  'warning': $warning,
+  'info': info,
+  'danger': danger,
+  'success': success,
+  'warning': warning,
 );
 
 @mixin getToastThemes() {
   @each $key, $value in $colorMap {
     &-#{$key} {
-      border-left: 0.3125rem solid $value;
+      @include themify($themes) { 
+      border-left: 0.3125rem solid themed($value + '_border');
+      }
+    
+    .#{$prefix}-toast-icon-container {
+      >.#{$prefix}-notification-icon {
+      @include themify($themes) { 
+        fill: themed($value + '_icon');
+      }
+    }
     }
   }
+}
 }
 
 .#{$prefix}-toast {
@@ -96,5 +106,6 @@ $colorMap: (
   .#{$prefix}-toast-icon-container {
     display: flex;
     align-items: center;
+   
   }
 }
