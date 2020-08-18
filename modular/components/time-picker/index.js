@@ -30,8 +30,8 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  timePicker: function(selector) {
-    attachElements(selector, null, TimePicker);
+  timePicker: function(selector, options) {
+    attachElements(selector, options, TimePicker);
   }
 };
 

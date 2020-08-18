@@ -136,8 +136,8 @@ export const components = {
   password: function(selector, options) {
     attachElements(selector, options, Password);
   },
-  timePicker: function(selector) {
-    attachElements(selector, null, TimePicker);
+  timePicker: function(selector, options) {
+    attachElements(selector, options, TimePicker);
   }
 };
 

@@ -1,16 +1,23 @@
 @import '../../base';
 
 .#{$prefix}-timepicker {
+  display: flex;
+  flex-direction: column;
+
+  &-input {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    border-bottom: 0.0625rem solid transparent;
 
-    &-input {
-        display: flex;
-        flex-direction: row;
-        border-bottom: .0625rem solid transparent;
-
-        input{
-            width: 5.25rem;
-        }
+    input {
+      width: 5.25rem;
     }
+  }
+
+  .#{$prefix}-timepicker-hour-label {
+    color: $lightGrey;
+    display: flex;
+    align-items: center;
+    padding-left: 0.625rem;
+  }
 }

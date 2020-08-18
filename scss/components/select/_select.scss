@@ -26,4 +26,9 @@
         position: relative;
         display: inline-block;
     }
+
+    &:disabled {
+        opacity: .3;
+        cursor: not-allowed;
+    }
 }
