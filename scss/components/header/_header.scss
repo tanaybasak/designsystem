@@ -11,7 +11,11 @@
 .#{$prefix}-header {
   display: flex;
   justify-content: flex-start;
-  background-color: $blue;
+  // background-color: $blue;
+      @include themify($themes) {
+      background-color: themed("primary_bg");
+      color: themed("primary_text");
+    }
   position: fixed;
   top: 0;
   left: 0;
@@ -37,7 +41,9 @@
       outline: none;
 
       img {
-        outline: 1px solid $focus-outline-color;
+        @include themify($themes) { 
+        outline: 1px solid themed('primary_icon');
+        }
         outline-offset: 0.5rem;
       }
     }
@@ -59,8 +65,17 @@
       .#{$prefix}-search {
         width: 100%;
 
+        .#{$prefix}-search-btn {
+          .#{$prefix}-search-icon {
+            @include themify($themes) { 
+              fill : themed('primary_icon');
+            }
+          }
+        }
         .#{$prefix}-search-btn:focus {
-          outline: 1px solid $focus-outline-color;
+          @include themify($themes) {
+          outline: 1px solid themed('primary_icon');
+          }
         }
       }
 
@@ -86,11 +101,15 @@
         >input,
         >button {
           background: transparent;
-          color: $white;
+          @include themify($themes) { 
+            color : themed('primary_icon');
+          }
 
           &:focus,
           &:active {
-            outline: 1px solid $focus-outline-color;
+            @include themify($themes) { 
+              outline: 1px solid themed('primary_icon');
+            }
             outline-offset: 0.125rem;
           }
         }
