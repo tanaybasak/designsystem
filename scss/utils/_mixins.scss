@@ -382,10 +382,3 @@ $inputColor-map: (
     }
   }
 }
-
-@each $theme, $map in $themes {
-  .theme-#{$theme} {
-    background-color:map-get(map-get($themes, $theme), "default_bg");
-    color: map-get(map-get($themes, $theme), "default_text");
-  }
-}
