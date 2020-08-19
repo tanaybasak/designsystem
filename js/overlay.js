@@ -11,8 +11,11 @@ class Overlay {
     this.targetElementSelector = element.getAttribute('data-target');
 
     this.targetElement = document.querySelector(this.targetElementSelector);
+
+    this.overlayStatus = false;
     this.state = {
       direction: 'bottom-left',
+      currentDirection: 'bottom-left',
       scrollListner: false,
       onToggle: NOOP,
       attachElementToBody: false,
@@ -36,9 +39,12 @@ class Overlay {
     );
     this.targetElement.style.top = positions.top;
     this.targetElement.style.left = positions.left;
+    this.state.currentDirection = positions.direction;
+    console.log("this.state.currentDirection",this.state.currentDirection)
   }
 
   show = () => {
+    this.overlayStatus = true;
     if (this.state.attachElementToBody) {
       document.body.appendChild(this.targetElement);
     }
@@ -92,6 +98,7 @@ class Overlay {
   }
 
   hide = type => {
+    this.overlayStatus = false;
     this.targetElement.classList.remove(`${PREFIX}-overlay-container-show`);
     this.targetElement.classList.remove(`${PREFIX}-overlay-container-scroll`);
     if (
@@ -147,7 +154,12 @@ class Overlay {
 
   attachEvents = () => {
     this.element.addEventListener('click', () => {
-      this.show();
+      console.log('CLICKED');
+      if (this.overlayStatus) {
+        this.hide();
+      } else {
+        this.show();
+      }
     });
 
     if (this.targetElement) {
