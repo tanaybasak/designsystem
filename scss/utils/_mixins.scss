@@ -96,7 +96,7 @@
       // `$cols - 1` because offsetting by the width of an entire row isn't possible
       @for $i from 0 through ($cols - 1) {
         // Avoid emitting useless .#{$prefix}-offset-0
-        @if not($infix== '' and $i==0) {
+        @if not($infix== "" and $i==0) {
           .#{$prefix}-offset#{$infix}-#{$i} {
             @include generate-col-offset($i, $cols);
           }
@@ -117,7 +117,7 @@
   &::after {
     display: block;
     clear: both;
-    content: '';
+    content: "";
   }
 }
 
@@ -166,7 +166,7 @@
 
   &::before,
   &::after {
-    content: ' ';
+    content: " ";
     position: absolute;
     width: 2px;
     background-color: lighten($fg-color, 20%);
@@ -209,13 +209,14 @@
   align-items: center;
   justify-content: center;
   font-size: $font-size;
+
   @include themify($themes) {
-    color: themed('interactive_icon');
-    background-color: themed('interactive_bg');
+    color: themed("interactive_icon");
+    background-color: themed("interactive_bg");
   }
 
   &::after {
-    content: '\2022 \2022 \2022';
+    content: "\2022 \2022 \2022";
     transform: rotate(90deg);
     padding: 0 0.5rem;
   }
@@ -255,17 +256,17 @@
 @mixin clearfix() {
   &::after {
     display: block;
-    content: '';
+    content: "";
     clear: both;
   }
 }
 
 // Input Fields Color Maps
 $inputColor-map: (
-  'color-1': #152935,
-  'color-2': #5a6872,
-  'color-3': #efefef,
-  'color-5': #3d70b2,
+  "color-1": #152935,
+  "color-2": #5a6872,
+  "color-3": #efefef,
+  "color-5": #3d70b2
 );
 
 // getInputColor(<requiredColor>, <propertyNametoApply>)
@@ -279,26 +280,30 @@ $inputColor-map: (
 
 // getFormControl(<control>)
 @mixin getFormControl($which) {
-  @if ($which== 'inputcontrol') {
+  @if ($which== "inputcontrol") {
     font-size: 0.875rem;
     width: 100%;
     height: $input-height;
     padding: $input-padding-y $input-padding-x;
+
     // @include getInputColor('color-1', 'color');
     // @include getInputColor('color-3', 'background-color');
     @include themify($themes) {
-      color: themed('input_text');
-      background-color: themed('input_bg');
-      border-bottom: 1px solid themed('input_border');
+      color: themed("input_text");
+      background-color: themed("input_bg");
+      border-bottom: 1px solid themed("input_border");
     }
+
     border: none;
     // box-shadow: 0 1px 0 0 #5a6872;
 
     &:focus {
       outline: none;
+
       @include themify($themes) {
-        box-shadow: 0 1px 0 0 themed('interactive_border');
+        box-shadow: 0 1px 0 0 themed("interactive_border");
       }
+
       & ~ label.#{$prefix}-label {
         color: $blue-7;
       }
@@ -307,10 +312,12 @@ $inputColor-map: (
     &[disabled] {
       // opacity: .5;
       cursor: not-allowed;
+
       // background-color: rgba($blue-secondary, 0.5);
       @include themify($themes) {
-        background-color: rgba($blue-secondary, themed('disabled_all'));
+        background-color: rgba($blue-secondary, themed("disabled_all"));
       }
+
       & ~ label,
       & ~ .#{$prefix}-error-msg,
       & ~ .#{$prefix}-helper-text {
@@ -324,15 +331,17 @@ $inputColor-map: (
 
 // getErrorMarkup(<control>)
 @mixin getErrorMarkup($which) {
-  @if ($which== 'inputcontrol') {
+  @if ($which== "inputcontrol") {
     .#{$prefix}-error-msg {
-      @include getFontWeight('regular');
+      @include getFontWeight("regular");
       font-size: 0.75rem;
       line-height: getLineHeight(0.75rem);
+
       // color: $red-3;
       @include themify($themes) {
-        color: themed('danger_text');
+        color: themed("danger_text");
       }
+
       margin-top: 0.25rem;
     }
   } @else {
@@ -359,11 +368,11 @@ $inputColor-map: (
       $theme-map: () !global;
 
       @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $value: map-get(map-get($themes, $theme), "#{$key}");
         $theme-map: map-merge(
           $theme-map,
           (
-            $key: $value,
+            $key: $value
           )
         ) !global;
       }
@@ -371,5 +380,12 @@ $inputColor-map: (
       @content;
       $theme-map: null !global;
     }
+  }
+}
+
+@each $theme, $map in $themes {
+  .theme-#{$theme} {
+    background-color:map-get(map-get($themes, $theme), "default_bg");
+    color: map-get(map-get($themes, $theme), "default_text");
   }
 }

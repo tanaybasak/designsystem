@@ -45,14 +45,3 @@ dl {
 input::-ms-clear {
   display: none;
 }
-
-// dark themes
-.theme-blue_active_orange_dark,
-.theme-blue_active_blue_dark {
-  background-color: $grey-100;
-  color: white;
-  //   @include themify($themes) {
-  //     background-color: themed("default_bg");
-  //     color: themed("default_text");
-  //   }
-}
