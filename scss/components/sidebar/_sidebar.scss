@@ -51,10 +51,6 @@ $animation-duration: 220ms;
     justify-content: space-between;
     align-items: center;
     height: 3.125rem;
-    // @include themify($themes) {
-    //   border: 0.0625rem solid themed('primary_border_xlow');
-    //   background-color: themed('primary_bg');
-    // }
     position: relative;
     width: 100%;
 
@@ -64,7 +60,6 @@ $animation-duration: 220ms;
       width: 0;
       margin: 0;
       @include themify($themes) {
-       // color: themed('primary_icon');
         color: themed('default_icon');
       }
     }
@@ -73,7 +68,6 @@ $animation-duration: 220ms;
       display: block;
       font-size: 0.875rem;
       @include themify($themes) {
-       // color: themed('primary_text');
         color: themed('default_text');
       }
       line-height: 1.125rem;
@@ -175,17 +169,16 @@ $animation-duration: 220ms;
   }
 
   a {
-    
-    &:focus{
+    &:focus {
       cursor: pointer;
       text-decoration: none;
       outline-offset: -1px;
       @include themify($themes) {
-       color: themed('default_text');
-       outline: 1px solid themed('default_border_xhigh');
-     }
+        color: themed('default_text');
+        outline: 1px solid themed('default_border_xhigh');
+      }
     }
-    &:active{
+    &:active {
       cursor: pointer;
       text-decoration: none;
       @include themify($themes) {
@@ -197,10 +190,9 @@ $animation-duration: 220ms;
       text-decoration: none;
       outline: none;
       @include themify($themes) {
-       color: themed('default_icon_high');
-       background-color: themed('interactive_bg_hover')
-     }
-     
+        color: themed('default_icon_high');
+        background-color: themed('interactive_bg_hover');
+      }
     }
   }
 
@@ -251,18 +243,18 @@ $animation-duration: 220ms;
       }
 
       > a:hover {
-      @include themify($themes) {
-        color: themed('default_text_high');
-        background-color: themed('interactive_bg_hover');
-      }
+        @include themify($themes) {
+          color: themed('default_text_high');
+          background-color: themed('interactive_bg_hover');
+        }
       }
 
       > a:focus {
-       outline-offset: -1px;
-       @include themify($themes) {
-        color: themed('default_text');
-        outline: 1px solid themed('default_border_xhigh');
-      }
+        outline-offset: -1px;
+        @include themify($themes) {
+          color: themed('default_text');
+          outline: 1px solid themed('default_border_xhigh');
+        }
       }
 
       &.active {
