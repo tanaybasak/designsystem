@@ -202,9 +202,10 @@
         left: 50%;
         height: 0.1875rem;
         width: 0.1875rem;
-        border-radius: 50%;
-        // background: $blue-7;          
-       
+        border-radius: 15%;
+        @include themify($themes) {
+          background: themed('active_icon');
+      }
       }
     }
 
@@ -245,7 +246,7 @@
       opacity: 0.5;
       // color: $lightGrey;
       @include themify($themes) {
-        color: themed('default_text_xlow');
+        color: themed('default_text_low');
     }
     }
 
@@ -285,7 +286,7 @@
     display: none;
     @include themify($themes) {
       color: themed('danger_text');
-      border-bottom: themed('danger_bottom');
+      border-bottom: themed('danger_border');
   }
     margin-top: 0.25rem;
     font-size: 0.75rem;
