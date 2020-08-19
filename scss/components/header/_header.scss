@@ -11,7 +11,6 @@
 .#{$prefix}-header {
   display: flex;
   justify-content: flex-start;
-  // background-color: $blue;
       @include themify($themes) {
       background-color: themed("primary_bg");
       color: themed("primary_text");
