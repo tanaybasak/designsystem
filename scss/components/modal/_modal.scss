@@ -11,7 +11,7 @@
   bottom: 0;
   left: 0;
   @include themify($themes) {
-    background-color: themed('default_bg'); 
+    background: rgba(themed('default_bg'), 0.5);
   }
   z-index: 969;
   display: flex;
