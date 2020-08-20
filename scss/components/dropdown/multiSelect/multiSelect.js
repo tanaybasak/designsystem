@@ -1,7 +1,9 @@
 window.patron.dropdown('#multi-dropdown', {
-  position: 'bottom',
   type: 'multi',
-  onChange: (event , target) => {
-    console.log(event , target)
-}
+  position: 'top',
+  attachElementToBody: true,
+  scrollListner: true,
+  onChange: (event, target) => {
+    console.log(event, target);
+  }
 });

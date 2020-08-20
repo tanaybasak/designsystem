@@ -92,6 +92,12 @@
       outline-offset: -1px;
       outline: 1px solid $blue;
     }
+
+    .#{$prefix}-checkbox-label {
+      &:focus {
+        outline: none;
+      }
+    }
   }
 
   &.#{$prefix}-dropdown-top {
