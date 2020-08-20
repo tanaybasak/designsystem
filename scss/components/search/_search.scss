@@ -66,9 +66,6 @@ $search-reset-size: 0.759rem;
       @include themify($themes) {
         fill: themed('input-icon');
       }
-      &.white {
-        fill: white;
-      }
     }
   }
 
