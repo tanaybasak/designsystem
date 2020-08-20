@@ -111,6 +111,7 @@ $search-reset-size: 0.759rem;
   .#{$prefix}-search-reset {
      background: none;
      display: inline-flex;
+     right:0;
      height: $search-height;
      width: $search-height;
      visibility: hidden;
@@ -119,6 +120,7 @@ $search-reset-size: 0.759rem;
      justify-content: center;
      cursor: pointer;
      transition: visibility 0.15s ease-out;
+
 
     &.show {
       visibility: visible;
