@@ -114,7 +114,7 @@
           @include themify($themes) {
             background: linear-gradient(
               90deg,
-              themed('primary_border') var(--progressPercent),
+              themed('secondary_border') var(--progressPercent),
               themed('default_border_low') var(--progressPercent)
             );
           }
@@ -148,10 +148,10 @@
         &::-moz-range-track {
           height: 0.25rem;
           @include themify($themes) {
-            background-color: themed('primary_border');
+            background-color: themed('secondary_border');
             background: linear-gradient(
               90deg,
-              themed('primary_border') var(--progressPercent),
+              themed('secondary_border') var(--progressPercent),
               themed('default_border_low') var(--progressPercent)
             );
           }
@@ -160,7 +160,7 @@
             @include themify($themes) {
               background: linear-gradient(
                 90deg,
-                themed('primary_border') var(--progressPercent),
+                themed('secondary_border') var(--progressPercent),
                 themed('default_border_low') var(--progressPercent)
               );
             }
@@ -191,10 +191,10 @@
         &::-ms-track {
           height: 0.25rem;
           @include themify($themes) {
-            background-color: themed('primary_border');
+            background-color: themed('secondary_border');
             background: linear-gradient(
               90deg,
-              themed('primary_border') var(--progressPercent),
+              themed('secondary_border') var(--progressPercent),
               themed('default_border_low') var(--progressPercent)
             );
           }
@@ -203,7 +203,7 @@
             @include themify($themes) {
               background: linear-gradient(
                 90deg,
-                themed('primary_border') var(--progressPercent),
+                themed('secondary_border') var(--progressPercent),
                 themed('default_border_low') var(--progressPercent)
               );
             }
