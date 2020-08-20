@@ -109,18 +109,16 @@ $search-reset-size: 0.759rem;
   }
 
   .#{$prefix}-search-reset {
-    background: none;
-    right:0;
-    display: inline-flex;
-    top: 0;
-    height: $search-height;
-    width: $search-height;
-    visibility: hidden;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: visibility 0.15s ease-out;
+     background: none;
+     display: inline-flex;
+     height: $search-height;
+     width: $search-height;
+     visibility: hidden;
+     position: absolute;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     transition: visibility 0.15s ease-out;
 
     &.show {
       visibility: visible;
