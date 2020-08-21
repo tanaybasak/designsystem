@@ -93,9 +93,6 @@ a.#{$prefix}-primary {
       @include themify($themes) {
         outline: 0.0625rem solid themed('interactive_border');
       }
-      > .#{$prefix}-btn-icon {
-        fill: $white;
-      }
     }
 
     &:disabled,
