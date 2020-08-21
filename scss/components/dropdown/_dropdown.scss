@@ -133,12 +133,13 @@
     text-decoration: none;
     text-overflow: ellipsis;
     @include themify($themes) {
-      color: themed('input_text');
+      color: themed('default_text');
     }
     &:hover {
       text-decoration: none;
          @include themify($themes) {
            background: themed('interactive_bg_hover');
+           color: themed('default_text');
          }
     }
 
