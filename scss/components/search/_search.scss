@@ -6,179 +6,193 @@ $search-icon-size: 1rem;
 $search-reset-size: 0.759rem;
 
 .#{$prefix}-search {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 0;
-    height: $search-height;
-
-    >* {
-        &:disabled {
-            &:hover {
-                cursor: not-allowed;
-            }
-        }
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  height: $search-height;
+  &:focus {
+    outline: 0;
+    @include themify($themes) {
+      border-bottom: 1px solid themed('interactive_border');
     }
-
-    &.show {
-        direction: rtl;
-
-        &>* {
-            direction: ltr;
-        }
-
-        .#{$prefix}-search-input {
-            padding-left: 1rem;
-        }
-
-        .#{$prefix}-search-btn {
-            display: none;
-        }
+  }
+  > * {
+    &:disabled {
+      &:hover {
+        cursor: not-allowed;
+      }
     }
+  }
 
-    button.#{$prefix}-search-btn:hover {
-        background-color: $interactive_bg_hover;
-        cursor: pointer;
-        .#{$prefix}-search-icon {
-            fill: $blue-7;
-        }
-    }
+  &.show {
+    direction: rtl;
 
-    .#{$prefix}-search-btn {
-        height: $search-height;
-        width: $search-height;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        background: none;
-        pointer-events: none;
-
-        .#{$prefix}-search-icon {
-            margin-left: ($search-height - $search-icon-size)/2;
-            margin-top: ($search-height - $search-icon-size)/2;
-            fill: $blue-7;
-
-            &.white {
-                fill: $white;
-            }
-        }
+    & > * {
+      direction: ltr;
     }
 
     .#{$prefix}-search-input {
-        -webkit-appearance: none;
-        font-size: var(--body-font-size);
-        width: 100%;
-        height: $search-height;
-        padding: 0 $search-height;
-        color: $grey-5;
-        background-color: $grey-6;
-        border: none;
-        right: 0;
-        position: unset;
-        transition: width 0.15s ease-out;
+      padding-left: 1rem;
+    }
 
-        &:focus {
-            outline: 0.0625rem solid $blue;
-            outline-offset: -1px;
-        }
+    .#{$prefix}-search-btn {
+      display: none;
+    }
+  }
 
-        &::-ms-clear,
-        &::-ms-reveal {
-            display: none;
-            width: 0;
-            height: 0;
-        }
+  button.#{$prefix}-search-btn:hover {
+    background-color: $interactive_bg_hover;
+    cursor: pointer;
+    .#{$prefix}-search-icon {
+      @include themify($themes) {
+        fill: themed('input-icon');
+      }
+    }
+  }
 
-        /* clears the 'x' from Chrome */
-        &::-webkit-search-decoration,
-        &::-webkit-search-cancel-button,
-        &::-webkit-search-results-button,
-        &::-webkit-search-results-decoration {
-            display: none;
-        }
+  .#{$prefix}-search-btn {
+    height: $search-height;
+    width: $search-height;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: none;
+    pointer-events: none;
+
+    .#{$prefix}-search-icon {
+      margin-left: ($search-height - $search-icon-size)/2;
+      margin-top: ($search-height - $search-icon-size)/2;
+      @include themify($themes) {
+        fill: themed('input-icon');
+      }
+      &.white {
+        fill: white;
+      }
+    }
+  }
+
+  .#{$prefix}-search-input {
+    -webkit-appearance: none;
+    font-size: var(--body-font-size);
+    width: 100%;
+    height: $search-height;
+    outline: none;
+    padding: 0 $search-height;
+    @include themify($themes) {
+      border-bottom: 0.0625rem solid themed('input_border');
+      color: themed('input_text');
+      background-color: themed('input_bg');
+    }
+    right: 0;
+    position: unset;
+    transition: width 0.15s ease-out;
+
+    &:focus {
+      @include themify($themes) {
+        border-bottom: 2px solid themed('interactive_border');
+      }
+      outline-offset: -1px;
+    }
+
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    /* clears the 'x' from Chrome */
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+
+  .#{$prefix}-search-reset {
+    background: none;
+    right: 0;
+    display: flex;
+    top: 0;
+    height: $search-height;
+    width: $search-height;
+    visibility: hidden;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: visibility 0.15s ease-out;
+
+    &.show {
+      visibility: visible;
+    }
+
+    &::before,
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 0.125rem;
+      height: $search-reset-size;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.#{$prefix}-search-sm {
+    height: $search-height-sm;
+
+    .#{$prefix}-search-input {
+      height: $search-height-sm;
+      padding: 0 $search-height-sm;
+    }
+
+    .#{$prefix}-search-btn {
+      height: $search-height-sm;
+      width: $search-height-sm;
+
+      .#{$prefix}-search-icon {
+        margin-left: ($search-height-sm - $search-icon-size)/2;
+        margin-top: ($search-height-sm - $search-icon-size)/2;
+      }
     }
 
     .#{$prefix}-search-reset {
-        background: none;
-        right: 0;
-        display: flex;
-        top: 0;
-        height: $search-height;
-        width: $search-height;
+      height: $search-height-sm;
+      width: $search-height-sm;
+    }
+  }
+
+  &.#{$prefix}-search-btn-only {
+    &:not(.show) {
+      .#{$prefix}-search-input {
         visibility: hidden;
+        width: 0;
+        padding: 0;
         position: absolute;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: visibility 0.15s ease-out;
+        transition: all 0.15s ease-out;
+      }
 
-        &.show {
-            visibility: visible;
-        }
-
-        &::before,
-        &::after {
-            content: ' ';
-            position: absolute;
-            width: 0.125rem;
-            background-color: $grey-7;
-            height: $search-reset-size;
-        }
-
-        &::before {
-            transform: rotate(45deg);
-        }
-
-        &::after {
-            transform: rotate(-45deg);
-        }
+      .#{$prefix}-search-btn {
+        right: 0;
+        left: unset;
+        pointer-events: unset;
+      }
     }
+  }
 
-    &.#{$prefix}-search-sm {
-        height: $search-height-sm;
-
-        .#{$prefix}-search-input {
-            height: $search-height-sm;
-            padding: 0 $search-height-sm;
-        }
-
-        .#{$prefix}-search-btn {
-            height: $search-height-sm;
-            width: $search-height-sm;
-
-            .#{$prefix}-search-icon {
-                margin-left: ($search-height-sm - $search-icon-size)/2;
-                margin-top: ($search-height-sm - $search-icon-size)/2;
-            }
-        }
-
-        .#{$prefix}-search-reset {
-            height: $search-height-sm;
-            width: $search-height-sm;
-        }
+  &.#{$prefix}-bg-white {
+    .#{$prefix}-search-input {
+      @include themify($themes) {
+        background-color: themed('default_bg');
+      }
     }
-
-    &.#{$prefix}-search-btn-only {
-        &:not(.show) {
-            .#{$prefix}-search-input {
-                visibility: hidden;
-                width: 0;
-                padding: 0;
-                position: absolute;
-                transition: all 0.15s ease-out;
-            }
-
-            .#{$prefix}-search-btn {
-                right: 0;
-                left: unset;
-                pointer-events: unset;
-            }
-        }
-    }
-
-    &.#{$prefix}-bg-white {
-        .#{$prefix}-search-input {
-            background-color: $white;
-        }
-    }
+  }
 }
