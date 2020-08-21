@@ -94,9 +94,8 @@
             height: 1.5rem;
             width: 1.5rem;
             transform: translate(0, -50%);
-
             @include themify($themes) {
-                background-color: themed('default_bg');
+                background-color: themed('default_bg_high');
                 border: .0625rem solid themed('default_border');
             }
         }
@@ -107,6 +106,7 @@
             &::before {
                 @include themify($themes) {
                     background-color: themed('primary_bg');
+                    border:.0625rem solid themed('secondary_border');
                 }
             }
 
@@ -114,7 +114,6 @@
                 top: 50%;
                 transform: translate(1.5rem, -50%);
                 border: none;
-
                 @include themify($themes) {
                     background-color: themed('primary_bg');
                 }
@@ -146,8 +145,10 @@
             &::before {
                 width: 1.5rem;
 
+               
                 @include themify($themes) {
-                    background-color: rgba(themed('primary_bg'), themed('disabled_all'));
+                    opacity: themed('disabled_all');
+                    background-color: themed('primary_bg');
                 }
             }
 
@@ -160,6 +161,7 @@
 
         &:focus~.#{$prefix}-toggle-label {
             .#{$prefix}-switch {
+
                 @include themify($themes) {
                     box-shadow: 0 0 0 0.125rem themed('interactive_border');
                     border: .0625rem solid themed('default_bg');
@@ -193,7 +195,6 @@
             height: 1rem;
             width: 2rem;
             border-radius: 6.25rem;
-
             @include themify($themes) {
                 background-color: themed('default_bg_high');
                 border: .0625rem solid themed('default_border');
