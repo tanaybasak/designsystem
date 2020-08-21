@@ -94,7 +94,7 @@ a.#{$prefix}-primary {
         outline: 0.0625rem solid themed('interactive_border');
       }
       > .#{$prefix}-btn-icon {
-        fill: $white;
+        fill : themed('primary_icon');
       }
     }
 
