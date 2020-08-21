@@ -1,68 +1,70 @@
-@import '../../base';
+@import "../../base";
 
 .#{$prefix}-datePicker {
   width: 9.4375rem;
   &-label {
     @include themify($themes) {
-      color: themed('default_text');
-  }
+      color: themed("default_text");
+    }
   }
   &-container {
     position: relative;
     display: flex;
     flex-direction: column;
-  
-    >svg {
+    @include themify($themes) {
+      border-bottom: 0.0625rem solid themed("input_border");
+    }
+
+    > svg {
       position: absolute;
       top: 0.75rem;
       left: 1rem;
-     // fill: $blue-7;
-     @include themify($themes) {
-      fill: themed('input_icon');
+      // fill: $blue-7;
+      @include themify($themes) {
+        fill: themed("input_icon");
       }
       z-index: 1;
       cursor: pointer;
     }
 
     &-error {
-      // border: 0.0625rem solid $red-3;
-      @include themify($themes) {
-        border-bottom: 0.0625rem solid themed('danger_text');
+        // border: 0.0625rem solid $red-3;
+        @include themify($themes) {
+          border-bottom: 2px solid themed("danger_text");
         }
     }
 
-    >input {
+    > input {
       padding: 0 1rem 0 3rem;
       border: none;
       height: 2.5rem;
       // border-bottom: 0.0625rem solid $dark-blue;
-    //  background-color: rgba(70, 150, 210, 0.05);
+      //  background-color: rgba(70, 150, 210, 0.05);
+      @include themify($themes) {
+        color: themed("input_text");
+        background-color: themed("input_bg");
+      }
       outline: none;
       font-size: 0.875rem;
       line-height: 1.125rem;
       cursor: pointer;
-      @include themify($themes) {
-        color: themed('input_text');
-        border-bottom:  0.0625rem solid themed('input_border');
-        background-color: themed('input_bg');
-    }
-
+ 
       &:focus {
         @include themify($themes) {
-          border-bottom: 0.0625rem solid themed('interactive_border');
-          }
+          border-bottom: 2px solid themed("interactive_border");
+        }
       }
       &[disabled] {
         opacity: 0.5;
         cursor: not-allowed;
-        @include themify($themes) { 
-          background-color: themed('disabled_all');
+        @include themify($themes) {
+          background-color: themed("disabled_all");
         }
 
-        &~svg {
+        & ~ svg {
           cursor: not-allowed;
-          @include themify($themes) { 
-            fill: themed('input_icon');
+          @include themify($themes) {
+            fill: themed("input_icon");
           }
         }
       }
@@ -71,9 +73,9 @@
 
   &-curMonth {
     font-size: 0.875rem;
-    @include themify($themes) { 
-      color: themed('default_text_xhigh');
-      }
+    @include themify($themes) {
+      color: themed("default_text_xhigh");
+    }
   }
 
   &-arrows {
@@ -95,27 +97,27 @@
   }
 
   &-up {
-    @include themify($themes) { 
-    border-bottom: 0.25rem solid themed('interactive_icon');
+    @include themify($themes) {
+      border-bottom: 0.25rem solid themed("interactive_icon");
     }
   }
 
   &-down {
     // border-top: 0.25rem solid $blue;
-    @include themify($themes) { 
-      border-top: 0.25rem solid themed('interactive_icon');
-      }
+    @include themify($themes) {
+      border-top: 0.25rem solid themed("interactive_icon");
+    }
   }
 
   &-year {
     position: relative;
     padding: 0 0.5rem;
 
-    >input {
+    > input {
       width: 2.5rem;
-      @include themify($themes) { 
-      color: themed('interactive_text');
-      background-color: themed('default_bg');
+      @include themify($themes) {
+        color: themed("interactive_text");
+        background-color: themed("default_bg");
       }
       text-align: center;
       font-size: 0.875rem;
@@ -126,7 +128,7 @@
       }
     }
 
-    &:hover>div {
+    &:hover > div {
       display: flex;
     }
   }
@@ -137,16 +139,16 @@
     align-items: center;
   }
 
-  &-month>span,
-  &-days>span {
+  &-month > span,
+  &-days > span {
     height: 1.5rem;
     width: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     @include themify($themes) {
-      color: themed('default_text_xhigh');
-  }
+      color: themed("default_text_xhigh");
+    }
   }
 
   &-month {
@@ -156,11 +158,11 @@
     font-weight: 600;
     margin-bottom: 0.25rem;
 
-    >span {
+    > span {
       padding: 0.5rem;
-      @include themify($themes) { 
-        fill: themed('interactive_icon');
-        }
+      @include themify($themes) {
+        fill: themed("interactive_icon");
+      }
       cursor: pointer;
     }
   }
@@ -174,13 +176,13 @@
     font-size: 0.75rem;
     padding: 0 1.75rem;
 
-    >span {
+    > span {
       border-radius: 0;
       border: none;
       margin: 0.125rem;
       @include themify($themes) {
-        color: themed('default_text_xhigh');
-    }
+        color: themed("default_text_xhigh");
+      }
     }
   }
 
@@ -192,10 +194,10 @@
 
     &-today {
       @include themify($themes) {
-        color: themed('active_text');
-    }
+        color: themed("active_text");
+      }
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         display: block;
         top: 90%;
@@ -204,8 +206,8 @@
         width: 0.1875rem;
         border-radius: 15%;
         @include themify($themes) {
-          background: themed('active_icon');
-      }
+          background: themed("active_icon");
+        }
       }
     }
 
@@ -219,48 +221,43 @@
       align-items: center;
       justify-content: center;
       position: relative;
-    //   @include themify($themes) {
-    //     color: themed('default_text_high');
-    // }
+      //   @include themify($themes) {
+      //     color: themed('default_text_high');
+      // }
     }
   }
 
   &-date {
-
     &:hover {
       @include themify($themes) {
-        background-color: themed('interactive_bg_hover');
-    }
-      
+        background-color: themed("interactive_bg_hover");
+      }
     }
 
     &-picked {
       // border: 0.125rem solid $blue-7;
       @include themify($themes) {
-        background-color: themed('active_bg_high');
-        color : themed('active_text');
-    }
+        background-color: themed("active_bg_high");
+        color: themed("active_text");
+      }
     }
 
     &-fade {
       opacity: 0.5;
       // color: $lightGrey;
       @include themify($themes) {
-        color: themed('default_text_low');
+        color: themed("default_text_low");
+      }
     }
-    }
-
-  
   }
 
   &-panel {
     position: absolute;
     // background-color: $white;
 
-
     @include themify($themes) {
-      background-color: themed('default_bg');
-  }
+      background-color: themed("default_bg");
+    }
     box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 9;
@@ -285,9 +282,9 @@
   &-error {
     display: none;
     @include themify($themes) {
-      color: themed('danger_text');
-      border-bottom: themed('danger_border');
-  }
+      color: themed("danger_text");
+      // border-bottom: 0.0625rem solid themed('danger_border');
+    }
     margin-top: 0.25rem;
     font-size: 0.75rem;
     letter-spacing: 0;
