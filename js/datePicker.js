@@ -87,7 +87,8 @@ class DatePicker {
       yearIncrease: `.${PREFIX}-datePicker-up`,
       yearDecrease: `.${PREFIX}-datePicker-down`,
       monthInput: `.${PREFIX}-datePicker-curMonth`,
-      dateContainer: `.${PREFIX}-datePicker-panel`,
+      datePanelContainer: `.${PREFIX}-datePicker-panel`,
+      dateContainer: `.${PREFIX}-overlay-container`,
       errorDiv: `.${PREFIX}-datePicker-error`,
       fade: `${PREFIX}-datePicker-date-fade`
     };
@@ -345,7 +346,7 @@ class DatePicker {
         .querySelector(DOMstrings.yearInput)
         .addEventListener('change', yearChangeHandler);
       this.datePickerElm
-        .querySelector(DOMstrings.dateContainer)
+        .querySelector(DOMstrings.datePanelContainer)
         .addEventListener('click', datePanelClickHandler);
       bindDateEvent();
 

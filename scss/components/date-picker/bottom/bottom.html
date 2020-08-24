@@ -1,4 +1,8 @@
-<section class="hcl-datePicker" data-component="datepicker" id="bottom-datepicker">
+<section
+  class="hcl-datePicker"
+  data-component="datepicker"
+  id="bottom-datepicker"
+>
   <label>Date picker label</label>
   <div class="hcl-overlay-wrapper hcl-datePicker-container">
     <input
@@ -22,37 +26,39 @@
         fill-rule="nonzero"
       />
     </svg>
-    <div class="hcl-overlay-container hcl-datePicker-panel">
-      <div class="hcl-datePicker-month">
-        <span class="hcl-datePicker-month-prev">
-          <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
-            <path d="M7.5 10.6L2.8 6l4.7-4.6L6.1 0 0 6l6.1 6z"></path>
-          </svg>
-        </span>
-        <div class="hcl-datePicker-select">
-          <span class="hcl-datePicker-curMonth">March </span>
-          <div class="hcl-datePicker-year">
-            <input
-              class="hcl-datePicker-year-input"
-              type="text"
-              tabindex="-1"
-              aria-label="Year"
-              value="2019"
-            />
-            <div class="hcl-datePicker-arrows">
-              <span class="hcl-datePicker-up"></span>
-              <span class="hcl-datePicker-down"></span>
+    <div class="hcl-overlay-container">
+      <div class="hcl-datePicker-panel">
+        <div class="hcl-datePicker-month">
+          <span class="hcl-datePicker-month-prev">
+            <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
+              <path d="M7.5 10.6L2.8 6l4.7-4.6L6.1 0 0 6l6.1 6z"></path>
+            </svg>
+          </span>
+          <div class="hcl-datePicker-select">
+            <span class="hcl-datePicker-curMonth">March </span>
+            <div class="hcl-datePicker-year">
+              <input
+                class="hcl-datePicker-year-input"
+                type="text"
+                tabindex="-1"
+                aria-label="Year"
+                value="2019"
+              />
+              <div class="hcl-datePicker-arrows">
+                <span class="hcl-datePicker-up"></span>
+                <span class="hcl-datePicker-down"></span>
+              </div>
             </div>
           </div>
+          <span class="hcl-datePicker-month-next">
+            <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
+              <path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
+            </svg>
+          </span>
         </div>
-        <span class="hcl-datePicker-month-next">
-          <svg width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
-            <path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
-          </svg>
-        </span>
+        <div class="hcl-datePicker-days"></div>
+        <div class="hcl-datePicker-dates"></div>
       </div>
-      <div class="hcl-datePicker-days"></div>
-      <div class="hcl-datePicker-dates"></div>
     </div>
   </div>
   <div class="hcl-datePicker-error">
