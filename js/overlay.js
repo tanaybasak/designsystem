@@ -20,6 +20,7 @@ class Overlay {
       onToggle: NOOP,
       attachElementToBody: false,
       closeOnEscape: false,
+      preventCloseElements: [],
       ...options
     };
   }
@@ -40,7 +41,7 @@ class Overlay {
     this.targetElement.style.top = positions.top;
     this.targetElement.style.left = positions.left;
     this.state.currentDirection = positions.direction;
-    console.log("this.state.currentDirection",this.state.currentDirection)
+    console.log('this.state.currentDirection', this.state.currentDirection);
   }
 
   show = () => {
@@ -124,7 +125,20 @@ class Overlay {
       if (e && this.element && this.element.contains(e.target)) {
         return;
       }
-      this.hide('outside');
+      let canClose = true;
+      if (
+        this.state.preventCloseElements &&
+        this.state.preventCloseElements.length > 0
+      ) {
+        this.state.preventCloseElements.forEach(element => {
+          if (e && element && element.contains(e.target)) {
+            canClose = false;
+          }
+        });
+      }
+      if (canClose) {
+        this.hide('outside');
+      }
     }
   };
 
@@ -154,7 +168,6 @@ class Overlay {
 
   attachEvents = () => {
     this.element.addEventListener('click', () => {
-      console.log('CLICKED');
       if (this.overlayStatus) {
         this.hide();
       } else {

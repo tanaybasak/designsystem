@@ -2,14 +2,17 @@ import { PREFIX, WEEKDAYS, MONTHS } from './utils/config';
 import { trackDocumentClick } from './utils/dom';
 import handleDataBinding from './utils/data-api';
 import { NOOP } from './utils/functions';
+import Overlay from './overlay';
 
 class DatePicker {
   constructor(element, options) {
     this.datePickerElm = element;
     this.state = {
       onChange: NOOP,
+      isOpen: false,
       ...options
     };
+    this.overlay = null;
   }
 
   // DatePicker Controller
@@ -239,12 +242,12 @@ class DatePicker {
       this.datePickerElm
         .querySelector(DOMstrings.dateContainer)
         .classList.add(DOMstrings.showDateContainer);
-      trackDocumentClick(
-        this.datePickerElm.querySelector(DOMstrings.inputDate),
-        () => {
-          hideDateContainer();
-        }
-      );
+      //   trackDocumentClick(
+      //     this.datePickerElm.querySelector(DOMstrings.inputDate),
+      //     () => {
+      //       hideDateContainer();
+      //     }
+      //   );
     };
 
     const removeExistingDates = () => {
@@ -256,7 +259,8 @@ class DatePicker {
         hightlightSelectedDate(event.target.getAttribute('date'));
         hideErrorInvalidDate();
         setInputDate(event.target.getAttribute('date'));
-        hideDateContainer();
+        //hideDateContainer();
+        this.overlay.hide();
         if (typeof this.state.onChange === 'function') {
           this.state.onChange(event, event.target.getAttribute('date'));
         }
@@ -337,9 +341,39 @@ class DatePicker {
       this.datePickerElm
         .querySelector(DOMstrings.yearIncrease)
         .addEventListener('click', yearIncrease);
-      this.datePickerElm
-        .querySelector(DOMstrings.inputDate)
-        .addEventListener('click', toggleDateContainer);
+      // this.datePickerElm
+      //   .querySelector(DOMstrings.inputDate)
+      //   .addEventListener('click', toggleDateContainer);
+
+      this.overlay = new Overlay(
+        this.datePickerElm.querySelector(DOMstrings.inputDate),
+        {
+          attachElementToBody: false,
+          scrollListner: false,
+          direction: 'bottom-left',
+          closeOnEscape: true,
+          preventCloseElements: [
+            this.datePickerElm.querySelector(DOMstrings.inputCalSVG)
+          ],
+          onToggle: status => {
+            this.state.isOpen = status;
+
+            if (status) {
+              const selectedDate = this.datePickerElm.querySelector(
+                DOMstrings.inputDate
+              ).value;
+              if (isValidDate(selectedDate) && selectedDate !== '') {
+                eventHandler(dateCtrl.setDateObject(selectedDate));
+              }
+            }
+          }
+        }
+      );
+      this.overlay.setTargetElement(
+        this.datePickerElm.querySelector(DOMstrings.dateContainer)
+      );
+      this.overlay.attachEvents();
+
       this.datePickerElm
         .querySelector(DOMstrings.inputDate)
         .addEventListener('change', dateChangeHandler);
@@ -359,7 +393,12 @@ class DatePicker {
       event.stopPropagation();
       event.preventDefault();
       if (!event.currentTarget.previousElementSibling.disabled) {
-        toggleDateContainer(event);
+        //toggleDateContainer(event);
+        if (this.state.isOpen) {
+          this.overlay.hide('toggle');
+        } else {
+          this.overlay.show();
+        }
       }
     };
 
@@ -381,7 +420,7 @@ class DatePicker {
           .querySelector(DOMstrings.dateContainer)
           .classList.contains(DOMstrings.showDateContainer)
       ) {
-        UICtrl.hideDateContainer();
+        //UICtrl.hideDateContainer();
       } else {
         const selectedDate = this.datePickerElm.querySelector(
           DOMstrings.inputDate
@@ -389,7 +428,7 @@ class DatePicker {
         if (isValidDate(selectedDate) && selectedDate !== '') {
           eventHandler(dateCtrl.setDateObject(selectedDate));
         }
-        UICtrl.showDateContainer();
+        //UICtrl.showDateContainer();
       }
     };
 
@@ -504,10 +543,10 @@ class DatePicker {
     // UICtrl.showDateContainer();
   };
 
-  static handleDataAPI = () => {
-    handleDataBinding('datepicker', function(element) {
-      return new DatePicker(element);
-    });
-  };
+  //   static handleDataAPI = () => {
+  //     handleDataBinding('datepicker', function(element) {
+  //       return new DatePicker(element);
+  //     });
+  //   };
 }
 export default DatePicker;
