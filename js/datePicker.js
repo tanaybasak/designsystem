@@ -1,6 +1,4 @@
 import { PREFIX, WEEKDAYS, MONTHS } from './utils/config';
-import { trackDocumentClick } from './utils/dom';
-import handleDataBinding from './utils/data-api';
 import { NOOP } from './utils/functions';
 import Overlay from './overlay';
 
@@ -10,6 +8,9 @@ class DatePicker {
     this.state = {
       onChange: NOOP,
       isOpen: false,
+      attachElementToBody: false,
+      scrollListner: false,
+      direction: 'bottom-left',
       ...options
     };
     this.overlay = null;
@@ -71,7 +72,6 @@ class DatePicker {
   // UI Controller
   UIController = () => {
     const DOMstrings = {
-      showDateContainer: `${PREFIX}-datePicker-panel-show`,
       datePicked: `${PREFIX}-datePicker-date-picked`,
       todayHighlight: `${PREFIX}-datePicker-dates-today`,
       dateUnSelected: `${PREFIX}-datePicker-date`,
@@ -92,15 +92,49 @@ class DatePicker {
       fade: `${PREFIX}-datePicker-date-fade`
     };
 
+    const getElement = elementSelector => {
+      console.log(elementSelector);
+      if (this.datePickerElm.querySelector(elementSelector)) {
+        return this.datePickerElm.querySelector(elementSelector);
+      } else {
+        return this.overlay.targetElement.querySelector(elementSelector);
+      }
+
+      //   if (this.state.attachElementToBody) {
+      //     if (this.overlay && this.overlay.targetElement) {
+      //       console.log(
+      //         'ELEMENT ',
+      //         elementSelector,
+      //         this.overlay.targetElement.querySelector(elementSelector)
+      //       );
+      //       return this.overlay.targetElement.querySelector(elementSelector);
+      //     } else {
+      //       console.log(
+      //         'ELEMENT ',
+      //         elementSelector,
+      //         this.datePickerElm.querySelector(elementSelector)
+      //       );
+      //       return this.datePickerElm.querySelector(elementSelector);
+      //     }
+      //   } else {
+      //     console.log(
+      //       'ELEMENT ',
+      //       elementSelector,
+      //       this.datePickerElm.querySelector(elementSelector)
+      //     );
+      //     return this.datePickerElm.querySelector(elementSelector);
+      //   }
+    };
     const getDaysInMonth = (month, year) => {
       return new Date(year, month, 0).getDate();
     };
 
     const initWeekDaysPanel = () => {
       WEEKDAYS.forEach(weekDay => {
-        this.datePickerElm
-          .querySelector(DOMstrings.weekDaysPanel)
-          .insertAdjacentHTML('beforeend', `<span>${weekDay}</span>`);
+        getElement(DOMstrings.weekDaysPanel).insertAdjacentHTML(
+          'beforeend',
+          `<span>${weekDay}</span>`
+        );
       });
     };
 
@@ -147,7 +181,7 @@ class DatePicker {
         curMonthObj.month === 0 ? 12 : curMonthObj.month,
         curMonthObj.month === 0 ? curMonthObj.year - 1 : curMonthObj.year
       );
-      const datePanel = this.datePickerElm.querySelector(element);
+      const datePanel = getElement(element);
 
       // days from previous month
       for (
@@ -185,73 +219,40 @@ class DatePicker {
         '0' + todayDate.getDate()
       ).slice(-2)}/${todayDate.getFullYear()}`;
       const selector = `[date='${todayDate}']`;
-      if (this.datePickerElm.querySelector(selector)) {
-        this.datePickerElm
-          .querySelector(selector)
-          .classList.add(DOMstrings.todayHighlight);
+      if (getElement(selector)) {
+        getElement(selector).classList.add(DOMstrings.todayHighlight);
       }
     };
 
     const initMonthYearPanel = curMonthObj => {
-      this.datePickerElm.querySelector(DOMstrings.monthInput).innerHTML =
-        MONTHS[curMonthObj.month];
-      this.datePickerElm.querySelector(DOMstrings.yearInput).value = String(
-        curMonthObj.year
-      );
+      getElement(DOMstrings.monthInput).innerHTML = MONTHS[curMonthObj.month];
+      getElement(DOMstrings.yearInput).value = String(curMonthObj.year);
     };
 
     const hightlightSelectedDate = id => {
-      const elm = this.datePickerElm.querySelector(`.${DOMstrings.datePicked}`);
+      const elm = getElement(`.${DOMstrings.datePicked}`);
       if (elm) {
         elm.classList.remove(DOMstrings.datePicked);
       }
       const selector = `[date='${id}']`;
-      if (this.datePickerElm.querySelector(selector)) {
-        this.datePickerElm
-          .querySelector(selector)
-          .classList.add(DOMstrings.datePicked);
+      if (getElement(selector)) {
+        getElement(selector).classList.add(DOMstrings.datePicked);
       }
     };
 
     const showErrorInvalidDate = () => {
-      this.datePickerElm
-        .querySelector(DOMstrings.errorDiv)
-        .classList.add(DOMstrings.showErrorDiv);
-      this.datePickerElm
-        .querySelector(DOMstrings.inputDate)
-        .classList.add(DOMstrings.addErrorBorder);
+      getElement(DOMstrings.errorDiv).classList.add(DOMstrings.showErrorDiv);
+      getElement(DOMstrings.inputDate).classList.add(DOMstrings.addErrorBorder);
     };
     const hideErrorInvalidDate = () => {
-      this.datePickerElm
-        .querySelector(DOMstrings.inputDate)
-        .classList.remove(DOMstrings.addErrorBorder);
-      this.datePickerElm
-        .querySelector(DOMstrings.errorDiv)
-        .classList.remove(DOMstrings.showErrorDiv);
-    };
-
-    const hideDateContainer = () => {
-      this.datePickerElm
-        .querySelector(DOMstrings.dateContainer)
-        .classList.remove(DOMstrings.showDateContainer);
-    };
-
-    const showDateContainer = () => {
-      event.stopPropagation();
-      event.preventDefault();
-      this.datePickerElm
-        .querySelector(DOMstrings.dateContainer)
-        .classList.add(DOMstrings.showDateContainer);
-      //   trackDocumentClick(
-      //     this.datePickerElm.querySelector(DOMstrings.inputDate),
-      //     () => {
-      //       hideDateContainer();
-      //     }
-      //   );
+      getElement(DOMstrings.inputDate).classList.remove(
+        DOMstrings.addErrorBorder
+      );
+      getElement(DOMstrings.errorDiv).classList.remove(DOMstrings.showErrorDiv);
     };
 
     const removeExistingDates = () => {
-      this.datePickerElm.querySelector(DOMstrings.datePanel).innerHTML = '';
+      getElement(DOMstrings.datePanel).innerHTML = '';
     };
 
     const selectDate = event => {
@@ -259,7 +260,6 @@ class DatePicker {
         hightlightSelectedDate(event.target.getAttribute('date'));
         hideErrorInvalidDate();
         setInputDate(event.target.getAttribute('date'));
-        //hideDateContainer();
         this.overlay.hide();
         if (typeof this.state.onChange === 'function') {
           this.state.onChange(event, event.target.getAttribute('date'));
@@ -268,7 +268,7 @@ class DatePicker {
     };
 
     const setInputDate = date => {
-      this.datePickerElm.querySelector(DOMstrings.inputDate).value = date;
+      getElement(DOMstrings.inputDate).value = date;
     };
 
     return {
@@ -285,9 +285,7 @@ class DatePicker {
       // to initialize date panel
       initDatePanel: curMonthObj => {
         initDatePanel(curMonthObj);
-        hightlightSelectedDate(
-          this.datePickerElm.querySelector(DOMstrings.inputDate).value
-        );
+        hightlightSelectedDate(getElement(DOMstrings.inputDate).value);
       },
       // returns DOMStrings
       getDOMstrings: () => {
@@ -296,14 +294,6 @@ class DatePicker {
       // remove existing dates from datePanel
       removeExistingDates: () => {
         removeExistingDates();
-      },
-      // show/hide datepicker
-      showDateContainer: () => {
-        showDateContainer();
-      },
-      // hide datepicker
-      hideDateContainer: () => {
-        hideDateContainer();
       },
       // action taken once date is selected
       selectDate: event => {
@@ -320,6 +310,9 @@ class DatePicker {
       },
       setInputDate: date => {
         setInputDate(date);
+      },
+      getElement: elementSelector => {
+        return getElement(elementSelector);
       }
     };
   };
@@ -341,17 +334,27 @@ class DatePicker {
       this.datePickerElm
         .querySelector(DOMstrings.yearIncrease)
         .addEventListener('click', yearIncrease);
-      // this.datePickerElm
-      //   .querySelector(DOMstrings.inputDate)
-      //   .addEventListener('click', toggleDateContainer);
+
+      this.datePickerElm
+        .querySelector(DOMstrings.inputDate)
+        .addEventListener('change', dateChangeHandler);
+      this.datePickerElm
+        .querySelector(DOMstrings.inputCalSVG)
+        .addEventListener('click', onClickInputCalSVG);
+      this.datePickerElm
+        .querySelector(DOMstrings.yearInput)
+        .addEventListener('change', yearChangeHandler);
+      this.datePickerElm
+        .querySelector(DOMstrings.dateContainer)
+        .addEventListener('click', datePanelClickHandler);
+      bindDateEvent();
 
       this.overlay = new Overlay(
         this.datePickerElm.querySelector(DOMstrings.inputDate),
         {
-          attachElementToBody: false,
-          scrollListner: false,
-          direction: 'bottom-left',
-          closeOnEscape: true,
+          attachElementToBody: this.state.attachElementToBody,
+          scrollListner: this.state.scrollListner,
+          direction: this.state.direction,
           preventCloseElements: [
             this.datePickerElm.querySelector(DOMstrings.inputCalSVG)
           ],
@@ -373,27 +376,12 @@ class DatePicker {
         this.datePickerElm.querySelector(DOMstrings.dateContainer)
       );
       this.overlay.attachEvents();
-
-      this.datePickerElm
-        .querySelector(DOMstrings.inputDate)
-        .addEventListener('change', dateChangeHandler);
-      this.datePickerElm
-        .querySelector(DOMstrings.inputCalSVG)
-        .addEventListener('click', onClickInputCalSVG);
-      this.datePickerElm
-        .querySelector(DOMstrings.yearInput)
-        .addEventListener('change', yearChangeHandler);
-      this.datePickerElm
-        .querySelector(DOMstrings.dateContainer)
-        .addEventListener('click', datePanelClickHandler);
-      bindDateEvent();
     };
 
     const onClickInputCalSVG = event => {
       event.stopPropagation();
       event.preventDefault();
       if (!event.currentTarget.previousElementSibling.disabled) {
-        //toggleDateContainer(event);
         if (this.state.isOpen) {
           this.overlay.hide('toggle');
         } else {
@@ -411,34 +399,16 @@ class DatePicker {
       }
     };
 
-    const toggleDateContainer = event => {
-      event.stopPropagation();
-      event.preventDefault();
-      checkErrorBox(event.target.value);
-      if (
-        this.datePickerElm
-          .querySelector(DOMstrings.dateContainer)
-          .classList.contains(DOMstrings.showDateContainer)
-      ) {
-        //UICtrl.hideDateContainer();
-      } else {
-        const selectedDate = this.datePickerElm.querySelector(
-          DOMstrings.inputDate
-        ).value;
-        if (isValidDate(selectedDate) && selectedDate !== '') {
-          eventHandler(dateCtrl.setDateObject(selectedDate));
-        }
-        //UICtrl.showDateContainer();
-      }
-    };
-
     const datePanelClickHandler = event => {
       event.stopPropagation();
       event.preventDefault();
     };
 
     const bindDateEvent = () => {
-      const datePanel = this.datePickerElm.querySelector(DOMstrings.datePanel);
+      let datePanel = this.datePickerElm.querySelector(DOMstrings.datePanel);
+      if (!datePanel) {
+        datePanel = this.overlay.targetElement.querySelector(DOMstrings.datePanel);
+      }
       datePanel.addEventListener('click', UICtrl.selectDate);
     };
 
@@ -540,7 +510,6 @@ class DatePicker {
   attachEvents = () => {
     const UICtrl = this.UIController();
     this.controller(this.datePickerController(), UICtrl).init();
-    // UICtrl.showDateContainer();
   };
 
   //   static handleDataAPI = () => {
