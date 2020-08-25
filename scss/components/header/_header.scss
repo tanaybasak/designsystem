@@ -71,10 +71,18 @@
               fill : themed('primary_icon');
             }
           }
+
+
         }
         .#{$prefix}-search-btn:focus {
           @include themify($themes) {
           outline: 1px solid themed('primary_icon');
+          }
+        }
+
+        .#{$prefix}-search-btn:hover {
+          @include themify($themes) {
+          background-color: themed('primary_bg_hover');
           }
         }
       }
@@ -113,6 +121,19 @@
             outline-offset: 0.125rem;
           }
         }
+
+        &:hover {
+          @include themify($themes) {
+            background-color: themed('primary_bg_hover');
+            }
+        }
+
+        &:focus {
+          @include themify($themes) {
+            outline: 1px solid themed('primary_icon');
+            }
+        }
+
       }
 
       @include media-breakpoint-down(md) {
