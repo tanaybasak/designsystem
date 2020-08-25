@@ -1,6 +1,6 @@
 window.patron.datepicker('#bottom-datepicker', {
   direction: 'bottom-right',
-  scrollListner:true,
+  scrollListner: true,
   attachElementToBody: true,
   onChange: () => {}
 });

@@ -1,0 +1,54 @@
+<div class="hcl-overlay-wrapper">
+  <button
+    class="hcl-btn hcl-primary"
+    id="overlay"
+    data-target="#overlayContainer"
+  >
+    Overlay Component 2
+  </button>
+
+  <div class="hcl-overlay-container" id="overlayContainer">
+    <div class="hcl-timepicker" id="overlay-time-picker" style="padding:1rem">
+      <label for="overlay-time-picker-input" class="hcl-label"
+        >Select a time</label
+      >
+      <div class="hcl-timepicker-input">
+        <input
+          id="overlay-time-picker-input"
+          type="text"
+          class="hcl-form-control"
+          placeholder="hh:mm"
+          maxlength="5"
+        />
+        <select class="hcl-select" aria-label="choose option">
+          <option class="hcl-select-option" value="AM">AM</option>
+          <option class="hcl-select-option" value="PM">PM</option>
+        </select>
+        <select class="hcl-select" aria-label="choose option">
+          <option class="hcl-select-option" value="option-1"
+            >Time zone 1</option
+          >
+          <option class="hcl-select-option" value="option-2"
+            >Time zone 2</option
+          >
+          <option class="hcl-select-option" value="option-3"
+            >Time zone 3</option
+          >
+        </select>
+      </div>
+      <div class="hcl-error-msg"></div>
+
+      <ol class="hcl-list-ordered hcl-upper-alpha">
+        <li class="hcl-list-item">
+          Ordered List level 1
+          <ol class="hcl-list-nested">
+            <li class="hcl-list-item">Ordered List level 2</li>
+            <li class="hcl-list-item">Ordered List level 2</li>
+          </ol>
+        </li>
+        <li class="hcl-list-item">Ordered List level 1</li>
+        <li class="hcl-list-item">Ordered List level 1</li>
+      </ol>
+    </div>
+  </div>
+</div>

@@ -41,7 +41,6 @@ class Overlay {
     this.targetElement.style.top = positions.top;
     this.targetElement.style.left = positions.left;
     this.state.currentDirection = positions.direction;
-    console.log('this.state.currentDirection', this.state.currentDirection);
   }
 
   show = () => {

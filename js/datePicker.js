@@ -94,37 +94,11 @@ class DatePicker {
     };
 
     const getElement = elementSelector => {
-      console.log(elementSelector);
       if (this.datePickerElm.querySelector(elementSelector)) {
         return this.datePickerElm.querySelector(elementSelector);
       } else {
         return this.overlay.targetElement.querySelector(elementSelector);
       }
-
-      //   if (this.state.attachElementToBody) {
-      //     if (this.overlay && this.overlay.targetElement) {
-      //       console.log(
-      //         'ELEMENT ',
-      //         elementSelector,
-      //         this.overlay.targetElement.querySelector(elementSelector)
-      //       );
-      //       return this.overlay.targetElement.querySelector(elementSelector);
-      //     } else {
-      //       console.log(
-      //         'ELEMENT ',
-      //         elementSelector,
-      //         this.datePickerElm.querySelector(elementSelector)
-      //       );
-      //       return this.datePickerElm.querySelector(elementSelector);
-      //     }
-      //   } else {
-      //     console.log(
-      //       'ELEMENT ',
-      //       elementSelector,
-      //       this.datePickerElm.querySelector(elementSelector)
-      //     );
-      //     return this.datePickerElm.querySelector(elementSelector);
-      //   }
     };
     const getDaysInMonth = (month, year) => {
       return new Date(year, month, 0).getDate();
@@ -408,7 +382,9 @@ class DatePicker {
     const bindDateEvent = () => {
       let datePanel = this.datePickerElm.querySelector(DOMstrings.datePanel);
       if (!datePanel) {
-        datePanel = this.overlay.targetElement.querySelector(DOMstrings.datePanel);
+        datePanel = this.overlay.targetElement.querySelector(
+          DOMstrings.datePanel
+        );
       }
       datePanel.addEventListener('click', UICtrl.selectDate);
     };
@@ -512,11 +488,5 @@ class DatePicker {
     const UICtrl = this.UIController();
     this.controller(this.datePickerController(), UICtrl).init();
   };
-
-  //   static handleDataAPI = () => {
-  //     handleDataBinding('datepicker', function(element) {
-  //       return new DatePicker(element);
-  //     });
-  //   };
 }
 export default DatePicker;

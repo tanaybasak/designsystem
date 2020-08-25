@@ -13,16 +13,13 @@
         .bgColor {
             background-color: #eee;
         }
-
         .colBorder {
             border: 1px solid #999;
         }
-
         .bigCol {
             min-height: 5rem;
             padding: 0.9375rem;
         }
-
         .darkBox {
             background-color: #555;
             color: #BBB;
@@ -45,69 +42,8 @@
             <!-- typography -->
             <addHTML src="./scss/base/typography/typography.html" />
 
-            <!-- Dropdown -->
-            <section class="m-1 p-2">
-                <!-- Top -->
-                <div class="hcl-row m-3">
-                    <div class="hcl-col-3">
-                        <addHTML src="./scss/components/dropdown/top/top.html" />
-                    </div>
-                </div>
-                <!-- Bottom -->
-                <div class="hcl-row m-3">
-                    <div class="hcl-col-3">
-                        <addHTML src="./scss/components/dropdown/bottom/bottom.html" />
-                    </div>
-                </div>
-                <!-- multiselect -->
-                <div class="hcl-row m-3">
-                    <div class="hcl-col-3">
-                        <addHTML src="./scss/components/dropdown/multiselect/multiselect.html" />
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Overflow Menu -->
-            <section id="overflowmenu" class="hcl-row m-0">
-                    <!-- Right Overflow Menu  -->
-                    <div class="hcl-col-6">
-                        <p style="float: left;">Right Overflow Menu</p>
-                        <addHTML src="./scss/components/overflow-menu/right/right.html" />
-                    </div>
-    
-                    <!-- Left Overflow Menu  -->
-                    <div class="hcl-col-6">
-                        <p style="float: left;">Left Overflow Menu</p>
-                        <addHTML src="./scss/components/overflow-menu/left/left.html" />
-                    </div>
-    
-                    <!-- Custom Overflow Menu  -->
-                    <div class="hcl-col-12">
-                        <p style="float: left;margin-right: 1.5rem;">Custom </p>
-                        <addHTML src="./scss/components/overflow-menu/custom/custom.html" />
-                    </div>
-    
-                </section>
-
-                <!-- Date Picker -->
-            <section class="m-1 p-2 hcl-row">
-                <!-- bottom -->
-                <div class="hcl-col-6">
-                    <addHTML src="./scss/components/date-picker/bottom/bottom.html" />
-                </div>
-                <!-- top -->
-                <div class="hcl-col-6">
-                    <addHTML src="./scss/components/date-picker/top/top.html" />
-                </div>
-            </section>
-                
             <!-- buttons -->
             <section class="m-1 p-2">
-
-                
-
-                    <addHTML src="./scss/components/overlay/overlay.html" />
-
                 <!-- primary buttons -->
                 <addHTML src="./scss/components/button/primary/primary.html" />
 
@@ -303,7 +239,27 @@
                 <addHTML src="./scss/components/tab/tab.html" />
             </section>
 
-            
+            <!-- Overflow Menu -->
+            <section id="overflowmenu" class="hcl-row m-0">
+                <!-- Right Overflow Menu  -->
+                <div class="hcl-col-6">
+                    <p style="float: left;">Right Overflow Menu</p>
+                    <addHTML src="./scss/components/overflow-menu/right/right.html" />
+                </div>
+
+                <!-- Left Overflow Menu  -->
+                <div class="hcl-col-6">
+                    <p style="float: left;">Left Overflow Menu</p>
+                    <addHTML src="./scss/components/overflow-menu/left/left.html" />
+                </div>
+
+                <!-- Custom Overflow Menu  -->
+                <div class="hcl-col-12">
+                    <p style="float: left;margin-right: 1.5rem;">Custom </p>
+                    <addHTML src="./scss/components/overflow-menu/custom/custom.html" />
+                </div>
+
+            </section>
 
             <!-- List -->
             <section class="hcl-row m-0">
@@ -348,7 +304,27 @@
                 <addHTML src="./scss/components/slider/slider-onhover-tooltip/slider-onhover-tooltip.html" />
             </section>
 
-            
+            <!-- Dropdown -->
+            <section class="m-1 p-2">
+                <!-- Top -->
+                <div class="hcl-row m-3">
+                    <div class="hcl-col-3">
+                        <addHTML src="./scss/components/dropdown/top/top.html" />
+                    </div>
+                </div>
+                <!-- Bottom -->
+                <div class="hcl-row m-3">
+                    <div class="hcl-col-3">
+                        <addHTML src="./scss/components/dropdown/bottom/bottom.html" />
+                    </div>
+                </div>
+                <!-- multiselect -->
+                <div class="hcl-row m-3">
+                    <div class="hcl-col-3">
+                        <addHTML src="./scss/components/dropdown/multiselect/multiselect.html" />
+                    </div>
+                </div>
+            </section>
 
             <!-- File Uploader -->
             <section class="m-1 p-2">
@@ -450,7 +426,17 @@
                 </div>
             </section>
 
-            
+            <!-- Date Picker -->
+            <section class="m-1 p-2 hcl-row">
+                <!-- bottom -->
+                <div class="hcl-col-6">
+                    <addHTML src="./scss/components/date-picker/bottom/bottom.html" />
+                </div>
+                <!-- top -->
+                <div class="hcl-col-6">
+                    <addHTML src="./scss/components/date-picker/top/top.html" />
+                </div>
+            </section>
 
             <!-- Time Picker -->
             <section class="m-1 p-2">
@@ -560,6 +546,15 @@
                 <addHTML src="./scss/components/tree/tree.html" />
             </section>
 
+            <!-- overlay  -->
+            <section class="m-1 p-2">
+                <addHTML src="./scss/components/overlay/default/default.html" />
+            </section>
+    
+            <section class="m-1 p-2">
+                <addHTML src="./scss/components/overlay/attachToBody/attachToBody.html" />
+            </section>
+
             <!-- AVAILABLE COMPONENTS ENDS -->
         </main>
     </div>
@@ -620,7 +615,8 @@
     <script src="./scss/components/time-picker/default/default.js"></script>
     <script src="./scss/components/time-picker/with-24H/with-24H.js"></script>
     <script src="./scss/components/time-picker/with-timezone/with-timezone.js"></script>
-    <script src="./scss/components/overlay/overlay.js"></script>
+    <script src="./scss/components/overlay/default/default.js"></script>
+    <script src="./scss/components/overlay/attachToBody/attachToBody.js"></script>
 </body>
 
 </html>

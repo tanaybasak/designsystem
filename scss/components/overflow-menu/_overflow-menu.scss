@@ -36,8 +36,8 @@
       }
 
       &:focus {
-        outline-offset: -1px;
-        outline: 1px solid $blue;
+        outline-offset: -0.0625rem;
+        outline: 0.0625rem solid $blue;
       }
 
       &.#{$prefix}-overflow-option-separator {
@@ -51,8 +51,8 @@
         }
 
         &:focus {
-          outline-offset: -1px;
-          outline: 1px solid $blue;
+          outline-offset: -0.0625rem;
+          outline: 0.0625rem solid $blue;
           background-color: $red;
           color: $white;
         }
@@ -67,6 +67,10 @@
 
         &:hover {
           background-color: transparent;
+
+          &.#{$prefix}-overflow-option-danger {
+            color: #132730;
+          }
         }
       }
     }

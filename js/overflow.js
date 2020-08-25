@@ -1,11 +1,9 @@
 import { PREFIX } from './utils/config';
 import Overlay from './overlay';
 import { NOOP } from './utils/functions';
-let overflowIdRef = 0;
 class Overflow {
   constructor(element, options) {
     this.element = element;
-    this.overflowId = overflowIdRef++;
     this.overlay = null;
     this.state = {
       isOpen: false,
@@ -84,13 +82,6 @@ class Overflow {
     const icon = this.element.children[0];
     const overflowMenu = this.element.querySelector(`.${PREFIX}-overflow-menu`);
     if (icon) {
-      //   icon.addEventListener('keypress', function(event) {
-      //     if (event.keyCode === 13) {
-      //       event.preventDefault();
-      //       icon.click();
-      //     }
-      //   });
-
       overflowMenu.addEventListener('keydown', e => {
         this.keyDownOnTree(e);
       });

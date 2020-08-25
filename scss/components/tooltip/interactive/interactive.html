@@ -1,79 +1,35 @@
 <span>
-    Interactive Tooltip Label
-    <svg tabindex="0" class="hcl-interactive-tooltip" data-direction="right" data-focus-on-click data-tooltip="#tooltipContent" role="tooltip"
-        focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-        xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-        <path d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"></path>
-        <path
-            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z">
-        </path>
-    </svg>
+  Interactive Tooltip Label
+  <svg
+    tabindex="0"
+    class="hcl-interactive-tooltip"
+    data-direction="right"
+    data-focus-on-click
+    data-tooltip="#tooltipContent"
+    role="tooltip"
+    focusable="false"
+    preserveAspectRatio="xMidYMid meet"
+    style="will-change: transform;"
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+  >
+    <path
+      d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+    ></path>
+    <path
+      d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+    ></path>
+  </svg>
 </span>
 <div id="tooltipContent">
-        <ul class="hcl-accordion" id="con1">
-                <li class="hcl-accordion-item">
-                  <h4 class="hcl-accordion-title" tabindex="0">What is Lorem Ipsum4?</h4>
-                  <div class="hcl-accordion-content-wrapper">
-                    <div class="hcl-accordion-content">
-                            <div class="hcl-timepicker" id="time-picker-101">
-                                    <label for="hcl-timepicker-1" class="hcl-label">Select a time</label>
-                                    <div class="hcl-timepicker-input">
-                                      <input
-                                        id="hcl-timepicker-1"
-                                        type="text"
-                                        class="hcl-form-control"
-                                        placeholder="hh:mm"
-                                        maxlength="5"
-                                      />
-                                      <select class="hcl-select" aria-label="choose option">
-                                        <option class="hcl-select-option" value="AM">AM</option>
-                                        <option class="hcl-select-option" value="PM">PM</option>
-                                      </select>
-                                      <select class="hcl-select" aria-label="choose option">
-                                        <option class="hcl-select-option" value="option-1">Time zone 1</option>
-                                        <option class="hcl-select-option" value="option-2">Time zone 2</option>
-                                        <option class="hcl-select-option" value="option-3">Time zone 3</option>
-                                      </select>
-                                    </div>
-                                    <div class="hcl-error-msg"></div>
-                                  </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="hcl-accordion-item">
-                  <h4 class="hcl-accordion-title" tabindex="0">Why do we use it?</h4>
-                  <div class="hcl-accordion-content-wrapper">
-                    <div class="hcl-accordion-content">
-                      It is a long established fact that a reader will be distracted by the
-                      readable content of a page when looking at its layout. The point of
-                      using Lorem Ipsum is that it has a more-or-less normal distribution of
-                      letters, as opposed to using 'Content here, content here', making it
-                      look like readable English. Many desktop publishing packages and web
-                      page editors now use Lorem Ipsum as their default model text, and a
-                      search for 'lorem ipsum' will uncover many web sites still in their
-                      infancy. Various versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the like).
-                    </div>
-                  </div>
-                </li>
-                <li class="hcl-accordion-item">
-                  <h4 class="hcl-accordion-title" tabindex="0">Where we can use it?</h4>
-                  <div class="hcl-accordion-content-wrapper">
-                    <div class="hcl-accordion-content">
-                      There are many variations of passages of Lorem Ipsum available, but the
-                      majority have suffered alteration in some form, by injected humour, or
-                      randomised words which don't look even slightly believable. If you are
-                      going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                      anything embarrassing hidden in the middle of text. All the Lorem Ipsum
-                      generators on the Internet tend to repeat predefined chunks as
-                      necessary, making this the first true generator on the Internet. It uses
-                      a dictionary of over 200 Latin words, combined with a handful of model
-                      sentence structures, to generate Lorem Ipsum which looks reasonable. The
-                      generated Lorem Ipsum is therefore always free from repetition, injected
-                      humour, or non-characteristic words etc.
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              
+  <p>
+    This is some tooltip text. This box shows the maximum amount of text that
+    should appear inside. If more room is needed please use a modal instead.
+  </p>
+  <div>
+    <a href="#">Learn More</a>
+    <button type="button" class="hcl-btn hcl-primary">Create</button>
+  </div>
 </div>

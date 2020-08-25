@@ -153,7 +153,6 @@ class Dropdown {
   clearMultiselectDropdownItem = event => {
     const tag = this.dropdownBtn.querySelector(`.${PREFIX}-tag-primary`);
     event.stopPropagation();
-    //event.preventDefault();
     tag.classList.add(`hidden`);
     const list = this.dropdownMenu.querySelectorAll('input:checked');
     list.forEach(item => {
@@ -166,7 +165,7 @@ class Dropdown {
   };
 
   selectDropdownItem = event => {
-    const dropdownItem = getClosest(event.target, '.hcl-dropdown-item');
+    const dropdownItem = getClosest(event.target, `.${PREFIX}-dropdown-item`);
     if (this.state.type === 'multi') {
       const input = dropdownItem.querySelector('input');
       input.checked = !input.checked;
