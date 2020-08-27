@@ -68,7 +68,7 @@ $colorMap: (
         line-height: getLineHeight(0.875rem);
         letter-spacing: 0;
         @include themify($themes) {  
-          color: themed('default_text');
+          color: themed('default_text_high');
         }
         margin-right: 0.5rem;
         font-weight: 600;

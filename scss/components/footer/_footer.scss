@@ -89,10 +89,7 @@
         }
 
         &:focus {
-          @include getTextDecorationLine('underline');
-          @include themify($themes) {
-            outline: 1px solid themed('interactive_border');
-          }
+          border: unset;
         }
 
         &[disabled] {

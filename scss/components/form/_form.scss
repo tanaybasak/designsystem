@@ -35,14 +35,14 @@
 input.#{$prefix}-form-control[data-invalid='true'],
 textarea.#{$prefix}-textarea[data-invalid='true'] {
   @include themify($themes) {
-    border-bottom: 1px solid themed('danger_border');
+    border-bottom: 2px solid themed('danger_border');
   }
 }
 
 input.#{$prefix}-form-control[data-invalid='true']:focus,
 textarea.#{$prefix}-textarea[data-invalid='true']:focus {
   @include themify($themes) {
-    border-bottom: 1px solid themed('danger_border');
+    border-bottom: 2px solid themed('danger_border');
   }
 }
 

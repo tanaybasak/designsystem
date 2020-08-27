@@ -173,6 +173,7 @@
     @include themify($themes) {
       color: themed('interactive_icon_hover') !important;
       background-color: themed('interactive_bg_hover') !important;
+      text-decoration: none;
     }
   }
 

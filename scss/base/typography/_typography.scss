@@ -9,67 +9,59 @@
 @import 'typographyMixins';
 
 // Font weight
-@each $key,
-$value in $fontWeights-map {
-    .#{$prefix}-font-#{$key} {
-        @include getFontWeight($key);
-    }
+@each $key, $value in $fontWeights-map {
+  .#{$prefix}-font-#{$key} {
+    @include getFontWeight($key);
+  }
 }
 
 // Font style
-@each $key,
-$value in $textStyles-map {
-    .#{$prefix}-font-#{$key} {
-        @include getTextStyles($key);
-    }
+@each $key, $value in $textStyles-map {
+  .#{$prefix}-font-#{$key} {
+    @include getTextStyles($key);
+  }
 }
 
 // Text decoration style
-@each $key,
-$value in $textDecorationStyle-map {
-    .#{$prefix}-font-#{$key} {
-        @include getTextDecorationStyle($key);
-    }
+@each $key, $value in $textDecorationStyle-map {
+  .#{$prefix}-font-#{$key} {
+    @include getTextDecorationStyle($key);
+  }
 }
 
 // Text decoration line
-@each $key,
-$value in $textDecorationLine-map {
-    .#{$prefix}-font-#{$key} {
-        @include getTextDecorationLine($key);
-    }
+@each $key, $value in $textDecorationLine-map {
+  .#{$prefix}-font-#{$key} {
+    @include getTextDecorationLine($key);
+  }
 }
 
 // Text transform
-@each $key,
-$value in $textTransforms-map {
-    .#{$prefix}-font-#{$key} {
-        @include getTextTransform($key);
-    }
+@each $key, $value in $textTransforms-map {
+  .#{$prefix}-font-#{$key} {
+    @include getTextTransform($key);
+  }
 }
 
 // Text alignment
-@each $key,
-$value in $textAlignments-map {
-    .#{$prefix}-font-#{$key} {
-        @include getTextAlignment($key);
-    }
+@each $key, $value in $textAlignments-map {
+  .#{$prefix}-font-#{$key} {
+    @include getTextAlignment($key);
+  }
 }
 
 // White space
-@each $key,
-$value in $whiteSpaces-map {
-    .#{$prefix}-whitespace-#{$key} {
-        @include getWhiteSpace($key);
-    }
+@each $key, $value in $whiteSpaces-map {
+  .#{$prefix}-whitespace-#{$key} {
+    @include getWhiteSpace($key);
+  }
 }
 
 // Writing Mode
-@each $key,
-$value in $writingModes-map {
-    .#{$prefix}-writing-#{$key} {
-        @include getWritingMode($key);
-    }
+@each $key, $value in $writingModes-map {
+  .#{$prefix}-writing-#{$key} {
+    @include getWritingMode($key);
+  }
 }
 
 // Headings
@@ -77,125 +69,131 @@ $value in $writingModes-map {
 h1,
 .#{$prefix}-h1,
 .#{$prefix}-giga {
-    @include getFontSizeAndLineHeightForHeadings('h1');
-    @include getFontWeight(light);
+  @include getFontSizeAndLineHeightForHeadings('h1');
+  @include getFontWeight(light);
 }
 
 // font-size: 3.375rem or 54px
 h2,
 .#{$prefix}-h2,
 .#{$prefix}-mega {
-    @include getFontSizeAndLineHeightForHeadings('h2');
-    @include getFontWeight(light);
+  @include getFontSizeAndLineHeightForHeadings('h2');
+  @include getFontWeight(light);
 }
 
 // font-size: 2.25rem or 36px
 h3,
 .#{$prefix}-h3,
 .#{$prefix}-alpha {
-    @include getFontSizeAndLineHeightForHeadings('h3');
-    @include getFontWeight(light);
+  @include getFontSizeAndLineHeightForHeadings('h3');
+  @include getFontWeight(light);
 }
 
 // font-size: 1.75rem or 28px
 h4,
 .#{$prefix}-h4,
 .#{$prefix}-beta {
-    @include getFontSizeAndLineHeightForHeadings('h4');
-    @include getFontWeight(light);
+  @include getFontSizeAndLineHeightForHeadings('h4');
+  @include getFontWeight(light);
 }
 
 // font-size: 1.25rem or 20px
 h5,
 .#{$prefix}-h5,
 .#{$prefix}-gamma {
-    @include getFontSizeAndLineHeightForHeadings('h5');
-    @include getFontWeight(light);
+  @include getFontSizeAndLineHeightForHeadings('h5');
+  @include getFontWeight(light);
 }
 
 // font-size: 1.125rem or 18px
 .#{$prefix}-type-delta {
-    @include getFontSizeAndLineHeightForHeadings('h6');
-    @include getFontWeight(semibold);
+  @include getFontSizeAndLineHeightForHeadings('h6');
+  @include getFontWeight(semibold);
 }
 
 // font-size: 1.125rem or 18px
 h6,
 .#{$prefix}-h6 {
-    @include getFontSizeAndLineHeightForHeadings('h6');
+  @include getFontSizeAndLineHeightForHeadings('h6');
 }
 
 // font-size: 1rem or 16px
 .#{$prefix}-type-epsilon {
-    font-size: 1rem;
-    line-height: getLineHeight(1rem);
-    @include getFontWeight(semibold);
+  font-size: 1rem;
+  line-height: getLineHeight(1rem);
+  @include getFontWeight(semibold);
 }
 
 // font-size: .875rem or 14px
 .#{$prefix}-type-zeta {
-    font-size: .875rem;
-    line-height: getLineHeight(.875rem);
-    @include getFontWeight(semibold);
+  font-size: 0.875rem;
+  line-height: getLineHeight(0.875rem);
+  @include getFontWeight(semibold);
 }
 
 // font-size: .75rem or 12px
 .#{$prefix}-type-omega {
-    font-size: .75rem;
-    line-height: getLineHeight(.75rem);
-    @include getFontWeight(semibold);
+  font-size: 0.75rem;
+  line-height: getLineHeight(0.75rem);
+  @include getFontWeight(semibold);
 }
 
 // font-size: .6875rem or 10px
 .#{$prefix}-type-legal {
-    font-size: .6875rem;
-    line-height: getLineHeight(.6875rem);
-    @include getFontWeight(regular);
+  font-size: 0.6875rem;
+  line-height: getLineHeight(0.6875rem);
+  @include getFontWeight(regular);
 }
 
 // font-size: .75rem or 12px
 .#{$prefix}-type-caption {
-    font-size: .75rem;
-    line-height: getLineHeight(.75rem);
-    @include getFontWeight(regular);
+  font-size: 0.75rem;
+  line-height: getLineHeight(0.75rem);
+  @include getFontWeight(regular);
 }
 
 // Anchor link
 a {
-    color: theme-color('primary');
-    font-size: .875rem;
-    line-height: getLineHeight(.875rem);
-    text-decoration: none;
+  @include themify($themes) {
+    color: themed('interactive_text');
+  }
+  font-size: 0.875rem;
+  line-height: getLineHeight(0.875rem);
+  text-decoration: none;
 
-    &:hover {
-        color: $black-light;
-        text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+    @include themify($themes) {
+      color: themed('interactive_text_hover');
     }
+  }
 
-    &:focus {
-        color: $black-light;
-        outline: 1px solid theme-color('primary');
-        text-decoration: underline;
-        outline-offset: 3px;
+  &:focus {
+    @include themify($themes) {
+      border: 1px solid themed('interactive_border');
     }
+    outline-offset: 3px;
+  }
 
-    &.disable {
-        color: $black-light;
-        pointer-events: none;
+  &.disable {
+    @include themify($themes) {
+      opacity: themed('disabled_all');
     }
+    pointer-events: none;
+  }
 }
 
 p,
 .#{$prefix}-p {
-    font-size: 1rem;
-    line-height: getLineHeight(1rem);
-    color: inherit;
-    @include getFontWeight(regular);
+  font-size: 1rem;
+  line-height: getLineHeight(1rem);
+  color: inherit;
+  @include getFontWeight(regular);
 }
 
 // Text overflow
 .#{$prefix}-ellipsis {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    @include getWhiteSpace(nowrap);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  @include getWhiteSpace(nowrap);
 }
