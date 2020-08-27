@@ -162,7 +162,6 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: $black-light;
     text-decoration: underline;
     @include themify($themes) {
       color: themed('interactive_text_hover');
