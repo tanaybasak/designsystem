@@ -62,6 +62,9 @@
   }
 
   &-label {
+    @include themify($themes) {
+      color: themed('default_text');
+     }
     &-hide {
       display: none;
     }
