@@ -301,16 +301,18 @@ $inputColor-map: (
       outline: none;
 
       @include themify($themes) {
-        box-shadow: 0 1px 0 0 themed("interactive_border");
+       // box-shadow: 0 1px 0 0 themed("interactive_border");
+        border-bottom: 2px solid themed("interactive_border");
       }
 
       & ~ label.#{$prefix}-label {
-        color: $blue-7;
+        @include themify($themes) {
+           color: themed("default_text");
+         }
       }
     }
 
     &[disabled] {
-      // opacity: .5;
       cursor: not-allowed;
 
       // background-color: rgba($blue-secondary, 0.5);
@@ -321,7 +323,9 @@ $inputColor-map: (
       & ~ label,
       & ~ .#{$prefix}-error-msg,
       & ~ .#{$prefix}-helper-text {
-        opacity: 0.5;
+        @include themify($themes) {
+          opacity: themed('disabled_all');
+        }
       }
     }
   } @else {

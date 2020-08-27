@@ -16,6 +16,11 @@
 
         &:focus {
             @include themify($themes) {
+                border: 2px solid themed('interactive_border');
+              }
+        }
+        &:hover {
+            @include themify($themes) {
                 border: 1px solid themed('interactive_border');
               }
         }
