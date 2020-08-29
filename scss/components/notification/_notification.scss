@@ -1,10 +1,10 @@
 @import '../../base';
 
-$colorMap: (
-  'info': $info,
-  'danger': $red-3,
-  'success': $success,
-  'warning': $warning,
+$colorMap: (  //TODO this should be removed
+  'info': info,
+  'danger': danger,
+  'success': success,
+  'warning': warning,
 );
 
 .#{$prefix}-notification {
@@ -15,9 +15,23 @@ $colorMap: (
 
   @each $key, $value in $colorMap {
     &.#{$prefix}-#{$key} {
-      border: 1px solid $value;
-      border-left: 0.3125rem solid $value;
-      background-color: $white;
+      @include themify($themes) { 
+      border: 1px solid themed($value + '_border');
+      border-left: 0.3125rem solid themed($value + '_border');
+      background-color: themed($value + '_bg');
+      }
+
+      >.#{$prefix}-notification-body {
+        >.#{$prefix}-notification-icon-container {
+          >.#{$prefix}-notification-icon {
+          @include themify($themes) { 
+            fill: themed($value + '_icon');
+          }
+        }
+        }
+      }
+    
+
     }
  
 }
@@ -29,7 +43,14 @@ $colorMap: (
     .#{$prefix}-notification-icon-container {
       display: flex;
       align-items: center;
+      @each $key, $value in $colorMap {
+      >.#{$prefix}-notification-icon {
+        @include themify($themes) { 
+          fill: themed($value + '_icon');
+      }
     }
+  }
+}
 
     .#{$prefix}-notification-icon {
       flex-shrink: 0;
