@@ -50,9 +50,6 @@
     padding: 1rem 1.5rem;
     margin-top: 1.25rem;
     word-wrap: break-word;
-    @include themify($themes) {
-     color: themed('default_text_high');
-    }
   }
 
   @include media-breakpoint-between(md, xxl) {
@@ -90,9 +87,6 @@
     width: 100%;
     padding: 1rem 1.5rem;
     max-height: 15rem;
-    @include themify($themes) {
-      color: themed('default_text_high');
-     }
   }
 
   @include media-breakpoint-between(md, xxl) {
@@ -110,9 +104,6 @@
     justify-content: flex-end;
     padding: 1rem 1.5rem;
     align-items: center;
-    @include themify($themes) {
-      background-color: themed('default_bg_low');
-     }
 
     &-hide {
       display: none;

@@ -11,7 +11,6 @@
   &-input {
     display: flex;
     flex-direction: row;
-    /// border-bottom: .0625rem solid transparent;
     @include themify($themes) {
       color: themed('input_text_low');
     }
@@ -55,5 +54,12 @@
       cursor: not-allowed;
       opacity: themed('disabled_all');
     }
+  }
+
+  .#{$prefix}-timepicker-hour-label {
+    color: $lightGrey;
+    display: flex;
+    align-items: center;
+    padding-left: 0.625rem;
   }
 }

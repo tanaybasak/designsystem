@@ -1,4 +1,4 @@
-@import '../../base';
+@import "../../base";
 
 $search-height: 2.5rem;
 $search-height-sm: 2rem;
@@ -14,7 +14,7 @@ $search-reset-size: 0.759rem;
   &:focus {
     outline: 0;
     @include themify($themes) {
-      border-bottom: 1px solid themed('interactive_border');
+      border-bottom: 1px solid themed("interactive_border");
     }
   }
   > * {
@@ -46,7 +46,7 @@ $search-reset-size: 0.759rem;
     cursor: pointer;
     .#{$prefix}-search-icon {
       @include themify($themes) {
-        fill: themed('input_icon');
+        fill: themed("input_icon");
       }
     }
   }
@@ -64,7 +64,7 @@ $search-reset-size: 0.759rem;
       margin-left: ($search-height - $search-icon-size)/2;
       margin-top: ($search-height - $search-icon-size)/2;
       @include themify($themes) {
-        fill: themed('input_icon');
+        fill: themed("input_icon");
       }
     }
   }
@@ -77,9 +77,9 @@ $search-reset-size: 0.759rem;
     outline: none;
     padding: 0 $search-height;
     @include themify($themes) {
-      border-bottom: 0.0625rem solid themed('input_border');
-      color: themed('input_text');
-      background-color: themed('input_bg');
+      border-bottom: 0.0625rem solid themed("input_border");
+      color: themed("input_text");
+      background-color: themed("input_bg");
     }
     right: 0;
     position: unset;
@@ -87,7 +87,7 @@ $search-reset-size: 0.759rem;
 
     &:focus {
       @include themify($themes) {
-        border-bottom: 2px solid themed('interactive_border');
+        border-bottom: 2px solid themed("interactive_border");
       }
       outline-offset: -1px;
     }
@@ -109,18 +109,17 @@ $search-reset-size: 0.759rem;
   }
 
   .#{$prefix}-search-reset {
-     background: none;
-     display: inline-flex;
-     right:0;
-     height: $search-height;
-     width: $search-height;
-     visibility: hidden;
-     position: absolute;
-     align-items: center;
-     justify-content: center;
-     cursor: pointer;
-     transition: visibility 0.15s ease-out;
-
+    background: none;
+    display: inline-flex;
+    right: 0;
+    height: $search-height;
+    width: $search-height;
+    visibility: hidden;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: visibility 0.15s ease-out;
 
     &.show {
       visibility: visible;
@@ -128,11 +127,11 @@ $search-reset-size: 0.759rem;
 
     &::before,
     &::after {
-      content: ' ';
+      content: " ";
       position: absolute;
       width: 0.125rem;
       @include themify($themes) {
-        background-color: themed('input_icon');
+        background-color: themed("input_icon");
       }
       height: $search-reset-size;
     }
@@ -165,34 +164,32 @@ $search-reset-size: 0.759rem;
     }
 
     .#{$prefix}-search-reset {
-      height: $search-height-sm;
-      width: $search-height-sm;
+      background: none;
+      right: 0;
+      display: flex;
+      height: $search-height;
+      width: $search-height;
+      visibility: hidden;
+      width: 0;
+      padding: 0;
+      position: absolute;
+      transition: all 0.15s ease-out;
     }
-  }
 
-  &.#{$prefix}-search-btn-only {
-    &:not(.show) {
-      .#{$prefix}-search-input {
-        visibility: hidden;
-        width: 0;
-        padding: 0;
-        position: absolute;
-        transition: all 0.15s ease-out;
-      }
-
-      .#{$prefix}-search-btn {
-        right: 0;
-        left: unset;
-        pointer-events: unset;
-      }
+    .#{$prefix}-search-btn {
+      right: 0;
+      left: unset;
+      pointer-events: unset;
     }
   }
 
   &.#{$prefix}-bg-white {
     .#{$prefix}-search-input {
       @include themify($themes) {
-        background-color: themed('default_bg');
+        background-color: themed("default_bg");
       }
     }
   }
 }
+
+

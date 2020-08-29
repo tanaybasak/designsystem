@@ -19,7 +19,6 @@
       position: absolute;
       top: 0.75rem;
       left: 1rem;
-      // fill: $blue-7;
       @include themify($themes) {
         fill: themed("input_icon");
       }
@@ -28,7 +27,6 @@
     }
 
     &-error {
-        // border: 0.0625rem solid $red-3;
         @include themify($themes) {
           border-bottom: 2px solid themed("danger_text");
         }
@@ -38,8 +36,6 @@
       padding: 0 1rem 0 3rem;
       border: none;
       height: 2.5rem;
-      // border-bottom: 0.0625rem solid $dark-blue;
-      //  background-color: rgba(70, 150, 210, 0.05);
       @include themify($themes) {
         color: themed("input_text");
         background-color: themed("input_bg");
@@ -221,9 +217,6 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      //   @include themify($themes) {
-      //     color: themed('default_text_high');
-      // }
     }
   }
 
@@ -283,7 +276,6 @@
     display: none;
     @include themify($themes) {
       color: themed("danger_text");
-      // border-bottom: 0.0625rem solid themed('danger_border');
     }
     margin-top: 0.25rem;
     font-size: 0.75rem;
@@ -295,4 +287,3 @@
     }
   }
 }
-//date picker scss

@@ -150,16 +150,17 @@
             width: 100%;
             position: relative;
             margin-bottom: 0;
+
             .#{$prefix}-form-control {
               height: 1.5rem;
             }
 
-            button{
-                position: absolute;
-                background: transparent;
-                right: 0;
-                padding: 0 0.5rem;
-                cursor: pointer;
+            button {
+              position: absolute;
+              background: transparent;
+              right: 0;
+              padding: 0 0.5rem;
+              cursor: pointer;
             }
           }
 
@@ -175,6 +176,21 @@
       &.add-border-bottom {
         @include themify($themes) {
           border-bottom: 0.125rem solid themed('interactive_border');
+        }
+      }
+
+      .overflow-onhover {
+        visibility: hidden;
+
+        &.hcl-overflow-active {
+          visibility: visible;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        .overflow-onhover {
+          visibility: visible;
         }
       }
     }

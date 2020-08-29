@@ -34,11 +34,6 @@
     justify-content: left;
     margin: 0;
     padding-right: 2.5rem;
-    @include themify($themes) {
-      background-color: themed('input_bg');
-      color: themed('input_text');
-      border-bottom: 1px solid themed('input_border');
-    }
 
     &::after {
       content: '';
