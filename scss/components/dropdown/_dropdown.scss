@@ -34,6 +34,11 @@
     justify-content: left;
     margin: 0;
     padding-right: 2.5rem;
+    @include themify($themes) {
+      background-color: themed('input_bg');
+      color: themed('input_text');
+      border-bottom: 1px solid themed('input_border');
+    }
 
     &::after {
       content: '';
@@ -99,7 +104,7 @@
     cursor: pointer;
     @include themify($themes) {
       background: themed('default_bg');
-      color: themed('input_text');
+      color: themed('default_text');
     }
 
     &:hover {
@@ -124,7 +129,7 @@
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
-    padding: 0.5125rem 1rem;
+    padding: 0.4698rem 1rem;
     text-decoration: none;
     text-overflow: ellipsis;
     @include themify($themes) {
@@ -143,6 +148,7 @@
       outline-offset: -1px;
       @include themify($themes) {
         outline: 1px solid themed('interactive_border');
+        color: themed('default_text');
       }
     }
   }
@@ -188,3 +194,4 @@
     }
   }
 }
+
