@@ -132,7 +132,9 @@ $value in $iconSizesMap {
 // Disable
 %disable,
 .disable {
-    opacity: .5;
+    @include themify($themes) {
+        opacity: themed('disabled_all');
+    }
     cursor: not-allowed;
 }
 
