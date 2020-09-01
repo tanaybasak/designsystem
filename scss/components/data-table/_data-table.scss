@@ -73,6 +73,25 @@ $zebra-bg: #F5F9FC;
                 &.sortable {
                     cursor: pointer;
                 }
+                > span.#{$prefix}-data-table-resizable {
+                    user-select: none;
+                    display: inline-block;
+                    position: absolute;
+                    width: 10px;
+                    height: 100%;
+                    bottom: 0;
+                    right: -5px;
+                    z-index: 1;
+                    &:hover {
+                      cursor: col-resize;
+                      &:after {
+                        content: "";
+                        display: inline-block;
+                        border: 5px solid $blue;
+                        height: 100%;
+                      }
+                    }
+                }
             }
 
             td {
