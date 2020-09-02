@@ -80,14 +80,14 @@
     @include hcl-ellipsis();
 }
 
-// Border
-.b-0 {
-    border: 0;
-}
+// Border   //TODO need to check if we need border classes as these classes are not used anywhere
+// .b-0 {
+//     border: 0;
+// }
 
-.b-1 {
-    border: 1px solid $light-40;
-}
+// .b-1 {
+//     border: 1px solid $light-40;
+// }
 
 /* 
  * ICON UTILITY CLASSES
