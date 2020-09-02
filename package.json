@@ -4,8 +4,8 @@
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
   "scripts": {
+    "build": "parcel build modular/*/index.js --no-source-maps -d .dist/ && parcel build modular/*/*/index.js --no-source-maps -d .dist/ ",
     "start": "node importHTML.js && parcel index.html -d output --port 8000",
-    "build": "npm run clean && parcel build js/index.js -o patron --no-source-maps ",
     "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss';",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js .",
