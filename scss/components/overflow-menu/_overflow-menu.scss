@@ -96,4 +96,19 @@
   .#{$prefix}-overflow-btn {
     background: lightblue;
   }
+
+  &:hover {
+    @include themify($themes) {
+      color: themed('interactive_icon_hover') !important;
+      background-color: themed('interactive_bg_hover') !important;
+      text-decoration: none;
+    }
+  }
+
+  &:focus {
+    outline-offset: -1px;
+    @include themify($themes) {
+      outline: 1px solid themed('interactive_border');
+    }
+  }
 }

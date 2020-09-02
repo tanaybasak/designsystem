@@ -1,11 +1,13 @@
-$loading-bg : rgba(61, 112, 178, .1);
-
 @mixin loading() {
     position: relative;
     border: none !important;
     box-shadow: none;
     pointer-events: none;
-    background: $loading-bg !important;
+
+    @include themify($themes) {
+        background: rgba(themed("primary_bg"), 0.1) !important;
+    }
+
     color: transparent !important;
 
     &:hover,
@@ -22,14 +24,18 @@ $loading-bg : rgba(61, 112, 178, .1);
     }
 
     &::before {
-        content: '';
+        content: "";
         width: 0;
         height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        opacity: .3;
-        background: $loading-bg;
+        opacity: 0.3;
+
+        @include themify($themes) {
+            background: rgba(themed("primary_bg"), 0.1) !important;
+        }
+
         animation: loading-animation 3s ease-in-out infinite;
     }
 }
@@ -39,56 +45,56 @@ $loading-bg : rgba(61, 112, 178, .1);
         width: 0;
         left: 0;
         right: auto;
-        opacity: .3
+        opacity: 0.3;
     }
 
     20% {
         width: 100%;
         left: 0;
         right: auto;
-        opacity: 1
+        opacity: 1;
     }
 
     28% {
         width: 100%;
         left: auto;
-        right: 0
+        right: 0;
     }
 
     51% {
         width: 0;
         left: auto;
-        right: 0
+        right: 0;
     }
 
     58% {
         width: 0;
         left: auto;
-        right: 0
+        right: 0;
     }
 
     82% {
         width: 100%;
         left: auto;
-        right: 0
+        right: 0;
     }
 
     83% {
         width: 100%;
         left: 0;
-        right: auto
+        right: auto;
     }
 
     96% {
         width: 0;
         left: 0;
-        right: auto
+        right: auto;
     }
 
     to {
         width: 0;
         left: 0;
         right: auto;
-        opacity: .3
+        opacity: 0.3;
     }
 }

@@ -80,14 +80,14 @@
     @include hcl-ellipsis();
 }
 
-// Border
-.b-0 {
-    border: 0;
-}
+// Border   //TODO need to check if we need border classes as these classes are not used anywhere
+// .b-0 {
+//     border: 0;
+// }
 
-.b-1 {
-    border: 1px solid $light-40;
-}
+// .b-1 {
+//     border: 1px solid $light-40;
+// }
 
 /* 
  * ICON UTILITY CLASSES
@@ -132,7 +132,9 @@ $value in $iconSizesMap {
 // Disable
 %disable,
 .disable {
-    opacity: .5;
+    @include themify($themes) {
+        opacity: themed('disabled_all');
+    }
     cursor: not-allowed;
 }
 
@@ -198,16 +200,16 @@ $displayProperties: none inline inline-block block table inline-table table-cell
 }
 
 .#{$prefix}-lightbox {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  opacity: 1;
-  z-index: 959;
-
-  &-disable {
-    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);  //TODO needs to be changed
+    opacity: 1;
+    z-index: 959;
+  
+    &-disable {
+      opacity: 0;
+    }
   }
-}

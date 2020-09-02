@@ -7,9 +7,9 @@
  */
 
 // Themes
-@function theme-color($key: 'primary') {
-    @return map-get($theme-colors, $key);
-}
+// @function theme-color($key: 'primary') {
+//     @return map-get($theme-colors, $key);
+// }
 
 // Grids
 @function grid-width($n) {
@@ -40,3 +40,9 @@
 
     @return $color;
 }
+
+//theme
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+  }

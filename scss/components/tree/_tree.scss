@@ -1,10 +1,5 @@
 @import '../../base';
 
-$caret-icon: #555;
-$node-hover-bg: rgba(70, 150, 210, 0.1);
-$node-selection-bg: #0066b0;
-$drag: #092b51;
-
 .#{$prefix}-tree {
   font-size: 0.875rem;
   @include getFontWeight(regular);
@@ -17,6 +12,12 @@ $drag: #092b51;
     position: relative;
     padding: 0.3125rem 0 0;
 
+    &:focus {
+      @include themify($themes) {
+        border: themed('interactive_border');
+      }
+    }
+
     .tree-node {
       cursor: pointer;
       line-height: unset;
@@ -24,6 +25,12 @@ $drag: #092b51;
       flex-direction: row;
       align-items: center;
       border: 0.125rem solid transparent;
+
+      &:hover {
+        @include themify($themes) {
+          background-color: themed('interactive_bg_hover');
+        }
+      }
 
       & > i {
         margin-right: 0.5rem;
@@ -47,8 +54,10 @@ $drag: #092b51;
           height: 0.5rem;
           width: 0.5rem;
           margin-top: 0.125rem;
-          border-right: 0.0625rem solid $caret-icon;
-          border-bottom: 0.0625rem solid $caret-icon;
+          @include themify($themes) {
+            border-right: 0.0625rem solid themed('default_icon');
+            border-bottom: 0.0625rem solid themed('default_icon');
+          }
           transform: scale(1) rotate(-45deg);
           transition: all 0.2s ease-in-out;
           margin-left: 0.3125rem;
@@ -75,9 +84,6 @@ $drag: #092b51;
             padding: 0 0.625rem;
           }
 
-          &:hover {
-            background-color: $node-hover-bg;
-          }
         }
 
         .treenode-content-wrapper {
@@ -101,17 +107,29 @@ $drag: #092b51;
           .tree-text-node {
             display: inline-flex;
             max-width: 100%;
+           
+            @include themify($themes) {
+              color: themed('default_text');
+            }
 
+            &:hover{
+              @include themify($themes) {
+                color: themed('default_text_high');
+              }
+            }
             &.highlight {
-              background-color: $node-selection-bg;
-              color: $white;
+              @include themify($themes) {
+                color: themed('default_text');
+                background-color: themed('active_bg');
+              }
             }
 
             &.highlight-row {
-              background: $drag;
-              color: $white;
+              @include themify($themes) {
+                color: themed('default_text');
+                background: themed('active_bg');
+              }
             }
-
             &.#{$prefix}-cut-node {
               opacity: 0.5;
             }
@@ -146,18 +164,19 @@ $drag: #092b51;
             }
           }
 
-          &:hover {
-            background-color: $node-hover-bg;
-          }
         }
       }
 
       &.add-border {
-        border-top: 0.125rem solid $drag;
+        @include themify($themes) {
+          border-top: 0.125rem solid themed('interactive_border');
+        }
       }
 
       &.add-border-bottom {
-        border-bottom: 0.125rem solid $drag;
+        @include themify($themes) {
+          border-bottom: 0.125rem solid themed('interactive_border');
+        }
       }
 
       .overflow-onhover {
