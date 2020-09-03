@@ -12,7 +12,7 @@
   .#{$prefix}-overflow-option {
     width: inherit;
     font-size: 0.875rem;
-    color: $aqua-90;
+    color: red;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -37,24 +37,24 @@
 
       &:focus {
         outline-offset: -0.0625rem;
-        outline: 0.0625rem solid $blue;
+        outline: 0.0625rem solid yellow;
       }
 
       &.#{$prefix}-overflow-option-separator {
-        border-top: 0.0625rem solid $grey-8;
+        border-top: 0.0625rem solid grey;
       }
 
       &.#{$prefix}-overflow-option-danger {
         &:hover {
-          background-color: $red;
-          color: $white;
+          background-color: red;
+          color: white;
         }
 
         &:focus {
           outline-offset: -0.0625rem;
-          outline: 0.0625rem solid $blue;
-          background-color: $red;
-          color: $white;
+          outline: 0.0625rem solid blue;
+          background-color: red;
+          color: white;
         }
       }
 
