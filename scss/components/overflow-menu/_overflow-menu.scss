@@ -10,7 +10,7 @@
   overflow: auto;
   @include themify($themes) {
     background-color: themed('default_bg');
-    border: 1px solid themed('default_border_xlow');
+    border: 0.0625rem solid themed('default_border_xlow');
   }
 
   .#{$prefix}-overflow-option {
@@ -110,7 +110,7 @@
   &:focus {
     outline-offset: -1px;
     @include themify($themes) {
-      outline: 2px solid themed('interactive_border');
+      outline: 0.125rem solid themed('interactive_border');
     }
   }
 }

@@ -18,7 +18,7 @@
     @include themify($themes) {
       background-color: themed('input_bg');
       color: themed('input_text');
-      border-bottom: 1px solid themed('input_border');
+      border-bottom: 0.0625rem solid themed('input_border');
     }
 
     &::after {
@@ -40,7 +40,7 @@
     &:focus {
       outline-offset: -0.0625rem;
       @include themify($themes) {
-        border-bottom: 2px solid themed('interactive_border');
+        border-bottom: 0.125rem solid themed('interactive_border');
       }
     }
 
@@ -63,7 +63,7 @@
     }
     .#{$prefix}-dropdown-toggle {
       @include themify($themes) {
-        border-bottom: 2px solid themed('interactive_border');
+        border-bottom: 0.125rem solid themed('interactive_border');
       }
     }
   }
@@ -103,9 +103,9 @@
 
     &:focus {
       text-decoration: none;
-      outline-offset: -1px;
+      outline-offset: -0.0625rem;
       @include themify($themes) {
-        outline: 1px solid themed('interactive_border');
+        outline: 0.0625rem solid themed('interactive_border');
       }
     }
 
@@ -118,13 +118,13 @@
 
   &.#{$prefix}-dropdown-top {
     @include themify($themes) {
-      border-top: 1px solid themed('input_border');
+      border-top: 0.0625rem solid themed('input_border');
      }
   }
 
   &:not(.#{$prefix}-dropdown-top) {
     @include themify($themes) {
-      border-bottom: 1px solid themed('input_border');
+      border-bottom: 0.0625rem solid themed('input_border');
      }
   }
 }
