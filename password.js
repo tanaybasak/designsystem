@@ -66,7 +66,7 @@ class Password {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('password', function(element, target) {
+    handleDataBinding('password', function (element, target) {
       if (element && target) {
         const defaultOption = {
           button: {

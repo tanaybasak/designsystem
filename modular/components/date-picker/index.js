@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  datepicker: function(selector, options) {
+  datepicker: function (selector, options) {
     attachElements(selector, options, DatePicker);
   }
 };

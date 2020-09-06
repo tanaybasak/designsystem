@@ -12,7 +12,7 @@ $colorMap: (
   'info': $info,
   'danger': $red-3,
   'success': $success,
-  'warning': $warning,
+  'warning': $warning
 );
 
 @mixin getToastThemes() {

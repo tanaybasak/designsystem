@@ -78,7 +78,7 @@
     width: 100%;
     display: none;
     max-height: 20rem;
-    overflow:auto;
+    overflow: auto;
   }
 
   &-item {
@@ -153,11 +153,11 @@
     display: none;
   }
 
-  &-open {  
+  &-open {
     .#{$prefix}-dropdown-container {
-        display: block;
+      display: block;
     }
-    &>.#{$prefix}-dropdown-toggle::after {
+    & > .#{$prefix}-dropdown-toggle::after {
       right: 1.2rem;
       transform: rotate(180deg);
     }

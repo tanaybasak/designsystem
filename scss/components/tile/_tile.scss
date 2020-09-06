@@ -1,115 +1,115 @@
 @import '../../base';
 
 @mixin tile($type) {
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
-    display: inline-block;
-    background-color: $white;
-    border: 1px solid transparent;
-    position: relative;
-    padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  background-color: $white;
+  border: 1px solid transparent;
+  position: relative;
+  padding: 1rem;
+  cursor: default;
+
+  @if ($type==clickable or $type==selectable or $type==expandable) {
+    cursor: pointer;
+    outline: none;
+
+    &:focus {
+      border: 1px solid $blue;
+    }
+
+    &:hover .#{$prefix}-tile-checkbox {
+      visibility: visible;
+    }
+  }
+
+  @if ($type==selectable) {
+    padding-right: 3rem;
+  }
+
+  @if ($type==expandable) {
+    padding: hcl-rem(15px) 2.5rem;
     cursor: default;
 
-    @if($type==clickable or $type==selectable or $type==expandable) {
-        cursor: pointer;
-        outline: none;
-
-        &:focus {
-            border: 1px solid $blue;
-        }
-
-        &:hover .#{$prefix}-tile-checkbox {
-            visibility: visible;
-        }
+    input {
+      &:checked ~ .#{$prefix}-tile-hide {
+        display: block;
+      }
     }
-
-    @if($type==selectable) {
-        padding-right: 3rem;
-    }
-
-    @if($type==expandable) {
-        padding: hcl-rem(15px) 2.5rem;
-        cursor: default;
-
-        input {
-            &:checked~.#{$prefix}-tile-hide {
-                display: block;
-            }
-        }
-    }
+  }
 }
 
 .#{$prefix}-tile {
-    @include tile(default);
+  @include tile(default);
 
-    &-clickable {
-        @include tile(clickable);
+  &-clickable {
+    @include tile(clickable);
+  }
+
+  &-selectable {
+    @include tile(selectable);
+  }
+
+  &-expandable {
+    @include tile(expandable);
+    &.arrow-top-left {
+      .#{$prefix}-tile-arrow {
+        top: 0;
+        left: 0;
+        bottom: unset;
+        right: unset;
+      }
+    }
+  }
+
+  &-input {
+    display: none;
+
+    &:checked + .#{$prefix}-tile-checkbox {
+      visibility: visible;
+      fill: $blue-7;
+      background-color: $white;
     }
 
-    &-selectable {
-        @include tile(selectable);
+    &:checked + .#{$prefix}-tile-arrow > svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-checkbox {
+    visibility: hidden;
+    height: 1rem;
+    top: 1rem;
+    right: 1rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 100%, 0.25);
+    fill: rgba(61, 112, 178, 0.25);
+  }
+
+  &-arrow {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+    padding: 14px 16px;
+
+    &:focus {
+      outline: 1px solid $blue;
+      outline-offset: -6px;
     }
 
-    &-expandable {
-        @include tile(expandable);
-        &.arrow-top-left {
-            .#{$prefix}-tile-arrow {
-                top: 0;
-                left: 0;
-                bottom: unset;
-                right: unset;
-            }
-        }
+    > svg {
+      border-radius: 50%;
+      background-color: hsla(0, 0%, 100%, 0.25);
+      fill: $black-2;
+
+      &:hover {
+        fill: $blue;
+      }
     }
+  }
 
-    &-input {
-        display: none;
-
-        &:checked+.#{$prefix}-tile-checkbox {
-            visibility: visible;
-            fill: $blue-7;
-            background-color: $white;
-        }
-
-        &:checked+.#{$prefix}-tile-arrow>svg {
-            transform: rotate(180deg);
-        }
-    }
-
-    &-checkbox {
-        visibility: hidden;
-        height: 1rem;
-        top: 1rem;
-        right: 1rem;
-        position: absolute;
-        border-radius: 50%;
-        background-color: hsla(0, 0%, 100%, .25);
-        fill: rgba(61, 112, 178, .25);
-    }
-
-    &-arrow {
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        cursor: pointer;
-        padding:14px 16px;
-
-        &:focus {
-            outline: 1px solid $blue;
-            outline-offset: -6px;
-        }
-
-        >svg {
-            border-radius: 50%;
-            background-color: hsla(0, 0%, 100%, .25);
-            fill: $black-2;
-
-            &:hover {
-                fill: $blue;
-            }
-        }
-    }
-
-    &-hide {
-        display: none;
-    }
+  &-hide {
+    display: none;
+  }
 }

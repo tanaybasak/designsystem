@@ -166,7 +166,7 @@ class Overflow {
     const icon = this.element.children[0];
     const overflowMenu = this.element.children[1];
     if (icon) {
-      icon.addEventListener('keypress', function(event) {
+      icon.addEventListener('keypress', function (event) {
         if (event.keyCode === 13) {
           event.preventDefault();
           icon.click();

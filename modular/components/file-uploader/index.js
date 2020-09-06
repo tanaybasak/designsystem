@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  fileUploader: function(selector) {
+  fileUploader: function (selector) {
     attachElements(selector, null, FileUploader);
   }
 };

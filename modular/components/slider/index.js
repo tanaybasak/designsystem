@@ -17,7 +17,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  slider: function(selector, options) {
+  slider: function (selector, options) {
     attachElements(selector, options, Slider);
   }
 };

@@ -1,195 +1,194 @@
 @import '../../base';
 
 %button {
-    text-align: center;
-    cursor: pointer;
-    line-height: 1rem;
-    font-size: .875rem;
-    border: 1px solid transparent;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    background: transparent;
-    color: $black;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1rem;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: transparent;
+  color: $black;
 }
 
 .#{$prefix}-btn {
-    @extend %button;
-    color: $white;
-    background: $blue;
-    padding: .625rem 1rem;
-    height: 2.5rem;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  @extend %button;
+  color: $white;
+  background: $blue;
+  padding: 0.625rem 1rem;
+  height: 2.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
-    &-icon {
-        width: 1rem;
-        height: 1rem;
-        margin-left: .5rem;
-        fill: $white;
-    }
+  &-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+    fill: $white;
+  }
 }
 
 a.#{$prefix}-primary {
-    &:hover {
-        color: $white;
-    }
+  &:hover {
+    color: $white;
+  }
 }
 
 .#{$prefix}-primary {
-    background: $blue;
-    color: $white;
+  background: $blue;
+  color: $white;
+
+  &:hover {
+    background: $blue-secondary;
+  }
+
+  &:focus {
+    background: $blue-5;
+  }
+
+  &:disabled,
+  &[disabled='disabled'] {
+    background: $blue-6;
+    @extend %disable;
+  }
+
+  &.#{$prefix}-danger {
+    background: $red;
 
     &:hover {
-        background: $blue-secondary;
+      background: $red-1;
+      color: $white;
     }
 
     &:focus {
-        background: $blue-5;
+      background: $red-1;
     }
 
     &:disabled,
-    &[disabled=disabled] {
-        background: $blue-6;
-        @extend %disable;
+    &[disabled='disabled'] {
+      @extend %disable;
+      background: $red-2;
+
+      &:hover {
+        background: $red-2;
+      }
     }
-
-    &.#{$prefix}-danger {
-        background: $red;
-
-        &:hover {
-            background: $red-1;
-            color: $white;
-        }
-
-        &:focus {
-            background: $red-1;
-        }
-
-        &:disabled,
-        &[disabled=disabled] {
-            @extend %disable;
-            background: $red-2;
-
-            &:hover {
-                background: $red-2;
-            }
-        }
-    }
+  }
 }
 
 .#{$prefix}-secondary {
-    background: transparent;
-    color: $blue;
+  background: transparent;
+  color: $blue;
+  border: 0.0625rem solid $blue;
+
+  &:hover,
+  &:focus {
+    background: $blue;
+    color: $white;
     border: 0.0625rem solid $blue;
+
+    > .#{$prefix}-btn-icon {
+      fill: $white;
+    }
+  }
+
+  &:disabled,
+  &[disabled='disabled'] {
+    color: $blue-6;
+    border: 0.0625rem solid $blue-6;
+    cursor: not-allowed;
+
+    &:hover {
+      background: transparent;
+      color: $blue-6;
+      border: 0.0625rem solid $blue-6;
+    }
+
+    > .#{$prefix}-btn-icon {
+      fill: $blue-6;
+    }
+  }
+
+  > .#{$prefix}-btn-icon {
+    fill: $blue;
+  }
+
+  &.#{$prefix}-danger {
+    background: transparent;
+    color: $red;
+    border: 0.0625rem solid $red;
 
     &:hover,
     &:focus {
-        background: $blue;
-        color: $white;
-        border: 0.0625rem solid $blue;
+      background: $red-1;
+      color: $white;
 
-        >.#{$prefix}-btn-icon {
-            fill: $white;
-        }
+      > .#{$prefix}-btn-icon {
+        fill: $white;
+      }
     }
 
     &:disabled,
-    &[disabled=disabled] {
-        color: $blue-6;
-        border: 0.0625rem solid $blue-6;
-        cursor: not-allowed;
+    &[disabled='disabled'] {
+      border: 0.0625rem solid $red-2;
+      color: $red-2;
+      @extend %disable;
 
-        &:hover {
-            background: transparent;
-            color: $blue-6;
-            border: 0.0625rem solid $blue-6;
-        }
-
-        >.#{$prefix}-btn-icon {
-            fill: $blue-6;
-        }
-    }
-
-
-    >.#{$prefix}-btn-icon {
-        fill: $blue;
-    }
-
-    &.#{$prefix}-danger {
+      &:hover {
         background: transparent;
-        color: $red;
-        border: 0.0625rem solid $red;
+        border: 0.0625rem solid $red-2;
+        color: $red-2;
 
-        &:hover,
-        &:focus {
-            background: $red-1;
-            color: $white;
-
-            >.#{$prefix}-btn-icon {
-                fill: $white;
-            }
+        > .#{$prefix}-btn-icon {
+          fill: $red;
         }
-
-        &:disabled,
-        &[disabled=disabled] {
-            border: 0.0625rem solid $red-2;
-            color: $red-2;
-            @extend %disable;
-
-            &:hover {
-                background: transparent;
-                border: 0.0625rem solid $red-2;
-                color: $red-2;
-
-                >.#{$prefix}-btn-icon {
-                    fill: $red;
-                }
-            }
-        }
-
-        >.#{$prefix}-btn-icon {
-            fill: $red;
-        }
+      }
     }
+
+    > .#{$prefix}-btn-icon {
+      fill: $red;
+    }
+  }
 }
 
 .#{$prefix}-ghost {
-    background: transparent;
-    color: $blue;
-    border: none;
+  background: transparent;
+  color: $blue;
+  border: none;
 
-    &:hover,
-    &:focus {
-        background: $blue;
-        color: $white;
+  &:hover,
+  &:focus {
+    background: $blue;
+    color: $white;
 
-        >.#{$prefix}-btn-icon {
-            fill: $white;
-        }
+    > .#{$prefix}-btn-icon {
+      fill: $white;
     }
+  }
 
-    &:disabled,
-    &[disabled] {
-        color: $blue-6;
-        @extend %disable;
+  &:disabled,
+  &[disabled] {
+    color: $blue-6;
+    @extend %disable;
 
-        &:hover {
-            background: transparent;
-            color: $blue-6;
+    &:hover {
+      background: transparent;
+      color: $blue-6;
 
-            >.#{$prefix}-btn-icon {
-                fill: $blue;
-            }
-        }
-    }
-
-    >.#{$prefix}-btn-icon {
+      > .#{$prefix}-btn-icon {
         fill: $blue;
+      }
     }
+  }
+
+  > .#{$prefix}-btn-icon {
+    fill: $blue;
+  }
 }
 
 .#{$prefix}-sm {
-    padding: .4375rem 1rem;
-    height: 2rem;
+  padding: 0.4375rem 1rem;
+  height: 2rem;
 }
