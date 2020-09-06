@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
-    <link href="./node_modules/patron-icon/dist/patron-font.css" rel="stylesheet">
+    <link href="./node_modules/@patron/patron-icon/dist/patron-font.css" rel="stylesheet">
 
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <style>
@@ -443,7 +443,13 @@
 
             <!-- Time Picker -->
             <section class="m-1 p-2">
-                <addHTML src="./scss/components/time-picker/time-picker.html" />
+                <addHTML src="./scss/components/time-picker/default/default.html" />
+            </section>
+            <section class="m-1 p-2">
+                <addHTML src="./scss/components/time-picker/with-24H/with-24H.html" />
+            </section>
+            <section class="m-1 p-2">
+                <addHTML src="./scss/components/time-picker/with-timezone/with-timezone.html" />
             </section>
 
             <!-- Select option -->
@@ -600,7 +606,9 @@
     <script src="./scss/components/password/password-with-error/password-with-error.js"></script>
     <script src="./scss/components/password/password-with-helpertext/password-with-helpertext.js"></script>
     <script src="./scss/components/password/disabled/disabled.js"></script>
-    <script src="./scss/components/time-picker/time-picker.js"></script>
+    <script src="./scss/components/time-picker/default/default.js"></script>
+    <script src="./scss/components/time-picker/with-24H/with-24H.js"></script>
+    <script src="./scss/components/time-picker/with-timezone/with-timezone.js"></script>
 </body>
 
 </html>

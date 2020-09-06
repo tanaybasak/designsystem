@@ -132,16 +132,17 @@ $drag: #092b51;
             width: 100%;
             position: relative;
             margin-bottom: 0;
+
             .#{$prefix}-form-control {
               height: 1.5rem;
             }
 
-            button{
-                position: absolute;
-                background: transparent;
-                right: 0;
-                padding: 0 0.5rem;
-                cursor: pointer;
+            button {
+              position: absolute;
+              background: transparent;
+              right: 0;
+              padding: 0 0.5rem;
+              cursor: pointer;
             }
           }
 
@@ -157,6 +158,21 @@ $drag: #092b51;
 
       &.add-border-bottom {
         border-bottom: 0.125rem solid $drag;
+      }
+
+      .overflow-onhover {
+        visibility: hidden;
+
+        &.hcl-overflow-active {
+          visibility: visible;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        .overflow-onhover {
+          visibility: visible;
+        }
       }
     }
 
