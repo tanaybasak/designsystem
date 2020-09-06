@@ -64,10 +64,10 @@ class Tree {
             .getElementsByClassName('toggle-icon')[0]
             .classList.add(...classList);
         } else {
-        //   const toggleIcon = document.createElement('i');
-        //   toggleIcon.className = 'toggle-icon caret';
-        //   toggleIcon.style.visibility = 'hidden';
-        //   nodeElement.insertBefore(toggleIcon, nodeElement.childNodes[0]);
+          //   const toggleIcon = document.createElement('i');
+          //   toggleIcon.className = 'toggle-icon caret';
+          //   toggleIcon.style.visibility = 'hidden';
+          //   nodeElement.insertBefore(toggleIcon, nodeElement.childNodes[0]);
           canProceed = false;
         }
       }
@@ -213,7 +213,7 @@ class Tree {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('tree', function(element) {
+    handleDataBinding('tree', function (element) {
       return new Tree(element);
     });
   };

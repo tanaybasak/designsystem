@@ -505,7 +505,7 @@ class DatePicker {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('datepicker', function(element) {
+    handleDataBinding('datepicker', function (element) {
       return new DatePicker(element);
     });
   };

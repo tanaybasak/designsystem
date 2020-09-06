@@ -59,48 +59,83 @@ class Tabs {
   keydownListener = e => {
     const keycode = e.keycode || e.which;
 
-    if (keycode === 37) { // previous
+    if (keycode === 37) {
+      // previous
       e.preventDefault();
       this.focusNode(e.target, 'previous');
-    } else if (e.keyCode === 39) { // next
+    } else if (e.keyCode === 39) {
+      // next
       e.preventDefault();
       this.focusNode(e.target, 'next');
     }
 
-    if (e.keyCode === 13 || e.keyCode === 32) { // space or Enter
+    if (e.keyCode === 13 || e.keyCode === 32) {
+      // space or Enter
       e.preventDefault();
       e.target.click();
     }
-  }
+  };
 
   focusNode(node, direction = 'next') {
     if (direction === 'next') {
-      if (!node.parentElement.nextElementSibling) { // last
-        if (node.parentElement.parentElement.firstElementChild.classList.contains(`${PREFIX}-tabs-disabled`)) {
-          this.focusNode(node.parentElement.parentElement.firstElementChild.firstElementChild);
+      if (!node.parentElement.nextElementSibling) {
+        // last
+        if (
+          node.parentElement.parentElement.firstElementChild.classList.contains(
+            `${PREFIX}-tabs-disabled`
+          )
+        ) {
+          this.focusNode(
+            node.parentElement.parentElement.firstElementChild.firstElementChild
+          );
         } else {
-          (node.parentElement.parentElement.firstElementChild.firstElementChild).focus();
+          node.parentElement.parentElement.firstElementChild.firstElementChild.focus();
         }
-      } else if (node.parentElement.nextElementSibling && node.parentElement.nextElementSibling.classList.contains(`${PREFIX}-tabs-disabled`)) { // disabled
+      } else if (
+        node.parentElement.nextElementSibling &&
+        node.parentElement.nextElementSibling.classList.contains(
+          `${PREFIX}-tabs-disabled`
+        )
+      ) {
+        // disabled
         this.focusNode(node.parentElement.nextElementSibling.firstElementChild);
-      } else { // focus next respective element.
+      } else {
+        // focus next respective element.
         if (node.parentElement.nextElementSibling) {
-          (node.parentElement.nextElementSibling.firstElementChild).focus();
+          node.parentElement.nextElementSibling.firstElementChild.focus();
           return false;
         }
       }
     } else if (direction === 'previous') {
-      if (!node.parentElement.previousElementSibling) { // first
-        if (node.parentElement.parentElement.lastElementChild.classList.contains(`${PREFIX}-tabs-disabled`)) {
-          this.focusNode(node.parentElement.parentElement.lastElementChild.firstElementChild, 'previous');
+      if (!node.parentElement.previousElementSibling) {
+        // first
+        if (
+          node.parentElement.parentElement.lastElementChild.classList.contains(
+            `${PREFIX}-tabs-disabled`
+          )
+        ) {
+          this.focusNode(
+            node.parentElement.parentElement.lastElementChild.firstElementChild,
+            'previous'
+          );
         } else {
-          (node.parentElement.parentElement.lastElementChild.firstElementChild).focus();
+          node.parentElement.parentElement.lastElementChild.firstElementChild.focus();
         }
-      } else if (node.parentElement.previousElementSibling && node.parentElement.previousElementSibling.classList.contains(`${PREFIX}-tabs-disabled`)) { // disabled
-        this.focusNode(node.parentElement.previousElementSibling.firstElementChild, 'previous');
-      } else { // focus next respective element.
+      } else if (
+        node.parentElement.previousElementSibling &&
+        node.parentElement.previousElementSibling.classList.contains(
+          `${PREFIX}-tabs-disabled`
+        )
+      ) {
+        // disabled
+        this.focusNode(
+          node.parentElement.previousElementSibling.firstElementChild,
+          'previous'
+        );
+      } else {
+        // focus next respective element.
         if (node.parentElement.previousElementSibling) {
-          (node.parentElement.previousElementSibling.firstElementChild).focus();
+          node.parentElement.previousElementSibling.firstElementChild.focus();
           return false;
         }
       }
@@ -192,7 +227,7 @@ class Tabs {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('tabs', function(element, target) {
+    handleDataBinding('tabs', function (element, target) {
       const defaultTabOption = { selectedIndex: 0, disabled: [] };
       if (element && target) {
         const tabItems = Array.from(

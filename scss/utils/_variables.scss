@@ -51,11 +51,11 @@ $light-70: #8d8d8d;
 $blue: #0066b3;
 $blue-secondary: #4696d2;
 $blue-4: #152934; //TODO datepicker text color
-$grey-15: #E6E6E6;
+$grey-15: #e6e6e6;
 $blue-5: #00578f; //TODO button background color on focus
 $blue-6: #8cd7fa;
 $blue-7: #3d70b2;
-$blue-8: #0786Cf;
+$blue-8: #0786cf;
 // $blue-light: #3d70b2;
 $dark-blue: #132730;
 $primary: $blue !default;
@@ -74,10 +74,14 @@ $grey-8: #dfe3e6; //TODO datatable, overflow menu border
 
 // THEMES
 $theme-colors: () !default;
-$theme-colors: map-merge(('primary': $primary,
+$theme-colors: map-merge(
+  (
+    'primary': $primary,
     'danger': $red,
-    'tertiary': $tertiary),
-  $theme-colors);
+    'tertiary': $tertiary
+  ),
+  $theme-colors
+);
 
 // Forms
 $label-margin-bottom: 0.5rem;
@@ -95,7 +99,7 @@ $checkbox-border-width: 2px;
 // $error:var(--error);
 $success: #589d25;
 // $success:var(--success);
-$info:#4696D2;
+$info: #4696d2;
 // $danger: var(--error);
 // $warning: var(--warning);
 $warning: #fac43b;
@@ -106,12 +110,14 @@ $gutter: 0.9375rem;
 $grid-columns: 12;
 $minHeight: 0.0625rem;
 // BREAKPOINTS
-$grid-breakpoints: (xs: 0,
+$grid-breakpoints: (
+  xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1600px) !default;
+  xxl: 1600px
+) !default;
 // TODO: Subject to be changed once the breakpoints are finalized
 $mobile-width: 640px;
 $tablet-width: 768px;

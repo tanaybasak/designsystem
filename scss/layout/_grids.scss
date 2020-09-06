@@ -13,12 +13,12 @@
 
 // Grid Container
 .#{$prefix}-container {
-    @include generate-container();
+  @include generate-container();
 }
 
 // Row
 .#{$prefix}-row {
-    @include generate-row();
+  @include generate-row();
 }
 
 @include generate-cols();

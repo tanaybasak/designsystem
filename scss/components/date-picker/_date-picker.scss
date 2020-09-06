@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
 
-    >svg {
+    > svg {
       position: absolute;
       top: 0.75rem;
       left: 1rem;
@@ -21,7 +21,7 @@
       border: 0.0625rem solid $red-3;
     }
 
-    >input {
+    > input {
       padding: 0 1rem 0 3rem;
       border: none;
       height: 2.5rem;
@@ -37,7 +37,7 @@
         cursor: not-allowed;
         background-color: rgba(70, 150, 210, 0.5);
 
-        &~svg {
+        & ~ svg {
           cursor: not-allowed;
           fill: rgba(61, 112, 178, 0.5);
         }
@@ -79,7 +79,7 @@
     position: relative;
     padding: 0 0.5rem;
 
-    >input {
+    > input {
       width: 2.5rem;
       background-color: rgba(70, 150, 210, 0.05);
       text-align: center;
@@ -91,7 +91,7 @@
       }
     }
 
-    &:hover>div {
+    &:hover > div {
       display: flex;
     }
   }
@@ -102,8 +102,8 @@
     align-items: center;
   }
 
-  &-month>span,
-  &-days>span {
+  &-month > span,
+  &-days > span {
     height: 1.5rem;
     width: 1.5rem;
     display: flex;
@@ -118,7 +118,7 @@
     font-weight: 600;
     margin-bottom: 0.25rem;
 
-    >span {
+    > span {
       padding: 0.5rem;
       fill: $dark-blue;
       cursor: pointer;
@@ -134,7 +134,7 @@
     font-size: 0.75rem;
     padding: 0 1.75rem;
 
-    >span {
+    > span {
       border-radius: 0;
       border: none;
       margin: 0.125rem;
