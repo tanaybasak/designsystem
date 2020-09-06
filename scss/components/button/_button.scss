@@ -123,10 +123,12 @@ a.#{$prefix}-primary {
   }
   &:hover,
   &:focus {
+    outline-offset: 2px;
     @include themify($themes) {
       background-color: themed('secondary_bg_hover');
       color: themed('secondary_text');
       border: 0.0625rem solid themed('secondary_border');
+      outline: 0.0625rem solid themed('interactive_border');     
     }
 
     > .#{$prefix}-btn-icon {
