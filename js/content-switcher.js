@@ -116,7 +116,7 @@ class ContentSwitcher {
     }
   };
 
-  keyDownOnContextSwitch = (e) => {
+  keyDownOnContextSwitch = e => {
     const key = e.which || e.keyCode;
     const currentElem = e.currentTarget;
     switch (key) {
@@ -153,7 +153,7 @@ class ContentSwitcher {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('contentswitcher', function(element, target) {
+    handleDataBinding('contentswitcher', function (element, target) {
       let idx = 0;
       if (element && target) {
         target = getClosest(target, `.${PREFIX}-content-switcher-btn`);

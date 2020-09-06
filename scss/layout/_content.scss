@@ -7,20 +7,20 @@
  */
 
 .#{$prefix}-content {
-    display: flex;
+  display: flex;
 
-    &-main {
-        flex: 1;
-        height: calc(100vh - 3.125rem);
-        min-height: calc(100vh - 3.125rem);
-    }
+  &-main {
+    flex: 1;
+    height: calc(100vh - 3.125rem);
+    min-height: calc(100vh - 3.125rem);
+  }
 }
 
 // COLLAPSING AT SCREEN SIZE <= 768px
 @include media-breakpoint-down(sm) {
-    .#{$prefix}-content {
-        &.mt-3 {
-            margin-top: 3.875rem;
-        }
+  .#{$prefix}-content {
+    &.mt-3 {
+      margin-top: 3.875rem;
     }
+  }
 }

@@ -82,7 +82,7 @@ class Modal {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('modal', function(element) {
+    handleDataBinding('modal', function (element) {
       return new Modal(element, {
         isOpen: true,
         keyboard: !(element.getAttribute('data-keyboard') === 'false')

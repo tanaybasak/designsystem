@@ -26,8 +26,6 @@ $small-font-size: var(--small-font-size);
 $base-margin: var(--base-margin);
 $base-padding: var(--base-padding);
 
-
-
 // Forms
 $label-margin-bottom: 0.5rem;
 $input-padding-y: 0;
@@ -44,12 +42,14 @@ $gutter: 0.9375rem;
 $grid-columns: 12;
 $minHeight: 0.0625rem;
 // BREAKPOINTS
-$grid-breakpoints: (xs: 0,
+$grid-breakpoints: (
+  xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1600px) !default;
+  xxl: 1600px
+) !default;
 // TODO: Subject to be changed once the breakpoints are finalized
 $mobile-width: 640px;
 $tablet-width: 768px;

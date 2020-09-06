@@ -7,7 +7,7 @@ function getClosest(element, selector) {
       Element.prototype.msMatchesSelector ||
       Element.prototype.oMatchesSelector ||
       Element.prototype.webkitMatchesSelector ||
-      function(s) {
+      function (s) {
         const matches = (this.document || this.ownerDocument).querySelectorAll(
           s
         );

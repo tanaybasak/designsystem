@@ -1,117 +1,117 @@
 @import '../../base';
 
 .#{$prefix}-content-switcher {
+  display: flex;
+  width: 100%;
+  height: hcl-rem(40px);
+  position: relative;
+
+  button::-moz-focus-inner {
+    border: 0;
+  }
+
+  &-btn {
+    @include media-breakpoint-only(xs) {
+      padding: 0 0.2rem;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    @include themify($themes) {
+      background-color: themed('default_bg');
+      border: 1px solid themed('default_border_xlow');
+      color: themed('interactive_text');
+    }
     display: flex;
-    width: 100%;
+    align-items: center;
     height: hcl-rem(40px);
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 0 2rem;
     position: relative;
 
-    button::-moz-focus-inner {
-        border: 0;
+    &.active {
+      @include themify($themes) {
+        background-color: themed('active_bg_high');
+        color: themed('active_text');
       }
 
-    &-btn {
-        @include media-breakpoint-only(xs) {
-            padding: 0 .2rem;
-            flex-grow: 1;
-            justify-content: center;
-        }
-
+      .#{$prefix}-thumbnail {
         @include themify($themes) {
-            background-color: themed('default_bg');
-            border: 1px solid themed('default_border_xlow');
-            color: themed('interactive_text');
-          }
-        display: flex;
-        align-items: center;
-        height: hcl-rem(40px);
-        font-size: .875rem;
-        margin: 0;
-        padding: 0 2rem;
-        position: relative;
-
-        &.active {
-            @include themify($themes) {
-                background-color: themed('active_bg_high');
-                color: themed('active_text');
-              }
-
-            .#{$prefix}-thumbnail {
-                @include themify($themes) {
-                    border: 1px solid themed('active_icon');
-                }
-            }
+          border: 1px solid themed('active_icon');
         }
-
-        &:focus{
-            outline-offset: -1px;
-            z-index: 1;
-            @include themify($themes) {
-                outline: 2px solid themed('interactive_border');
-              }
-        }
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &:hover:not(:disabled) {
-            @include themify($themes) {
-                background-color: themed('interactive_bg_hover');
-                color: themed('interactive_text');
-              }
-
-            .#{$prefix}-thumbnail {
-                @include themify($themes) {
-                    border: 1px solid themed('interactive_icon');
-                }
-            }
-        }
-
-        &:disabled {
-            cursor: not-allowed;
-            @include themify($themes) {
-                opacity: themed('disabled_all');
-              }
-
-            .#{$prefix}-thumbnail {
-                @include themify($themes) {
-                    opacity: themed('disabled_all');
-                }
-            }
-        }
-
-        .#{$prefix}-thumbnail {
-            width: 1.125rem;
-            height: 1.125rem;
-            margin-right: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;            
-            border-radius: 50%;
-
-            @include themify($themes) {
-                border: 1px solid themed('interactive_icon');
-            }
-        }
+      }
     }
 
-    &-btn:first-of-type {
-        border-top-left-radius: hcl-rem(4px);
-        border-bottom-left-radius: hcl-rem(4px);
+    &:focus {
+      outline-offset: -1px;
+      z-index: 1;
+      @include themify($themes) {
+        outline: 2px solid themed('interactive_border');
+      }
     }
 
-    &-btn:not(:last-of-type) {
-        border-right: none;
+    &:hover {
+      cursor: pointer;
     }
 
-    &-btn:last-of-type {
-        border-top-right-radius: hcl-rem(4px);
-        border-bottom-right-radius: hcl-rem(4px);
+    &:hover:not(:disabled) {
+      @include themify($themes) {
+        background-color: themed('interactive_bg_hover');
+        color: themed('interactive_text');
+      }
+
+      .#{$prefix}-thumbnail {
+        @include themify($themes) {
+          border: 1px solid themed('interactive_icon');
+        }
+      }
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      @include themify($themes) {
+        opacity: themed('disabled_all');
+      }
+
+      .#{$prefix}-thumbnail {
+        @include themify($themes) {
+          opacity: themed('disabled_all');
+        }
+      }
+    }
+
+    .#{$prefix}-thumbnail {
+      width: 1.125rem;
+      height: 1.125rem;
+      margin-right: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      @include themify($themes) {
+        border: 1px solid themed('interactive_icon');
+      }
+    }
+  }
+
+  &-btn:first-of-type {
+    border-top-left-radius: hcl-rem(4px);
+    border-bottom-left-radius: hcl-rem(4px);
+  }
+
+  &-btn:not(:last-of-type) {
+    border-right: none;
+  }
+
+  &-btn:last-of-type {
+    border-top-right-radius: hcl-rem(4px);
+    border-bottom-right-radius: hcl-rem(4px);
+  }
 }
 
 .#{$prefix}-content-switcher-content {
-    margin: hcl-rem(15px) 0 hcl-rem(10px);
-    width: 100%;
+  margin: hcl-rem(15px) 0 hcl-rem(10px);
+  width: 100%;
 }

@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  tabs: function(selector, options) {
+  tabs: function (selector, options) {
     attachElements(selector, options, Tabs);
   }
 };

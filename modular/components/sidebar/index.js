@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  sidebar: function(selector, options) {
+  sidebar: function (selector, options) {
     attachElements(selector, options, Sidebar);
   }
 };
