@@ -1,5 +1,5 @@
 import handleDataBinding from './utils/data-api';
-
+import { PREFIX } from './utils/config';
 class Tree {
   constructor(element) {
     this.element = element;
@@ -45,7 +45,9 @@ class Tree {
   };
 
   attachEvents = () => {
-    const nodeElements = this.element.getElementsByClassName('tree-node');
+    const nodeElements = this.element.getElementsByClassName(
+      `${PREFIX}-tree-node`
+    );
     for (let i = 0; i < nodeElements.length; i++) {
       const nodeElement = nodeElements[i];
 
@@ -57,49 +59,59 @@ class Tree {
       if (icon) {
         const classList = icon.split(' ');
         if (
-          nodeElement.getElementsByClassName('toggle-icon') &&
-          nodeElement.getElementsByClassName('toggle-icon').length > 0
+          nodeElement.getElementsByClassName(`${PREFIX}-toggle-icon`) &&
+          nodeElement.getElementsByClassName(`${PREFIX}-toggle-icon`).length > 0
         ) {
           nodeElement
-            .getElementsByClassName('toggle-icon')[0]
+            .getElementsByClassName(`${PREFIX}-toggle-icon`)[0]
             .classList.add(...classList);
         } else {
-        //   const toggleIcon = document.createElement('i');
-        //   toggleIcon.className = 'toggle-icon caret';
-        //   toggleIcon.style.visibility = 'hidden';
-        //   nodeElement.insertBefore(toggleIcon, nodeElement.childNodes[0]);
+          //   const toggleIcon = document.createElement('i');
+          //   toggleIcon.className = 'toggle-icon caret';
+          //   toggleIcon.style.visibility = 'hidden';
+          //   nodeElement.insertBefore(toggleIcon, nodeElement.childNodes[0]);
           canProceed = false;
         }
       }
-      if (nodeElement.querySelector('.toggle-icon') && canProceed) {
-        nodeElement.addEventListener('click', e => {
-          this.toggleTree(e.currentTarget.children[0]);
-        });
+      if (nodeElement.querySelector(`.${PREFIX}-toggle-icon`) && canProceed) {
+        nodeElement
+          .querySelector(`.${PREFIX}-toggle-icon`)
+          .addEventListener('click', e => {
+            e.stopPropagation();
+            this.toggleTree(e.currentTarget);
+          });
       }
+
+      nodeElement.addEventListener('click', e => {
+        this.selectNode(e.currentTarget);
+      });
 
       nodeElement.addEventListener('keydown', e => {
         this.keyDownOnTree(e, canProceed);
       });
 
-      nodeElement.querySelector('span').addEventListener('click', e => {
-        e.stopPropagation();
-        this.selectNode(e.currentTarget);
-      });
+      //   nodeElement.querySelector('span').addEventListener('click', e => {
+      //     e.stopPropagation();
+      //     this.selectNode(e.currentTarget);
+      //   });
+      const newNode = document.createElement('div');
+      newNode.className = `${PREFIX}-node-highlight-wrapper`;
+      nodeElement.insertBefore(newNode, nodeElement.firstChild);
     }
   };
 
   selectNode = node => {
     if (node !== this.selectedElement) {
       if (this.selectedElement) {
-        this.selectedElement.classList.remove('highlight');
+        this.selectedElement.classList.remove(`${PREFIX}-node-highlight`);
       }
       this.selectedElement = node;
-      node.classList.add('highlight');
+      node.classList.add(`${PREFIX}-node-highlight`);
     }
   };
 
   focusNode = node => {
-    if (node.classList.contains('tree-item')) {
+    if (node.classList.contains(`${PREFIX}-tree-item`)) {
       node.children[0].focus();
     }
   };
@@ -158,14 +170,14 @@ class Tree {
       }
       case 39: {
         if (nodeStatus === 'false' && isChildrenExist) {
-          this.toggleTree(nodeElement.children[0]);
+          this.toggleTree(nodeElement.children[1]);
         }
         e.preventDefault();
         break;
       }
       case 37: {
         if (nodeStatus === 'true' && isChildrenExist) {
-          this.toggleTree(nodeElement.children[0]);
+          this.toggleTree(nodeElement.children[1]);
         } else {
           const parentNodeElement =
             nodeElement.parentElement.parentElement.parentElement;
@@ -177,8 +189,7 @@ class Tree {
         break;
       }
       case 13: {
-        const highlightElement = nodeElement.querySelector('span');
-        this.selectNode(highlightElement);
+        this.selectNode(nodeElement);
         e.preventDefault();
         break;
       }
