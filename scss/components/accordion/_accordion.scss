@@ -20,8 +20,10 @@
     }
 
     &:last-child {
-      border-bottom: 0.0625rem solid $grey-4;
-    }
+      @include themify($themes) {
+        border-bottom:  .0625rem solid themed('default_border_xlow');
+      }   
+     }
 
     .#{$prefix}-accordion-title {
       display: inline-block;
@@ -34,12 +36,11 @@
       cursor: pointer;
       width: 100%;
 
-<<<<<<< HEAD
         &:last-child {
             @include themify($themes) {
                 border-bottom:  .0625rem solid themed('default_border_xlow');
               }
-=======
+            }
       &::before {
         content: ' ';
         position: absolute;
@@ -50,7 +51,6 @@
         @include themify($themes) {
           border-right: 0.0625rem solid themed('default_icon_high');
           border-bottom: 0.0625rem solid themed('default_icon_high');
->>>>>>> 431a0cad3d664d418b574396522f09752aa20f6a
         }
         transform: scale(1) rotate(-45deg);
         transition: all 0.2s ease-in-out;

@@ -41,19 +41,8 @@ $search-reset-size: 0.759rem;
     }
   }
 
-<<<<<<< HEAD
-  // button.#{$prefix}-search-btn:hover {
-  //   background-color: red;
-  //   cursor: pointer;
-  //   .#{$prefix}-search-icon {
-  //     @include themify($themes) {
-  //       fill: themed("input_icon");
-  //     }
-  //   }
-  // }
-=======
   button.#{$prefix}-search-btn:hover {
-    background-color: $interactive_bg_hover;
+    // background-color: $interactive_bg_hover;
     cursor: pointer;
     .#{$prefix}-search-icon {
       @include themify($themes) {
@@ -61,7 +50,6 @@ $search-reset-size: 0.759rem;
       }
     }
   }
->>>>>>> 431a0cad3d664d418b574396522f09752aa20f6a
 
   .#{$prefix}-search-btn {
     height: $search-height;

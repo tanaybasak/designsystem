@@ -11,7 +11,6 @@
 $breadcrumb-margin: 1rem;
 
 .#{$prefix}-breadcrumb {
-<<<<<<< HEAD
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -53,39 +52,6 @@ $breadcrumb-margin: 1rem;
             @include getFontWeight('semibold');
             @include getTextDecorationLine('underline');
         }
-=======
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
-  &-item {
-    margin-right: $breadcrumb-margin;
-    color: $blue;
-    font-size: 0.875rem;
-
-    &:not(:last-child)::after {
-      content: '/';
-      margin-left: $breadcrumb-margin;
     }
-
-    .#{$prefix}-link {
-      white-space: nowrap;
-      @include getTextDecorationLine('none');
-      border-bottom: 0.0625rem solid transparent;
-
-      &:hover {
-        color: $dark-blue;
-        @include getTextDecorationLine('underline');
-      }
-    }
-  }
-
-  &-item-active {
-    .#{$prefix}-link {
-      color: $dark-blue;
-      @include getFontWeight('semibold');
-      @include getTextDecorationLine('underline');
->>>>>>> 431a0cad3d664d418b574396522f09752aa20f6a
-    }
-  }
+  
 }
