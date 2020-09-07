@@ -10,10 +10,7 @@
   &-container {
     display: flex;
     flex-direction: column;
-    @include themify($themes) {
-      border-bottom: 0.0625rem solid themed('input_border');
-    }
-
+  
     > svg {
       position: absolute;
       top: 0.75rem;
@@ -27,7 +24,7 @@
 
     &-error {
       @include themify($themes) {
-        border-bottom: 2px solid themed('danger_text');
+        border-bottom: 0.125rem solid themed('danger_text');
       }
     }
 
@@ -38,22 +35,17 @@
       @include themify($themes) {
         color: themed('input_text');
         background-color: themed('input_bg');
+        border-bottom: 0.125rem solid themed('input_border');
       }
       outline: none;
       font-size: 0.875rem;
       line-height: 1.125rem;
       cursor: pointer;
 
-      &:focus {
-        @include themify($themes) {
-          border-bottom: 2px solid themed('interactive_border');
-        }
-      }
       &[disabled] {
-        opacity: 0.5;
         cursor: not-allowed;
         @include themify($themes) {
-          background-color: themed('disabled_all');
+          opacity: themed('disabled_all');
         }
 
         & ~ svg {
@@ -64,6 +56,15 @@
         }
       }
     }
+    &.#{$prefix}-overlay-wrapper-active {
+      > input {
+      outline: none;
+      @include themify($themes) {
+        border-bottom: 0.125rem solid themed('interactive_border');
+      }
+    }
+    }
+   
   }
 
   &-curMonth {
@@ -98,7 +99,6 @@
   }
 
   &-down {
-    // border-top: 0.25rem solid $blue;
     @include themify($themes) {
       border-top: 0.25rem solid themed('interactive_icon');
     }
@@ -119,7 +119,9 @@
       line-height: 1.125rem;
 
       &:focus {
-        outline: 0.0625rem solid $blue;
+        @include themify($themes) {
+          outline: 0.0625rem solid themed('interactive_border');
+        }
       }
     }
 
@@ -227,7 +229,6 @@
     }
 
     &-picked {
-      // border: 0.125rem solid $blue-7;
       @include themify($themes) {
         background-color: themed('active_bg_high');
         color: themed('active_text');
@@ -236,7 +237,6 @@
 
     &-fade {
       opacity: 0.5;
-      // color: $lightGrey;
       @include themify($themes) {
         color: themed('default_text_low');
       }
@@ -247,7 +247,9 @@
     width: 17.5rem;
     height: 16.375rem;
     padding: 1rem 0.625rem 0.25rem 0.625rem;
-    color: blue;
+    @include themify($themes) {
+      color: themed('default_text_xhigh');
+    }
   }
 
   &-error {

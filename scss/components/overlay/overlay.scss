@@ -7,14 +7,15 @@
 
 .#{$prefix}-overlay-container {
   position: absolute;
-  border: 0.0625rem solid #dfe3e6;
-  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+  @include themify($themes) {
+    box-shadow: 0 0.25rem 0.5rem 0 themed('default_shadow');
+    background-color: themed('default_bg');
+  }
   top: 0;
   left: 0;
   visibility: hidden;
   opacity: 0;
   z-index: 999;
-  background: white;
   transition: opacity 0.3s ease-in-out;
 
   &.#{$prefix}-overlay-container-show {
