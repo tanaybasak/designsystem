@@ -73,71 +73,71 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  dropdown: function(selector, options) {
+  dropdown: function (selector, options) {
     attachElements(selector, options, Dropdown);
   },
-  overflow: function(selector, options) {
+  overflow: function (selector, options) {
     attachElements(selector, options, Overflow);
   },
-  tabs: function(selector, options) {
+  tabs: function (selector, options) {
     attachElements(selector, options, Tabs);
   },
-  tooltip: function(selector, options) {
+  tooltip: function (selector, options) {
     attachElements(selector, options, Tooltip);
   },
-  sidebar: function(selector, options) {
+  sidebar: function (selector, options) {
     attachElements(selector, options, Sidebar);
   },
-  search: function(selector, options) {
+  search: function (selector, options) {
     attachElements(selector, options, Search);
   },
-  datepicker: function(selector, options) {
+  datepicker: function (selector, options) {
     attachElements(selector, options, DatePicker);
   },
-  numberInput: function(selector, options) {
+  numberInput: function (selector, options) {
     attachElements(selector, options, NumberInput);
   },
-  contentswitch: function(selector, options) {
+  contentswitch: function (selector, options) {
     attachElements(selector, options, ContentSwitcher);
   },
-  accordion: function(selector, options) {
+  accordion: function (selector, options) {
     attachElements(selector, options, Accordion);
   },
-  slider: function(selector, options) {
+  slider: function (selector, options) {
     attachElements(selector, options, Slider);
   },
-  tree: function(selector) {
+  tree: function (selector) {
     attachElements(selector, null, Tree);
   },
-  dataTable: function(selector) {
+  dataTable: function (selector) {
     attachElements(selector, null, DataTable);
   },
-  fileUploader: function(selector, options) {
+  fileUploader: function (selector, options) {
     attachElements(selector, options, FileUploader);
   },
-  tag: function(selector) {
+  tag: function (selector) {
     attachElements(selector, null, Tag);
   },
-  modal: function(selector, options) {
+  modal: function (selector, options) {
     attachElements(selector, options, Modal);
   },
-  breadcrumb: function(selector) {
+  breadcrumb: function (selector) {
     attachElements(selector, null, Breadcrumb);
   },
-  tile: function(selector) {
+  tile: function (selector) {
     attachElements(selector, null, Tile);
   },
-  toggle: function(selector) {
+  toggle: function (selector) {
     attachElements(selector, null, Toggle);
   },
-  pagination: function(selector, options) {
+  pagination: function (selector, options) {
     attachElements(selector, options, Pagination);
   },
-  password: function(selector, options) {
+  password: function (selector, options) {
     attachElements(selector, options, Password);
   },
-  timePicker: function(selector) {
-    attachElements(selector, null, TimePicker);
+  timePicker: function (selector, options) {
+    attachElements(selector, options, TimePicker);
   }
 };
 

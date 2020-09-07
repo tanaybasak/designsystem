@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  dataTable: function(selector) {
+  dataTable: function (selector) {
     attachElements(selector, null, DataTable);
   }
 };

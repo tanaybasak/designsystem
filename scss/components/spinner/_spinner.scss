@@ -29,6 +29,8 @@
         stroke-width: 8;
       } @else if ($size== 'inline') {
         stroke-width: 12;
+        stroke-dasharray: 421;
+        stroke-dashoffset: 105;
       }
 
       fill: transparent;

@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  overflow: function(selector, options) {
+  overflow: function (selector, options) {
     attachElements(selector, options, Overflow);
   }
 };

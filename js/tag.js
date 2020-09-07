@@ -18,7 +18,7 @@ class Tag {
     if (event.keyCode === 13) {
       this.element.parentNode.removeChild(this.element);
     }
-  }
+  };
 
   attachEvents = () => {
     const closeIcon = this.element.querySelector(this.selectors.closeIcon);

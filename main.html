@@ -1,550 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Patron CSS Framework</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap" rel="stylesheet">
-    <link href="./node_modules/patron-icon/dist/patron-font.css" rel="stylesheet">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="./node_modules/@patron/patron-icon/dist/patron-font.css"
+      rel="stylesheet"
+    />
 
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <style>
-        .bgColor {
-            background-color: #eee;
-        }
+      .bgColor {
+        background-color: #eee;
+      }
 
-        .colBorder {
-            border: 1px solid #999;
-        }
+      .colBorder {
+        border: 1px solid #999;
+      }
 
-        .bigCol {
-            min-height: 5rem;
-            padding: 0.9375rem;
-        }
+      .bigCol {
+        min-height: 5rem;
+        padding: 0.9375rem;
+      }
 
-        .darkBox {
-            background-color: #555;
-            color: #BBB;
-        }
+      .darkBox {
+        background-color: #555;
+        color: #bbb;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- HEADER LAYOUT -->
     <addHTML src="./scss/components/header/header.html" />
     <addHTML src="./scss/components/sidebar/sidebar.html" />
 
     <!-- CONTENT LAYOUT -->
-    <div class="hcl-content" style="margin-top: 4rem" data-withsidenav=true>
-        <!-- SIDEBAR LAYOUT -->
-        <!-- MAIN CONTENT LAYOUT -->
-        <main class="hcl-content-main">
-            <!-- AVAILABLE COMPONENTS STARTS -->
+    <div class="hcl-content" style="margin-top: 4rem" data-withsidenav="true">
+      <!-- SIDEBAR LAYOUT -->
+      <!-- MAIN CONTENT LAYOUT -->
+      <main class="hcl-content-main">
+        <!-- AVAILABLE COMPONENTS STARTS -->
 
-            <!-- typography -->
-            <addHTML src="./scss/base/typography/typography.html" />
+        <!-- typography -->
+        <addHTML src="./scss/base/typography/typography.html" />
 
-            <!-- buttons -->
-            <section class="m-1 p-2">
-                <!-- primary buttons -->
-                <addHTML src="./scss/components/button/primary/primary.html" />
+        <!-- buttons -->
+        <section class="m-1 p-2">
+          <!-- primary buttons -->
+          <addHTML src="./scss/components/button/primary/primary.html" />
 
-                <!-- primary danger buttons -->
-                <addHTML src="./scss/components/button/primary-danger/primary-danger.html" />
+          <!-- primary danger buttons -->
+          <addHTML
+            src="./scss/components/button/primary-danger/primary-danger.html"
+          />
 
-                <!-- primary small buttons -->
-                <addHTML src="./scss/components/button/primary-small/primary-small.html" />
+          <!-- primary small buttons -->
+          <addHTML
+            src="./scss/components/button/primary-small/primary-small.html"
+          />
 
-                <!-- primary danger small buttons -->
-                <addHTML src="./scss/components/button/primary-danger-small/primary-danger-small.html" />
+          <!-- primary danger small buttons -->
+          <addHTML
+            src="./scss/components/button/primary-danger-small/primary-danger-small.html"
+          />
 
-                <!-- secondary buttons -->
-                <addHTML src="./scss/components/button/secondary/secondary.html" />
+          <!-- secondary buttons -->
+          <addHTML src="./scss/components/button/secondary/secondary.html" />
 
-                <!-- secondary danger buttons -->
-                <addHTML src="./scss/components/button/secondary-danger/secondary-danger.html" />
+          <!-- secondary danger buttons -->
+          <addHTML
+            src="./scss/components/button/secondary-danger/secondary-danger.html"
+          />
 
-                <!-- secondary small buttons -->
-                <addHTML src="./scss/components/button/secondary-small/secondary-small.html" />
+          <!-- secondary small buttons -->
+          <addHTML
+            src="./scss/components/button/secondary-small/secondary-small.html"
+          />
 
-                <!-- secondary danger small buttons -->
-                <addHTML src="./scss/components/button/secondary-danger-small/secondary-danger-small.html" />
+          <!-- secondary danger small buttons -->
+          <addHTML
+            src="./scss/components/button/secondary-danger-small/secondary-danger-small.html"
+          />
 
-                <!-- ghost buttons -->
-                <addHTML src="./scss/components/button/ghost/ghost.html" />
+          <!-- ghost buttons -->
+          <addHTML src="./scss/components/button/ghost/ghost.html" />
 
-                <!-- ghost small buttons -->
-                <addHTML src="./scss/components/button/ghost-small/ghost-small.html" />
-            </section>
+          <!-- ghost small buttons -->
+          <addHTML
+            src="./scss/components/button/ghost-small/ghost-small.html"
+          />
+        </section>
 
-            <!-- sidebar
+        <!-- sidebar
               <section class="m-1 p-2" style="position:unset">
                     <addHTML src="./scss/components/sidebar/sidebar.html" />
               </section> -->
 
+        <!-- Pagination -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/pagination/pagination.html" />
+        </section>
 
-            <!-- Pagination -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/pagination/pagination.html" />
-            </section>
+        <!-- Grid System -->
+        <section id="gridSystem" class="hcl-container">
+          <div class="hcl-row">
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-11 colBorder bgColor">11</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-2 colBorder bgColor">2</div>
+            <div class="hcl-col-10 colBorder bgColor">10</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-3 colBorder bgColor">3</div>
+            <div class="hcl-col-9 colBorder bgColor">9</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-4 colBorder bgColor">4</div>
+            <div class="hcl-col-8 colBorder bgColor">8</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-5 colBorder bgColor">5</div>
+            <div class="hcl-col-7 colBorder bgColor">7</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-6 colBorder bgColor">6</div>
+            <div class="hcl-col-6 colBorder bgColor">6</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-7 colBorder bgColor">7</div>
+            <div class="hcl-col-5 colBorder bgColor">5</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+            <div class="hcl-col-1 colBorder bgColor">1</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-12 colBorder bgColor">12</div>
+          </div>
+        </section>
+        <section id="boxExamples" class="hcl-container pt-5 m-0">
+          <div class="hcl-row">
+            <div class="hcl-col-3 colBorder bgColor bigCol darkBox">
+              Left Box
+            </div>
+            <div class="hcl-col-9 colBorder bgColor bigCol">Right Box</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-4 colBorder bgColor bigCol darkBox">
+              Left Box
+            </div>
+            <div class="hcl-col-4 colBorder bgColor bigCol darkBox">
+              Center Box
+            </div>
+            <div class="hcl-col-4 colBorder bgColor bigCol darkBox">
+              Right Box
+            </div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-6 colBorder bgColor bigCol">Left Box</div>
+            <div class="hcl-col-6 colBorder bgColor bigCol">Right Box</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-4 colBorder bgColor bigCol darkBox">
+              Left Box
+            </div>
+            <div class="hcl-col-4 colBorder bgColor bigCol darkBox">
+              Center Box
+            </div>
+            <div class="hcl-col-4 colBorder bgColor bigCol darkBox">
+              Right Box
+            </div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-2 colBorder bgColor bigCol darkBox"></div>
+            <div class="hcl-col-10 colBorder bgColor bigCol darkBox">Data</div>
+          </div>
+          <div class="hcl-row">
+            <div class="hcl-col-2 colBorder bgColor bigCol darkBox">Values</div>
+            <div class="hcl-col-2 colBorder bgColor bigCol">Value One</div>
+            <div class="hcl-col-2 colBorder bgColor bigCol">Value Two</div>
+            <div class="hcl-col-2 colBorder bgColor bigCol">Value Three</div>
+            <div class="hcl-col-2 colBorder bgColor bigCol">Value Four</div>
+            <div class="hcl-col-2 colBorder bgColor bigCol">Value Five</div>
+          </div>
+        </section>
+        <!-- spinner -->
+        <section class="m-1 p-2">
+          <!-- inline -->
+          <addHTML src="./scss/components/spinner/inline/inline.html" />
 
-            <!-- Grid System -->
-            <section id="gridSystem" class="hcl-container">
-                <div class="hcl-row">
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-11 colBorder  bgColor">11</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-2 colBorder bgColor">2</div>
-                    <div class="hcl-col-10 colBorder bgColor">10</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-3 colBorder bgColor">3</div>
-                    <div class="hcl-col-9 colBorder bgColor">9</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-4 colBorder bgColor">4</div>
-                    <div class="hcl-col-8 colBorder bgColor">8</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-5 colBorder bgColor">5</div>
-                    <div class="hcl-col-7 colBorder bgColor">7</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-6 colBorder bgColor">6</div>
-                    <div class="hcl-col-6 colBorder bgColor">6</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-7 colBorder bgColor">7</div>
-                    <div class="hcl-col-5 colBorder bgColor">5</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                    <div class="hcl-col-1 colBorder bgColor">1</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-12 colBorder bgColor">12</div>
-                </div>
-            </section>
-            <section id="boxExamples" class="hcl-container pt-5 m-0">
-                <div class="hcl-row">
-                    <div class="hcl-col-3 colBorder bgColor bigCol darkBox">Left Box</div>
-                    <div class="hcl-col-9 colBorder bgColor bigCol">Right Box</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Left Box</div>
-                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Center Box</div>
-                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Right Box</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-6 colBorder bgColor bigCol">Left Box</div>
-                    <div class="hcl-col-6 colBorder bgColor bigCol">Right Box</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Left Box</div>
-                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Center Box</div>
-                    <div class="hcl-col-4 colBorder bgColor bigCol darkBox">Right Box</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-2 colBorder bgColor bigCol darkBox"></div>
-                    <div class="hcl-col-10 colBorder bgColor bigCol darkBox">Data</div>
-                </div>
-                <div class="hcl-row">
-                    <div class="hcl-col-2 colBorder bgColor bigCol darkBox">Values</div>
-                    <div class="hcl-col-2 colBorder bgColor bigCol">Value One</div>
-                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Two</div>
-                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Three</div>
-                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Four</div>
-                    <div class="hcl-col-2 colBorder bgColor bigCol">Value Five</div>
-                </div>
-            </section>
-            <!-- spinner -->
-            <section class="m-1 p-2">
-                <!-- inline -->
-                <addHTML src="./scss/components/spinner/inline/inline.html" />
+          <!-- large -->
+          <addHTML src="./scss/components/spinner/large/large.html" />
+        </section>
 
-                <!-- large -->
-                <addHTML src="./scss/components/spinner/large/large.html" />
-            </section>
+        <!-- Breadcrumb -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/breadcrumb/default/default.html" />
+        </section>
+        <section class="m-1 p-2">
+          <addHTML
+            src="./scss/components/breadcrumb/withoverflow/withoverflow.html"
+          />
+        </section>
 
-            <!-- Breadcrumb -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/breadcrumb/default/default.html" />
-            </section>
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/breadcrumb/withoverflow/withoverflow.html" />
-            </section>
+        <!-- Toggle -->
+        <section class="m-1 p-2">
+          <!-- default -->
+          <addHTML src="./scss/components/toggle/default/default.html" />
+          <!-- small -->
+          <addHTML src="./scss/components/toggle/small/small.html" />
+        </section>
 
-            <!-- Toggle -->
-            <section class="m-1 p-2">
-                <!-- default -->
-                <addHTML src="./scss/components/toggle/default/default.html" />
-                <!-- small -->
-                <addHTML src="./scss/components/toggle/small/small.html" />
-            </section>
+        <!--- Notification -->
+        <section class="m-1 p-2">
+          <!-- danger -->
+          <addHTML src="./scss/components/notification/danger/danger.html" />
+          <!-- info -->
+          <addHTML src="./scss/components/notification/info/info.html" />
+          <!-- success -->
+          <addHTML src="./scss/components/notification/success/success.html" />
+          <!-- warning -->
+          <addHTML src="./scss/components/notification/warning/warning.html" />
+        </section>
 
-            <!--- Notification -->
-            <section class="m-1 p-2">
-                <!-- danger -->
-                <addHTML src="./scss/components/notification/danger/danger.html" />
-                <!-- info -->
-                <addHTML src="./scss/components/notification/info/info.html" />
-                <!-- success -->
-                <addHTML src="./scss/components/notification/success/success.html" />
-                <!-- warning -->
-                <addHTML src="./scss/components/notification/warning/warning.html" />
-            </section>
+        <!-- Tag -->
+        <section class="m-1 p-2">
+          <!-- primary -->
+          <addHTML src="./scss/components/tag/primary/primary.html" />
+          <!-- secondary -->
+          <addHTML src="./scss/components/tag/secondary/secondary.html" />
+        </section>
 
-            <!-- Tag -->
-            <section class="m-1 p-2">
-                <!-- primary -->
-                <addHTML src="./scss/components/tag/primary/primary.html" />
-                <!-- secondary -->
-                <addHTML src="./scss/components/tag/secondary/secondary.html" />
-            </section>
+        <!-- Modals -->
+        <section id="hcl-modal">
+          <!-- Success  -->
+          <addHTML src="./scss/components/modal/success/success.html" />
+          <!-- Success with label  -->
+          <addHTML
+            src="./scss/components/modal/success-label/success-label.html"
+          />
+          <!--Success with action  -->
+          <addHTML
+            src="./scss/components/modal/success-action/success-action.html"
+          />
+          <!-- Success with label and action  -->
+          <addHTML
+            src="./scss/components/modal/success-label-action/success-label-action.html"
+          />
+          <!-- Danger  -->
+          <addHTML src="./scss/components/modal/danger/danger.html" />
+          <!-- Danger with label  -->
+          <addHTML
+            src="./scss/components/modal/danger-label/danger-label.html"
+          />
+          <!--Danger with action  -->
+          <addHTML
+            src="./scss/components/modal/danger-action/danger-action.html"
+          />
+          <!-- Danger with label and action  -->
+          <addHTML
+            src="./scss/components/modal/danger-label-action/danger-label-action.html"
+          />
+        </section>
 
-            <!-- Modals -->
-            <section id="hcl-modal">
-                <!-- Success  -->
-                <addHTML src="./scss/components/modal/success/success.html" />
-                <!-- Success with label  -->
-                <addHTML src="./scss/components/modal/success-label/success-label.html" />
-                <!--Success with action  -->
-                <addHTML src="./scss/components/modal/success-action/success-action.html" />
-                <!-- Success with label and action  -->
-                <addHTML src="./scss/components/modal/success-label-action/success-label-action.html" />
-                <!-- Danger  -->
-                <addHTML src="./scss/components/modal/danger/danger.html" />
-                <!-- Danger with label  -->
-                <addHTML src="./scss/components/modal/danger-label/danger-label.html" />
-                <!--Danger with action  -->
-                <addHTML src="./scss/components/modal/danger-action/danger-action.html" />
-                <!-- Danger with label and action  -->
-                <addHTML src="./scss/components/modal/danger-label-action/danger-label-action.html" />
-            </section>
-
-            <!-- <section class="hcl-lightbox" >
+        <!-- <section class="hcl-lightbox" >
             </section> -->
 
-            <!-- Tabs -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/tab/tab.html" />
-            </section>
+        <!-- Tabs -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/tab/tab.html" />
+        </section>
 
-            <!-- Overflow Menu -->
-            <section id="overflowmenu" class="hcl-row m-0">
-                <!-- Right Overflow Menu  -->
-                <div class="hcl-col-6">
-                    <p style="float: left;">Right Overflow Menu</p>
-                    <addHTML src="./scss/components/overflow-menu/right/right.html" />
-                </div>
+        <!-- Overflow Menu -->
+        <section id="overflowmenu" class="hcl-row m-0">
+          <!-- Right Overflow Menu  -->
+          <div class="hcl-col-6">
+            <p style="float: left">Right Overflow Menu</p>
+            <addHTML src="./scss/components/overflow-menu/right/right.html" />
+          </div>
 
-                <!-- Left Overflow Menu  -->
-                <div class="hcl-col-6">
-                    <p style="float: left;">Left Overflow Menu</p>
-                    <addHTML src="./scss/components/overflow-menu/left/left.html" />
-                </div>
+          <!-- Left Overflow Menu  -->
+          <div class="hcl-col-6">
+            <p style="float: left">Left Overflow Menu</p>
+            <addHTML src="./scss/components/overflow-menu/left/left.html" />
+          </div>
 
-                <!-- Custom Overflow Menu  -->
-                <div class="hcl-col-12">
-                    <p style="float: left;margin-right: 1.5rem;">Custom </p>
-                    <addHTML src="./scss/components/overflow-menu/custom/custom.html" />
-                </div>
+          <!-- Custom Overflow Menu  -->
+          <div class="hcl-col-12">
+            <p style="float: left; margin-right: 1.5rem">Custom</p>
+            <addHTML src="./scss/components/overflow-menu/custom/custom.html" />
+          </div>
+        </section>
 
-            </section>
+        <!-- List -->
+        <section class="hcl-row m-0">
+          <!-- Ordered List -->
+          <div class="hcl-col-12 mb-4">
+            <addHTML src="./scss/components/list/ordered/ordered.html" />
+          </div>
+          <!-- Unordered List -->
+          <div class="hcl-col-12 mb-4">
+            <addHTML src="./scss/components/list/unordered/unordered.html" />
+          </div>
+        </section>
 
-            <!-- List -->
-            <section class="hcl-row m-0">
-                <!-- Ordered List -->
-                <div class="hcl-col-12 mb-4">
-                    <addHTML src="./scss/components/list/ordered/ordered.html" />
-                </div>
-                <!-- Unordered List -->
-                <div class="hcl-col-12 mb-4">
-                    <addHTML src="./scss/components/list/unordered/unordered.html" />
-                </div>
-            </section>
+        <!-- Content Switcher -->
+        <section class="m-1 p-2">
+          <!-- default -->
+          <addHTML
+            src="./scss/components/content-switcher/with-icons/with-icons.html"
+          />
+          <!-- with icons -->
+          <addHTML
+            src="./scss/components/content-switcher/default/default.html"
+          />
+          <!-- disabled -->
+          <addHTML
+            src="./scss/components/content-switcher/disabled/disabled.html"
+          />
+          <!-- disabled with icons -->
+          <addHTML
+            src="./scss/components/content-switcher/disabled-with-icons/disabled-with-icons.html"
+          />
+        </section>
 
-            <!-- Content Switcher -->
-            <section class="m-1 p-2">
-                <!-- default -->
-                <addHTML src="./scss/components/content-switcher/with-icons/with-icons.html" />
-                <!-- with icons -->
-                <addHTML src="./scss/components/content-switcher/default/default.html" />
-                <!-- disabled -->
-                <addHTML src="./scss/components/content-switcher/disabled/disabled.html" />
-                <!-- disabled with icons -->
-                <addHTML src="./scss/components/content-switcher/disabled-with-icons/disabled-with-icons.html" />
-            </section>
+        <!-- Toast -->
+        <section class="m-1 p-2">
+          <!-- danger -->
+          <addHTML src="./scss/components/toast/danger/danger.html" />
+          <!-- info -->
+          <addHTML src="./scss/components/toast/info/info.html" />
+          <!-- success -->
+          <addHTML src="./scss/components/toast/success/success.html" />
+          <!-- wanrning -->
+          <addHTML src="./scss/components/toast/warning/warning.html" />
+        </section>
 
-            <!-- Toast -->
-            <section class="m-1 p-2">
-                <!-- danger -->
-                <addHTML src="./scss/components/toast/danger/danger.html" />
-                <!-- info -->
-                <addHTML src="./scss/components/toast/info/info.html" />
-                <!-- success -->
-                <addHTML src="./scss/components/toast/success/success.html" />
-                <!-- wanrning -->
-                <addHTML src="./scss/components/toast/warning/warning.html" />
-            </section>
+        <!-- Slider -->
+        <section class="hcl-row m-1 p-2">
+          <addHTML
+            src="./scss/components/slider/basic-slider/basic-slider.html"
+          />
+          <addHTML
+            src="./scss/components/slider/slider-with-textInput/slider-with-textInput.html"
+          />
+          <addHTML
+            src="./scss/components/slider/slider-onhover-tooltip/slider-onhover-tooltip.html"
+          />
+        </section>
 
-            <!-- Slider -->
-            <section class="hcl-row m-1 p-2">
-                <addHTML src="./scss/components/slider/basic-slider/basic-slider.html" />
-                <addHTML src="./scss/components/slider/slider-with-textInput/slider-with-textInput.html" />
-                <addHTML src="./scss/components/slider/slider-onhover-tooltip/slider-onhover-tooltip.html" />
-            </section>
+        <!-- Dropdown -->
+        <section class="m-1 p-2">
+          <!-- Top -->
+          <div class="hcl-row m-3">
+            <div class="hcl-col-3">
+              <addHTML src="./scss/components/dropdown/top/top.html" />
+            </div>
+          </div>
+          <!-- Bottom -->
+          <div class="hcl-row m-3">
+            <div class="hcl-col-3">
+              <addHTML src="./scss/components/dropdown/bottom/bottom.html" />
+            </div>
+          </div>
+          <!-- multiselect -->
+          <div class="hcl-row m-3">
+            <div class="hcl-col-3">
+              <addHTML
+                src="./scss/components/dropdown/multiselect/multiselect.html"
+              />
+            </div>
+          </div>
+        </section>
 
-            <!-- Dropdown -->
-            <section class="m-1 p-2">
-                <!-- Top -->
-                <div class="hcl-row m-3">
-                    <div class="hcl-col-3">
-                        <addHTML src="./scss/components/dropdown/top/top.html" />
-                    </div>
-                </div>
-                <!-- Bottom -->
-                <div class="hcl-row m-3">
-                    <div class="hcl-col-3">
-                        <addHTML src="./scss/components/dropdown/bottom/bottom.html" />
-                    </div>
-                </div>
-                <!-- multiselect -->
-                <div class="hcl-row m-3">
-                    <div class="hcl-col-3">
-                        <addHTML src="./scss/components/dropdown/multiselect/multiselect.html" />
-                    </div>
-                </div>
-            </section>
+        <!-- File Uploader -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/file-uploader/file-uploader.html" />
+        </section>
 
-            <!-- File Uploader -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/file-uploader/file-uploader.html" />
-            </section>
+        <!-- Radio Components -->
+        <section class="m-1 p-2">
+          <!-- default -->
+          <addHTML src="./scss/components/radio/default/default.html" />
+          <!-- hrorizontal -->
+          <addHTML
+            src="./scss/components/radio/horizontal-grouping/horizontal-grouping.html"
+          />
+          <!-- vertical  -->
+          <addHTML
+            src="./scss/components/radio/vertical-grouping/vertical-grouping.html"
+          />
+        </section>
 
-            <!-- Radio Components -->
-            <section class="m-1 p-2">
-                <!-- default -->
-                <addHTML src="./scss/components/radio/default/default.html" />
-                <!-- hrorizontal -->
-                <addHTML src="./scss/components/radio/horizontal-grouping/horizontal-grouping.html" />
-                <!-- vertical  -->
-                <addHTML src="./scss/components/radio/vertical-grouping/vertical-grouping.html" />
-            </section>
+        <!-- Checkbox Components -->
+        <section class="m-1 p-2">
+          <!-- default -->
+          <addHTML src="./scss/components/checkbox/default/default.html" />
+          <!-- hrorizontal -->
+          <addHTML
+            src="./scss/components/checkbox/horizontal-grouping/horizontal-grouping.html"
+          />
+          <!-- vertical  -->
+          <addHTML
+            src="./scss/components/checkbox/vertical-grouping/vertical-grouping.html"
+          />
+        </section>
 
-            <!-- Checkbox Components -->
-            <section class="m-1 p-2">
-                <!-- default -->
-                <addHTML src="./scss/components/checkbox/default/default.html" />
-                <!-- hrorizontal -->
-                <addHTML src="./scss/components/checkbox/horizontal-grouping/horizontal-grouping.html" />
-                <!-- vertical  -->
-                <addHTML src="./scss/components/checkbox/vertical-grouping/vertical-grouping.html" />
-            </section>
+        <!-- Input Components -->
+        <section class="m-1 p-2">
+          <!-- default -->
+          <addHTML src="./scss/components/textinput/default/default.html" />
+          <!-- textinput-with-error -->
+          <addHTML
+            src="./scss/components/textinput/textinput-with-error/textinput-with-error.html"
+          />
+          <!-- textinput-with-helpertext -->
+          <addHTML
+            src="./scss/components/textinput/textinput-with-helpertext/textinput-with-helpertext.html"
+          />
+        </section>
 
-            <!-- Input Components -->
-            <section class="m-1 p-2">
-                <!-- default -->
-                <addHTML src="./scss/components/textinput/default/default.html" />
-                <!-- textinput-with-error -->
-                <addHTML src="./scss/components/textinput/textinput-with-error/textinput-with-error.html" />
-                <!-- textinput-with-helpertext -->
-                <addHTML src="./scss/components/textinput/textinput-with-helpertext/textinput-with-helpertext.html" />
-            </section>
+        <!-- Password Components -->
+        <section class="m-1 p-2">
+          <!-- default -->
+          <addHTML src="./scss/components/password/default/default.html" />
+          <!-- textinput-with-error -->
+          <addHTML
+            src="./scss/components/password/password-with-error/password-with-error.html"
+          />
+          <!-- textinput-with-helpertext -->
+          <addHTML
+            src="./scss/components/password/password-with-helpertext/password-with-helpertext.html"
+          />
+          <!-- disabled -->
+          <addHTML src="./scss/components/password/disabled/disabled.html" />
+        </section>
 
-            <!-- Password Components -->
-            <section class="m-1 p-2">
-                <!-- default -->
-                <addHTML src="./scss/components/password/default/default.html" />
-                <!-- textinput-with-error -->
-                <addHTML src="./scss/components/password/password-with-error/password-with-error.html" />
-                <!-- textinput-with-helpertext -->
-                <addHTML src="./scss/components/password/password-with-helpertext/password-with-helpertext.html" />
-                <!-- disabled -->
-                <addHTML src="./scss/components/password/disabled/disabled.html" />
-            </section>
+        <!-- Text Area -->
+        <section class="m-1 p-2">
+          <!-- default -->
+          <addHTML src="./scss/components/textarea/default/default.html" />
+          <!-- textinput-with-error -->
+          <addHTML
+            src="./scss/components/textarea/textarea-with-error/textinput-with-error.html"
+          />
+          <!-- textinput-with-helpertext -->
+          <addHTML
+            src="./scss/components/textarea/textarea-with-helpertext/textinput-with-helpertext.html"
+          />
+        </section>
 
-            <!-- Text Area -->
-            <section class="m-1 p-2">
-                <!-- default -->
-                <addHTML src="./scss/components/textarea/default/default.html" />
-                <!-- textinput-with-error -->
-                <addHTML src="./scss/components/textarea/textarea-with-error/textinput-with-error.html" />
-                <!-- textinput-with-helpertext -->
-                <addHTML src="./scss/components/textarea/textarea-with-helpertext/textinput-with-helpertext.html" />
-            </section>
+        <!-- Form Group -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/form/form.html" />
+        </section>
 
-            <!-- Form Group -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/form/form.html" />
-            </section>
+        <!-- Tooltip -->
+        <section class="m-1 p-2">
+          <!-- primary -->
+          <addHTML src="./scss/components/tooltip/definition/definition.html" />
+          <!-- secondary -->
+          <addHTML src="./scss/components/tooltip/icon/icon.html" />
+          <!-- secondary -->
+          <addHTML
+            src="./scss/components/tooltip/interactive/interactive.html"
+          />
+        </section>
 
-            <!-- Tooltip -->
-            <section class="m-1 p-2">
-                <!-- primary -->
-                <addHTML src="./scss/components/tooltip/definition/definition.html" />
-                <!-- secondary -->
-                <addHTML src="./scss/components/tooltip/icon/icon.html" />
-                <!-- secondary -->
-                <addHTML src="./scss/components/tooltip/interactive/interactive.html" />
-            </section>
+        <!-- Data table -->
+        <section class="m-1 p-2">
+          <div class="hcl-col-12 mb-4">
+            <!-- borderless -->
+            <addHTML
+              src="./scss/components/data-table/borderless/borderless.html"
+            />
+          </div>
+          <div class="hcl-col-12 mb-4">
+            <!-- compact -->
+            <addHTML src="./scss/components/data-table/compact/compact.html" />
+          </div>
+          <div class="hcl-col-12 mb-4">
+            <!-- default -->
+            <addHTML src="./scss/components/data-table/default/default.html" />
+          </div>
+          <div class="hcl-col-12 mb-4">
+            <!-- tall -->
+            <addHTML src="./scss/components/data-table/tall/tall.html" />
+          </div>
+          <div class="hcl-col-12 mb-4">
+            <!-- zebra -->
+            <addHTML src="./scss/components/data-table/zebra/zebra.html" />
+          </div>
+          <div class="hcl-col-12 mb-4">
+            <!-- overflow -->
+            <addHTML
+              src="./scss/components/data-table/overflow/overflow.html"
+            />
+          </div>
+        </section>
 
-            <!-- Data table -->
-            <section class="m-1 p-2">
-                <div class="hcl-col-12 mb-4">
-                    <!-- borderless -->
-                    <addHTML src="./scss/components/data-table/borderless/borderless.html" />
-                </div>
-                <div class="hcl-col-12 mb-4">
-                    <!-- compact -->
-                    <addHTML src="./scss/components/data-table/compact/compact.html" />
-                </div>
-                <div class="hcl-col-12 mb-4">
-                    <!-- default -->
-                    <addHTML src="./scss/components/data-table/default/default.html" />
-                </div>
-                <div class="hcl-col-12 mb-4">
-                    <!-- tall -->
-                    <addHTML src="./scss/components/data-table/tall/tall.html" />
-                </div>
-                <div class="hcl-col-12 mb-4">
-                    <!-- zebra -->
-                    <addHTML src="./scss/components/data-table/zebra/zebra.html" />
-                </div>
-                <div class="hcl-col-12 mb-4">
-                    <!-- overflow -->
-                    <addHTML src="./scss/components/data-table/overflow/overflow.html" />
-                </div>
-            </section>
+        <!-- Date Picker -->
+        <section class="m-1 p-2 hcl-row">
+          <!-- bottom -->
+          <div class="hcl-col-6">
+            <addHTML src="./scss/components/date-picker/bottom/bottom.html" />
+          </div>
+          <!-- top -->
+          <div class="hcl-col-6">
+            <addHTML src="./scss/components/date-picker/top/top.html" />
+          </div>
+        </section>
 
-            <!-- Date Picker -->
-            <section class="m-1 p-2 hcl-row">
-                <!-- bottom -->
-                <div class="hcl-col-6">
-                    <addHTML src="./scss/components/date-picker/bottom/bottom.html" />
-                </div>
-                <!-- top -->
-                <div class="hcl-col-6">
-                    <addHTML src="./scss/components/date-picker/top/top.html" />
-                </div>
-            </section>
+        <!-- Time Picker -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/time-picker/default/default.html" />
+        </section>
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/time-picker/with-24H/with-24H.html" />
+        </section>
+        <section class="m-1 p-2">
+          <addHTML
+            src="./scss/components/time-picker/with-timezone/with-timezone.html"
+          />
+        </section>
 
-            <!-- Time Picker -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/time-picker/time-picker.html" />
-            </section>
+        <!-- Select option -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/select/default/select.html" />
+        </section>
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/select/group/selectOptGroup.html" />
+        </section>
 
-            <!-- Select option -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/select/default/select.html" />
-            </section>
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/select/group/selectOptGroup.html" />
-            </section>
+        <!-- Accordion -->
+        <section class="m-1 p-2">
+          <!-- controlled -->
+          <addHTML
+            src="./scss/components/accordion/controlled/controlled.html"
+          />
+          <!-- uncontrolled -->
+          <addHTML
+            src="./scss/components/accordion/uncontrolled/uncontrolled.html"
+          />
+        </section>
 
+        <!-- Tile -->
+        <section class="m-1 p-2">
+          <!-- clickable -->
+          <addHTML src="./scss/components/tile/clickable/clickable.html" />
+          <!-- expandable -->
+          <addHTML src="./scss/components/tile/expandable/expandable.html" />
+          <!-- readable -->
+          <addHTML src="./scss/components/tile/readable/readable.html" />
+          <!-- selectable -->
+          <addHTML src="./scss/components/tile/selectable/selectable.html" />
+        </section>
 
-            <!-- Accordion -->
-            <section class="m-1 p-2">
-                <!-- controlled -->
-                <addHTML src="./scss/components/accordion/controlled/controlled.html" />
-                <!-- uncontrolled -->
-                <addHTML src="./scss/components/accordion/uncontrolled/uncontrolled.html" />
-            </section>
+        <!-- Number Input -->
+        <section class="m-1 p-2">
+          <!-- disabledNumberInput -->
+          <addHTML
+            src="./scss/components/number-input/disabledNumberInput/disabledNumberInput.html"
+          />
+        </section>
+        <section class="m-1 p-2">
+          <!-- numberInput -->
+          <addHTML
+            src="./scss/components/number-input/numberInput/numberInput.html"
+          />
+        </section>
+        <section class="m-1 p-2">
+          <!-- optionalHelperNumberInput -->
+          <addHTML
+            src="./scss/components/number-input/optionalHelperNumberInput/optionalHelperNumberInput.html"
+          />
+        </section>
+        <section class="m-1 p-2">
+          <!-- validationNumberInput -->
+          <addHTML
+            src="./scss/components/number-input/validationNumberInput/validationNumberInput.html"
+          />
+        </section>
 
+        <!-- Search -->
+        <section class="m-1 p-2">
+          <!-- normal -->
+          <addHTML src="./scss/components/search/normal/normal.html" />
+          <!-- secondary -->
+          <addHTML src="./scss/components/search/expandable/expandable.html" />
+        </section>
 
-            <!-- Tile -->
-            <section class="m-1 p-2">
-                <!-- clickable -->
-                <addHTML src="./scss/components/tile/clickable/clickable.html" />
-                <!-- expandable -->
-                <addHTML src="./scss/components/tile/expandable/expandable.html" />
-                <!-- readable -->
-                <addHTML src="./scss/components/tile/readable/readable.html" />
-                <!-- selectable -->
-                <addHTML src="./scss/components/tile/selectable/selectable.html" />
-            </section>
+        <!-- Loading -->
+        <section class="m-1 p-2">
+          <!-- accordion -->
+          <addHTML
+            src="./scss/components/loading-state/accordion/accordion.html"
+          />
+          <!-- breadcrumb -->
+          <addHTML
+            src="./scss/components/loading-state/breadcrumb/breadcrumb.html"
+          />
+          <!-- dataTable -->
+          <addHTML
+            src="./scss/components/loading-state/dataTable/dataTable.html"
+          />
+          <!-- normal -->
+          <addHTML src="./scss/components/loading-state/normal/normal.html" />
+          <!-- numberInput -->
+          <addHTML
+            src="./scss/components/loading-state/numberInput/numberInput.html"
+          />
+          <!-- slider -->
+          <addHTML src="./scss/components/loading-state/slider/slider.html" />
+          <!-- tab -->
+          <addHTML src="./scss/components/loading-state/tab/tab.html" />
+          <!-- tag -->
+          <addHTML src="./scss/components/loading-state/tag/tag.html" />
+        </section>
 
-            <!-- Number Input -->
-            <section class="m-1 p-2">
-                <!-- disabledNumberInput -->
-                <addHTML src="./scss/components/number-input/disabledNumberInput/disabledNumberInput.html" />
-            </section>
-            <section class="m-1 p-2">
-                <!-- numberInput -->
-                <addHTML src="./scss/components/number-input/numberInput/numberInput.html" />
-            </section>
-            <section class="m-1 p-2">
-                <!-- optionalHelperNumberInput -->
-                <addHTML src="./scss/components/number-input/optionalHelperNumberInput/optionalHelperNumberInput.html" />
-            </section>
-            <section class="m-1 p-2">
-                <!-- validationNumberInput -->
-                <addHTML src="./scss/components/number-input/validationNumberInput/validationNumberInput.html" />
-            </section>
+        <!-- action bar -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/action-bar/action-bar.html" />
+        </section>
 
-            <!-- Search -->
-            <section class="m-1 p-2">
-                <!-- normal -->
-                <addHTML src="./scss/components/search/normal/normal.html" />
-                <!-- secondary -->
-                <addHTML src="./scss/components/search/expandable/expandable.html" />
-            </section>
+        <!-- toolbar -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/toolbar/toolbar.html" />
+        </section>
 
-            <!-- Loading -->
-            <section class="m-1 p-2">
-                <!-- accordion -->
-                <addHTML src="./scss/components/loading-state/accordion/accordion.html" />
-                <!-- breadcrumb -->
-                <addHTML src="./scss/components/loading-state/breadcrumb/breadcrumb.html" />
-                <!-- dataTable -->
-                <addHTML src="./scss/components/loading-state/dataTable/dataTable.html" />
-                <!-- normal -->
-                <addHTML src="./scss/components/loading-state/normal/normal.html" />
-                <!-- numberInput -->
-                <addHTML src="./scss/components/loading-state/numberInput/numberInput.html" />
-                <!-- slider -->
-                <addHTML src="./scss/components/loading-state/slider/slider.html" />
-                <!-- tab -->
-                <addHTML src="./scss/components/loading-state/tab/tab.html" />
-                <!-- tag -->
-                <addHTML src="./scss/components/loading-state/tag/tag.html" />
-            </section>
+        <!-- footer -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/footer/footer.html" />
+        </section>
 
+        <!-- tree -->
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/tree/tree.html" />
+        </section>
 
-            <!-- action bar -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/action-bar/action-bar.html" />
-            </section>
-
-            <!-- toolbar -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/toolbar/toolbar.html" />
-            </section>
-
-             <!-- footer -->
-             <section class="m-1 p-2">
-                <addHTML src="./scss/components/footer/footer.html" />
-            </section>
-
-            <!-- tree -->
-            <section class="m-1 p-2">
-                <addHTML src="./scss/components/tree/tree.html" />
-            </section>
-
-            <!-- AVAILABLE COMPONENTS ENDS -->
-        </main>
+        <!-- AVAILABLE COMPONENTS ENDS -->
+      </main>
     </div>
     <script src="./modular/patron/index.js"></script>
     <script src="./scss/components/accordion/controlled/controlled.js"></script>
@@ -600,7 +715,8 @@
     <script src="./scss/components/password/password-with-error/password-with-error.js"></script>
     <script src="./scss/components/password/password-with-helpertext/password-with-helpertext.js"></script>
     <script src="./scss/components/password/disabled/disabled.js"></script>
-    <script src="./scss/components/time-picker/time-picker.js"></script>
-</body>
-
+    <script src="./scss/components/time-picker/default/default.js"></script>
+    <script src="./scss/components/time-picker/with-24H/with-24H.js"></script>
+    <script src="./scss/components/time-picker/with-timezone/with-timezone.js"></script>
+  </body>
 </html>

@@ -17,14 +17,14 @@ class FileUploader {
     this.fileList = [];
   }
 
-  keyListener = (event) => {
+  keyListener = event => {
     event.preventDefault();
     if (event.keyCode === 13) {
       this.element.querySelector(this.selectors.input).click();
     }
   };
 
-  fileNameHTML = (name) => {
+  fileNameHTML = name => {
     return `<div class="${PREFIX}-file-container-item">
     <span title="${name}" class="${PREFIX}-file-selected-file">
       <p class="${PREFIX}-file-filename">${name}</p>
@@ -34,37 +34,41 @@ class FileUploader {
     `;
   };
 
-  getList = (event) => {
+  getList = event => {
     const files = event.target.files;
     const length = event.target.files.length;
     const multiple = this.element.querySelector(this.selectors.input).multiple;
+
     if (!multiple) {
       this.fileContainer.innerHTML = '';
     }
+
     if (files) {
-      for (let i = 0; i < length; i++) {
-        const string = this.fileNameHTML(files[i].name);
-        this.fileContainer.insertAdjacentHTML('beforeend', string);
+      if (!this.state.hideFile) {
+        for (let i = 0; i < length; i++) {
+          const string = this.fileNameHTML(files[i].name);
+          this.fileContainer.insertAdjacentHTML('beforeend', string);
+        }
       }
       this.fileList = multiple ? [...files, ...this.fileList] : [...files];
     }
     if (typeof this.state.onChange === 'function') {
-      this.state.onChange(this.fileList);
+      this.state.onChange(this.fileList, event);
     }
     event.target.value = null;
   };
 
-  removeFile = (event) => {
+  removeFile = event => {
     if (event.target.type === 'button') {
       this.fileContainer.removeChild(event.target.parentNode);
       const index = this.fileList.findIndex(
-        (file) => file.name === event.target.value
+        file => file.name === event.target.value
       );
       if (index !== -1) {
         this.fileList.splice(index, 1);
       }
       if (typeof this.state.onChange === 'function') {
-        this.state.onChange(this.fileList);
+        this.state.onChange(this.fileList, event);
       }
     }
   };

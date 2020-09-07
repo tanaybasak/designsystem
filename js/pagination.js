@@ -55,7 +55,9 @@ class Pagination {
       ...options
     };
     // eslint-disable-next-line dot-notation
-    options['itemStepper'] ? this.state.pageItems.value = options.itemStepper : (() => {})();
+    options['itemStepper']
+      ? (this.state.pageItems.value = options.itemStepper)
+      : (() => {})();
     this.init();
     this.toggleState(this.state);
   }
@@ -204,24 +206,28 @@ class Pagination {
     const { target } = e;
     const keycode = e.keycode || e.which;
     const optionsLen = target.options.length;
-    if (keycode === 37) { // PREVIOUS
+    if (keycode === 37) {
+      // PREVIOUS
       e.preventDefault();
       const selIndex = target.selectedIndex;
-      if (selIndex > 0) { // OTHER THAN FIRST ELEMENT
+      if (selIndex > 0) {
+        // OTHER THAN FIRST ELEMENT
         target.selectedIndex--;
       }
       this.handleChange(e);
-    } else if (keycode === 39) { // NEXT
+    } else if (keycode === 39) {
+      // NEXT
       e.preventDefault();
       if (target.options) {
         const selIndex = target.selectedIndex;
-        if ((optionsLen - 1) !== selIndex) { // OTHER THAN LAST ELEMENT
+        if (optionsLen - 1 !== selIndex) {
+          // OTHER THAN LAST ELEMENT
           target.selectedIndex++;
         }
         this.handleChange(e);
       }
     }
-  }
+  };
 
   handleChange = e => {
     // Drop-Down Change
@@ -420,7 +426,7 @@ class Pagination {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('pagination', function(element, target) {
+    handleDataBinding('pagination', function (element, target) {
       if (element && target) {
         const defaultOption = {
           navigationButton: {

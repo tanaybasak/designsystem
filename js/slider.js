@@ -97,7 +97,8 @@ class Slider {
           const nearestValue = findMinMax(this.min, this.step, value);
           this.returnError('invalid', {
             message:
-              'Please enter a valid value. The two nearest valid values are ' + nearestValue.join(' and '),
+              'Please enter a valid value. The two nearest valid values are ' +
+              nearestValue.join(' and '),
             nearestValue: nearestValue
           });
         }

@@ -12,328 +12,329 @@
 
 // GRID SYSTEMS
 @mixin generate-container($gutter: $total-gutter-width) {
-    width: 100%;
-    padding-right: $gutter / 2;
-    padding-left: $gutter / 2;
-    margin-right: auto;
-    margin-left: auto;
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @mixin generate-row($gutter: $total-gutter-width) {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -$gutter / 2;
-    margin-left: -$gutter / 2;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter / 2;
+  margin-left: -$gutter / 2;
 }
 
 @mixin generate-col($size, $cols: $grid-columns) {
-    flex: 0 0 percentage($size / $cols);
-    max-width: percentage($size / $cols); // Applies to IE10+ and Firefox.
+  flex: 0 0 percentage($size / $cols);
+  max-width: percentage($size / $cols); // Applies to IE10+ and Firefox.
 }
 
 @mixin generate-col-offset($size, $cols: $grid-columns) {
-    $num: $size / $cols;
-    margin-left: if($num==0, 0, percentage($num));
+  $num: $size / $cols;
+  margin-left: if($num==0, 0, percentage($num));
 }
 
 // Framework grid generation
 //
 // Generate the correct number of grid classes given any value of `$grid-columns`.
-@mixin generate-cols($cols: $grid-columns, $gutter: $total-gutter-width, $breakpoints: $grid-breakpoints) {
-    @each $breakpoint in map-keys($breakpoints) {
-        $infix: breakpoint-infix($breakpoint, $breakpoints);
+@mixin generate-cols(
+  $cols: $grid-columns,
+  $gutter: $total-gutter-width,
+  $breakpoints: $grid-breakpoints
+) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
 
-        // Allow columns to stretch full width below their breakpoints
-        @for $i from 1 through $cols {
-            .#{$prefix}-col#{$infix}-#{$i} {
-                @extend %common-col-rules;
-            }
-        }
-
-        .#{$prefix}-col#{$infix},
-        .#{$prefix}-col#{$infix}-auto {
-            @extend %common-col-rules;
-        }
-
-        @include media-breakpoint-up($breakpoint, $breakpoints) {
-
-            // Provide basic `.#{$prefix}-col-{bp}` classes for equal-width flexbox columns
-            .#{$prefix}-col#{$infix} {
-                flex-basis: 0;
-                flex-grow: 1;
-                max-width: 100%;
-            }
-
-            .#{$prefix}-col#{$infix}-auto {
-                flex: 0 0 auto;
-                width: auto;
-                max-width: 100%; // Reset earlier grid tiers
-            }
-
-            @for $i from 1 through $cols {
-                .#{$prefix}-col#{$infix}-#{$i} {
-                    @include generate-col($i, $cols);
-                }
-            }
-
-            .#{$prefix}-order#{$infix}-first {
-                order: -1;
-            }
-
-            .#{$prefix}-order#{$infix}-last {
-                order: $cols + 1;
-            }
-
-            @for $i from 0 through $cols {
-                .#{$prefix}-order#{$infix}-#{$i} {
-                    order: $i;
-                }
-            }
-
-            // `$cols - 1` because offsetting by the width of an entire row isn't possible
-            @for $i from 0 through ($cols - 1) {
-
-                // Avoid emitting useless .#{$prefix}-offset-0
-                @if not ($infix==''and $i==0) {
-                    .#{$prefix}-offset#{$infix}-#{$i} {
-                        @include generate-col-offset($i, $cols);
-                    }
-                }
-            }
-        }
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $cols {
+      .#{$prefix}-col#{$infix}-#{$i} {
+        @extend %common-col-rules;
+      }
     }
+
+    .#{$prefix}-col#{$infix},
+    .#{$prefix}-col#{$infix}-auto {
+      @extend %common-col-rules;
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.#{$prefix}-col-{bp}` classes for equal-width flexbox columns
+      .#{$prefix}-col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .#{$prefix}-col#{$infix}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%; // Reset earlier grid tiers
+      }
+
+      @for $i from 1 through $cols {
+        .#{$prefix}-col#{$infix}-#{$i} {
+          @include generate-col($i, $cols);
+        }
+      }
+
+      .#{$prefix}-order#{$infix}-first {
+        order: -1;
+      }
+
+      .#{$prefix}-order#{$infix}-last {
+        order: $cols + 1;
+      }
+
+      @for $i from 0 through $cols {
+        .#{$prefix}-order#{$infix}-#{$i} {
+          order: $i;
+        }
+      }
+
+      // `$cols - 1` because offsetting by the width of an entire row isn't possible
+      @for $i from 0 through ($cols - 1) {
+        // Avoid emitting useless .#{$prefix}-offset-0
+        @if not($infix== '' and $i==0) {
+          .#{$prefix}-offset#{$infix}-#{$i} {
+            @include generate-col-offset($i, $cols);
+          }
+        }
+      }
+    }
+  }
 }
 
 // Resize
 @mixin resizable($direction) {
-    overflow: auto;
-    resize: $direction;
+  overflow: auto;
+  resize: $direction;
 }
 
 // Clearfix
 @mixin clearfix() {
-    &::after {
-        display: block;
-        clear: both;
-        content: '';
-    }
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
 }
 
 // MEDIA QUERIES
 @mixin respond-to($breakpoint) {
-    @if $breakpoint==phone {
-        @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
-            @content;
-        }
+  @if $breakpoint==phone {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+      @content;
     }
-
-    @else if $breakpoint==tablet {
-        @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-            @content;
-        }
+  } @else if $breakpoint==tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+      @content;
     }
-
-    @else if $breakpoint==desktop {
-        @media (min-width: #{$desktop-width}) {
-            @content;
-        }
+  } @else if $breakpoint==desktop {
+    @media (min-width: #{$desktop-width}) {
+      @content;
     }
+  }
 }
 
 // Line height
 @function getLineHeight($font-size) {
-    @return $font-size*1.5;
+  @return $font-size * 1.5;
 }
 
 // px to rem
 @mixin pxtorem($value) {
-    font-size: ($value/$base-font-size-px) + rem;
+  font-size: ($value/$base-font-size-px) + rem;
 }
 
 // close icon
-@mixin hcl-close-icon($size: 16, $bg-color: transparent, $fg-color: $black, $rounded: false) {
-    width: #{$size}px;
-    height: #{$size}px;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $bg-color;
-    cursor: pointer;
+@mixin hcl-close-icon(
+  $size: 16,
+  $bg-color: transparent,
+  $fg-color: $black,
+  $rounded: false
+) {
+  width: #{$size}px;
+  height: #{$size}px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-color;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: ' ';
+    position: absolute;
+    width: 2px;
+    background-color: lighten($fg-color, 20%);
+  }
+
+  @if $rounded {
+    border-radius: 50%;
 
     &::before,
     &::after {
-        content: ' ';
-        position: absolute;
-        width: 2px;
-        background-color: lighten($fg-color, 20%);
+      height: #{round($size - 10)}px;
     }
-
-    @if $rounded {
-        border-radius: 50%;
-
-        &::before,
-        &::after {
-            height: #{round($size - 10)}px;
-        }
-    }
-
-    @else {
-
-        &::before,
-        &::after {
-            height: #{$size}px;
-        }
-
-    }
-
-    &::before {
-        transform: rotate(45deg);
-    }
-
+  } @else {
+    &::before,
     &::after {
-        transform: rotate(-45deg);
+      height: #{$size}px;
     }
+  }
 
-    &:hover {
+  &::before {
+    transform: rotate(45deg);
+  }
 
-        &::before,
-        &::after {
-            background-color: lighten($fg-color, 0);
-        }
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      background-color: lighten($fg-color, 0);
     }
+  }
 }
 
 // ellipsis icon
-@mixin hcl-ellipsis($color: $black, $font-size: .8rem) {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: $color;
-    font-size: $font-size;
+@mixin hcl-ellipsis($color: $black, $font-size: 0.8rem) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $color;
+  font-size: $font-size;
 
+  &::after {
+    content: '\2022 \2022 \2022';
+    transform: rotate(90deg);
+    padding: 0 0.5rem;
+  }
+
+  &.horizontal-ellipsis {
     &::after {
-        content: '\2022 \2022 \2022';
-        transform: rotate(90deg);
-        padding: 0 .5rem;
+      transform: none;
     }
-
-    &.horizontal-ellipsis {
-        &::after {
-            transform: none;
-        }
-    }
+  }
 }
 
 // HOVER
 @mixin hover {
-    &:hover {
-        @content;
-    }
+  &:hover {
+    @content;
+  }
 }
 
 @mixin hover-focus {
-
-    &:hover,
-    &:focus {
-        @content;
-    }
+  &:hover,
+  &:focus {
+    @content;
+  }
 }
 
 @mixin nav-active {
-    background-image: linear-gradient(to top, $white 0%, $white 4%, transparent 4%);
-    background-size: cover;
-    transition: all ease .1s;
+  background-image: linear-gradient(
+    to top,
+    $white 0%,
+    $white 4%,
+    transparent 4%
+  );
+  background-size: cover;
+  transition: all ease 0.1s;
 }
 
 @mixin clearfix() {
-    &::after {
-        display: block;
-        content: '';
-        clear: both;
-    }
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
 }
 
 // Input Fields Color Maps
-$inputColor-map: ('color-1': #152935, 'color-2': #5a6872, 'color-3': #EFEFEF, 'color-5': #3d70b2);
+$inputColor-map: (
+  'color-1': #152935,
+  'color-2': #5a6872,
+  'color-3': #efefef,
+  'color-5': #3d70b2
+);
 
 // getInputColor(<requiredColor>, <propertyNametoApply>)
 @mixin getInputColor($color, $property) {
-    @if map-has-key($inputColor-map, $color) {
-        #{$property}: map-get($inputColor-map, $color);
-    }
-
-    @else {
-        @warn 'This is not define in the HCL design System - `#{$color} #{$property}`';
-    }
+  @if map-has-key($inputColor-map, $color) {
+    #{$property}: map-get($inputColor-map, $color);
+  } @else {
+    @warn 'This is not define in the HCL design System - `#{$color} #{$property}`';
+  }
 }
 
 // getFormControl(<control>)
 @mixin getFormControl($which) {
-    @if ($which=='inputcontrol') {
-        font-size: .875rem;
-        width: 100%;
-        height: $input-height;
-        padding: $input-padding-y $input-padding-x;
-        @include getInputColor('color-1', 'color');
-        @include getInputColor('color-3', 'background-color');
-        border: none;
-        box-shadow: 0 1px 0 0 #5a6872;
-        border-bottom: 1px solid transparent;
+  @if ($which== 'inputcontrol') {
+    font-size: 0.875rem;
+    width: 100%;
+    height: $input-height;
+    padding: $input-padding-y $input-padding-x;
+    @include getInputColor('color-1', 'color');
+    @include getInputColor('color-3', 'background-color');
+    border: none;
+    box-shadow: 0 1px 0 0 #5a6872;
+    border-bottom: 1px solid transparent;
 
-        &:focus {
-            outline: none;
-            box-shadow: 0 3px 0 0 $blue-7;
+    &:focus {
+      outline: none;
+      box-shadow: 0 3px 0 0 $blue-7;
 
-            &~label.#{$prefix}-label {
-                color: $blue-7;
-            }
-        }
-
-        &[disabled] {
-            opacity: .5;
-            cursor: not-allowed;
-            background-color: rgba($blue-secondary, 0.5);
-
-            &~label,
-            &~.#{$prefix}-error-msg,
-            &~.#{$prefix}-helper-text {
-                opacity: .5;
-            }
-        }
+      & ~ label.#{$prefix}-label {
+        color: $blue-7;
+      }
     }
 
-    @else {
-        @warn 'This is not define in the HCL design System!';
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background-color: rgba($blue-secondary, 0.5);
+
+      & ~ label,
+      & ~ .#{$prefix}-error-msg,
+      & ~ .#{$prefix}-helper-text {
+        opacity: 0.5;
+      }
     }
+  } @else {
+    @warn 'This is not define in the HCL design System!';
+  }
 }
 
 // getErrorMarkup(<control>)
 @mixin getErrorMarkup($which) {
-    @if ($which=='inputcontrol') {
-        .#{$prefix}-error-msg {
-            @include getFontWeight('regular');
-            font-size: .75rem;
-            line-height: getLineHeight(.75rem);
-            color: $red-3;
-            margin-top: 0.25rem;
-        }
+  @if ($which== 'inputcontrol') {
+    .#{$prefix}-error-msg {
+      @include getFontWeight('regular');
+      font-size: 0.75rem;
+      line-height: getLineHeight(0.75rem);
+      color: $red-3;
+      margin-top: 0.25rem;
     }
-
-    @else {
-        @warn 'This is not define in the HCL design System! - `#{$which}`';
-    }
+  } @else {
+    @warn 'This is not define in the HCL design System! - `#{$which}`';
+  }
 }
 
 @mixin groupOption($which) {
-    >.#{$prefix}-#{$which}-item:not(:first-of-type) {
-        margin-left: 1rem;
-    }
+  > .#{$prefix}-#{$which}-item:not(:first-of-type) {
+    margin-left: 1rem;
+  }
 
-    &.#{$prefix}-stack-vertical {
-        >.#{$prefix}-#{$which}-item:not(:first-of-type) {
-            margin-left: 0;
-        }
+  &.#{$prefix}-stack-vertical {
+    > .#{$prefix}-#{$which}-item:not(:first-of-type) {
+      margin-left: 0;
     }
+  }
 }

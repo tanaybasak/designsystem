@@ -1,25 +1,56 @@
 <div id="hcl-optional-number-input" class="hcl-number-input-wrapper">
-    <label for="numbetInput2" class="hcl-label">Number Input</label>
-    <div class="hcl-helper-text">
-        Optional Helper text goes here (max 20 and min 10)
+  <label for="numbetInput2" class="hcl-label">Number Input</label>
+  <div class="hcl-helper-text">
+    Optional Helper text goes here (max 20 and min 10)
+  </div>
+  <div class="hcl-number-input">
+    <input
+      type="number"
+      value="15"
+      min="10"
+      max="20"
+      class="hcl-form-control"
+      id="numbetInput2"
+    />
+    <div class="hcl-number-input-control">
+      <button
+        aria-label="increase number input"
+        class="increment-btn"
+        type="button"
+        aria-live="polite"
+        aria-atomic="true"
+        tabindex="-1"
+      >
+        <svg
+          focusable="false"
+          preserveAspectRatio="xMidYMid meet"
+          style="will-change: transform"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 8 4"
+          aria-hidden="true"
+        >
+          <path d="M0 4l4-4 4 4z"></path>
+        </svg>
+      </button>
+      <button
+        aria-label="decrease number input"
+        class="decrement-btn"
+        type="button"
+        aria-live="polite"
+        aria-atomic="true"
+        tabindex="-1"
+      >
+        <svg
+          focusable="false"
+          preserveAspectRatio="xMidYMid meet"
+          style="will-change: transform"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 8 4"
+          aria-hidden="true"
+        >
+          <path d="M8 0L4 4 0 0z"></path>
+        </svg>
+      </button>
     </div>
-    <div class="hcl-number-input">
-        <input type="number" value="15" min="10" max="20" class="hcl-form-control" id="numbetInput2" />
-        <div class="hcl-number-input-control">
-            <button aria-label="increase number input" class="increment-btn" type="button" aria-live="polite"
-                aria-atomic="true" tabindex="-1">
-                <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4" aria-hidden="true">
-                    <path d="M0 4l4-4 4 4z"></path>
-                </svg>
-            </button>
-            <button aria-label="decrease number input" class="decrement-btn" type="button" aria-live="polite"
-                aria-atomic="true" tabindex="-1">
-                <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4" aria-hidden="true">
-                    <path d="M8 0L4 4 0 0z"></path>
-                </svg>
-            </button>
-        </div>
-    </div>
+  </div>
 </div>

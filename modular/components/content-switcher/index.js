@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  contentswitch: function(selector, options) {
+  contentswitch: function (selector, options) {
     attachElements(selector, options, ContentSwitcher);
   }
 };
