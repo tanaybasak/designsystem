@@ -41,15 +41,15 @@ $search-reset-size: 0.759rem;
     }
   }
 
-  button.#{$prefix}-search-btn:hover {
-    background-color: $interactive_bg_hover;
-    cursor: pointer;
-    .#{$prefix}-search-icon {
-      @include themify($themes) {
-        fill: themed("input_icon");
-      }
-    }
-  }
+  // button.#{$prefix}-search-btn:hover {
+  //   background-color: red;
+  //   cursor: pointer;
+  //   .#{$prefix}-search-icon {
+  //     @include themify($themes) {
+  //       fill: themed("input_icon");
+  //     }
+  //   }
+  // }
 
   .#{$prefix}-search-btn {
     height: $search-height;

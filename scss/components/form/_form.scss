@@ -118,7 +118,9 @@ label.#{$prefix}-label {
     }
 
     svg {
-      fill: $blue-7;
+      @include themify($themes) {
+        fill : themed('input_icon');
+        }
     }
   }
 }
@@ -176,7 +178,6 @@ label.#{$prefix}-label {
 
     &:focus + .#{$prefix}-checkbox-label::before {
       outline: 1px solid transparent;
-      box-shadow: 0 0 0 2px $checkbox-focus-color;
       @include themify($themes) {
         border-color: themed("interactive_border");
       }
