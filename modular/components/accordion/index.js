@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  accordion: function(selector, options) {
+  accordion: function (selector, options) {
     attachElements(selector, options, Accordion);
   }
 };

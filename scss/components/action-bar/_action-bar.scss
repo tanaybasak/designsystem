@@ -73,7 +73,7 @@
       &:hover {
         @include themify($themes) {
           color: themed('primary_text');
-          background-color: themed('primary_bg_hover')!important;
+          background-color: themed('primary_bg_hover') !important;
         }
       }
 

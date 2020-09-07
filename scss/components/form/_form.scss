@@ -6,14 +6,14 @@
  *******************************************************************
  */
 
-@import "../../base";
+@import '../../base';
 
 .#{$prefix}-form-group {
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
 
-  input.#{$prefix}-form-control[data-invalid="false"] ~ .#{$prefix}-error-msg,
+  input.#{$prefix}-form-control[data-invalid='false'] ~ .#{$prefix}-error-msg,
   input.#{$prefix}-form-control:not([data-invalid]) ~ .#{$prefix}-error-msg {
     display: none;
   }
@@ -26,34 +26,34 @@
     order: 3;
   }
 
-  input[type="password"]::-ms-reveal,
-  input[type="password"]::-ms-clear {
+  input[type='password']::-ms-reveal,
+  input[type='password']::-ms-clear {
     display: none;
   }
 }
 
-input.#{$prefix}-form-control[data-invalid="true"],
-textarea.#{$prefix}-textarea[data-invalid="true"] {
+input.#{$prefix}-form-control[data-invalid='true'],
+textarea.#{$prefix}-textarea[data-invalid='true'] {
   @include themify($themes) {
-    border-bottom: 2px solid themed("danger_border");
+    border-bottom: 2px solid themed('danger_border');
   }
 }
 
-input.#{$prefix}-form-control[data-invalid="true"]:focus,
-textarea.#{$prefix}-textarea[data-invalid="true"]:focus {
+input.#{$prefix}-form-control[data-invalid='true']:focus,
+textarea.#{$prefix}-textarea[data-invalid='true']:focus {
   @include themify($themes) {
-    border-bottom: 2px solid themed("danger_border");
+    border-bottom: 2px solid themed('danger_border');
   }
 }
 
-input.#{$prefix}-form-control[data-invalid="true"] ~ .#{$prefix}-error-msg,
-textarea.#{$prefix}-textarea[data-invalid="true"] ~ .#{$prefix}-error-msg {
+input.#{$prefix}-form-control[data-invalid='true'] ~ .#{$prefix}-error-msg,
+textarea.#{$prefix}-textarea[data-invalid='true'] ~ .#{$prefix}-error-msg {
   order: 4;
 }
 
 .#{$prefix}-helper-text {
   @include themify($themes) {
-    color: themed("default_text_low");
+    color: themed('default_text_low');
   }
   margin-bottom: 0.5rem;
   font-size: 0.75rem;
@@ -62,16 +62,16 @@ textarea.#{$prefix}-textarea[data-invalid="true"] ~ .#{$prefix}-error-msg {
 
 label.#{$prefix}-label {
   @include themify($themes) {
-    color: themed("default_text");
+    color: themed('default_text');
   }
   font-weight: $input-label-weight;
   margin-bottom: $label-margin-bottom;
 }
 
-@include getErrorMarkup("inputcontrol");
+@include getErrorMarkup('inputcontrol');
 
 .#{$prefix}-form-control {
-  @include getFormControl("inputcontrol");
+  @include getFormControl('inputcontrol');
 
   & ~ label.#{$prefix}-label {
     order: 1;
@@ -81,13 +81,13 @@ label.#{$prefix}-label {
     order: 2;
   }
 
-  &[type="password"],
-  input[type="password"] {
+  &[type='password'],
+  input[type='password'] {
     padding-right: 0;
   }
 
   & ~ button.#{$prefix}-password-visibility,
-  & ~ [data-component="password"] {
+  & ~ [data-component='password'] {
     position: relative;
     top: -2.45rem;
     right: 0;
@@ -118,18 +118,20 @@ label.#{$prefix}-label {
     }
 
     svg {
-      fill: $blue-7;
+      @include themify($themes) {
+        fill : themed('input_icon');
+        }
     }
   }
 }
 
 .#{$prefix}-textarea {
-  @include getFormControl("inputcontrol");
+  @include getFormControl('inputcontrol');
   resize: vertical;
   padding: 1rem;
   height: auto;
 
-  &[data-invalid="false"] ~ .#{$prefix}-error-msg {
+  &[data-invalid='false'] ~ .#{$prefix}-error-msg {
     color: inherit;
     display: none;
   }
@@ -164,8 +166,8 @@ label.#{$prefix}-label {
 
     &:checked + .#{$prefix}-checkbox-label::before {
       @include themify($themes) {
-        border-color: themed("interactive_border");
-        background-color: themed("interactive_icon");
+        border-color: themed('interactive_border');
+        background-color: themed('interactive_icon');
       }
     }
 
@@ -176,15 +178,14 @@ label.#{$prefix}-label {
 
     &:focus + .#{$prefix}-checkbox-label::before {
       outline: 1px solid transparent;
-      box-shadow: 0 0 0 2px $checkbox-focus-color;
       @include themify($themes) {
-        border-color: themed("interactive_border");
+        border-color: themed('interactive_border');
       }
     }
   }
 
   .#{$prefix}-checkbox-label {
-    @include getFontWeight("regular");
+    @include getFontWeight('regular');
     font-size: 0.875rem;
     display: inline-block;
     cursor: pointer;
@@ -192,25 +193,25 @@ label.#{$prefix}-label {
     padding-left: 1.5rem;
     position: relative;
     @include themify($themes) {
-      color: themed("default_text_high");
+      color: themed('default_text_high');
     }
     &::before {
       box-sizing: border-box;
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       top: calc(50% - 0.5625rem);
       height: 1.125rem;
       width: 1.125rem;
       @include themify($themes) {
-        border: $checkbox-border-width solid themed("default_icon_high");
+        border: $checkbox-border-width solid themed('default_icon_high');
       }
       background-color: $white;
     }
 
     &::after {
       box-sizing: border-box;
-      content: "";
+      content: '';
       width: 0.5625rem;
       height: 0.3125rem;
       background: none;
@@ -226,7 +227,7 @@ label.#{$prefix}-label {
 }
 
 .#{$prefix}-checkbox-group {
-  @include groupOption("checkbox");
+  @include groupOption('checkbox');
 }
 
 // Radio
@@ -258,20 +259,20 @@ label.#{$prefix}-label {
     outline: 1px solid transparent;
 
     @include themify($themes) {
-      box-shadow: 0 0 0 2px themed("interactive_border");
+      box-shadow: 0 0 0 2px themed('interactive_border');
     }
   }
 
   &:disabled + .#{$prefix}-radio-label {
     @include themify($themes) {
-      opacity: themed("disabled_all");
+      opacity: themed('disabled_all');
     }
 
     cursor: not-allowed;
   }
 
   &:checked + .#{$prefix}-radio-label::after {
-    content: "";
+    content: '';
     display: inline-block;
     position: absolute;
     top: 0.25rem;
@@ -280,19 +281,19 @@ label.#{$prefix}-label {
     height: 0.5rem;
     border-radius: 50%;
     @include themify($themes) {
-      background-color: themed("active_icon");
+      background-color: themed('active_icon');
     }
   }
 
   &:checked + .#{$prefix}-radio-label::before {
     @include themify($themes) {
-      border: 2px solid themed("active_icon");
+      border: 2px solid themed('active_icon');
     }
   }
 }
 
 .#{$prefix}-radio-label {
-  @include getFontWeight("regular");
+  @include getFontWeight('regular');
   font-size: 0.875rem;
   display: inline-block;
   cursor: pointer;
@@ -300,11 +301,11 @@ label.#{$prefix}-label {
   position: relative;
   padding-left: 1.5rem;
   @include themify($themes) {
-    color: themed("default_text_high");
+    color: themed('default_text_high');
   }
 
   &::before {
-    content: "";
+    content: '';
     display: inline-block;
     position: absolute;
     top: -1px;
@@ -314,13 +315,13 @@ label.#{$prefix}-label {
     height: 1.125rem;
     width: 1.125rem;
     @include themify($themes) {
-      border: 2px solid themed("default_icon_high");
+      border: 2px solid themed('default_icon_high');
     }
   }
 }
 
 .#{$prefix}-radio-group {
-  @include groupOption("radio");
+  @include groupOption('radio');
 }
 
 // Fieldset
@@ -330,8 +331,8 @@ label.#{$prefix}-label {
 
 // Legend
 .#{$prefix}-legend {
-  @include getFontWeight("semibold");
-  @include getInputColor("color-1", "color");
+  @include getFontWeight('semibold');
+  @include getInputColor('color-1', 'color');
   vertical-align: baseline;
   display: inline-block;
   margin-bottom: 0.5rem;

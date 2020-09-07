@@ -189,7 +189,7 @@ class Dropdown {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('dropdown', function(element) {
+    handleDataBinding('dropdown', function (element) {
       return new Dropdown(element, {
         isOpen: true,
         type: element.getAttribute('data-type')

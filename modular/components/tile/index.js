@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  tile: function(selector, options) {
+  tile: function (selector, options) {
     attachElements(selector, options, Tile);
   }
 };

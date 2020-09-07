@@ -1,136 +1,136 @@
 @import '../../base';
 
 @mixin tile($type) {
-    display: inline-block;
-    @include themify($themes) {
-        border: 1px solid themed('default_border_xlow');
-        background-color: themed('default_bg');
+  display: inline-block;
+  @include themify($themes) {
+    border: 1px solid themed('default_border_xlow');
+    background-color: themed('default_bg');
+  }
+  position: relative;
+  padding: 1rem;
+  cursor: default;
+
+  @if ($type==clickable or $type==selectable or $type==expandable) {
+    cursor: pointer;
+    outline: none;
+
+    &:focus {
+      @include themify($themes) {
+        border: 2px solid themed('interactive_border');
       }
-    position: relative;
-    padding: 1rem;
+    }
+    &:hover {
+      @include themify($themes) {
+        border: 1px solid themed('interactive_border');
+      }
+    }
+
+    &:hover .#{$prefix}-tile-checkbox {
+      visibility: visible;
+      @include themify($themes) {
+        opacity: themed('disabled_all');
+      }
+    }
+  }
+
+  @if ($type==selectable) {
+    padding-right: 3rem;
+  }
+
+  @if ($type==expandable) {
+    padding: hcl-rem(15px) 2.5rem;
     cursor: default;
 
-    @if($type==clickable or $type==selectable or $type==expandable) {
-        cursor: pointer;
-        outline: none;
-
-        &:focus {
-            @include themify($themes) {
-                border: 2px solid themed('interactive_border');
-              }
-        }
-        &:hover {
-            @include themify($themes) {
-                border: 1px solid themed('interactive_border');
-              }
-        }
-
-        &:hover .#{$prefix}-tile-checkbox {
-            visibility: visible;
-            @include themify($themes) {
-                opacity: themed('disabled_all');
-              }
-        }
+    input {
+      &:checked ~ .#{$prefix}-tile-hide {
+        display: block;
+      }
     }
-
-    @if($type==selectable) {
-        padding-right: 3rem;
-    }
-
-    @if($type==expandable) {
-        padding: hcl-rem(15px) 2.5rem;
-        cursor: default;
-
-        input {
-            &:checked~.#{$prefix}-tile-hide {
-                display: block;
-            }
-        }
-    }
+  }
 }
 
 .#{$prefix}-tile {
-    @include tile(default);
+  @include tile(default);
 
-    &-clickable {
-        @include tile(clickable);
+  &-clickable {
+    @include tile(clickable);
+  }
+
+  &-selectable {
+    @include tile(selectable);
+  }
+
+  &-expandable {
+    @include tile(expandable);
+    &.arrow-top-left {
+      .#{$prefix}-tile-arrow {
+        top: 0;
+        left: 0;
+        bottom: unset;
+        right: unset;
+      }
+    }
+  }
+
+  &-input {
+    display: none;
+
+    &:checked + .#{$prefix}-tile-checkbox {
+      visibility: visible;
+      @include themify($themes) {
+        fill: themed('active_icon');
+      }
+      background-color: transparent;
     }
 
-    &-selectable {
-        @include tile(selectable);
+    &:checked + .#{$prefix}-tile-arrow > svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-checkbox {
+    visibility: hidden;
+    height: 1rem;
+    top: 1rem;
+    right: 1rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    @include themify($themes) {
+      fill: themed('interactive_icon');
+    }
+  }
+
+  &-arrow {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+    padding: 14px 16px;
+
+    &:focus {
+      @include themify($themes) {
+        outline: 1px solid themed('interactive_border');
+      }
+      outline-offset: -6px;
     }
 
-    &-expandable {
-        @include tile(expandable);
-        &.arrow-top-left {
-            .#{$prefix}-tile-arrow {
-                top: 0;
-                left: 0;
-                bottom: unset;
-                right: unset;
-            }
-        }
-    }
+    > svg {
+      border-radius: 50%;
+      background-color: transparent;
+      @include themify($themes) {
+        fill: themed('interactive_icon');
+      }
 
-    &-input {
-        display: none;
-
-        &:checked+.#{$prefix}-tile-checkbox {
-            visibility: visible;
-            @include themify($themes) {
-                fill: themed('active_icon');
-              }
-            background-color: transparent;
-        }
-
-        &:checked+.#{$prefix}-tile-arrow>svg {
-            transform: rotate(180deg);
-        }
-    }
-
-    &-checkbox {
-        visibility: hidden;
-        height: 1rem;
-        top: 1rem;
-        right: 1rem;
-        position: absolute;
-        border-radius: 50%;
-        background-color: transparent;
+      &:hover {
         @include themify($themes) {
-            fill: themed('interactive_icon');
-          }
-    }
-
-    &-arrow {
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        cursor: pointer;
-        padding:14px 16px;
-
-        &:focus {
-            @include themify($themes) {
-                outline: 1px solid themed('interactive_border');
-              }
-            outline-offset: -6px;
+          fill: themed('interactive_icon');
         }
-
-        >svg {
-            border-radius: 50%;
-            background-color: transparent;
-            @include themify($themes) {
-                fill: themed('interactive_icon');
-              }
-
-            &:hover {
-                @include themify($themes) {
-                    fill: themed('interactive_icon');
-                  }
-            }
-        }
+      }
     }
+  }
 
-    &-hide {
-        display: none;
-    }
+  &-hide {
+    display: none;
+  }
 }

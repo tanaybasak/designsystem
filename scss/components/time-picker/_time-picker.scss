@@ -57,7 +57,10 @@
   }
 
   .#{$prefix}-timepicker-hour-label {
-    color: $lightGrey;
+    @include themify($themes) {
+      color: themed('interactive_text');
+      background-color: themed('interactive_bg');
+    }
     display: flex;
     align-items: center;
     padding-left: 0.625rem;

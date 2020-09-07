@@ -1,58 +1,60 @@
 @import '../../base';
 
 .#{$prefix}-number-input-wrapper {
-    .#{$prefix}-number-input {
-        display: flex;
-        padding: 0;
-        position: relative;
+  .#{$prefix}-number-input {
+    display: flex;
+    padding: 0;
+    position: relative;
 
-        &-control {
-            position: absolute;
-            right: 0;
-            top: 0;
-            display: flex;
-            flex-direction: column;
+    &-control {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
 
-            button {
-                background: none;
-                appearance: none;
-                cursor: pointer;
-                width: 2.625rem;
-                height: 1.25rem;
+      button {
+        background: none;
+        appearance: none;
+        cursor: pointer;
+        width: 2.625rem;
+        height: 1.25rem;
 
-                svg {
-                    fill: $blue;
-                    width: .625rem;
-                    height: .3125rem;
-                }
-
-                &[disabled] {
-                    cursor: not-allowed;
-                }
+        svg {
+          @include themify($themes) {
+            fill : themed('input_icon');
             }
-
-            .increment-btn svg {
-                margin-top: .3125rem;
-            }
-
-            .decrement-btn svg {
-                margin-bottom: .3125rem;
-            }
+          width: 0.625rem;
+          height: 0.3125rem;
         }
 
-        input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+        &[disabled] {
+          cursor: not-allowed;
         }
+      }
 
-        input[type=number] {
-            -moz-appearance: textfield;
-            padding-right: 2.625rem;
-        }
+      .increment-btn svg {
+        margin-top: 0.3125rem;
+      }
+
+      .decrement-btn svg {
+        margin-bottom: 0.3125rem;
+      }
     }
 
-    &[disabled] {
-        opacity: .5;
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
+
+    input[type='number'] {
+      -moz-appearance: textfield;
+      padding-right: 2.625rem;
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+  }
 }

@@ -11,10 +11,10 @@
 .#{$prefix}-header {
   display: flex;
   justify-content: flex-start;
-      @include themify($themes) {
-      background-color: themed("primary_bg");
-      color: themed("primary_text");
-    }
+  @include themify($themes) {
+    background-color: themed('primary_bg');
+    color: themed('primary_text');
+  }
   position: fixed;
   top: 0;
   left: 0;
@@ -40,8 +40,8 @@
       outline: none;
 
       img {
-        @include themify($themes) { 
-        outline: 1px solid themed('primary_icon');
+        @include themify($themes) {
+          outline: 1px solid themed('primary_icon');
         }
         outline-offset: 0.5rem;
       }
@@ -66,22 +66,20 @@
 
         .#{$prefix}-search-btn {
           .#{$prefix}-search-icon {
-            @include themify($themes) { 
-              fill : themed('primary_icon');
+            @include themify($themes) {
+              fill: themed('primary_icon');
             }
           }
-
-
         }
         .#{$prefix}-search-btn:focus {
           @include themify($themes) {
-          outline: 1px solid themed('primary_icon');
+            outline: 1px solid themed('primary_icon');
           }
         }
 
         .#{$prefix}-search-btn:hover {
           @include themify($themes) {
-          background-color: themed('primary_bg_hover');
+            background-color: themed('primary_bg_hover');
           }
         }
       }
@@ -105,16 +103,16 @@
         display: inline-flex;
         margin: 1rem 0.5rem;
 
-        >input,
-        >button {
+        > input,
+        > button {
           background: transparent;
-          @include themify($themes) { 
-            color : themed('primary_icon');
+          @include themify($themes) {
+            color: themed('primary_icon');
           }
 
           &:focus,
           &:active {
-            @include themify($themes) { 
+            @include themify($themes) {
               outline: 1px solid themed('primary_icon');
             }
             outline-offset: 0.125rem;
@@ -124,10 +122,8 @@
         &:hover {
           @include themify($themes) {
             background-color: themed('primary_bg_hover');
-            }
+          }
         }
-
-     
       }
 
       @include media-breakpoint-down(md) {

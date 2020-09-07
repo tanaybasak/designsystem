@@ -13,7 +13,7 @@ $themes: (
     secondary_icon: $blue-60,
     secondary_icon_hover: $blue-50,
     secondary_text: $blue-40,
-    interactive_bg: transparent,  
+    interactive_bg: transparent,
     interactive_bg_hover: $blue-100,
     interactive_border: $blue-60,
     interactive_icon: $blue-60,
@@ -289,10 +289,9 @@ $themes: (
   )
 );
 
-
 @each $theme, $map in $themes {
   .theme-#{$theme} {
-    background-color:map-get(map-get($themes, $theme), "default_bg");
-    color: map-get(map-get($themes, $theme), "default_text");
+    background-color: map-get(map-get($themes, $theme), 'default_bg');
+    color: map-get(map-get($themes, $theme), 'default_text');
   }
 }
