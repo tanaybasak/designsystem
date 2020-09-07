@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  numberInput: function(selector, options) {
+  numberInput: function (selector, options) {
     attachElements(selector, options, NumberInput);
   }
 };

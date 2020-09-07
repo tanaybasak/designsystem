@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  tree: function(selector) {
+  tree: function (selector) {
     attachElements(selector, null, Tree);
   }
 };

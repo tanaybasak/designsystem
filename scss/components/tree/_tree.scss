@@ -83,7 +83,6 @@
           .#{$prefix}-overflow-container > span {
             padding: 0 0.625rem;
           }
-
         }
 
         .treenode-content-wrapper {
@@ -107,12 +106,12 @@
           .tree-text-node {
             display: inline-flex;
             max-width: 100%;
-           
+
             @include themify($themes) {
               color: themed('default_text');
             }
 
-            &:hover{
+            &:hover {
               @include themify($themes) {
                 color: themed('default_text_high');
               }
@@ -163,7 +162,6 @@
               cursor: pointer;
             }
           }
-
         }
       }
 

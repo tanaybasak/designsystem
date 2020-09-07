@@ -27,7 +27,7 @@ const getVersion = () => {
   return q.when(PROCESS_VER);
 };
 
-const bump = (version) => {
+const bump = version => {
   replace({
     regex: /"version": "[^"]+"/m,
     replacement: `"version": "${version}"`,
@@ -44,19 +44,21 @@ function addAndCommit(version) {
     return deferred.reject(new Error(`Problem in ${version}`));
   }
 
-  git.pull('origin', `${BRANCH_NAME}`, (err1) => {
+  git.pull('origin', `${BRANCH_NAME}`, err1 => {
     if (!err1) {
       console.log(`GIT:Adding...`);
-      git.add('./*', (err2) => {
+      git.add('./*', err2 => {
         if (!err2) {
           console.log(`GIT:Committing...`);
-          git.commit(`chore(release): ${version}`, [packageFile], (err3) => {
+          git.commit(`chore(release): ${version}`, [packageFile], err3 => {
             if (!err3) {
               console.log('Tagging...');
               if (PROCESS_DESC !== '') {
                 DESCRIPTION = PROCESS_DESC;
               }
-              git.addAnnotatedTag(`v${version}`, `${DESCRIPTION}`, () => deferred.resolve(version));
+              git.addAnnotatedTag(`v${version}`, `${DESCRIPTION}`, () =>
+                deferred.resolve(version)
+              );
             } else {
               return deferred.reject(new Error(`GIT:Commit: Issue`));
             }
@@ -76,14 +78,18 @@ function pushToBranch(version) {
   const deferred = q.defer();
 
   console.log(`GIT:Push --> ${BRANCH_NAME}`);
-  git.push(['origin', `HEAD:refs/heads/${BRANCH_NAME}`], (err) => {
+  git.push(['origin', `HEAD:refs/heads/${BRANCH_NAME}`], err => {
     if (!err) {
       console.log(`GIT:Push:Tags`);
       git.pushTags(`origin`, () => {
         return deferred.resolve(version);
       });
     } else {
-      return deferred.reject(new Error(`**** Issue in Pushing to ${BRANCH_NAME} / Issue in Pushing Tags ****`));
+      return deferred.reject(
+        new Error(
+          `**** Issue in Pushing to ${BRANCH_NAME} / Issue in Pushing Tags ****`
+        )
+      );
     }
   });
   return deferred.promise;
@@ -92,13 +98,13 @@ function pushToBranch(version) {
 // getVersion()
 // dummy()
 getVersion()
-  .then((version) => {
+  .then(version => {
     return bump(version);
   })
-  .then((version) => {
+  .then(version => {
     return addAndCommit(version);
   })
-  .then((version) => {
+  .then(version => {
     return pushToBranch(version);
   })
   .done(() => {

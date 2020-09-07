@@ -9,119 +9,147 @@
 /* MIXINS SPECIFIC TO TYPOGRAPHY */
 
 // Font weight
-$fontWeights-map: (light: 300, regular: 400, semibold: 500, bold: 800);
+$fontWeights-map: (
+  light: 300,
+  regular: 400,
+  semibold: 500,
+  bold: 800
+);
 
 @mixin getFontWeight($fontWeight) {
-    @if map-has-key($fontWeights-map, $fontWeight) {
-        font-weight: map-get($fontWeights-map, $fontWeight);
-    }
-
-    @else {
-        @warn '#{$fontWeight} is not defined in HCL design system!';
-    }
+  @if map-has-key($fontWeights-map, $fontWeight) {
+    font-weight: map-get($fontWeights-map, $fontWeight);
+  } @else {
+    @warn '#{$fontWeight} is not defined in HCL design system!';
+  }
 }
 
 // Font style
-$textStyles-map: (normal: normal, italic: italic, oblique: oblique, initial: initial);
+$textStyles-map: (
+  normal: normal,
+  italic: italic,
+  oblique: oblique,
+  initial: initial
+);
 
 @mixin getTextStyles($textTextStyle) {
-    @if map-has-key($textStyles-map, $textTextStyle) {
-        font-style: map-get($textStyles-map, $textTextStyle);
-    }
-
-    @else {
-        @warn '#{$textTextStyle} is not defined in HCL design system!';
-    }
+  @if map-has-key($textStyles-map, $textTextStyle) {
+    font-style: map-get($textStyles-map, $textTextStyle);
+  } @else {
+    @warn '#{$textTextStyle} is not defined in HCL design system!';
+  }
 }
 
 // Text decoration style
-$textDecorationStyle-map: (none: none, solid: solid, double: double, dotted: dotted, dashed: dashed, through: through);
+$textDecorationStyle-map: (
+  none: none,
+  solid: solid,
+  double: double,
+  dotted: dotted,
+  dashed: dashed,
+  through: through
+);
 
 @mixin getTextDecorationStyle($textDecorStyle) {
-    @if map-has-key($textDecorationStyle-map, $textDecorStyle) {
-        text-decoration-style: map-get($textDecorationStyle-map, $textDecorStyle);
-    }
-
-    @else {
-        @warn '#{$textDecorStyle} is not defined in HCL design system!';
-    }
+  @if map-has-key($textDecorationStyle-map, $textDecorStyle) {
+    text-decoration-style: map-get($textDecorationStyle-map, $textDecorStyle);
+  } @else {
+    @warn '#{$textDecorStyle} is not defined in HCL design system!';
+  }
 }
 
 // Text decoration line
-$textDecorationLine-map: (none: none, overline: overline, underline: underline, through: line-through, overunder: overline underline);
+$textDecorationLine-map: (
+  none: none,
+  overline: overline,
+  underline: underline,
+  through: line-through,
+  overunder: overline underline
+);
 
 @mixin getTextDecorationLine($textDecorLine) {
-    @if map-has-key($textDecorationLine-map, $textDecorLine) {
-        text-decoration-line: map-get($textDecorationLine-map, $textDecorLine);
-    }
-
-    @else {
-        @warn '#{$textDecorLine} is not defined in HCL design system!';
-    }
+  @if map-has-key($textDecorationLine-map, $textDecorLine) {
+    text-decoration-line: map-get($textDecorationLine-map, $textDecorLine);
+  } @else {
+    @warn '#{$textDecorLine} is not defined in HCL design system!';
+  }
 }
 
 // Text transform
-$textTransforms-map: (uppercase: uppercase, lowercase: lowercase, capitalize: capitalize);
+$textTransforms-map: (
+  uppercase: uppercase,
+  lowercase: lowercase,
+  capitalize: capitalize
+);
 
 @mixin getTextTransform($textTransform) {
-    @if map-has-key($textTransforms-map, $textTransform) {
-        text-transform: map-get($textTransforms-map, $textTransform);
-    }
-
-    @else {
-        @warn '#{$textTransform} is not defined in HCL design system!';
-    }
+  @if map-has-key($textTransforms-map, $textTransform) {
+    text-transform: map-get($textTransforms-map, $textTransform);
+  } @else {
+    @warn '#{$textTransform} is not defined in HCL design system!';
+  }
 }
 
 // Text alignment
-$textAlignments-map: (center: center, left: left, right: right, justify: justify);
+$textAlignments-map: (
+  center: center,
+  left: left,
+  right: right,
+  justify: justify
+);
 
 @mixin getTextAlignment($textAlignment) {
-    @if map-has-key($textAlignments-map, $textAlignment) {
-        text-align: map-get($textAlignments-map, $textAlignment);
-    }
-
-    @else {
-        @warn '#{$textAlignment} is not defined in HCL design system!';
-    }
+  @if map-has-key($textAlignments-map, $textAlignment) {
+    text-align: map-get($textAlignments-map, $textAlignment);
+  } @else {
+    @warn '#{$textAlignment} is not defined in HCL design system!';
+  }
 }
 
 // Font Sizes
-$typeSizes-map: ('h1': 4.75rem, 'h2': 3.375rem, 'h3': 2.25rem, 'h4': 1.75rem, 'h5': 1.25rem, 'h6': 1.125rem);
+$typeSizes-map: (
+  'h1': 4.75rem,
+  'h2': 3.375rem,
+  'h3': 2.25rem,
+  'h4': 1.75rem,
+  'h5': 1.25rem,
+  'h6': 1.125rem
+);
 
 @mixin getFontSizeAndLineHeightForHeadings($size) {
-    @if map-has-key($typeSizes-map, $size) {
-        font-size: map-get($typeSizes-map, $size);
-        line-height: map-get($typeSizes-map, $size)*1.25;
-    }
-
-    @else {
-        @warn '#{$size} is not defined in HCL design system!';
-    }
+  @if map-has-key($typeSizes-map, $size) {
+    font-size: map-get($typeSizes-map, $size);
+    line-height: map-get($typeSizes-map, $size) * 1.25;
+  } @else {
+    @warn '#{$size} is not defined in HCL design system!';
+  }
 }
 
 // White space
-$whiteSpaces-map: (nowrap: nowrap, normal: normal, pre: pre);
+$whiteSpaces-map: (
+  nowrap: nowrap,
+  normal: normal,
+  pre: pre
+);
 
 @mixin getWhiteSpace($whiteSpace) {
-    @if map-has-key($whiteSpaces-map, $whiteSpace) {
-        white-space: map-get($whiteSpaces-map, $whiteSpace);
-    }
-
-    @else {
-        @warn '#{$whiteSpace} is not defined in HCL design system!';
-    }
+  @if map-has-key($whiteSpaces-map, $whiteSpace) {
+    white-space: map-get($whiteSpaces-map, $whiteSpace);
+  } @else {
+    @warn '#{$whiteSpace} is not defined in HCL design system!';
+  }
 }
 
 // Writing Mode
-$writingModes-map: (htb: horizontal-tb, vrl: vertical-rl);
+$writingModes-map: (
+  htb: horizontal-tb,
+  vrl: vertical-rl
+);
 
 @mixin getWritingMode($writingMode) {
-    @if map-has-key($writingModes-map, $writingMode) {
-        writing-mode: map-get($writingModes-map, $writingMode);
-    }
-
-    @else {
-        @warn '#{$writingMode} is not defined in HCL design system!';
-    }
+  @if map-has-key($writingModes-map, $writingMode) {
+    writing-mode: map-get($writingModes-map, $writingMode);
+  } @else {
+    @warn '#{$writingMode} is not defined in HCL design system!';
+  }
 }
