@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  password: function(selector, options) {
+  password: function (selector, options) {
     attachElements(selector, options, Password);
   }
 };

@@ -20,9 +20,9 @@
 
   .#{$prefix}-modal-container {
     &-danger {
-     @include themify($themes) {
-      border-top: 0.25rem solid themed('danger_border') !important; 
-    }
+      @include themify($themes) {
+        border-top: 0.25rem solid themed('danger_border') !important;
+      }
     }
 
     position: relative;
@@ -61,7 +61,7 @@
   &-label {
     @include themify($themes) {
       color: themed('default_text');
-     }
+    }
     &-hide {
       display: none;
     }
@@ -123,5 +123,3 @@
     margin: 0.5rem 0 0.5rem 0.5rem;
   }
 }
-
-

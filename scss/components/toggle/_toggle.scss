@@ -9,296 +9,298 @@
 @import '../../base';
 
 %basic-toggle {
+  display: inline-block;
+
+  .#{$prefix}-toggle-label {
+    position: relative;
+    cursor: pointer;
     display: inline-block;
+    top: 0;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
 
-    .#{$prefix}-toggle-label {
-        position: relative;
-        cursor: pointer;
-        display: inline-block;
-        top: 0;
-        margin-left: .5rem;
-        margin-right: .5rem;
-        margin-bottom: 0;
-
-        &::before {
-            content: '';
-            position: relative;
-            display: block;
-            top: 50%;
-            left: 0;
-            transition: .4s;
-            transform: translate(0, -50%);
-        }
-
-        .#{$prefix}-switch {
-            position: absolute;
-            display: block;
-            left: 0;
-            top: 50%;
-            transition: .4s;
-            border-radius: 50%;
-        }
+    &::before {
+      content: '';
+      position: relative;
+      display: block;
+      top: 50%;
+      left: 0;
+      transition: 0.4s;
+      transform: translate(0, -50%);
     }
 
-    input[type='checkbox'] {
-        opacity: 0;
-        width: 0;
-        height: 0;
-        position: absolute;
+    .#{$prefix}-switch {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 50%;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
 
-        &:disabled+.#{$prefix}-toggle-label {
-            cursor: not-allowed;
-        }
+  input[type='checkbox'] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
 
-        &:disabled~.#{$prefix}-toggle-off,
-        &:disabled~.#{$prefix}-toggle-on {
-            @include themify($themes) {
-                opacity: themed('disabled_all');
-            }
-        }
+    &:disabled + .#{$prefix}-toggle-label {
+      cursor: not-allowed;
     }
 
-    .#{$prefix}-toggle-off {
-        float: left;
+    &:disabled ~ .#{$prefix}-toggle-off,
+    &:disabled ~ .#{$prefix}-toggle-on {
+      @include themify($themes) {
+        opacity: themed('disabled_all');
+      }
     }
+  }
 
-    .#{$prefix}-toggle-on {
-        float: right;
-    }
+  .#{$prefix}-toggle-off {
+    float: left;
+  }
 
-    &::after {
-        content: '';
-        display: block;
-        clear: both;
-    }
+  .#{$prefix}-toggle-on {
+    float: right;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }
 
 .#{$prefix}-toggle {
-    position: relative;
-    @extend %basic-toggle;
+  position: relative;
+  @extend %basic-toggle;
 
-    .#{$prefix}-toggle-label {
-        height: .375rem;
-        width: 3rem;
+  .#{$prefix}-toggle-label {
+    height: 0.375rem;
+    width: 3rem;
 
-        &::before {
-            height: .375rem;
-            width: 3rem;
+    &::before {
+      height: 0.375rem;
+      width: 3rem;
 
-            @include themify($themes) {
-                background-color: themed('default_border');
-            }
-        }
-
-        .#{$prefix}-switch {
-            height: 1.5rem;
-            width: 1.5rem;
-            transform: translate(0, -50%);
-            @include themify($themes) {
-                background-color: themed('default_bg_high');
-                border: .0625rem solid themed('default_border');
-            }
-        }
+      @include themify($themes) {
+        background-color: themed('default_border');
+      }
     }
 
-    input[type='checkbox'] {
-        &:checked+.#{$prefix}-toggle-label {
-            &::before {
-                @include themify($themes) {
-                    background-color: themed('primary_bg');
-                    border:.0625rem solid themed('secondary_border');
-                }
-            }
+    .#{$prefix}-switch {
+      height: 1.5rem;
+      width: 1.5rem;
+      transform: translate(0, -50%);
+      @include themify($themes) {
+        background-color: themed('default_bg_high');
+        border: 0.0625rem solid themed('default_border');
+      }
+    }
+  }
 
-            .#{$prefix}-switch {
-                top: 50%;
-                transform: translate(1.5rem, -50%);
-                border: none;
-                @include themify($themes) {
-                    background-color: themed('primary_bg');
-                }
-            }
+  input[type='checkbox'] {
+    &:checked + .#{$prefix}-toggle-label {
+      &::before {
+        @include themify($themes) {
+          background-color: themed('primary_bg');
+          border: 0.0625rem solid themed('secondary_border');
         }
+      }
 
-        &:not(:checked):disabled~.#{$prefix}-toggle-label {
-            @include themify($themes) {
-                opacity: themed('disabled_all');
-            }
-
-            &::before {
-                @include themify($themes) {
-                    background-color: rgba(themed('default_border'), themed('disabled_all'));
-                }
-            }
-
-            .#{$prefix}-switch {
-                @include themify($themes) {
-                    border: .0625rem solid rgba(themed('default_border'), themed('disabled_all'));
-                }
-            }
+      .#{$prefix}-switch {
+        top: 50%;
+        transform: translate(1.5rem, -50%);
+        border: none;
+        @include themify($themes) {
+          background-color: themed('primary_bg');
         }
-
-        &:checked:disabled~.#{$prefix}-toggle-label {
-            width: 1.563rem;
-            margin-right: 1.938rem;
-
-            &::before {
-                width: 1.5rem;
-
-               
-                @include themify($themes) {
-                    opacity: themed('disabled_all');
-                    background-color: themed('primary_bg');
-                }
-            }
-
-            .#{$prefix}-switch {
-                @include themify($themes) {
-                    background-color: rgba(themed('primary_bg'), themed('disabled_all'));
-                }
-            }
-        }
-
-        &:focus~.#{$prefix}-toggle-label {
-            .#{$prefix}-switch {
-
-                @include themify($themes) {
-                    box-shadow: 0 0 0 0.125rem themed('interactive_border');
-                    border: .0625rem solid themed('default_bg');
-                }
-            }
-        }
+      }
     }
 
-    .#{$prefix}-toggle-off,
-    .#{$prefix}-toggle-on {
-        font-size: .875rem;
-        line-height: 1.5rem;
-        letter-spacing: .01rem;
+    &:not(:checked):disabled ~ .#{$prefix}-toggle-label {
+      @include themify($themes) {
+        opacity: themed('disabled_all');
+      }
+
+      &::before {
+        @include themify($themes) {
+          background-color: rgba(
+            themed('default_border'),
+            themed('disabled_all')
+          );
+        }
+      }
+
+      .#{$prefix}-switch {
+        @include themify($themes) {
+          border: 0.0625rem solid
+            rgba(themed('default_border'), themed('disabled_all'));
+        }
+      }
+    }
+
+    &:checked:disabled ~ .#{$prefix}-toggle-label {
+      width: 1.563rem;
+      margin-right: 1.938rem;
+
+      &::before {
+        width: 1.5rem;
 
         @include themify($themes) {
-            color: themed('default_text_high');
+          opacity: themed('disabled_all');
+          background-color: themed('primary_bg');
         }
+      }
+
+      .#{$prefix}-switch {
+        @include themify($themes) {
+          background-color: rgba(themed('primary_bg'), themed('disabled_all'));
+        }
+      }
     }
+
+    &:focus ~ .#{$prefix}-toggle-label {
+      .#{$prefix}-switch {
+        @include themify($themes) {
+          box-shadow: 0 0 0 0.125rem themed('interactive_border');
+          border: 0.0625rem solid themed('default_bg');
+        }
+      }
+    }
+  }
+
+  .#{$prefix}-toggle-off,
+  .#{$prefix}-toggle-on {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.01rem;
+
+    @include themify($themes) {
+      color: themed('default_text_high');
+    }
+  }
 }
 
 .#{$prefix}-toggle-small {
-    position: relative;
-    @extend %basic-toggle;
+  position: relative;
+  @extend %basic-toggle;
 
-    .#{$prefix}-toggle-label {
-        height: 1rem;
-        width: 2rem;
-        border-radius: 6.25rem;
+  .#{$prefix}-toggle-label {
+    height: 1rem;
+    width: 2rem;
+    border-radius: 6.25rem;
 
-        &::before {
-            height: 1rem;
-            width: 2rem;
-            border-radius: 6.25rem;
-            @include themify($themes) {
-                background-color: themed('default_bg_high');
-                border: .0625rem solid themed('default_border');
-            }
-        }
-
-        .#{$prefix}-switch {
-            height: .625rem;
-            width: .625rem;
-            border: none;
-            transform: translate(.1875rem, -50%);
-
-            @include themify($themes) {
-                background-color: themed('default_icon');
-            }
-        }
+    &::before {
+      height: 1rem;
+      width: 2rem;
+      border-radius: 6.25rem;
+      @include themify($themes) {
+        background-color: themed('default_bg_high');
+        border: 0.0625rem solid themed('default_border');
+      }
     }
 
-    input[type='checkbox'] {
-        &:checked+.#{$prefix}-toggle-label {
-            &::before {
-                border: none;
+    .#{$prefix}-switch {
+      height: 0.625rem;
+      width: 0.625rem;
+      border: none;
+      transform: translate(0.1875rem, -50%);
 
-                @include themify($themes) {
-                    background-color: themed('primary_bg');
-                }
-            }
-
-            .#{$prefix}-switch {
-                top: 50%;
-                transform: translate(1.125rem, -50%);
-                border: none;
-
-                @include themify($themes) {
-                    background-color: themed('default_bg');
-                }
-
-                &::after {
-                    transform: scale(1) rotate(-45deg);
-                    content: '';
-                    width: 5.8px;
-                    height: 3.7px;
-
-                    @include themify($themes) {
-                        border-left: 1px solid themed('primary_bg');
-                        border-bottom: 1px solid themed('primary_bg');
-                    }
-
-                    position: absolute;
-                    left: .125rem;
-                    top: 50%;
-                    margin-top: -.1875rem;
-                }
-            }
-        }
-
-        &:not(:checked):disabled~.#{$prefix}-toggle-label {
-            @include themify($themes) {
-                opacity: themed('disabled_all');
-            }
-
-            &::before {
-                @include themify($themes) {
-                    border: .0625rem solid themed('default_border');
-                }
-            }
-        }
-
-        &:checked:disabled~.#{$prefix}-toggle-label {
-            &::before {
-                @include themify($themes) {
-                    opacity: themed('disabled_all');
-                    background-color: themed('primary_bg');
-                    border: .0625rem solid themed('default_border');
-                }
-            }
-
-            .#{$prefix}-switch {
-                &::after {
-                    @include themify($themes) {
-                        opacity: themed('disabled_all');
-                    }
-                }
-            }
-        }
-
-        &:focus~.#{$prefix}-toggle-label {
-            &::before {
-                @include themify($themes) {
-                    box-shadow: 0 0 0 0.125rem themed('interactive_border');
-                    border: .0625rem solid themed('default_bg');
-                }
-            }
-        }
+      @include themify($themes) {
+        background-color: themed('default_icon');
+      }
     }
+  }
 
-    .#{$prefix}-toggle-off,
-    .#{$prefix}-toggle-on {
-        font-size: .875rem;
-        line-height: 1rem;
-        letter-spacing: .01rem;
+  input[type='checkbox'] {
+    &:checked + .#{$prefix}-toggle-label {
+      &::before {
+        border: none;
 
         @include themify($themes) {
-            color: themed('default_text_high');
+          background-color: themed('primary_bg');
         }
+      }
+
+      .#{$prefix}-switch {
+        top: 50%;
+        transform: translate(1.125rem, -50%);
+        border: none;
+
+        @include themify($themes) {
+          background-color: themed('default_bg');
+        }
+
+        &::after {
+          transform: scale(1) rotate(-45deg);
+          content: '';
+          width: 5.8px;
+          height: 3.7px;
+
+          @include themify($themes) {
+            border-left: 1px solid themed('primary_bg');
+            border-bottom: 1px solid themed('primary_bg');
+          }
+
+          position: absolute;
+          left: 0.125rem;
+          top: 50%;
+          margin-top: -0.1875rem;
+        }
+      }
     }
+
+    &:not(:checked):disabled ~ .#{$prefix}-toggle-label {
+      @include themify($themes) {
+        opacity: themed('disabled_all');
+      }
+
+      &::before {
+        @include themify($themes) {
+          border: 0.0625rem solid themed('default_border');
+        }
+      }
+    }
+
+    &:checked:disabled ~ .#{$prefix}-toggle-label {
+      &::before {
+        @include themify($themes) {
+          opacity: themed('disabled_all');
+          background-color: themed('primary_bg');
+          border: 0.0625rem solid themed('default_border');
+        }
+      }
+
+      .#{$prefix}-switch {
+        &::after {
+          @include themify($themes) {
+            opacity: themed('disabled_all');
+          }
+        }
+      }
+    }
+
+    &:focus ~ .#{$prefix}-toggle-label {
+      &::before {
+        @include themify($themes) {
+          box-shadow: 0 0 0 0.125rem themed('interactive_border');
+          border: 0.0625rem solid themed('default_bg');
+        }
+      }
+    }
+  }
+
+  .#{$prefix}-toggle-off,
+  .#{$prefix}-toggle-on {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    letter-spacing: 0.01rem;
+
+    @include themify($themes) {
+      color: themed('default_text_high');
+    }
+  }
 }

@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  dropdown: function(selector, options) {
+  dropdown: function (selector, options) {
     attachElements(selector, options, Dropdown);
   }
 };

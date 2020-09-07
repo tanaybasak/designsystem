@@ -1,75 +1,75 @@
 .justify-content-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .align-items-center {
-    align-items: center;
+  align-items: center;
 }
 
 .hcl-brand {
-    display: inline-block;
-    padding-top: 1rem;
-    padding-left: 0.3125rem;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-left: 0.3125rem;
 }
 
 .hcl-form-title {
-    color: $blue;
+  color: $blue;
 }
 
 .bg-default {
-    background: url(../../login_bg.jpg) 0 top no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background: url(../../login_bg.jpg) 0 top no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .bg-white {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .hcl-logo-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .layout-main {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-    display: flex;
-    align-items: center;
-    height: 3.5rem;
-    background-color: #0065B3;
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  background-color: #0065b3;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    height: calc(100% - 3.5rem);
-    top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 3.5rem);
+  top: 3.5rem;
 }
 
 .form-wrapper {
-    position: absolute;
-    display: flex;
-    flex-grow: 1;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    min-width: 350px;
+  position: absolute;
+  display: flex;
+  flex-grow: 1;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  min-width: 350px;
 }
 
-@media screen and (max-width:667px) {
-    .form-wrapper {
-        min-width: 100%;
-        height: 100%;
-    }
+@media screen and (max-width: 667px) {
+  .form-wrapper {
+    min-width: 100%;
+    height: 100%;
+  }
 }

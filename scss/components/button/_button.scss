@@ -23,9 +23,9 @@
     width: 1rem;
     height: 1rem;
     margin-left: 0.5rem;
-    
-      @include themify($themes) {
-        fill : themed('primary_icon');
+
+    @include themify($themes) {
+      fill: themed('primary_icon');
     }
   }
 }
@@ -83,7 +83,7 @@ a.#{$prefix}-primary {
       }
       > .#{$prefix}-btn-icon {
         @include themify($themes) {
-          fill : themed('primary_icon');
+          fill: themed('primary_icon');
         }
       }
     }
@@ -95,7 +95,7 @@ a.#{$prefix}-primary {
       }
       > .#{$prefix}-btn-icon {
         @include themify($themes) {
-        fill : themed('primary_icon');
+          fill: themed('primary_icon');
         }
       }
     }

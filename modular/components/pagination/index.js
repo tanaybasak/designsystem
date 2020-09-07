@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  pagination: function(selector, options) {
+  pagination: function (selector, options) {
     attachElements(selector, options, Pagination);
   }
 };

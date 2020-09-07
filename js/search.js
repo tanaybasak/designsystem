@@ -66,7 +66,7 @@ class Search {
   }
 
   static handleDataAPI = () => {
-    handleDataBinding('search', function(element, target) {
+    handleDataBinding('search', function (element, target) {
       let openSearch = false;
       const newTarget = getClosest(target, `.${PREFIX}-search-btn`);
       if (newTarget) {

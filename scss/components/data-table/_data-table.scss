@@ -63,9 +63,9 @@
           background-color: themed('default_bg_low');
         }
 
-                    &.#{$prefix}-overlay-wrapper-active {
-                        visibility: visible;
-                    }
+        &.#{$prefix}-overlay-wrapper-active {
+          visibility: visible;
+        }
 
         &.sortable {
           cursor: pointer;

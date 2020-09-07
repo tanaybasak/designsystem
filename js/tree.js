@@ -224,7 +224,7 @@ class Tree {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('tree', function(element) {
+    handleDataBinding('tree', function (element) {
       return new Tree(element);
     });
   };

@@ -1,8 +1,7 @@
-
 // This javascript function is for demonstation demonstration purpose of toast in landing page
 // This function will not be part package created for design system
 
-const toast = (function() {
+const toast = (function () {
   const DOMStrings = {
     toastContainer: 'hcl-toast-type',
     toastButton: 'hcl-btn-toast-type'
@@ -12,14 +11,14 @@ const toast = (function() {
     toastDisable: 'hcl-toast-hide'
   };
 
-  const showtoast = function(event) {
+  const showtoast = function (event) {
     const toastType = event.target.getAttribute('data-toast-type');
     document
       .getElementById(`${DOMStrings.toastContainer}${toastType}`)
       .classList.remove(classNames.toastDisable);
   };
 
-  const hidetoast = function(event) {
+  const hidetoast = function (event) {
     const toastType = event.target
       .closest('div[data-toast-type]')
       .getAttribute('data-toast-type');
@@ -28,7 +27,7 @@ const toast = (function() {
       .classList.add(classNames.toastDisable);
   };
 
-  const setupEventListeners = function() {
+  const setupEventListeners = function () {
     for (let type = 1; type <= 4; type++) {
       let elm = document.getElementById(`hcl-btn-toast-type${type}`);
       if (elm) {
@@ -42,7 +41,7 @@ const toast = (function() {
   };
 
   return {
-    setUpHeplerEvent: function() {
+    setUpHeplerEvent: function () {
       setupEventListeners();
     }
   };
