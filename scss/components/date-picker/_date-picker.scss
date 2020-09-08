@@ -10,7 +10,7 @@
   &-container {
     display: flex;
     flex-direction: column;
-  
+
     > svg {
       position: absolute;
       top: 0.75rem;
@@ -58,13 +58,12 @@
     }
     &.#{$prefix}-overlay-wrapper-active {
       > input {
-      outline: none;
-      @include themify($themes) {
-        border-bottom: 0.125rem solid themed('interactive_border');
+        outline: none;
+        @include themify($themes) {
+          border-bottom: 0.125rem solid themed('interactive_border');
+        }
       }
     }
-    }
-   
   }
 
   &-curMonth {

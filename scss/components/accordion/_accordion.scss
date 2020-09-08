@@ -20,7 +20,9 @@
     }
 
     &:last-child {
-      border-bottom: 0.0625rem solid $grey-4;
+      @include themify($themes) {
+        border-bottom: 0.0625rem solid themed('default_border_xlow');
+      }
     }
 
     .#{$prefix}-accordion-title {
@@ -34,6 +36,11 @@
       cursor: pointer;
       width: 100%;
 
+      &:last-child {
+        @include themify($themes) {
+          border-bottom: 0.0625rem solid themed('default_border_xlow');
+        }
+      }
       &::before {
         content: ' ';
         position: absolute;

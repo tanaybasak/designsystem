@@ -4,8 +4,8 @@
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
   "scripts": {
+    "build": "parcel build modular/*/index.js --no-source-maps -d .dist/ && parcel build modular/*/*/index.js --no-source-maps -d .dist/ ",
     "start": "node importHTML.js && parcel index.html -d output --port 8000",
-    "build": "npm run clean && parcel build js/index.js -o patron --no-source-maps ",
     "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss';",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js .",
@@ -31,6 +31,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "fs": "0.0.1-security",
     "parcel-bundler": "^1.12.4",
     "postcss-cli": "^6.1.2",

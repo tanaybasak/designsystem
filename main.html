@@ -21,9 +21,11 @@
       .bgColor {
         background-color: #eee;
       }
+
       .colBorder {
         border: 1px solid #999;
       }
+
       .bigCol {
         min-height: 5rem;
         padding: 0.9375rem;
@@ -41,7 +43,7 @@
     <addHTML src="./scss/components/header/header.html" />
     <!-- CONTENT LAYOUT -->
     <div style="padding: 4rem" data-withsidenav="true">
-      <!-- <addHTML src="./scss/components/sidebar/sidebar.html" /> -->
+      <addHTML src="./scss/components/sidebar/sidebar.html" />
       <!-- SIDEBAR LAYOUT -->
       <!-- MAIN CONTENT LAYOUT -->
       <main class="hcl-content-main">
@@ -445,15 +447,12 @@
         <!-- Radio Components -->
         <section class="m-1 p-2">
           <!-- default -->
-          <h6>Default</h6>
           <addHTML src="./scss/components/radio/default/default.html" />
           <!-- hrorizontal -->
-          <h6>horizontal-grouping</h6>
           <addHTML
             src="./scss/components/radio/horizontal-grouping/horizontal-grouping.html"
           />
           <!-- vertical  -->
-          <h6>vertical-grouping</h6>
           <addHTML
             src="./scss/components/radio/vertical-grouping/vertical-grouping.html"
           />
@@ -705,7 +704,6 @@
           <addHTML src="./scss/components/tree/tree.html" />
         </section>
 
-        <!-- overlay  -->
         <section class="m-1 p-2">
           <addHTML src="./scss/components/overlay/default/default.html" />
         </section>
@@ -777,7 +775,5 @@
     <script src="./scss/components/time-picker/with-24H/with-24H.js"></script>
     <script src="./scss/components/time-picker/with-timezone/with-timezone.js"></script>
     <script src="themes.js"></script>
-    <script src="./scss/components/overlay/default/default.js"></script>
-    <script src="./scss/components/overlay/attachToBody/attachToBody.js"></script>
   </body>
 </html>

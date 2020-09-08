@@ -93,7 +93,6 @@
     padding: 0 1rem;
     line-height: 2.5rem;
     cursor: pointer;
-    
 
     &:hover {
       @include themify($themes) {
@@ -119,12 +118,12 @@
   &.#{$prefix}-dropdown-top {
     @include themify($themes) {
       border-top: 0.0625rem solid themed('input_border');
-     }
+    }
   }
 
   &:not(.#{$prefix}-dropdown-top) {
     @include themify($themes) {
       border-bottom: 0.0625rem solid themed('input_border');
-     }
+    }
   }
 }
