@@ -22,8 +22,8 @@
 
         svg {
           @include themify($themes) {
-            fill : themed('input_icon');
-            }
+            fill: themed('input_icon');
+          }
           width: 0.625rem;
           height: 0.3125rem;
         }

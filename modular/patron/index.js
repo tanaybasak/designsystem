@@ -141,7 +141,7 @@ export const components = {
   timePicker: function (selector, options) {
     attachElements(selector, options, TimePicker);
   },
-  overlay: function(selector, options) {
+  overlay: function (selector, options) {
     attachElements(selector, options, Overlay);
   }
 };

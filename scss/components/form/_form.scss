@@ -119,8 +119,8 @@ label.#{$prefix}-label {
 
     svg {
       @include themify($themes) {
-        fill : themed('input_icon');
-        }
+        fill: themed('input_icon');
+      }
     }
   }
 }

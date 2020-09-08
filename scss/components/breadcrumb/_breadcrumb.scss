@@ -11,47 +11,46 @@
 $breadcrumb-margin: 1rem;
 
 .#{$prefix}-breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 
-    &-item {
-        margin-right: $breadcrumb-margin;
+  &-item {
+    margin-right: $breadcrumb-margin;
+    @include themify($themes) {
+      color: themed('default_text_high');
+    }
+    font-size: 0.875rem;
+
+    &:not(:last-child)::after {
+      content: '/';
+      margin-left: $breadcrumb-margin;
+    }
+
+    .#{$prefix}-link {
+      @include themify($themes) {
+        color: themed('interactive_text');
+      }
+      white-space: nowrap;
+      @include getTextDecorationLine('none');
+      border-bottom: 0.0625rem solid transparent;
+
+      &:hover {
         @include themify($themes) {
-            color : themed('default_text_high');
-            }
-        font-size: .875rem;
-
-        &:not(:last-child)::after {
-            content: '/';
-            margin-left: $breadcrumb-margin;
+          color: themed('interactive_text_hover');
         }
-
-        .#{$prefix}-link {
-            @include themify($themes) {
-                color : themed('interactive_text');
-                }
-            white-space: nowrap;
-            @include getTextDecorationLine('none');
-            border-bottom: .0625rem solid transparent;
-
-            &:hover {
-                @include themify($themes) {
-                    color : themed('interactive_text_hover');
-                    }
-                @include getTextDecorationLine('underline');
-            }
-        }
+        @include getTextDecorationLine('underline');
+      }
     }
+  }
 
-    &-item-active {
-        .#{$prefix}-link {
-            @include themify($themes) {
-                color : themed('default_text_high');
-                }
-            @include getFontWeight('semibold');
-            @include getTextDecorationLine('underline');
-        }
+  &-item-active {
+    .#{$prefix}-link {
+      @include themify($themes) {
+        color: themed('default_text_high');
+      }
+      @include getFontWeight('semibold');
+      @include getTextDecorationLine('underline');
     }
-  
+  }
 }
