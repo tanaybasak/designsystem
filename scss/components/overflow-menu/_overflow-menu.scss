@@ -119,7 +119,7 @@
 .#{$prefix}-overlay-wrapper-active {
   .#{$prefix}-overflow-btn {
     @include themify($themes) {
-     background-color: themed('active_bg_high') !important;
+      background-color: themed('active_bg_high') !important;
       color: themed('active_icon') !important;
     }
   }
