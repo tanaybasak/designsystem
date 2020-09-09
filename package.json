@@ -33,7 +33,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "fs": "0.0.1-security",
     "parcel-bundler": "^1.12.4",
-    "postcss-cli": "^6.1.2",
+    "postcss-cli": "^7.1.2",
     "prettier": "^2.0.5",
     "q": "^1.5.1",
     "replace": "^1.2.0",
@@ -41,7 +41,7 @@
     "sass": "^1.23.3",
     "semver": "^7.3.2",
     "simple-git": "^2.19.0",
-    "stylelint": "^10.1.0"
+    "stylelint": "^13.7.0"
   },
   "browserslist": [
     "> .1%",

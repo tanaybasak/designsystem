@@ -1,4 +1,5 @@
 @import '../../base';
+
 .#{$prefix}-tree {
   font-size: 0.875rem;
   @include getFontWeight(regular);
@@ -140,12 +141,6 @@
         }
       }
 
-      &.no-children-exist {
-        .#{$prefix}-treenode-content-wrapper {
-          width: 100%;
-        }
-      }
-
       &.drop-on-above {
         @include themify($themes) {
           box-shadow: inset -1px 0 0 transparent,
@@ -167,9 +162,6 @@
 
           .#{$prefix}-overflow-btn {
             opacity: 0;
-          }
-
-          .#{$prefix}-overflow-btn {
             &:focus {
               opacity: 1;
             }
