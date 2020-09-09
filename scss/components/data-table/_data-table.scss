@@ -190,10 +190,6 @@ $zebra-bg: #F5F9FC;
   &.data-table-sticky-header {
     overflow-x: auto;
 
-    &.overflow-unset {
-      overflow-x: unset;
-    }
-
     .#{$prefix}-data-table {
       border-collapse: separate;
 
