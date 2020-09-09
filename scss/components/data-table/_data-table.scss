@@ -11,6 +11,7 @@
 .#{$prefix}-data-table-wrapper {
   width: 100%;
   border-bottom: transparent;
+
   @include themify($themes) {
     color: themed('deafult_text');
   }
@@ -58,9 +59,20 @@
 
       th {
         line-height: 1.5rem;
+
         @include themify($themes) {
           color: themed('default_text_high');
           background-color: themed('default_bg_low');
+        }
+
+        .#{$prefix}-sorting {
+          vertical-align: middle;
+          margin-left: 0.625rem;
+          transition: transform 0.3s ease-in-out;
+
+          &.desc {
+            transform: rotate(180deg);
+          }
         }
 
         &.#{$prefix}-overlay-wrapper-active {
@@ -74,6 +86,7 @@
 
       td {
         border-top: 0.0625rem solid transparent;
+
         @include themify($themes) {
           border-bottom: 0.0625rem solid themed('default_border_xlow');
           background-color: themed('default_bg');
@@ -99,6 +112,7 @@
             background-color: themed('interactive_bg_hover');
           }
         }
+
         .overflow-onhover {
           visibility: visible;
         }
