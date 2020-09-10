@@ -41,7 +41,7 @@ $search-reset-size: 0.759rem;
   }
 
   button.#{$prefix}-search-btn:hover {
-    // background-color: $interactive_bg_hover;
+    background-color: var(--interactive_bg_hover);
     cursor: pointer;
     .#{$prefix}-search-icon {
       fill: var(--input_icon);
@@ -151,6 +151,9 @@ $search-reset-size: 0.759rem;
     .#{$prefix}-search-btn {
       height: $search-height-sm;
       width: $search-height-sm;
+      right: 0;
+      left: unset;
+      pointer-events: unset;
 
       .#{$prefix}-search-icon {
         margin-left: ($search-height-sm - $search-icon-size)/2;
@@ -170,11 +173,23 @@ $search-reset-size: 0.759rem;
       position: absolute;
       transition: all 0.15s ease-out;
     }
+  }
 
-    .#{$prefix}-search-btn {
-      right: 0;
-      left: unset;
-      pointer-events: unset;
+  &.#{$prefix}-search-btn-only {
+    &:not(.show) {
+      .#{$prefix}-search-input {
+        visibility: hidden;
+        width: 0;
+        padding: 0;
+        position: absolute;
+        transition: all 0.15s ease-out;
+      }
+
+      .#{$prefix}-search-btn {
+        right: 0;
+        left: unset;
+        pointer-events: unset;
+      }
     }
   }
 
