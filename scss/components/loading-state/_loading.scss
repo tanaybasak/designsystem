@@ -1,11 +1,12 @@
-$loading-bg: rgba(61, 112, 178, 0.1);
-
 @mixin loading() {
   position: relative;
   border: none !important;
   box-shadow: none;
   pointer-events: none;
-  background: $loading-bg !important;
+
+  background-color: var(--default_bg) !important;
+  opacity: 0.1;
+
   color: transparent !important;
 
   &:hover,
@@ -29,7 +30,10 @@ $loading-bg: rgba(61, 112, 178, 0.1);
     top: 0;
     left: 0;
     opacity: 0.3;
-    background: $loading-bg;
+
+    background-color: var(--primary_bg) !important;
+    opacity: 0.1;
+
     animation: loading-animation 3s ease-in-out infinite;
   }
 }

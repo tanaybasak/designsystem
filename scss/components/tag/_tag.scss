@@ -36,59 +36,66 @@
   }
 
   &-primary {
-    background-color: $blue;
-    color: $white;
+    color: var(--primary_text);
+    background-color: var(--primary_bg);
 
     &:hover:not([disabled]) {
-      background-color: $blue-60;
-      border-color: $blue-60;
-    }
-
-    &:active:not([disabled]) {
-      background-color: $blue-70;
-      border-color: $blue-70;
+      background-color: var(--primary_bg_hover);
     }
 
     > .#{$prefix}-tag-icon {
-      background-color: $white;
-      color: $black;
+      color: var(--primary_icon);
     }
 
     > .#{$prefix}-close {
-      @include hcl-close-icon(18, $white, $blue-70, true);
+      @include hcl-close-icon(18, true, --primary_bg, --primary_icon);
+
       margin-left: 0.5rem;
+
+      &:hover {
+        background-color: var(--primary_bg_hover);
+      }
+
+      &:focus {
+        border: 2px solid var(--primary_border);
+        outline: none;
+      }
     }
   }
 
   &-secondary {
-    background-color: $white;
-    border: 1px solid $blue;
-    color: $blue;
+    color: var(--secondary_text);
+    background-color: var(--secondary_bg);
+    border: 1px solid var(--secondary_border);
 
     &:hover:not([disabled]) {
-      background-color: $aqua-10;
-      border-color: $blue-60;
-    }
-
-    &:active:not([disabled]) {
-      background: rgba(0, 102, 179, 0.18);
-      border-color: $blue-70;
+      background-color: var(--secondary_bg_hover);
     }
 
     > .#{$prefix}-close {
-      @include hcl-close-icon(18, $blue, $white, true);
+      @include hcl-close-icon(18, true, --secondary_bg, --secondary_icon);
+
       margin-left: 0.5rem;
+
+      &:hover {
+        background-color: var(--secondary_bg_hover);
+      }
+
+      &:focus {
+        border: 2px solid var(--interactive_border);
+        outline: none;
+      }
     }
 
     > .#{$prefix}-tag-icon {
-      background-color: $blue;
-      color: $white;
+      color: var(--secondary_icon);
     }
   }
 
   &:disabled,
   &[disabled] {
-    opacity: 0.5;
+    opacity: var(--disabled_all);
+
     cursor: not-allowed;
 
     > .#{$prefix}-close {
@@ -108,7 +115,6 @@
     width: 1.375rem;
     height: 1.375rem;
     border-radius: 50%;
-    background-color: $light-20;
     position: absolute;
     left: 0.625rem;
     display: inline-flex;

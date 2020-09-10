@@ -11,7 +11,11 @@ $search-reset-size: 0.759rem;
   position: relative;
   padding: 0;
   height: $search-height;
+  &:focus {
+    outline: 0;
 
+    border-bottom: 1px solid var(--interactive_border);
+  }
   > * {
     &:disabled {
       &:hover {
@@ -37,10 +41,10 @@ $search-reset-size: 0.759rem;
   }
 
   button.#{$prefix}-search-btn:hover {
-    background-color: $interactive_bg_hover;
+    background-color: var(--interactive_bg_hover);
     cursor: pointer;
     .#{$prefix}-search-icon {
-      fill: $blue-7;
+      fill: var(--input_icon);
     }
   }
 
@@ -56,11 +60,8 @@ $search-reset-size: 0.759rem;
     .#{$prefix}-search-icon {
       margin-left: ($search-height - $search-icon-size)/2;
       margin-top: ($search-height - $search-icon-size)/2;
-      fill: $blue-7;
 
-      &.white {
-        fill: $white;
-      }
+      fill: var(--input_icon);
     }
   }
 
@@ -69,16 +70,20 @@ $search-reset-size: 0.759rem;
     font-size: var(--body-font-size);
     width: 100%;
     height: $search-height;
+    outline: none;
     padding: 0 $search-height;
-    color: $grey-5;
-    background-color: $grey-6;
-    border: none;
+
+    border-bottom: 0.0625rem solid var(--input_border);
+    color: var(--input_text);
+    background-color: var(--input_bg);
+
     right: 0;
     position: unset;
     transition: width 0.15s ease-out;
 
     &:focus {
-      outline: 0.0625rem solid $blue;
+      border-bottom: 2px solid var(--interactive_border);
+
       outline-offset: -1px;
     }
 
@@ -100,8 +105,8 @@ $search-reset-size: 0.759rem;
 
   .#{$prefix}-search-reset {
     background: none;
+    display: inline-flex;
     right: 0;
-    display: flex;
     height: $search-height;
     width: $search-height;
     visibility: hidden;
@@ -120,7 +125,9 @@ $search-reset-size: 0.759rem;
       content: ' ';
       position: absolute;
       width: 0.125rem;
-      background-color: $grey-7;
+
+      background-color: var(--input_icon);
+
       height: $search-reset-size;
     }
 
@@ -144,6 +151,9 @@ $search-reset-size: 0.759rem;
     .#{$prefix}-search-btn {
       height: $search-height-sm;
       width: $search-height-sm;
+      right: 0;
+      left: unset;
+      pointer-events: unset;
 
       .#{$prefix}-search-icon {
         margin-left: ($search-height-sm - $search-icon-size)/2;
@@ -152,8 +162,16 @@ $search-reset-size: 0.759rem;
     }
 
     .#{$prefix}-search-reset {
-      height: $search-height-sm;
-      width: $search-height-sm;
+      background: none;
+      right: 0;
+      display: flex;
+      height: $search-height;
+      width: $search-height;
+      visibility: hidden;
+      width: 0;
+      padding: 0;
+      position: absolute;
+      transition: all 0.15s ease-out;
     }
   }
 
@@ -177,7 +195,7 @@ $search-reset-size: 0.759rem;
 
   &.#{$prefix}-bg-white {
     .#{$prefix}-search-input {
-      background-color: $white;
+      background-color: var(--default_bg);
     }
   }
 }

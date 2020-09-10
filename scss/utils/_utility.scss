@@ -72,7 +72,7 @@
 
 // close icon class
 .#{$prefix}-close {
-  @include hcl-close-icon(24);
+  @include hcl-close-icon(24, false, --tranparent, --black);
 }
 
 // ellipsis icon
@@ -80,14 +80,14 @@
   @include hcl-ellipsis();
 }
 
-// Border
-.b-0 {
-  border: 0;
-}
+// Border   //TODO need to check if we need border classes as these classes are not used anywhere
+// .b-0 {
+//     border: 0;
+// }
 
-.b-1 {
-  border: 1px solid $light-40;
-}
+// .b-1 {
+//     border: 1px solid $light-40;
+// }
 
 /* 
  * ICON UTILITY CLASSES
@@ -124,7 +124,7 @@ $iconSizesMap: (
 }
 
 .bg-white {
-  background-color: $white;
+  background-color: var(--white);
 }
 
 // Display
@@ -135,7 +135,7 @@ $iconSizesMap: (
 // Disable
 %disable,
 .disable {
-  opacity: 0.5;
+  opacity: var(--disabled_all);
   cursor: not-allowed;
 }
 
@@ -211,7 +211,7 @@ $displayProperties: none inline inline-block block table inline-table table-cell
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--overlay);
   opacity: 1;
   z-index: 959;
 

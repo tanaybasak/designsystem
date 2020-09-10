@@ -14,26 +14,50 @@
     background: transparent;
     padding: 0.75rem 0;
 
-    &.active {
+    &.#{$prefix}-tabs-disabled {
+      cursor: not-allowed;
       > a {
-        color: $blue;
         outline: none;
-      }
-      > a:focus {
-        outline: 1px solid $blue;
+        cursor: not-allowed;
       }
 
-      border-bottom: 2px solid $blue;
+      opacity: var(--disabled_all);
+
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        border-bottom: transparent;
+      }
     }
 
-    &.#{$prefix}-tabs-disabled {
-      > a:focus {
+    &.active {
+      > a {
         outline: none;
+
+        color: var(--default_text_high);
       }
+
+      border-bottom: 2px solid var(--active_border);
+
+      &:focus {
+        border-bottom: none;
+      }
+    }
+
+    &:focus {
+      outline: 2px solid var(--interactive_border);
     }
 
     &:hover {
       cursor: pointer;
+      > a {
+        outline: none;
+
+        color: var(--interactive_text);
+      }
+
+      border-bottom: 2px solid var(--interactive_border);
     }
   }
 
@@ -44,7 +68,8 @@
   &-link {
     text-decoration: none;
     display: inline-block;
-    color: $black;
+
+    color: var(--interactive_text);
 
     &:hover,
     &:active,
@@ -52,16 +77,14 @@
     &:focus {
       text-decoration: none;
     }
-
-    &:hover {
-      color: $blue-secondary;
-    }
   }
 }
 
 .#{$prefix}-tabs-panel {
   padding-top: hcl-rem(10px);
   display: none;
+
+  color: var(--default_text);
 
   &.active {
     display: block;
@@ -73,32 +96,26 @@
 }
 
 .#{$prefix}-tabs-disabled {
-  opacity: 0.5;
-
-  > a,
-  .#{$prefix}-tabs-nav-link {
+  &.active {
     cursor: not-allowed;
-    color: $black;
+    > a {
+      outline: none;
+    }
+
+    opacity: var(--disabled_all);
 
     &:focus {
       outline: none;
     }
 
     &:hover {
-      color: $black;
-    }
-  }
-
-  &.active {
-    > a,
-    .#{$prefix}-tabs-nav-link {
-      &:focus {
+      > a {
         outline: none;
+
+        color: var(--default_text_high);
       }
 
-      &:hover {
-        color: $blue;
-      }
+      border-bottom: 2px solid var(--active_border);
     }
   }
 }

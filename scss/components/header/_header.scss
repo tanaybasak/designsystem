@@ -11,7 +11,10 @@
 .#{$prefix}-header {
   display: flex;
   justify-content: flex-start;
-  background-color: $blue;
+
+  background-color: var(--primary_bg);
+  color: var(--primary_text);
+
   position: fixed;
   top: 0;
   left: 0;
@@ -37,7 +40,8 @@
       outline: none;
 
       img {
-        outline: 1px solid $focus-outline-color;
+        outline: 1px solid var(--primary_icon);
+
         outline-offset: 0.5rem;
       }
     }
@@ -59,8 +63,17 @@
       .#{$prefix}-search {
         width: 100%;
 
+        .#{$prefix}-search-btn {
+          .#{$prefix}-search-icon {
+            fill: var(--primary_icon);
+          }
+        }
         .#{$prefix}-search-btn:focus {
-          outline: 1px solid $focus-outline-color;
+          outline: 1px solid var(--primary_icon);
+        }
+
+        .#{$prefix}-search-btn:hover {
+          background-color: var(--primary_bg_hover);
         }
       }
 
@@ -86,13 +99,19 @@
         > input,
         > button {
           background: transparent;
-          color: $white;
+
+          color: var(--primary_icon);
 
           &:focus,
           &:active {
-            outline: 1px solid $focus-outline-color;
+            outline: 1px solid var(--primary_border);
+
             outline-offset: 0.125rem;
           }
+        }
+
+        &:hover {
+          background-color: var(--primary_bg_hover);
         }
       }
 

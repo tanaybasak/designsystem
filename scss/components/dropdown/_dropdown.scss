@@ -16,7 +16,8 @@
     &:focus {
       text-decoration: none;
       outline-offset: -1px;
-      outline: 1px solid $blue;
+
+      outline: 1px solid var(--interactive_border);
     }
   }
 
@@ -25,25 +26,28 @@
   }
 
   &-toggle {
-    background: #efefef;
     font-size: 0.875rem;
-    color: $dark-blue;
     line-height: 1.125rem;
     outline: none;
     width: 100%;
     justify-content: left;
     margin: 0;
-    border-bottom: 1px solid $grey-2;
     padding-right: 2.5rem;
+
+    background-color: var(--input_bg);
+    color: var(--input_text);
+    border-bottom: 1px solid var(--input_border);
 
     &::after {
       content: '';
       width: 0;
       height: 0;
-      border-top: 0.3rem solid $blue;
-      border-right: 0.3rem solid transparent;
       border-bottom: 0;
+
+      border-top: 0.3rem solid var(--input_icon);
+      border-right: 0.3rem solid transparent;
       border-left: 0.3rem solid transparent;
+
       position: absolute;
       top: 50%;
       right: 0.875rem;
@@ -51,7 +55,8 @@
     }
     &:focus {
       outline-offset: -1px;
-      outline: 1px solid $blue;
+
+      border-bottom: 2px solid var(--interactive_border);
     }
   }
 
@@ -68,13 +73,13 @@
     will-change: transform;
     z-index: 6;
     font-size: 1rem;
-    color: #212529;
     text-align: left;
     list-style: none;
-    background-color: $white;
     background-clip: padding-box;
-    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid $grey-2;
+
+    background-color: var(--default_bg);
+    box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
+
     width: 100%;
     display: none;
     max-height: 20rem;
@@ -85,10 +90,8 @@
     height: 2.5rem;
     @include getFontWeight('regular');
     white-space: nowrap;
-    background-color: transparent;
     border: 0;
     font-size: 0.875rem;
-    color: $dark-blue;
     border: 1px solid transparent;
     max-width: 100%;
     white-space: nowrap;
@@ -97,14 +100,18 @@
     line-height: 1;
     cursor: pointer;
 
+    background: var(--default_bg);
+    color: var(--default_text);
+
     &:hover {
-      background: rgba(70, 150, 210, 0.1);
+      background: var(--interactive_bg_hover);
     }
 
     &:focus {
       text-decoration: none;
       outline-offset: -1px;
-      outline: 1px solid $blue;
+
+      outline: 1px solid var(--interactive_border);
     }
   }
 
@@ -115,20 +122,25 @@
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
-    padding: 0.5125rem 1rem;
-    color: $black;
+    padding: 0.4698rem 1rem;
     text-decoration: none;
-
     text-overflow: ellipsis;
+
+    color: var(--default_text);
 
     &:hover {
       text-decoration: none;
+
+      background: var(--interactive_bg_hover);
+      color: var(--default_text);
     }
 
     &:focus {
       text-decoration: none;
       outline-offset: -1px;
-      outline: 1px solid $blue;
+
+      outline: 1px solid var(--interactive_border);
+      color: var(--default_text);
     }
   }
 
@@ -140,7 +152,9 @@
     overflow: hidden;
     white-space: nowrap;
     padding: 0.7625rem 1rem;
-    color: $black;
+
+    color: var(--input_text);
+
     text-decoration: none;
     text-overflow: ellipsis;
 
@@ -168,7 +182,6 @@
       bottom: 2.5rem;
       top: inherit;
       border: 0;
-      border-top: 1px solid #8c8c8c;
     }
   }
 }

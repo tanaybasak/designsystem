@@ -9,16 +9,22 @@
 @import '../../base';
 
 $colorMap: (
-  'info': $info,
-  'danger': $red-3,
-  'success': $success,
-  'warning': $warning
+  'info': info,
+  'danger': danger,
+  'success': success,
+  'warning': warning
 );
 
 @mixin getToastThemes() {
   @each $key, $value in $colorMap {
     &-#{$key} {
-      border-left: 0.3125rem solid $value;
+      border-left: 0.3125rem solid var(#{'--' + $value + '_border'});
+
+      .#{$prefix}-toast-icon-container {
+        > .#{$prefix}-notification-icon {
+          fill: var(#{'--' + $value + '_icon'});
+        }
+      }
     }
   }
 }
@@ -29,12 +35,14 @@ $colorMap: (
   height: auto;
   padding: 0.75rem 1rem;
   margin: 2rem;
-  color: #171717;
   position: fixed;
   top: 0;
   right: 0;
   box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
-  background: $white;
+
+  background-color: var(--default_bg);
+  color: var(--default_text);
+
   @include getToastThemes();
   z-index: 999;
 
@@ -49,7 +57,9 @@ $colorMap: (
   &-title {
     font-size: 0.875rem;
     line-height: 1rem;
-    color: #132730;
+
+    color: var(--default_text_high);
+
     letter-spacing: 0;
     word-break: break-word;
     @include getFontWeight('semibold');
@@ -59,7 +69,9 @@ $colorMap: (
   &-caption {
     line-height: 0.875rem;
     font-size: 0.75rem;
-    color: #aaa;
+
+    color: var(--default_text);
+
     letter-spacing: 0;
     word-break: break-word;
     @include getFontWeight('regular');
@@ -79,7 +91,9 @@ $colorMap: (
     min-height: 2.5rem;
     max-height: 2.5rem;
     transition: outline 0.11s, background-color 0.11s;
-    @include hcl-close-icon(12.15);
+
+    @include hcl-close-icon(12.15, false, --transparent, --default_icon_high);
+
     position: absolute;
   }
 

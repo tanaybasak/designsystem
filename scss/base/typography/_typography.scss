@@ -6,7 +6,10 @@
  *******************************************************************
  */
 @import '../../utils/variables';
+@import '../../utils/colors';
+@import '../../utils/themes';
 @import 'typographyMixins';
+@import '../../utils/mixins';
 
 // Font weight
 @each $key, $value in $fontWeights-map {
@@ -154,25 +157,23 @@ h6,
 
 // Anchor link
 a {
-  color: theme-color('primary');
+  color: var(--interactive_text);
   font-size: 0.875rem;
   line-height: getLineHeight(0.875rem);
   text-decoration: none;
 
   &:hover {
-    color: $black-light;
     text-decoration: underline;
+    color: var(--interactive_text_hover);
   }
 
   &:focus {
-    color: $black-light;
-    outline: 1px solid theme-color('primary');
-    text-decoration: underline;
+    border: 1px solid var(--interactive_border);
     outline-offset: 3px;
   }
 
   &.disable {
-    color: $black-light;
+    opacity: var(--disabled_all);
     pointer-events: none;
   }
 }

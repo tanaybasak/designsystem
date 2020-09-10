@@ -1,9 +1,10 @@
 @import 'utils/variables';
 @import 'utils/colors';
+@import 'utils/themes';
 @import 'utils/breakpoints';
 @import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/utility';
 @import 'base/reset';
 @import 'base/global';
 @import 'base/typography/typography';
-@import 'utils/mixins';
-@import 'utils/utility';

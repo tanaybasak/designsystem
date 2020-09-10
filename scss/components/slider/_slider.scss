@@ -1,7 +1,5 @@
 @import '../../base';
 
-$slider-thumb-hover: #00518f;
-
 .#{$prefix}-slider-wrapper {
   width: 100%;
   --progressPercent: 0%;
@@ -17,6 +15,8 @@ $slider-thumb-hover: #00518f;
     .#{$prefix}-slider-top-range {
       display: inline-flex;
       margin: 0 0.5rem;
+
+      color: var(--default_text_high);
     }
 
     &.on-hover {
@@ -55,8 +55,6 @@ $slider-thumb-hover: #00518f;
         height: 1.5rem;
         line-height: 1.5rem;
         text-align: center;
-        background: $white;
-        color: $black;
         font-size: 0.75rem;
         display: block;
         position: absolute;
@@ -65,7 +63,9 @@ $slider-thumb-hover: #00518f;
         transform: translate(-50%, 0);
         border-radius: 0.375rem;
         padding: 0 0.625rem;
-        border: 1px solid $black-lighter;
+
+        color: var(--default_text_high);
+        background: var(--default_bg_low);
       }
 
       .#{$prefix}-range-value span::before {
@@ -73,7 +73,7 @@ $slider-thumb-hover: #00518f;
         position: absolute;
         width: 0;
         height: 0;
-        border-top: 0.4375rem solid $black-lighter;
+        border-top: 0.4375rem solid transparent;
         border-left: 0.3125rem solid transparent;
         border-right: 0.3125rem solid transparent;
         top: 100%;
@@ -87,13 +87,14 @@ $slider-thumb-hover: #00518f;
         position: absolute;
         width: 0;
         height: 0;
-        border-top: 0.4375rem solid $white;
         border-left: 0.3125rem solid transparent;
         border-right: 0.3125rem solid transparent;
         top: 100%;
         left: 50%;
         margin-left: -0.3125rem;
         margin-top: -1px;
+
+        border-top: 0.4375rem solid var(--default_bg_low);
       }
 
       > input[type='range'].#{$prefix}-slider-input {
@@ -106,59 +107,49 @@ $slider-thumb-hover: #00518f;
 
         &::-webkit-slider-runnable-track {
           height: 0.25rem;
-          background-color: $light-60;
 
           background: linear-gradient(
             90deg,
-            $blue var(--progressPercent),
-            $light-60 var(--progressPercent)
+            var(--secondary_border) var(--progressPercent),
+            var(--default_border_low) var(--progressPercent)
           );
-
-          &:hover {
-            background: linear-gradient(
-              90deg,
-              $slider-thumb-hover var(--progressPercent),
-              $light-60 var(--progressPercent)
-            );
-          }
         }
 
         &::-webkit-slider-thumb {
           width: 1.5rem;
           height: 1.5rem;
           border-radius: 50%;
-          background-color: $blue;
           appearance: none;
           margin-top: -0.625rem;
 
-          &:hover {
-            background: $slider-thumb-hover;
-          }
+          background-color: var(--primary_bg);
         }
 
         &:focus::-webkit-slider-thumb {
-          box-shadow: 0 0 0 0.1875rem $focus-outline-color;
+          box-shadow: 0 0 0 0.1875rem var(--interactive_border);
+          border: 0.0625rem solid var(--default_bg);
         }
 
         &:focus::-moz-range-thumb {
-          box-shadow: 0 0 0 0.1875rem $focus-outline-color;
+          box-shadow: 0 0 0 0.1875rem var(--interactive_border);
+          border: 0.0625rem solid var(--default_bg);
         }
 
         &::-moz-range-track {
           height: 0.25rem;
-          background-color: $light-60;
 
+          background-color: var(--secondary_border);
           background: linear-gradient(
             90deg,
-            $blue var(--progressPercent),
-            $light-60 var(--progressPercent)
+            var(--secondary_border) var(--progressPercent),
+            var(--default_border_low) var(--progressPercent)
           );
 
           &:hover {
             background: linear-gradient(
               90deg,
-              $slider-thumb-hover var(--progressPercent),
-              $light-60 var(--progressPercent)
+              var(--secondary_border) var(--progressPercent),
+              var(--default_border_low) var(--progressPercent)
             );
           }
         }
@@ -167,13 +158,11 @@ $slider-thumb-hover: #00518f;
           width: 1.5rem;
           height: 1.5rem;
           border-radius: 50%;
-          background-color: $blue;
+
+          background-color: var(--primary_bg);
+
           margin-top: 0;
           border: 0;
-
-          &:hover {
-            background: $slider-thumb-hover;
-          }
         }
 
         &:disabled {
@@ -188,19 +177,19 @@ $slider-thumb-hover: #00518f;
 
         &::-ms-track {
           height: 0.25rem;
-          background-color: $light-60;
 
+          background-color: var(--secondary_border);
           background: linear-gradient(
             90deg,
-            $blue var(--progressPercent),
-            $light-60 var(--progressPercent)
+            var(--secondary_border) var(--progressPercent),
+            var(--default_border_low) var(--progressPercent)
           );
 
           &:hover {
             background: linear-gradient(
               90deg,
-              $slider-thumb-hover var(--progressPercent),
-              $light-60 var(--progressPercent)
+              var(--secondary_border) var(--progressPercent),
+              var(--default_border_low) var(--progressPercent)
             );
           }
         }
@@ -209,13 +198,10 @@ $slider-thumb-hover: #00518f;
           width: 1.5rem;
           height: 1.5rem;
           border-radius: 50%;
-          background-color: $blue;
+
+          background-color: var(--primary_bg);
 
           margin-top: 0;
-
-          &:hover {
-            background: $slider-thumb-hover;
-          }
         }
       }
     }

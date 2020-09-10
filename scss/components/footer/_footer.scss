@@ -10,7 +10,9 @@
 .#{$prefix}-footer {
   min-height: 2.5rem;
   width: 100%;
-  background-color: $light-20;
+
+  background-color: var(--default_bg_low);
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -25,7 +27,9 @@
   &-caption {
     display: inline-flex;
     font-size: 0.75rem;
-    color: $light-70;
+
+    color: var(--default_text_low);
+
     letter-spacing: 0;
     align-self: center;
     padding: 0 1rem;
@@ -50,7 +54,6 @@
     .#{$prefix}-navigation-item {
       margin-right: 0.5rem;
       font-size: 0.75rem;
-      color: $light-60;
       letter-spacing: 0;
       align-self: flex-end;
       cursor: pointer;
@@ -61,6 +64,8 @@
       &:not(:last-child)::after {
         content: '|';
         margin-left: 0.5rem;
+
+        color: var(--default_border_xlow);
       }
 
       .#{$prefix}-link {
@@ -69,12 +74,29 @@
         border-bottom: 0.0625rem solid transparent;
         transition: 0.25s;
         font-size: 0.75rem;
-        color: $light-60;
+
+        color: var(--default_text);
+
         letter-spacing: 0;
         line-height: 0.75rem;
 
         &:hover {
           @include getTextDecorationLine('underline');
+
+          color: var(--default_text_high);
+        }
+
+        &:focus {
+          border: unset;
+          text-decoration: none;
+          border-bottom: none !important;
+          outline: 2px solid var(--interactive_border) !important;
+        }
+
+        &[disabled] {
+          cursor: not-allowed;
+
+          opacity: var(--disabled_all);
         }
       }
     }

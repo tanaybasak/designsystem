@@ -10,22 +10,20 @@
 
 $pagination-font-size: var(--body-font-size);
 $pagination-line-height: 1.125rem;
-$pagination-select-text-color: $blue;
-$pagination-bg-color: $white;
-$pagination-text-variant-1: $dark-10;
-$pagination-text-variant-2: $dark-20;
 
 .#{$prefix}-pagination {
   font-size: $pagination-font-size;
   @include getFontWeight('regular');
   line-height: $pagination-line-height;
   width: 100%;
-  background-color: $white;
+
+  background-color: var(--default_bg);
+  border: 1px solid var(--default_border_xlow);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: hcl-rem(40px);
-  border: 1px solid $grey-4;
 
   &-left,
   &-right {
@@ -57,7 +55,9 @@ $pagination-text-variant-2: $dark-20;
 
       &::after {
         content: '';
-        border-right: 1px solid $grey-4;
+
+        border-right: 1px solid var(--default_border_xlow);
+
         height: 100%;
       }
     }
@@ -82,29 +82,53 @@ $pagination-text-variant-2: $dark-20;
       margin: 0;
       border-width: 0 1px 0 1px;
       border-style: solid;
-      border-color: $grey-4;
+
+      background-color: var(--default_bg);
+      border-right: 1px solid var(--default_border_xlow);
+      border-left: 1px solid var(--default_border_xlow);
+
       padding: 0 1rem;
       cursor: pointer;
 
       &:focus {
-        outline: 1px solid $blue;
         outline-offset: -1px;
+
+        outline: 1px solid var(--interactive_border);
+      }
+
+      &:hover {
+        background-color: var(--interactive_bg_hover);
       }
 
       &:disabled {
-        opacity: 0.3;
-        background-color: #e6e6e6;
+        opacity: var(--disabled_all);
+
         cursor: not-allowed;
+      }
+
+      svg,
+      .#{$prefix}-pagination__button-icon {
+        fill: var(--interactive_icon);
       }
     }
 
     button.#{$prefix}-pagination-button-next {
       border-right-width: 0;
+
+      &:hover {
+        background-color: var(--interactive_bg_hover);
+      }
+
+      svg,
+      .#{$prefix}-pagination__button-icon {
+        fill: var(--interactive_icon);
+      }
     }
 
     .#{$prefix}-pagination-text {
       margin-right: hcl-rem(16px);
-      color: $pagination-text-variant-2;
+
+      color: var(--default_text);
     }
 
     .#{$prefix}-pagination-select-wrapper {
@@ -120,6 +144,8 @@ $pagination-text-variant-2: $dark-20;
       svg,
       .#{$prefix}-select-arrow {
         right: hcl-rem(16px);
+
+        fill: var(--interactive_icon);
       }
     }
 
@@ -144,7 +170,8 @@ $pagination-text-variant-2: $dark-20;
 
   .#{$prefix}-pagination-range {
     margin-left: hcl-rem(16px);
-    color: $dark-20;
+
+    color: var(--default_text);
 
     @include media-breakpoint-down(sm) {
       display: none;
@@ -152,7 +179,7 @@ $pagination-text-variant-2: $dark-20;
   }
 
   .#{$prefix}-pagination-label {
-    color: $pagination-text-variant-1;
+    color: var(--default_text);
 
     @include media-breakpoint-down(sm) {
       font-size: 0.75rem;
@@ -179,17 +206,28 @@ $pagination-text-variant-2: $dark-20;
       height: 100%;
       padding: 0 1rem 0 1rem;
       appearance: none;
-      background-color: $white;
       margin-right: -0.65rem;
       cursor: pointer;
       text-align-last: center;
-      color: $pagination-select-text-color;
+
+      background-color: var(--interactive_bg);
+      color: var(--interactive_text);
+
+      &:hover {
+        background-color: var(--interactive_bg_hover);
+      }
+
+      &:focus {
+        outline: 2px solid var(--interactive_border);
+      }
     }
 
     svg,
     .#{$prefix}-select-arrow {
       pointer-events: none;
-      fill: $blue-7;
+
+      fill: var(--interactive_icon);
+
       position: relative;
       top: auto;
       bottom: auto;

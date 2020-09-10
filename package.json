@@ -4,8 +4,8 @@
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
   "scripts": {
+    "build": "parcel build modular/*/index.js --no-source-maps -d .dist/ && parcel build modular/*/*/index.js --no-source-maps -d .dist/ ",
     "start": "node importHTML.js && parcel index.html -d output --port 8000",
-    "build": "npm run clean && parcel build js/index.js -o patron --no-source-maps ",
     "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss';",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js .",
@@ -16,11 +16,11 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@patron/patron-icon": "git+https://github01.hclpnp.com/UXUIAssets/patron-icon.git",
     "app-root-path": "^3.0.0",
-    "autoprefixer": "^9.7.1",
+    "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.0.3",
     "delegate": "^3.2.0",
     "eslint": "^6.6.0",
@@ -33,15 +33,15 @@
     "eslint-plugin-standard": "^4.0.1",
     "fs": "0.0.1-security",
     "parcel-bundler": "^1.12.4",
-    "postcss-cli": "^6.1.2",
+    "postcss-cli": "^7.1.2",
     "prettier": "^2.0.5",
     "q": "^1.5.1",
     "replace": "^1.2.0",
     "rimraf": "^3.0.0",
-    "sass": "^1.23.3",
+    "sass": "^1.26.10",
     "semver": "^7.3.2",
     "simple-git": "^2.20.1",
-    "stylelint": "^10.1.0"
+    "stylelint": "^13.7.0"
   },
   "browserslist": [
     "> .1%",
@@ -53,7 +53,7 @@
       "selector-type-case": "lower",
       "string-quotes": "single",
       "selector-pseudo-element-colon-notation": "double",
-      "unit-blacklist": [
+      "unit-disallowed-list": [
         "em"
       ],
       "block-no-empty": true,

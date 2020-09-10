@@ -8,15 +8,11 @@
 
 @import '../../base';
 
-$table-header-bg: #f4f7fb;
-$table-hover-bg: #d9f9ff;
-$zebra-bg: #F5F9FC;
-
 .#{$prefix}-data-table-wrapper {
   width: 100%;
-  border: 0.0625rem solid $grey-8;
   border-bottom: transparent;
-  color: $dark-blue;
+
+  color: var(--deafult_text);
 
   .#{$prefix}-data-table {
     width: 100%;
@@ -44,8 +40,8 @@ $zebra-bg: #F5F9FC;
         height: 3.125rem;
 
         &:focus {
-          outline: 0.0625rem solid $blue;
           outline-offset: -0.0625rem;
+          outline: 0.0625rem solid var(--interactive_border);
         }
       }
 
@@ -59,7 +55,9 @@ $zebra-bg: #F5F9FC;
 
       th {
         line-height: 1.5rem;
-        background-color: $table-header-bg;
+
+        color: var(--default_text_high);
+        background-color: var(--default_bg_low);
 
         .#{$prefix}-sorting {
           vertical-align: middle;
@@ -77,8 +75,9 @@ $zebra-bg: #F5F9FC;
 
       td {
         border-top: 0.0625rem solid transparent;
-        border-bottom: 0.0625rem solid $grey-8;
-        background-color: $white;
+
+        border-bottom: 0.0625rem solid var(--default_border_xlow);
+        background-color: var(--default_bg);
 
         .overflow-onhover {
           visibility: hidden;
@@ -95,22 +94,17 @@ $zebra-bg: #F5F9FC;
 
       tr:hover {
         td {
-          background-color: $table-hover-bg;
-          border-top: 0.0625rem solid $blue;
-          border-bottom: 0.0625rem solid $blue;
+          color: var(--default_text_high);
+          background-color: var(--interactive_bg_hover);
         }
-
-        td:first-child {
-          border-left: 0.0625rem solid $blue;
-        }
-
-        td:last-child {
-          border-right: 0.0625rem solid $blue;
-        }
-
         .overflow-onhover {
           visibility: visible;
         }
+      }
+
+      tr:focus {
+        outline-offset: -1px;
+        outline: 1px solid var(--interactive_border);
       }
     }
 
@@ -119,19 +113,21 @@ $zebra-bg: #F5F9FC;
         tr {
           &:nth-child(even) {
             td {
-              background-color: $zebra-bg;
+              color: var(--default_text_high);
+              background-color: var(--default_bg_low);
             }
           }
 
           &:nth-child(odd) {
             td {
-              background-color: $white;
+              background-color: var(--deafult_bg);
             }
           }
 
           &:hover {
             td {
-              background-color: $table-hover-bg;
+              color: var(--default_text_high);
+              background-color: var(--interactive_bg_hover);
             }
           }
         }

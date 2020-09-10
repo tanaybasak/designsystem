@@ -1,10 +1,11 @@
 @import '../../base';
 
 @mixin tile($type) {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   display: inline-block;
-  background-color: $white;
-  border: 1px solid transparent;
+
+  border: 1px solid var(--default_border_xlow);
+  background-color: var(--default_bg);
+
   position: relative;
   padding: 1rem;
   cursor: default;
@@ -14,11 +15,16 @@
     outline: none;
 
     &:focus {
-      border: 1px solid $blue;
+      border: 2px solid var(--interactive_border);
+    }
+    &:hover {
+      border: 1px solid var(--interactive_border);
     }
 
     &:hover .#{$prefix}-tile-checkbox {
       visibility: visible;
+
+      opacity: var(--disabled_all);
     }
   }
 
@@ -66,8 +72,10 @@
 
     &:checked + .#{$prefix}-tile-checkbox {
       visibility: visible;
-      fill: $blue-7;
-      background-color: $white;
+
+      fill: var(--active_icon);
+
+      background-color: transparent;
     }
 
     &:checked + .#{$prefix}-tile-arrow > svg {
@@ -82,8 +90,9 @@
     right: 1rem;
     position: absolute;
     border-radius: 50%;
-    background-color: hsla(0, 0%, 100%, 0.25);
-    fill: rgba(61, 112, 178, 0.25);
+    background-color: transparent;
+
+    fill: var(--interactive_icon);
   }
 
   &-arrow {
@@ -94,17 +103,19 @@
     padding: 14px 16px;
 
     &:focus {
-      outline: 1px solid $blue;
+      outline: 1px solid var(--interactive_border);
+
       outline-offset: -6px;
     }
 
     > svg {
       border-radius: 50%;
-      background-color: hsla(0, 0%, 100%, 0.25);
-      fill: $black-2;
+      background-color: transparent;
+
+      fill: var(--interactive_icon);
 
       &:hover {
-        fill: $blue;
+        fill: var(--interactive_icon);
       }
     }
   }

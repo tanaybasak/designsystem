@@ -149,19 +149,14 @@
 }
 
 // close icon
-@mixin hcl-close-icon(
-  $size: 16,
-  $bg-color: transparent,
-  $fg-color: $black,
-  $rounded: false
-) {
+@mixin hcl-close-icon($size: 16, $rounded: false, $bg-color, $fg-color) {
   width: #{$size}px;
   height: #{$size}px;
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: $bg-color;
+  background-color: var(#{$bg-color});
   cursor: pointer;
 
   &::before,
@@ -169,7 +164,7 @@
     content: ' ';
     position: absolute;
     width: 2px;
-    background-color: lighten($fg-color, 20%);
+    background-color: var(#{$fg-color});
   }
 
   @if $rounded {
@@ -197,19 +192,21 @@
   &:hover {
     &::before,
     &::after {
-      background-color: lighten($fg-color, 0);
+      background-color: var(#{$fg-color});
+      opacity: 0.8;
     }
   }
 }
 
 // ellipsis icon
-@mixin hcl-ellipsis($color: $black, $font-size: 0.8rem) {
+@mixin hcl-ellipsis($font-size: 0.8rem) {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: $color;
   font-size: $font-size;
+  color: var(--interactive_icon);
+  background-color: var(--interactive_bg);
 
   &::after {
     content: '\2022 \2022 \2022';
@@ -241,8 +238,8 @@
 @mixin nav-active {
   background-image: linear-gradient(
     to top,
-    $white 0%,
-    $white 4%,
+    var(--white) 0%,
+    var(--white) 4%,
     transparent 4%
   );
   background-size: cover;
@@ -281,30 +278,30 @@ $inputColor-map: (
     width: 100%;
     height: $input-height;
     padding: $input-padding-y $input-padding-x;
-    @include getInputColor('color-1', 'color');
-    @include getInputColor('color-3', 'background-color');
-    border: none;
-    box-shadow: 0 1px 0 0 #5a6872;
-    border-bottom: 1px solid transparent;
+    color: var(--input_text);
+    background-color: var(--input_bg);
+    border-bottom: 1px solid var(--input_border);
 
+    border: none;
     &:focus {
       outline: none;
-      box-shadow: 0 3px 0 0 $blue-7;
+      border-bottom: 2px solid var(--interactive_border);
 
       & ~ label.#{$prefix}-label {
-        color: $blue-7;
+        color: var(--default_text);
       }
     }
 
     &[disabled] {
-      opacity: 0.5;
       cursor: not-allowed;
-      background-color: rgba($blue-secondary, 0.5);
+
+      background-color: var(--input_bg);
+      opacity: var(--disabled_all);
 
       & ~ label,
       & ~ .#{$prefix}-error-msg,
       & ~ .#{$prefix}-helper-text {
-        opacity: 0.5;
+        opacity: var(--disabled_all);
       }
     }
   } @else {
@@ -319,7 +316,7 @@ $inputColor-map: (
       @include getFontWeight('regular');
       font-size: 0.75rem;
       line-height: getLineHeight(0.75rem);
-      color: $red-3;
+      color: var(--danger_text);
       margin-top: 0.25rem;
     }
   } @else {

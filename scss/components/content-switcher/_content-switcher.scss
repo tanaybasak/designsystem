@@ -17,31 +17,32 @@
       justify-content: center;
     }
 
-    background-color: transparent;
-    color: $blue-7;
+    background-color: var(--default_bg);
+    border: 1px solid var(--default_border_xlow);
+    color: var(--interactive_text);
+
     display: flex;
     align-items: center;
     height: hcl-rem(40px);
     font-size: 0.875rem;
     margin: 0;
     padding: 0 2rem;
-    border: 1px solid $blue-7;
     position: relative;
 
     &.active {
-      background-color: $blue;
-      color: $white;
+      background-color: var(--active_bg_high);
+      color: var(--active_text);
 
       .#{$prefix}-thumbnail {
-        background-color: $white;
-        color: $blue;
+        border: 1px solid var(--active_icon);
       }
     }
 
     &:focus {
-      outline: 2px solid $blue-7;
-      outline-offset: 1px;
+      outline-offset: -1px;
       z-index: 1;
+
+      outline: 2px solid var(--interactive_border);
     }
 
     &:hover {
@@ -49,28 +50,21 @@
     }
 
     &:hover:not(:disabled) {
-      background-color: $blue-5;
-      color: $white;
+      background-color: var(--interactive_bg_hover);
+      color: var(--interactive_text);
 
       .#{$prefix}-thumbnail {
-        background-color: $white;
-        color: $blue;
+        border: 1px solid var(--interactive_icon);
       }
     }
 
     &:disabled {
       cursor: not-allowed;
-      background-color: rgba(255, 255, 255, 0.5);
-      color: rgba(61, 112, 178, 0.5);
-      border-color: rgba(0, 102, 179, 0.5);
 
-      &.active {
-        background-color: rgba(0, 102, 179, 0.5);
-        color: rgba(255, 255, 255, 0.5);
-      }
+      opacity: var(--disabled_all);
 
       .#{$prefix}-thumbnail {
-        background-color: rgba(0, 102, 179, 0.5);
+        opacity: var(--disabled_all);
       }
     }
 
@@ -82,22 +76,14 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      background-color: $blue;
-      color: $white;
+
+      border: 1px solid var(--interactive_icon);
     }
   }
 
   &-btn:first-of-type {
     border-top-left-radius: hcl-rem(4px);
     border-bottom-left-radius: hcl-rem(4px);
-  }
-
-  &-btn:not(:first-of-type) {
-    border-left: 1px solid $blue-7;
-  }
-
-  &-btn:disabled:not(:first-of-type) {
-    border-color: rgba(0, 102, 179, 0.5);
   }
 
   &-btn:not(:last-of-type) {

@@ -8,14 +8,10 @@
   border: 1px solid transparent;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  background: transparent;
-  color: $black;
 }
 
 .#{$prefix}-btn {
   @extend %button;
-  color: $white;
-  background: $blue;
   padding: 0.625rem 1rem;
   height: 2.5rem;
   display: inline-flex;
@@ -26,165 +22,208 @@
     width: 1rem;
     height: 1rem;
     margin-left: 0.5rem;
-    fill: $white;
+
+    fill: var(--primary_icon);
   }
 }
 
 a.#{$prefix}-primary {
   &:hover {
-    color: $white;
+    color: var(--primary_text);
   }
 }
 
 .#{$prefix}-primary {
-  background: $blue;
-  color: $white;
+  background-color: var(--primary_bg);
+  color: var(--primary_text);
 
   &:hover {
-    background: $blue-secondary;
+    background-color: var(--primary_bg_hover);
   }
 
   &:focus {
-    background: $blue-5;
+    outline-offset: 2px;
+
+    outline: 0.0625rem solid var(--primary_bg_hover);
   }
 
   &:disabled,
   &[disabled='disabled'] {
-    background: $blue-6;
-    @extend %disable;
+    opacity: var(--disabled_all);
+
+    cursor: not-allowed;
+    &:hover {
+      background-color: var(--primary_bg);
+    }
   }
 
   &.#{$prefix}-danger {
-    background: $red;
+    background-color: var(--danger_bg_inverse);
+    color: var(--default_text_inverse);
 
     &:hover {
-      background: $red-1;
-      color: $white;
+      background-color: var(--danger_bg_inverse_hover);
+      color: var(--default_text_inverse);
+
+      > .#{$prefix}-btn-icon {
+        fill: var(--primary_icon);
+      }
     }
 
     &:focus {
-      background: $red-1;
+      outline-offset: 2px;
+
+      outline: 0.0625rem solid var(--interactive_border);
+
+      > .#{$prefix}-btn-icon {
+        fill: var(--primary_icon);
+      }
     }
 
     &:disabled,
     &[disabled='disabled'] {
-      @extend %disable;
-      background: $red-2;
-
       &:hover {
-        background: $red-2;
+        background-color: var(--danger_bg_inverse);
       }
+
+      opacity: var(--disabled_all);
+
+      cursor: not-allowed;
     }
   }
 }
 
 .#{$prefix}-secondary {
-  background: transparent;
-  color: $blue;
-  border: 0.0625rem solid $blue;
+  background-color: var(--secondary_bg);
+  color: var(--secondary_text);
+  border: 0.0625rem solid var(--secondary_border);
 
   &:hover,
   &:focus {
-    background: $blue;
-    color: $white;
-    border: 0.0625rem solid $blue;
+    outline-offset: 2px;
+
+    background-color: var(--secondary_bg_hover);
+    color: var(--secondary_text);
+    border: 0.0625rem solid var(--secondary_border);
+    outline: 0.0625rem solid var(--interactive_border);
 
     > .#{$prefix}-btn-icon {
-      fill: $white;
+      fill: var(--secondary_icon);
+    }
+  }
+  &:focus {
+    border: 0.0625rem solid var(--interactive_border);
+
+    > .#{$prefix}-btn-icon {
+      fill: var(--secondary_icon);
     }
   }
 
   &:disabled,
   &[disabled='disabled'] {
-    color: $blue-6;
-    border: 0.0625rem solid $blue-6;
-    cursor: not-allowed;
-
     &:hover {
-      background: transparent;
-      color: $blue-6;
-      border: 0.0625rem solid $blue-6;
+      background-color: var(--secondary_bg);
     }
 
+    opacity: var(--disabled_all);
+
+    cursor: not-allowed;
+
     > .#{$prefix}-btn-icon {
-      fill: $blue-6;
+      fill: var(--secondary_icon);
     }
   }
 
   > .#{$prefix}-btn-icon {
-    fill: $blue;
+    fill: var(--secondary_icon);
   }
 
   &.#{$prefix}-danger {
     background: transparent;
-    color: $red;
-    border: 0.0625rem solid $red;
 
-    &:hover,
+    border: 0.0625rem solid var(--danger_border);
+    color: var(--danger_text);
+
+    &:hover {
+      background-color: var(--danger_bg_hover);
+      color: var(--danger_text);
+      border: 0.0625rem solid var(--danger_border);
+    }
+
     &:focus {
-      background: $red-1;
-      color: $white;
+      background: transparent;
+      color: var(--danger_text);
+      border: 0.0625rem solid var(--interactive_border);
 
       > .#{$prefix}-btn-icon {
-        fill: $white;
+        fill: var(--danger_icon);
       }
     }
 
     &:disabled,
     &[disabled='disabled'] {
-      border: 0.0625rem solid $red-2;
-      color: $red-2;
-      @extend %disable;
-
       &:hover {
-        background: transparent;
-        border: 0.0625rem solid $red-2;
-        color: $red-2;
+        background-color: var(--secondary_bg);
+        opacity: var(--disabled_all);
 
         > .#{$prefix}-btn-icon {
-          fill: $red;
+          fill: var(--danger_icon);
         }
+      }
+      // @extend %disable;
+
+      opacity: var(--disabled_all);
+
+      cursor: not-allowed;
+      > .#{$prefix}-btn-icon {
+        fill: var(--danger_icon);
       }
     }
 
     > .#{$prefix}-btn-icon {
-      fill: $red;
+      fill: var(--danger_icon);
     }
   }
 }
 
 .#{$prefix}-ghost {
-  background: transparent;
-  color: $blue;
+  background-color: var(--interactive_bg);
+  color: var(--interactive_text);
+
   border: none;
 
-  &:hover,
-  &:focus {
-    background: $blue;
-    color: $white;
+  &:hover {
+    background-color: var(--interactive_bg_hover);
+    color: var(--interactive_text);
 
     > .#{$prefix}-btn-icon {
-      fill: $white;
+      fill: var(--interactive_icon);
+    }
+  }
+
+  &:focus {
+    background-color: var(--interactive_bg_hover);
+    color: var(--interactive_text);
+    outline: 0.0625rem solid var(--interactive_border);
+
+    > .#{$prefix}-btn-icon {
+      fill: var(--interactive_icon);
     }
   }
 
   &:disabled,
   &[disabled] {
-    color: $blue-6;
-    @extend %disable;
+    opacity: var(--disabled_all);
+
+    cursor: not-allowed;
 
     &:hover {
-      background: transparent;
-      color: $blue-6;
-
-      > .#{$prefix}-btn-icon {
-        fill: $blue;
-      }
+      background-color: var(--interactive_bg);
     }
   }
 
   > .#{$prefix}-btn-icon {
-    fill: $blue;
+    fill: var(--interactive_icon);
   }
 }
 

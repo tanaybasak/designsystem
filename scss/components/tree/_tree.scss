@@ -1,10 +1,5 @@
 @import '../../base';
 
-$caret-icon: #555;
-$node-hover-bg: rgba(70, 150, 210, 0.1);
-$node-selection-bg: #0066b0;
-$drag: #092b51;
-
 .#{$prefix}-tree {
   font-size: 0.875rem;
   @include getFontWeight(regular);
@@ -17,6 +12,10 @@ $drag: #092b51;
     position: relative;
     padding: 0.3125rem 0 0;
 
+    &:focus {
+      border: var(--interactive_border);
+    }
+
     .tree-node {
       cursor: pointer;
       line-height: unset;
@@ -24,6 +23,10 @@ $drag: #092b51;
       flex-direction: row;
       align-items: center;
       border: 0.125rem solid transparent;
+
+      &:hover {
+        background-color: var(--interactive_bg_hover);
+      }
 
       & > i {
         margin-right: 0.5rem;
@@ -47,8 +50,10 @@ $drag: #092b51;
           height: 0.5rem;
           width: 0.5rem;
           margin-top: 0.125rem;
-          border-right: 0.0625rem solid $caret-icon;
-          border-bottom: 0.0625rem solid $caret-icon;
+
+          border-right: 0.0625rem solid var(--default_icon);
+          border-bottom: 0.0625rem solid var(--default_icon);
+
           transform: scale(1) rotate(-45deg);
           transition: all 0.2s ease-in-out;
           margin-left: 0.3125rem;
@@ -74,10 +79,6 @@ $drag: #092b51;
           .#{$prefix}-overflow-container > span {
             padding: 0 0.625rem;
           }
-
-          &:hover {
-            background-color: $node-hover-bg;
-          }
         }
 
         .treenode-content-wrapper {
@@ -102,16 +103,20 @@ $drag: #092b51;
             display: inline-flex;
             max-width: 100%;
 
+            color: var(--default_text);
+
+            &:hover {
+              color: var(--default_text_high);
+            }
             &.highlight {
-              background-color: $node-selection-bg;
-              color: $white;
+              color: var(--default_text);
+              background-color: var(--active_bg);
             }
 
             &.highlight-row {
-              background: $drag;
-              color: $white;
+              color: var(--default_text);
+              background: var(--active_bg);
             }
-
             &.#{$prefix}-cut-node {
               opacity: 0.5;
             }
@@ -145,19 +150,15 @@ $drag: #092b51;
               cursor: pointer;
             }
           }
-
-          &:hover {
-            background-color: $node-hover-bg;
-          }
         }
       }
 
       &.add-border {
-        border-top: 0.125rem solid $drag;
+        border-top: 0.125rem solid var(--interactive_border);
       }
 
       &.add-border-bottom {
-        border-bottom: 0.125rem solid $drag;
+        border-bottom: 0.125rem solid var(--interactive_border);
       }
 
       .overflow-onhover {
