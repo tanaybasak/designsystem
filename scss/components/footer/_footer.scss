@@ -90,6 +90,9 @@
 
         &:focus {
           border: unset;
+          @include themify($themes) {
+            outline: 1px solid themed('interactive_border');
+          }
         }
 
         &[disabled] {
