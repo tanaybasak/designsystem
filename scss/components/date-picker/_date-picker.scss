@@ -64,9 +64,7 @@
       > input {
         outline: none;
 
-        @include themify($themes) {
-          border-bottom: 0.125rem solid themed('interactive_border');
-        }
+        border-bottom: 0.125rem solid var(--interactive_border);
       }
     }
   }

@@ -7,10 +7,8 @@
 
 .#{$prefix}-overlay-container {
   position: absolute;
-  @include themify($themes) {
-    box-shadow: 0 0.25rem 0.5rem 0 themed('default_shadow');
-    background-color: themed('default_bg');
-  }
+  box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
+  background-color: var(--default_bg);
   top: 0;
   left: 0;
   visibility: hidden;
