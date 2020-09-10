@@ -151,9 +151,9 @@
 // close icon
 @mixin hcl-close-icon(
   $size: 16,
-  $bg-color: transparent,
-  $fg-color: $black,
-  $rounded: false
+  $rounded: false,
+  $bg-color , 
+  $fg-color, 
 ) {
   width: #{$size}px;
   height: #{$size}px;
@@ -161,7 +161,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: $bg-color;
+  background-color: var(#{$bg-color});
   cursor: pointer;
 
   &::before,
@@ -169,7 +169,7 @@
     content: ' ';
     position: absolute;
     width: 2px;
-    background-color: $fg-color;
+    background-color: var(#{$fg-color});
   }
 
   @if $rounded {
@@ -197,7 +197,9 @@
   &:hover {
     &::before,
     &::after {
-      background-color: lighten($fg-color, 0);
+      background-color: var(#{$fg-color});
+      opacity:0.8;
+
     }
   }
 }
@@ -209,11 +211,8 @@
   align-items: center;
   justify-content: center;
   font-size: $font-size;
-
-  @include themify($themes) {
-    color: themed('interactive_icon');
-    background-color: themed('interactive_bg');
-  }
+  color: var(--interactive_icon);
+  background-color: var(--interactive_bg);
 
   &::after {
     content: '\2022 \2022 \2022';
@@ -245,8 +244,8 @@
 @mixin nav-active {
   background-image: linear-gradient(
     to top,
-    $white 0%,
-    $white 4%,
+    var(--white) 0%,
+    var(--white) 4%,
     transparent 4%
   );
   background-size: cover;
@@ -285,41 +284,30 @@ $inputColor-map: (
     width: 100%;
     height: $input-height;
     padding: $input-padding-y $input-padding-x;
-
-    @include themify($themes) {
-      color: themed('input_text');
-      background-color: themed('input_bg');
-      border-bottom: 1px solid themed('input_border');
-    }
+    color: var(--input_text);
+    background-color: var(--input_bg);
+    border-bottom: 1px solid var(--input_border);
 
     border: none;
     &:focus {
       outline: none;
-
-      @include themify($themes) {
-        border-bottom: 2px solid themed('interactive_border');
-      }
+      border-bottom: 2px solid var(--interactive_border);
 
       & ~ label.#{$prefix}-label {
-        @include themify($themes) {
-          color: themed('default_text');
-        }
+        color: var(--default_text);
       }
     }
 
     &[disabled] {
       cursor: not-allowed;
-
-      @include themify($themes) {
-        background-color: rgba($blue-secondary, themed('disabled_all'));
-      }
+     
+      background-color: rgba(var(--input_bg), var(--disabled_all));
 
       & ~ label,
       & ~ .#{$prefix}-error-msg,
       & ~ .#{$prefix}-helper-text {
-        @include themify($themes) {
-          opacity: themed('disabled_all');
-        }
+       
+        opacity: var(--disabled_all);
       }
     }
   } @else {
@@ -334,11 +322,7 @@ $inputColor-map: (
       @include getFontWeight('regular');
       font-size: 0.75rem;
       line-height: getLineHeight(0.75rem);
-
-      @include themify($themes) {
-        color: themed('danger_text');
-      }
-
+      color: var(--danger_text);
       margin-top: 0.25rem;
     }
   } @else {
@@ -354,28 +338,6 @@ $inputColor-map: (
   &.#{$prefix}-stack-vertical {
     > .#{$prefix}-#{$which}-item:not(:first-of-type) {
       margin-left: 0;
-    }
-  }
-}
-
-// theme
-@mixin themify($themes: $themes) {
-  @each $theme, $map in $themes {
-    .theme-#{$theme} & {
-      $theme-map: () !global;
-
-      @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge(
-          $theme-map,
-          (
-            $key: $value
-          )
-        ) !global;
-      }
-
-      @content;
-      $theme-map: null !global;
     }
   }
 }

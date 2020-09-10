@@ -10,9 +10,9 @@
 .#{$prefix}-footer {
   min-height: 2.5rem;
   width: 100%;
-  @include themify($themes) {
-    background-color: themed('default_bg_low');
-  }
+  
+    background-color: var(--default_bg_low);
+ 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -27,9 +27,9 @@
   &-caption {
     display: inline-flex;
     font-size: 0.75rem;
-    @include themify($themes) {
-      color: themed('default_text_low');
-    }
+    
+      color: var(--default_text_low);
+   
     letter-spacing: 0;
     align-self: center;
     padding: 0 1rem;
@@ -64,9 +64,9 @@
       &:not(:last-child)::after {
         content: '|';
         margin-left: 0.5rem;
-        @include themify($themes) {
-          color: themed('default_border_xlow');
-        }
+        
+          color: var(--default_border_xlow);
+       
       }
 
       .#{$prefix}-link {
@@ -75,17 +75,17 @@
         border-bottom: 0.0625rem solid transparent;
         transition: 0.25s;
         font-size: 0.75rem;
-        @include themify($themes) {
-          color: themed('default_text');
-        }
+        
+          color: var(--default_text);
+       
         letter-spacing: 0;
         line-height: 0.75rem;
 
         &:hover {
           @include getTextDecorationLine('underline');
-          @include themify($themes) {
-            color: themed('default_text_high');
-          }
+          
+            color: var(--default_text_high);
+         
         }
 
         &:focus {
@@ -94,9 +94,9 @@
 
         &[disabled] {
           cursor: not-allowed;
-          @include themify($themes) {
-            opacity: themed('disabled_all');
-          }
+          
+            opacity: var(--disabled_all);
+         
         }
       }
     }

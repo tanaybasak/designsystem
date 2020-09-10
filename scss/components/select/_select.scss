@@ -1,16 +1,16 @@
 @import '../../base';
 
 .#{$prefix}-select {
-  @include themify($themes) {
-    color: themed('interactive_text');
-    background-color: themed('interactive_bg');
+  
+    color: var(--interactive_text);
+    background-color: var(--interactive_bg);
     background-image: linear-gradient(
         45deg,
         transparent 50%,
-        themed('interactive_icon') 50%
+        var(--interactive_icon) 50%
       ),
-      linear-gradient(135deg, themed('interactive_icon') 50%, transparent 50%);
-  }
+      linear-gradient(135deg, var(--interactive_icon) 50%, transparent 50%);
+ 
   font-weight: 600;
   height: 2.5rem;
   -webkit-appearance: none;
@@ -23,25 +23,25 @@
   background-repeat: no-repeat;
 
   &-option {
-    @include themify($themes) {
-      color: themed('input_text_low');
-    }
+    
+      color: var(--input_text_low);
+   
   }
   &:focus {
-    @include themify($themes) {
-      outline: 2px solid themed('interactive_border');
-    }
+    
+      outline: 2px solid var(--interactive_border);
+   
   }
 
   &:hover {
-    @include themify($themes) {
-      background-color: themed('interactive_bg_hover');
-    }
+    
+      background-color: var(--interactive_bg_hover);
+   
   }
   &-label {
-    @include themify($themes) {
-      color: themed('default_text');
-    }
+    
+      color: var(--default_text);
+   
   }
   &-container {
     position: relative;
@@ -50,8 +50,8 @@
 
   &:disabled {
     cursor: not-allowed;
-    @include themify($themes) {
-      opacity: themed('disabled_all');
-    }
+    
+      opacity: var(--disabled_all);
+   
   }
 }

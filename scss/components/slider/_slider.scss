@@ -15,9 +15,9 @@
     .#{$prefix}-slider-top-range {
       display: inline-flex;
       margin: 0 0.5rem;
-      @include themify($themes) {
-        color: themed('default_text_high');
-      }
+      
+        color: var(--default_text_high);
+     
     }
 
     &.on-hover {
@@ -64,10 +64,10 @@
         transform: translate(-50%, 0);
         border-radius: 0.375rem;
         padding: 0 0.625rem;
-        @include themify($themes) {
-          color: themed('default_text_high');
-          background: themed('default_bg_low');
-        }
+        
+          color: var(--default_text_high);
+          background: var(--default_bg_low);
+       
       }
 
       .#{$prefix}-range-value span::before {
@@ -95,9 +95,9 @@
         left: 50%;
         margin-left: -0.3125rem;
         margin-top: -1px;
-        @include themify($themes) {
-          border-top: 0.4375rem solid themed('default_bg_low');
-        }
+        
+          border-top: 0.4375rem solid var(--default_bg_low);
+       
       }
 
       > input[type='range'].#{$prefix}-slider-input {
@@ -111,13 +111,13 @@
         &::-webkit-slider-runnable-track {
           height: 0.25rem;
 
-          @include themify($themes) {
+          
             background: linear-gradient(
               90deg,
-              themed('secondary_border') var(--progressPercent),
-              themed('default_border_low') var(--progressPercent)
+              var(--secondary_border) var(--progressPercent),
+              var(--default_border_low) var(--progressPercent)
             );
-          }
+         
         }
 
         &::-webkit-slider-thumb {
@@ -126,44 +126,44 @@
           border-radius: 50%;
           appearance: none;
           margin-top: -0.625rem;
-          @include themify($themes) {
-            background-color: themed('primary_bg');
-          }
+          
+            background-color: var(--primary_bg);
+         
         }
 
         &:focus::-webkit-slider-thumb {
-          @include themify($themes) {
-            box-shadow: 0 0 0 0.1875rem themed('interactive_border');
-            border: 0.0625rem solid themed('default_bg');
-          }
+          
+            box-shadow: 0 0 0 0.1875rem var(--interactive_border);
+            border: 0.0625rem solid var(--default_bg);
+         
         }
 
         &:focus::-moz-range-thumb {
-          @include themify($themes) {
-            box-shadow: 0 0 0 0.1875rem themed('interactive_border');
-            border: 0.0625rem solid themed('default_bg');
-          }
+          
+            box-shadow: 0 0 0 0.1875rem var(--interactive_border);
+            border: 0.0625rem solid var(--default_bg);
+         
         }
 
         &::-moz-range-track {
           height: 0.25rem;
-          @include themify($themes) {
-            background-color: themed('secondary_border');
+          
+            background-color: var(--secondary_border);
             background: linear-gradient(
               90deg,
-              themed('secondary_border') var(--progressPercent),
-              themed('default_border_low') var(--progressPercent)
+              var(--secondary_border) var(--progressPercent),
+              var(--default_border_low) var(--progressPercent)
             );
-          }
+         
 
           &:hover {
-            @include themify($themes) {
+            
               background: linear-gradient(
                 90deg,
-                themed('secondary_border') var(--progressPercent),
-                themed('default_border_low') var(--progressPercent)
+                var(--secondary_border) var(--progressPercent),
+                var(--default_border_low) var(--progressPercent)
               );
-            }
+           
           }
         }
 
@@ -171,9 +171,9 @@
           width: 1.5rem;
           height: 1.5rem;
           border-radius: 50%;
-          @include themify($themes) {
-            background-color: themed('primary_bg');
-          }
+          
+            background-color: var(--primary_bg);
+         
           margin-top: 0;
           border: 0;
         }
@@ -190,23 +190,23 @@
 
         &::-ms-track {
           height: 0.25rem;
-          @include themify($themes) {
-            background-color: themed('secondary_border');
+          
+            background-color: var(--secondary_border);
             background: linear-gradient(
               90deg,
-              themed('secondary_border') var(--progressPercent),
-              themed('default_border_low') var(--progressPercent)
+              var(--secondary_border) var(--progressPercent),
+              var(--default_border_low) var(--progressPercent)
             );
-          }
+         
 
           &:hover {
-            @include themify($themes) {
+            
               background: linear-gradient(
                 90deg,
-                themed('secondary_border') var(--progressPercent),
-                themed('default_border_low') var(--progressPercent)
+                var(--secondary_border) var(--progressPercent),
+                var(--default_border_low) var(--progressPercent)
               );
-            }
+           
           }
         }
 
@@ -214,9 +214,9 @@
           width: 1.5rem;
           height: 1.5rem;
           border-radius: 50%;
-          @include themify($themes) {
-            background-color: themed('primary_bg');
-          }
+          
+            background-color: var(--primary_bg);
+         
 
           margin-top: 0;
         }

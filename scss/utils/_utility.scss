@@ -72,7 +72,7 @@
 
 // close icon class
 .#{$prefix}-close {
-  @include hcl-close-icon(24);
+  @include hcl-close-icon(24,false, --tranparent, --black);
 }
 
 // ellipsis icon
@@ -124,7 +124,7 @@ $iconSizesMap: (
 }
 
 .bg-white {
-  background-color: $white;
+  background-color: var(--white);
 }
 
 // Display
@@ -135,9 +135,7 @@ $iconSizesMap: (
 // Disable
 %disable,
 .disable {
-  @include themify($themes) {
-    opacity: themed('disabled_all');
-  }
+  opacity: var(--disabled_all);
   cursor: not-allowed;
 }
 

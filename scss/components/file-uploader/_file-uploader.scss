@@ -12,9 +12,9 @@
   .#{$prefix}-label {
     font-size: 0.875rem;
 
-    @include themify($themes) {
-      color: themed('default_text_high');
-    }
+    
+      color: var(--default_text_high);
+   
 
     letter-spacing: 0;
     line-height: 1.125rem;
@@ -23,9 +23,9 @@
   .#{$prefix}-label-description {
     font-size: 0.875rem;
 
-    @include themify($themes) {
-      color: themed('default_text');
-    }
+    
+      color: var(--default_text);
+   
 
     line-height: 1.313rem;
   }
@@ -42,41 +42,41 @@
         @extend %disable;
 
         &.#{$prefix}-primary {
-          @include themify($themes) {
-            opacity: themed('disabled_all');
-            background-color: themed('primary_bg');
-          }
+          
+            opacity: var(--disabled_all);
+            background-color: var(--primary_bg);
+         
         }
 
         &.#{$prefix}-secondary {
           cursor: not-allowed;
-          @include themify($themes) {
-            opacity: themed('disabled_all');
-            color: themed('secondary_text');
-            border: 0.0625rem solid themed('secondary_border');
-          }
+          
+            opacity: var(--disabled_all);
+            color: var(--secondary_text);
+            border: 0.0625rem solid var(--secondary_border);
+         
         }
 
         &.#{$prefix}-ghost {
-          @include themify($themes) {
-            opacity: themed('disabled_all');
-            color: themed('interactive_text');
-          }
+          
+            opacity: var(--disabled_all);
+            color: var(--interactive_text);
+         
         }
 
         &.#{$prefix}-secondary.#{$prefix}-danger {
-          @include themify($themes) {
-            opacity: themed('disabled_all');
-            color: themed('danger_text');
-            border: 0.0625rem solid themed('danger_border');
-          }
+          
+            opacity: var(--disabled_all);
+            color: var(--danger_text);
+            border: 0.0625rem solid var(--danger_border);
+         
         }
 
         &.#{$prefix}-primary.#{$prefix}-danger {
-          @include themify($themes) {
-            opacity: themed('disabled_all');
-            background: themed('danger_bg_inverse');
-          }
+          
+            opacity: var(--disabled_all);
+            background: var(--danger_bg_inverse);
+         
         }
 
         &:hover.#{$prefix}-secondary {
@@ -85,10 +85,10 @@
 
         &:hover.#{$prefix}-ghost {
           background: transparent;
-          @include themify($themes) {
-            opacity: themed('disabled_all');
-            color: themed('interactive_text');
-          }
+          
+            opacity: var(--disabled_all);
+            color: var(--interactive_text);
+         
         }
 
         &:hover.#{$prefix}-secondary.#{$prefix}-danger {
@@ -102,10 +102,10 @@
       height: 2.5rem;
       display: flex;
 
-      @include themify($themes) {
-        border: 1px solid themed('default_border_xlow');
-        background-color: themed('default_bg');
-      }
+      
+        border: 1px solid var(--default_border_xlow);
+        background-color: var(--default_bg);
+     
 
       margin-bottom: 1rem;
 
@@ -121,16 +121,16 @@
         text-overflow: ellipsis;
         padding: 0.5rem;
 
-        @include themify($themes) {
-          color: themed('default_text_high');
-        }
+        
+          color: var(--default_text_high);
+       
       }
 
       .#{$prefix}-file-close {
-        @include themify($themes) {
-          background-color: themed('default_bg');
-          @include hcl-close-icon(10, transparent, themed('default_icon_high'));
-        }
+        
+          background-color: var(--default_bg);
+          @include hcl-close-icon(10, false,--tranparent, --black );
+       
 
         height: 2.375rem !important;
         width: 2.5rem !important;

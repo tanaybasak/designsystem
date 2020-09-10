@@ -21,51 +21,51 @@
         cursor: not-allowed;
       }
 
-      @include themify($themes) {
-        opacity: themed('disabled_all');
-      }
+      
+        opacity: var(--disabled_all);
+     
       &:focus {
         outline: none;
       }
       &:hover {
-        @include themify($themes) {
+        
           border-bottom: transparent;
-        }
+       
       }
     }
 
     &.active {
       > a {
         outline: none;
-        @include themify($themes) {
-          color: themed('default_text_high');
-        }
+        
+          color: var(--default_text_high);
+       
       }
-      @include themify($themes) {
-        border-bottom: 2px solid themed('active_border');
-      }
+      
+        border-bottom: 2px solid var(--active_border);
+     
       &:focus {
         border-bottom: none;
       }
     }
 
     &:focus {
-      @include themify($themes) {
-        outline: 2px solid themed('interactive_border');
-      }
+      
+        outline: 2px solid var(--interactive_border);
+     
     }
 
     &:hover {
       cursor: pointer;
       > a {
         outline: none;
-        @include themify($themes) {
-          color: themed('interactive_text');
-        }
+        
+          color: var(--interactive_text);
+       
       }
-      @include themify($themes) {
-        border-bottom: 2px solid themed('interactive_border');
-      }
+      
+        border-bottom: 2px solid var(--interactive_border);
+     
     }
   }
 
@@ -76,9 +76,9 @@
   &-link {
     text-decoration: none;
     display: inline-block;
-    @include themify($themes) {
-      color: themed('interactive_text');
-    }
+    
+      color: var(--interactive_text);
+   
 
     &:hover,
     &:active,
@@ -92,9 +92,9 @@
 .#{$prefix}-tabs-panel {
   padding-top: hcl-rem(10px);
   display: none;
-  @include themify($themes) {
-    color: themed('default_text');
-  }
+  
+    color: var(--default_text);
+ 
 
   &.active {
     display: block;
@@ -112,9 +112,9 @@
       outline: none;
     }
 
-    @include themify($themes) {
-      opacity: themed('disabled_all');
-    }
+    
+      opacity: var(--disabled_all);
+   
 
     &:focus {
       outline: none;
@@ -123,13 +123,13 @@
     &:hover {
       > a {
         outline: none;
-        @include themify($themes) {
-          color: themed('default_text_high');
-        }
+        
+          color: var(--default_text_high);
+       
       }
-      @include themify($themes) {
-        border-bottom: 2px solid themed('active_border');
-      }
+      
+        border-bottom: 2px solid var(--active_border);
+     
     }
   }
 }

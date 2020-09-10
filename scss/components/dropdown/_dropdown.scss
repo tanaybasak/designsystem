@@ -16,9 +16,9 @@
     &:focus {
       text-decoration: none;
       outline-offset: -1px;
-      @include themify($themes) {
-        outline: 1px solid themed('interactive_border');
-      }
+      
+        outline: 1px solid var(--interactive_border);
+     
     }
   }
 
@@ -34,22 +34,22 @@
     justify-content: left;
     margin: 0;
     padding-right: 2.5rem;
-    @include themify($themes) {
-      background-color: themed('input_bg');
-      color: themed('input_text');
-      border-bottom: 1px solid themed('input_border');
-    }
+    
+      background-color: var(--input_bg);
+      color: var(--input_text);
+      border-bottom: 1px solid var(--input_border);
+   
 
     &::after {
       content: '';
       width: 0;
       height: 0;
       border-bottom: 0;
-      @include themify($themes) {
-        border-top: 0.3rem solid themed('input_icon');
+      
+        border-top: 0.3rem solid var(--input_icon);
         border-right: 0.3rem solid transparent;
         border-left: 0.3rem solid transparent;
-      }
+     
       position: absolute;
       top: 50%;
       right: 0.875rem;
@@ -57,9 +57,9 @@
     }
     &:focus {
       outline-offset: -1px;
-      @include themify($themes) {
-        border-bottom: 2px solid themed('interactive_border');
-      }
+      
+        border-bottom: 2px solid var(--interactive_border);
+     
     }
   }
 
@@ -79,10 +79,10 @@
     text-align: left;
     list-style: none;
     background-clip: padding-box;
-    @include themify($themes) {
-      background-color: themed('default_bg');
-      box-shadow: 0 0.25rem 0.5rem 0 themed('default_shadow');
-    }
+    
+      background-color: var(--default_bg);
+      box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
+   
     width: 100%;
     display: none;
     max-height: 20rem;
@@ -102,23 +102,23 @@
     text-overflow: ellipsis;
     line-height: 1;
     cursor: pointer;
-    @include themify($themes) {
-      background: themed('default_bg');
-      color: themed('default_text');
-    }
+    
+      background: var(--default_bg);
+      color: var(--default_text);
+   
 
     &:hover {
-      @include themify($themes) {
-        background: themed('interactive_bg_hover');
-      }
+      
+        background: var(--interactive_bg_hover);
+     
     }
 
     &:focus {
       text-decoration: none;
       outline-offset: -1px;
-      @include themify($themes) {
-        outline: 1px solid themed('interactive_border');
-      }
+      
+        outline: 1px solid var(--interactive_border);
+     
     }
   }
 
@@ -132,24 +132,24 @@
     padding: 0.4698rem 1rem;
     text-decoration: none;
     text-overflow: ellipsis;
-    @include themify($themes) {
-      color: themed('default_text');
-    }
+    
+      color: var(--default_text);
+   
     &:hover {
       text-decoration: none;
-      @include themify($themes) {
-        background: themed('interactive_bg_hover');
-        color: themed('default_text');
-      }
+      
+        background: var(--interactive_bg_hover);
+        color: var(--default_text);
+     
     }
 
     &:focus {
       text-decoration: none;
       outline-offset: -1px;
-      @include themify($themes) {
-        outline: 1px solid themed('interactive_border');
-        color: themed('default_text');
-      }
+      
+        outline: 1px solid var(--interactive_border);
+        color: var(--default_text);
+     
     }
   }
 
@@ -161,9 +161,9 @@
     overflow: hidden;
     white-space: nowrap;
     padding: 0.7625rem 1rem;
-    @include themify($themes) {
-      color: themed('input_text');
-    }
+    
+      color: var(--input_text);
+   
     text-decoration: none;
     text-overflow: ellipsis;
 

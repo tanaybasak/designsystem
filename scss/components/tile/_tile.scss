@@ -2,10 +2,10 @@
 
 @mixin tile($type) {
   display: inline-block;
-  @include themify($themes) {
-    border: 1px solid themed('default_border_xlow');
-    background-color: themed('default_bg');
-  }
+  
+    border: 1px solid var(--default_border_xlow);
+    background-color: var(--default_bg);
+ 
   position: relative;
   padding: 1rem;
   cursor: default;
@@ -15,21 +15,21 @@
     outline: none;
 
     &:focus {
-      @include themify($themes) {
-        border: 2px solid themed('interactive_border');
-      }
+      
+        border: 2px solid var(--interactive_border);
+     
     }
     &:hover {
-      @include themify($themes) {
-        border: 1px solid themed('interactive_border');
-      }
+      
+        border: 1px solid var(--interactive_border);
+     
     }
 
     &:hover .#{$prefix}-tile-checkbox {
       visibility: visible;
-      @include themify($themes) {
-        opacity: themed('disabled_all');
-      }
+      
+        opacity: var(--disabled_all);
+     
     }
   }
 
@@ -77,9 +77,9 @@
 
     &:checked + .#{$prefix}-tile-checkbox {
       visibility: visible;
-      @include themify($themes) {
-        fill: themed('active_icon');
-      }
+      
+        fill: var(--active_icon);
+     
       background-color: transparent;
     }
 
@@ -96,9 +96,9 @@
     position: absolute;
     border-radius: 50%;
     background-color: transparent;
-    @include themify($themes) {
-      fill: themed('interactive_icon');
-    }
+    
+      fill: var(--interactive_icon);
+   
   }
 
   &-arrow {
@@ -109,23 +109,23 @@
     padding: 14px 16px;
 
     &:focus {
-      @include themify($themes) {
-        outline: 1px solid themed('interactive_border');
-      }
+      
+        outline: 1px solid var(--interactive_border);
+     
       outline-offset: -6px;
     }
 
     > svg {
       border-radius: 50%;
       background-color: transparent;
-      @include themify($themes) {
-        fill: themed('interactive_icon');
-      }
+      
+        fill: var(--interactive_icon);
+     
 
       &:hover {
-        @include themify($themes) {
-          fill: themed('interactive_icon');
-        }
+        
+          fill: var(--interactive_icon);
+       
       }
     }
   }

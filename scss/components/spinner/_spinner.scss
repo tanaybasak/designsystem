@@ -42,9 +42,7 @@
   @include spinner(default);
 
   circle {
-    @include themify($themes) {
-      stroke: themed('primary_border');
-    }
+      stroke: var(--secondary_icon);
   }
 }
 
@@ -52,9 +50,7 @@
   @include spinner(inline);
 
   circle {
-    @include themify($themes) {
-      stroke: themed('primary_border');
-    }
+      stroke: var(--secondary_icon);
   }
 }
 
