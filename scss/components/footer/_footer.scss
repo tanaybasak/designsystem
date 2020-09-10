@@ -88,6 +88,9 @@
 
         &:focus {
           border: unset;
+          text-decoration: none;
+          border-bottom: none !important;
+          outline: 2px solid var(--interactive_border) !important;
         }
 
         &[disabled] {

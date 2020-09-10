@@ -14,6 +14,7 @@
   --secondary_text: var(--blue-40);
   --interactive_bg: transparent;
   --interactive_bg_hover: var(--blue-100);
+  --interactive_bg_high: var(--blue-90);
   --interactive_border: var(--blue-60);
   --interactive_icon: var(--blue-60);
   --interactive_icon_hover: var(--blue-50);
@@ -91,6 +92,7 @@
   --secondary_text: var(--blue-70);
   --interactive_bg: transparent;
   --interactive_bg_hover: var(--blue-10);
+  --interactive_bg_high: var(--blue-20);
   --interactive_border: var(--blue-70);
   --interactive_icon: var(--blue-70);
   --interactive_icon_hover: var(--blue-80);
@@ -167,6 +169,7 @@
   --secondary_text: var(--blue-70);
   --interactive_bg: transparent;
   --interactive_bg_hover: var(--blue-10);
+  --interactive_bg_high: var(--indigo-20);
   --interactive_border: var(--blue-70);
   --interactive_icon: var(--blue-70);
   --interactive_icon_hover: var(--blue-80);
@@ -190,7 +193,7 @@
   --default_text_high: var(--grey-100);
   --default_text_xhigh: var(--black);
   --default_text_inverse: var(--white);
-  --active_bg: var(--indigo-10);
+  --active_bg: var(--blue-10);
   --active_bg_high: var(--indigo-20);
   --active_border: var(--blue-70);
   --active_icon: var(--blue-70);
@@ -243,6 +246,7 @@
   --secondary_text: var(--blue-40);
   --interactive_bg: transparent;
   --interactive_bg_hover: var(--blue-100);
+  --interactive_bg_high: var(--blue-90);
   --interactive_border: var(--blue-60);
   --interactive_icon: var(--blue-60);
   --interactive_icon_hover: var(--blue-50);
