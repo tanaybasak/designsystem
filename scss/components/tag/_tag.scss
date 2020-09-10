@@ -36,100 +36,66 @@
   }
 
   &-primary {
-    @include themify($themes) {
-      color: themed('primary_text');
-      background-color: themed('primary_bg');
-    }
+    color: var(--primary_text);
+    background-color: var(--primary_bg);
 
     &:hover:not([disabled]) {
-      @include themify($themes) {
-        background-color: themed('primary_bg_hover');
-      }
+      background-color: var(--primary_bg_hover);
     }
 
     > .#{$prefix}-tag-icon {
-      @include themify($themes) {
-        color: themed('primary_icon');
-      }
+      color: var(--primary_icon);
     }
 
     > .#{$prefix}-close {
-      @include themify($themes) {
-        @include hcl-close-icon(
-          18,
-          themed('primary_bg'),
-          themed('primary_icon'),
-          true
-        );
-      }
+      @include hcl-close-icon(18, true, --primary_bg, --primary_icon);
+
       margin-left: 0.5rem;
 
       &:hover {
-        @include themify($themes) {
-          background-color: themed('primary_bg_hover');
-        }
+        background-color: var(--primary_bg_hover);
       }
 
       &:focus {
-        @include themify($themes) {
-          border: 2px solid themed('primary_border');
-          outline: none;
-        }
+        border: 2px solid var(--primary_border);
+        outline: none;
       }
     }
   }
 
   &-secondary {
-    @include themify($themes) {
-      color: themed('secondary_text');
-      background-color: themed('secondary_bg');
-      border: 1px solid themed('secondary_border');
-    }
+    color: var(--secondary_text);
+    background-color: var(--secondary_bg);
+    border: 1px solid var(--secondary_border);
 
     &:hover:not([disabled]) {
-      @include themify($themes) {
-        background-color: themed('secondary_bg_hover');
-      }
+      background-color: var(--secondary_bg_hover);
     }
 
     > .#{$prefix}-close {
-      @include themify($themes) {
-        @include hcl-close-icon(
-          18,
-          themed('secondary_bg'),
-          themed('secondary_icon'),
-          true
-        );
-      }
+      @include hcl-close-icon(18, true, --secondary_bg, --secondary_icon);
 
       margin-left: 0.5rem;
 
       &:hover {
-        @include themify($themes) {
-          background-color: themed('secondary_bg_hover');
-        }
+        background-color: var(--secondary_bg_hover);
       }
 
       &:focus {
-        @include themify($themes) {
-          border: 2px solid themed('interactive_border');
-          outline: none;
-        }
+        border: 2px solid var(--interactive_border);
+        outline: none;
       }
     }
 
     > .#{$prefix}-tag-icon {
-      @include themify($themes) {
-        color: themed('secondary_icon');
-      }
+      color: var(--secondary_icon);
     }
   }
 
   &:disabled,
   &[disabled] {
-    @include themify($themes) {
-      opacity: themed('disabled_all');
-    }
+    opacity: var(--disabled_all);
+
     cursor: not-allowed;
 
     > .#{$prefix}-close {

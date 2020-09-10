@@ -95,9 +95,7 @@
     cursor: pointer;
 
     &:hover {
-      @include themify($themes) {
-        background: themed('interactive_bg_hover');
-      }
+      background: var(--interactive_bg_hover);
     }
 
     &:focus {

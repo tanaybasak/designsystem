@@ -29,14 +29,10 @@
 
         &:hover,
         &:focus {
-          @include themify($themes) {
-            fill: themed('interactive_bg_hover');
-          }
+          fill: var(--interactive_bg_hover);
         }
         svg {
-          @include themify($themes) {
-            fill: themed('interactive_icon');
-          }
+          fill: var(--interactive_icon);
         }
       }
 
