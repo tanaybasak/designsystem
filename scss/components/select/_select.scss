@@ -1,16 +1,15 @@
 @import '../../base';
 
 .#{$prefix}-select {
-  
-    color: var(--interactive_text);
-    background-color: var(--interactive_bg);
-    background-image: linear-gradient(
-        45deg,
-        transparent 50%,
-        var(--interactive_icon) 50%
-      ),
-      linear-gradient(135deg, var(--interactive_icon) 50%, transparent 50%);
- 
+  color: var(--interactive_text);
+  background-color: var(--interactive_bg);
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--interactive_icon) 50%
+    ),
+    linear-gradient(135deg, var(--interactive_icon) 50%, transparent 50%);
+
   font-weight: 600;
   height: 2.5rem;
   -webkit-appearance: none;
@@ -23,25 +22,17 @@
   background-repeat: no-repeat;
 
   &-option {
-    
-      color: var(--input_text_low);
-   
+    color: var(--input_text_low);
   }
   &:focus {
-    
-      outline: 2px solid var(--interactive_border);
-   
+    outline: 2px solid var(--interactive_border);
   }
 
   &:hover {
-    
-      background-color: var(--interactive_bg_hover);
-   
+    background-color: var(--interactive_bg_hover);
   }
   &-label {
-    
-      color: var(--default_text);
-   
+    color: var(--default_text);
   }
   &-container {
     position: relative;
@@ -50,8 +41,7 @@
 
   &:disabled {
     cursor: not-allowed;
-    
-      opacity: var(--disabled_all);
-   
+
+    opacity: var(--disabled_all);
   }
 }

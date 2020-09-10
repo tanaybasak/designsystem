@@ -4,10 +4,8 @@
   box-shadow: none;
   pointer-events: none;
 
-  
-    background-color: var(--default_bg) !important;
-    opacity: 0.1;
- 
+  background-color: var(--default_bg) !important;
+  opacity: 0.1;
 
   color: transparent !important;
 
@@ -33,10 +31,8 @@
     left: 0;
     opacity: 0.3;
 
-    
     background-color: var(--primary_bg) !important;
     opacity: 0.1;
-   
 
     animation: loading-animation 3s ease-in-out infinite;
   }

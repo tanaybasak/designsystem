@@ -149,12 +149,7 @@
 }
 
 // close icon
-@mixin hcl-close-icon(
-  $size: 16,
-  $rounded: false,
-  $bg-color , 
-  $fg-color, 
-) {
+@mixin hcl-close-icon($size: 16, $rounded: false, $bg-color, $fg-color) {
   width: #{$size}px;
   height: #{$size}px;
   position: relative;
@@ -198,8 +193,7 @@
     &::before,
     &::after {
       background-color: var(#{$fg-color});
-      opacity:0.8;
-
+      opacity: 0.8;
     }
   }
 }
@@ -300,13 +294,12 @@ $inputColor-map: (
 
     &[disabled] {
       cursor: not-allowed;
-     
+
       background-color: rgba(var(--input_bg), var(--disabled_all));
 
       & ~ label,
       & ~ .#{$prefix}-error-msg,
       & ~ .#{$prefix}-helper-text {
-       
         opacity: var(--disabled_all);
       }
     }

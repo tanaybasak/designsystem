@@ -52,9 +52,7 @@
 
     &:disabled ~ .#{$prefix}-toggle-off,
     &:disabled ~ .#{$prefix}-toggle-on {
-      
-        opacity: var(--disabled_all);
-     
+      opacity: var(--disabled_all);
     }
   }
 
@@ -85,58 +83,47 @@
       height: 0.375rem;
       width: 3rem;
 
-      
-        background-color: var(--default_border);
-     
+      background-color: var(--default_border);
     }
 
     .#{$prefix}-switch {
       height: 1.5rem;
       width: 1.5rem;
       transform: translate(0, -50%);
-      
-        background-color: var(--default_bg_high);
-        border: 0.0625rem solid var(--default_border);
-     
+
+      background-color: var(--default_bg_high);
+      border: 0.0625rem solid var(--default_border);
     }
   }
 
   input[type='checkbox'] {
     &:checked + .#{$prefix}-toggle-label {
       &::before {
-        
-          background-color: var(--primary_bg);
-          border: 0.0625rem solid var(--secondary_border);
-       
+        background-color: var(--primary_bg);
+        border: 0.0625rem solid var(--secondary_border);
       }
 
       .#{$prefix}-switch {
         top: 50%;
         transform: translate(1.5rem, -50%);
         border: none;
-        
-          background-color: var(--primary_bg);
-       
+
+        background-color: var(--primary_bg);
       }
     }
 
     &:not(:checked):disabled ~ .#{$prefix}-toggle-label {
-      
-        opacity: var(--disabled_all);
-     
+      opacity: var(--disabled_all);
 
       &::before {
-        
-          background-color: var(--default_border);
-          opacity: var(--disabled_all);
+        background-color: var(--default_border);
+        opacity: var(--disabled_all);
       }
 
       .#{$prefix}-switch {
-        
-          border: 0.0625rem solid;
-          background-color: var(--default_border);
-          opacity: var(--disabled_all);
-       
+        border: 0.0625rem solid;
+        background-color: var(--default_border);
+        opacity: var(--disabled_all);
       }
     }
 
@@ -147,26 +134,20 @@
       &::before {
         width: 1.5rem;
 
-        
-          opacity: var(--disabled_all);
-          background-color: var(--primary_bg);
-       
+        opacity: var(--disabled_all);
+        background-color: var(--primary_bg);
       }
 
       .#{$prefix}-switch {
-        
-          background-color: var(--primary_bg);
-          opacity: var(--disabled_all);
-       
+        background-color: var(--primary_bg);
+        opacity: var(--disabled_all);
       }
     }
 
     &:focus ~ .#{$prefix}-toggle-label {
       .#{$prefix}-switch {
-        
-          box-shadow: 0 0 0 0.125rem var(--interactive_border);
-          border: 0.0625rem solid var(--default_bg);
-       
+        box-shadow: 0 0 0 0.125rem var(--interactive_border);
+        border: 0.0625rem solid var(--default_bg);
       }
     }
   }
@@ -177,9 +158,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.01rem;
 
-    
-      color: var(--default_text_high);
-   
+    color: var(--default_text_high);
   }
 }
 
@@ -196,10 +175,9 @@
       height: 1rem;
       width: 2rem;
       border-radius: 6.25rem;
-      
-        background-color: var(--default_bg_high);
-        border: 0.0625rem solid var(--default_border);
-     
+
+      background-color: var(--default_bg_high);
+      border: 0.0625rem solid var(--default_border);
     }
 
     .#{$prefix}-switch {
@@ -208,9 +186,7 @@
       border: none;
       transform: translate(0.1875rem, -50%);
 
-      
-        background-color: var(--default_icon);
-     
+      background-color: var(--default_icon);
     }
   }
 
@@ -219,9 +195,7 @@
       &::before {
         border: none;
 
-        
-          background-color: var(--primary_bg);
-       
+        background-color: var(--primary_bg);
       }
 
       .#{$prefix}-switch {
@@ -229,9 +203,7 @@
         transform: translate(1.125rem, -50%);
         border: none;
 
-        
-          background-color: var(--default_bg);
-       
+        background-color: var(--default_bg);
 
         &::after {
           transform: scale(1) rotate(-45deg);
@@ -239,10 +211,8 @@
           width: 5.8px;
           height: 3.7px;
 
-          
-            border-left: 1px solid var(--primary_bg);
-            border-bottom: 1px solid var(--primary_bg);
-         
+          border-left: 1px solid var(--primary_bg);
+          border-bottom: 1px solid var(--primary_bg);
 
           position: absolute;
           left: 0.125rem;
@@ -253,41 +223,31 @@
     }
 
     &:not(:checked):disabled ~ .#{$prefix}-toggle-label {
-      
-        opacity: var(--disabled_all);
-     
+      opacity: var(--disabled_all);
 
       &::before {
-        
-          border: 0.0625rem solid var(--default_border);
-       
+        border: 0.0625rem solid var(--default_border);
       }
     }
 
     &:checked:disabled ~ .#{$prefix}-toggle-label {
       &::before {
-        
-          opacity: var(--disabled_all);
-          background-color: var(--primary_bg);
-          border: 0.0625rem solid var(--default_border);
-       
+        opacity: var(--disabled_all);
+        background-color: var(--primary_bg);
+        border: 0.0625rem solid var(--default_border);
       }
 
       .#{$prefix}-switch {
         &::after {
-          
-            opacity: var(--disabled_all);
-         
+          opacity: var(--disabled_all);
         }
       }
     }
 
     &:focus ~ .#{$prefix}-toggle-label {
       &::before {
-        
-          box-shadow: 0 0 0 0.125rem var(--interactive_border);
-          border: 0.0625rem solid var(--default_bg);
-       
+        box-shadow: 0 0 0 0.125rem var(--interactive_border);
+        border: 0.0625rem solid var(--default_bg);
       }
     }
   }
@@ -298,8 +258,6 @@
     line-height: 1rem;
     letter-spacing: 0.01rem;
 
-    
-      color: var(--default_text_high);
-   
+    color: var(--default_text_high);
   }
 }

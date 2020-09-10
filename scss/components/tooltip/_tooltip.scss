@@ -11,21 +11,15 @@ $tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position +
 $tooltip-box-shadow: rgba(var(--black), 0.1);
 
 .#{$prefix}-def-tooltip {
-  
-    color: var(--default_text);
- 
+  color: var(--default_text);
 }
 
 .#{$prefix}-icon-tooltip {
-  
-    stroke: var(--interactive_icon);
- 
+  stroke: var(--interactive_icon);
 }
 
 .#{$prefix}-interactive-tooltip {
-  
-    stroke: var(--interactive_icon);
- 
+  stroke: var(--interactive_icon);
 }
 
 .#{$prefix}-tooltip {
@@ -36,11 +30,11 @@ $tooltip-box-shadow: rgba(var(--black), 0.1);
   word-wrap: break-word;
   text-align: left;
   max-width: $tooltip-default-max-width;
-  
-    color: var(--default_text_high);
-    background-color: var(--default_bg_low);
-    box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
- 
+
+  color: var(--default_text_high);
+  background-color: var(--default_bg_low);
+  box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
+
   border-radius: 0.25rem;
   padding: 0.5rem;
 
@@ -52,9 +46,8 @@ $tooltip-box-shadow: rgba(var(--black), 0.1);
     position: absolute;
     width: $tooltip-arrow-size-default;
     height: $tooltip-arrow-size-default;
-    
-      background-color: var(--default_bg_low);
-   
+
+    background-color: var(--default_bg_low);
 
     &[data-direction='bottom'] {
       top: -($tooltip-arrow-size-default-position);
@@ -82,17 +75,14 @@ $tooltip-box-shadow: rgba(var(--black), 0.1);
   }
 
   &[data-focus-on-click='true'] {
-    
-      color: var(--default_text_high);
-      background-color: var(--default_bg_low);
-   
+    color: var(--default_text_high);
+    background-color: var(--default_bg_low);
+
     max-width: $tooltip-interactive-max-width;
     padding: 1rem;
 
     .#{$prefix}-tooltip-arrow {
-      
-        background-color: var(--default_bg_low);
-     
+      background-color: var(--default_bg_low);
 
       &[data-direction='bottom'] {
         top: -($tooltip-arrow-size-interactive-position);
@@ -139,7 +129,5 @@ $tooltip-box-shadow: rgba(var(--black), 0.1);
 }
 
 .#{$prefix}-tooltip-dottedline {
-  
-    border-bottom: 1px dotted var(--interactive_border);
- 
+  border-bottom: 1px dotted var(--interactive_border);
 }

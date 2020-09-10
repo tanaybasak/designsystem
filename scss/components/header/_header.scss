@@ -11,10 +11,10 @@
 .#{$prefix}-header {
   display: flex;
   justify-content: flex-start;
-  
-    background-color: var(--primary_bg);
-    color: var(--primary_text);
- 
+
+  background-color: var(--primary_bg);
+  color: var(--primary_text);
+
   position: fixed;
   top: 0;
   left: 0;
@@ -40,9 +40,8 @@
       outline: none;
 
       img {
-        
-          outline: 1px solid var(--primary_icon);
-       
+        outline: 1px solid var(--primary_icon);
+
         outline-offset: 0.5rem;
       }
     }
@@ -66,21 +65,15 @@
 
         .#{$prefix}-search-btn {
           .#{$prefix}-search-icon {
-            
-              fill: var(--primary_icon);
-           
+            fill: var(--primary_icon);
           }
         }
         .#{$prefix}-search-btn:focus {
-          
-            outline: 1px solid var(--primary_icon);
-         
+          outline: 1px solid var(--primary_icon);
         }
 
         .#{$prefix}-search-btn:hover {
-          
-            background-color: var(--primary_bg_hover);
-         
+          background-color: var(--primary_bg_hover);
         }
       }
 
@@ -106,23 +99,19 @@
         > input,
         > button {
           background: transparent;
-          
-            color: var(--primary_icon);
-         
+
+          color: var(--primary_icon);
 
           &:focus,
           &:active {
-            
-              outline: 1px solid var(--primary_icon);
-           
+            outline: 1px solid var(--primary_icon);
+
             outline-offset: 0.125rem;
           }
         }
 
         &:hover {
-          
-            background-color: var(--primary_bg_hover);
-         
+          background-color: var(--primary_bg_hover);
         }
       }
 

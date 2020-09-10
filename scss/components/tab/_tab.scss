@@ -21,51 +21,43 @@
         cursor: not-allowed;
       }
 
-      
-        opacity: var(--disabled_all);
-     
+      opacity: var(--disabled_all);
+
       &:focus {
         outline: none;
       }
       &:hover {
-        
-          border-bottom: transparent;
-       
+        border-bottom: transparent;
       }
     }
 
     &.active {
       > a {
         outline: none;
-        
-          color: var(--default_text_high);
-       
+
+        color: var(--default_text_high);
       }
-      
-        border-bottom: 2px solid var(--active_border);
-     
+
+      border-bottom: 2px solid var(--active_border);
+
       &:focus {
         border-bottom: none;
       }
     }
 
     &:focus {
-      
-        outline: 2px solid var(--interactive_border);
-     
+      outline: 2px solid var(--interactive_border);
     }
 
     &:hover {
       cursor: pointer;
       > a {
         outline: none;
-        
-          color: var(--interactive_text);
-       
+
+        color: var(--interactive_text);
       }
-      
-        border-bottom: 2px solid var(--interactive_border);
-     
+
+      border-bottom: 2px solid var(--interactive_border);
     }
   }
 
@@ -76,9 +68,8 @@
   &-link {
     text-decoration: none;
     display: inline-block;
-    
-      color: var(--interactive_text);
-   
+
+    color: var(--interactive_text);
 
     &:hover,
     &:active,
@@ -92,9 +83,8 @@
 .#{$prefix}-tabs-panel {
   padding-top: hcl-rem(10px);
   display: none;
-  
-    color: var(--default_text);
- 
+
+  color: var(--default_text);
 
   &.active {
     display: block;
@@ -112,9 +102,7 @@
       outline: none;
     }
 
-    
-      opacity: var(--disabled_all);
-   
+    opacity: var(--disabled_all);
 
     &:focus {
       outline: none;
@@ -123,13 +111,11 @@
     &:hover {
       > a {
         outline: none;
-        
-          color: var(--default_text_high);
-       
+
+        color: var(--default_text_high);
       }
-      
-        border-bottom: 2px solid var(--active_border);
-     
+
+      border-bottom: 2px solid var(--active_border);
     }
   }
 }

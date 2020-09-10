@@ -3,66 +3,57 @@
 .#{$prefix}-datePicker {
   width: 9.4375rem;
   &-label {
-    
-      color: var(--default_text);
-   
+    color: var(--default_text);
   }
   &-container {
     position: relative;
     display: flex;
     flex-direction: column;
-    
-      border-bottom: 0.0625rem solid var(--input_border);
-   
+
+    border-bottom: 0.0625rem solid var(--input_border);
 
     > svg {
       position: absolute;
       top: 0.75rem;
       left: 1rem;
-      
-        fill: var(--input_icon);
-     
+
+      fill: var(--input_icon);
+
       z-index: 1;
       cursor: pointer;
     }
 
     &-error {
-      
-        border-bottom: 2px solid var(--danger_text);
-     
+      border-bottom: 2px solid var(--danger_text);
     }
 
     > input {
       padding: 0 1rem 0 3rem;
       border: none;
       height: 2.5rem;
-      
-        color: var(--input_text_low);
-        background-color: var(--input_bg);
-     
+
+      color: var(--input_text_low);
+      background-color: var(--input_bg);
+
       outline: none;
       font-size: 0.875rem;
       line-height: 1.125rem;
       cursor: pointer;
 
       &:focus {
-        
-          border-bottom: 2px solid var(--interactive_border);
-          color: var(--input_text);
-       
+        border-bottom: 2px solid var(--interactive_border);
+        color: var(--input_text);
       }
       &[disabled] {
         opacity: 0.5;
         cursor: not-allowed;
-        
-          background-color: var(--disabled_all);
-       
+
+        background-color: var(--disabled_all);
 
         & ~ svg {
           cursor: not-allowed;
-          
-            fill: var(--input_icon);
-         
+
+          fill: var(--input_icon);
         }
       }
     }
@@ -70,9 +61,8 @@
 
   &-curMonth {
     font-size: 0.875rem;
-    
-      color: var(--default_text_xhigh);
-   
+
+    color: var(--default_text_xhigh);
   }
 
   &-arrows {
@@ -94,16 +84,13 @@
   }
 
   &-up {
-    
-      border-bottom: 0.25rem solid var(--interactive_icon);
-   
+    border-bottom: 0.25rem solid var(--interactive_icon);
   }
 
   &-down {
     // border-top: 0.25rem solid $blue;
-    
-      border-top: 0.25rem solid var(--interactive_icon);
-   
+
+    border-top: 0.25rem solid var(--interactive_icon);
   }
 
   &-year {
@@ -112,18 +99,16 @@
 
     > input {
       width: 2.5rem;
-      
-        color: var(--interactive_text);
-        background-color: var(--default_bg);
-     
+
+      color: var(--interactive_text);
+      background-color: var(--default_bg);
+
       text-align: center;
       font-size: 0.875rem;
       line-height: 1.125rem;
 
       &:focus {
-        
         outline: 1px solid var(--interactive_border);
-       
       }
     }
 
@@ -145,9 +130,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
-      color: var(--default_text_xhigh);
-   
+
+    color: var(--default_text_xhigh);
   }
 
   &-month {
@@ -159,9 +143,9 @@
 
     > span {
       padding: 0.5rem;
-      
-        fill: var(--interactive_icon);
-     
+
+      fill: var(--interactive_icon);
+
       cursor: pointer;
     }
   }
@@ -179,9 +163,8 @@
       border-radius: 0;
       border: none;
       margin: 0.125rem;
-      
-        color: var(--default_text_xhigh);
-     
+
+      color: var(--default_text_xhigh);
     }
   }
 
@@ -192,9 +175,8 @@
     padding: 0 1.75rem;
 
     &-today {
-      
-        color: var(--active_text);
-     
+      color: var(--active_text);
+
       &::after {
         content: '';
         position: absolute;
@@ -204,9 +186,8 @@
         height: 0.1875rem;
         width: 0.1875rem;
         border-radius: 15%;
-        
-          background: var(--active_icon);
-       
+
+        background: var(--active_icon);
       }
     }
 
@@ -225,25 +206,21 @@
 
   &-date {
     &:hover {
-      
-        background-color: var(--interactive_bg_hover);
-     
+      background-color: var(--interactive_bg_hover);
     }
 
     &-picked {
       // border: 0.125rem solid $blue-7;
-      
-        background-color: var(--active_bg_high);
-        color: var(--active_text);
-     
+
+      background-color: var(--active_bg_high);
+      color: var(--active_text);
     }
 
     &-fade {
       opacity: 0.5;
       // color: $lightGrey;
-      
-        color: var(--default_text_low);
-     
+
+      color: var(--default_text_low);
     }
   }
 
@@ -251,9 +228,8 @@
     position: absolute;
     // background-color: var(--white);
 
-    
-      background-color: var(--default_bg);
-   
+    background-color: var(--default_bg);
+
     box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 9;
@@ -277,9 +253,9 @@
 
   &-error {
     display: none;
-    
-      color: var(--danger_text);
-   
+
+    color: var(--danger_text);
+
     margin-top: 0.25rem;
     font-size: 0.75rem;
     letter-spacing: 0;

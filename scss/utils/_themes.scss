@@ -74,7 +74,8 @@
   color: var(--default_text);
 }
 
-.blue_active_orange_light, :root {
+.blue_active_orange_light,
+:root {
   --primary_bg: var(--blue-70);
   --primary_bg_hover: var(--blue-80);
   --primary_border: var(--white);

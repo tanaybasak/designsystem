@@ -12,9 +12,7 @@
   .#{$prefix}-label {
     font-size: 0.875rem;
 
-    
-      color: var(--default_text_high);
-   
+    color: var(--default_text_high);
 
     letter-spacing: 0;
     line-height: 1.125rem;
@@ -23,9 +21,7 @@
   .#{$prefix}-label-description {
     font-size: 0.875rem;
 
-    
-      color: var(--default_text);
-   
+    color: var(--default_text);
 
     line-height: 1.313rem;
   }
@@ -42,41 +38,32 @@
         @extend %disable;
 
         &.#{$prefix}-primary {
-          
-            opacity: var(--disabled_all);
-            background-color: var(--primary_bg);
-         
+          opacity: var(--disabled_all);
+          background-color: var(--primary_bg);
         }
 
         &.#{$prefix}-secondary {
           cursor: not-allowed;
-          
-            opacity: var(--disabled_all);
-            color: var(--secondary_text);
-            border: 0.0625rem solid var(--secondary_border);
-         
+
+          opacity: var(--disabled_all);
+          color: var(--secondary_text);
+          border: 0.0625rem solid var(--secondary_border);
         }
 
         &.#{$prefix}-ghost {
-          
-            opacity: var(--disabled_all);
-            color: var(--interactive_text);
-         
+          opacity: var(--disabled_all);
+          color: var(--interactive_text);
         }
 
         &.#{$prefix}-secondary.#{$prefix}-danger {
-          
-            opacity: var(--disabled_all);
-            color: var(--danger_text);
-            border: 0.0625rem solid var(--danger_border);
-         
+          opacity: var(--disabled_all);
+          color: var(--danger_text);
+          border: 0.0625rem solid var(--danger_border);
         }
 
         &.#{$prefix}-primary.#{$prefix}-danger {
-          
-            opacity: var(--disabled_all);
-            background: var(--danger_bg_inverse);
-         
+          opacity: var(--disabled_all);
+          background: var(--danger_bg_inverse);
         }
 
         &:hover.#{$prefix}-secondary {
@@ -85,10 +72,9 @@
 
         &:hover.#{$prefix}-ghost {
           background: transparent;
-          
-            opacity: var(--disabled_all);
-            color: var(--interactive_text);
-         
+
+          opacity: var(--disabled_all);
+          color: var(--interactive_text);
         }
 
         &:hover.#{$prefix}-secondary.#{$prefix}-danger {
@@ -102,10 +88,8 @@
       height: 2.5rem;
       display: flex;
 
-      
-        border: 1px solid var(--default_border_xlow);
-        background-color: var(--default_bg);
-     
+      border: 1px solid var(--default_border_xlow);
+      background-color: var(--default_bg);
 
       margin-bottom: 1rem;
 
@@ -121,16 +105,12 @@
         text-overflow: ellipsis;
         padding: 0.5rem;
 
-        
-          color: var(--default_text_high);
-       
+        color: var(--default_text_high);
       }
 
       .#{$prefix}-file-close {
-        
-          background-color: var(--default_bg);
-          @include hcl-close-icon(10, false,--tranparent, --black );
-       
+        background-color: var(--default_bg);
+        @include hcl-close-icon(10, false, --tranparent, --black);
 
         height: 2.375rem !important;
         width: 2.5rem !important;

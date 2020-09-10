@@ -2,7 +2,7 @@
 
 $colorMap: (
   //TODO this should be removed
-  'info': info,
+    'info': info,
   'danger': danger,
   'success': success,
   'warning': warning
@@ -16,18 +16,14 @@ $colorMap: (
 
   @each $key, $value in $colorMap {
     &.#{$prefix}-#{$key} {
-      
-        border: 1px solid var( #{'--' + $value + '_border'});
-        border-left: 0.3125rem solid var(#{'--' + $value + '_border'});
-        background-color: var(#{'--' + $value + '_bg'});
-     
+      border: 1px solid var(#{'--' + $value + '_border'});
+      border-left: 0.3125rem solid var(#{'--' + $value + '_border'});
+      background-color: var(#{'--' + $value + '_bg'});
 
       > .#{$prefix}-notification-body {
         > .#{$prefix}-notification-icon-container {
           > .#{$prefix}-notification-icon {
-            
-              fill: var('--' + $value + '_icon');
-           
+            fill: var('--' + $value + '_icon');
           }
         }
       }
@@ -43,9 +39,7 @@ $colorMap: (
       align-items: center;
       @each $key, $value in $colorMap {
         > .#{$prefix}-notification-icon {
-          
-            fill: var(#{'--' + $value + '_icon'});
-         
+          fill: var(#{'--' + $value + '_icon'});
         }
       }
     }
@@ -65,9 +59,9 @@ $colorMap: (
         font-size: 0.875rem;
         line-height: getLineHeight(0.875rem);
         letter-spacing: 0;
-        
-          color: var(--default_text_high);
-       
+
+        color: var(--default_text_high);
+
         margin-right: 0.5rem;
         font-weight: 600;
       }
@@ -77,9 +71,8 @@ $colorMap: (
         line-height: getLineHeight(0.875rem);
         @include getFontWeight('regular');
         word-break: break-word;
-        
-          color: var(--default_text);
-       
+
+        color: var(--default_text);
       }
     }
   }
@@ -89,13 +82,7 @@ $colorMap: (
     max-width: 2.5rem;
     min-height: 2.5rem;
     max-height: 2.5rem;
-    
-      @include hcl-close-icon(
-        12.15,
-        false,
-        --transparent,
-        --default_icon_high,
-      );
-   
+
+    @include hcl-close-icon(12.15, false, --transparent, --default_icon_high);
   }
 }

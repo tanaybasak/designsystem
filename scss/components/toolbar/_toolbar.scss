@@ -29,14 +29,10 @@
 
         &:hover,
         &:focus {
-          
-            fill: var(--interactive_bg_hover);
-         
+          fill: var(--interactive_bg_hover);
         }
         svg {
-          
-            fill: var(--interactive_icon);
-         
+          fill: var(--interactive_icon);
         }
       }
 

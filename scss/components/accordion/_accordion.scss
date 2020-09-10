@@ -17,8 +17,8 @@
     position: relative;
     border-top: 0.0625rem solid var(--default_border_xlow);
     &:last-child {
-      border-bottom:  .0625rem solid var(--default_border_xlow);
-     }
+      border-bottom: 0.0625rem solid var(--default_border_xlow);
+    }
 
     .#{$prefix}-accordion-title {
       display: inline-block;
@@ -29,9 +29,9 @@
       cursor: pointer;
       width: 100%;
 
-        &:last-child {
-              border-bottom:  .0625rem solid var(--default_border_xlow);
-            }
+      &:last-child {
+        border-bottom: 0.0625rem solid var(--default_border_xlow);
+      }
       &::before {
         content: ' ';
         position: absolute;
