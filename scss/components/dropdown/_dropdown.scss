@@ -15,20 +15,16 @@
     justify-content: left;
     margin: 0;
     padding-right: 2.5rem;
-    @include themify($themes) {
-      background-color: themed('input_bg');
-      color: themed('input_text');
-      border-bottom: 0.0625rem solid themed('input_border');
-    }
+    background-color: var(--input_bg);
+    color: var(--input_text);
+    border-bottom: 0.0625rem solid var(--input_border);
 
     &::after {
       content: '';
       width: 0;
       height: 0;
       border-bottom: 0;
-      @include themify($themes) {
-        border-top: 0.3rem solid themed('input_icon');
-      }
+      border-top: 0.3rem solid var(--input_icon);
       border-right: 0.3rem solid transparent;
       border-left: 0.3rem solid transparent;
       position: absolute;
@@ -39,9 +35,7 @@
 
     &:focus {
       outline-offset: -0.0625rem;
-      @include themify($themes) {
-        border-bottom: 0.125rem solid themed('interactive_border');
-      }
+      border-bottom: 0.125rem solid var(--interactive_border);
     }
 
     .#{$prefix}-tag-primary {
@@ -61,10 +55,9 @@
       transform: rotate(180deg);
       transition: all 0.3s ease-in-out;
     }
+
     .#{$prefix}-dropdown-toggle {
-      @include themify($themes) {
-        border-bottom: 0.125rem solid themed('interactive_border');
-      }
+      border-bottom: 0.125rem solid var(--interactive_border);
     }
   }
 }
@@ -77,10 +70,8 @@
   width: 100%;
   max-height: 20rem;
   overflow: auto;
-  @include themify($themes) {
-    background-color: themed('default_bg');
-    color: themed('default_text');
-  }
+  background-color: var(--default_bg);
+  color: var(--default_text);
 
   .#{$prefix}-dropdown-item {
     height: 2.5rem;
@@ -95,17 +86,14 @@
     cursor: pointer;
 
     &:hover {
-      @include themify($themes) {
-        background: themed('interactive_bg_hover');
-      }
+      background: var(--interactive_bg_hover);
     }
 
     &:focus {
       text-decoration: none;
       outline-offset: -0.0625rem;
-      @include themify($themes) {
-        outline: 0.0625rem solid themed('interactive_border');
-      }
+
+      outline: 0.0625rem solid var(--interactive_border);
     }
 
     .#{$prefix}-checkbox-label {
@@ -116,14 +104,10 @@
   }
 
   &.#{$prefix}-dropdown-top {
-    @include themify($themes) {
-      border-top: 0.0625rem solid themed('input_border');
-    }
+    border-top: 0.0625rem solid var(--input_border);
   }
 
   &:not(.#{$prefix}-dropdown-top) {
-    @include themify($themes) {
-      border-bottom: 0.0625rem solid themed('input_border');
-    }
+    border-bottom: 0.0625rem solid var(--input_border);
   }
 }

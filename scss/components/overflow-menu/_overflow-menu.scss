@@ -8,10 +8,8 @@
   width: 11.25rem;
   max-height: 12rem;
   overflow: auto;
-  @include themify($themes) {
-    background-color: themed('default_bg');
-    border: 0.0625rem solid themed('default_border_xlow');
-  }
+  background-color: var(--default_bg);
+  border: 0.0625rem solid var(--default_border_xlow);
 
   .#{$prefix}-overflow-option {
     width: inherit;
@@ -32,45 +30,33 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       line-height: 30px;
-      @include themify($themes) {
-        color: themed('default_text');
-      }
+      color: var(--default_text);
 
       &:hover {
-        @include themify($themes) {
-          background-color: themed('interactive_bg_hover');
-          color: themed('default_text_high');
-        }
+        background-color: var(--interactive_bg_hover);
+        color: var(--default_text_high);
       }
 
       &:focus {
         outline-offset: -0.0625rem;
-        @include themify($themes) {
-          outline: 0.0625rem solid themed('interactive_border');
-        }
+        outline: 0.0625rem solid var(--interactive_border);
       }
 
       &.#{$prefix}-overflow-option-separator {
-        @include themify($themes) {
-          border-top: 0.0625rem solid themed('default_border_xlow');
-        }
+        border-top: 0.0625rem solid var(--default_border_xlow);
       }
 
       &.#{$prefix}-overflow-option-danger {
         &:hover {
-          @include themify($themes) {
-            background-color: themed('danger_bg_inverse');
-            color: themed('default_text_inverse');
-          }
+          background-color: var(--danger_bg_inverse);
+          color: var(--default_text_inverse);
         }
 
         &:focus {
           outline-offset: -0.0625rem;
-          @include themify($themes) {
-            outline: 0.0625rem solid themed('interactive_border');
-            background-color: themed('danger_bg_inverse');
-            color: themed('default_text_inverse');
-          }
+          outline: 0.0625rem solid var(--interactive_border);
+          background-color: var(--danger_bg_inverse);
+          color: var(--default_text_inverse);
         }
       }
 
@@ -79,9 +65,8 @@
       &.#{$prefix}-overflow-option-disabled {
         outline-offset: 0;
         cursor: not-allowed;
-        @include themify($themes) {
-          opacity: themed('disabled_all');
-        }
+
+        opacity: var(--disabled_all);
 
         &:hover {
           background-color: transparent;
@@ -101,16 +86,22 @@
   background: transparent;
 
   &:hover {
-    @include themify($themes) {
-      color: themed('interactive_icon_hover');
-      background-color: themed('interactive_bg_hover');
-      text-decoration: none;
-    }
+    color: var(--interactive_icon_hover);
+    background-color: var(--interactive_bg_hover);
+    text-decoration: none;
+    cursor: pointer;
   }
+
   &:focus {
     outline-offset: -1px;
-    @include themify($themes) {
-      outline: 0.125rem solid themed('interactive_border');
-    }
+
+    outline: 0.125rem solid var(--interactive_border);
+  }
+}
+
+.#{$prefix}-overlay-wrapper-active {
+  .#{$prefix}-overflow-btn {
+    background-color: var(--active_bg_high) !important;
+    color: var(--active_icon) !important;
   }
 }

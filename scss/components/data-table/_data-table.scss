@@ -11,9 +11,8 @@
 .#{$prefix}-data-table-wrapper {
   width: 100%;
   border-bottom: transparent;
-  @include themify($themes) {
-    color: themed('deafult_text');
-  }
+
+  color: var(--deafult_text);
 
   .#{$prefix}-data-table {
     width: 100%;
@@ -41,10 +40,8 @@
         height: 3.125rem;
 
         &:focus {
-          @include themify($themes) {
-            outline-offset: -0.0625rem;
-            outline: 0.0625rem solid themed('interactive_border');
-          }
+          outline-offset: -0.0625rem;
+          outline: 0.0625rem solid var(--interactive_border);
         }
       }
 
@@ -58,9 +55,18 @@
 
       th {
         line-height: 1.5rem;
-        @include themify($themes) {
-          color: themed('default_text_high');
-          background-color: themed('default_bg_low');
+
+        color: var(--default_text_high);
+        background-color: var(--default_bg_low);
+
+        .#{$prefix}-sorting {
+          vertical-align: middle;
+          margin-left: 0.625rem;
+          transition: transform 0.3s ease-in-out;
+
+          &.desc {
+            transform: rotate(180deg);
+          }
         }
 
         &.#{$prefix}-overlay-wrapper-active {
@@ -74,10 +80,9 @@
 
       td {
         border-top: 0.0625rem solid transparent;
-        @include themify($themes) {
-          border-bottom: 0.0625rem solid themed('default_border_xlow');
-          background-color: themed('default_bg');
-        }
+
+        border-bottom: 0.0625rem solid var(--default_border_xlow);
+        background-color: var(--default_bg);
 
         .overflow-onhover {
           visibility: hidden;
@@ -94,21 +99,18 @@
 
       tr:hover {
         td {
-          @include themify($themes) {
-            color: themed('default_text_high');
-            background-color: themed('interactive_bg_hover');
-          }
+          color: var(--default_text_high);
+          background-color: var(--interactive_bg_hover);
         }
+
         .overflow-onhover {
           visibility: visible;
         }
       }
 
       tr:focus {
-        @include themify($themes) {
-          outline-offset: -1px;
-          outline: 1px solid themed('interactive_border');
-        }
+        outline-offset: -1px;
+        outline: 1px solid var(--interactive_border);
       }
     }
 
@@ -117,27 +119,21 @@
         tr {
           &:nth-child(even) {
             td {
-              @include themify($themes) {
-                color: themed('default_text_high');
-                background-color: themed('default_bg_low');
-              }
+              color: var(--default_text_high);
+              background-color: var(--default_bg_low);
             }
           }
 
           &:nth-child(odd) {
             td {
-              @include themify($themes) {
-                background-color: themed('deafult_bg');
-              }
+              background-color: var(--deafult_bg);
             }
           }
 
           &:hover {
             td {
-              @include themify($themes) {
-                color: themed('default_text_high');
-                background-color: themed('interactive_bg_hover');
-              }
+              color: var(--default_text_high);
+              background-color: var(--interactive_bg_hover);
             }
           }
         }
@@ -185,10 +181,6 @@
 
   &.data-table-sticky-header {
     overflow-x: auto;
-
-    &.overflow-unset {
-      overflow-x: unset;
-    }
 
     .#{$prefix}-data-table {
       border-collapse: separate;

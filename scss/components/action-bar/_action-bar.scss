@@ -14,41 +14,29 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 0.5rem 1.5rem;
-  @include themify($themes) {
-    background-color: themed('primary_bg');
-  }
+  background-color: var(--primary_bg);
 
   &-list {
     > .#{$prefix}-btn {
-      @include themify($themes) {
-        color: themed('primary_text');
-      }
+      color: var(--primary_text);
       margin: 0;
 
       > .#{$prefix}-btn-icon {
-        @include themify($themes) {
-          fill: themed('primary_icon');
-        }
+        fill: var(--primary_icon);
       }
 
       &:focus {
-        @include themify($themes) {
-          border: 0.0625rem solid themed('primary_border');
-          background-color: themed('primary_bg');
-        }
+        border: 0.0625rem solid var(--primary_border);
+        background-color: var(--primary_bg);
 
         outline: none;
 
         > .#{$prefix}-btn-icon {
-          @include themify($themes) {
-            fill: themed('primary_icon');
-          }
+          fill: var(--primary_icon);
         }
       }
       &:hover {
-        @include themify($themes) {
-          background-color: themed('primary_bg_hover');
-        }
+        background-color: var(--primary_bg_hover);
       }
     }
   }
@@ -58,29 +46,20 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    @include themify($themes) {
-      color: themed('primary_text');
-    }
-
+    color: var(--primary_text);
     button {
       padding: 10;
       margin: 0;
       border-bottom: 0.0625rem solid transparent;
-      @include themify($themes) {
-        color: themed('primary_text');
-        background-color: themed('primary_bg');
-      }
+      color: var(--primary_text);
+      background-color: var('primary_bg');
       &:hover {
-        @include themify($themes) {
-          color: themed('primary_text');
-          background-color: themed('primary_bg_hover') !important;
-        }
+        color: var(--primary_text);
+        background-color: var(--primary_bg_hover) !important;
       }
 
       &:focus {
-        @include themify($themes) {
-          border: 0.0625rem solid themed('primary_border');
-        }
+        border: 0.0625rem solid var(--primary_border);
 
         outline: none;
       }
@@ -89,9 +68,7 @@
 
   &-text {
     margin-right: 1.5rem;
-    @include themify($themes) {
-      color: themed('primary_text');
-    }
+    color: var(--primary_text);
   }
 
   &-hide {

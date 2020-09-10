@@ -1,6 +1,6 @@
 import { PREFIX } from './utils/config';
 import { addListener, removeListeners } from './eventManager';
-import { getPositions, visibleY } from './utils/overlayUtil';
+import { getPositions } from './utils/overlayUtil';
 import debounceFunction from './utils/debounce';
 import { NOOP } from './utils/functions';
 let overlayRef = 0;
@@ -88,13 +88,9 @@ class Overlay {
   }
 
   updateOverlayContainerPositionOnScroll() {
-    if (visibleY(this.element)) {
-      this.updateOverlayContainerPosition();
-      this.targetElement.classList.add(`${PREFIX}-overlay-container-scroll`);
-      this.targetElement.classList.remove(`${PREFIX}-overlay-container-hidden`);
-    } else {
-      this.targetElement.classList.add(`${PREFIX}-overlay-container-hidden`);
-    }
+    this.updateOverlayContainerPosition();
+    this.targetElement.classList.add(`${PREFIX}-overlay-container-scroll`);
+    this.targetElement.classList.remove(`${PREFIX}-overlay-container-hidden`);
   }
 
   hide = type => {

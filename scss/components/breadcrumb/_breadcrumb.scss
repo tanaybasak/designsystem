@@ -17,9 +17,9 @@ $breadcrumb-margin: 1rem;
 
   &-item {
     margin-right: $breadcrumb-margin;
-    @include themify($themes) {
-      color: themed('default_text_high');
-    }
+
+    color: var(--default_text_high);
+
     font-size: 0.875rem;
 
     &:not(:last-child)::after {
@@ -28,17 +28,15 @@ $breadcrumb-margin: 1rem;
     }
 
     .#{$prefix}-link {
-      @include themify($themes) {
-        color: themed('interactive_text');
-      }
+      color: var(--interactive_text);
+
       white-space: nowrap;
       @include getTextDecorationLine('none');
       border-bottom: 0.0625rem solid transparent;
 
       &:hover {
-        @include themify($themes) {
-          color: themed('interactive_text_hover');
-        }
+        color: var(--interactive_text_hover);
+
         @include getTextDecorationLine('underline');
       }
     }
@@ -46,9 +44,8 @@ $breadcrumb-margin: 1rem;
 
   &-item-active {
     .#{$prefix}-link {
-      @include themify($themes) {
-        color: themed('default_text_high');
-      }
+      color: var(--default_text_high);
+
       @include getFontWeight('semibold');
       @include getTextDecorationLine('underline');
     }

@@ -1,6 +1,6 @@
 {
   "name": "@patron/patron-css-dev",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
   "scripts": {
@@ -40,7 +40,7 @@
     "rimraf": "^3.0.0",
     "sass": "^1.23.3",
     "semver": "^7.3.2",
-    "simple-git": "^2.19.0",
+    "simple-git": "^2.20.1",
     "stylelint": "^13.7.0"
   },
   "browserslist": [
@@ -53,7 +53,7 @@
       "selector-type-case": "lower",
       "string-quotes": "single",
       "selector-pseudo-element-colon-notation": "double",
-      "unit-blacklist": [
+      "unit-disallowed-list": [
         "em"
       ],
       "block-no-empty": true,

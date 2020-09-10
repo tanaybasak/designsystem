@@ -157,31 +157,23 @@ h6,
 
 // Anchor link
 a {
-  @include themify($themes) {
-    color: themed('interactive_text');
-  }
+  color: var(--interactive_text);
   font-size: 0.875rem;
   line-height: getLineHeight(0.875rem);
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
-    @include themify($themes) {
-      color: themed('interactive_text_hover');
-    }
+    color: var(--interactive_text_hover);
   }
 
   &:focus {
-    @include themify($themes) {
-      border: 1px solid themed('interactive_border');
-    }
+    border: 1px solid var(--interactive_border);
     outline-offset: 3px;
   }
 
   &.disable {
-    @include themify($themes) {
-      opacity: themed('disabled_all');
-    }
+    opacity: var(--disabled_all);
     pointer-events: none;
   }
 }
