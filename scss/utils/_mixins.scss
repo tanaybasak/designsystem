@@ -295,7 +295,8 @@ $inputColor-map: (
     &[disabled] {
       cursor: not-allowed;
 
-      background-color: rgba(var(--input_bg), var(--disabled_all));
+      background-color: var(--input_bg);
+      opacity: var(--disabled_all);
 
       & ~ label,
       & ~ .#{$prefix}-error-msg,

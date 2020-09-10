@@ -211,7 +211,7 @@ $displayProperties: none inline inline-block block table inline-table table-cell
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3); //TODO needs to be changed
+  background-color: var(--overlay);
   opacity: 1;
   z-index: 959;
 
