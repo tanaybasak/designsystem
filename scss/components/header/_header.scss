@@ -64,15 +64,18 @@
         width: 100%;
 
         .#{$prefix}-search-btn {
-          .#{$prefix}-search-icon {
+          &.disabled{
+            opacity: var(--disabled_all);
+          }
+          .#{$prefix}-search-icon :enabled{
             fill: var(--primary_icon);
           }
         }
-        .#{$prefix}-search-btn:focus {
+        .#{$prefix}-search-btn:focus :enabled{
           outline: 1px solid var(--primary_icon);
         }
 
-        .#{$prefix}-search-btn:hover {
+        .#{$prefix}-search-btn:hover :enabled{
           background-color: var(--primary_bg_hover);
         }
       }
