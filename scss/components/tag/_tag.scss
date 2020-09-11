@@ -57,6 +57,7 @@
       }
 
       &:focus {
+        border-radius: 1rem;
         border: 2px solid var(--primary_border);
         outline: none;
       }
@@ -82,6 +83,7 @@
       }
 
       &:focus {
+        border-radius: 1rem;
         border: 2px solid var(--interactive_border);
         outline: none;
       }

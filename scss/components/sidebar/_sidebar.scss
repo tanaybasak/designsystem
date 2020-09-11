@@ -10,8 +10,7 @@
 $animation-duration: 220ms;
 
 .#{$prefix}-sidebar {
-  background-color: var(--default_bg);
-
+ 
   display: flex;
   flex-direction: column;
   height: calc(100vh - 3.125rem);
@@ -34,6 +33,7 @@ $animation-duration: 220ms;
       width: 1.5rem;
       height: 0.125rem;
       margin-top: 0.3125rem;
+      background-color: var(--default_text);
 
       &:first-of-type {
         margin-top: 0;
@@ -197,6 +197,7 @@ $animation-duration: 220ms;
   &.expanded {
     width: 12.5rem;
     transition: width $animation-duration ease-in-out;
+    background-color: var(--default_bg);
 
     .#{$prefix}-sidebar-title {
       .#{$prefix}-sidebar-title-icon {
@@ -273,7 +274,7 @@ $animation-duration: 220ms;
     width: 4.5rem;
     height: 4rem;
     top: 0;
-    background: transparent;
+    // background: transparent;
     transition: width $animation-duration ease-in-out,
       height $animation-duration ease-in-out $animation-duration,
       background $animation-duration ease-in-out $animation-duration;
@@ -382,6 +383,7 @@ $animation-duration: 220ms;
 
   &.sidebar-expanded {
     margin-left: 12.5rem;
+
 
     @include media-breakpoint-down(md) {
       margin-left: 0;
