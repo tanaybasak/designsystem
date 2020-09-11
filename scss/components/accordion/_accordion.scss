@@ -48,7 +48,7 @@
       &:focus,
       &:active {
         outline: 1px solid var(--interactive_border);
-        outline-offset: 0rem;
+        outline-offset: 0;
       }
     }
 
@@ -74,6 +74,6 @@
     }
   }
   &:disabled {
-      opacity: var(--disabled_all);
+    opacity: var(--disabled_all);
   }
 }
