@@ -158,7 +158,7 @@ label.#{$prefix}-label {
 
     &:checked + .#{$prefix}-checkbox-label::before {
       border-color: var(--interactive_border);
-      background-color: var(--interactive_icon);
+      background-color: var(--active_icon);
     }
 
     &:checked + .#{$prefix}-checkbox-label::after {
@@ -167,9 +167,9 @@ label.#{$prefix}-label {
     }
 
     &:focus + .#{$prefix}-checkbox-label::before {
-      outline: 1px solid transparent;
-
-      border-color: var(--interactive_border);
+      border: none;
+      outline-offset: 2px;
+      outline: 2px solid var(--interactive_border);
     }
   }
 
