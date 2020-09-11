@@ -164,7 +164,7 @@
       border: none;
       margin: 0.125rem;
 
-      color: var(--default_text_xhigh);
+      color: var(--default_text_high);
     }
   }
 
@@ -201,6 +201,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      color: var(--default_text_xhigh);
     }
   }
 
