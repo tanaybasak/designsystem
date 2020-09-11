@@ -52,6 +52,7 @@ $animation-duration: 220ms;
     height: 3.125rem;
     position: relative;
     width: 100%;
+    border-bottom: var(--default_border_xlow);
 
     .#{$prefix}-sidebar-title-icon {
       height: 1.875rem;
@@ -88,7 +89,11 @@ $animation-duration: 220ms;
 
       display: flex;
 
-      &:hover,
+      &:hover{
+        color: var(--default_icon_high);
+        outline: none;
+      }
+
       &:focus {
         outline: none;
       }
@@ -170,22 +175,22 @@ $animation-duration: 220ms;
       text-decoration: none;
       outline-offset: -1px;
 
-      color: var(--default_text);
-      outline: 1px solid var(--default_border_xhigh);
+      color: var(--default_text)!important;
+      outline: 1px solid var(--default_border_xhigh)!important;
     }
     &:active {
       cursor: pointer;
       text-decoration: none;
 
-      color: var(--default_text_high);
-      background-color: var(--default_bg_low);
+      color: var(--default_text_high)!important;
+      background-color: var(--default_bg_low)!important;
     }
     &:hover {
       text-decoration: none;
       outline: none;
 
-      color: var(--default_icon_high);
-      background-color: var(--interactive_bg_hover);
+      color: var(--default_icon_high)!important;
+      background-color: var(--interactive_bg_hover)!important;
     }
   }
 
