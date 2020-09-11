@@ -61,7 +61,7 @@
         @include themify($themes) {
           outline: 1px solid themed('interactive_border');
         }
-        outline-offset: 0.125rem;
+        outline-offset: 0;
       }
     }
 
