@@ -10,8 +10,6 @@
 $animation-duration: 220ms;
 
 .#{$prefix}-sidebar {
-  background-color: var(--default_bg);
-
   display: flex;
   flex-direction: column;
   height: calc(100vh - 3.125rem);
@@ -34,6 +32,7 @@ $animation-duration: 220ms;
       width: 1.5rem;
       height: 0.125rem;
       margin-top: 0.3125rem;
+      background-color: var(--default_text);
 
       &:first-of-type {
         margin-top: 0;
@@ -89,7 +88,7 @@ $animation-duration: 220ms;
 
       display: flex;
 
-      &:hover{
+      &:hover {
         color: var(--default_icon_high);
         outline: none;
       }
@@ -175,28 +174,29 @@ $animation-duration: 220ms;
       text-decoration: none;
       outline-offset: -1px;
 
-      color: var(--default_text)!important;
-      outline: 1px solid var(--default_border_xhigh)!important;
+      color: var(--default_text) !important;
+      outline: 1px solid var(--default_border_xhigh) !important;
     }
     &:active {
       cursor: pointer;
       text-decoration: none;
 
-      color: var(--default_text_high)!important;
-      background-color: var(--default_bg_low)!important;
+      color: var(--default_text_high) !important;
+      background-color: var(--default_bg_low) !important;
     }
     &:hover {
       text-decoration: none;
       outline: none;
 
-      color: var(--default_icon_high)!important;
-      background-color: var(--interactive_bg_hover)!important;
+      color: var(--default_icon_high) !important;
+      background-color: var(--interactive_bg_hover) !important;
     }
   }
 
   &.expanded {
     width: 12.5rem;
     transition: width $animation-duration ease-in-out;
+    background-color: var(--default_bg);
 
     .#{$prefix}-sidebar-title {
       .#{$prefix}-sidebar-title-icon {
@@ -273,7 +273,7 @@ $animation-duration: 220ms;
     width: 4.5rem;
     height: 4rem;
     top: 0;
-    background: transparent;
+    // background: transparent;
     transition: width $animation-duration ease-in-out,
       height $animation-duration ease-in-out $animation-duration,
       background $animation-duration ease-in-out $animation-duration;
