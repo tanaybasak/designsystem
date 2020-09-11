@@ -34,12 +34,12 @@
 
 input.#{$prefix}-form-control[data-invalid='true'],
 textarea.#{$prefix}-textarea[data-invalid='true'] {
-  border-bottom: 1px solid var(--danger_border);
+  border-bottom: 2px solid var(--danger_border);
 }
 
 input.#{$prefix}-form-control[data-invalid='true']:focus,
 textarea.#{$prefix}-textarea[data-invalid='true']:focus {
-  border-bottom: 1px solid var(--danger_border);
+  border-bottom: 2px solid var(--danger_border);
 }
 
 input.#{$prefix}-form-control[data-invalid='true'] ~ .#{$prefix}-error-msg,
@@ -158,7 +158,7 @@ label.#{$prefix}-label {
 
     &:checked + .#{$prefix}-checkbox-label::before {
       border-color: var(--interactive_border);
-      background-color: var(--interactive_icon);
+      background-color: var(--active_icon);
     }
 
     &:checked + .#{$prefix}-checkbox-label::after {
@@ -167,9 +167,9 @@ label.#{$prefix}-label {
     }
 
     &:focus + .#{$prefix}-checkbox-label::before {
-      outline: 1px solid transparent;
-
-      border-color: var(--interactive_border);
+      border: none;
+      outline-offset: 2px;
+      outline: 2px solid var(--interactive_border);
     }
   }
 
