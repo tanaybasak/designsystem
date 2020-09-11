@@ -16,10 +16,10 @@ $pagination-line-height: 1.125rem;
   @include getFontWeight('regular');
   line-height: $pagination-line-height;
   width: 100%;
-  @include themify($themes) {
-    background-color: themed('default_bg');
-    border: 1px solid themed('default_border_xlow');
-  }
+
+  background-color: var(--default_bg);
+  border: 1px solid var(--default_border_xlow);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,9 +55,9 @@ $pagination-line-height: 1.125rem;
 
       &::after {
         content: '';
-        @include themify($themes) {
-          border-right: 1px solid themed('default_border_xlow');
-        }
+
+        border-right: 1px solid var(--default_border_xlow);
+
         height: 100%;
       }
     }
@@ -82,39 +82,33 @@ $pagination-line-height: 1.125rem;
       margin: 0;
       border-width: 0 1px 0 1px;
       border-style: solid;
-      @include themify($themes) {
-        background-color: themed('default_bg');
-        border-right: 1px solid themed('default_border_xlow');
-        border-left: 1px solid themed('default_border_xlow');
-      }
+
+      background-color: var(--default_bg);
+      border-right: 1px solid var(--default_border_xlow);
+      border-left: 1px solid var(--default_border_xlow);
+
       padding: 0 1rem;
       cursor: pointer;
 
       &:focus {
         outline-offset: -1px;
-        @include themify($themes) {
-          outline: 1px solid themed('interactive_border');
-        }
+
+        outline: 1px solid var(--interactive_border);
       }
 
       &:hover {
-        @include themify($themes) {
-          background-color: themed('interactive_bg_hover');
-        }
+        background-color: var(--interactive_bg_hover);
       }
 
       &:disabled {
-        @include themify($themes) {
-          opacity: themed('disabled_all');
-        }
+        opacity: var(--disabled_all);
+
         cursor: not-allowed;
       }
 
       svg,
       .#{$prefix}-pagination__button-icon {
-        @include themify($themes) {
-          fill: themed('interactive_icon');
-        }
+        fill: var(--interactive_icon);
       }
     }
 
@@ -122,24 +116,19 @@ $pagination-line-height: 1.125rem;
       border-right-width: 0;
 
       &:hover {
-        @include themify($themes) {
-          background-color: themed('interactive_bg_hover');
-        }
+        background-color: var(--interactive_bg_hover);
       }
 
       svg,
       .#{$prefix}-pagination__button-icon {
-        @include themify($themes) {
-          fill: themed('interactive_icon');
-        }
+        fill: var(--interactive_icon);
       }
     }
 
     .#{$prefix}-pagination-text {
       margin-right: hcl-rem(16px);
-      @include themify($themes) {
-        color: themed('default_text');
-      }
+
+      color: var(--default_text);
     }
 
     .#{$prefix}-pagination-select-wrapper {
@@ -155,9 +144,8 @@ $pagination-line-height: 1.125rem;
       svg,
       .#{$prefix}-select-arrow {
         right: hcl-rem(16px);
-        @include themify($themes) {
-          fill: themed('interactive_icon');
-        }
+
+        fill: var(--interactive_icon);
       }
     }
 
@@ -182,9 +170,8 @@ $pagination-line-height: 1.125rem;
 
   .#{$prefix}-pagination-range {
     margin-left: hcl-rem(16px);
-    @include themify($themes) {
-      color: themed('default_text');
-    }
+
+    color: var(--default_text);
 
     @include media-breakpoint-down(sm) {
       display: none;
@@ -192,9 +179,8 @@ $pagination-line-height: 1.125rem;
   }
 
   .#{$prefix}-pagination-label {
-    @include themify($themes) {
-      color: themed('default_text');
-    }
+    color: var(--default_text);
+
     @include media-breakpoint-down(sm) {
       font-size: 0.75rem;
       white-space: nowrap;
@@ -223,29 +209,25 @@ $pagination-line-height: 1.125rem;
       margin-right: -0.65rem;
       cursor: pointer;
       text-align-last: center;
-      @include themify($themes) {
-        background-color: themed('interactive_bg');
-        color: themed('interactive_text');
-      }
+
+      background-color: var(--interactive_bg);
+      color: var(--interactive_text);
+
       &:hover {
-        @include themify($themes) {
-          background-color: themed('interactive_bg_hover');
-        }
+        background-color: var(--interactive_bg_hover);
       }
 
       &:focus {
-        @include themify($themes) {
-          outline: 2px solid themed('interactive_border');
-        }
+        outline: 2px solid var(--interactive_border);
       }
     }
 
     svg,
     .#{$prefix}-select-arrow {
       pointer-events: none;
-      @include themify($themes) {
-        fill: themed('interactive_icon');
-      }
+
+      fill: var(--interactive_icon);
+
       position: relative;
       top: auto;
       bottom: auto;

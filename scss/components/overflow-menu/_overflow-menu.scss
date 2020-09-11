@@ -16,44 +16,37 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  @include themify($themes) {
-    color: themed('default_text');
-    background-color: themed('default_bg');
-  }
+
+  color: var(--default_text);
+  background-color: var(--default_bg);
+
   &:hover {
-    @include themify($themes) {
-      color: themed('default_text_high');
-      background-color: themed('interactive_bg_hover');
-    }
+    color: var(--default_text_high);
+    background-color: var(--interactive_bg_hover);
   }
 
   &:focus {
     outline-offset: -1px;
-    @include themify($themes) {
-      outline: 1px solid themed('interactive_border');
-    }
+
+    outline: 1px solid var(--interactive_border);
   }
 
   @if ($type==disable) {
     outline-offset: 0;
     cursor: not-allowed;
-    @include themify($themes) {
-      opacity: themed('disabled_all');
-    }
+
+    opacity: var(--disabled_all);
   } @else if($type==danger) {
     &:hover {
-      @include themify($themes) {
-        color: themed('default_text_inverse');
-        background-color: themed('danger_bg_inverse');
-      }
+      color: var(--default_text_inverse);
+      background-color: var(--danger_bg_inverse);
     }
     &:focus {
       outline-offset: -1px;
-      @include themify($themes) {
-        outline: 1px solid themed('interactive_border');
-        color: themed('default_text_inverse');
-        background-color: themed('danger_bg_inverse');
-      }
+
+      outline: 1px solid var(--interactive_border);
+      color: var(--default_text_inverse);
+      background-color: var(--danger_bg_inverse);
     }
   }
 }
@@ -64,12 +57,12 @@
   width: 0.65625rem;
   height: 0.65625rem;
   transform: rotate(-45deg);
-  @include themify($themes) {
-    border-top: 0.0625rem solid themed('default_border_xlow');
-    border-right: 0.0625rem solid themed('default_border_xlow');
-    background-color: themed('default_bg');
-    box-shadow: 0.5rem 0 0.625rem -0.375rem themed('default_shadow');
-  }
+
+  border-top: 0.0625rem solid var(--default_border_xlow);
+  border-right: 0.0625rem solid var(--default_border_xlow);
+  background-color: var(--default_bg);
+  box-shadow: 0.5rem 0 0.625rem -0.375rem var(--default_shadow);
+
   z-index: 5;
 
   @if ($type==right) {
@@ -81,9 +74,7 @@
 
 .#{$prefix}-overflow {
   &-separator {
-    @include themify($themes) {
-      border-top: 0.0625rem solid themed('default_border_xlow');
-    }
+    border-top: 0.0625rem solid var(--default_border_xlow);
   }
 
   &-caret {
@@ -108,11 +99,11 @@
     z-index: 9;
     height: auto;
     width: 11.25rem;
-    @include themify($themes) {
-      border: 0.0625rem solid themed('default_border_xlow');
-      background-color: themed('default_bg');
-      box-shadow: 0 0.25rem 0.5rem 0 themed('default_shadow');
-    }
+
+    border: 0.0625rem solid var(--default_border_xlow);
+    background-color: var(--default_bg);
+    box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
+
     list-style: none;
     top: 1.4375rem;
     display: none;
@@ -170,17 +161,14 @@
   }
 
   &:hover {
-    @include themify($themes) {
-      color: themed('interactive_icon_hover') !important;
-      background-color: themed('interactive_bg_hover') !important;
-      text-decoration: none;
-    }
+    color: var(--interactive_icon_hover) !important;
+    background-color: var(--interactive_bg_hover) !important;
+    text-decoration: none;
   }
 
   &:focus {
     outline-offset: -1px;
-    @include themify($themes) {
-      outline: 1px solid themed('interactive_border');
-    }
+
+    outline: 1px solid var(--interactive_border);
   }
 }

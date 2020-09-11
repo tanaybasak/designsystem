@@ -21,9 +21,8 @@
         height: 1.25rem;
 
         svg {
-          @include themify($themes) {
-            fill : themed('input_icon');
-            }
+          fill: var(--input_icon);
+
           width: 0.625rem;
           height: 0.3125rem;
         }

@@ -16,7 +16,7 @@ body {
     family: 'Roboto', sans-serif;
   }
 
-  color: $black;
+  color: var(--default_text);
   font-size: 1rem;
 }
 
