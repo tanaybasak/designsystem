@@ -94,6 +94,12 @@ $search-reset-size: 0.759rem;
       height: 0;
     }
 
+    &:disabled {
+      opacity: var(--disabled_all);
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
     /* clears the 'x' from Chrome */
     &::-webkit-search-decoration,
     &::-webkit-search-cancel-button,

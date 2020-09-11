@@ -53,6 +53,7 @@
   @include media-breakpoint-between(md, xxl) {
     &-header-lg {
       padding: 1rem 3rem;
+      color: var(--default_text_high);
     }
   }
 
@@ -89,6 +90,7 @@
   @include media-breakpoint-between(md, xxl) {
     &-content-lg {
       padding: 1rem 3rem;
+      color: var(--default_text_high);
     }
   }
 
