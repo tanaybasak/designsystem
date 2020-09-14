@@ -74,7 +74,7 @@
     min-height: 2.75rem;
     max-height: 2.75rem;
 
-    @include hcl-close-icon(12.15, false, --tranparent, --black);
+    @include hcl-close-icon(12.15, false, --tranparent, --default_icon_high);
 
     position: absolute !important;
   }
