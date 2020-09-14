@@ -12,25 +12,22 @@
   border: 0.0625rem solid var(--default_border_xlow);
 
   .#{$prefix}-overflow-option {
-    width: inherit;
     font-size: 0.875rem;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
 
     &-item {
       display: inline-block;
       width: 100%;
       padding: 0 0.5rem;
-      height: 30px;
+      height: 1.875rem;
       text-align: left;
       cursor: pointer;
       overflow: hidden;
       background: transparent;
       white-space: nowrap;
       text-overflow: ellipsis;
-      line-height: 30px;
+      line-height: 1.875rem;
       color: var(--default_text);
+      border: 1px solid transparent;
 
       &:hover {
         background-color: var(--interactive_bg_hover);
@@ -101,7 +98,7 @@
 
 .#{$prefix}-overlay-wrapper-active {
   .#{$prefix}-overflow-btn {
-    background-color: var(--active_bg_high) !important;
-    color: var(--active_icon) !important;
+    background-color: var(--active_bg_high);
+    color: var(--active_icon);
   }
 }

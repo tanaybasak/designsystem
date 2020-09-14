@@ -25,7 +25,7 @@
     }
 
     &-error {
-      border-bottom: 2px solid var(--danger_text);
+      border-bottom: 0.125rem solid var(--danger_text);
     }
 
     > input {
@@ -43,7 +43,7 @@
       cursor: pointer;
 
       &:focus {
-        border-bottom: 2px solid var(--interactive_border);
+        border-bottom: 0.125rem solid var(--interactive_border);
         color: var(--input_text);
       }
 
