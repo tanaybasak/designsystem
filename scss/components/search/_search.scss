@@ -18,11 +18,8 @@ $search-reset-size: 0.759rem;
   }
   > * {
     &:disabled {
-      &:hover {
         opacity: var(--disabled_all);
-        pointer-events: none;
         cursor: not-allowed;
-      }
     }
   }
 
@@ -98,7 +95,6 @@ $search-reset-size: 0.759rem;
 
     &:disabled {
       opacity: var(--disabled_all);
-      pointer-events: none;
       cursor: not-allowed;
     }
 
