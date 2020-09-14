@@ -188,7 +188,27 @@ const getDirection = (propsDirection, width, height, parentElementPosition) => {
     right: 'left'
   };
   const newDirection = `${
-    first ? direOb[splitDirection[0]] : splitDirection[0]
-  }-${second ? direOb[splitDirection[1]] : splitDirection[1]}`;
+    first
+      ? isOutofBound(
+          direOb[splitDirection[0]],
+          width,
+          height,
+          parentElementPosition
+        )
+        ? splitDirection[0]
+        : direOb[splitDirection[0]]
+      : splitDirection[0]
+  }-${
+    second
+      ? isOutofBound(
+          direOb[splitDirection[1]],
+          width,
+          height,
+          parentElementPosition
+        )
+        ? splitDirection[1]
+        : direOb[splitDirection[1]]
+      : splitDirection[1]
+  }`;
   return newDirection;
 };

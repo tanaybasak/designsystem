@@ -39,6 +39,11 @@ $breadcrumb-margin: 1rem;
 
         @include getTextDecorationLine('underline');
       }
+      &:focus {
+        outline: 0.0625rem solid var(--interactive_border);
+        border: 0;
+        @include getTextDecorationLine('none');
+      }
     }
   }
 

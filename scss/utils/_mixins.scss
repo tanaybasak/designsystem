@@ -282,7 +282,6 @@ $inputColor-map: (
     background-color: var(--input_bg);
     border-bottom: 1px solid var(--input_border);
 
-    border: none;
     &:focus {
       outline: none;
       border-bottom: 2px solid var(--interactive_border);
