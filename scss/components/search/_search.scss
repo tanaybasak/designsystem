@@ -19,6 +19,8 @@ $search-reset-size: 0.759rem;
   > * {
     &:disabled {
       &:hover {
+        opacity: var(--disabled_all);
+        pointer-events: none;
         cursor: not-allowed;
       }
     }
@@ -40,7 +42,7 @@ $search-reset-size: 0.759rem;
     }
   }
 
-  button.#{$prefix}-search-btn:hover {
+  button.#{$prefix}-search-btn:hover:enabled{
     background-color: var(--interactive_bg_hover);
     cursor: pointer;
     .#{$prefix}-search-icon {
@@ -92,6 +94,12 @@ $search-reset-size: 0.759rem;
       display: none;
       width: 0;
       height: 0;
+    }
+
+    &:disabled {
+      opacity: var(--disabled_all);
+      pointer-events: none;
+      cursor: not-allowed;
     }
 
     /* clears the 'x' from Chrome */

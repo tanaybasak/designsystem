@@ -12,7 +12,7 @@
   width: 100%;
   border-bottom: transparent;
 
-  color: var(--deafult_text);
+  color: var(--default_text);
 
   .#{$prefix}-data-table {
     width: 100%;
@@ -126,7 +126,7 @@
 
           &:nth-child(odd) {
             td {
-              background-color: var(--deafult_bg);
+              background-color: var(--default_bg);
             }
           }
 
