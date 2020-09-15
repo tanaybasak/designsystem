@@ -231,7 +231,7 @@
       opacity: 0.5;
       // color: $lightGrey;
 
-      color: var(--default_text_low);
+      color: var(--default_text_low) !important;
     }
   }
 
