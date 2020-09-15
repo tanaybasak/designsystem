@@ -18,8 +18,8 @@ $search-reset-size: 0.759rem;
   }
   > * {
     &:disabled {
-        opacity: var(--disabled_all);
-        cursor: not-allowed;
+      opacity: var(--disabled_all);
+      cursor: not-allowed;
     }
   }
 
