@@ -18,8 +18,8 @@ $search-reset-size: 0.759rem;
   }
   > * {
     &:disabled {
-        opacity: var(--disabled_all);
-        cursor: not-allowed;
+      opacity: var(--disabled_all);
+      cursor: not-allowed;
     }
   }
 
@@ -39,7 +39,7 @@ $search-reset-size: 0.759rem;
     }
   }
 
-  button.#{$prefix}-search-btn:hover:enabled{
+  button.#{$prefix}-search-btn:hover:enabled {
     background-color: var(--interactive_bg_hover);
     cursor: pointer;
     .#{$prefix}-search-icon {
