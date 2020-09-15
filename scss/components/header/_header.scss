@@ -62,13 +62,12 @@
 
       .#{$prefix}-search {
         width: 100%;
-
+      .#{$prefix}-search-icon{
+          fill: var(--primary_icon)!important;
+      }
         .#{$prefix}-search-btn {
           &.disabled {
             opacity: var(--disabled_all);
-          }
-          .#{$prefix}-search-icon :enabled {
-            fill: var(--primary_icon);
           }
         }
         .#{$prefix}-search-btn:focus :enabled {
