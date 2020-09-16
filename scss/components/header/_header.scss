@@ -62,9 +62,9 @@
 
       .#{$prefix}-search {
         width: 100%;
-      .#{$prefix}-search-icon{
-          fill: var(--primary_icon)!important;
-      }
+        .#{$prefix}-search-icon {
+          fill: var(--primary_icon) !important;
+        }
         .#{$prefix}-search-btn {
           &.disabled {
             opacity: var(--disabled_all);
