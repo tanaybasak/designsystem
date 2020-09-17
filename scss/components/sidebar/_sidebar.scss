@@ -21,6 +21,7 @@ $animation-duration: 220ms;
   overflow: hidden;
   transition: width $animation-duration ease-in-out;
   z-index: 9;
+  background-color: var(--default_bg_low);
 
   .#{$prefix}-sidebar-hamburger {
     display: none;
@@ -112,6 +113,7 @@ $animation-duration: 220ms;
         display: flex;
         align-items: center;
         height: 2.5rem;
+        border:transparent;
 
         .#{$prefix}-sidebar-icon {
           width: 0.875rem;
@@ -168,35 +170,35 @@ $animation-duration: 220ms;
     }
   }
 
-  a {
-    &:focus {
-      cursor: pointer;
-      text-decoration: none;
-      outline-offset: -1px;
+  // a {
+  //   &:focus {
+  //     cursor: pointer;
+  //     text-decoration: none;
+  //     outline-offset: -1px;
 
-      color: var(--default_text) !important;
-      outline: 1px solid var(--default_border_xhigh) !important;
-    }
-    &:active {
-      cursor: pointer;
-      text-decoration: none;
+  //     color: var(--default_text) !important;
+  //     outline: 1px solid var(--default_border_xhigh) !important;
+  //   }
+  //   &:active {
+  //     cursor: pointer;
+  //     text-decoration: none;
 
-      color: var(--default_text_high) !important;
-      background-color: var(--default_bg_low) !important;
-    }
-    &:hover {
-      text-decoration: none;
-      outline: none;
+  //     color: var(--default_text_high) !important;
+  //     background-color:var(--default_bg_low) !important;
+  //   }
+  //   &:hover {
+  //     text-decoration: none;
+  //     outline: none;
 
-      color: var(--default_icon_high) !important;
-      background-color: var(--interactive_bg_hover) !important;
-    }
-  }
+  //     color: var(--default_icon_high) !important;
+  //     background-color: var(--interactive_bg_hover) !important;
+  //   }
+  // }
 
   &.expanded {
     width: 12.5rem;
     transition: width $animation-duration ease-in-out;
-    background-color: var(--default_bg);
+    background-color: var(--default_bg_low);
 
     .#{$prefix}-sidebar-title {
       .#{$prefix}-sidebar-title-icon {
@@ -241,20 +243,22 @@ $animation-duration: 220ms;
       }
 
       > a:hover {
+        text-decoration: none;
         color: var(--default_text_high);
         background-color: var(--interactive_bg_hover);
       }
 
       > a:focus {
         outline-offset: -1px;
-
+        text-decoration: none;
         color: var(--default_text);
         outline: 1px solid var(--default_border_xhigh);
       }
 
       &.active {
+        text-decoration: none;
         color: var(--default_text_high);
-        background-color: var(--default_bg_low);
+        background-color: var(--default_bg);
 
         &::before {
           content: '';
