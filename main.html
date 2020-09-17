@@ -51,7 +51,16 @@
         <!-- AVAILABLE COMPONENTS STARTS -->
 
         <!-- To select one of the theme -->
-        <div style="display: flex; justify-content: flex-end; margin: 4rem 0;">
+        <div
+          style="
+            display: flex;
+            justify-content: flex-end;
+            margin: 4rem 0;
+            position: fixed;
+            top: 50px;
+            right: 0;
+          "
+        >
           <div id="themes-radio" class="hcl-radio-group">
             <div class="hcl-radio-item">
               <input
@@ -381,13 +390,11 @@
               <addHTML src="./scss/components/dropdown/top/top.html" />
             </div>
           </div>
-
           <div class="hcl-row m-3">
             <div class="hcl-col-3">
               <addHTML src="./scss/components/dropdown/bottom/bottom.html" />
             </div>
           </div>
-
           <div class="hcl-row m-3">
             <div class="hcl-col-3">
               <addHTML
@@ -617,6 +624,15 @@
           <addHTML src="./scss/components/tree/tree.html" />
         </section>
 
+        <section class="m-1 p-2">
+          <addHTML
+            src="./scss/components/overlay/attachToBody/attachToBody.html"
+          />
+        </section>
+
+        <section class="m-1 p-2">
+          <addHTML src="./scss/components/overlay/default/default.html" />
+        </section>
         <!-- AVAILABLE COMPONENTS ENDS -->
       </main>
     </div>
@@ -677,6 +693,8 @@
     <script src="./scss/components/time-picker/default/default.js"></script>
     <script src="./scss/components/time-picker/with-24H/with-24H.js"></script>
     <script src="./scss/components/time-picker/with-timezone/with-timezone.js"></script>
+    <script src="./scss/components/overlay/attachToBody/attachToBody.js"></script>
+    <script src="./scss/components/overlay/default/default.js"></script>
     <script src="themes.js"></script>
   </body>
 </html>

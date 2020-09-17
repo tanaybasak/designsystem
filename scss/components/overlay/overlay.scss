@@ -1,0 +1,35 @@
+@import '../../base';
+
+.#{$prefix}-overlay-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.#{$prefix}-overlay-container {
+  position: absolute;
+  box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
+  background-color: var(--default_bg);
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99;
+  transition: opacity 0.3s ease-in-out;
+
+  &.#{$prefix}-overlay-container-show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &.#{$prefix}-overlay-container-scroll {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.#{$prefix}-overlay-container-hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

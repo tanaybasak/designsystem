@@ -2,11 +2,12 @@
 
 .#{$prefix}-datePicker {
   width: 9.4375rem;
+
   &-label {
     color: var(--default_text);
   }
+
   &-container {
-    position: relative;
     display: flex;
     flex-direction: column;
 
@@ -24,7 +25,7 @@
     }
 
     &-error {
-      border-bottom: 2px solid var(--danger_text);
+      border-bottom: 0.125rem solid var(--danger_text);
     }
 
     > input {
@@ -41,11 +42,11 @@
       cursor: pointer;
 
       &:focus {
-        border-bottom: 2px solid var(--interactive_border);
+        border-bottom: 0.125rem solid var(--interactive_border);
         color: var(--input_text);
       }
+
       &[disabled] {
-        opacity: 0.5;
         cursor: not-allowed;
 
         background-color: var(--disabled_all);
@@ -55,6 +56,14 @@
 
           fill: var(--input_icon);
         }
+      }
+    }
+
+    &.#{$prefix}-overlay-wrapper-active {
+      > input {
+        outline: none;
+
+        border-bottom: 0.125rem solid var(--interactive_border);
       }
     }
   }
@@ -226,30 +235,10 @@
   }
 
   &-panel {
-    position: absolute;
-    // background-color: var(--white);
-
-    background-color: var(--default_bg);
-
-    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 9;
     width: 17.5rem;
     height: 16.375rem;
     padding: 1rem 0.625rem 0.25rem 0.625rem;
-    // color: $blue-4;
-
-    &-show {
-      display: block;
-    }
-
-    &-above {
-      bottom: 2.5rem;
-    }
-
-    &-below {
-      top: 2.5rem;
-    }
+    color: var(--default_text_xhigh);
   }
 
   &-error {

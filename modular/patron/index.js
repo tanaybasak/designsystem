@@ -21,6 +21,7 @@ import Breadcrumb from '../../js/breadcrumb';
 import Tile from '../../js/tile';
 import Toggle from '../../js/toggle';
 import TimePicker from '../../js/timePicker';
+import Overlay from '../../js/overlay';
 import { isElement } from '../../js/utils/dom';
 
 // Demo Scripts
@@ -46,7 +47,8 @@ const ComponentList = {
   breadcrumb: Breadcrumb,
   tile: Tile,
   toggle: Toggle,
-  timePicker: TimePicker
+  timePicker: TimePicker,
+  overlay: Overlay
 };
 
 for (const componentName in ComponentList) {
@@ -138,6 +140,9 @@ export const components = {
   },
   timePicker: function (selector, options) {
     attachElements(selector, options, TimePicker);
+  },
+  overlay: function (selector, options) {
+    attachElements(selector, options, Overlay);
   }
 };
 

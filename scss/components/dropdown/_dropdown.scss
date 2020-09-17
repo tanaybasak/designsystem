@@ -1,31 +1,13 @@
 @import '../../base';
 
 .#{$prefix}-dropdown {
-  display: inline-block;
-  position: relative;
   width: 100%;
 
   button::-moz-focus-inner {
     border: 0;
   }
 
-  .#{$prefix}-checkbox-item {
-    padding: 0.7625rem 1rem;
-    width: 100%;
-    height: 38px;
-    &:focus {
-      text-decoration: none;
-      outline-offset: -1px;
-
-      outline: 1px solid var(--interactive_border);
-    }
-  }
-
-  .#{$prefix}-tag-primary {
-    margin-right: 1rem;
-  }
-
-  &-toggle {
+  .#{$prefix}-dropdown-toggle {
     font-size: 0.875rem;
     line-height: 1.125rem;
     outline: none;
@@ -33,155 +15,99 @@
     justify-content: left;
     margin: 0;
     padding-right: 2.5rem;
-
     background-color: var(--input_bg);
     color: var(--input_text);
-    border-bottom: 1px solid var(--input_border);
+    border-bottom: 0.0625rem solid var(--input_border);
 
     &::after {
       content: '';
       width: 0;
       height: 0;
       border-bottom: 0;
-
       border-top: 0.3rem solid var(--input_icon);
       border-right: 0.3rem solid transparent;
       border-left: 0.3rem solid transparent;
-
       position: absolute;
       top: 50%;
       right: 0.875rem;
       transform: translate(-50%, -50%);
     }
-    &:focus {
-      outline-offset: -1px;
-
-      border-bottom: 2px solid var(--interactive_border);
-    }
-  }
-
-  &-text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  &-container {
-    position: absolute;
-    top: 2.5rem;
-    left: 0;
-    will-change: transform;
-    z-index: 6;
-    font-size: 1rem;
-    text-align: left;
-    list-style: none;
-    background-clip: padding-box;
-
-    background-color: var(--default_bg);
-    box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
-
-    width: 100%;
-    display: none;
-    max-height: 20rem;
-    overflow: auto;
-  }
-
-  &-item {
-    height: 2.5rem;
-    @include getFontWeight('regular');
-    white-space: nowrap;
-    border: 0;
-    font-size: 0.875rem;
-    border: 1px solid transparent;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1;
-    cursor: pointer;
-
-    background: var(--default_bg);
-    color: var(--default_text);
-
-    &:hover {
-      background: var(--interactive_bg_hover);
-    }
 
     &:focus {
-      text-decoration: none;
-      outline-offset: -1px;
+      outline-offset: -0.0625rem;
+      border-bottom: 0.125rem solid var(--interactive_border);
+    }
 
-      outline: 1px solid var(--interactive_border);
+    .#{$prefix}-tag-primary {
+      margin-right: 1rem;
+    }
+
+    .#{$prefix}-dropdown-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
-  &-wrapper {
-    display: block;
-    width: 100%;
-    padding: 3px 20px;
-    cursor: pointer;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 0.4698rem 1rem;
-    text-decoration: none;
-    text-overflow: ellipsis;
-
-    color: var(--default_text);
-
-    &:hover {
-      text-decoration: none;
-
-      background: var(--interactive_bg_hover);
-      color: var(--default_text);
-    }
-
-    &:focus {
-      text-decoration: none;
-      outline-offset: -1px;
-
-      outline: 1px solid var(--interactive_border);
-      color: var(--default_text);
-    }
-  }
-
-  &-option {
-    display: block;
-    width: 100%;
-    padding: 3px 20px;
-    cursor: pointer;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 0.7625rem 1rem;
-
-    color: var(--input_text);
-
-    text-decoration: none;
-    text-overflow: ellipsis;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  &-item-selected {
-    display: none;
-  }
-
-  &-open {
-    .#{$prefix}-dropdown-container {
-      display: block;
-    }
+  &.#{$prefix}-overlay-wrapper-active {
     & > .#{$prefix}-dropdown-toggle::after {
       right: 1.2rem;
       transform: rotate(180deg);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .#{$prefix}-dropdown-toggle {
+      border-bottom: 0.125rem solid var(--interactive_border);
+    }
+  }
+}
+
+.#{$prefix}-dropdown-menu {
+  font-size: 1rem;
+  text-align: left;
+  list-style: none;
+  background-clip: padding-box;
+  width: 100%;
+  max-height: 20rem;
+  overflow: auto;
+  background-color: var(--default_bg);
+  color: var(--default_text);
+
+  .#{$prefix}-dropdown-item {
+    height: 2.5rem;
+    @include getFontWeight('regular');
+    white-space: nowrap;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 1rem;
+    line-height: 2.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--interactive_bg_hover);
+    }
+
+    &:focus {
+      text-decoration: none;
+      outline-offset: -0.0625rem;
+
+      outline: 0.0625rem solid var(--interactive_border);
+    }
+
+    .#{$prefix}-checkbox-label {
+      &:focus {
+        outline: none;
+      }
     }
   }
 
   &.#{$prefix}-dropdown-top {
-    .#{$prefix}-dropdown-container {
-      bottom: 2.5rem;
-      top: inherit;
-      border: 0;
-    }
+    border-top: 0.0625rem solid var(--input_border);
+  }
+
+  &:not(.#{$prefix}-dropdown-top) {
+    border-bottom: 0.0625rem solid var(--input_border);
   }
 }

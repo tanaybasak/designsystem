@@ -1,5 +1,8 @@
 <div class="p-5">
-  <section class="hcl-dropdown hcl-dropdown-multiSelect" id="multi-dropdown">
+  <div
+    class="hcl-overlay-wrapper hcl-dropdown hcl-dropdown-multiSelect"
+    id="multi-dropdown"
+  >
     <div
       role="button"
       class="hcl-btn hcl-dropdown-toggle"
@@ -12,7 +15,7 @@
       <button
         class="hcl-tag hcl-tag-primary hidden"
         title="primary-closeable"
-        tabindex="0"
+        tabindex="-1"
       >
         <span class="hcl-tag-text"></span>
         <span
@@ -24,63 +27,51 @@
       </button>
       <span class="hcl-dropdown-text">MultiSelect Dropdown</span>
     </div>
-    <ul
-      class="hcl-dropdown-container"
-      role="menu"
-      id="multiselect-container"
-      aria-labelledby="multiselect-dropdown-btn"
-    >
-      <li class="hcl-dropdown-item">
-        <div
-          class="hcl-checkbox-item"
-          role="checkbox"
-          aria-label="A"
-          tabindex="0"
-        >
-          <input
-            class="hcl-checkbox"
-            id="check0"
-            type="checkbox"
-            tabindex="-1"
-            value="check0"
-          />
-          <label class="hcl-checkbox-label" for="check0">A</label>
-        </div>
-      </li>
-      <li class="hcl-dropdown-item">
-        <div
-          class="hcl-checkbox-item"
-          aria-label="B"
-          role="checkbox"
-          tabindex="0"
-        >
-          <input
-            class="hcl-checkbox"
-            id="check1"
-            type="checkbox"
-            tabindex="-1"
-            value="check1"
-          />
-          <label class="hcl-checkbox-label" for="check0">B</label>
-        </div>
-      </li>
-      <li class="hcl-dropdown-item">
-        <div
-          class="hcl-checkbox-item"
-          aria-label="C"
-          role="checkbox"
-          tabindex="0"
-        >
-          <input
-            class="hcl-checkbox"
-            id="check2"
-            type="checkbox"
-            tabindex="-1"
-            value="check2"
-          />
-          <label class="hcl-checkbox-label" for="check0">C</label>
-        </div>
-      </li>
-    </ul>
-  </section>
+
+    <div class="hcl-overlay-container">
+      <ul
+        class="hcl-dropdown-menu"
+        role="menu"
+        id="multiselect-container"
+        aria-labelledby="multiselect-dropdown-btn"
+      >
+        <li class="hcl-dropdown-item" tabindex="0">
+          <div class="hcl-checkbox-item" role="checkbox" aria-label="A">
+            <input
+              class="hcl-checkbox"
+              id="check0"
+              type="checkbox"
+              tabindex="-1"
+              value="check0"
+            />
+            <label class="hcl-checkbox-label" for="check0">A</label>
+          </div>
+        </li>
+        <li class="hcl-dropdown-item" tabindex="0">
+          <div class="hcl-checkbox-item" aria-label="B" role="checkbox">
+            <input
+              class="hcl-checkbox"
+              id="check1"
+              type="checkbox"
+              tabindex="-1"
+              value="check1"
+            />
+            <label class="hcl-checkbox-label" for="check1">B</label>
+          </div>
+        </li>
+        <li class="hcl-dropdown-item" tabindex="0">
+          <div class="hcl-checkbox-item" aria-label="C" role="checkbox">
+            <input
+              class="hcl-checkbox"
+              id="check2"
+              type="checkbox"
+              tabindex="-1"
+              value="check2"
+            />
+            <label class="hcl-checkbox-label" for="check2">C</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

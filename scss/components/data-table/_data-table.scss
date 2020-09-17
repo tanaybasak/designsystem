@@ -63,9 +63,14 @@
           vertical-align: middle;
           margin-left: 0.625rem;
           transition: transform 0.3s ease-in-out;
+
           &.desc {
             transform: rotate(180deg);
           }
+        }
+
+        &.#{$prefix}-overlay-wrapper-active {
+          visibility: visible;
         }
 
         &.sortable {
@@ -82,7 +87,7 @@
         .overflow-onhover {
           visibility: hidden;
 
-          &.#{$prefix}-overflow-active {
+          &.#{$prefix}-overlay-wrapper-active {
             visibility: visible;
           }
         }
@@ -97,6 +102,7 @@
           color: var(--default_text_high);
           background-color: var(--interactive_bg_hover);
         }
+
         .overflow-onhover {
           visibility: visible;
         }
@@ -175,10 +181,6 @@
 
   &.data-table-sticky-header {
     overflow-x: auto;
-
-    &.overflow-unset {
-      overflow-x: unset;
-    }
 
     .#{$prefix}-data-table {
       border-collapse: separate;
