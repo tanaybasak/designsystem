@@ -35,7 +35,6 @@
 
       color: var(--input_text_low);
       background-color: var(--input_bg);
-      border-bottom: 0.125rem solid var(--input_border);
 
       outline: none;
       font-size: 0.875rem;
@@ -231,7 +230,7 @@
       opacity: 0.5;
       // color: $lightGrey;
 
-      color: var(--default_text_low);
+      color: var(--default_text_low) !important;
     }
   }
 

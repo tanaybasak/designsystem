@@ -7,7 +7,7 @@
 
 .#{$prefix}-overlay-container {
   position: absolute;
-  box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
+  box-shadow: 0 0.25rem 0.5rem 0.15rem var(--default_shadow);
   background-color: var(--default_bg);
   top: 0;
   left: 0;

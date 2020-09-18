@@ -147,7 +147,7 @@
   --input_text: var(--black);
   --overlay_bg: var(--black) 40%;
   --disabled_all: 0.5;
-  --default_shadow: var(--black);
+  --default_shadow: rgba(0,0,0,0.2);
 
   background-color: var(--default_bg);
   color: var(--default_text);
@@ -224,7 +224,7 @@
   --input_text: var(--black);
   --overlay_bg: var(--black) 40%;
   --disabled_all: 0.5;
-  --default_shadow: var(--black);
+  --default_shadow: rgba(0,0,0,0.2);
 
   background-color: var(--default_bg);
   color: var(--default_text);
