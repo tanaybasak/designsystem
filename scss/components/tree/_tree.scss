@@ -72,7 +72,7 @@ $default-node-height: 2rem;
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: calc(100% - $default-node-height);
+        width: calc(100% - 2rem);
         min-height: $default-node-height;
         position: relative;
 
