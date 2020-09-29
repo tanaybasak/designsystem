@@ -3,13 +3,10 @@
 .#{$prefix}-overflow-menu {
   list-style: none;
   padding: 0.375rem 0;
-  position: relative;
-  z-index: 6;
   width: 11.25rem;
   max-height: 12rem;
   overflow: auto;
   background-color: var(--default_bg);
-
 
   .#{$prefix}-overflow-option {
     font-size: 0.875rem;

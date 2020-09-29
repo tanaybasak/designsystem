@@ -1,5 +1,7 @@
 @import '../../base';
 
+$default-node-height: 2rem;
+
 .#{$prefix}-tree {
   font-size: 0.875rem;
   @include getFontWeight(regular);
@@ -10,8 +12,8 @@
   .#{$prefix}-tree-item {
     width: 100%;
     display: block;
-    border: 1px solid transparent;
-    padding-left: 4px;
+    border: 0.0625rem solid transparent;
+    padding-left: 0.25rem;
 
     .#{$prefix}-tree-node {
       cursor: pointer;
@@ -19,11 +21,11 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      min-height: 32px;
+      min-height: $default-node-height;
 
       .#{$prefix}-toggle-icon {
-        width: 32px;
-        height: 32px;
+        width: $default-node-height;
+        height: $default-node-height;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -31,7 +33,7 @@
 
         &.caret {
           display: inline-block;
-          padding: 10px;
+          padding: 0.625rem;
 
           &::before {
             content: ' ';
@@ -44,23 +46,22 @@
 
             transform: scale(1) rotate(-45deg);
             transition: all 0.2s ease-in-out;
-            //margin-left: 0.3125rem;
           }
 
           &.caret-down::before {
             transform: scale(1) rotate(45deg);
             margin-top: 0;
-            margin-left: 2px;
+            margin-left: 0.125rem;
           }
         }
 
         &:hover {
-          background-color: var(--interactive_bg_hover);
+          background-color: var(--interactive_bg_high);
         }
       }
 
       &.no-children-exist {
-        padding-left: 32px;
+        padding-left: $default-node-height;
 
         .#{$prefix}-treenode-content-wrapper {
           width: 100%;
@@ -71,11 +72,9 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: calc(100% - 32px);
-        min-height: 32px;
+        width: calc(100% - $default-node-height);
+        min-height: $default-node-height;
         position: relative;
-        //background: white;
-        //mix-blend-mode: darken;
 
         .#{$prefix}-tree-node-icon {
           margin-right: 0.25rem;
@@ -83,7 +82,6 @@
         }
 
         .#{$prefix}-tree-content-node {
-          //flex: 1;
           min-width: 0;
 
           .tree-content-text {
@@ -102,25 +100,7 @@
           margin-bottom: 0;
 
           .#{$prefix}-form-control {
-            height: 32px;
-          }
-
-          button {
-            position: absolute;
-            background: transparent;
-            right: 0;
-            //padding: 0 0.5rem;
-            height: 32px;
-            width: 32px;
-            cursor: pointer;
-
-            svg {
-              width: 14px;
-            }
-
-            &:hover {
-              background-color: #aed2ff;
-            }
+            height: $default-node-height;
           }
         }
 
@@ -131,23 +111,21 @@
       }
 
       &.drop-on-above {
-        box-shadow: inset -1px 0 0 transparent,
-          0 -2px 0 var(--interactive_border), inset 1px 0 0 transparent,
-          inset 0 1px 0 transparent;
+        box-shadow: inset -0.0625rem 0 0 transparent,
+          0 -0.125rem 0 var(--interactive_border),
+          inset 0.0625rem 0 0 transparent, inset 0 0.0625rem 0 transparent;
       }
 
       &.drop-on-below {
-        box-shadow: inset -1px 0 0 transparent, inset 0 -1px 0 transparent,
-          inset 1px 0 0 transparent, 0 2px 0 var(--interactive_border);
+        box-shadow: inset -0.0625rem 0 0 transparent,
+          inset 0 -0.0625rem 0 transparent, inset 0.0625rem 0 0 transparent,
+          0 0.125rem 0 var(--interactive_border);
       }
 
       .action-on-hover {
         .#{$prefix}-overlay-wrapper {
-          //visibility: hidden;
-
           .#{$prefix}-overflow-btn {
             opacity: 0;
-
             &:focus {
               opacity: 1;
             }
@@ -165,7 +143,7 @@
         box-sizing: border-box;
         content: '';
         height: inherit;
-        min-height: 32px;
+        min-height: $default-node-height;
         left: 0;
         position: absolute;
         right: 0;
@@ -175,8 +153,10 @@
       &.#{$prefix}-node-highlight {
         .#{$prefix}-node-highlight-wrapper {
           background: var(--active_bg);
-          box-shadow: inset -1px 0 0 transparent, inset 0 -1px 0 transparent,
-            inset 4px 0 0 var(--active_border), inset 0 2px 0 transparent;
+          box-shadow: inset -0.0625rem 0 0 transparent,
+            inset 0 -0.0625rem 0 transparent,
+            inset 0.25rem 0 0 var(--active_border),
+            inset 0 0.125rem 0 transparent;
         }
 
         .#{$prefix}-tree-node-icon {
@@ -236,15 +216,16 @@
         outline: none;
 
         .#{$prefix}-node-highlight-wrapper {
-          outline: 1px solid var(--interactive_border);
-
-          //outline-offset: -2px;
+          outline: 0.0625rem solid var(--interactive_border);
         }
 
         .action-on-hover {
           .#{$prefix}-overlay-wrapper {
             .#{$prefix}-overflow-btn {
               opacity: 1;
+              &:hover {
+                background-color: var(--interactive_bg_high);
+              }
             }
           }
         }
@@ -253,7 +234,7 @@
       &.ghost {
         .#{$prefix}-node-highlight-wrapper {
           background: var(--default_bg_low);
-          border: 1px dashed var(--default_border_xlow);
+          border: 0.0625rem dashed var(--default_border_xlow);
         }
 
         opacity: var(--disabled_all);
@@ -261,8 +242,8 @@
 
       &.drop-on-node {
         .#{$prefix}-node-highlight-wrapper {
-          outline: 1px solid var(--interactive_border);
-          background: var(--info_bg); //interactivebg
+          outline: 0.0625rem solid var(--interactive_border);
+          background: var(--info_bg);
         }
 
         .#{$prefix}-tree-node-icon {
