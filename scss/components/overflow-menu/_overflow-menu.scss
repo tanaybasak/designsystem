@@ -66,6 +66,11 @@
           background-color: transparent;
         }
       }
+
+      .#{$prefix}-overflow-option-icon {
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
     }
 
     button::-moz-focus-inner {

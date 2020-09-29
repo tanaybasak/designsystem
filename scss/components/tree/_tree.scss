@@ -129,6 +129,9 @@ $default-node-height: 2rem;
             &:focus {
               opacity: 1;
             }
+            &:hover {
+              background-color: var(--interactive_bg_high);
+            }
           }
         }
 
@@ -223,9 +226,6 @@ $default-node-height: 2rem;
           .#{$prefix}-overlay-wrapper {
             .#{$prefix}-overflow-btn {
               opacity: 1;
-              &:hover {
-                background-color: var(--interactive_bg_high);
-              }
             }
           }
         }
