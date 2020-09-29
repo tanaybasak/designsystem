@@ -78,64 +78,64 @@ class Tabs {
 
   focusNode(node, direction = 'next') {
     if (direction === 'next') {
-      if (!node.parentElement.nextElementSibling) {
+      if (!node.nextElementSibling) {
         // last
         if (
-          node.parentElement.parentElement.firstElementChild.classList.contains(
+          node.parentElement.firstElementChild.classList.contains(
             `${PREFIX}-tabs-disabled`
           )
         ) {
           this.focusNode(
-            node.parentElement.parentElement.firstElementChild.firstElementChild
+            node.parentElement.firstElementChild
           );
         } else {
-          node.parentElement.parentElement.firstElementChild.firstElementChild.focus();
+          node.parentElement.firstElementChild.focus();
         }
       } else if (
-        node.parentElement.nextElementSibling &&
-        node.parentElement.nextElementSibling.classList.contains(
+        node.nextElementSibling &&
+        node.nextElementSibling.classList.contains(
           `${PREFIX}-tabs-disabled`
         )
       ) {
         // disabled
-        this.focusNode(node.parentElement.nextElementSibling.firstElementChild);
+        this.focusNode(node.nextElementSibling);
       } else {
         // focus next respective element.
-        if (node.parentElement.nextElementSibling) {
-          node.parentElement.nextElementSibling.firstElementChild.focus();
+        if (node.nextElementSibling) {
+          node.nextElementSibling.focus();
           return false;
         }
       }
     } else if (direction === 'previous') {
-      if (!node.parentElement.previousElementSibling) {
+      if (!node.previousElementSibling) {
         // first
         if (
-          node.parentElement.parentElement.lastElementChild.classList.contains(
+          node.parentElement.lastElementChild.classList.contains(
             `${PREFIX}-tabs-disabled`
           )
         ) {
           this.focusNode(
-            node.parentElement.parentElement.lastElementChild.firstElementChild,
+            node.parentElement.lastElementChild,
             'previous'
           );
         } else {
-          node.parentElement.parentElement.lastElementChild.firstElementChild.focus();
+          node.parentElement.lastElementChild.focus();
         }
       } else if (
-        node.parentElement.previousElementSibling &&
-        node.parentElement.previousElementSibling.classList.contains(
+        node.previousElementSibling &&
+        node.previousElementSibling.classList.contains(
           `${PREFIX}-tabs-disabled`
         )
       ) {
         // disabled
         this.focusNode(
-          node.parentElement.previousElementSibling.firstElementChild,
+          node.previousElementSibling,
           'previous'
         );
       } else {
         // focus next respective element.
-        if (node.parentElement.previousElementSibling) {
-          node.parentElement.previousElementSibling.firstElementChild.focus();
+        if (node.previousElementSibling) {
+          node.previousElementSibling.focus();
           return false;
         }
       }
@@ -220,9 +220,7 @@ class Tabs {
     const anchorLen = anchorEle.length;
     for (let i = 0; i < len; i++) {
       tabs[i].addEventListener('click', this.clickEventListener.bind(this));
-    }
-    for (let i = 0; i < anchorLen; i++) {
-      anchorEle[i].addEventListener('keydown', this.keydownListener.bind(this));
+      tabs[i].addEventListener('keydown', this.keydownListener.bind(this));
     }
   };
 

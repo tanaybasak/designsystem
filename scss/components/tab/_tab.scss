@@ -13,6 +13,8 @@
   &-item {
     background: transparent;
     padding: 0.75rem 0;
+    border-bottom: 2px solid transparent;
+
 
     &.#{$prefix}-tabs-disabled {
       cursor: not-allowed;
@@ -28,6 +30,9 @@
       }
       &:hover {
         border-bottom: transparent;
+      }
+      &:focus, &:hover {
+        border-bottom: none;
       }
     }
 
@@ -56,7 +61,8 @@
 
         color: var(--interactive_text);
       }
-
+    }
+    &:focus, &:hover {
       border-bottom: 2px solid var(--interactive_border);
     }
   }
@@ -68,6 +74,7 @@
   &-link {
     text-decoration: none;
     display: inline-block;
+    user-select: none;    
 
     color: var(--interactive_text);
 
@@ -76,6 +83,9 @@
     &:visited,
     &:focus {
       text-decoration: none;
+    }
+    &:focus {
+      outline: none;
     }
   }
 }
