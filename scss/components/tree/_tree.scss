@@ -108,6 +108,12 @@ $default-node-height: 2rem;
           position: absolute;
           right: 0;
         }
+
+        .#{$prefix}-overflow-btn {
+          &:hover {
+            background-color: var(--interactive_bg_high);
+          }
+        }
       }
 
       &.drop-on-above {
@@ -128,9 +134,6 @@ $default-node-height: 2rem;
             opacity: 0;
             &:focus {
               opacity: 1;
-            }
-            &:hover {
-              background-color: var(--interactive_bg_high);
             }
           }
         }
