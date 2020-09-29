@@ -30,8 +30,10 @@ $search-reset-size: 0.759rem;
       direction: ltr;
     }
 
-    .#{$prefix}-search-input {
-      padding-left: 1rem;
+    &.hcl-search-btn-only {
+      .#{$prefix}-search-input {
+        padding-left: 1rem;
+      }
     }
 
     .#{$prefix}-search-btn {
@@ -155,9 +157,6 @@ $search-reset-size: 0.759rem;
     .#{$prefix}-search-btn {
       height: $search-height-sm;
       width: $search-height-sm;
-      right: 0;
-      left: unset;
-      pointer-events: unset;
 
       .#{$prefix}-search-icon {
         margin-left: ($search-height-sm - $search-icon-size)/2;
@@ -166,16 +165,8 @@ $search-reset-size: 0.759rem;
     }
 
     .#{$prefix}-search-reset {
-      background: none;
-      right: 0;
-      display: flex;
-      height: $search-height;
-      width: $search-height;
-      visibility: hidden;
-      width: 0;
-      padding: 0;
-      position: absolute;
-      transition: all 0.15s ease-out;
+      height: $search-height-sm;
+      width: $search-height-sm;
     }
   }
 
