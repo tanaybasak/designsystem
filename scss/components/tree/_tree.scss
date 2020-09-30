@@ -301,9 +301,3 @@ $default-node-height: 2rem;
     }
   }
 }
-
-.#{$prefix}-secondary-bg-hover {
-  &:hover {
-    background-color: var(--interactive_bg_high);
-  }
-}
