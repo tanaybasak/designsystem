@@ -110,6 +110,12 @@ $default-node-height: 2rem;
         }
       }
 
+      .#{$prefix}-overflow-btn {
+        &:hover {
+          background-color: var(--interactive_bg_hover_high);
+        }
+      }
+
       &.drop-on-above {
         box-shadow: inset -0.0625rem 0 0 transparent,
           0 -0.125rem 0 var(--interactive_border),
