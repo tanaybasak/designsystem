@@ -85,14 +85,14 @@
   --primary_icon_hover: var(--blue-10);
   --primary_text: var(--white);
   --secondary_bg: transparent;
-  --secondary_bg_hover: var(--blue-10);
+  --secondary_bg_hover: var(--indigo-10);
   --secondary_border: var(--blue-70);
   --secondary_icon: var(--blue-70);
   --secondary_icon_hover: var(--blue-80);
   --secondary_text: var(--blue-70);
   --interactive_bg: transparent;
-  --interactive_bg_hover: var(--blue-10);
-  --interactive_bg_high: var(--blue-20);
+  --interactive_bg_hover: var(--indigo-10);
+  --interactive_bg_high: var(--indigo-20);
   --interactive_border: var(--blue-70);
   --interactive_icon: var(--blue-70);
   --interactive_icon_hover: var(--blue-80);
@@ -147,7 +147,7 @@
   --input_text: var(--black);
   --overlay_bg: var(--black) 40%;
   --disabled_all: 0.5;
-  --default_shadow: rgba(0,0,0,0.2);
+  --default_shadow: var(--black) 20%;
 
   background-color: var(--default_bg);
   color: var(--default_text);
@@ -162,13 +162,13 @@
   --primary_icon_hover: var(--blue-10);
   --primary_text: var(--white);
   --secondary_bg: transparent;
-  --secondary_bg_hover: var(--blue-10);
+  --secondary_bg_hover: var(--indigo-10);
   --secondary_border: var(--blue-70);
   --secondary_icon: var(--blue-70);
   --secondary_icon_hover: var(--blue-80);
   --secondary_text: var(--blue-70);
   --interactive_bg: transparent;
-  --interactive_bg_hover: var(--blue-10);
+  --interactive_bg_hover: var(--indigo-10);
   --interactive_bg_high: var(--indigo-20);
   --interactive_border: var(--blue-70);
   --interactive_icon: var(--blue-70);
@@ -194,7 +194,7 @@
   --default_text_xhigh: var(--black);
   --default_text_inverse: var(--white);
   --active_bg: var(--blue-10);
-  --active_bg_high: var(--indigo-20);
+  --active_bg_high: var(--blue-20);
   --active_border: var(--blue-70);
   --active_icon: var(--blue-70);
   --active_text: var(--blue-70);
@@ -224,7 +224,7 @@
   --input_text: var(--black);
   --overlay_bg: var(--black) 40%;
   --disabled_all: 0.5;
-  --default_shadow: rgba(0,0,0,0.2);
+  --default_shadow: var(--black) 20%;
 
   background-color: var(--default_bg);
   color: var(--default_text);
@@ -271,7 +271,7 @@
   --default_text_xhigh: var(--white);
   --default_text_inverse: var(--black);
   --active_bg: var(--blue-100);
-  --active_bg_high: var(--blue-100);
+  --active_bg_high: var(--blue-90);
   --active_border: var(--blue-60);
   --active_icon: var(--blue-60);
   --active_text: var(--blue-60);
