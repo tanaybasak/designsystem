@@ -16,11 +16,11 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.11.4",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
     "@patron/patron-icon": "git+https://github01.hclpnp.com/UXUIAssets/patron-icon.git",
     "app-root-path": "^3.0.0",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^9.7.1",
     "babel-eslint": "^10.0.3",
     "delegate": "^3.2.0",
     "eslint": "^6.6.0",
@@ -38,7 +38,7 @@
     "q": "^1.5.1",
     "replace": "^1.2.0",
     "rimraf": "^3.0.0",
-    "sass": "^1.26.10",
+    "sass": "^1.23.3",
     "semver": "^7.3.2",
     "simple-git": "^2.20.1",
     "stylelint": "^13.7.0"
