@@ -12,7 +12,8 @@ $default-node-height: 2rem;
   .#{$prefix}-tree-item {
     width: 100%;
     display: block;
-    border: 0.0625rem solid transparent;
+    border-top: 0.0625rem solid transparent;
+    border-bottom: 0.0625rem solid transparent;
     padding-left: 0.25rem;
 
     .#{$prefix}-tree-node {
@@ -56,7 +57,7 @@ $default-node-height: 2rem;
         }
 
         &:hover {
-          background-color: var(--interactive_bg_hover_high);
+          background-color: var(--interactive_bg_high);
         }
       }
 
@@ -112,7 +113,7 @@ $default-node-height: 2rem;
 
       .#{$prefix}-overflow-btn {
         &:hover {
-          background-color: var(--interactive_bg_hover_high);
+          background-color: var(--interactive_bg_high);
         }
       }
 
@@ -303,6 +304,6 @@ $default-node-height: 2rem;
 
 .#{$prefix}-secondary-bg-hover {
   &:hover {
-    background-color: var(--interactive_bg_hover_high);
+    background-color: var(--interactive_bg_high);
   }
 }
