@@ -14,7 +14,7 @@
   --secondary_text: var(--blue-40);
   --interactive_bg: transparent;
   --interactive_bg_hover: var(--blue-100);
-  --interactive_bg_high: var(--blue-90);
+  --interactive_bg_hover_high: var(--blue-90);
   --interactive_border: var(--blue-60);
   --interactive_icon: var(--blue-60);
   --interactive_icon_hover: var(--blue-50);
@@ -38,9 +38,9 @@
   --default_text_high: var(--grey-10);
   --default_text_xhigh: var(--white);
   --default_text_inverse: var(--black);
-  --active_bg: var(--orange-100);
-  --active_bg_high: var(--orange-90);
-  --active_border: var(--orange-70);
+  --active_bg: var(--yellow-100);
+  --active_bg_high: var(--yellow-90);
+  --active_border: var(--orange-60);
   --active_icon: var(--orange-60);
   --active_text: var(--orange-50);
   --info_bg: var(--blue-100);
@@ -67,7 +67,7 @@
   --input_icon: var(--grey-20);
   --input_text_low: var(--grey-60);
   --input_text: var(--white);
-  --overlay_bg: var(--white) 40%;
+  --overlay_bg: rgba(255,255,255,0.4);
   --disabled_all: 0.5;
   --default_shadow: var(--black);
 
@@ -92,7 +92,7 @@
   --secondary_text: var(--blue-70);
   --interactive_bg: transparent;
   --interactive_bg_hover: var(--indigo-10);
-  --interactive_bg_high: var(--indigo-20);
+  --interactive_bg_hover_high: var(--indigo-20);
   --interactive_border: var(--blue-70);
   --interactive_icon: var(--blue-70);
   --interactive_icon_hover: var(--blue-80);
@@ -145,9 +145,9 @@
   --input_icon: var(--grey-90);
   --input_text_low: var(--grey-40);
   --input_text: var(--black);
-  --overlay_bg: var(--black) 40%;
+  --overlay_bg: rgba(0,0,0,0.4);
   --disabled_all: 0.5;
-  --default_shadow: var(--black) 20%;
+  --default_shadow: rgba(0, 0, 0, 0.2);
 
   background-color: var(--default_bg);
   color: var(--default_text);
@@ -169,7 +169,7 @@
   --secondary_text: var(--blue-70);
   --interactive_bg: transparent;
   --interactive_bg_hover: var(--indigo-10);
-  --interactive_bg_high: var(--indigo-20);
+  --interactive_bg_hover_high: var(--indigo-20);
   --interactive_border: var(--blue-70);
   --interactive_icon: var(--blue-70);
   --interactive_icon_hover: var(--blue-80);
@@ -222,9 +222,9 @@
   --input_icon: var(--grey-90);
   --input_text_low: var(--grey-40);
   --input_text: var(--black);
-  --overlay_bg: var(--black) 40%;
+  --overlay_bg: rgba(0,0,0,0.4);
   --disabled_all: 0.5;
-  --default_shadow: var(--black) 20%;
+  --default_shadow: rgba(0, 0, 0, 0.2);
 
   background-color: var(--default_bg);
   color: var(--default_text);
@@ -244,9 +244,9 @@
   --secondary_icon: var(--blue-60);
   --secondary_icon_hover: var(--blue-50);
   --secondary_text: var(--blue-40);
-  --interactive_bg: transparent;
+  --interactive_bg: transparent; 
   --interactive_bg_hover: var(--blue-100);
-  --interactive_bg_high: var(--blue-90);
+  --interactive_bg_hover_high: var(--blue-90);
   --interactive_border: var(--blue-60);
   --interactive_icon: var(--blue-60);
   --interactive_icon_hover: var(--blue-50);
@@ -299,7 +299,7 @@
   --input_icon: var(--grey-20);
   --input_text_low: var(--grey-60);
   --input_text: var(--white);
-  --overlay_bg: var(--white) 40%;
+  --overlay_bg: rgba(255,255,255,0.4);
   --disabled_all: 0.5;
   --default_shadow: var(--black);
 
