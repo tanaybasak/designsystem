@@ -222,6 +222,6 @@ $displayProperties: none inline inline-block block table inline-table table-cell
 
 .#{$prefix}-secondary-bg-hover {
   &:hover {
-    background-color: var(--interactive_bg_high);
+    background-color: var(--interactive_bg_hover_high);
   }
 }
