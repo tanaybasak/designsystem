@@ -219,3 +219,9 @@ $displayProperties: none inline inline-block block table inline-table table-cell
     opacity: 0;
   }
 }
+
+.#{$prefix}-secondary-bg-hover {
+  &:hover {
+    background-color: var(--interactive_bg_high);
+  }
+}
