@@ -13,10 +13,8 @@ class Tile {
       e.preventDefault();
       if (input) {
         input.checked = !input.checked;
-        if (select && input.checked) {
-          select.classList.add('active');
-        } else if (select) {
-          select.classList.remove('active');
+        if (select) {
+          this.clickHandler();
         }
       }
     }
