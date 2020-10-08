@@ -8,12 +8,26 @@ class Tile {
   keyDownOnTile = e => {
     const key = e.which || e.keyCode;
     const input = this.element.querySelector('input[type="checkbox"]');
+    const select = this.element.querySelector(`.${PREFIX}-tile-selectable`);
     if (key === 13 || key === 32) {
       e.preventDefault();
       if (input) {
         input.checked = !input.checked;
+        if (select && input.checked) {
+          select.classList.add('active');
+        } else if (select) {
+          select.classList.remove('active');
+        }
       }
     }
+  };
+
+  clickHandler = () => {
+    const input = this.element.querySelector('input[type="checkbox"]');
+    const select = this.element.querySelector(`.${PREFIX}-tile-selectable`);
+    select && input.checked
+      ? select.classList.add('active')
+      : select.classList.remove('active');
   };
 
   attachEvents = () => {
@@ -28,6 +42,9 @@ class Tile {
     if (selectable) {
       selectable.addEventListener('keydown', e => {
         this.keyDownOnTile(e);
+      });
+      selectable.addEventListener('click', () => {
+        this.clickHandler();
       });
     } else {
       const anchor = this.element.querySelector('a');
