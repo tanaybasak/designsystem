@@ -161,9 +161,20 @@ label.#{$prefix}-label {
       background-color: var(--active_icon);
     }
 
+    &:indeterminate + .#{$prefix}-checkbox-label::before {
+      border: none;
+      background-color: var(--active_icon);
+    }
+
     &:checked + .#{$prefix}-checkbox-label::after {
       opacity: 1;
       transform: scale(1) rotate(-45deg);
+    }
+
+    &:indeterminate + .#{$prefix}-checkbox-label::after {
+      border-left: 0;
+      top: calc(50% - 0.0875rem);
+      transform: scale(1) rotate(0deg);
     }
 
     &:focus + .#{$prefix}-checkbox-label::before {
