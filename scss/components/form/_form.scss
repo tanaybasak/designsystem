@@ -167,7 +167,6 @@ label.#{$prefix}-label {
     }
 
     &:focus + .#{$prefix}-checkbox-label::before {
-     // border: none;
       outline-offset: 2px;
       outline: 2px solid var(--interactive_border);
     }
