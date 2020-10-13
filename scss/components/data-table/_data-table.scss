@@ -81,7 +81,7 @@
               z-index: 1;
               &:hover {
                 cursor: col-resize;
-                &:after {
+                &::after {
                   content: '';
                   display: inline-block;
                   border: 5px solid var(--default_border_low);
@@ -286,9 +286,9 @@
       width: 2px;
       height: 100%;
       bottom: 0;
-      right: 0px;
+      right: 0;
       z-index: 1;
-      &:after {
+      &::after {
         content: ' ';
         display: inline-block;
         background: var(--interactive_border);
