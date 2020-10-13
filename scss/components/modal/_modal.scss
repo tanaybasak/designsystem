@@ -10,7 +10,9 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: hsla(0, 0%, 9%, 0.5);
+
+  background-color: var(--overlay) !important;
+
   z-index: 969;
   display: flex;
   align-items: center;
@@ -18,13 +20,15 @@
 
   .#{$prefix}-modal-container {
     &-danger {
-      border-top: 0.25rem solid $red-3;
+      border-top: 0.25rem solid var(--danger_border) !important;
     }
 
     position: relative;
-    background-color: $white;
-    border-top: 0.25rem solid $blue;
-    box-shadow: 0 0.75rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+
+    border-top: 0.25rem solid var(--secondary_border);
+    background-color: var(--default_bg);
+    box-shadow: 0 0.75rem 1.5rem 0 var(--default_shadow);
+
     width: 100%;
     height: 100%;
     display: flex;
@@ -49,14 +53,16 @@
   @include media-breakpoint-between(md, xxl) {
     &-header-lg {
       padding: 1rem 3rem;
+      color: var(--default_text_high);
     }
   }
 
   &-label {
+    color: var(--default_text);
+
     &-hide {
       display: none;
     }
-
     margin-bottom: 0.25rem;
   }
 
@@ -67,8 +73,10 @@
     max-width: 2.75rem;
     min-height: 2.75rem;
     max-height: 2.75rem;
-    @include hcl-close-icon(12.15, $white, $lightGrey);
-    position: absolute;
+
+    @include hcl-close-icon(12.15, false, --tranparent, --default_icon_high);
+
+    position: absolute !important;
   }
 
   &-content {
@@ -82,6 +90,7 @@
   @include media-breakpoint-between(md, xxl) {
     &-content-lg {
       padding: 1rem 3rem;
+      color: var(--default_text_high);
     }
   }
 
@@ -91,10 +100,10 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    background-color: $grey-15;
     justify-content: flex-end;
     padding: 1rem 1.5rem;
     align-items: center;
+    background-color: var(--default_bg_low);
 
     &-hide {
       display: none;
@@ -114,5 +123,3 @@
     margin: 0.5rem 0 0.5rem 0.5rem;
   }
 }
-
-

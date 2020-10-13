@@ -1,19 +1,36 @@
-<div class="hcl-slider-wrapper" id="slider-onhover-tooltip">
-    <label for="sliderElement" class="hcl-label">Basic Slider - Tooltip on Hover</label>
-    <div class="hcl-helper-text">
-        Optional Helper text goes here (max 0 and min 1)
+<div class="hcl-slider-wrapper p-5" id="slider-onhover-tooltip">
+  <label for="sliderElement" class="hcl-label"
+    >Basic Slider - Tooltip on Hover</label
+  >
+  <div class="hcl-helper-text">
+    Optional Helper text goes here (max 0 and min 1)
+  </div>
+  <div class="hcl-slider on-hover">
+    <label class="hcl-slider-bottom-range">0</label>
+    <div class="hcl-slider-input-wrapper">
+      <input
+        id="sliderElement"
+        class="hcl-slider-input"
+        type="range"
+        value="0"
+        min="0"
+        max="1"
+        step="0.1"
+      />
+      <div class="hcl-range-value">
+        <span></span>
+      </div>
     </div>
-    <div class="hcl-slider on-hover">
-        <label class="hcl-slider-bottom-range">0</label>
-        <div class="hcl-slider-input-wrapper">
-            <input id="sliderElement" class="hcl-slider-input" type="range" value="0" min="0" max="1" step="0.1" />
-            <div class="hcl-range-value">
-                <span></span>
-            </div>
-        </div>
 
-        <label class="hcl-slider-top-range">1</label>
-        <input class="hcl-form-control hcl-slider-text-input" aria-label="slider value label" min="0" max="1" step="0.1" type="number" />
-    </div>
-    <div class="hcl-error-msg"></div>
+    <label class="hcl-slider-top-range">1</label>
+    <input
+      class="hcl-form-control hcl-slider-text-input"
+      aria-label="slider value label"
+      min="0"
+      max="1"
+      step="0.1"
+      type="number"
+    />
+  </div>
+  <div class="hcl-error-msg"></div>
 </div>

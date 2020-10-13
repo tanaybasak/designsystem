@@ -37,6 +37,7 @@
 // Utilities partials
 @import 'utils/variables';
 @import 'utils/colors';
+@import 'utils/themes';
 @import 'utils/breakpoints';
 @import 'utils/functions';
 @import 'utils/mixins';
@@ -83,3 +84,4 @@
 @import 'components/toolbar/toolbar';
 @import 'components/footer/footer';
 @import 'components/tree/tree';
+@import 'components/overlay/overlay';

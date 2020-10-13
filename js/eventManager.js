@@ -16,7 +16,7 @@ export const removeListeners = (node, event) => {
     const handlers = _eventHandlers[node];
     if (event in handlers) {
       const eventHandlers = handlers[event];
-      for (let i = eventHandlers.length; i--;) {
+      for (let i = eventHandlers.length; i--; ) {
         const handler = eventHandlers[i];
         document.removeEventListener(event, handler[0], handler[1]);
       }

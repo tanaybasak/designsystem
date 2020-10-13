@@ -15,6 +15,7 @@
   --small-font-size: 0.75rem;
   --base-margin: 0.5rem;
   --base-padding: 0.2rem;
+  --transparent: transparent;
 }
 
 // SASS VARIABLES
@@ -26,79 +27,15 @@ $small-font-size: var(--small-font-size);
 $base-margin: var(--base-margin);
 $base-padding: var(--base-padding);
 
-// COLOR GUIDE
-$red: #eb1946;
-$red-1: #c3143a;
-$red-2: #f8b2c1;
-$red-3: #e0182d;
-$tertiary: $red !default;
-
-$black: #000000; //TODO  not part of color palette
-$black-2: #555555;
-$black-light: #3b5060; //TODO typography not part of color palette
-$black-lighter: #272d33;
-$dark-10: #4b4b4b;
-$dark-20: #717171;
-$dark-50: #383838;
-$secondary: $black !default;
-
-$white: #ffffff; //TODO not part of color palette
-$light-20: #efefef;
-$light-40: #e2e2e2;
-$light-60: #aaaaaa;
-$light-70: #8d8d8d;
-
-$blue: #0066b3;
-$blue-secondary: #4696d2;
-$blue-4: #152934; //TODO datepicker text color
-$grey-15: #E6E6E6;
-$blue-5: #00578f; //TODO button background color on focus
-$blue-6: #8cd7fa;
-$blue-7: #3d70b2;
-$blue-8: #0786Cf;
-// $blue-light: #3d70b2;
-$dark-blue: #132730;
-$primary: $blue !default;
-$checkbox-focus-color: #7cc7ff; //TODO checkbox focus color
-
-// $grey: #707070;
-$grey-2: #8c8c8c;
-$grey-4: #d2d2d2;
-// $grey-3: #565656;
-$grey-5: #1c1c1c;
-$lightGrey: #5a6872; //TODO modal close icon & checkbox border
-// $grey-secondary: #f3f3f3;
-$grey-6: #f5f5f5;
-$grey-7: #6d6e70;
-$grey-8: #dfe3e6; //TODO datatable, overflow menu border
-
-// THEMES
-$theme-colors: () !default;
-$theme-colors: map-merge(('primary': $primary,
-    'danger': $red,
-    'tertiary': $tertiary),
-  $theme-colors);
-
 // Forms
 $label-margin-bottom: 0.5rem;
 $input-padding-y: 0;
 $input-padding-x: 1rem;
 $input-height: 2.5rem !default;
 $input-label-weight: 600;
-$background-disabled: rgba(70, 150, 210, 0.05);
 
 // Checkbox
 $checkbox-border-width: 2px;
-
-//Alerts
-// Errors
-// $error:var(--error);
-$success: #589d25;
-// $success:var(--success);
-$info:#4696D2;
-// $danger: var(--error);
-// $warning: var(--warning);
-$warning: #fac43b;
 
 // GRIDS GUTTER
 $total-gutter-width: 1.875rem !default;
@@ -106,30 +43,17 @@ $gutter: 0.9375rem;
 $grid-columns: 12;
 $minHeight: 0.0625rem;
 // BREAKPOINTS
-$grid-breakpoints: (xs: 0,
+$grid-breakpoints: (
+  xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1600px) !default;
+  xxl: 1600px
+) !default;
 // TODO: Subject to be changed once the breakpoints are finalized
 $mobile-width: 640px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
-// BORDER
-$border-width: 1px !default;
-$border-radius: 0.25rem !default;
-$line-height-base: 1.5 !default;
-$spacer: 1rem !default;
-
-$focus-outline-color: rgb(175, 224, 247);
-//Tooltip
-
 $tooltip-zindex: 10; //TODO zindex common place
-
-//Pagination
-
-//Search
-$interactive_bg_hover: #d9f9ff;
-//Treeview

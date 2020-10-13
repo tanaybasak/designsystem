@@ -3,50 +3,75 @@
 .#{$prefix}-datePicker {
   width: 9.4375rem;
 
+  &-label {
+    color: var(--default_text);
+  }
+
   &-container {
-    position: relative;
     display: flex;
     flex-direction: column;
 
-    >svg {
+    border-bottom: 0.0625rem solid var(--input_border);
+
+    > svg {
       position: absolute;
       top: 0.75rem;
       left: 1rem;
-      fill: $blue-7;
+
+      fill: var(--input_icon);
+
       z-index: 1;
       cursor: pointer;
     }
 
     &-error {
-      border: 0.0625rem solid $red-3;
+      border-bottom: 0.125rem solid var(--danger_text);
     }
 
-    >input {
+    > input {
       padding: 0 1rem 0 3rem;
       border: none;
       height: 2.5rem;
-      border-bottom: 0.0625rem solid $dark-blue;
-      background-color: rgba(70, 150, 210, 0.05);
+
+      color: var(--input_text_low);
+      background-color: var(--input_bg);
+
       outline: none;
       font-size: 0.875rem;
       line-height: 1.125rem;
       cursor: pointer;
 
-      &[disabled] {
-        opacity: 0.5;
-        cursor: not-allowed;
-        background-color: rgba(70, 150, 210, 0.5);
+      &:focus {
+        border-bottom: 0.125rem solid var(--interactive_border);
+        color: var(--input_text);
+      }
 
-        &~svg {
+      &[disabled] {
+        cursor: not-allowed;
+
+        background-color: var(--disabled_all);
+
+        & ~ svg {
           cursor: not-allowed;
-          fill: rgba(61, 112, 178, 0.5);
+
+          fill: var(--input_icon);
         }
+      }
+    }
+
+    &.#{$prefix}-overlay-wrapper-active {
+      > input {
+        outline: none;
+
+        border-bottom: 0.125rem solid var(--interactive_border);
       }
     }
   }
 
   &-curMonth {
     font-size: 0.875rem;
+
+    color: var(--default_text_xhigh);
   }
 
   &-arrows {
@@ -68,30 +93,35 @@
   }
 
   &-up {
-    border-bottom: 0.25rem solid $blue;
+    border-bottom: 0.25rem solid var(--interactive_icon);
   }
 
   &-down {
-    border-top: 0.25rem solid $blue;
+    // border-top: 0.25rem solid $blue;
+
+    border-top: 0.25rem solid var(--interactive_icon);
   }
 
   &-year {
     position: relative;
     padding: 0 0.5rem;
 
-    >input {
+    > input {
       width: 2.5rem;
-      background-color: rgba(70, 150, 210, 0.05);
+
+      color: var(--interactive_text);
+      background-color: var(--default_bg);
+
       text-align: center;
       font-size: 0.875rem;
       line-height: 1.125rem;
 
       &:focus {
-        outline: 1px solid $blue;
+        outline: 1px solid var(--interactive_border);
       }
     }
 
-    &:hover>div {
+    &:hover > div {
       display: flex;
     }
   }
@@ -102,13 +132,15 @@
     align-items: center;
   }
 
-  &-month>span,
-  &-days>span {
+  &-month > span,
+  &-days > span {
     height: 1.5rem;
     width: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    color: var(--default_text_xhigh);
   }
 
   &-month {
@@ -118,9 +150,11 @@
     font-weight: 600;
     margin-bottom: 0.25rem;
 
-    >span {
+    > span {
       padding: 0.5rem;
-      fill: $dark-blue;
+
+      fill: var(--interactive_icon);
+
       cursor: pointer;
     }
   }
@@ -134,10 +168,12 @@
     font-size: 0.75rem;
     padding: 0 1.75rem;
 
-    >span {
+    > span {
       border-radius: 0;
       border: none;
       margin: 0.125rem;
+
+      color: var(--default_text_high);
     }
   }
 
@@ -148,6 +184,8 @@
     padding: 0 1.75rem;
 
     &-today {
+      color: var(--active_text);
+
       &::after {
         content: '';
         position: absolute;
@@ -156,8 +194,9 @@
         left: 50%;
         height: 0.1875rem;
         width: 0.1875rem;
-        border-radius: 50%;
-        background: $blue-7;
+        border-radius: 15%;
+
+        background: var(--active_icon);
       }
     }
 
@@ -171,51 +210,42 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      color: var(--default_text_xhigh);
     }
   }
 
   &-date {
     &:hover {
-      background-color: rgba(85, 150, 230, 0.1);
+      background-color: var(--interactive_bg_hover);
     }
 
     &-picked {
-      border: 0.125rem solid $blue-7;
+      // border: 0.125rem solid $blue-7;
+
+      background-color: var(--active_bg_high);
+      color: var(--active_text);
     }
 
     &-fade {
       opacity: 0.5;
-      color: $lightGrey;
+      // color: $lightGrey;
+
+      color: var(--default_text_low) !important;
     }
   }
 
   &-panel {
-    position: absolute;
-    background-color: $white;
-    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 9;
     width: 17.5rem;
     height: 16.375rem;
     padding: 1rem 0.625rem 0.25rem 0.625rem;
-    color: $blue-4;
-
-    &-show {
-      display: block;
-    }
-
-    &-above {
-      bottom: 2.5rem;
-    }
-
-    &-below {
-      top: 2.5rem;
-    }
+    color: var(--default_text_xhigh);
   }
 
   &-error {
     display: none;
-    color: $red-3;
+
+    color: var(--danger_text);
+
     margin-top: 0.25rem;
     font-size: 0.75rem;
     letter-spacing: 0;

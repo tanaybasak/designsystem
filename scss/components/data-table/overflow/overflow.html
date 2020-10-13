@@ -1,4 +1,4 @@
-<div class="hcl-data-table-wrapper data-table-sticky-header overflow-unset">
+<div class="hcl-data-table-wrapper p-5">
   <table class="hcl-data-table">
     <thead>
       <tr>
@@ -21,46 +21,53 @@
         <td>Active</td>
         <td>
           <div
-            id="dataTableOverflow"
-            class="hcl-overflow-container overflow-onhover"
+            id="data-table-onhover-overflow-menu"
+            class="hcl-overlay-wrapper overflow-onhover"
           >
             <button
-              class="hcl-ellipsis"
-              aria-label="Right Overflow Menu"
+              class="hcl-overflow-btn hcl-ellipsis"
+              aria-label="Overflow Menu"
               role="Overflow Menu"
             ></button>
-            <div class="hcl-overflow-menu hcl-overflow-right">
-              <ul aria-labelledby="Right Overflow Menu">
+            <div class="hcl-overlay-container">
+              <ul aria-labelledby="Overflow Menu" class="hcl-overflow-menu">
                 <li class="hcl-overflow-option">
-                  <button class="hcl-overflow-option-btn" aria-label="Option 1">
-                    Option 1
-                  </button>
-                </li>
-                <li class="hcl-overflow-option">
-                  <button class="hcl-overflow-option-btn" aria-label="option 2">
-                    Option 2
+                  <button class="hcl-overflow-option-item" aria-label="Share">
+                    Share
                   </button>
                 </li>
                 <li class="hcl-overflow-option">
                   <button
-                    class="hcl-overflow-option-disablebtn"
+                    class="hcl-overflow-option-item hcl-overflow-option-danger"
+                    aria-label="Delete"
+                  >
+                    Delete
+                  </button>
+                </li>
+                <li class="hcl-overflow-option">
+                  <button
+                    class="hcl-overflow-option-item"
                     disabled="disabled"
-                    tabindex="-1"
-                    aria-label="option 3"
+                    aria-label="Move to"
                   >
-                    Option 3
+                    Move to
                   </button>
                 </li>
-                <li class="hcl-overflow-option hcl-overflow-separator">
-                  <button
-                    class="hcl-overflow-option-dangerbtn"
-                    aria-label="Danger"
-                  >
-                    Danger
+                <li class="hcl-overflow-option">
+                  <button class="hcl-overflow-option-item" aria-label="Copy to">
+                    Copy to
                   </button>
+                </li>
+                <li class="hcl-overflow-option">
+                  <a
+                    class="hcl-overflow-option-item hcl-overflow-option-separator"
+                    aria-label="Detail"
+                    href="https://google.com"
+                    title="Detail"
+                    >Detail</a
+                  >
                 </li>
               </ul>
-              <div class="hcl-overflow-caret-right"></div>
             </div>
           </div>
         </td>
@@ -73,44 +80,51 @@
         <td>Maureen's VM Groups</td>
         <td>Active</td>
         <td>
-          <div id="dataTableOverflow2" class="hcl-overflow-container">
+          <div id="data-table-overflow-menu" class="hcl-overlay-wrapper">
             <button
-              class="hcl-ellipsis"
-              aria-label="Right Overflow Menu"
+              class="hcl-overflow-btn hcl-ellipsis"
+              aria-label="Overflow Menu"
               role="Overflow Menu"
             ></button>
-            <div class="hcl-overflow-menu hcl-overflow-right">
-              <ul aria-labelledby="Right Overflow Menu">
+            <div class="hcl-overlay-container">
+              <ul aria-labelledby="Overflow Menu" class="hcl-overflow-menu">
                 <li class="hcl-overflow-option">
-                  <button class="hcl-overflow-option-btn" aria-label="Option 1">
-                    Option 1
-                  </button>
-                </li>
-                <li class="hcl-overflow-option">
-                  <button class="hcl-overflow-option-btn" aria-label="option 2">
-                    Option 2
+                  <button class="hcl-overflow-option-item" aria-label="Share">
+                    Share
                   </button>
                 </li>
                 <li class="hcl-overflow-option">
                   <button
-                    class="hcl-overflow-option-disablebtn"
+                    class="hcl-overflow-option-item hcl-overflow-option-danger"
+                    aria-label="Delete"
+                  >
+                    Delete
+                  </button>
+                </li>
+                <li class="hcl-overflow-option">
+                  <button
+                    class="hcl-overflow-option-item"
                     disabled="disabled"
-                    tabindex="-1"
-                    aria-label="option 3"
+                    aria-label="Move to"
                   >
-                    Option 3
+                    Move to
                   </button>
                 </li>
-                <li class="hcl-overflow-option hcl-overflow-separator">
-                  <button
-                    class="hcl-overflow-option-dangerbtn"
-                    aria-label="Danger"
-                  >
-                    Danger
+                <li class="hcl-overflow-option">
+                  <button class="hcl-overflow-option-item" aria-label="Copy to">
+                    Copy to
                   </button>
+                </li>
+                <li class="hcl-overflow-option">
+                  <a
+                    class="hcl-overflow-option-item hcl-overflow-option-separator"
+                    aria-label="Detail"
+                    href="https://google.com"
+                    title="Detail"
+                    >Detail</a
+                  >
                 </li>
               </ul>
-              <div class="hcl-overflow-caret-right"></div>
             </div>
           </div>
         </td>

@@ -1,149 +1,106 @@
 @import '../../base';
 
-@mixin option() {
-  width: inherit;
-  font-size: 0.875rem;
-  color: $aqua-90;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+.#{$prefix}-overflow-menu {
+  list-style: none;
+  padding: 0.375rem 0;
+  width: 11.25rem;
+  max-height: 12rem;
+  overflow: auto;
+  background-color: var(--default_bg);
+
+  .#{$prefix}-overflow-option {
+    font-size: 0.875rem;
+
+    &-item {
+      display: inline-block;
+      width: 100%;
+      padding: 0 0.5rem;
+      height: 1.875rem;
+      text-align: left;
+      cursor: pointer;
+      overflow: hidden;
+      background: transparent;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 1.875rem;
+      color: var(--default_text);
+      border: 1px solid transparent;
+
+      &:hover {
+        background-color: var(--interactive_bg_hover);
+        color: var(--default_text_high);
+      }
+
+      &:focus {
+        outline-offset: -0.0625rem;
+        outline: 0.0625rem solid var(--interactive_border);
+      }
+
+      &.#{$prefix}-overflow-option-separator {
+        border-top: 0.0625rem solid var(--default_border_xlow);
+      }
+
+      &.#{$prefix}-overflow-option-danger {
+        &:hover {
+          background-color: var(--danger_bg_inverse);
+          color: var(--default_text_inverse);
+        }
+
+        &:focus {
+          outline-offset: -0.0625rem;
+          outline: 0.0625rem solid var(--interactive_border);
+          background-color: var(--danger_bg_inverse);
+          color: var(--default_text_inverse);
+        }
+      }
+
+      &:disabled,
+      &[disabled='disabled'],
+      &.#{$prefix}-overflow-option-disabled {
+        outline-offset: 0;
+        cursor: not-allowed;
+
+        opacity: var(--disabled_all);
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+
+      .#{$prefix}-overflow-option-icon {
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+    }
+
+    button::-moz-focus-inner {
+      border: 0;
+    }
+  }
 }
 
-@mixin btn($type) {
-  width: 100%;
-  padding: 0.5rem;
-  text-align: left;
-  cursor: pointer;
-  overflow:hidden;
+.#{$prefix}-overflow-btn {
+  width: 2rem;
+  height: 2rem;
   background: transparent;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 
   &:hover {
-    background-color: rgba(70, 150, 210, 0.1);
+    color: var(--interactive_icon_hover);
+    background-color: var(--interactive_bg_hover);
+    text-decoration: none;
+    cursor: pointer;
   }
 
   &:focus {
     outline-offset: -1px;
-    outline: 1px solid $blue;
-  }
 
-  @if ($type==disable) {
-    outline-offset: 0;
-    cursor: not-allowed;
-  } @else if($type==danger) {
-    &:hover {
-      background-color: $red;
-      color: $white;
-    }
-    &:focus {
-      outline-offset: -1px;
-      outline: 1px solid $blue;
-      background-color: $red;
-      color: $white;
-    }
+    outline: 0.125rem solid var(--interactive_border);
   }
 }
 
-@mixin caret($type) {
-  position: absolute;
-  top: -0.3125rem;
-  width: 0.65625rem;
-  height: 0.65625rem;
-  transform: rotate(-45deg);
-  background: $white;
-  border-top: 0.0625rem solid $grey-8;
-  border-right: 0.0625rem solid $grey-8;
-  z-index: 5;
-  box-shadow: 0.5rem 0 0.625rem -0.375rem rgba(0, 0, 0, 0.1);
-
-  @if ($type==right) {
-    left: 1rem;
-  } @else if ($type==left) {
-    right: 0.8rem;
-  }
-}
-
-.#{$prefix}-overflow {
-  &-separator {
-    border-top: 0.0625rem solid $grey-8;
-  }
-
-  &-caret {
-    @include caret(left);
-
-    &-right {
-      @include caret(right);
-    }
-  }
-
-  &-container {
-    position: relative;
-    display: inline-block;
-  }
-
-  &-close {
-    display: none;
-  }
-
-  &-menu {
-    position: absolute;
-    z-index: 9;
-    height: auto;
-    width: 11.25rem;
-    background-color: $white;
-    border: 0.0625rem solid $grey-8;
-    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
-    list-style: none;
-    top: 1.4375rem;
-    display: none;
-
-    ul {
-      padding: 0.375rem 0;
-      position: relative;
-      z-index: 6;
-      max-height: 12rem;
-      overflow: auto;
-    }
-  }
-
-  &-option {
-    @include option();
-
-    &-btn {
-      @include btn(default);
-    }
-    button::-moz-focus-inner {
-      border: 0;
-    }
-
-    &-disablebtn {
-      @include btn(disable);
-    }
-
-    &-dangerbtn {
-      @include btn(danger);
-    }
-  }
-
-  &-disable {
-    cursor: not-allowed;
-    opacity: 0.3;
-  }
-}
-
-.#{$prefix}-hidden {
-  display: none;
-}
-
-.#{$prefix}-show {
-  display: block;
-}
-
-.#{$prefix}-ellipsis {
-  width: 0.5rem;
-
-  &.horizontal-ellipsis {
-    width: 1rem;
+.#{$prefix}-overlay-wrapper-active {
+  .#{$prefix}-overflow-btn {
+    background-color: var(--active_bg_high);
+    color: var(--active_icon);
   }
 }

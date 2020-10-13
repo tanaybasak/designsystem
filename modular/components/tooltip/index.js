@@ -17,7 +17,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  tooltip: function(selector, options) {
+  tooltip: function (selector, options) {
     attachElements(selector, options, Tooltip);
   }
 };

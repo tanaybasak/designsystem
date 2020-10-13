@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  modal: function(selector, options) {
+  modal: function (selector, options) {
     attachElements(selector, options, Modal);
   }
 };

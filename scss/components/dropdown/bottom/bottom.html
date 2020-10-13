@@ -1,14 +1,24 @@
-<section class="hcl-dropdown" id="bottom-dropdown">
-    <button class="hcl-btn hcl-dropdown-toggle" id="bottom-dropdown-btn" aria-haspopup="true"
-        aria-controls="bottom-container" data-toggle="dropdown">
-        Dropdown Bottom
+<div class="p-5">
+  <div class="hcl-overlay-wrapper hcl-dropdown" id="bottom-dropdown">
+    <button
+      class="hcl-btn hcl-dropdown-toggle"
+      id="bottom-dropdown-btn"
+      aria-haspopup="true"
+      aria-controls="bottom-container"
+      data-toggle="dropdown"
+    >
+      Dropdown Bottom
     </button>
-    <ul class="hcl-dropdown-container" id="bottom-dropdown" role="menu" aria-labelledby="bottom-dropdown-btn">
-        <li class="hcl-dropdown-item"><a role="menuitem" tabindex="0" href="#" class="hcl-dropdown-wrapper">A</a>
-        </li>
-        <li class="hcl-dropdown-item"><a role="menuitem" tabindex="0" href="#" class="hcl-dropdown-wrapper">B</a>
-        </li>
-        <li class="hcl-dropdown-item"><a role="menuitem" tabindex="0" href="#" class="hcl-dropdown-wrapper">C</a>
-        </li>
-    </ul>
-</section>
+    <div class="hcl-overlay-container">
+      <ul
+        class="hcl-dropdown-menu"
+        role="menu"
+        aria-labelledby="bottom-dropdown-btn"
+      >
+        <li class="hcl-dropdown-item" tabindex="0">A</li>
+        <li class="hcl-dropdown-item" tabindex="0">B</li>
+        <li class="hcl-dropdown-item" tabindex="0">C</li>
+      </ul>
+    </div>
+  </div>
+</div>

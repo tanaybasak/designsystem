@@ -3,19 +3,51 @@
 .#{$prefix}-timepicker {
   display: flex;
   flex-direction: column;
-
+  &-label {
+    color: var(--default_text);
+  }
   &-input {
     display: flex;
     flex-direction: row;
-    border-bottom: 0.0625rem solid transparent;
+
+    color: var(--input_text_low);
+
+    border-bottom: var(--interactive_border);
 
     input {
       width: 5.25rem;
+
+      background-color: var(--input_bg);
+      border-bottom: 1px solid var(--input_border);
+      color: var(--input_text_low);
+
+      &:focus {
+        border-bottom: 2px solid var(--interactive_border);
+        color: var(--input_text);
+      }
+      &:active {
+        border-bottom: 1px solid var(--input_border);
+        color: var(--input_text);
+      }
+
+      &:disabled,
+      &[disabled='disabled'] {
+        cursor: not-allowed;
+        opacity: var(--disabled_all);
+      }
     }
   }
 
+  &:disabled,
+  &[disabled='disabled'] {
+    cursor: not-allowed;
+    opacity: var(--disabled_all);
+  }
+
   .#{$prefix}-timepicker-hour-label {
-    color: $lightGrey;
+    color: var(--interactive_text);
+    background-color: var(--interactive_bg);
+
     display: flex;
     align-items: center;
     padding-left: 0.625rem;

@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  toggle: function(selector, options) {
+  toggle: function (selector, options) {
     attachElements(selector, options, Toggle);
   }
 };

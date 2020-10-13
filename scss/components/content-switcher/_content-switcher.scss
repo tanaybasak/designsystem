@@ -1,116 +1,102 @@
 @import '../../base';
 
 .#{$prefix}-content-switcher {
+  display: flex;
+  width: 100%;
+  height: hcl-rem(40px);
+  position: relative;
+
+  button::-moz-focus-inner {
+    border: 0;
+  }
+
+  &-btn {
+    @include media-breakpoint-only(xs) {
+      padding: 0 0.2rem;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    background-color: var(--default_bg);
+    border: 1px solid var(--default_border_xlow);
+    color: var(--interactive_text);
+
     display: flex;
-    width: 100%;
+    align-items: center;
     height: hcl-rem(40px);
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 0 2rem;
     position: relative;
 
-    button::-moz-focus-inner {
-        border: 0;
+    &.active {
+      background-color: var(--active_bg_high);
+      color: var(--active_text);
+
+      .#{$prefix}-thumbnail {
+        border: 1px solid var(--active_icon);
       }
-
-    &-btn {
-        @include media-breakpoint-only(xs) {
-            padding: 0 .2rem;
-            flex-grow: 1;
-            justify-content: center;
-        }
-
-        background-color: transparent;
-        color: $blue-7;
-        display: flex;
-        align-items: center;
-        height: hcl-rem(40px);
-        font-size: .875rem;
-        margin: 0;
-        padding: 0 2rem;
-        border: 1px solid $blue-7;
-        position: relative;
-
-        &.active {
-            background-color: $blue;
-            color: $white;
-
-            .#{$prefix}-thumbnail {
-                background-color: $white;
-                color: $blue;
-            }
-        }
-
-        &:focus{
-            outline: 2px solid $blue-7;
-            outline-offset: 1px;
-            z-index: 1;
-        }
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &:hover:not(:disabled) {
-            background-color: $blue-5;
-            color: $white;
-
-            .#{$prefix}-thumbnail {
-                background-color: $white;
-                color: $blue;
-            }
-        }
-
-        &:disabled {
-            cursor: not-allowed;
-            background-color: rgba(255, 255, 255, .5);
-            color: rgba(61, 112, 178, .5);
-            border-color: rgba(0, 102, 179, .5);
-
-            &.active {
-                background-color: rgba(0, 102, 179, .5);
-                color: rgba(255, 255, 255, .5);
-            }
-
-            .#{$prefix}-thumbnail {
-                background-color: rgba(0, 102, 179, .5);
-            }
-        }
-
-        .#{$prefix}-thumbnail {
-            width: 1.125rem;
-            height: 1.125rem;
-            margin-right: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;            
-            border-radius: 50%;
-            background-color: $blue;
-            color: $white;
-        }
     }
 
-    &-btn:first-of-type {
-        border-top-left-radius: hcl-rem(4px);
-        border-bottom-left-radius: hcl-rem(4px);
+    &:focus {
+      outline-offset: -1px;
+      z-index: 1;
+
+      outline: 2px solid var(--interactive_border);
     }
 
-    &-btn:not(:first-of-type) {
-        border-left: 1px solid $blue-7;
+    &:hover {
+      cursor: pointer;
     }
 
-    &-btn:disabled:not(:first-of-type) {
-        border-color: rgba(0, 102, 179, .5);
+    &:hover:not(:disabled) {
+      background-color: var(--interactive_bg_hover);
+      color: var(--interactive_text);
+
+      .#{$prefix}-thumbnail {
+        border: 1px solid var(--interactive_icon);
+      }
     }
 
-    &-btn:not(:last-of-type) {
-        border-right: none;
+    &:disabled {
+      cursor: not-allowed;
+
+      opacity: var(--disabled_all);
+
+      .#{$prefix}-thumbnail {
+        opacity: var(--disabled_all);
+      }
     }
 
-    &-btn:last-of-type {
-        border-top-right-radius: hcl-rem(4px);
-        border-bottom-right-radius: hcl-rem(4px);
+    .#{$prefix}-thumbnail {
+      width: 1.125rem;
+      height: 1.125rem;
+      margin-right: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      border: 1px solid var(--interactive_icon);
     }
+  }
+
+  &-btn:first-of-type {
+    border-top-left-radius: hcl-rem(4px);
+    border-bottom-left-radius: hcl-rem(4px);
+  }
+
+  &-btn:not(:last-of-type) {
+    border-right: none;
+  }
+
+  &-btn:last-of-type {
+    border-top-right-radius: hcl-rem(4px);
+    border-bottom-right-radius: hcl-rem(4px);
+  }
 }
 
 .#{$prefix}-content-switcher-content {
-    margin: hcl-rem(15px) 0 hcl-rem(10px);
-    width: 100%;
+  margin: hcl-rem(15px) 0 hcl-rem(10px);
+  width: 100%;
 }

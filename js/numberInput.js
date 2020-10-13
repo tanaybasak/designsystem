@@ -74,7 +74,7 @@ class NumberInput {
   };
 
   static handleDataAPI = () => {
-    handleDataBinding('numberInput', function(element, target) {
+    handleDataBinding('numberInput', function (element, target) {
       let action = '';
       let newTarget = getClosest(target, `.increment-btn`);
       if (!newTarget) {

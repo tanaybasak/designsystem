@@ -2,117 +2,132 @@
 
 $tooltip-default-max-width: 12.5rem;
 $tooltip-interactive-max-width: 15rem;
-$tooltip-arrow-size-default: .625rem;
+$tooltip-arrow-size-default: 0.625rem;
 $tooltip-arrow-size-default-position: $tooltip-arrow-size-default/2;
-$tooltip-arrow-size-icon: .3125rem;
+$tooltip-arrow-size-icon: 0.3125rem;
 $tooltip-arrow-size-icon-position: $tooltip-arrow-size-icon/2;
-$tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position+.0625rem;
-$tooltip-box-shadow:rgba($black, 0.1);
+$tooltip-arrow-size-interactive-position: $tooltip-arrow-size-default-position +
+  0.0625rem;
+$tooltip-box-shadow: rgba(var(--black), 0.1);
+
+.#{$prefix}-def-tooltip {
+  color: var(--default_text);
+}
+
+.#{$prefix}-icon-tooltip {
+  stroke: var(--interactive_icon);
+}
+
+.#{$prefix}-interactive-tooltip {
+  stroke: var(--interactive_icon);
+}
 
 .#{$prefix}-tooltip {
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  font-size: var(--small-font-size);
+  word-wrap: break-word;
+  text-align: left;
+  max-width: $tooltip-default-max-width;
+
+  color: var(--default_text_high);
+  background-color: var(--default_bg_low);
+  box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
+
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+
+  z-index: $tooltip-zindex;
+  top: 0;
+  left: 0;
+
+  &-arrow {
     position: absolute;
-    display: block;
-    visibility: hidden;
-    font-size: var(--small-font-size);
-    word-wrap: break-word;
-    text-align: left;
-    max-width: $tooltip-default-max-width;
-    background-color: $black-lighter;
-    color: $white;
-    border-radius: .25rem;
-    padding: .5rem;
-    box-shadow: 0 0.25rem 0.5rem 0 $tooltip-box-shadow;
-    z-index: $tooltip-zindex;
-    top: 0;
-    left: 0;
+    width: $tooltip-arrow-size-default;
+    height: $tooltip-arrow-size-default;
 
-    &-arrow {
-        position: absolute;
-        width: $tooltip-arrow-size-default;
-        height: $tooltip-arrow-size-default;
-        background: $black-lighter;
+    background-color: var(--default_bg_low);
 
-        &[data-direction='bottom'] {
-            top: -($tooltip-arrow-size-default-position);
-            transform: rotate(-45deg);
-        }
-
-        &[data-direction='top'] {
-            bottom: -($tooltip-arrow-size-default-position);
-            transform: rotate(135deg);
-        }
-
-        &[data-direction='right'] {
-            left: -($tooltip-arrow-size-default-position);
-            transform: rotate(-135deg);
-        }
-
-        &[data-direction='left'] {
-            right: -($tooltip-arrow-size-default-position);
-            transform: rotate(45deg);
-        }
+    &[data-direction='bottom'] {
+      top: -($tooltip-arrow-size-default-position);
+      transform: rotate(-45deg);
     }
 
-    &.show {
-        visibility: visible;
+    &[data-direction='top'] {
+      bottom: -($tooltip-arrow-size-default-position);
+      transform: rotate(135deg);
     }
 
-    &[data-focus-on-click='true'] {
-        background-color: $white;
-        color: $dark-blue;
-        max-width: $tooltip-interactive-max-width;
-        border: .0625rem solid $grey-8;
-        padding: 1rem;
-
-        .#{$prefix}-tooltip-arrow {
-            background: $white;
-            border-top: .0625rem solid $grey-8;
-            border-right: .0625rem solid $grey-8;
-
-            &[data-direction='bottom'] {
-                top: -($tooltip-arrow-size-interactive-position);
-            }
-
-            &[data-direction='top'] {
-                bottom: -($tooltip-arrow-size-interactive-position);
-            }
-
-            &[data-direction='right'] {
-                left: -($tooltip-arrow-size-interactive-position);
-            }
-
-            &[data-direction='left'] {
-                right: -($tooltip-arrow-size-interactive-position);
-            }
-        }
+    &[data-direction='right'] {
+      left: -($tooltip-arrow-size-default-position);
+      transform: rotate(-135deg);
     }
 
-    &.#{$prefix}-tooltip-icon {
-        padding: .25rem;
-
-        .#{$prefix}-tooltip-arrow {
-            width: $tooltip-arrow-size-icon;
-            height: $tooltip-arrow-size-icon;
-
-            &[data-direction='bottom'] {
-                top: -($tooltip-arrow-size-icon-position);
-            }
-
-            &[data-direction='top'] {
-                bottom: -($tooltip-arrow-size-icon-position);
-            }
-
-            &[data-direction='right'] {
-                left: -($tooltip-arrow-size-icon-position);
-            }
-
-            &[data-direction='left'] {
-                right: -($tooltip-arrow-size-icon-position);
-            }
-        }
+    &[data-direction='left'] {
+      right: -($tooltip-arrow-size-default-position);
+      transform: rotate(45deg);
     }
+  }
+
+  &.show {
+    visibility: visible;
+  }
+
+  &[data-focus-on-click='true'] {
+    color: var(--default_text_high);
+    background-color: var(--default_bg_low);
+
+    max-width: $tooltip-interactive-max-width;
+    padding: 1rem;
+
+    .#{$prefix}-tooltip-arrow {
+      background-color: var(--default_bg_low);
+
+      &[data-direction='bottom'] {
+        top: -($tooltip-arrow-size-interactive-position);
+      }
+
+      &[data-direction='top'] {
+        bottom: -($tooltip-arrow-size-interactive-position);
+      }
+
+      &[data-direction='right'] {
+        left: -($tooltip-arrow-size-interactive-position);
+      }
+
+      &[data-direction='left'] {
+        right: -($tooltip-arrow-size-interactive-position);
+      }
+    }
+  }
+
+  &.#{$prefix}-tooltip-icon {
+    padding: 0.25rem;
+
+    .#{$prefix}-tooltip-arrow {
+      width: $tooltip-arrow-size-icon;
+      height: $tooltip-arrow-size-icon;
+
+      &[data-direction='bottom'] {
+        top: -($tooltip-arrow-size-icon-position);
+      }
+
+      &[data-direction='top'] {
+        bottom: -($tooltip-arrow-size-icon-position);
+      }
+
+      &[data-direction='right'] {
+        left: -($tooltip-arrow-size-icon-position);
+      }
+
+      &[data-direction='left'] {
+        right: -($tooltip-arrow-size-icon-position);
+      }
+    }
+  }
 }
 
 .#{$prefix}-tooltip-dottedline {
-    border-bottom: 1px dotted black;
+  border-bottom: 1px dotted var(--interactive_border);
 }

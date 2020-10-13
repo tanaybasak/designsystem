@@ -8,86 +8,86 @@
 
 // MARGIN
 .margin {
-    margin: $base-margin;
+  margin: $base-margin;
 }
 
 .mr-auto {
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .ml-auto {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 // Margin and Padding
 @for $i from 0 to 11 {
-    .mt-#{$i} {
-        margin-top: $i * 4px;
-    }
+  .mt-#{$i} {
+    margin-top: $i * 4px;
+  }
 
-    .mb-#{$i} {
-        margin-bottom: $i * 4px;
-    }
+  .mb-#{$i} {
+    margin-bottom: $i * 4px;
+  }
 
-    .ml-#{$i} {
-        margin-left: $i * 4px;
-    }
+  .ml-#{$i} {
+    margin-left: $i * 4px;
+  }
 
-    .mr-#{$i} {
-        margin-right: $i * 4px;
-    }
+  .mr-#{$i} {
+    margin-right: $i * 4px;
+  }
 
-    .m-#{$i} {
-        margin: $i * 4px;
-    }
+  .m-#{$i} {
+    margin: $i * 4px;
+  }
 
-    .pt-#{$i} {
-        padding-top: $i * 4px;
-    }
+  .pt-#{$i} {
+    padding-top: $i * 4px;
+  }
 
-    .pb-#{$i} {
-        padding-bottom: $i * 4px;
-    }
+  .pb-#{$i} {
+    padding-bottom: $i * 4px;
+  }
 
-    .pl-#{$i} {
-        padding-left: $i * 4px;
-    }
+  .pl-#{$i} {
+    padding-left: $i * 4px;
+  }
 
-    .pr-#{$i} {
-        padding-right: $i * 4px;
-    }
+  .pr-#{$i} {
+    padding-right: $i * 4px;
+  }
 
-    .p-#{$i} {
-        padding: $i * 4px;
-    }
+  .p-#{$i} {
+    padding: $i * 4px;
+  }
 }
 
 .m-0 {
-    margin: 0;
+  margin: 0;
 }
 
 .p-0 {
-    margin: 0;
+  margin: 0;
 }
 
 // close icon class
 .#{$prefix}-close {
-    @include hcl-close-icon(24);
+  @include hcl-close-icon(24, false, --tranparent, --black);
 }
 
 // ellipsis icon
 .#{$prefix}-ellipsis {
-    @include hcl-ellipsis();
+  @include hcl-ellipsis();
 }
 
-// Border
-.b-0 {
-    border: 0;
-}
+// Border   //TODO need to check if we need border classes as these classes are not used anywhere
+// .b-0 {
+//     border: 0;
+// }
 
-.b-1 {
-    border: 1px solid $light-40;
-}
+// .b-1 {
+//     border: 1px solid $light-40;
+// }
 
 /* 
  * ICON UTILITY CLASSES
@@ -101,100 +101,108 @@
  *********************************************************************
 */
 
-$iconSizesMap: ('icon-1': 1rem, 'icon-2': 2rem, 'icon-3': 3rem);
+$iconSizesMap: (
+  'icon-1': 1rem,
+  'icon-2': 2rem,
+  'icon-3': 3rem
+);
 
-@each $key,
-$value in $iconSizesMap {
-    .#{$prefix}-#{$key} {
-        display: inline-flex;
-        height: $value;
-        width: $value;
-        font-size: $value;
-        background-color: transparent;
-        overflow: hidden;
-    }
+@each $key, $value in $iconSizesMap {
+  .#{$prefix}-#{$key} {
+    display: inline-flex;
+    height: $value;
+    width: $value;
+    font-size: $value;
+    background-color: transparent;
+    overflow: hidden;
+  }
 }
 
 // ACTIVE TAB/MENU UTILITY CLASS
 .#{$prefix}-active {
-    @include nav-active;
+  @include nav-active;
 }
 
 .bg-white {
-    background-color: $white;
+  background-color: var(--white);
 }
 
 // Display
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 // Disable
 %disable,
 .disable {
-    opacity: .5;
-    cursor: not-allowed;
+  opacity: var(--disabled_all);
+  cursor: not-allowed;
 }
 
 .#{$prefix}-boxshadow-0 {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .#{$prefix}-boxshadow-1 {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .#{$prefix}-boxshadow-2 {
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 .#{$prefix}-boxshadow-3 {
-    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
 }
 
 .#{$prefix}-boxshadow-4 {
-    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -7px rgba(0, 0, 0, .2);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
 }
 
 .#{$prefix}-boxshadow-5 {
-    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12), 0 11px 15px -7px rgba(0, 0, 0, .2);
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
-
 
 $positionProperties: static fixed absolute relative sticky;
 
 @each $positionProperty in $positionProperties {
-    .#{$prefix}-#{$positionProperty} {
-        position: $positionProperty;
-    }
+  .#{$prefix}-#{$positionProperty} {
+    position: $positionProperty;
+  }
 }
 
 $textAlignment: left center right justify;
 
 @each $alignment in $textAlignment {
-    .#{$prefix}-text-#{$alignment} {
-        text-align: $alignment;
-    }
+  .#{$prefix}-text-#{$alignment} {
+    text-align: $alignment;
+  }
 }
 
 $floatProperties: right left none;
 
 @each $floatroperty in $floatProperties {
-    .#{$prefix}-float-#{$floatroperty} {
-        float: #{$floatroperty};
-    }
+  .#{$prefix}-float-#{$floatroperty} {
+    float: #{$floatroperty};
+  }
 }
 
 .#{$prefix}-clearfix {
-    @include clearfix;
+  @include clearfix;
 }
 
-$displayProperties: none inline inline-block block table inline-table table-cell table-row table-column flex inline-flex;
+$displayProperties: none inline inline-block block table inline-table table-cell
+  table-row table-column flex inline-flex;
 
 @each $displayProperty in $displayProperties {
-    .#{$prefix}-#{$displayProperty} {
-        display: $displayProperty;
-    }
+  .#{$prefix}-#{$displayProperty} {
+    display: $displayProperty;
+  }
 }
 
 .#{$prefix}-lightbox {
@@ -203,11 +211,17 @@ $displayProperties: none inline inline-block block table inline-table table-cell
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--overlay);
   opacity: 1;
   z-index: 959;
 
   &-disable {
     opacity: 0;
+  }
+}
+
+.#{$prefix}-secondary-bg-hover {
+  &:hover {
+    background-color: var(--interactive_bg_hover_high);
   }
 }

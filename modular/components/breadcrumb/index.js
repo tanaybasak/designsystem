@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  breadcrumb: function(selector) {
+  breadcrumb: function (selector) {
     attachElements(selector, null, Breadcrumb);
   }
 };

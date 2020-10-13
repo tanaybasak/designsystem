@@ -1,55 +1,71 @@
-<section id="content-switcher4" class="hcl-row m-4 p-4 colBorder">
-    <h6 class="p-2">Content Switcher (disabled with icons)</h6>
-    <div data-content-switcher class="hcl-content-switcher" role="tablist">
-        <button class="hcl-content-switcher-btn active" role="tab" data-target=".gateDisabled">
-            <i class="hcl-thumbnail p-hclsw p-hclsw-active"></i>
-            All
-        </button>
-        <button class="hcl-content-switcher-btn" role="tab" data-target=".windowDisabled">
-            <i class="hcl-thumbnail p-hclsw p-hclsw-arrow-up"></i>
-            Cybernetics
-        </button>
-        <button class="hcl-content-switcher-btn" role="tab" data-target=".doorDisabled">
-            <i class="hcl-thumbnail p-hclsw p-hclsw-checkbox"></i>
-            Information & Communication
-        </button>
+<section id="content-switcher4" class="hcl-row p-5 colBorder">
+  <h6 class="p-2">Content Switcher (disabled with icons)</h6>
+  <div data-content-switcher class="hcl-content-switcher" role="tablist">
+    <button
+      class="hcl-content-switcher-btn active"
+      role="tab"
+      data-target=".gateDisabled"
+    >
+      <i class="hcl-thumbnail p-hclsw p-hclsw-active"></i>
+      All
+    </button>
+    <button
+      class="hcl-content-switcher-btn"
+      role="tab"
+      data-target=".windowDisabled"
+    >
+      <i class="hcl-thumbnail p-hclsw p-hclsw-arrow-up"></i>
+      Cybernetics
+    </button>
+    <button
+      class="hcl-content-switcher-btn"
+      role="tab"
+      data-target=".doorDisabled"
+    >
+      <i class="hcl-thumbnail p-hclsw p-hclsw-checkbox"></i>
+      Information & Communication
+    </button>
+  </div>
+  <section class="hcl-content-switcher-content">
+    <div class="gateDisabled" role="tabpanel">
+      <ol class="hcl-list-ordered">
+        <li class="hcl-list-item">
+          Cybernetics
+          <ul class="hcl-list-nested">
+            <li class="hcl-list-item">Artifical Intelligence</li>
+            <li class="hcl-list-item">Bionics</li>
+          </ul>
+        </li>
+        <li class="hcl-list-item">
+          Information & Communication technology
+          <ul class="hcl-list-nested">
+            <li class="hcl-list-item">Cyber Infrastructure</li>
+            <li class="hcl-list-item">Digital Technology</li>
+          </ul>
+        </li>
+      </ol>
     </div>
-    <section class="hcl-content-switcher-content">
-        <div class="gateDisabled" role="tabpanel">
-            <ol class="hcl-list-ordered">
-                <li class="hcl-list-item">Cybernetics
-                    <ul class="hcl-list-nested">
-                        <li class="hcl-list-item">Artifical Intelligence</li>
-                        <li class="hcl-list-item">Bionics</li>
-                    </ul>
-                </li>
-                <li class="hcl-list-item">Information & Communication technology
-                    <ul class="hcl-list-nested">
-                        <li class="hcl-list-item">Cyber Infrastructure</li>
-                        <li class="hcl-list-item">Digital Technology</li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-        <div class="windowDisabled" role="tabpanel" hidden>
-            <ol class="hcl-list-ordered">
-                <li class="hcl-list-item">Cybernetics
-                    <ul class="hcl-list-nested">
-                        <li class="hcl-list-item">Artifical Intelligence</li>
-                        <li class="hcl-list-item">Bionics</li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-        <div class="doorDisabled" role="tabpanel" hidden>
-            <ol class="hcl-list-ordered">
-                <li class="hcl-list-item">Information & Communication technology
-                    <ul class="hcl-list-nested">
-                        <li class="hcl-list-item">Cyber Infrastructure</li>
-                        <li class="hcl-list-item">Digital Technology</li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-    </section>
+    <div class="windowDisabled" role="tabpanel" hidden>
+      <ol class="hcl-list-ordered">
+        <li class="hcl-list-item">
+          Cybernetics
+          <ul class="hcl-list-nested">
+            <li class="hcl-list-item">Artifical Intelligence</li>
+            <li class="hcl-list-item">Bionics</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+    <div class="doorDisabled" role="tabpanel" hidden>
+      <ol class="hcl-list-ordered">
+        <li class="hcl-list-item">
+          Information & Communication technology
+          <ul class="hcl-list-nested">
+            <li class="hcl-list-item">Cyber Infrastructure</li>
+            <li class="hcl-list-item">Digital Technology</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
 </section>

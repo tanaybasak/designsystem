@@ -5,7 +5,7 @@ class Tile {
     this.element = element;
   }
 
-  keyDownOnTile = (e) => {
+  keyDownOnTile = e => {
     const key = e.which || e.keyCode;
     const input = this.element.querySelector('input[type="checkbox"]');
     if (key === 13 || key === 32) {
@@ -21,12 +21,12 @@ class Tile {
     const selectable = this.element.querySelector(`.${PREFIX}-tile-selectable`);
 
     if (expandable) {
-      expandable.addEventListener('keydown', (e) => {
+      expandable.addEventListener('keydown', e => {
         this.keyDownOnTile(e);
       });
     }
     if (selectable) {
-      selectable.addEventListener('keydown', (e) => {
+      selectable.addEventListener('keydown', e => {
         this.keyDownOnTile(e);
       });
     } else {

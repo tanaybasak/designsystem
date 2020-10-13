@@ -30,7 +30,7 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  search: function(selector, options) {
+  search: function (selector, options) {
     attachElements(selector, options, Search);
   }
 };

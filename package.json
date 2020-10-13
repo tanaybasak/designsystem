@@ -1,15 +1,16 @@
 {
   "name": "@patron/patron-css-dev",
-  "version": "1.1.1",
+  "version": "1.4.0",
   "description": "Patron CSS Framework",
   "main": "dist/patron-style.js",
   "scripts": {
+    "build": "parcel build modular/*/index.js --no-source-maps -d .dist/ && parcel build modular/*/*/index.js --no-source-maps -d .dist/ ",
     "start": "node importHTML.js && parcel index.html -d output --port 8000",
-    "build": "npm run clean && parcel build js/index.js -o patron --no-source-maps ",
     "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss';",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js .",
-    "import-html": "node importHTML.js"
+    "import-html": "node importHTML.js",
+    "prettier:dev": "npx prettier --config prettier.config.js --ignore-path .gitignore --write \"./**/*.{js,html,scss}\""
   },
   "author": "HCL Software",
   "license": "ISC",
@@ -23,21 +24,24 @@
     "babel-eslint": "^10.0.3",
     "delegate": "^3.2.0",
     "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.2.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "fs": "0.0.1-security",
     "parcel-bundler": "^1.12.4",
-    "postcss-cli": "^6.1.2",
+    "postcss-cli": "^7.1.2",
+    "prettier": "^2.0.5",
     "q": "^1.5.1",
     "replace": "^1.2.0",
     "rimraf": "^3.0.0",
     "sass": "^1.23.3",
     "semver": "^7.3.2",
-    "simple-git": "^2.19.0",
-    "stylelint": "^10.1.0"
+    "simple-git": "^2.21.0",
+    "stylelint": "^13.7.0"
   },
   "browserslist": [
     "> .1%",
@@ -49,7 +53,7 @@
       "selector-type-case": "lower",
       "string-quotes": "single",
       "selector-pseudo-element-colon-notation": "double",
-      "unit-blacklist": [
+      "unit-disallowed-list": [
         "em"
       ],
       "block-no-empty": true,
