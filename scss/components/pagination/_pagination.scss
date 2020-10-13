@@ -75,7 +75,6 @@ $pagination-line-height: 1.125rem;
     }
   }
 
-  &-right {
     button.#{$prefix}-pagination-button-previous,
     button.#{$prefix}-pagination-button-next {
       height: 100%;
@@ -156,7 +155,6 @@ $pagination-line-height: 1.125rem;
     .#{$prefix}-page-end {
       margin: 0 hcl-rem(2px) 0;
     }
-  }
 
   label,
   &-text {
