@@ -229,7 +229,7 @@
     th.sticky-left-div,
     td.sticky-left-div {
       &::after {
-        right: -1;
+        right: -1px;
         transform: translateX(100%);
         box-shadow: inset 10px 0 8px -8px var(--default_shadow);
       }
@@ -238,7 +238,7 @@
     th.sticky-right-div,
     td.sticky-right-div {
       &::after {
-        left: -1;
+        left: -1px;
         transform: translateX(-100%);
         box-shadow: inset -10px 0 8px -8px var(--default_shadow);
       }
