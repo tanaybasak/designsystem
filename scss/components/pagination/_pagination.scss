@@ -50,19 +50,13 @@ $pagination-line-height: 1.125rem;
   }
 
   &-left {
-    .#{$prefix}-pagination-left-wrapper,
-    .#{$prefix}-pagination-wrapper {
-      svg,
-      .#{$prefix}-select-arrow {
-        &::after {
-          border: none;
-        }
-      }
-    }
     .#{$prefix}-pagination-left-wrapper {
       .#{$prefix}-pagination-text {
         margin-right: 1rem;
       }
+    }
+    button.#{$prefix}-pagination-button-next {
+        border-left-width: 0;
     }
   }
 
