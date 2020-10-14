@@ -17,12 +17,11 @@
   .resize-line {
     display: none;
     position: absolute;
-    // top: 0;
     left: 0;
     display: inline-block;
     z-index: 5999;
     background-color: var(--interactive_border);
-    width: 2px;
+    width: 1px;
     height: 100%;
   }
 
