@@ -75,23 +75,31 @@ $pagination-line-height: 1.125rem;
     }
   }
 
-  &-right {
-    button.#{$prefix}-pagination-button-next {
+  &-left {
+    button.#{$prefix}-pagination-button-next,
+    button.#{$prefix}-pagination-button-previous {
       border-right-width: 0;
     }
   }
 
-  // &-right {
-  //   button.#{$prefix}-pagination-button-next {
-  //     border-right-width: 0;
-  //   }
-  // }
+  &-right {
+    button.#{$prefix}-pagination-button-next{
+      border-left-width: 0;
+    }
+  }
 
-  // &-left {
-  //   button.#{$prefix}-pagination-button-previous {
-  //     border-right-width: 0;
-  //   }
-  // }
+  &-right:last-child {
+    button.#{$prefix}-pagination-button-next{
+      border-right-width: 0;
+    }
+  }
+
+  &-left {
+    button.#{$prefix}-pagination-button-next,
+    button.#{$prefix}-pagination-button-previous {
+      border-left-width: 0;
+    }
+  }
 
   &-right,
   &-left {
@@ -199,6 +207,7 @@ $pagination-line-height: 1.125rem;
 
   .#{$prefix}-pagination-label {
     color: var(--default_text);
+    margin-left: 1rem;
 
     @include media-breakpoint-down(sm) {
       font-size: 0.75rem;
