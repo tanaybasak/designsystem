@@ -39,6 +39,9 @@ $pagination-line-height: 1.125rem;
         margin-right: 1rem;
       }
     }
+    .#{$prefix}-pagination-range {
+      margin-right: hcl-rem(2px);
+    }
     .#{$prefix}-pagination-right-wrapper {
       .#{$prefix}-pagination-text {
         margin-right: 1rem;
@@ -47,8 +50,14 @@ $pagination-line-height: 1.125rem;
   }
 
   &-left {
-    .#{$prefix}-pagination-select-wrapper:after {
-      border: none;
+    .#{$prefix}-pagination-left-wrapper,
+    .#{$prefix}-pagination-wrapper {
+      svg,
+      .#{$prefix}-select-arrow {
+        &::after {
+          border: none;
+        }
+      }
     }
     .#{$prefix}-pagination-left-wrapper {
       .#{$prefix}-pagination-text {
@@ -58,8 +67,6 @@ $pagination-line-height: 1.125rem;
   }
 
   &-left {
-    // padding: 0 1rem;
-
     @include media-breakpoint-down(sm) {
       flex-grow: 1;
       flex-shrink: 1;
