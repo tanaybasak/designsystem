@@ -90,7 +90,7 @@ $pagination-line-height: 1.125rem;
   // }
 
   &-right {
-    button.#{$prefix}-pagination-button-next:last-child {
+    button.hcl-pagination-button-next:last-child {
       border-right-width: 0;
     }
   }
@@ -154,7 +154,7 @@ $pagination-line-height: 1.125rem;
     }
 
     .#{$prefix}-pagination-text {
-      margin-right: hcl-rem(16px);
+      margin-left: hcl-rem(16px);
 
       color: var(--default_text);
     }
