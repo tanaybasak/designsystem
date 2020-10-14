@@ -76,18 +76,17 @@ $pagination-line-height: 1.125rem;
     }
   }
 
-  // &-left {
-  //   button.#{$prefix}-pagination-button-next,
-  //   button.#{$prefix}-pagination-button-previous {
-  //     border-right-width: 0;
-  //   }
-  // }
+  &-left {
+    span.hcl-pagination-text:last-child {
+      border: none;
+    }
+  }
 
-  // &-right {
-  //   button.#{$prefix}-pagination-button-next{
-  //     border-left-width: 0;
-  //   }
-  // }
+  &-right {
+    span.hcl-pagination-text:first-child {
+      border: none;
+    }
+  }
 
   &-right {
     button.hcl-pagination-button-next:last-child {
