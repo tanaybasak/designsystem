@@ -33,7 +33,7 @@ $pagination-line-height: 1.125rem;
   }
 
   &-left {
-    padding: 0 1rem;
+    //padding: 0 1rem;
 
     @include media-breakpoint-down(sm) {
       flex-grow: 1;
@@ -106,7 +106,7 @@ $pagination-line-height: 1.125rem;
       border-right: 1px solid var(--default_border_xlow);
       border-left: 1px solid var(--default_border_xlow);
 
-      // padding: 0 1rem;
+      padding: 0 1rem;
       cursor: pointer;
 
       &:focus {
