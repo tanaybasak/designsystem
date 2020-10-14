@@ -71,6 +71,7 @@
           > span.hcl-data-table-resizable {
             user-select: none;
             display: inline-block;
+            visibility: hidden;
             position: absolute;
             width: 7px !important;
             height: 100%;
@@ -129,6 +130,13 @@
           //     }
           //   }
           // }
+        }
+
+        &.resizable.hovered {
+          > span.hcl-data-table-resizable {
+            visibility: visible;
+            display: inline-block;
+          }
         }
 
         color: var(--default_text_high);
