@@ -81,12 +81,12 @@ $pagination-line-height: 1.125rem;
       margin: 0 hcl-rem(2px) 0;
     }
 
-    .#{$prefix}-pagination-right-wrapper {
+    .#{$prefix}-pagination-left-wrapper {
       display: flex;
       align-items: center;
       height: 100%;
       padding-right: 1rem;
-      border-left: 1px solid var(--default_border_xlow);
+      border-right: 1px solid var(--default_border_xlow);
 
       button.hcl-pagination-button-previous {
         border-left-width: 0;
@@ -94,12 +94,12 @@ $pagination-line-height: 1.125rem;
     }
   }
   &-right {
-    .#{$prefix}-pagination-left-wrapper {
+    .#{$prefix}-pagination-right-wrapper {
       display: flex;
       align-items: center;
       height: 100%;
       padding-right: 1rem;
-      border-right: 1px solid var(--default_border_xlow);
+      border-left: 1px solid var(--default_border_xlow);
 
       button.hcl-pagination-button-previous {
         border-left-width: 0;
