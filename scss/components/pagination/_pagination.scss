@@ -39,6 +39,11 @@ $pagination-line-height: 1.125rem;
         margin-right: 1rem;
       }
     }
+    .#{$prefix}-pagination-right-wrapper {
+      .#{$prefix}-pagination-text {
+        margin-right: 1rem;
+      }
+    }
   }
 
   &-left {
@@ -110,7 +115,6 @@ $pagination-line-height: 1.125rem;
       display: flex;
       align-items: center;
       height: 100%;
-      padding-right: 1rem;
       border-left: 1px solid var(--default_border_xlow);
 
       button.hcl-pagination-button-previous {
