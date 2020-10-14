@@ -97,7 +97,7 @@ $pagination-line-height: 1.125rem;
   &-left {
     button.#{$prefix}-pagination-button-next,
     button.#{$prefix}-pagination-button-previous {
-      border-left-width: 0;
+      border-left-width: 0 !important;
     }
   }
 
