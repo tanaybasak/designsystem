@@ -71,7 +71,7 @@
           > span.hcl-data-table-resizable {
             user-select: none;
             display: inline-block;
-            visibility: hidden;
+            // visibility: hidden;
             position: absolute;
             width: 7px !important;
             height: 100%;
@@ -82,34 +82,55 @@
             background: transparent !important;
           }
 
-          &:hover {
-            > span.hcl-data-table-resizable span.resize-handle {
-              user-select: none;
-              display: inline-block;
-              position: absolute;
-              width: 2px;
-              height: 100%;
-              bottom: 0;
-              right: 0;
-              z-index: 2;
-              cursor: col-resize;
-              background: var(--default_border_low);
-            }
-
+          &.hovered {
             > span.hcl-data-table-resizable {
+              span.resize-handle {
+                user-select: none;
+                display: inline-block;
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                bottom: 0;
+                right: 0;
+                z-index: 2;
+                cursor: col-resize;
+                background: var(--default_border_low);
+              }
               &:hover {
-                span.resize-handle {
-                  &::after {
-                    content: '';
-                    display: inline-block;
-                    background: var(--interactive_border);
-                    height: 100%;
-                    width: 100%;
-                  }
-                }
+                background: var(--interactive_border);
               }
             }
           }
+
+          // &:hover {
+          //   > span.hcl-data-table-resizable span.resize-handle {
+          //     user-select: none;
+          //     display: inline-block;
+          //     position: absolute;
+          //     width: 2px;
+          //     height: 100%;
+          //     bottom: 0;
+          //     right: 0;
+          //     z-index: 2;
+          //     cursor: col-resize;
+          //     background: var(--default_border_low);
+          //   }
+
+          //   > span.hcl-data-table-resizable {
+          //     &:hover {
+          //       span.resize-handle {
+          //         &::after {
+          //           content: '';
+          //           display: inline-block;
+          //           background: var(--interactive_border);
+          //           height: 100%;
+          //           width: 100%;
+          //         }
+          //       }
+          //     }
+          //   }
+          // }
+
           // &:hover {
           //   > span.#{$prefix}-data-table-resizable {
           //     user-select: none;
@@ -132,12 +153,11 @@
           // }
         }
 
-        &.resizable.hovered {
-          > span.hcl-data-table-resizable {
-            visibility: visible;
-            display: inline-block;
-          }
-        }
+        // &.resizable.hovered {
+        //   > span.hcl-data-table-resizable {
+        //     display: inline-block;
+        //   }
+        // }
 
         color: var(--default_text_high);
         background-color: var(--default_bg_low);
