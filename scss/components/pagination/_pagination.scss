@@ -33,16 +33,7 @@ $pagination-line-height: 1.125rem;
   }
 
   &-left {
-    .#{$prefix}-pagination-left-wrapper {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      border-right: 1px solid var(--default_border_xlow);
-
-      button.hcl-pagination-button-previous {
-        border-left-width: 0;
-      }
-    }
+    padding: 0 1rem;
 
     @include media-breakpoint-down(sm) {
       flex-grow: 1;
@@ -83,98 +74,107 @@ $pagination-line-height: 1.125rem;
       margin: 0 hcl-rem(2px) 0;
     }
   }
+
   &-right {
-    .#{$prefix}-pagination-right-wrapper {
-      display: flex;
-      align-items: center;
+    button.#{$prefix}-pagination-button-next {
+      border-right-width: 0;
+    }
+  }
+
+  // &-right {
+  //   button.#{$prefix}-pagination-button-next {
+  //     border-right-width: 0;
+  //   }
+  // }
+
+  // &-left {
+  //   button.#{$prefix}-pagination-button-previous {
+  //     border-right-width: 0;
+  //   }
+  // }
+
+  &-right,
+  &-left {
+    button.#{$prefix}-pagination-button-previous,
+    button.#{$prefix}-pagination-button-next {
       height: 100%;
+      margin: 0;
+      border-width: 0 1px 0 1px;
+      border-style: solid;
+
+      background-color: var(--default_bg);
+      border-right: 1px solid var(--default_border_xlow);
       border-left: 1px solid var(--default_border_xlow);
 
-      button.hcl-pagination-button-previous {
-        border-left-width: 0;
+      padding: 0 1rem;
+      cursor: pointer;
+
+      &:focus {
+        outline-offset: -1px;
+
+        outline: 1px solid var(--interactive_border);
+      }
+
+      &:hover {
+        background-color: var(--interactive_bg_hover);
+      }
+
+      &:disabled {
+        opacity: var(--disabled_all);
+
+        cursor: not-allowed;
+      }
+
+      svg,
+      .#{$prefix}-pagination__button-icon {
+        fill: var(--interactive_icon);
       }
     }
-  }
 
-  button.#{$prefix}-pagination-button-previous,
-  button.#{$prefix}-pagination-button-next {
-    height: 100%;
-    margin: 0;
-    border-width: 0 1px 0 1px;
-    border-style: solid;
+    button.#{$prefix}-pagination-button-next {
+      // border-right-width: 0;
 
-    background-color: var(--default_bg);
-    border-right: 1px solid var(--default_border_xlow);
-    border-left: 1px solid var(--default_border_xlow);
+      &:hover {
+        background-color: var(--interactive_bg_hover);
+      }
 
-    padding: 0 1rem;
-    cursor: pointer;
-
-    &:focus {
-      outline-offset: -1px;
-
-      outline: 1px solid var(--interactive_border);
+      svg,
+      .#{$prefix}-pagination__button-icon {
+        fill: var(--interactive_icon);
+      }
     }
 
-    &:hover {
-      background-color: var(--interactive_bg_hover);
+    .#{$prefix}-pagination-text {
+      margin-right: hcl-rem(16px);
+
+      color: var(--default_text);
     }
 
-    &:disabled {
-      opacity: var(--disabled_all);
+    .#{$prefix}-pagination-select-wrapper {
+      select,
+      .#{$prefix}-pagination-select {
+        padding-right: 2rem;
+      }
 
-      cursor: not-allowed;
+      &::after {
+        margin-left: 0;
+      }
+
+      svg,
+      .#{$prefix}-select-arrow {
+        right: hcl-rem(16px);
+
+        fill: var(--interactive_icon);
+      }
     }
 
-    svg,
-    .#{$prefix}-pagination__button-icon {
-      fill: var(--interactive_icon);
-    }
-  }
-
-  button.#{$prefix}-pagination-button-next {
-    border-right-width: 0;
-
-    &:hover {
-      background-color: var(--interactive_bg_hover);
+    .#{$prefix}-page-start {
+      margin-right: hcl-rem(2px);
     }
 
-    svg,
-    .#{$prefix}-pagination__button-icon {
-      fill: var(--interactive_icon);
+    .#{$prefix}-page-end {
+      margin: 0 hcl-rem(2px) 0;
     }
-  }
-
-  .#{$prefix}-pagination-text {
-    margin-right: hcl-rem(16px);
-    margin-left: 1rem;
-    color: var(--default_text);
-  }
-
-  .#{$prefix}-pagination-select-wrapper {
-    select,
-    .#{$prefix}-pagination-select {
-      padding-right: 2rem;
-    }
-
-    &::after {
-      margin-left: 0;
-    }
-
-    svg,
-    .#{$prefix}-select-arrow {
-      right: hcl-rem(16px);
-
-      fill: var(--interactive_icon);
-    }
-  }
-
-  .#{$prefix}-page-start {
-    margin-right: hcl-rem(2px);
-  }
-
-  .#{$prefix}-page-end {
-    margin: 0 hcl-rem(2px) 0;
   }
 
   label,
@@ -199,7 +199,6 @@ $pagination-line-height: 1.125rem;
 
   .#{$prefix}-pagination-label {
     color: var(--default_text);
-    margin-left: 1rem;
 
     @include media-breakpoint-down(sm) {
       font-size: 0.75rem;
