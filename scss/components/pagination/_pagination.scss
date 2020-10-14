@@ -33,14 +33,22 @@ $pagination-line-height: 1.125rem;
     height: 100%;
   }
 
-  &-left {
-    .#{$prefix}-pagination-select-wrapper::after {
-      border: none
+  &-right {
+    .#{$prefix}-pagination-wrapper {
+      .#{$prefix}-pagination-text {
+        margin-right: 1rem;
+      }
     }
   }
 
   &-left {
-    padding: 0 1rem;
+    .#{$prefix}-pagination-select-wrapper:after {
+      border: none;
+    }
+  }
+
+  &-left {
+    // padding: 0 1rem;
 
     @include media-breakpoint-down(sm) {
       flex-grow: 1;
@@ -202,7 +210,7 @@ $pagination-line-height: 1.125rem;
   }
 
   .#{$prefix}-pagination-range {
-    margin-left: hcl-rem(16px);
+    // margin-left: hcl-rem(16px);
 
     color: var(--default_text);
 
