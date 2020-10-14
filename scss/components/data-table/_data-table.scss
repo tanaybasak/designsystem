@@ -97,7 +97,9 @@
                 background: var(--default_border_low);
               }
               &:hover {
-                background: var(--interactive_border);
+                span.resize-handle {
+                  background: var(--interactive_border);
+                }
               }
             }
           }
