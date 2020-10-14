@@ -75,12 +75,12 @@ $pagination-line-height: 1.125rem;
     }
   }
 
-  &-left {
-    button.#{$prefix}-pagination-button-next,
-    button.#{$prefix}-pagination-button-previous {
-      border-right-width: 0;
-    }
-  }
+  // &-left {
+  //   button.#{$prefix}-pagination-button-next,
+  //   button.#{$prefix}-pagination-button-previous {
+  //     border-right-width: 0;
+  //   }
+  // }
 
   &-right {
     button.#{$prefix}-pagination-button-next{
