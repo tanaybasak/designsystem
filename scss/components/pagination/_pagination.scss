@@ -26,7 +26,8 @@ $pagination-line-height: 1.125rem;
   height: hcl-rem(40px);
 
   &-left,
-  &-right {
+  &-right,
+  &-wrapper {
     display: flex;
     align-items: center;
     height: 100%;
@@ -82,14 +83,14 @@ $pagination-line-height: 1.125rem;
   //   }
   // }
 
-  &-right {
-    button.#{$prefix}-pagination-button-next{
-      border-left-width: 0;
-    }
-  }
+  // &-right {
+  //   button.#{$prefix}-pagination-button-next{
+  //     border-left-width: 0;
+  //   }
+  // }
 
-  &-right:last-child {
-    button.#{$prefix}-pagination-button-next{
+  &-right {
+    button.#{$prefix}-pagination-button-next:last-child {
       border-right-width: 0;
     }
   }
