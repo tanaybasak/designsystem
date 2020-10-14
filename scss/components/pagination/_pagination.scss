@@ -33,11 +33,15 @@ $pagination-line-height: 1.125rem;
   }
 
   &-left {
-    .hcl-pagination-right-wrapper {
+    .#{$prefix}-pagination-left-wrapper {
       display: flex;
       align-items: center;
       height: 100%;
-      border-left: 1px solid var(--default_border_xlow);
+      border-right: 1px solid var(--default_border_xlow);
+
+      button.hcl-pagination-button-previous {
+        border-left-width: 0;
+      }
     }
 
     @include media-breakpoint-down(sm) {
@@ -80,11 +84,15 @@ $pagination-line-height: 1.125rem;
     }
   }
   &-right {
-    .hcl-pagination-left-wrapper {
+    .#{$prefix}-pagination-right-wrapper {
       display: flex;
       align-items: center;
       height: 100%;
-      border-right: 1px solid var(--default_border_xlow);
+      border-left: 1px solid var(--default_border_xlow);
+
+      button.hcl-pagination-button-previous {
+        border-left-width: 0;
+      }
     }
   }
 
