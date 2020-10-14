@@ -79,8 +79,8 @@ $pagination-line-height: 1.125rem;
   &-left {
     .#{$prefix}-pagination-text {
       &.#{$prefix}-border {
-        padding-left: 1rem;
-        border-left: 1px solid var(--default_border_xlow);
+        padding-right: 1rem;
+        border-right: 1px solid var(--default_border_xlow);
       }
     }
     span.#{$prefix}-pagination-text:last-child {
@@ -101,9 +101,9 @@ $pagination-line-height: 1.125rem;
 
   &-right {
     .#{$prefix}-pagination-text {
-      .#{$prefix}-border {
-        padding-right: 1rem;
-        border-right: 1px solid var(--default_border_xlow);;
+      &.#{$prefix}-border {
+        padding-left: 1rem;
+        border-left: 1px solid var(--default_border_xlow);;
       }
     }
 
