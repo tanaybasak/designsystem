@@ -96,13 +96,17 @@
               background: var(--default_border_low);
             }
 
-            > span.hcl-data-table-resizable &:hover {
-              span.resize-handle::after {
-                content: '';
-                display: inline-block;
-                background: var(--interactive_border);
-                height: 100%;
-                width: 100%;
+            > span.hcl-data-table-resizable {
+              &:hover {
+                span.resize-handle {
+                  &::after {
+                    content: '';
+                    display: inline-block;
+                    background: var(--interactive_border);
+                    height: 100%;
+                    width: 100%;
+                  }
+                }
               }
             }
           }
