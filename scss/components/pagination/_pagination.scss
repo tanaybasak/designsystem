@@ -77,27 +77,55 @@ $pagination-line-height: 1.125rem;
   }
 
   &-left {
-    span.hcl-pagination-text:last-child {
+    .#{$prefix}-pagination-text {
+      &.#{$prefix}-border {
+        padding-left: 1rem;
+        border-left: 1rem;
+      }
+    }
+    span.#{$prefix}-pagination-text:last-child {
       border: none;
     }
-  }
 
-  &-right {
-    span.hcl-pagination-text:first-child {
-      border: none;
+    svg.#{$prefix}-select-arrow:last-child {
+      &::after {
+        border: none;
+      }
     }
-  }
 
-  &-right {
-    button.hcl-pagination-button-next:last-child {
-      border-right-width: 0;
-    }
-  }
-
-  &-left {
     button.#{$prefix}-pagination-button-next,
     button.#{$prefix}-pagination-button-previous {
       border-left-width: 0 !important;
+    }
+  }
+
+  &-right {
+    .#{$prefix}-pagination-text {
+      .#{$prefix}-border {
+        padding-right: 1rem;
+        border-right: 1rem;
+      }
+    }
+
+    span.hcl-pagination-text:first-child {
+      border: none;
+    }
+
+    button.hcl-pagination-button-next:last-child {
+      border-right-width: 0;
+    }
+
+    svg.#{$prefix}-select-arrow:first-child {
+      &::after {
+        border: none;
+      }
+    }
+
+    svg,
+    .#{$prefix}-select-arrow {
+      &::after {
+        border-right: 1px solid var(--default_border_xlow);
+      }
     }
   }
 
@@ -153,7 +181,7 @@ $pagination-line-height: 1.125rem;
     }
 
     .#{$prefix}-pagination-text {
-      margin-left: hcl-rem(16px);
+      margin-right: hcl-rem(16px);
 
       color: var(--default_text);
     }
