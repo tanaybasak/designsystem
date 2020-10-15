@@ -46,6 +46,10 @@ $pagination-line-height: 1.125rem;
       .#{$prefix}-pagination-text {
         margin-right: 1rem;
       }
+
+      .#{$prefix}-pagination-totalitems {
+        margin: 0 hcl-rem(2px) 0;
+      }
     }
   }
 
@@ -55,8 +59,11 @@ $pagination-line-height: 1.125rem;
         margin-right: 1rem;
       }
     }
+    .#{$prefix}-pagination-select-wrapper::after {
+      border: none;
+    }
     button.#{$prefix}-pagination-button-next {
-        border-left-width: 0;
+      border-left-width: 0;
     }
   }
 
