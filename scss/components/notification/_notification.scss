@@ -36,6 +36,7 @@ $colorMap: (
 
     .#{$prefix}-notification-icon-container {
       display: flex;
+      //width: 36px;
       align-items: center;
       @each $key, $value in $colorMap {
         > .#{$prefix}-notification-icon {
@@ -46,7 +47,7 @@ $colorMap: (
 
     .#{$prefix}-notification-icon {
       flex-shrink: 0;
-      margin-right: 1rem;
+      //margin-right: 1rem;
     }
 
     .#{$prefix}-notification-text-wrapper {
@@ -54,6 +55,7 @@ $colorMap: (
       flex-wrap: wrap;
       align-items: center;
       padding: 0.75rem 0;
+      margin-left: 1rem;
 
       .#{$prefix}-notification-title {
         font-size: 0.875rem;

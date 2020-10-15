@@ -21,7 +21,7 @@ $default-node-height: 2rem;
       line-height: unset;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      //align-items: center;
       min-height: $default-node-height;
 
       .#{$prefix}-toggle-icon {
@@ -31,6 +31,7 @@ $default-node-height: 2rem;
         align-items: center;
         justify-content: center;
         z-index: 2;
+        position: relative;
 
         &.caret {
           display: inline-block;

@@ -19,6 +19,11 @@
     color: var(--input_text);
     border-bottom: 0.0625rem solid var(--input_border);
 
+    &.hcl-btn {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
     &::after {
       content: '';
       width: 0;

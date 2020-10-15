@@ -23,6 +23,10 @@ import Toggle from '../../js/toggle';
 import TimePicker from '../../js/timePicker';
 import Overlay from '../../js/overlay';
 import { isElement } from '../../js/utils/dom';
+// import cssVars from 'css-vars-ponyfill';
+// cssVars({
+//   rootElement: document // default
+// });
 
 // Demo Scripts
 import '../../js/toast';

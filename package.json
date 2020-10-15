@@ -14,8 +14,8 @@
   },
   "author": "HCL Software",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
+    "css-vars-ponyfill": "^2.3.2",
     "@babel/core": "^7.7.2",
     "@babel/plugin-proposal-class-properties": "^7.7.0",
     "@patron/patron-icon": "git+https://github01.hclpnp.com/UXUIAssets/patron-icon.git",

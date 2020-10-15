@@ -24,6 +24,7 @@
   &-option {
     color: var(--input_text_low);
   }
+
   &:focus {
     outline: 2px solid var(--interactive_border);
   }
@@ -31,9 +32,11 @@
   &:hover {
     background-color: var(--interactive_bg_hover);
   }
+
   &-label {
     color: var(--default_text);
   }
+
   &-container {
     position: relative;
     display: inline-block;
@@ -44,4 +47,8 @@
 
     opacity: var(--disabled_all);
   }
+}
+
+select::-ms-expand {
+  display: none;
 }
