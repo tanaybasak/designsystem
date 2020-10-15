@@ -373,4 +373,22 @@
   //     }
   //   }
   // }
+  .#{$prefix}-data-table {
+    .resizable {
+      > span.hcl-data-table-resizable {
+        span.resize-handle {
+          user-select: none;
+          display: inline-block;
+          position: absolute;
+          width: 2px;
+          height: 100%;
+          bottom: 0;
+          right: 0;
+          z-index: 2;
+          cursor: col-resize;
+          background: var(--default_border_low);
+        }
+      }
+    }
+  }
 }
