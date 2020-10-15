@@ -374,7 +374,7 @@
   //   }
   // }
   .#{$prefix}-data-table {
-    .resizable {
+    .resizable.hovered {
       > span.hcl-data-table-resizable {
         span.resize-handle {
           user-select: none;
@@ -386,7 +386,7 @@
           right: 0;
           z-index: 2;
           cursor: col-resize;
-          background: var(--default_border_low);
+          background: var(--interactive_border);
         }
       }
     }
