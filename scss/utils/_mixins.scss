@@ -164,7 +164,7 @@
   &::after {
     content: ' ';
     position: absolute;
-    top: 0px;
+    top: 0;
     margin: 25% 0;
     width: 2px;
     background-color: var(#{$fg-color});
