@@ -34,33 +34,34 @@ $pagination-line-height: 1.125rem;
   }
 
   &-right {
-    .#{$prefix}-pagination-wrapper {
-      .#{$prefix}-pagination-text {
-        margin-right: 1rem;
-      }
-    }
-    .#{$prefix}-pagination-range {
-      margin-right: hcl-rem(2px);
-    }
+    .#{$prefix}-pagination-wrapper,
     .#{$prefix}-pagination-right-wrapper {
       .#{$prefix}-pagination-text {
         margin-right: 1rem;
       }
-
-      .#{$prefix}-pagination-totalitems {
-        margin: 0 hcl-rem(2px) 0;
-      }
+    }
+    .#{$prefix}-pagination-text {
+      margin-right: 1rem;
+    }
+    .#{$prefix}-pagination-range {
+      margin-right: hcl-rem(2px);
+    }
+    .#{$prefix}-pagination-totalitems {
+      margin: 0 hcl-rem(2px) 0;
     }
   }
 
   &-left {
+    .#{$prefix}-pagination-wrapper,
+    .#{$prefix}-pagination-left-wrapper {
+      .#{$prefix}-pagination-select-wrapper::after {
+        border: none !important;
+      }
+    }
     .#{$prefix}-pagination-left-wrapper {
       .#{$prefix}-pagination-text {
         margin-right: 1rem;
       }
-    }
-    .#{$prefix}-pagination-select-wrapper::after {
-      border: none;
     }
     button.#{$prefix}-pagination-button-next {
       border-left-width: 0;
