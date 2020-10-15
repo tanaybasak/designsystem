@@ -103,63 +103,7 @@
               }
             }
           }
-
-          // &:hover {
-          //   > span.hcl-data-table-resizable span.resize-handle {
-          //     user-select: none;
-          //     display: inline-block;
-          //     position: absolute;
-          //     width: 2px;
-          //     height: 100%;
-          //     bottom: 0;
-          //     right: 0;
-          //     z-index: 2;
-          //     cursor: col-resize;
-          //     background: var(--default_border_low);
-          //   }
-
-          //   > span.hcl-data-table-resizable {
-          //     &:hover {
-          //       span.resize-handle {
-          //         &::after {
-          //           content: '';
-          //           display: inline-block;
-          //           background: var(--interactive_border);
-          //           height: 100%;
-          //           width: 100%;
-          //         }
-          //       }
-          //     }
-          //   }
-          // }
-
-          // &:hover {
-          //   > span.#{$prefix}-data-table-resizable {
-          //     user-select: none;
-          //     display: inline-block;
-          //     position: absolute;
-          //     width: 2px;
-          //     height: 100%;
-          //     bottom: 0;
-          //     right: 0;
-          //     z-index: 1;
-          //     cursor: col-resize;
-          //     &::after {
-          //       content: '';
-          //       display: inline-block;
-          //       background: var(--default_border_low);
-          //       height: 100%;
-          //       width: 100%;
-          //     }
-          //   }
-          // }
         }
-
-        // &.resizable.hovered {
-        //   > span.hcl-data-table-resizable {
-        //     display: inline-block;
-        //   }
-        // }
 
         color: var(--default_text_high);
         background-color: var(--default_bg_low);
@@ -354,25 +298,6 @@
 */
 .resize-table {
   cursor: col-resize;
-  // & .#{$prefix}-data-table-wrapper thead tr th.resizing {
-  //   > span.#{$prefix}-data-table-resizable {
-  //     user-select: none;
-  //     display: inline-block;
-  //     position: absolute;
-  //     width: 2px;
-  //     height: 100%;
-  //     bottom: 0;
-  //     right: 0;
-  //     z-index: 1;
-  //     &::after {
-  //       content: ' ';
-  //       display: inline-block;
-  //       background: var(--interactive_border);
-  //       height: 100%;
-  //       width: 100%;
-  //     }
-  //   }
-  // }
   .#{$prefix}-data-table {
     .resizable.hovered {
       > span.hcl-data-table-resizable {
