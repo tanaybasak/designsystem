@@ -73,6 +73,12 @@ $pagination-line-height: 1.125rem;
       padding-right: 0;
     }
 
+    .#{$prefix}-pagination-left-wrapper {
+      @include media-breakpoint-down(sm) {
+        border-right-width: 0;
+      }
+    }
+
     .#{$prefix}-pagination-select-wrapper {
       select,
       .#{$prefix}-pagination-select {
