@@ -75,7 +75,7 @@ $pagination-line-height: 1.125rem;
 
     .#{$prefix}-pagination-left-wrapper {
       @include media-breakpoint-down(sm) {
-        border-right-width: 0;
+        border-right-width: 0 !important;
       }
     }
 
