@@ -65,7 +65,6 @@ $pagination-line-height: 1.125rem;
   &-left {
     .#{$prefix}-pagination-wrapper,
     .#{$prefix}-pagination-left-wrapper {
-      .#{$prefix}-pagination-left-page-items,
       .#{$prefix}-pagination-select-wrapper::after {
         border: none;
       }
@@ -83,13 +82,15 @@ $pagination-line-height: 1.125rem;
       padding-right: 0;
     }
 
-    .#{$prefix}-pagination-left-wrapper {
+    .#{$prefix}-pagination-left-wrapper,
+    .#{$prefix}-pagination-small {
       @include media-breakpoint-down(sm) {
-        border-right-width: 0 !important;
+        border-right-width: 0;
       }
-      button.hcl-pagination-button-previous {
+      button.hcl-pagination-button-previous,
+      .#{$prefix}-pagination-small {
         @include media-breakpoint-down(sm) {
-          border-left: 1px solid var(--default_border_xlow) !important;
+          border-left: 1px solid var(--default_border_xlow);
         }
       }
     }
