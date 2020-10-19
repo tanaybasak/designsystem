@@ -23,7 +23,7 @@ $colorMap: (
       > .#{$prefix}-notification-body {
         > .#{$prefix}-notification-icon-container {
           > .#{$prefix}-notification-icon {
-            fill: var('--' + $value + '_icon');
+            fill: var(#{'--' + $value + '_icon'});
           }
         }
       }
