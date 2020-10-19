@@ -65,9 +65,11 @@ $pagination-line-height: 1.125rem;
   &-left {
     .#{$prefix}-pagination-wrapper,
     .#{$prefix}-pagination-left-wrapper {
+      .#{$prefix}-pagination-left-page-items,
       .#{$prefix}-pagination-select-wrapper::after {
-        border: none !important;
+        border: none;
       }
+    }
     }
     .#{$prefix}-pagination-left-wrapper {
       .#{$prefix}-pagination-text {
