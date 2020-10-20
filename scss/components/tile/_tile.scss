@@ -30,7 +30,7 @@
 
   @if ($type==selectable) {
     padding-right: 3rem;
-    &.active {
+    &.#{$prefix}-tile-active {
       border: 1px solid var(--active_border);
     }
   }
@@ -83,8 +83,6 @@
     &:checked + .#{$prefix}-tile-arrow > svg {
       transform: rotate(180deg);
     }
-
-   
   }
 
   &-checkbox {

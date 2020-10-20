@@ -24,8 +24,8 @@ class Tile {
     const input = this.element.querySelector('input[type="checkbox"]');
     const select = this.element.querySelector(`.${PREFIX}-tile-selectable`);
     select && input.checked
-      ? select.classList.add('active')
-      : select.classList.remove('active');
+      ? select.classList.add(`${PREFIX}-tile-active`)
+      : select.classList.remove(`${PREFIX}-tile-active`);
   };
 
   attachEvents = () => {
