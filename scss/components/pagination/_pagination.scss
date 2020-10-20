@@ -65,24 +65,14 @@ $pagination-line-height: 1.125rem;
   &-left {
     .#{$prefix}-pagination-wrapper,
     .#{$prefix}-pagination-left-wrapper {
-      .#{$prefix}-pagination-select-wrapper::after {
-        border: none;
-      }
-    }
+      display: flex;
+      align-items: center;
+      height: 100%;
+      border-right: 1px solid var(--default_border_xlow);
 
-    .#{$prefix}-pagination-left-wrapper {
-      .#{$prefix}-pagination-text {
-        margin-right: 1rem;
+      button.hcl-pagination-button-previous {
+        border-left-width: 0;
       }
-    }
-    @include media-breakpoint-down(sm) {
-      flex-grow: 1;
-      flex-shrink: 1;
-      justify-content: flex-end;
-      padding-right: 0;
-    }
-
-    .#{$prefix}-pagination-left-wrapper {
       @include media-breakpoint-down(sm) {
         border-right-width: 0 !important;
       }
@@ -91,6 +81,19 @@ $pagination-line-height: 1.125rem;
           border-left: 1px solid var(--default_border_xlow) !important;
         }
       }
+      .#{$prefix}-pagination-select-wrapper::after {
+        border: none;
+      }
+      .#{$prefix}-pagination-text {
+        margin-right: 1rem;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      flex-grow: 1;
+      flex-shrink: 1;
+      justify-content: flex-end;
+      padding-right: 0;
     }
 
     .#{$prefix}-pagination-select-wrapper {
@@ -123,17 +126,6 @@ $pagination-line-height: 1.125rem;
 
     .#{$prefix}-pagination-totalitems {
       margin: 0 hcl-rem(2px) 0;
-    }
-
-    .#{$prefix}-pagination-left-wrapper {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      border-right: 1px solid var(--default_border_xlow);
-
-      button.hcl-pagination-button-previous {
-        border-left-width: 0;
-      }
     }
   }
 
