@@ -22,7 +22,6 @@ import Tile from '../../js/tile';
 import Toggle from '../../js/toggle';
 import TimePicker from '../../js/timePicker';
 import Overlay from '../../js/overlay';
-
 import { isElement } from '../../js/utils/dom';
 
 // Demo Scripts
