@@ -26,7 +26,7 @@ $search-reset-size: 0.759rem;
   &.show {
     direction: rtl;
 
-    & > * {
+    & > .hcl-search-input {
       direction: ltr;
     }
 
@@ -57,7 +57,7 @@ $search-reset-size: 0.759rem;
     display: flex;
     flex-direction: column;
     background: none;
-    pointer-events: none;
+    //pointer-events: none;
 
     .#{$prefix}-search-icon {
       margin-left: ($search-height - $search-icon-size)/2;
@@ -112,40 +112,45 @@ $search-reset-size: 0.759rem;
 
   .#{$prefix}-search-reset {
     background: none;
-    display: inline-flex;
+    //display: inline-flex;
     right: 0;
     top: 0;
     height: $search-height;
     width: $search-height;
     visibility: hidden;
     position: absolute;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
     cursor: pointer;
     transition: visibility 0.15s ease-out;
 
+    svg{
+        fill: var(--input_icon);
+        width: 12px;
+        height: 12px;
+    }
     &.show {
       visibility: visible;
     }
 
-    &::before,
-    &::after {
-      content: ' ';
-      position: absolute;
-      width: 0.125rem;
+    // &::before,
+    // &::after {
+    //   content: ' ';
+    //   position: absolute;
+    //   width: 0.125rem;
 
-      background-color: var(--input_icon);
+    //   background-color: var(--input_icon);
 
-      height: $search-reset-size;
-    }
+    //   height: $search-reset-size;
+    // }
 
-    &::before {
-      transform: rotate(45deg);
-    }
+    // &::before {
+    //   transform: rotate(45deg);
+    // }
 
-    &::after {
-      transform: rotate(-45deg);
-    }
+    // &::after {
+    //   transform: rotate(-45deg);
+    // }
   }
 
   &.#{$prefix}-search-sm {

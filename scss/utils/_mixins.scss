@@ -153,10 +153,12 @@
   width: #{$size}px;
   height: #{$size}px;
   position: relative;
-  display: flex;
+  display: block;
+  vertical-align: middle;
+  line-height: #{$size}px;
   align-items: center;
   justify-content: center;
-  align-content: center;
+  //align-content: center;
   background-color: var(#{$bg-color});
   cursor: pointer;
 
@@ -164,8 +166,10 @@
   &::after {
     content: ' ';
     position: absolute;
-    top: 0;
-    margin: 25% 0;
+    //top: 0;
+
+    // margin: 25% 0;
+    //transform: translate(-50%, -50%);
     width: 2px;
     background-color: var(#{$fg-color});
   }
