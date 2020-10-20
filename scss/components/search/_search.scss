@@ -124,10 +124,10 @@ $search-reset-size: 0.759rem;
     cursor: pointer;
     transition: visibility 0.15s ease-out;
 
-    svg{
-        fill: var(--input_icon);
-        width: 12px;
-        height: 12px;
+    svg {
+      fill: var(--input_icon);
+      width: 12px;
+      height: 12px;
     }
     &.show {
       visibility: visible;

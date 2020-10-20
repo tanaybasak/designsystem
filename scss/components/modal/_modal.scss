@@ -113,9 +113,8 @@
   @include media-breakpoint-between(md, xxl) {
     &-footer-lg {
       padding: 1rem 3rem;
-      position: unset;
-      bottom: unset;
-      width: unset;
+      position: static;
+      width: auto;
     }
   }
 
