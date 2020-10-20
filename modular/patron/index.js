@@ -22,7 +22,6 @@ import Tile from '../../js/tile';
 import Toggle from '../../js/toggle';
 import TimePicker from '../../js/timePicker';
 import Overlay from '../../js/overlay';
-import Checkbox from '../../js/checkbox';
 
 import { isElement } from '../../js/utils/dom';
 
@@ -50,8 +49,7 @@ const ComponentList = {
   tile: Tile,
   toggle: Toggle,
   timePicker: TimePicker,
-  overlay: Overlay,
-  checkbox: Checkbox
+  overlay: Overlay
 };
 
 for (const componentName in ComponentList) {
@@ -146,9 +144,6 @@ export const components = {
   },
   overlay: function (selector, options) {
     attachElements(selector, options, Overlay);
-  },
-  checkbox: function (selector, options) {
-    attachElements(selector, options, Checkbox);
   }
 };
 
