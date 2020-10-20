@@ -63,7 +63,7 @@ $pagination-line-height: 1.125rem;
   }
 
   &-left {
-    .#{$prefix}-pagination-wrapper,
+    // .#{$prefix}-pagination-wrapper,
     .#{$prefix}-pagination-left-wrapper {
       display: flex;
       align-items: center;
