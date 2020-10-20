@@ -72,14 +72,12 @@ $pagination-line-height: 1.125rem;
 
       button.hcl-pagination-button-previous {
         border-left-width: 0;
-      }
-      @include media-breakpoint-down(sm) {
-        border-right-width: 0 !important;
-      }
-      button.hcl-pagination-button-previous {
         @include media-breakpoint-down(sm) {
           border-left: 1px solid var(--default_border_xlow) !important;
         }
+      }
+      @include media-breakpoint-down(sm) {
+        border-right-width: 0 !important;
       }
       .#{$prefix}-pagination-select-wrapper::after {
         border: none;
