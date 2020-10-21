@@ -1,6 +1,6 @@
 import { PREFIX } from './utils/config';
 import { NOOP } from './utils/functions';
-
+import getClosest from './utils/get-closest';
 class FileUploader {
   constructor(element, options) {
     this.element = element;
@@ -29,7 +29,20 @@ class FileUploader {
     <span title="${name}" class="${PREFIX}-file-selected-file">
       <p class="${PREFIX}-file-filename">${name}</p>
     </span>
-    <button type='button' value="${name}" class='${PREFIX}-file-close'></button>
+    <button type='button' value="${name}" class='${PREFIX}-file-close'>
+    <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 16 16"
+          xml:space="preserve"
+        >
+          <polygon
+            points="15.393,2.021 13.979,0.607 8,6.586 2.021,0.607 0.607,2.021 6.586,8 0.607,13.979 2.021,15.393 8,9.414 
+         13.979,15.393 15.393,13.979 9.414,8 "
+          />
+        </svg>
+    </button>
     </div>
     `;
   };
@@ -59,11 +72,10 @@ class FileUploader {
   };
 
   removeFile = event => {
-    if (event.target.type === 'button') {
-      this.fileContainer.removeChild(event.target.parentNode);
-      const index = this.fileList.findIndex(
-        file => file.name === event.target.value
-      );
+    const target = getClosest(event.target, `${PREFIX}-file-close`);
+    if (target) {
+      this.fileContainer.removeChild(target.parentNode);
+      const index = this.fileList.findIndex(file => file.name === target.value);
       if (index !== -1) {
         this.fileList.splice(index, 1);
       }

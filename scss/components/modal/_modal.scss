@@ -63,20 +63,29 @@
     &-hide {
       display: none;
     }
+
     margin-bottom: 0.25rem;
   }
 
   &-close {
     right: 0;
     top: 0;
-    min-width: 2.75rem;
-    max-width: 2.75rem;
-    min-height: 2.75rem;
-    max-height: 2.75rem;
+    padding: 14px;
+    background: transparent;
+    cursor: pointer;
 
-    @include hcl-close-icon(12.15, false, --transparent, --default_icon_high);
+    svg {
+      width: 12.15px;
+      height: 12.15px;
+      fill: var(--default_icon_high);
+    }
 
-    position: absolute !important;
+    &:hover {
+      svg {
+        opacity: 0.8;
+      }
+    }
+    position: absolute;
   }
 
   &-content {

@@ -47,10 +47,23 @@
       color: var(--primary_icon);
     }
 
-    > .#{$prefix}-close {
-      @include hcl-close-icon(18, true, --primary_bg, --primary_icon);
+    > .#{$prefix}-tag-close {
+      //@include hcl-close-icon(18, true, --primary_bg, --primary_icon);
 
       margin-left: 0.5rem;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--primary_bg);
+
+      svg {
+        width: 8px;
+        height: 8px;
+        fill: var(--primary_icon);
+      }
 
       &:hover {
         background-color: var(--primary_bg_hover);
@@ -73,8 +86,23 @@
       background-color: var(--secondary_bg_hover);
     }
 
-    > .#{$prefix}-close {
-      @include hcl-close-icon(18, true, --secondary_bg, --secondary_icon);
+    > .#{$prefix}-tag-close {
+      margin-left: 0.5rem;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--secondary_bg);
+
+      svg {
+        width: 8px;
+        height: 8px;
+        fill: var(--secondary_icon);
+      }
+
+      //@include hcl-close-icon(18, true, --secondary_bg, --secondary_icon);
 
       margin-left: 0.5rem;
 
@@ -100,7 +128,7 @@
 
     cursor: not-allowed;
 
-    > .#{$prefix}-close {
+    > .#{$prefix}-tag-close {
       pointer-events: none;
     }
 

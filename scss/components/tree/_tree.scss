@@ -252,10 +252,9 @@ $default-node-height: 2rem;
           border: 0.0625rem dashed var(--default_border_xlow);
         }
 
-        *>{
-            opacity: var(--disabled_all);
+        * > {
+          opacity: var(--disabled_all);
         }
-        
       }
 
       &.drop-on-node {

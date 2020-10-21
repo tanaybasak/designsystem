@@ -80,11 +80,36 @@ $colorMap: (
   }
 
   &-close {
-    min-width: 2.5rem;
-    max-width: 2.5rem;
-    min-height: 2.5rem;
-    max-height: 2.5rem;
+    // width: 2.5rem;
+    // height: 2.5rem;
+    // background: transparent;
+    // padding: 14px;
+    // cursor: pointer;
 
-    @include hcl-close-icon(12.15, false, --transparent, --default_icon_high);
+    background: transparent;
+    cursor: pointer;
+    height: 40px;
+    display: flex;
+    flex: 1 80px;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 12.15px;
+      height: 12.15px;
+      fill: var(--default_icon_high);
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.8;
+      }
+    }
+
+    // min-width: 2.5rem;
+    // max-width: 2.5rem;
+    // min-height: 2.5rem;
+    // max-height: 2.5rem;
+
+    //@include hcl-close-icon(12.15, false, --transparent, --default_icon_high);
   }
 }
