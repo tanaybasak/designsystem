@@ -275,6 +275,19 @@
     }
   }
 
+  &.data-table-header {
+    overflow-x: auto;
+
+    .#{$prefix}-data-table {
+      border-collapse: separate;
+
+      th {
+        z-index: 2;
+        position: relative;
+      }
+    }
+  }
+
   &.#{$prefix}-data-table-borderless {
     border: 0.0625rem solid transparent;
 
