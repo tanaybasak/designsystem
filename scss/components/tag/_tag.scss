@@ -48,11 +48,9 @@
     }
 
     > .#{$prefix}-tag-close {
-      //@include hcl-close-icon(18, true, --primary_bg, --primary_icon);
-
       margin-left: 0.5rem;
-      width: 18px;
-      height: 18px;
+      width: 1.125rem;
+      height: 1.125rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -60,8 +58,8 @@
       background: var(--primary_bg);
 
       svg {
-        width: 8px;
-        height: 8px;
+        width: 0.5rem;
+        height: 0.5rem;
         fill: var(--primary_icon);
       }
 
@@ -88,8 +86,8 @@
 
     > .#{$prefix}-tag-close {
       margin-left: 0.5rem;
-      width: 18px;
-      height: 18px;
+      width: 1.125rem;
+      height: 1.125rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -97,12 +95,10 @@
       background: var(--secondary_bg);
 
       svg {
-        width: 8px;
-        height: 8px;
+        width: 0.5rem;
+        height: 0.5rem;
         fill: var(--secondary_icon);
       }
-
-      //@include hcl-close-icon(18, true, --secondary_bg, --secondary_icon);
 
       margin-left: 0.5rem;
 
@@ -145,14 +141,9 @@
     width: 1.375rem;
     height: 1.375rem;
     border-radius: 50%;
-    //position: absolute;
     left: 0.625rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
-    + .hcl-tag-text {
-      //margin-left: 1.875rem;
-    }
   }
 }

@@ -23,13 +23,13 @@ import Toggle from '../../js/toggle';
 import TimePicker from '../../js/timePicker';
 import Overlay from '../../js/overlay';
 import { isElement } from '../../js/utils/dom';
-//import cssVars from 'css-vars-ponyfill';
+import cssVars from 'css-vars-ponyfill';
 
 // Demo Scripts
 import '../../js/toast';
-// cssVars({
-//   rootElement: document // default
-// });
+cssVars({
+  rootElement: document // default
+});
 const ComponentList = {
   dropdow: Dropdown,
   overflow: Overflow,

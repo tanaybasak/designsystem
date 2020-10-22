@@ -110,10 +110,9 @@
 
       .#{$prefix}-file-close {
         background-color: var(--default_bg);
-        //@include hcl-close-icon(10, false, --transparent, --default_icon_high);
         svg {
-          width: 10px;
-          height: 10px;
+          width: 0.625rem;
+          height: 0.625rem;
           fill: var(--default_icon_high);
         }
 

@@ -70,13 +70,13 @@
   &-close {
     right: 0;
     top: 0;
-    padding: 14px;
+    padding: 0.875rem;
     background: transparent;
     cursor: pointer;
 
     svg {
-      width: 12.15px;
-      height: 12.15px;
+      width: 0.75rem;
+      height: 0.75rem;
       fill: var(--default_icon_high);
     }
 
