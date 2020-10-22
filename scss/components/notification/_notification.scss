@@ -33,6 +33,7 @@ $colorMap: (
   &-body {
     display: flex;
     margin: 0 1rem;
+    width: calc(100% - 4.5rem);
 
     .#{$prefix}-notification-icon-container {
       display: flex;
@@ -89,10 +90,7 @@ $colorMap: (
     background: transparent;
     cursor: pointer;
     height: 40px;
-    display: flex;
-    flex: 1 80px;
-    justify-content: center;
-    align-items: center;
+    width: 40px;
     svg {
       width: 12.15px;
       height: 12.15px;
