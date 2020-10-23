@@ -99,6 +99,7 @@
               &:hover {
                 span.resize-handle {
                   background: var(--interactive_border);
+                  height: inherit;
                 }
               }
             }
