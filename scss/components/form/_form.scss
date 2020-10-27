@@ -139,8 +139,6 @@ label.#{$prefix}-label {
 
 .#{$prefix}-checkbox-item {
   position: relative;
-  display: flex;
-  align-items: center;
   user-select: none;
 
   .#{$prefix}-checkbox {
@@ -161,9 +159,20 @@ label.#{$prefix}-label {
       background-color: var(--active_icon);
     }
 
+    &:indeterminate + .#{$prefix}-checkbox-label::before {
+      border: none;
+      background-color: var(--active_icon);
+    }
+
     &:checked + .#{$prefix}-checkbox-label::after {
       opacity: 1;
       transform: scale(1) rotate(-45deg);
+    }
+
+    &:indeterminate + .#{$prefix}-checkbox-label::after {
+      border-left: 0;
+      top: calc(50% - 0.0875rem);
+      transform: scale(1) rotate(0deg);
     }
 
     &:focus + .#{$prefix}-checkbox-label::before {
@@ -179,15 +188,16 @@ label.#{$prefix}-label {
     line-height: 1.6rem;
     cursor: pointer;
     margin-bottom: 0;
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     position: relative;
-    height: 1.6rem;
+    height: 1.625rem;
     color: var(--default_text_high);
 
     &::before {
       box-sizing: border-box;
       content: '';
       position: absolute;
+      margin-left: 0.25rem;
       left: 0;
       top: calc(50% - 0.5625rem);
       width: 1.125rem;
@@ -206,7 +216,7 @@ label.#{$prefix}-label {
       border-bottom: 1px solid var(--white);
       transform: scale(0) rotate(-45deg);
       position: absolute;
-      left: 0.3125rem;
+      left: 0.5625rem;
       top: 50%;
       margin-top: -0.1875rem;
     }
