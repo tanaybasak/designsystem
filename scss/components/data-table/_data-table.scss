@@ -21,7 +21,7 @@
     display: inline-block;
     z-index: 5999;
     background-color: var(--interactive_border);
-    width: 1px;
+    width: hcl-rem(1px);
     height: 100%;
   }
 
@@ -73,7 +73,7 @@
             display: inline-block;
             // visibility: hidden;
             position: absolute;
-            width: 7px !important;
+            width: hcl-rem(7px) !important;
             height: 100%;
             bottom: 0;
             right: 0;
@@ -88,7 +88,7 @@
                 user-select: none;
                 display: inline-block;
                 position: absolute;
-                width: 2px;
+                width: hcl-rem(2px);
                 height: 100%;
                 bottom: 0;
                 right: 0;
@@ -319,7 +319,7 @@
           user-select: none;
           display: inline-block;
           position: absolute;
-          width: 2px;
+          width: hcl-rem(2px);
           height: 100%;
           bottom: 0;
           right: 0;
