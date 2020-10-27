@@ -306,12 +306,12 @@
     transition: all 0.3s ease-in-out;
   }
 
-  .#{$prefix}-dragged-col {
+  .dragged-col {
     opacity: 0.5;
     border: 1px dotted;
   }
-
-  .#{$prefix}-draggable {
+  
+  .draggable {
     cursor: pointer;
   }
 }
