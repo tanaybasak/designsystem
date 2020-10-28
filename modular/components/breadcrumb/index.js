@@ -1,3 +1,4 @@
+import '../../../scss/base';
 import '../../../scss/components/breadcrumb/_breadcrumb.scss';
 import Breadcrumb from '../../../js/breadcrumb';
 import { isElement } from '../../../js/utils/dom';

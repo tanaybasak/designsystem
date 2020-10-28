@@ -1,3 +1,4 @@
+import '../../../scss/base';
 import '../../../scss/components/search/_search.scss';
 import { isElement } from '../../../js/utils/dom';
 import Search from '../../../js/search';

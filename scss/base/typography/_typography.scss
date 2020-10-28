@@ -5,11 +5,11 @@
  *
  *******************************************************************
  */
-@import '../../utils/variables';
-@import '../../utils/colors';
-@import '../../utils/themes';
+// @import '../../utils/variables';
+// @import '../../utils/colors';
+// @import '../../utils/themes';
 @import 'typographyMixins';
-@import '../../utils/mixins';
+// @import '../../utils/mixins';
 
 // Font weight
 @each $key, $value in $fontWeights-map {

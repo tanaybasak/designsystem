@@ -1,3 +1,4 @@
+import '../../../scss/base';
 import '../../../scss/components/pagination/_pagination.scss';
 import { isElement } from '../../../js/utils/dom';
 import Pagination from '../../../js/pagination';
