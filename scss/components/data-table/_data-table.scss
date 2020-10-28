@@ -260,6 +260,14 @@
         box-shadow: inset -0.625rem 0 0.5rem -0.5rem var(--default_shadow);
       }
     }
+    svg {
+      g {
+        stroke: var(--interactive_icon);
+      }
+      path {
+        fill: var(--interactive_icon);
+      }
+    }
   }
 
   &.data-table-sticky-header {
@@ -310,7 +318,7 @@
     opacity: 0.5;
     border: 1px dotted;
   }
-  
+
   .draggable {
     cursor: pointer;
   }
