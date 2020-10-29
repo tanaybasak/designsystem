@@ -1,5 +1,3 @@
-import '../../../scss/base';
-import '../../../scss/components/time-picker/_time-picker.scss';
 import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import TimePicker from '../../../js/timePicker';

@@ -1,5 +1,3 @@
-import '../../../scss/base';
-import '../../../scss/components/overflow-menu/_overflow-menu.scss';
 import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import Overflow from '../../../js/overflow';

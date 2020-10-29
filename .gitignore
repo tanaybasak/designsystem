@@ -17,6 +17,7 @@ DS_Store
 .idea
 /.cache
 /output
+.dist
 
 npm-debug.log*
 yarn-debug.log*

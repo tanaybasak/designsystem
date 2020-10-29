@@ -1,5 +1,3 @@
-import '../../../scss/base';
-import '../../../scss/components/sidebar/_sidebar.scss';
 import './index.scss';
 import Sidebar from '../../../js/sidebar';
 import { isElement } from '../../../js/utils/dom';

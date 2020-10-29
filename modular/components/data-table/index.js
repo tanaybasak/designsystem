@@ -1,6 +1,4 @@
-import '../../../scss/base';
 import './index.scss';
-import '../../../scss/components/data-table/_data-table.scss';
 import DataTable from '../../../js/dataTable';
 import { isElement } from '../../../js/utils/dom';
 
