@@ -1,1 +1,1 @@
-import '../../scss/layout/_grids';
+import './index.scss';
