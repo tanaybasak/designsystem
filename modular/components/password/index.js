@@ -1,5 +1,6 @@
 import '../../../scss/base';
 import '../../../scss/components/form/_form.scss';
+import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import Password from '../../../js/password';
 

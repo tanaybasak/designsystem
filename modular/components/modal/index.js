@@ -1,5 +1,6 @@
 import '../../../scss/base';
 import '../../../scss/components/modal/_modal.scss';
+import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import Modal from '../../../js/modal';
 

@@ -1,5 +1,4 @@
-import '../../../scss/base';
-import '../../../scss/components/tooltip/_tooltip.scss';
+import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import Tooltip from '../../../js/tooltip';
 

@@ -1,5 +1,6 @@
 import '../../../scss/base';
 import '../../../scss/components/tree/_tree.scss';
+import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import Overlay from '../../../js/overlay';
 

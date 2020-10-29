@@ -1,4 +1,5 @@
 import '../../../scss/base';
+import './index.scss';
 import '../../../scss/components/file-uploader/_file-uploader.scss';
 import FileUploader from '../../../js/fileUploader';
 import { isElement } from '../../../js/utils/dom';
