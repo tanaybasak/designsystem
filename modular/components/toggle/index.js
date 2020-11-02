@@ -1,4 +1,4 @@
-import '../../../scss/components/toggle/_toggle.scss';
+import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import Toggle from '../../../js/toggle';
 
