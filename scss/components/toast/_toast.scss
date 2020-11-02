@@ -19,7 +19,7 @@ $colorMap: (
       border-left: 0.3125rem solid var(#{'--' + $value + '_border'});
 
       .#{$prefix}-toast-icon-container {
-        > .#{$prefix}-notification-icon {
+        .#{$prefix}-notification-icon {
           fill: var(#{'--' + $value + '_icon'});
         }
       }
