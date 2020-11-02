@@ -39,7 +39,7 @@ bug-UICoE-[ID]
 
 # Styleguide
 
-  http://10.115.87.64:8080/
+  https://10.115.87.64:8080/
   Carbon Design System
 
 # Tech Stack

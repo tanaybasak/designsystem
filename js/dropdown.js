@@ -130,11 +130,11 @@ class Dropdown {
 
       if (tag) {
         tag
-          .querySelector(`.${PREFIX}-close`)
+          .querySelector(`.${PREFIX}-tag-close`)
           .addEventListener('click', this.clearMultiselectDropdownItem);
 
         tag
-          .querySelector(`.${PREFIX}-close`)
+          .querySelector(`.${PREFIX}-tag-close`)
           .addEventListener('keydown', event => {
             if (event.key === 'Enter') {
               this.clearMultiselectDropdownItem(event);

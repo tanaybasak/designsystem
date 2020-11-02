@@ -108,10 +108,21 @@
 
       .#{$prefix}-file-close {
         background-color: var(--default_bg);
-        @include hcl-close-icon(10, false, --transparent, --default_icon_high);
+        svg {
+          width: 0.625rem;
+          height: 0.625rem;
+          fill: var(--default_icon_high);
+        }
 
-        height: 2.375rem !important;
-        width: 2.5rem !important;
+        &:hover {
+          svg {
+            opacity: 0.8;
+          }
+        }
+
+        height: 2.375rem;
+        width: 2.5rem;
+        cursor: pointer;
       }
     }
   }

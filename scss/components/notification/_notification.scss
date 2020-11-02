@@ -20,7 +20,7 @@ $colorMap: (
 
       > .#{$prefix}-notification-body {
         > .#{$prefix}-notification-icon-container {
-          > .#{$prefix}-notification-icon {
+          .#{$prefix}-notification-icon {
             fill: var(#{'--' + $value + '_icon'});
           }
         }
@@ -31,10 +31,12 @@ $colorMap: (
   &-body {
     display: flex;
     margin: 0 1rem;
+    width: calc(100% - 4.5rem);
 
     .#{$prefix}-notification-icon-container {
       display: flex;
       align-items: center;
+
       @each $key, $value in $colorMap {
         > .#{$prefix}-notification-icon {
           fill: var(#{'--' + $value + '_icon'});
@@ -44,7 +46,6 @@ $colorMap: (
 
     .#{$prefix}-notification-icon {
       flex-shrink: 0;
-      margin-right: 1rem;
     }
 
     .#{$prefix}-notification-text-wrapper {
@@ -52,6 +53,7 @@ $colorMap: (
       flex-wrap: wrap;
       align-items: center;
       padding: 0.75rem 0;
+      margin-left: 1rem;
 
       .#{$prefix}-notification-title {
         font-size: 0.875rem;
@@ -69,18 +71,27 @@ $colorMap: (
         line-height: getLineHeight(0.875rem);
         @include getFontWeight('regular');
         word-break: break-word;
-
         color: var(--default_text);
       }
     }
   }
 
   &-close {
-    min-width: 2.5rem;
-    max-width: 2.5rem;
-    min-height: 2.5rem;
-    max-height: 2.5rem;
+    background: transparent;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 2.5rem;
 
-    @include hcl-close-icon(12.15, false, --transparent, --default_icon_high);
+    svg {
+      width: 0.75rem;
+      height: 0.75rem;
+      fill: var(--default_icon_high);
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.8;
+      }
+    }
   }
 }
