@@ -20,6 +20,9 @@
     &-danger {
       border-top: 0.25rem solid var(--danger_border) !important;
     }
+    &-warning {
+      border-top: 0.25rem solid var(--warning_border) !important;
+    }
 
     position: relative;
 
