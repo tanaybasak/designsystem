@@ -1,4 +1,4 @@
-import '../../scss/main.scss';
+import './index.scss';
 import ContentSwitcher from '../../js/content-switcher';
 import Dropdown from '../../js/dropdown';
 import Sidebar from '../../js/sidebar';

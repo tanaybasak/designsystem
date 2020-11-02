@@ -1,4 +1,4 @@
-import '../../../scss/components/tile/_tile.scss';
+import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import Tile from '../../../js/tile';
 

@@ -1,1 +1,1 @@
-import '../../../scss/components/form/_form.scss';
+import './index.scss';
