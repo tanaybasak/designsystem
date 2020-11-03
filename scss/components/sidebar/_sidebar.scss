@@ -135,6 +135,21 @@ $animation-duration: 220ms;
           &.no-icon {
             margin-left: 2.75rem;
           }
+          &.highlight {
+            text-decoration: none;
+            color: var(--default_text_high);
+            background-color: var(--default_bg);
+
+            &::before {
+              content: '';
+              position: absolute;
+              height: 100%;
+              width: 0.375rem;
+              left: 0;
+              top: 0;
+              background-color: var(--active_border);
+            }
+          }
         }
 
         .toggleIcon {
