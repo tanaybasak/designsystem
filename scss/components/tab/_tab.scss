@@ -27,6 +27,7 @@
       }
       &:hover {
         border-bottom: transparent;
+        cursor: not-allowed;
       }
       &:focus,
       &:hover {
@@ -84,7 +85,8 @@
       text-decoration: none;
     }
     &:focus {
-      outline: none;
+      pointer-events: none;
+      border: none;
     }
   }
 }
