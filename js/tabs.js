@@ -85,17 +85,13 @@ class Tabs {
             `${PREFIX}-tabs-disabled`
           )
         ) {
-          this.focusNode(
-            node.parentElement.firstElementChild
-          );
+          this.focusNode(node.parentElement.firstElementChild);
         } else {
           node.parentElement.firstElementChild.focus();
         }
       } else if (
         node.nextElementSibling &&
-        node.nextElementSibling.classList.contains(
-          `${PREFIX}-tabs-disabled`
-        )
+        node.nextElementSibling.classList.contains(`${PREFIX}-tabs-disabled`)
       ) {
         // disabled
         this.focusNode(node.nextElementSibling);
@@ -114,10 +110,7 @@ class Tabs {
             `${PREFIX}-tabs-disabled`
           )
         ) {
-          this.focusNode(
-            node.parentElement.lastElementChild,
-            'previous'
-          );
+          this.focusNode(node.parentElement.lastElementChild, 'previous');
         } else {
           node.parentElement.lastElementChild.focus();
         }
@@ -128,10 +121,7 @@ class Tabs {
         )
       ) {
         // disabled
-        this.focusNode(
-          node.previousElementSibling,
-          'previous'
-        );
+        this.focusNode(node.previousElementSibling, 'previous');
       } else {
         // focus next respective element.
         if (node.previousElementSibling) {
@@ -213,11 +203,11 @@ class Tabs {
     const tabs = Array.from(
       this.element.querySelectorAll(this.selectors.selectableTabsAll)
     );
-    const anchorEle = Array.from(
-      this.element.querySelectorAll(this.selectors.selectorAnchor)
-    );
+    // const anchorEle = Array.from(
+    //   this.element.querySelectorAll(this.selectors.selectorAnchor)
+    // );
     const len = tabs.length;
-    const anchorLen = anchorEle.length;
+    // const anchorLen = anchorEle.length;
     for (let i = 0; i < len; i++) {
       tabs[i].addEventListener('click', this.clickEventListener.bind(this));
       tabs[i].addEventListener('keydown', this.keydownListener.bind(this));

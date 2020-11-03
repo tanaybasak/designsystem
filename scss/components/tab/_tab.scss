@@ -13,7 +13,6 @@
     padding: 0.75rem 0;
     border-bottom: 2px solid transparent;
 
-
     &.#{$prefix}-tabs-disabled {
       cursor: not-allowed;
       > a {
@@ -29,7 +28,8 @@
       &:hover {
         border-bottom: transparent;
       }
-      &:focus, &:hover {
+      &:focus,
+      &:hover {
         border-bottom: none;
       }
     }
@@ -60,7 +60,8 @@
         color: var(--interactive_text);
       }
     }
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
       border-bottom: 2px solid var(--interactive_border);
     }
   }
@@ -72,7 +73,7 @@
   &-link {
     text-decoration: none;
     display: inline-block;
-    user-select: none;    
+    user-select: none;
 
     color: var(--interactive_text);
 
