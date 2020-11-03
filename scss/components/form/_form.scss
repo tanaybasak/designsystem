@@ -6,8 +6,6 @@
  *******************************************************************
  */
 
-@import '../../base';
-
 .#{$prefix}-form-group {
   margin-bottom: 1.5rem;
   display: flex;
@@ -139,8 +137,6 @@ label.#{$prefix}-label {
 
 .#{$prefix}-checkbox-item {
   position: relative;
-  display: flex;
-  align-items: center;
   user-select: none;
 
   .#{$prefix}-checkbox {
@@ -157,7 +153,12 @@ label.#{$prefix}-label {
     }
 
     &:checked + .#{$prefix}-checkbox-label::before {
-      border-color: var(--interactive_border);
+      border: none;
+      background-color: var(--active_icon);
+    }
+
+    &:indeterminate + .#{$prefix}-checkbox-label::before {
+      border: none;
       background-color: var(--active_icon);
     }
 
@@ -166,8 +167,13 @@ label.#{$prefix}-label {
       transform: scale(1) rotate(-45deg);
     }
 
+    &:indeterminate + .#{$prefix}-checkbox-label::after {
+      border-left: 0;
+      top: calc(50% - 0.0875rem);
+      transform: scale(1) rotate(0deg);
+    }
+
     &:focus + .#{$prefix}-checkbox-label::before {
-      border: none;
       outline-offset: 2px;
       outline: 2px solid var(--interactive_border);
     }
@@ -177,24 +183,24 @@ label.#{$prefix}-label {
     @include getFontWeight('regular');
     font-size: 0.875rem;
     display: inline-block;
+    line-height: 1.6rem;
     cursor: pointer;
     margin-bottom: 0;
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     position: relative;
-
+    height: 1.625rem;
     color: var(--default_text_high);
 
     &::before {
       box-sizing: border-box;
       content: '';
       position: absolute;
+      margin-left: 0.25rem;
       left: 0;
       top: calc(50% - 0.5625rem);
-      height: 1.125rem;
       width: 1.125rem;
-
-      border: $checkbox-border-width solid var(--default_icon_high);
-
+      height: 1.125rem;
+      border: 1px solid var(--default_icon_high);
       background-color: var(--white);
     }
 
@@ -208,7 +214,7 @@ label.#{$prefix}-label {
       border-bottom: 1px solid var(--white);
       transform: scale(0) rotate(-45deg);
       position: absolute;
-      left: 0.3125rem;
+      left: 0.5625rem;
       top: 50%;
       margin-top: -0.1875rem;
     }

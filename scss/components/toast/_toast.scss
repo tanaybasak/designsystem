@@ -6,8 +6,6 @@
  *******************************************************************
  */
 
-@import '../../base';
-
 $colorMap: (
   'info': info,
   'danger': danger,
@@ -21,7 +19,7 @@ $colorMap: (
       border-left: 0.3125rem solid var(#{'--' + $value + '_border'});
 
       .#{$prefix}-toast-icon-container {
-        > .#{$prefix}-notification-icon {
+        .#{$prefix}-notification-icon {
           fill: var(#{'--' + $value + '_icon'});
         }
       }
@@ -82,19 +80,27 @@ $colorMap: (
   }
 
   &-close {
-    border: none;
-    right: 0;
+    position: absolute;
     top: 0;
-    padding: 0;
-    min-width: 2.5rem;
-    max-width: 2.5rem;
-    min-height: 2.5rem;
-    max-height: 2.5rem;
+    right: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
     transition: outline 0.11s, background-color 0.11s;
 
-    @include hcl-close-icon(12.15, false, --transparent, --default_icon_high);
+    svg {
+      width: 0.75rem;
+      height: 0.75rem;
+      fill: var(--default_icon_high);
+    }
 
-    position: absolute;
+    &:hover {
+      svg {
+        opacity: 0.8;
+      }
+    }
   }
 
   .#{$prefix}-toast-icon-container {

@@ -1,4 +1,4 @@
-import '../../../scss/components/slider/_slider.scss';
+import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import Slider from '../../../js/slider';
 

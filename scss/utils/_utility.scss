@@ -72,7 +72,7 @@
 
 // close icon class
 .#{$prefix}-close {
-  @include hcl-close-icon(24, false, --tranparent, --black);
+  @include hcl-close-icon(24, false, --transparent, --black);
 }
 
 // ellipsis icon
@@ -217,5 +217,11 @@ $displayProperties: none inline inline-block block table inline-table table-cell
 
   &-disable {
     opacity: 0;
+  }
+}
+
+.#{$prefix}-secondary-bg-hover {
+  &:hover {
+    background-color: var(--interactive_bg_hover_high);
   }
 }

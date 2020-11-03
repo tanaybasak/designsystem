@@ -1,1 +1,1 @@
-import '../../scss/utils/_breakpoints.scss';
+import './index.scss';

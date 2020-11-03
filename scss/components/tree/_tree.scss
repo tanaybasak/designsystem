@@ -1,178 +1,282 @@
-@import '../../base';
+$default-node-height: 2rem;
 
 .#{$prefix}-tree {
   font-size: 0.875rem;
   @include getFontWeight(regular);
   line-height: 1.5rem;
   letter-spacing: 0.16px;
+  position: relative;
 
-  .tree-item {
+  .#{$prefix}-tree-item {
     width: 100%;
     display: block;
-    position: relative;
-    padding: 0.3125rem 0 0;
+    border-top: 0.0625rem solid transparent;
+    border-bottom: 0.0625rem solid transparent;
+    padding-left: 0.25rem;
 
-    &:focus {
-      border: var(--interactive_border);
-    }
-
-    .tree-node {
+    .#{$prefix}-tree-node {
       cursor: pointer;
       line-height: unset;
       display: flex;
       flex-direction: row;
-      align-items: center;
-      border: 0.125rem solid transparent;
+      min-height: $default-node-height;
 
-      &:hover {
-        background-color: var(--interactive_bg_hover);
-      }
+      .#{$prefix}-toggle-icon {
+        width: $default-node-height;
+        height: $default-node-height;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        position: relative;
 
-      & > i {
-        margin-right: 0.5rem;
+        &.caret {
+          display: inline-block;
+          padding: 0.625rem;
 
-        + div.treenode-action-wrapper {
-          width: calc(100% - 1.375rem);
+          &::before {
+            content: ' ';
+            position: absolute;
+            height: 0.5rem;
+            width: 0.5rem;
+            margin-top: 0.125rem;
+            border-right: 0.0625rem solid var(--default_icon);
+            border-bottom: 0.0625rem solid var(--default_icon);
+
+            transform: scale(1) rotate(-45deg);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &.caret-down::before {
+            transform: scale(1) rotate(45deg);
+            margin-top: 0;
+            margin-left: 0.125rem;
+          }
         }
-      }
 
-      i {
-        width: 0.875rem;
-        height: 0.875rem;
-      }
-
-      .caret {
-        display: inline-block;
-
-        &::before {
-          content: ' ';
-          position: absolute;
-          height: 0.5rem;
-          width: 0.5rem;
-          margin-top: 0.125rem;
-
-          border-right: 0.0625rem solid var(--default_icon);
-          border-bottom: 0.0625rem solid var(--default_icon);
-
-          transform: scale(1) rotate(-45deg);
-          transition: all 0.2s ease-in-out;
-          margin-left: 0.3125rem;
+        &:hover {
+          background-color: var(--interactive_bg_hover_high);
         }
-      }
-
-      .caret-down::before {
-        transform: scale(1) rotate(45deg);
-        margin-top: 0;
       }
 
       &.no-children-exist {
-        padding-left: 1.375rem;
+        padding-left: $default-node-height;
+
+        .#{$prefix}-treenode-content-wrapper {
+          width: 100%;
+        }
       }
 
-      .treenode-action-wrapper {
+      .#{$prefix}-treenode-content-wrapper {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
+        align-items: center;
+        width: calc(100% - 2rem);
+        min-height: $default-node-height;
+        position: relative;
 
-        .treenode-overflow {
-          .#{$prefix}-overflow-container > span {
-            padding: 0 0.625rem;
-          }
+        .#{$prefix}-tree-node-icon {
+          margin-right: 0.25rem;
+          color: var(--default_icon);
         }
 
-        .treenode-content-wrapper {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          width: 100%;
+        .#{$prefix}-tree-content-node {
+          min-width: 0;
 
-          &.with-overflow {
-            width: calc(100% - 1.75rem);
-          }
-
-          & > i {
-            margin-right: 0.25rem;
-
-            + span.tree-text-node {
-              max-width: calc(100% - 1.125rem);
-            }
-          }
-
-          .tree-text-node {
-            display: inline-flex;
-            max-width: 100%;
-
+          .tree-content-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             color: var(--default_text);
+          }
+        }
 
-            &:hover {
-              color: var(--default_text_high);
-            }
-            &.highlight {
-              color: var(--default_text);
-              background-color: var(--active_bg);
-            }
+        .#{$prefix}-text-container {
+          display: inline-flex;
+          width: 100%;
+          z-index: 2;
+          position: relative;
+          margin-bottom: 0;
 
-            &.highlight-row {
-              color: var(--default_text);
-              background: var(--active_bg);
-            }
-            &.#{$prefix}-cut-node {
-              opacity: 0.5;
-            }
+          .#{$prefix}-form-control {
+            height: $default-node-height;
+          }
+        }
 
-            div {
-              overflow: hidden;
-              text-overflow: ellipsis;
-              padding: 0 0.25rem;
-              vertical-align: middle;
-              max-width: 100%;
-              white-space: nowrap;
-              height: 1.5rem;
+        .#{$prefix}-treenode-action {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      .#{$prefix}-overflow-btn {
+        &:hover {
+          background-color: var(--interactive_bg_hover_high);
+        }
+      }
+
+      &.drop-on-above {
+        box-shadow: inset -0.0625rem 0 0 transparent,
+          0 -0.125rem 0 var(--interactive_border),
+          inset 0.0625rem 0 0 transparent, inset 0 0.0625rem 0 transparent;
+      }
+
+      &.drop-on-below {
+        box-shadow: inset -0.0625rem 0 0 transparent,
+          inset 0 -0.0625rem 0 transparent, inset 0.0625rem 0 0 transparent,
+          0 0.125rem 0 var(--interactive_border);
+      }
+
+      .action-on-hover {
+        .#{$prefix}-overlay-wrapper {
+          .#{$prefix}-overflow-btn {
+            opacity: 0;
+            &:focus {
+              opacity: 1;
             }
           }
+        }
 
-          .#{$prefix}-text-container {
-            display: inline-flex;
-            width: 100%;
-            position: relative;
-            margin-bottom: 0;
+        .#{$prefix}-overlay-wrapper-active {
+          .#{$prefix}-overflow-btn {
+            opacity: 1;
+          }
+        }
+        :not(.#{$prefix}-overlay-wrapper) {
+          opacity: 0;
+        }
+      }
 
-            .#{$prefix}-form-control {
-              height: 1.5rem;
-            }
+      .#{$prefix}-node-highlight-wrapper {
+        box-sizing: border-box;
+        content: '';
+        height: inherit;
+        min-height: $default-node-height;
+        left: 0;
+        position: absolute;
+        right: 0;
+        background: transparent;
+      }
 
-            button {
-              position: absolute;
-              background: transparent;
-              right: 0;
-              padding: 0 0.5rem;
-              cursor: pointer;
+      &.#{$prefix}-node-highlight {
+        .#{$prefix}-node-highlight-wrapper {
+          background: var(--active_bg);
+          box-shadow: inset -0.0625rem 0 0 transparent,
+            inset 0 -0.0625rem 0 transparent,
+            inset 0.25rem 0 0 var(--active_border),
+            inset 0 0.125rem 0 transparent;
+        }
+
+        .#{$prefix}-tree-node-icon {
+          color: var(--default_icon_xhigh);
+        }
+
+        .#{$prefix}-tree-content-node {
+          .tree-content-text {
+            color: var(--default_text_xhigh);
+          }
+        }
+
+        .#{$prefix}-toggle-icon {
+          &.caret {
+            &::before {
+              border-right: 0.0625rem solid var(--default_icon_xhigh);
+              border-bottom: 0.0625rem solid var(--default_icon_xhigh);
             }
           }
         }
       }
 
-      &.add-border {
-        border-top: 0.125rem solid var(--interactive_border);
-      }
+      &:hover {
+        .#{$prefix}-node-highlight-wrapper {
+          background-color: var(--interactive_bg_hover);
+        }
 
-      &.add-border-bottom {
-        border-bottom: 0.125rem solid var(--interactive_border);
-      }
+        .#{$prefix}-tree-node-icon {
+          color: var(--default_icon_high);
+        }
 
-      .overflow-onhover {
-        visibility: hidden;
+        .#{$prefix}-tree-content-node {
+          .tree-content-text {
+            color: var(--default_text_high);
+          }
+        }
 
-        &.hcl-overflow-active {
-          visibility: visible;
+        .#{$prefix}-toggle-icon {
+          &.caret {
+            &::before {
+              border-right: 0.0625rem solid var(--default_icon_high);
+              border-bottom: 0.0625rem solid var(--default_icon_high);
+            }
+          }
+        }
+
+        .action-on-hover {
+          .#{$prefix}-overlay-wrapper {
+            .#{$prefix}-overflow-btn {
+              opacity: 1;
+            }
+          }
+          :not(.#{$prefix}-overlay-wrapper) {
+            opacity: 1;
+          }
         }
       }
 
-      &:hover,
       &:focus {
-        .overflow-onhover {
-          visibility: visible;
+        outline: none;
+
+        .#{$prefix}-node-highlight-wrapper {
+          outline: 0.0625rem solid var(--interactive_border);
+        }
+
+        .action-on-hover {
+          .#{$prefix}-overlay-wrapper {
+            .#{$prefix}-overflow-btn {
+              opacity: 1;
+            }
+          }
+          :not(.#{$prefix}-overlay-wrapper) {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.ghost {
+        .#{$prefix}-node-highlight-wrapper {
+          background: var(--default_bg_low);
+          border: 0.0625rem dashed var(--default_border_xlow);
+        }
+
+        * > {
+          opacity: var(--disabled_all);
+        }
+      }
+
+      &.drop-on-node {
+        .#{$prefix}-node-highlight-wrapper {
+          outline: 0.0625rem solid var(--interactive_border);
+          background: var(--info_bg);
+        }
+
+        .#{$prefix}-tree-node-icon {
+          color: var(--default_icon_high);
+        }
+
+        .#{$prefix}-tree-content-node {
+          .tree-content-text {
+            color: var(--default_text_high);
+          }
+        }
+
+        .#{$prefix}-toggle-icon {
+          &.caret {
+            &::before {
+              border-right: 0.0625rem solid var(--default_icon_high);
+              border-bottom: 0.0625rem solid var(--default_icon_high);
+            }
+          }
         }
       }
     }
@@ -192,8 +296,7 @@
       display: none;
     }
 
-    .tree-nested {
-      margin-bottom: 0.25rem;
+    .#{$prefix}-tree-nested {
       margin-left: 1.25rem;
       font-size: 0.875rem;
     }

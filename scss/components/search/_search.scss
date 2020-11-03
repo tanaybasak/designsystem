@@ -1,5 +1,3 @@
-@import '../../base';
-
 $search-height: 2.5rem;
 $search-height-sm: 2rem;
 $search-icon-size: 1rem;
@@ -11,11 +9,13 @@ $search-reset-size: 0.759rem;
   position: relative;
   padding: 0;
   height: $search-height;
+
   &:focus {
     outline: 0;
 
     border-bottom: 1px solid var(--interactive_border);
   }
+
   > * {
     &:disabled {
       opacity: var(--disabled_all);
@@ -26,12 +26,14 @@ $search-reset-size: 0.759rem;
   &.show {
     direction: rtl;
 
-    & > * {
+    & > .#{$prefix}-search-input {
       direction: ltr;
     }
 
-    .#{$prefix}-search-input {
-      padding-left: 1rem;
+    &.#{$prefix}-search-btn-only {
+      .#{$prefix}-search-input {
+        padding-left: 1rem;
+      }
     }
 
     .#{$prefix}-search-btn {
@@ -42,6 +44,7 @@ $search-reset-size: 0.759rem;
   button.#{$prefix}-search-btn:hover:enabled {
     background-color: var(--interactive_bg_hover);
     cursor: pointer;
+
     .#{$prefix}-search-icon {
       fill: var(--input_icon);
     }
@@ -51,10 +54,10 @@ $search-reset-size: 0.759rem;
     height: $search-height;
     width: $search-height;
     position: absolute;
+    top: 0;
     display: flex;
     flex-direction: column;
     background: none;
-    pointer-events: none;
 
     .#{$prefix}-search-icon {
       margin-left: ($search-height - $search-icon-size)/2;
@@ -109,38 +112,23 @@ $search-reset-size: 0.759rem;
 
   .#{$prefix}-search-reset {
     background: none;
-    display: inline-flex;
     right: 0;
+    top: 0;
     height: $search-height;
     width: $search-height;
     visibility: hidden;
     position: absolute;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     transition: visibility 0.15s ease-out;
 
+    svg {
+      fill: var(--input_icon);
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
     &.show {
       visibility: visible;
-    }
-
-    &::before,
-    &::after {
-      content: ' ';
-      position: absolute;
-      width: 0.125rem;
-
-      background-color: var(--input_icon);
-
-      height: $search-reset-size;
-    }
-
-    &::before {
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      transform: rotate(-45deg);
     }
   }
 
@@ -155,9 +143,6 @@ $search-reset-size: 0.759rem;
     .#{$prefix}-search-btn {
       height: $search-height-sm;
       width: $search-height-sm;
-      right: 0;
-      left: unset;
-      pointer-events: unset;
 
       .#{$prefix}-search-icon {
         margin-left: ($search-height-sm - $search-icon-size)/2;
@@ -166,16 +151,8 @@ $search-reset-size: 0.759rem;
     }
 
     .#{$prefix}-search-reset {
-      background: none;
-      right: 0;
-      display: flex;
-      height: $search-height;
-      width: $search-height;
-      visibility: hidden;
-      width: 0;
-      padding: 0;
-      position: absolute;
-      transition: all 0.15s ease-out;
+      height: $search-height-sm;
+      width: $search-height-sm;
     }
   }
 

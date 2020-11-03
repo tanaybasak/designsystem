@@ -6,8 +6,6 @@
  *******************************************************************
  */
 
-@import '../../base';
-
 $pagination-font-size: var(--body-font-size);
 $pagination-line-height: 1.125rem;
 
@@ -26,14 +24,70 @@ $pagination-line-height: 1.125rem;
   height: hcl-rem(40px);
 
   &-left,
-  &-right {
+  &-right,
+  &-wrapper {
     display: flex;
     align-items: center;
     height: 100%;
   }
 
+  &-right {
+    .#{$prefix}-pagination-wrapper,
+    .#{$prefix}-pagination-right-wrapper {
+      .#{$prefix}-pagination-text {
+        margin-right: 1rem;
+      }
+    }
+    .#{$prefix}-pagination-text {
+      margin-right: 1rem;
+    }
+    .#{$prefix}-pagination-range {
+      margin-right: hcl-rem(2px);
+    }
+    .#{$prefix}-pagination-totalitems {
+      margin: 0 hcl-rem(2px) 0;
+    }
+
+    .#{$prefix}-pagination-right-wrapper {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      border-left: 1px solid var(--default_border_xlow);
+
+      button.hcl-pagination-button-previous {
+        border-left-width: 0;
+      }
+    }
+  }
+
   &-left {
-    padding: 0 1rem;
+    .#{$prefix}-pagination-left-wrapper {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      border-right: 1px solid var(--default_border_xlow);
+
+      button.hcl-pagination-button-previous {
+        border-left-width: 0;
+        @include media-breakpoint-down(sm) {
+          border-left: 1px solid var(--default_border_xlow) !important;
+        }
+      }
+      @include media-breakpoint-down(sm) {
+        border-right-width: 0 !important;
+      }
+      .#{$prefix}-pagination-select-wrapper::after {
+        border: none;
+      }
+      .#{$prefix}-pagination-text {
+        margin-right: 1rem;
+      }
+    }
+    .#{$prefix}-pagination-wrapper {
+      .#{$prefix}-pagination-select-wrapper::after {
+        border: none;
+      }
+    }
 
     @include media-breakpoint-down(sm) {
       flex-grow: 1;
@@ -75,7 +129,8 @@ $pagination-line-height: 1.125rem;
     }
   }
 
-  &-right {
+  &-right,
+  &-left {
     button.#{$prefix}-pagination-button-previous,
     button.#{$prefix}-pagination-button-next {
       height: 100%;
@@ -126,7 +181,7 @@ $pagination-line-height: 1.125rem;
     }
 
     .#{$prefix}-pagination-text {
-      margin-right: hcl-rem(16px);
+      margin-left: hcl-rem(16px);
 
       color: var(--default_text);
     }
@@ -169,8 +224,6 @@ $pagination-line-height: 1.125rem;
   }
 
   .#{$prefix}-pagination-range {
-    margin-left: hcl-rem(16px);
-
     color: var(--default_text);
 
     @include media-breakpoint-down(sm) {
@@ -180,7 +233,7 @@ $pagination-line-height: 1.125rem;
 
   .#{$prefix}-pagination-label {
     color: var(--default_text);
-
+    margin-left: 1rem;
     @include media-breakpoint-down(sm) {
       font-size: 0.75rem;
       white-space: nowrap;
@@ -199,6 +252,7 @@ $pagination-line-height: 1.125rem;
     align-items: center;
     height: 100%;
     border: none;
+    padding-right: 1px;
 
     select,
     .#{$prefix}-pagination-select {

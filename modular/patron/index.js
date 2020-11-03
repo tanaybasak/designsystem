@@ -1,4 +1,4 @@
-import '../../scss/main.scss';
+import './index.scss';
 import ContentSwitcher from '../../js/content-switcher';
 import Dropdown from '../../js/dropdown';
 import Sidebar from '../../js/sidebar';
@@ -23,10 +23,8 @@ import Toggle from '../../js/toggle';
 import TimePicker from '../../js/timePicker';
 import Overlay from '../../js/overlay';
 import { isElement } from '../../js/utils/dom';
-
 // Demo Scripts
 import '../../js/toast';
-
 const ComponentList = {
   dropdow: Dropdown,
   overflow: Overflow,
