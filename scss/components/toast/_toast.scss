@@ -104,7 +104,7 @@ $colorMap: (
     &:focus {
       outline: 0 none;
       outline-offset: 0;
-      box-shadow: 0 0 0 hcl-em(0.8px) var(--interactive_border);
+      box-shadow: 0 0 0 0.05rem var(--interactive_border);
     }
   }
 
