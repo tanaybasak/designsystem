@@ -34,9 +34,8 @@ class Dropdown {
 
   setMultiSelectVal = value => {
     this.element.querySelector(`.${PREFIX}-tag-text`).innerText = value;
-    this.element
-      .querySelector(`.${PREFIX}-tag-text`)
-      .setAttribute('aria-label', `${value}-selected options`);
+    setAttribute(this.element
+      .querySelector(`.${PREFIX}-tag-text`), 'aria-label', `${value}-selected options`);
   };
 
   focusNode = node => {

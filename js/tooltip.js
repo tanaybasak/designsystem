@@ -1,6 +1,7 @@
 import { addListener, removeListeners } from './eventManager';
 import { PREFIX } from './utils/config';
 import { getRem } from './utils/dom';
+import { setAttribute } from './utils/dom';
 let elementNo = 1;
 let tooltipElementRef = 1;
 const tooltipContents = {};
@@ -28,9 +29,9 @@ class Tooltip {
         const element = document.getElementById(this.dataValue.substr(1));
         if (element) {
           const elementId = 'tooltip-' + elementNo++;
-          this.element.setAttribute('aria-describedby', elementId);
+          setAttribute(tooltip, 'aria-describedby', elementId);
           const tooltip = document.createElement('div');
-          tooltip.setAttribute('id', elementId);
+          setAttribute(tooltip, 'id', elementId);
           tooltip.className = `${PREFIX}-tooltip ${PREFIX}-tooltip-${this.type}`;
           if (this.element.hasAttribute('data-focus-on-click')) {
             tooltip.setAttribute('data-focus-on-click', true);
@@ -48,10 +49,7 @@ class Tooltip {
           const tooltipElement = document.getElementById(this.dataValue.substr(1));
           tooltipElement.remove();
         }
-        this.element.setAttribute(
-          'aria-describedby',
-          this.targetTooltipContent.id
-        );
+        setAttribute(this.element, 'aria-describedby', this.targetTooltipContent.id)
       }
     }
     this.element.addEventListener(this.eventName, () => {
@@ -123,9 +121,9 @@ class Tooltip {
       icon = tooltip.children[0];
       document.body.appendChild(tooltip);
     } else {
-      this.element.setAttribute('aria-describedby', elementId);
+      setAttribute(this.element, 'aria-describedby', elementId);
       tooltip = document.createElement('div');
-      tooltip.setAttribute('id', elementId);
+      setAttribute(tooltip, 'id', elementId);
       tooltip.className = `${PREFIX}-tooltip ${PREFIX}-remove-tooltip ${PREFIX}-tooltip-${this.type}`;
       if (this.eventName === 'click') {
         tooltip.setAttribute('data-focus-on-click', true);

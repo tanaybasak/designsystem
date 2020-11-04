@@ -1,5 +1,6 @@
 import handleDataBinding from './utils/data-api';
 import { PREFIX } from './utils/config';
+import { setAttribute } from './utils/dom';
 class Tree {
   constructor(element) {
     this.element = element;
@@ -203,10 +204,8 @@ class Tree {
       nodeElement.parentElement.parentElement.getAttribute('aria-expanded') ||
       'false';
 
-    nodeElement.parentElement.parentElement.setAttribute(
-      'aria-expanded',
-      collapsedStatus === 'false' ? 'true' : 'false'
-    );
+    setAttribute(nodeElement.parentElement.parentElement, 'aria-expanded',
+      collapsedStatus === 'false' ? 'true' : 'false')
 
     if (this.collapsedIcon) {
       const newClassList =
