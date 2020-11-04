@@ -113,10 +113,6 @@ class Overflow {
               this.overlay.hide('select');
               icon.focus();
               this.state.onChange(event, event.target.innerText);
-              const anchor = item.querySelector('a');
-              if (anchor) {
-                window.open(anchor.href, event.metaKey ? '' : '_self');
-              }
             }
           });
         });
