@@ -45,7 +45,8 @@ class Tooltip {
       } else {
         this.targetTooltipContent = tooltipContents[this.dataValue.substr(1)];
         if (document.getElementById(this.dataValue.substr(1))) {
-          document.getElementById(this.dataValue.substr(1)).remove();
+          const tooltipElement = document.getElementById(this.dataValue.substr(1));
+          tooltipElement.remove();
         }
         this.element.setAttribute(
           'aria-describedby',
@@ -145,7 +146,7 @@ class Tooltip {
 
         if (this.contentIn) {
           this.contentIn = false;
-          this.hide();
+          this.hideTooltip();
         }
       });
     }
@@ -261,9 +262,9 @@ class Tooltip {
             icon,
             'left',
             parentCoords.left +
-              parentCoords.width / 2 -
-              arrowSize -
-              tooltipAdjustment
+            parentCoords.width / 2 -
+            arrowSize -
+            tooltipAdjustment
           );
         } else if (this.diff >= 1 && this.diff < tooltipAdjustment) {
           this.diff = tooltipAdjustment - this.diff;
@@ -272,9 +273,9 @@ class Tooltip {
             icon,
             'left',
             parentCoords.left +
-              parentCoords.width / 2 -
-              arrowSize -
-              (tooltipAdjustment + this.diff)
+            parentCoords.width / 2 -
+            arrowSize -
+            (tooltipAdjustment + this.diff)
           );
 
           this.diff = -tooltipAdjustment;
@@ -294,10 +295,10 @@ class Tooltip {
             icon,
             'right',
             window.innerWidth -
-              parentCoords.right +
-              parentCoords.width / 2 -
-              arrowSize -
-              tooltipAdjustment
+            parentCoords.right +
+            parentCoords.width / 2 -
+            arrowSize -
+            tooltipAdjustment
           );
         } else if (
           right < window.innerWidth &&
@@ -307,10 +308,10 @@ class Tooltip {
             icon,
             'right',
             window.innerWidth -
-              parentCoords.right +
-              parentCoords.width / 2 -
-              arrowSize -
-              (tooltipAdjustment + (window.innerWidth - right))
+            parentCoords.right +
+            parentCoords.width / 2 -
+            arrowSize -
+            (tooltipAdjustment + (window.innerWidth - right))
           );
           this.diff = tooltipAdjustment;
         } else {
@@ -319,9 +320,9 @@ class Tooltip {
             icon,
             'right',
             window.innerWidth -
-              parentCoords.right +
-              parentCoords.width / 2 -
-              arrowSize
+            parentCoords.right +
+            parentCoords.width / 2 -
+            arrowSize
           );
         }
         break;
@@ -334,9 +335,9 @@ class Tooltip {
             icon,
             'top',
             parentCoords.top +
-              parentCoords.height / 2 -
-              arrowSize -
-              tooltipAdjustment
+            parentCoords.height / 2 -
+            arrowSize -
+            tooltipAdjustment
           );
         } else if (this.diff >= 1 && this.diff < tooltipAdjustment) {
           this.diff = tooltipAdjustment - this.diff;
@@ -344,9 +345,9 @@ class Tooltip {
             icon,
             'top',
             parentCoords.top +
-              parentCoords.height / 2 -
-              arrowSize -
-              tooltipAdjustment
+            parentCoords.height / 2 -
+            arrowSize -
+            tooltipAdjustment
           );
 
           this.diff = -this.diff;
@@ -366,9 +367,9 @@ class Tooltip {
             icon,
             'bottom',
             window.innerHeight -
-              (parentCoords.bottom - parentCoords.height / 2) -
-              arrowSize -
-              tooltipAdjustment
+            (parentCoords.bottom - parentCoords.height / 2) -
+            arrowSize -
+            tooltipAdjustment
           );
         } else if (
           bottom < window.innerHeight &&
@@ -378,10 +379,10 @@ class Tooltip {
             icon,
             'bottom',
             window.innerHeight -
-              (parentCoords.bottom - parentCoords.height / 2) -
-              arrowSize -
-              tooltipAdjustment -
-              (window.innerHeight - bottom)
+            (parentCoords.bottom - parentCoords.height / 2) -
+            arrowSize -
+            tooltipAdjustment -
+            (window.innerHeight - bottom)
           );
           this.diff = tooltipAdjustment;
         } else {
@@ -390,8 +391,8 @@ class Tooltip {
             icon,
             'bottom',
             window.innerHeight -
-              (parentCoords.bottom - parentCoords.height / 2) -
-              arrowSize
+            (parentCoords.bottom - parentCoords.height / 2) -
+            arrowSize
           );
         }
         break;
