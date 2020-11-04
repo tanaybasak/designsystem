@@ -93,5 +93,10 @@ $colorMap: (
         opacity: 0.8;
       }
     }
+    &:focus {
+      outline: 0 none;
+      outline-offset: 0;
+      box-shadow: 0 0 0 0.05rem var(--interactive_border);
+    }
   }
 }
