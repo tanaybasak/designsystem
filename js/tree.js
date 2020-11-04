@@ -204,8 +204,11 @@ class Tree {
       nodeElement.parentElement.parentElement.getAttribute('aria-expanded') ||
       'false';
 
-    setAttribute(nodeElement.parentElement.parentElement, 'aria-expanded',
-      collapsedStatus === 'false' ? 'true' : 'false')
+    setAttribute(
+      nodeElement.parentElement.parentElement,
+      'aria-expanded',
+      collapsedStatus === 'false' ? 'true' : 'false'
+    );
 
     if (this.collapsedIcon) {
       const newClassList =

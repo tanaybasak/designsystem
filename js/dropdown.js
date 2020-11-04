@@ -3,6 +3,7 @@ import { NOOP } from './utils/functions';
 import handleDataBinding from './utils/data-api';
 import Overlay from './overlay';
 import getClosest from './utils/get-closest';
+import { setAttribute } from './utils/dom';
 
 class Dropdown {
   constructor(element, options) {
@@ -34,8 +35,11 @@ class Dropdown {
 
   setMultiSelectVal = value => {
     this.element.querySelector(`.${PREFIX}-tag-text`).innerText = value;
-    setAttribute(this.element
-      .querySelector(`.${PREFIX}-tag-text`), 'aria-label', `${value}-selected options`);
+    setAttribute(
+      this.element.querySelector(`.${PREFIX}-tag-text`),
+      'aria-label',
+      `${value}-selected options`
+    );
   };
 
   focusNode = node => {
