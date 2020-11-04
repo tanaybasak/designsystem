@@ -66,18 +66,18 @@ class Pagination {
     this.createPageItemsDropDown();
     this.element.querySelector(
       this.selectors.totalitems
-    ).innerHTML = this.state.totalItems;
+    ).textContent = this.state.totalItems;
     const pageItemsDropDown = this.element.querySelector(
       this.selectors.PageItems
     );
     const pageNumberDropDown = this.element.querySelector(
       this.selectors.PageNumber
     );
-    this.element.querySelector(this.selectors.rangeStart).innerHTML = 1;
-    this.element.querySelector(this.selectors.pageStart).innerHTML = 1;
-    this.element.querySelector(this.selectors.rangeEnd).innerHTML =
+    this.element.querySelector(this.selectors.rangeStart).textContent = 1;
+    this.element.querySelector(this.selectors.pageStart).textContent = 1;
+    this.element.querySelector(this.selectors.rangeEnd).textContent =
       pageItemsDropDown.options[pageItemsDropDown.selectedIndex].value;
-    this.element.querySelector(this.selectors.pageEnd).innerHTML =
+    this.element.querySelector(this.selectors.pageEnd).textContent =
       pageNumberDropDown.options[pageNumberDropDown.options.length - 1].value;
   };
 
@@ -135,11 +135,11 @@ class Pagination {
     const { value: pageNumber } = this.state.pageNumber;
     const rangeStart = this.element.querySelector(this.selectors.rangeStart);
     const rangeEnd = this.element.querySelector(this.selectors.rangeEnd);
-    rangeStart.innerHTML = (pageNumber - 1) * this.state.pageItems.value + 1;
+    rangeStart.textContent = (pageNumber - 1) * this.state.pageItems.value + 1;
     if (pageNumber * this.state.pageItems.value > this.state.totalItems) {
-      rangeEnd.innerHTML = this.state.totalItems;
+      rangeEnd.textContent = this.state.totalItems;
     } else {
-      rangeEnd.innerHTML = pageNumber * this.state.pageItems.value;
+      rangeEnd.textContent = pageNumber * this.state.pageItems.value;
     }
   };
 
@@ -236,7 +236,7 @@ class Pagination {
     if (target && getClosest(target, this.selectors.PageNumber)) {
       // PageNumber Drop-Down change
       if (target.options) {
-        this.element.querySelector(this.selectors.pageStart).innerHTML =
+        this.element.querySelector(this.selectors.pageStart).textContent =
           target.options[target.selectedIndex].value;
         this.state.pageNumber.value = Number(
           target.options[target.selectedIndex].value
@@ -255,7 +255,7 @@ class Pagination {
     } else if (target && getClosest(target, this.selectors.PageItems)) {
       // PageItems Drop-Down change
       if (target.options) {
-        this.element.querySelector(this.selectors.rangeEnd).innerHTML =
+        this.element.querySelector(this.selectors.rangeEnd).textContent =
           target.options[target.selectedIndex].value;
         this.createPageNumberOptions(
           this.selectors.PageNumber,
@@ -311,7 +311,7 @@ class Pagination {
     const pageNumberDropDown = this.element.querySelector(
       this.selectors.PageNumber
     );
-    this.element.querySelector(this.selectors.pageStart).innerHTML =
+    this.element.querySelector(this.selectors.pageStart).textContent =
       pageNumberDropDown.options[pageNumberDropDown.selectedIndex].value;
   };
 
