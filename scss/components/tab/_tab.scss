@@ -58,14 +58,13 @@
 
     &:hover {
       cursor: pointer;
+      border-bottom: 2px solid var(--interactive_border);
+
       > a {
         outline: none;
 
         color: var(--interactive_text);
       }
-    }
-    &:hover {
-      border-bottom: 2px solid var(--interactive_border);
     }
   }
 
