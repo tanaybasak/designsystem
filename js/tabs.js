@@ -203,11 +203,7 @@ class Tabs {
     const tabs = Array.from(
       this.element.querySelectorAll(this.selectors.selectableTabsAll)
     );
-    // const anchorEle = Array.from(
-    //   this.element.querySelectorAll(this.selectors.selectorAnchor)
-    // );
     const len = tabs.length;
-    // const anchorLen = anchorEle.length;
     for (let i = 0; i < len; i++) {
       tabs[i].addEventListener('click', this.clickEventListener.bind(this));
       tabs[i].addEventListener('keydown', this.keydownListener.bind(this));
