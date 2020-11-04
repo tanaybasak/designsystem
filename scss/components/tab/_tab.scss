@@ -47,6 +47,9 @@
       &:focus {
         border-bottom: none;
       }
+      &:hover {
+        border-bottom: 2px solid var(--interactive_border);
+      }
     }
 
     &:focus {
@@ -61,7 +64,6 @@
         color: var(--interactive_text);
       }
     }
-    &:focus,
     &:hover {
       border-bottom: 2px solid var(--interactive_border);
     }
