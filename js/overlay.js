@@ -164,7 +164,7 @@ class Overlay {
   attachEvents = () => {
     this.element.addEventListener('click', () => {
       if (this.overlayStatus) {
-        this.hide();
+        this.hide('');
       } else {
         this.show();
       }

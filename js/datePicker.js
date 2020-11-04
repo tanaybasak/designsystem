@@ -200,7 +200,7 @@ class DatePicker {
     };
 
     const initMonthYearPanel = curMonthObj => {
-      getElement(DOMstrings.monthInput).innerHTML = MONTHS[curMonthObj.month];
+      getElement(DOMstrings.monthInput).textContent = MONTHS[curMonthObj.month];
       getElement(DOMstrings.yearInput).value = String(curMonthObj.year);
     };
 
@@ -235,7 +235,7 @@ class DatePicker {
         hightlightSelectedDate(event.target.getAttribute('date'));
         hideErrorInvalidDate();
         setInputDate(event.target.getAttribute('date'));
-        this.overlay.hide();
+        this.overlay.hide('');
         if (typeof this.state.onChange === 'function') {
           this.state.onChange(event, event.target.getAttribute('date'));
         }

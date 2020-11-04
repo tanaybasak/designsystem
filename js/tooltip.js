@@ -64,7 +64,7 @@ class Tooltip {
       });
       this.element.addEventListener('blur', () => {
         if (!this.contentIn) {
-          this.hide();
+          this.hideTooltip();
         }
       });
       this.element.addEventListener('mouseleave', () => {
@@ -73,7 +73,7 @@ class Tooltip {
           if (this.mouseOut) {
             this.mouseOut = false;
             this.contentIn = false;
-            this.hide();
+            this.hideTooltip();
           }
         }, 200);
       });
@@ -132,7 +132,7 @@ class Tooltip {
       icon = document.createElement('div');
       icon.className = `${PREFIX}-tooltip-arrow`;
       const content = document.createElement('div');
-      content.innerHTML = this.dataValue;
+      content.textContent = this.dataValue;
       tooltip.appendChild(icon);
       tooltip.appendChild(content);
       document.body.appendChild(tooltip);
@@ -189,7 +189,7 @@ class Tooltip {
     this.status = true;
   }
 
-  hide() {
+  hideTooltip() {
     if (!this.status) {
       return;
     }
@@ -226,7 +226,7 @@ class Tooltip {
       tooltip,
       this.direction
     );
-    icon.setAttribute('data-direction', this.direction);
+    icon.dataset.direction = this.direction;
     this.showTooltip(
       parentCoords,
       tooltip,
