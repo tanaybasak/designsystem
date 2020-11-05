@@ -9,7 +9,7 @@
 .#{$prefix}-data-table-wrapper {
   width: 100%;
   border-bottom: transparent;
-  border: 1px solid var(--default_border_xlow);
+  border: 0.0625rem solid var(--default_border_xlow);
   color: var(--default_text);
 
   .resize-line {
@@ -164,7 +164,7 @@
 
       tr:focus {
         outline-offset: -1px;
-        outline: 1px solid var(--interactive_border);
+        outline: 0.0625rem solid var(--interactive_border);
       }
     }
 
