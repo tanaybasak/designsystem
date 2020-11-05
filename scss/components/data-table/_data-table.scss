@@ -9,7 +9,7 @@
 .#{$prefix}-data-table-wrapper {
   width: 100%;
   border-bottom: transparent;
-
+  border: 1px solid var(--default_border_xlow);
   color: var(--default_text);
 
   .resize-line {
@@ -144,6 +144,12 @@
 
     tbody {
       display: table-row-group;
+
+      tr:last-child {
+        td {
+          border-bottom: 0.0625rem solid transparent;
+        }
+      }
 
       tr:hover {
         td {
@@ -297,8 +303,14 @@
 
   &.#{$prefix}-data-table-borderless {
     border: 0.0625rem solid transparent;
-
-    .#{$prefix}-data-table-zebra tr td {
+    tbody {
+      tr:last-child {
+        td {
+          border-bottom: 0.0625rem solid var(--default_border_xlow);
+        }
+      }
+    }
+    .#{$prefix}-data-table-zebra tbody tr td {
       border-bottom-color: transparent;
     }
   }
