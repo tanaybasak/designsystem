@@ -29,7 +29,9 @@ const getRem = value => {
 };
 
 const setAttribute = (element, attributeName, value) => {
-  element.setAttribute(attributeName, value);
+  var att = document.createAttribute(attributeName);
+  att.value = value;
+  element.setAttributeNode(att);
 };
 
 export { isElement, trackDocumentClick, getRem, setAttribute };
