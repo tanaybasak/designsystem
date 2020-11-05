@@ -47,8 +47,8 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0 0.125rem var(--primary_bg);
-      border: 0.0625rem solid var(--primary_border);
+      box-shadow: 0 0 0 0.125rem var(--interactive_border);
+      border: 0.0625rem solid var(--default_bg);
       outline: none;
     }
 
