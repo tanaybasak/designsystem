@@ -42,7 +42,7 @@
 
   &:disabled {
     cursor: not-allowed;
-
+    background-color: var(--interactive_bg);
     opacity: var(--disabled_all);
   }
 }
