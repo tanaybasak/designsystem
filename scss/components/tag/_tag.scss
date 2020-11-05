@@ -36,6 +36,7 @@
   &-primary {
     color: var(--primary_text);
     background-color: var(--primary_bg);
+    border: 0.0625rem solid transparent;
 
     &:hover:not([disabled]) {
       background-color: var(--primary_bg_hover);
@@ -43,6 +44,12 @@
 
     > .#{$prefix}-tag-icon {
       color: var(--primary_icon);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.125rem var(--primary_bg);
+      border: 0.0625rem solid var(--primary_border);
+      outline: none;
     }
 
     > .#{$prefix}-tag-close {
@@ -113,6 +120,11 @@
 
     > .#{$prefix}-tag-icon {
       color: var(--secondary_icon);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.0625rem var(--secondary_border);
+      outline: none;
     }
   }
 

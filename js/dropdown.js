@@ -70,6 +70,9 @@ class Dropdown {
   };
 
   keydownButton = e => {
+    if (e.target.classList.contains(`${PREFIX}-tag-close`)) {
+      return;
+    }
     const key = e.which || e.keyCode;
 
     if (this.state.isOpen) {
@@ -132,14 +135,6 @@ class Dropdown {
         tag
           .querySelector(`.${PREFIX}-tag-close`)
           .addEventListener('click', this.clearMultiselectDropdownItem);
-
-        tag
-          .querySelector(`.${PREFIX}-tag-close`)
-          .addEventListener('keydown', event => {
-            if (event.key === 'Enter') {
-              this.clearMultiselectDropdownItem(event);
-            }
-          });
       }
 
       this.element
