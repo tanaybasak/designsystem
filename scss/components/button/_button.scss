@@ -120,6 +120,7 @@ a.#{$prefix}-primary {
   &:disabled,
   &[disabled='disabled'] {
     &:hover {
+      outline: none;
       background-color: var(--secondary_bg);
     }
 
