@@ -81,17 +81,17 @@ label.#{$prefix}-label {
   & ~ button.#{$prefix}-password-visibility,
   & ~ [data-component='password'] {
     position: relative;
-    top: -2.45rem;
+    top: -2.5rem;
     right: 0;
     display: flex;
     justify-content: center;
     align-self: flex-end;
     align-items: center;
     order: 3;
-    height: 2.41rem;
-    width: 2.4rem;
+    height: 2.5rem;
+    width: 2.5rem;
     padding: 0;
-    margin-bottom: -2.4rem;
+    margin-bottom: -2.5rem;
     border: 0;
     background: none;
     cursor: pointer;
@@ -111,6 +111,10 @@ label.#{$prefix}-label {
 
     svg {
       fill: var(--input_icon);
+    }
+
+    &:hover {
+      background-color: var(--interactive_bg_hover_high);
     }
   }
 }
