@@ -118,7 +118,7 @@ label.#{$prefix}-label {
 .#{$prefix}-textarea {
   @include getFormControl('inputcontrol');
   resize: vertical;
-  padding: 1rem;
+  padding: 0.6875rem 1rem;
   height: auto;
 
   &[data-invalid='false'] ~ .#{$prefix}-error-msg {
