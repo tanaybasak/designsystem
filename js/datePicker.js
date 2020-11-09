@@ -235,7 +235,7 @@ class DatePicker {
         hightlightSelectedDate(event.target.getAttribute('date'));
         hideErrorInvalidDate();
         setInputDate(event.target.getAttribute('date'));
-        this.overlay.hide('');
+        this.overlay.hide();
         if (typeof this.state.onChange === 'function') {
           this.state.onChange(event, event.target.getAttribute('date'));
         }
