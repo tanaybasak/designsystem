@@ -235,7 +235,7 @@ class DatePicker {
         hightlightSelectedDate(event.target.getAttribute('date'));
         hideErrorInvalidDate();
         setInputDate(event.target.getAttribute('date'));
-        this.overlay.hide();
+        this.overlay.hideOverlay();
         if (typeof this.state.onChange === 'function') {
           this.state.onChange(event, event.target.getAttribute('date'));
         }
@@ -358,9 +358,9 @@ class DatePicker {
       event.preventDefault();
       if (!event.currentTarget.previousElementSibling.disabled) {
         if (this.state.isOpen) {
-          this.overlay.hide('toggle');
+          this.overlay.hideOverlay('toggle');
         } else {
-          this.overlay.show();
+          this.overlay.showOverlay();
         }
       }
     };

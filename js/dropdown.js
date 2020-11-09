@@ -90,7 +90,7 @@ class Dropdown {
       if (key === 38 || key === 40 || key === 13) {
         e.preventDefault();
         if (!this.state.isOpen) {
-          this.overlay.show();
+          this.overlay.showOverlay();
         }
       }
     }
@@ -176,7 +176,7 @@ class Dropdown {
         tag.classList.add(`hidden`);
       }
     } else {
-      this.overlay.hide('select');
+      this.overlay.hideOverlay('select');
       this.dropdownBtn.focus();
       this.setValue(dropdownItem.textContent.trim());
     }
