@@ -9,7 +9,7 @@
 .#{$prefix}-toolbar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  //justify-content: center;
   padding: 0.5rem 0;
   width: 100%;
   background: transparent;
@@ -18,7 +18,7 @@
     margin-left: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    //justify-content: center;
 
     button {
       &:not(:last-child) {
