@@ -1,159 +1,147 @@
 .#{$prefix}-tag {
-    font-size: 0.75rem;
-    @include getFontWeight(regular);
-    line-height: 1rem;
-    letter-spacing: 0.32px;
+  font-size: 0.75rem;
+  @include getFontWeight(regular);
+  line-height: 1rem;
+  letter-spacing: 0.32px;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  margin: 0.25rem;
+  border-radius: 1rem;
+  justify-content: center;
+  min-width: 2.75rem;
+  cursor: pointer;
+  position: relative;
+
+  &-text {
+    padding: 0 0.625rem;
+  }
+
+  .#{$prefix}-tag-icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
     display: inline-flex;
     align-items: center;
-    height: 32px;
-    margin: 0.25rem;
-    border-radius: 1rem;
     justify-content: center;
-    min-width: 2.75rem;
     cursor: pointer;
-    position: relative;
+    border-radius: 1rem;
+    color: var(--primary_icon);
+  }
 
-    &-text {
-        padding: 0 0.625rem;
+  .#{$prefix}-tag-close {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background: transparent;
+
+    svg {
+      width: 0.5rem;
+      height: 0.5rem;
+      fill: var(--primary_icon);
+    }
+  }
+
+  &-primary {
+    color: var(--primary_text);
+    background-color: var(--primary_bg);
+    border: 0.0625rem solid transparent;
+
+    &:hover:not([disabled]) {
+      background-color: var(--primary_bg_hover);
     }
 
-    .#{$prefix}-tag-icon {
-        width: 30px;
-        height: 30px;
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        border-radius: 1rem;
-        color: var(--primary_icon);
+    &:focus {
+      box-shadow: 0 0 0 0.125rem var(--interactive_border);
+      border: 0.0625rem solid var(--default_bg);
+      outline: none;
+    }
 
+    .#{$prefix}-tag-icon,
+    .#{$prefix}-tag-close {
+      &:focus {
+        border-radius: 1rem;
+        border: 2px solid var(--primary_border);
+        outline: none;
+      }
+
+      &:hover {
+        background-color: var(--primary_bg);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-secondary {
+    color: var(--secondary_text);
+    background-color: var(--secondary_bg);
+    border: 1px solid var(--secondary_border);
+
+    &:hover:not([disabled]) {
+      background-color: var(--secondary_bg_hover);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.0625rem var(--secondary_border);
+      outline: none;
+    }
+
+    .#{$prefix}-tag-close,
+    .#{$prefix}-tag-icon {
+      &:hover {
+        background-color: var(--interactive_bg_hover_high);
+        cursor: pointer;
+      }
+
+      &:focus {
+        border-radius: 1rem;
+        border: 2px solid var(--interactive_border);
+        outline: none;
+      }
     }
 
     .#{$prefix}-tag-close {
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 1rem;
-        background: transparent;
+      //background: var(--secondary_bg);
 
-        svg {
-            width: 0.5rem;
-            height: 0.5rem;
-            fill: var(--primary_icon);
-        }
+      svg {
+        fill: var(--secondary_icon);
+      }
     }
 
-    &-primary {
-        color: var(--primary_text);
-        background-color: var(--primary_bg);
-        border: 0.0625rem solid transparent;
-
-        &:hover:not([disabled]) {
-            background-color: var(--primary_bg_hover);
-        }
-
-        &:focus {
-            box-shadow: 0 0 0 0.125rem var(--interactive_border);
-            border: 0.0625rem solid var(--default_bg);
-            outline: none;
-        }
-
-        .#{$prefix}-tag-icon,
-        .#{$prefix}-tag-close {
-            &:focus {
-                border-radius: 1rem;
-                border: 2px solid var(--primary_border);
-                outline: none;
-            }
-
-            &:hover {
-                background-color: var(--primary_bg);
-                cursor: pointer;
-            }
-
-        }
-
-
+    .#{$prefix}-tag-icon {
+      color: var(--secondary_icon);
     }
+  }
 
-    &-secondary {
-        color: var(--secondary_text);
-        background-color: var(--secondary_bg);
-        border: 1px solid var(--secondary_border);
+  &:disabled,
+  &[disabled] {
+    opacity: var(--disabled_all);
+    pointer-events: none;
+    cursor: not-allowed;
 
-        &:hover:not([disabled]) {
-            background-color: var(--secondary_bg_hover);
-        }
-
-        &:focus {
-            box-shadow: 0 0 0 0.0625rem var(--secondary_border);
-            outline: none;
-        }
-
-        .#{$prefix}-tag-close,
-        .#{$prefix}-tag-icon {
-            &:hover {
-                background-color: var(--interactive_bg_hover_high);
-                cursor: pointer;
-            }
-
-            &:focus {
-                border-radius: 1rem;
-                border: 2px solid var(--interactive_border);
-                outline: none;
-            }
-        }
-
-        .#{$prefix}-tag-close {
-            //background: var(--secondary_bg);
-
-            svg {
-                fill: var(--secondary_icon);
-            }
-
-
-        }
-
-        .#{$prefix}-tag-icon {
-            color: var(--secondary_icon);
-
-
-        }
-
-
+    > .#{$prefix}-tag-close,
+    > span.#{$prefix}-icon,
+    > .#{$prefix}-tag-icon {
+      pointer-events: none;
     }
+  }
 
-    &:disabled,
-    &[disabled] {
-        opacity: var(--disabled_all);
-        pointer-events: none;
-        cursor: not-allowed;
+  &-thumbnail {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    left: 0.625rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
-        >.#{$prefix}-tag-close,
-        >span.#{$prefix}-icon,
-        >.#{$prefix}-tag-icon {
-            pointer-events: none;
-        }
-
-
-    }
-
-    &-thumbnail {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        left: 0.625rem;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-
-        // &:focus {
-        //     border-radius: 1rem;
-        //     border: 2px solid var(--primary_border);
-        //     outline: none;
-        // }
-    }
+    // &:focus {
+    //     border-radius: 1rem;
+    //     border: 2px solid var(--primary_border);
+    //     outline: none;
+    // }
+  }
 }
