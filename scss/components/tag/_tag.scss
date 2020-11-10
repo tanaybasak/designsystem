@@ -2,10 +2,10 @@
   font-size: 0.75rem;
   @include getFontWeight(regular);
   line-height: 1rem;
-  letter-spacing: 0.32px;
+  letter-spacing: 0.02rem;
   display: inline-flex;
   align-items: center;
-  height: 32px;
+  height: 2rem;
   margin: 0.25rem;
   border-radius: 1rem;
   justify-content: center;
@@ -18,8 +18,8 @@
   }
 
   .#{$prefix}-tag-icon {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -30,8 +30,8 @@
   }
 
   .#{$prefix}-tag-close {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,7 +64,7 @@
     .#{$prefix}-tag-close {
       &:focus {
         border-radius: 1rem;
-        border: 2px solid var(--primary_border);
+        border: 0.125rem solid var(--primary_border);
         outline: none;
       }
 
@@ -78,7 +78,7 @@
   &-secondary {
     color: var(--secondary_text);
     background-color: var(--secondary_bg);
-    border: 1px solid var(--secondary_border);
+    border: 0.0625rem solid var(--secondary_border);
 
     &:hover:not([disabled]) {
       background-color: var(--secondary_bg_hover);
@@ -98,14 +98,12 @@
 
       &:focus {
         border-radius: 1rem;
-        border: 2px solid var(--interactive_border);
+        border: 0.125rem solid var(--interactive_border);
         outline: none;
       }
     }
 
     .#{$prefix}-tag-close {
-      //background: var(--secondary_bg);
-
       svg {
         fill: var(--secondary_icon);
       }
@@ -130,18 +128,12 @@
   }
 
   &-thumbnail {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     border-radius: 50%;
     left: 0.625rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
-    // &:focus {
-    //     border-radius: 1rem;
-    //     border: 2px solid var(--primary_border);
-    //     outline: none;
-    // }
   }
 }
