@@ -14,7 +14,7 @@ function handleDataBinding(component, bind = NOOP) {
         target,
         `[data-component='${component}']`
       );
-      componentElement.setAttribute('data-init', component);
+      componentElement.dataset.init = component;
       const componentInstance = bind(componentElement, target);
       if (
         componentInstance &&

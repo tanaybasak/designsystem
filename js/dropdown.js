@@ -3,6 +3,7 @@ import { NOOP } from './utils/functions';
 import handleDataBinding from './utils/data-api';
 import Overlay from './overlay';
 import getClosest from './utils/get-closest';
+import { setAttribute } from './utils/dom';
 
 class Dropdown {
   constructor(element, options) {
@@ -34,9 +35,11 @@ class Dropdown {
 
   setMultiSelectVal = value => {
     this.element.querySelector(`.${PREFIX}-tag-text`).innerText = value;
-    this.element
-      .querySelector(`.${PREFIX}-tag-text`)
-      .setAttribute('aria-label', `${value}-selected options`);
+    setAttribute(
+      this.element.querySelector(`.${PREFIX}-tag-text`),
+      'aria-label',
+      `${value}-selected options`
+    );
   };
 
   focusNode = node => {
@@ -87,7 +90,7 @@ class Dropdown {
       if (key === 38 || key === 40 || key === 13) {
         e.preventDefault();
         if (!this.state.isOpen) {
-          this.overlay.show();
+          this.overlay.showOverlay();
         }
       }
     }
@@ -173,7 +176,7 @@ class Dropdown {
         tag.classList.add(`hidden`);
       }
     } else {
-      this.overlay.hide('select');
+      this.overlay.hideOverlay('select');
       this.dropdownBtn.focus();
       this.setValue(dropdownItem.textContent.trim());
     }
