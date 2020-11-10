@@ -119,11 +119,14 @@
     opacity: var(--disabled_all);
     pointer-events: none;
     cursor: not-allowed;
+    box-shadow: none;
+    border: none;
 
     > .#{$prefix}-tag-close,
     > span.#{$prefix}-icon,
     > .#{$prefix}-tag-icon {
       pointer-events: none;
+      border: none;
     }
   }
 
