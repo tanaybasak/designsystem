@@ -110,13 +110,9 @@ class Overflow {
         .forEach(item => {
           item.firstElementChild.addEventListener('click', event => {
             if (typeof this.state.onChange === 'function') {
-              this.overlay.hide('select');
+              this.overlay.hideOverlay('select');
               icon.focus();
               this.state.onChange(event, event.target.innerText);
-              const anchor = item.querySelector('a');
-              if (anchor) {
-                window.open(anchor.href, event.metaKey ? '' : '_self');
-              }
             }
           });
         });
