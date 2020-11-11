@@ -130,6 +130,19 @@ $animation-duration: 220ms;
           }
         }
 
+        &:hover {
+          text-decoration: none;
+          color: var(--default_text_high);
+          background-color: var(--interactive_bg_hover);
+        }
+
+        &:focus {
+          outline-offset: -1px;
+          text-decoration: none;
+          color: var(--default_text);
+          outline: 1px solid var(--default_border_xhigh);
+        }
+
         .#{$prefix}-sidebar-icon {
           width: 0.875rem;
           height: 0.875rem;
@@ -255,19 +268,6 @@ $animation-duration: 220ms;
         a {
           padding-left: 1.75rem;
         }
-      }
-
-      > a:hover {
-        text-decoration: none;
-        color: var(--default_text_high);
-        background-color: var(--interactive_bg_hover);
-      }
-
-      > a:focus {
-        outline-offset: -1px;
-        text-decoration: none;
-        color: var(--default_text);
-        outline: 1px solid var(--default_border_xhigh);
       }
 
       &.active {
