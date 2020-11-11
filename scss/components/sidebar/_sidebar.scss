@@ -114,7 +114,7 @@ $animation-duration: 220ms;
         height: 2.5rem;
         border: transparent;
 
-        &.#{$prefix}-sidebar-item.highlight {
+        &.highlight {
           text-decoration: none;
           color: var(--default_text_high);
           background-color: var(--default_bg);
