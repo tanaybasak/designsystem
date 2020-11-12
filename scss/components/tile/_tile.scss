@@ -32,6 +32,7 @@
     padding-right: 3rem;
     &.#{$prefix}-tile-active {
       border: 1px solid var(--active_border);
+      box-shadow: none;
     }
   }
 
