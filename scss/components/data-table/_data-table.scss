@@ -202,6 +202,10 @@
       }
     }
 
+    &.#{$prefix}-data-table-fixed {
+      table-layout: fixed;
+    }
+
     &.#{$prefix}-data-table-tall {
       tbody {
         tr {
@@ -329,10 +333,6 @@
 
   .draggable {
     cursor: pointer;
-  }
-
-  &.#{$prefix}-data-table-fixed {
-    table-layout: fixed;
   }
 }
 
