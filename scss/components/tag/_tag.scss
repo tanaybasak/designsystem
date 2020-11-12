@@ -117,7 +117,7 @@
   &:disabled,
   &[disabled] {
     opacity: var(--disabled_all);
-    pointer-events: none;
+    //pointer-events: none;
     cursor: not-allowed;
     box-shadow: none;
 
