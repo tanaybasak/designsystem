@@ -43,7 +43,7 @@
 
     <addHTML src="./scss/components/header/header.html" />
     <!-- CONTENT LAYOUT -->
-    <div style="padding: 4rem;" data-withsidenav="true">
+    <div style="padding: 4rem" data-withsidenav="true">
       <addHTML src="./scss/components/sidebar/sidebar.html" />
       <!-- SIDEBAR LAYOUT -->
       <!-- MAIN CONTENT LAYOUT -->
@@ -115,7 +115,7 @@
         </div>
 
         <!-- typography -->
-        <addHTML src="./scss/base/typography/typography.html" />
+        <addHTML src="./scss/typography/typography.html" />
 
         <!-- buttons -->
         <section class="m-1 p-2">
@@ -321,17 +321,17 @@
         <!-- Overflow Menu -->
         <section id="overflowmenu" class="hcl-row m-0">
           <div class="hcl-col-6">
-            <p style="float: left;">Right Overflow Menu</p>
+            <p style="float: left">Right Overflow Menu</p>
             <addHTML src="./scss/components/overflow-menu/right/right.html" />
           </div>
 
           <div class="hcl-col-6">
-            <p style="float: left;">Left Overflow Menu</p>
+            <p style="float: left">Left Overflow Menu</p>
             <addHTML src="./scss/components/overflow-menu/left/left.html" />
           </div>
 
           <div class="hcl-col-12">
-            <p style="float: left; margin-right: 1.5rem;">Custom</p>
+            <p style="float: left; margin-right: 1.5rem">Custom</p>
             <addHTML src="./scss/components/overflow-menu/custom/custom.html" />
           </div>
         </section>
@@ -423,6 +423,9 @@
         <!-- Checkbox Components -->
         <section class="m-1 p-2">
           <addHTML src="./scss/components/checkbox/default/default.html" />
+          <addHTML
+            src="./scss/components/checkbox/indeterminate/indeterminate.html"
+          />
           <addHTML
             src="./scss/components/checkbox/horizontal-grouping/horizontal-grouping.html"
           />
@@ -641,6 +644,7 @@
     <script src="./scss/components/accordion/uncontrolled/uncontrolled.js"></script>
     <script src="./scss/components/dropdown/bottom/bottom.js"></script>
     <script src="./scss/components/dropdown/top/top.js"></script>
+    <script src="./scss/components/checkbox/indeterminate/indeterminate.js"></script>
     <script src="./scss/components/dropdown/multiSelect/multiSelect.js"></script>
     <script src="./scss/components/modal/danger/danger.js"></script>
     <script src="./scss/components/modal/danger-action/danger-action.js"></script>
@@ -675,6 +679,7 @@
     <script src="./scss/components/slider/slider-onhover-tooltip/slider-onhover-tooltip.js"></script>
     <script src="./scss/components/slider/slider-with-textInput/slider-with-textInput.js"></script>
     <script src="./scss/components/slider/basic-slider/basic-slider.js"></script>
+
     <script src="./scss/components/tooltip/definition/definition.js"></script>
     <script src="./scss/components/tooltip/icon/icon.js"></script>
     <script src="./scss/components/tooltip/interactive/interactive.js"></script>

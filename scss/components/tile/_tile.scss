@@ -1,9 +1,7 @@
-@import '../../base';
-
 @mixin tile($type) {
   display: inline-block;
 
-  border: 1px solid var(--default_border_xlow);
+  border: 0.0625rem solid var(--default_border_xlow);
   background-color: var(--default_bg);
 
   position: relative;
@@ -15,10 +13,12 @@
     outline: none;
 
     &:focus {
-      border: 2px solid var(--interactive_border);
+      border: 0.0625rem solid var(--interactive_border);
+      box-shadow: 0 0 0 0.0625rem var(--interactive_border);
     }
+
     &:hover {
-      border: 1px solid var(--interactive_border);
+      border: 0.0625rem solid var(--interactive_border);
     }
 
     &:hover .#{$prefix}-tile-checkbox {
@@ -36,7 +36,7 @@
   }
 
   @if ($type==expandable) {
-    padding: hcl-rem(15px) 2.5rem;
+    padding: 0.9375rem 2.5rem;
     cursor: default;
 
     input {
@@ -60,7 +60,13 @@
 
   &-expandable {
     @include tile(expandable);
+
+    &:not(.arrow-top-left) {
+      padding-right: 3.125rem;
+    }
+
     &.arrow-top-left {
+      padding-left: 3.125rem;
       .#{$prefix}-tile-arrow {
         top: 0;
         left: 0;
@@ -102,12 +108,12 @@
     right: 0;
     position: absolute;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 0.875rem 1rem;
+    width: 2.75rem;
+    height: 2.75rem;
 
     &:focus {
-      outline: 1px solid var(--interactive_border);
-
-      outline-offset: -6px;
+      outline: 0.0625rem solid var(--interactive_border);
     }
 
     > svg {

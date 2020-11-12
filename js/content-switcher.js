@@ -47,9 +47,7 @@ class ContentSwitcher {
   selectSwitch = target => {
     const switchItem = Array.from(
       this.element.querySelectorAll(this.selectors.contentswitcherBtnAll)
-    ).find((item, index) => {
-      return target === index;
-    });
+    ).find((item, index) => target === index);
     let dataTarget = '';
     if (switchItem && this.element.contains(switchItem)) {
       if (!switchItem.getAttribute('disabled')) {

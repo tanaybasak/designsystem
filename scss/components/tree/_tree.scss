@@ -1,5 +1,3 @@
-@import '../../base';
-
 $default-node-height: 2rem;
 
 .#{$prefix}-tree {
@@ -21,7 +19,6 @@ $default-node-height: 2rem;
       line-height: unset;
       display: flex;
       flex-direction: row;
-      align-items: center;
       min-height: $default-node-height;
 
       .#{$prefix}-toggle-icon {
@@ -31,6 +28,7 @@ $default-node-height: 2rem;
         align-items: center;
         justify-content: center;
         z-index: 2;
+        position: relative;
 
         &.caret {
           display: inline-block;
@@ -108,6 +106,7 @@ $default-node-height: 2rem;
         .#{$prefix}-treenode-action {
           position: absolute;
           right: 0;
+          top: 0;
         }
       }
 
@@ -250,7 +249,9 @@ $default-node-height: 2rem;
           border: 0.0625rem dashed var(--default_border_xlow);
         }
 
-        opacity: var(--disabled_all);
+        * > {
+          opacity: var(--disabled_all);
+        }
       }
 
       &.drop-on-node {

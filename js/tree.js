@@ -1,5 +1,6 @@
 import handleDataBinding from './utils/data-api';
 import { PREFIX } from './utils/config';
+import { setAttribute } from './utils/dom';
 class Tree {
   constructor(element) {
     this.element = element;
@@ -203,7 +204,8 @@ class Tree {
       nodeElement.parentElement.parentElement.getAttribute('aria-expanded') ||
       'false';
 
-    nodeElement.parentElement.parentElement.setAttribute(
+    setAttribute(
+      nodeElement.parentElement.parentElement,
       'aria-expanded',
       collapsedStatus === 'false' ? 'true' : 'false'
     );

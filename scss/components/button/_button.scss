@@ -1,5 +1,3 @@
-@import '../../base';
-
 %button {
   text-align: center;
   cursor: pointer;
@@ -122,6 +120,7 @@ a.#{$prefix}-primary {
   &:disabled,
   &[disabled='disabled'] {
     &:hover {
+      outline: none;
       background-color: var(--secondary_bg);
     }
 

@@ -1,4 +1,4 @@
-import '../../../scss/components/pagination/_pagination.scss';
+import './index.scss';
 import { isElement } from '../../../js/utils/dom';
 import Pagination from '../../../js/pagination';
 

@@ -1,13 +1,10 @@
-@import '../../base';
-
 .#{$prefix}-tag {
   font-size: 0.75rem;
   @include getFontWeight(regular);
   line-height: 1rem;
-  letter-spacing: 0.32px;
+  letter-spacing: 0.02rem;
   display: inline-flex;
   align-items: center;
-  padding: 0 0.625rem;
   height: 2rem;
   margin: 0.25rem;
   border-radius: 1rem;
@@ -17,49 +14,63 @@
   position: relative;
 
   &-text {
-    max-width: 5.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    padding: 0 0.625rem;
   }
 
   .#{$prefix}-tag-icon {
-    width: hcl-rem(18px);
-    height: hcl-rem(18px);
+    width: 1.875rem;
+    height: 1.875rem;
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border-radius: 50%;
-    margin-left: 0.5rem;
+    border-radius: 1rem;
+    color: var(--primary_icon);
+  }
+
+  .#{$prefix}-tag-close {
+    width: 1.875rem;
+    height: 1.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background: transparent;
+
+    svg {
+      width: 0.5rem;
+      height: 0.5rem;
+      fill: var(--primary_icon);
+    }
   }
 
   &-primary {
     color: var(--primary_text);
     background-color: var(--primary_bg);
+    border: 0.0625rem solid transparent;
 
     &:hover:not([disabled]) {
       background-color: var(--primary_bg_hover);
     }
 
-    > .#{$prefix}-tag-icon {
-      color: var(--primary_icon);
+    &:focus {
+      box-shadow: 0 0 0 0.125rem var(--interactive_border);
+      border: 0.0625rem solid var(--default_bg);
+      outline: none;
     }
 
-    > .#{$prefix}-close {
-      @include hcl-close-icon(18, true, --primary_bg, --primary_icon);
-
-      margin-left: 0.5rem;
-
-      &:hover {
-        background-color: var(--primary_bg_hover);
-      }
-
+    .#{$prefix}-tag-icon,
+    .#{$prefix}-tag-close {
       &:focus {
         border-radius: 1rem;
-        border: 2px solid var(--primary_border);
+        border: 0.125rem solid var(--primary_border);
         outline: none;
+      }
+
+      &:hover {
+        background-color: var(--primary_bg);
+        cursor: pointer;
       }
     }
   }
@@ -67,29 +78,38 @@
   &-secondary {
     color: var(--secondary_text);
     background-color: var(--secondary_bg);
-    border: 1px solid var(--secondary_border);
+    border: 0.0625rem solid var(--secondary_border);
 
     &:hover:not([disabled]) {
       background-color: var(--secondary_bg_hover);
     }
 
-    > .#{$prefix}-close {
-      @include hcl-close-icon(18, true, --secondary_bg, --secondary_icon);
+    &:focus {
+      box-shadow: 0 0 0 0.0625rem var(--secondary_border);
+      outline: none;
+    }
 
-      margin-left: 0.5rem;
-
+    .#{$prefix}-tag-close,
+    .#{$prefix}-tag-icon {
       &:hover {
-        background-color: var(--secondary_bg_hover);
+        background-color: var(--interactive_bg_hover_high);
+        cursor: pointer;
       }
 
       &:focus {
         border-radius: 1rem;
-        border: 2px solid var(--interactive_border);
+        border: 0.125rem solid var(--interactive_border);
         outline: none;
       }
     }
 
-    > .#{$prefix}-tag-icon {
+    .#{$prefix}-tag-close {
+      svg {
+        fill: var(--secondary_icon);
+      }
+    }
+
+    .#{$prefix}-tag-icon {
       color: var(--secondary_icon);
     }
   }
@@ -97,34 +117,29 @@
   &:disabled,
   &[disabled] {
     opacity: var(--disabled_all);
-
+    pointer-events: none;
     cursor: not-allowed;
+    box-shadow: none;
 
-    > .#{$prefix}-close {
-      pointer-events: none;
+    &.#{$prefix}-tag-primary {
+      border: none;
     }
 
-    > span.#{$prefix}-icon {
-      pointer-events: none;
-    }
-
+    > .#{$prefix}-tag-close,
+    > span.#{$prefix}-icon,
     > .#{$prefix}-tag-icon {
       pointer-events: none;
+      border: none;
     }
   }
 
   &-thumbnail {
-    width: 1.375rem;
-    height: 1.375rem;
+    width: 1.875rem;
+    height: 1.875rem;
     border-radius: 50%;
-    position: absolute;
     left: 0.625rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
-    + .hcl-tag-text {
-      margin-left: 1.875rem;
-    }
   }
 }

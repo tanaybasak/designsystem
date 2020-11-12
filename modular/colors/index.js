@@ -1,1 +1,1 @@
-import '../../scss/utils/_colors.scss';
+import './index.scss';
