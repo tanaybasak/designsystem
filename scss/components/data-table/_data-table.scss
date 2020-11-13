@@ -63,16 +63,13 @@
       }
 
       th {
-        line-height: 1.5rem;
-
         &.resizable {
           > span.hcl-data-table-resizable {
             user-select: none;
             display: inline-block;
-            // visibility: hidden;
             position: absolute;
             width: 0.4375rem !important;
-            height: 100%;
+            height: inherit;
             bottom: 0;
             right: 0;
             z-index: 1;
@@ -202,6 +199,10 @@
           }
         }
       }
+    }
+
+    &.#{$prefix}-data-table-fixed {
+      table-layout: fixed;
     }
 
     &.#{$prefix}-data-table-tall {
@@ -334,7 +335,7 @@
   }
 }
 
-/* For Table Resize:
+/* 
 .resize-table class sits in body tag
 */
 .resize-table {
