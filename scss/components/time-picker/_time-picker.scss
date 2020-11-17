@@ -19,10 +19,10 @@
       border-bottom: 1px solid var(--input_border);
       color: var(--input_text_low);
 
-      &:focus {
-        border-bottom: 2px solid var(--interactive_border);
-        color: var(--input_text);
-      }
+      // &:focus {
+      //   border-bottom: 2px solid var(--interactive_border);
+      //   color: var(--input_text);
+      // }
       &:active {
         border-bottom: 1px solid var(--input_border);
         color: var(--input_text);

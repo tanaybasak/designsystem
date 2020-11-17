@@ -9,8 +9,6 @@
     display: flex;
     flex-direction: column;
 
-    border-bottom: 0.0625rem solid var(--input_border);
-
     > svg {
       position: absolute;
       top: 0.75rem;
@@ -33,7 +31,7 @@
 
       color: var(--input_text_low);
       background-color: var(--input_bg);
-
+      border-bottom: 0.0625rem solid var(--input_border);
       outline: none;
       font-size: 0.875rem;
       line-height: 1.125rem;
