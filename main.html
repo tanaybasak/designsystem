@@ -43,7 +43,7 @@
 
     <addHTML src="./scss/components/header/header.html" />
     <!-- CONTENT LAYOUT -->
-    <div style="padding: 4rem" data-withsidenav="true">
+    <div style="padding: 4rem;" data-withsidenav="true">
       <addHTML src="./scss/components/sidebar/sidebar.html" />
       <!-- SIDEBAR LAYOUT -->
       <!-- MAIN CONTENT LAYOUT -->
@@ -152,12 +152,8 @@
           <addHTML
             src="./scss/components/button/ghost-small/ghost-small.html"
           />
-          <addHTML
-          src="./scss/components/button/warning/warning.html"
-        />
-        <addHTML
-        src="./scss/components/button/neutral/neutral.html"
-      />
+          <addHTML src="./scss/components/button/warning/warning.html" />
+          <addHTML src="./scss/components/button/neutral/neutral.html" />
         </section>
 
         <!-- Pagination -->
@@ -317,6 +313,10 @@
           <addHTML
             src="./scss/components/modal/danger-label-action/danger-label-action.html"
           />
+          <addHTML src="./scss/components/modal/warning/warning.html" />
+          <addHTML
+            src="./scss/components/modal/warning-label-action/warning-label-action.html"
+          />
         </section>
 
         <!-- Tabs -->
@@ -327,17 +327,17 @@
         <!-- Overflow Menu -->
         <section id="overflowmenu" class="hcl-row m-0">
           <div class="hcl-col-6">
-            <p style="float: left">Right Overflow Menu</p>
+            <p style="float: left;">Right Overflow Menu</p>
             <addHTML src="./scss/components/overflow-menu/right/right.html" />
           </div>
 
           <div class="hcl-col-6">
-            <p style="float: left">Left Overflow Menu</p>
+            <p style="float: left;">Left Overflow Menu</p>
             <addHTML src="./scss/components/overflow-menu/left/left.html" />
           </div>
 
           <div class="hcl-col-12">
-            <p style="float: left; margin-right: 1.5rem">Custom</p>
+            <p style="float: left; margin-right: 1.5rem;">Custom</p>
             <addHTML src="./scss/components/overflow-menu/custom/custom.html" />
           </div>
         </section>
@@ -660,6 +660,7 @@
     <script src="./scss/components/modal/success-action/success-action.js"></script>
     <script src="./scss/components/modal/success-label/success-label.js"></script>
     <script src="./scss/components/modal/success-label-action/sucess-label-action.js"></script>
+    <script src="./scss/components/modal/warning/warning.js"></script>
     <script src="./scss/components/toggle/default/default.js"></script>
     <script src="./scss/components/toggle/small/small.js"></script>
     <script src="./scss/components/date-picker/bottom/bottom.js"></script>

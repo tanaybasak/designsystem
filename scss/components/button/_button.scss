@@ -225,9 +225,6 @@ a.#{$prefix}-primary {
   }
 }
 
-
-
-
 .#{$prefix}-warning {
   background-color: var(--warning_bg_inverse);
   color: var(--default_text_high);
@@ -240,7 +237,7 @@ a.#{$prefix}-primary {
     outline-offset: 2px;
     outline: 0.0625rem solid var(--interactive_border);
     > .#{$prefix}-btn-icon {
-      fill: var(--warning_icon);
+      fill: var(--default_icon_high);
     }
   }
 
@@ -254,25 +251,24 @@ a.#{$prefix}-primary {
   }
 
   > .#{$prefix}-btn-icon {
-    fill: var(--warning_icon);
+    fill: var(--default_icon_high);
   }
 }
 
-
-
 .#{$prefix}-neutral {
-  background-color: var(--default_border_low);
+  background-color: var(--secondary_bg);
   color: var(--default_text_high);
+  border: 0.0625rem solid var(--default_border_low);
 
   &:hover {
-    background-color: var(--default_border_low);
+    background-color: var(--secondary_bg_hover);
   }
 
   &:focus {
     outline-offset: 2px;
     outline: 0.0625rem solid var(--interactive_border);
     > .#{$prefix}-btn-icon {
-      fill: var(--interactive_icon);
+      fill: var(--default_icon_high);
     }
   }
 
@@ -281,12 +277,12 @@ a.#{$prefix}-primary {
     opacity: var(--disabled_all);
     cursor: not-allowed;
     &:hover {
-      background-color: var(--warning_bg_inverse);
+      background-color: var(--secondary_bg);
     }
   }
 
   > .#{$prefix}-btn-icon {
-    fill: var(--interactive_icon);
+    fill: var(--default_icon_high);
   }
 }
 
