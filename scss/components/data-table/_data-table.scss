@@ -143,6 +143,9 @@
       display: table-row-group;
       tr.#{$prefix}-active-row {
         background-color: var(--active_bg);
+        td {
+          background-color: unset !important;
+        }
       }
       tr:last-child {
         td {
@@ -162,7 +165,7 @@
       }
 
       tr:focus {
-        outline-offset: -1px;
+        outline-offset: -2px;
         outline: 0.125rem solid var(--interactive_border);
       }
     }
