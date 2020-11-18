@@ -3,7 +3,7 @@
   cursor: pointer;
   line-height: 1rem;
   font-size: 0.875rem;
-  border: 1px solid transparent;
+  border: 0.063rem solid transparent;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -40,7 +40,7 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    outline-offset: 2px;
+    outline-offset: 0.125rem;
 
     outline: 0.0625rem solid var(--primary_bg_hover);
   }
@@ -69,7 +69,7 @@ a.#{$prefix}-primary {
     }
 
     &:focus {
-      outline-offset: 2px;
+      outline-offset: 0.125rem;
 
       outline: 0.0625rem solid var(--interactive_border);
 
@@ -98,7 +98,7 @@ a.#{$prefix}-primary {
 
   &:hover,
   &:focus {
-    outline-offset: 2px;
+    outline-offset: 0.125rem;
 
     background-color: var(--secondary_bg_hover);
     color: var(--secondary_text);
@@ -235,7 +235,7 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    outline-offset: 2px;
+    outline-offset: 0.125rem;
     outline: 0.0625rem solid var(--interactive_border);
     > .#{$prefix}-btn-icon {
       fill: var(--default_icon_high);
@@ -266,7 +266,7 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    outline-offset: 2px;
+    outline-offset: 0.125rem;
     outline: 0.0625rem solid var(--interactive_border);
     > .#{$prefix}-btn-icon {
       fill: var(--default_icon_high);
