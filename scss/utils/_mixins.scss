@@ -280,11 +280,14 @@ $inputColor-map: (
     padding: $input-padding-y $input-padding-x;
     color: var(--input_text);
     background-color: var(--input_bg);
-    border-bottom: 1px solid var(--input_border);
+    border-bottom: 0.0625rem solid var(--input_border);
 
     &:focus {
       outline: none;
-      border-bottom: 2px solid var(--interactive_border);
+      box-shadow: inset -0.0625rem 0 0 transparent,
+        inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+        0 0.125rem 0 var(--interactive_border);
+      border-bottom: 1px solid transparent;
 
       & ~ label.#{$prefix}-label {
         color: var(--default_text);

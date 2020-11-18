@@ -9,7 +9,7 @@ class TimePicker {
   }
 
   showErrorMessage = status => {
-    this.input.setAttribute('data-invalid', status);
+    this.input.dataset.invalid = status;
     if (this.errorContainer) {
       this.errorContainer.style.display = `${status ? 'block' : 'none'}`;
       this.errorContainer.innerText = 'Please enter a valid time';

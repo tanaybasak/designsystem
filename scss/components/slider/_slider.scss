@@ -1,3 +1,9 @@
+$primary_bg: #0066b0;
+$secondary_border: #0066b0;
+$default_border_low: #737373;
+$interactive_border: #0066b0;
+$default_bg: white;
+
 .#{$prefix}-slider-wrapper {
   width: 100%;
   --progressPercent: 0%;
@@ -173,33 +179,30 @@
           border: 0;
         }
 
-        &::-ms-track {
-          height: 0.25rem;
-
-          background-color: var(--secondary_border);
-          background: linear-gradient(
-            90deg,
-            var(--secondary_border) var(--progressPercent),
-            var(--default_border_low) var(--progressPercent)
-          );
-
-          &:hover {
-            background: linear-gradient(
-              90deg,
-              var(--secondary_border) var(--progressPercent),
-              var(--default_border_low) var(--progressPercent)
-            );
-          }
-        }
-
         &::-ms-thumb {
           width: 1.5rem;
           height: 1.5rem;
           border-radius: 50%;
-
-          background-color: var(--primary_bg);
-
+          background-color: $primary_bg;
           margin-top: 0;
+        }
+
+        &::-ms-fill-lower {
+          background: $secondary_border;
+        }
+
+        &::-ms-fill-upper {
+          background: $default_border_low;
+        }
+        &::-ms-track {
+          height: 0.25rem;
+          color: transparent;
+          border: none;
+        }
+
+        &:focus::-ms-thumb {
+          box-shadow: 0 0 0 0.1875rem $interactive_border;
+          border: 0.0625rem solid $default_bg;
         }
       }
     }

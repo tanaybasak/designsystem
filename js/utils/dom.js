@@ -28,4 +28,10 @@ const getRem = value => {
   return value / 16 + 'rem';
 };
 
-export { isElement, trackDocumentClick, getRem };
+const setAttribute = (element, attributeName, value) => {
+  var att = document.createAttribute(attributeName);
+  att.value = value;
+  element.setAttributeNode(att);
+};
+
+export { isElement, trackDocumentClick, getRem, setAttribute };

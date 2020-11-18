@@ -43,7 +43,7 @@ class Overlay {
     this.state.currentDirection = positions.direction;
   }
 
-  show = () => {
+  showOverlay = () => {
     this.overlayStatus = true;
     if (this.state.attachElementToBody) {
       document.body.appendChild(this.targetElement);
@@ -93,7 +93,7 @@ class Overlay {
     this.targetElement.classList.remove(`${PREFIX}-overlay-container-hidden`);
   }
 
-  hide = type => {
+  hideOverlay = type => {
     this.overlayStatus = false;
     this.targetElement.classList.remove(`${PREFIX}-overlay-container-show`);
     this.targetElement.classList.remove(`${PREFIX}-overlay-container-scroll`);
@@ -132,14 +132,14 @@ class Overlay {
         });
       }
       if (canClose) {
-        this.hide('outside');
+        this.hideOverlay('outside');
       }
     }
   };
 
   keyDownListner = e => {
     if (e.keyCode === 27 && this.state.closeOnEscape) {
-      this.hide('escape');
+      this.hideOverlay('escape');
     } else if (e.keyCode === 9) {
       const focusableEls = this.targetElement.querySelectorAll(
         'a[href]:not([disabled]):not([tabindex="-1"]), button:not([disabled]):not([tabindex="-1"]), textarea:not([disabled]):not([tabindex="-1"]), input[type="text"]:not([disabled]):not([tabindex="-1"]), input[type="radio"]:not([disabled]):not([tabindex="-1"]), input[type="checkbox"]:not([disabled]):not([tabindex="-1"]), select:not([disabled]):not([tabindex="-1"]), [tabindex]:not([tabindex="-1"])'
@@ -149,12 +149,12 @@ class Overlay {
 
       if (e.shiftKey) {
         if (document.activeElement === firstFocusableEl) {
-          this.hide('focusout');
+          this.hideOverlay('focusout');
           e.preventDefault();
         }
       } else {
         if (document.activeElement === lastFocusableEl) {
-          this.hide('focusout');
+          this.hideOverlay('focusout');
           e.preventDefault();
         }
       }
@@ -164,9 +164,9 @@ class Overlay {
   attachEvents = () => {
     this.element.addEventListener('click', () => {
       if (this.overlayStatus) {
-        this.hide();
+        this.hideOverlay();
       } else {
-        this.show();
+        this.showOverlay();
       }
     });
 
