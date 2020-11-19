@@ -5,8 +5,11 @@
     border: 0;
   }
 
-  .#{$prefix}-dropdown-disabled {
+  .#{$prefix}-disable-cursor {
     cursor: not-allowed;
+  }
+
+  .#{$prefix}-dropdown-disabled {
     pointer-events: none;
     > a {
       outline: none;
