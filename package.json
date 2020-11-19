@@ -12,6 +12,11 @@
     "import-html": "node importHTML.js",
     "prettier:dev": "npx prettier --config prettier.config.js --ignore-path .gitignore --write \"./**/*.{js,html,scss}\""
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prettier:dev && npm run stylelint"
+    }
+  },
   "author": "HCL Software",
   "license": "ISC",
   "devDependencies": {
@@ -31,6 +36,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.2",
     "fs": "0.0.1-security",
+    "husky": "^4.3.0",
     "parcel-bundler": "^1.12.4",
     "postcss-cli": "^7.1.2",
     "prettier": "^2.1.2",
