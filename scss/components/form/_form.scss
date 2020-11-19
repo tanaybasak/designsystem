@@ -332,14 +332,22 @@ label.#{$prefix}-label {
   font-size: 0.875rem;
 }
 
-input::placeholder,
 input::-webkit-input-placeholder,
-input::-moz-placeholder,
 input:-ms-input-placeholder,
-textarea::placeholder,
+input::placeholder,
 textarea::-webkit-input-placeholder,
-textarea::-moz-placeholder,
-textarea:-ms-input-placeholder {
+textarea:-ms-input-placeholder,
+textarea::placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+input::-moz-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+textarea::-moz-placeholder {
   color: var(--input_text_low);
   opacity: 1;
 }
