@@ -335,5 +335,6 @@ label.#{$prefix}-label {
 input::placeholder,
 textarea::placeholder {
   color: var(--input_text_low);
+
   opacity: 1;
 }
