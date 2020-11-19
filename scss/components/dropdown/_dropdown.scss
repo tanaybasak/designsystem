@@ -6,7 +6,6 @@
   }
 
   .#{$prefix}-dropdown-disabled {
-    cursor: not-allowed;
     pointer-events: none;
     > a {
       outline: none;
