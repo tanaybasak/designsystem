@@ -333,7 +333,13 @@ label.#{$prefix}-label {
 }
 
 input::placeholder,
-textarea::placeholder {
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+textarea::placeholder,
+textarea::-webkit-input-placeholder,
+textarea::-moz-placeholder,
+textarea:-ms-input-placeholder {
   color: var(--input_text_low);
   opacity: 1;
 }
