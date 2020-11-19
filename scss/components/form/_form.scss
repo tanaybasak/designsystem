@@ -332,8 +332,6 @@ label.#{$prefix}-label {
   font-size: 0.875rem;
 }
 
-input::-webkit-input-placeholder,
-input::placeholder,
 input::placeholder,
 textarea::placeholder {
   color: var(--input_text_low);
