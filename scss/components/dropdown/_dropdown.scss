@@ -5,6 +5,10 @@
     border: 0;
   }
 
+  &.#{$prefix}-disable-cursor {
+    cursor: not-allowed;
+  }
+
   .#{$prefix}-dropdown-disabled {
     pointer-events: none;
     > a {
@@ -86,10 +90,6 @@
       border-bottom: 0.125rem solid var(--interactive_border);
     }
   }
-}
-
-.#{$prefix}-disable-cursor {
-  cursor: not-allowed;
 }
 
 .#{$prefix}-dropdown-menu {
