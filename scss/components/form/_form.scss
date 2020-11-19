@@ -332,6 +332,16 @@ label.#{$prefix}-label {
   font-size: 0.875rem;
 }
 
+input::-webkit-input-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+textarea::-webkit-input-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
 input::-moz-placeholder {
   color: var(--input_text_low);
   opacity: 1;
@@ -342,11 +352,21 @@ textarea::-moz-placeholder {
   opacity: 1;
 }
 
-input::-webkit-input-placeholder,
-input:-ms-input-placeholder,
-input::placeholder,
-textarea::-webkit-input-placeholder,
-textarea:-ms-input-placeholder,
+input:-ms-input-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+textarea:-ms-input-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+input::placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
 textarea::placeholder {
   color: var(--input_text_low);
   opacity: 1;
