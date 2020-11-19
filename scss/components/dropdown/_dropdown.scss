@@ -5,7 +5,7 @@
     border: 0;
   }
 
-  .#{$prefix}-disable-cursor {
+  &.#{$prefix}-disable-cursor {
     cursor: not-allowed;
   }
 
