@@ -549,4 +549,8 @@
       color: var(--danger_text);
     }
   }
+
+  .#{$prefix}-flex-row {
+    display: flex;
+  }
 }
