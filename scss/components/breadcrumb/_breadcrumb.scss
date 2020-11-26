@@ -80,10 +80,10 @@ $breadcrumb-margin: 1rem;
 }
 
 .#{$prefix}-progressbar-circle {
-  .#{$prefix}-progressbar-innercircle {
+  .#{$prefix}-progressbar-circle-inner {
     fill: none;
     stroke: var(--default_bg_high);
-    &-outercircle {
+    &-circle-outer {
       fill: none;
       stroke: var(--primary_bg);
     }
