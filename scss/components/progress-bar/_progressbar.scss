@@ -1,0 +1,35 @@
+.#{$prefix}-progressbar-linear {
+  &-label,
+  &-subtext {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--default_text);
+
+    &-value {
+      float: right;
+    }
+  }
+  &-content {
+    background-color: var(--default_bg_high);
+    height: 0.25rem;
+    .#{$prefix}-progressbar-style {
+      background-color: var(--primary_bg);
+    }
+  }
+}
+
+.#{$prefix}-progressbar-circle {
+  .#{$prefix}-progressbar-innercircle {
+    fill: none;
+    stroke: var(--default_bg_high);
+    &-outercircle {
+      fill: none;
+      stroke: var(--default_bg);
+    }
+    &-text {
+      font-size: 1rem;
+      text-anchor: middle;
+      fill: #fff;
+    }
+  }
+}
