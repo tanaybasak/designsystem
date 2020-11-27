@@ -103,7 +103,12 @@ label.#{$prefix}-label {
     }
 
     &:disabled {
+      opacity: var(--disabled_all);
       cursor: not-allowed;
+
+      &:hover {
+        background-color: transparent;
+      }
     }
 
     svg.#{$prefix}-icon-visibility-on {
@@ -116,6 +121,7 @@ label.#{$prefix}-label {
 
     &:hover {
       background-color: var(--interactive_bg_hover_high);
+      border-bottom: 0.0625rem solid var(--input_border);
     }
   }
 }
