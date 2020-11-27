@@ -56,16 +56,12 @@ $breadcrumb-margin: 1rem;
 }
 
 
-
-
-
-.#{$prefix}-progressbar-linear {
+.hcl-progressbar-linear {
   &-label,
   &-subtext {
     font-size: 0.75rem;
     font-weight: 400;
     color: var(--default_text);
-
     &-value {
       float: right;
     }
@@ -73,11 +69,13 @@ $breadcrumb-margin: 1rem;
   &-content {
     background-color: var(--default_bg_high);
     height: 0.25rem;
-    .#{$prefix}-progressbar-style {
+    .hcl-progressbar-linear-style {
       background-color: var(--primary_bg);
     }
   }
 }
+
+
 
 .#{$prefix}-progressbar-circle {
   .#{$prefix}-progressbar-circle-inner {
