@@ -34,9 +34,9 @@
     text-anchor: middle;
     fill: var(--default_text_high);
   }
+}
 
-  &-container {
-    vertical-align: middle;
-    display: inline-block;
-  }
+.#{$prefix}-progressbar-circle-container {
+  vertical-align: middle;
+  display: inline-block;
 }
