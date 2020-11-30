@@ -1,12 +1,9 @@
 .#{$prefix}-progressbar-linear {
-  &-content,
+  &-label-content,
   &-subtext {
     font-size: 0.75rem;
     font-weight: 400;
     color: var(--default_text);
-    &-value {
-      float: right;
-    }
   }
   &-content {
     background-color: var(--default_bg_high);
@@ -14,6 +11,10 @@
     .#{$prefix}-progressbar-linear-style {
       background-color: var(--primary_bg);
     }
+  }
+
+  &-label-value {
+    float: right;
   }
 }
 
