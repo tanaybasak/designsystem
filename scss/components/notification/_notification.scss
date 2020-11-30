@@ -81,7 +81,7 @@ $colorMap: (
     &:focus {
       border: 0;
       outline: 0.0625rem solid var(--interactive_border);
-      outline-offset: 0px;
+      outline-offset: 0;
     }
   }
 
