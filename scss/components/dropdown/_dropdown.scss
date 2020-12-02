@@ -5,6 +5,27 @@
     border: 0;
   }
 
+  &.#{$prefix}-disable-cursor {
+    cursor: not-allowed;
+  }
+
+  .#{$prefix}-dropdown-disabled {
+    pointer-events: none;
+    > a {
+      outline: none;
+      cursor: not-allowed;
+    }
+
+    opacity: var(--disabled_all);
+
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      border-bottom: transparent;
+    }
+  }
+
   .#{$prefix}-dropdown-toggle {
     font-size: 0.875rem;
     line-height: 1.125rem;
@@ -34,6 +55,12 @@
       top: 50%;
       right: 0.875rem;
       transform: translate(-50%, -50%);
+    }
+
+    &:disabled,
+    &[disabled='disabled'] {
+      opacity: var(--disabled_all);
+      cursor: not-allowed;
     }
 
     &:focus {
