@@ -168,9 +168,6 @@
         outline: 0.125rem solid var(--interactive_border);
       }
     }
-    
-
-   
 
     &.#{$prefix}-data-table-zebra {
       tbody {
@@ -282,7 +279,7 @@
     }
   }
 
-  table.#{$prefix}-data-table.#{$prefix}-data-table-zebra  {
+  table.#{$prefix}-data-table.#{$prefix}-data-table-zebra {
     tbody {
       tr.#{$prefix}-active-row {
         td {
