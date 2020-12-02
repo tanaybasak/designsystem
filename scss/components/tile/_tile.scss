@@ -82,7 +82,7 @@
 
     &:checked + .#{$prefix}-tile-checkbox {
       visibility: visible;
-      opacity: unset;
+      opacity: 1;
       fill: var(--active_icon);
       background-color: transparent;
     }
