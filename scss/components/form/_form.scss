@@ -103,7 +103,12 @@ label.#{$prefix}-label {
     }
 
     &:disabled {
+      opacity: var(--disabled_all);
       cursor: not-allowed;
+
+      &:hover {
+        background-color: transparent;
+      }
     }
 
     svg.#{$prefix}-icon-visibility-on {
@@ -137,7 +142,6 @@ label.#{$prefix}-label {
 .#{$prefix}-radio-group {
   display: flex;
   flex-direction: row;
-  margin-top: 0.5rem;
 }
 
 .#{$prefix}-checkbox-item {
@@ -271,8 +275,8 @@ label.#{$prefix}-label {
     content: '';
     display: inline-block;
     position: absolute;
-    top: 0.25rem;
-    left: 0.3125rem;
+    top: 0.5625rem;
+    left: 0.5625rem;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
@@ -289,10 +293,12 @@ label.#{$prefix}-label {
   @include getFontWeight('regular');
   font-size: 0.875rem;
   display: inline-block;
+  height: 1.625rem;
+  line-height: 1.6rem;
   cursor: pointer;
   margin-bottom: 0;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.625rem;
 
   color: var(--default_text_high);
 
@@ -300,7 +306,8 @@ label.#{$prefix}-label {
     content: '';
     display: inline-block;
     position: absolute;
-    top: -1px;
+    margin-left: 0.25rem;
+    top: calc(50% - 0.5625rem);
     left: 0;
     border-radius: 50%;
 
@@ -330,7 +337,41 @@ label.#{$prefix}-label {
   font-size: 0.875rem;
 }
 
-input::placeholder,
+input::-webkit-input-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+textarea::-webkit-input-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+input::-moz-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+textarea::-moz-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+input:-ms-input-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+textarea:-ms-input-placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
+input::placeholder {
+  color: var(--input_text_low);
+  opacity: 1;
+}
+
 textarea::placeholder {
   color: var(--input_text_low);
   opacity: 1;

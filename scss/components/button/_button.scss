@@ -3,7 +3,7 @@
   cursor: pointer;
   line-height: 1rem;
   font-size: 0.875rem;
-  border: 1px solid transparent;
+  border: 0.0625rem solid transparent;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -40,7 +40,7 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    outline-offset: 2px;
+    outline-offset: 0.125rem;
 
     outline: 0.0625rem solid var(--primary_bg_hover);
   }
@@ -69,7 +69,7 @@ a.#{$prefix}-primary {
     }
 
     &:focus {
-      outline-offset: 2px;
+      outline-offset: 0.125rem;
 
       outline: 0.0625rem solid var(--interactive_border);
 
@@ -98,7 +98,7 @@ a.#{$prefix}-primary {
 
   &:hover,
   &:focus {
-    outline-offset: 2px;
+    outline-offset: 0.125rem;
 
     background-color: var(--secondary_bg_hover);
     color: var(--secondary_text);
@@ -223,6 +223,67 @@ a.#{$prefix}-primary {
 
   > .#{$prefix}-btn-icon {
     fill: var(--interactive_icon);
+  }
+}
+
+.#{$prefix}-warning {
+  background-color: var(--warning_bg_inverse);
+  color: var(--default_text_high);
+
+  &:hover {
+    background-color: var(--warning_bg_inverse_hover);
+  }
+
+  &:focus {
+    outline-offset: 0.125rem;
+    outline: 0.0625rem solid var(--interactive_border);
+    > .#{$prefix}-btn-icon {
+      fill: var(--default_icon_high);
+    }
+  }
+
+  &:disabled,
+  &[disabled='disabled'] {
+    opacity: var(--disabled_all);
+    cursor: not-allowed;
+    &:hover {
+      background-color: var(--warning_bg_inverse);
+    }
+  }
+
+  > .#{$prefix}-btn-icon {
+    fill: var(--default_icon_high);
+  }
+}
+
+.#{$prefix}-neutral {
+  background-color: var(--secondary_bg);
+  color: var(--default_text_high);
+  border: 0.0625rem solid var(--default_border_low);
+
+  &:hover {
+    background-color: var(--secondary_bg_hover);
+  }
+
+  &:focus {
+    outline-offset: 0.125rem;
+    outline: 0.0625rem solid var(--interactive_border);
+    > .#{$prefix}-btn-icon {
+      fill: var(--default_icon_high);
+    }
+  }
+
+  &:disabled,
+  &[disabled='disabled'] {
+    opacity: var(--disabled_all);
+    cursor: not-allowed;
+    &:hover {
+      background-color: var(--secondary_bg);
+    }
+  }
+
+  > .#{$prefix}-btn-icon {
+    fill: var(--default_icon_high);
   }
 }
 

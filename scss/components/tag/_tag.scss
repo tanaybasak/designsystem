@@ -9,7 +9,6 @@
   margin: 0.25rem;
   border-radius: 1rem;
   justify-content: center;
-  min-width: 2.75rem;
   cursor: pointer;
   position: relative;
 
@@ -117,7 +116,6 @@
   &:disabled,
   &[disabled] {
     opacity: var(--disabled_all);
-    pointer-events: none;
     cursor: not-allowed;
     box-shadow: none;
 
