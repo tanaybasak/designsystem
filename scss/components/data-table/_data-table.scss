@@ -141,7 +141,11 @@
 
     tbody {
       display: table-row-group;
-
+      tr.#{$prefix}-active-row {
+        td {
+          background-color: var(--active_bg);
+        }
+      }
       tr:last-child {
         td {
           border-bottom: 0.0625rem solid transparent;
@@ -160,8 +164,8 @@
       }
 
       tr:focus {
-        outline-offset: -1px;
-        outline: 0.0625rem solid var(--interactive_border);
+        outline-offset: -0.125rem;
+        outline: 0.125rem solid var(--interactive_border);
       }
     }
 
@@ -271,6 +275,16 @@
       }
       path {
         fill: var(--interactive_icon);
+      }
+    }
+  }
+
+  table.#{$prefix}-data-table.#{$prefix}-data-table-zebra {
+    tbody {
+      tr.#{$prefix}-active-row {
+        td {
+          background-color: var(--active_bg);
+        }
       }
     }
   }
