@@ -286,6 +286,10 @@
         z-index: 2;
         position: sticky;
       }
+
+      thead tr:nth-child(2) th {
+        top: 3.125rem;
+      }
     }
   }
 
