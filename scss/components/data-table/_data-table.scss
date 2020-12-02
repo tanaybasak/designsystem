@@ -139,12 +139,11 @@
       }
     }
 
-    tbody {
+    table tbody {
       display: table-row-group;
       tr.#{$prefix}-active-row {
-        background-color: var(--active_bg);
         td {
-          background-color: unset !important;
+          background-color: var(--active_bg);
         }
       }
       tr:last-child {
@@ -172,6 +171,11 @@
 
     &.#{$prefix}-data-table-zebra {
       tbody {
+        tr.#{$prefix}-active-row {
+          td {
+            background-color: var(--active_bg);
+          }
+        }
         tr {
           &:nth-child(even) {
             td {
