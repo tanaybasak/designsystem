@@ -30,6 +30,10 @@
 
   @if ($type==selectable) {
     padding-right: 3rem;
+    &.#{$prefix}-tile-active {
+      border: 1px solid var(--active_border);
+      box-shadow: none;
+    }
   }
 
   @if ($type==expandable) {
@@ -78,9 +82,8 @@
 
     &:checked + .#{$prefix}-tile-checkbox {
       visibility: visible;
-
+      opacity: 1;
       fill: var(--active_icon);
-
       background-color: transparent;
     }
 
