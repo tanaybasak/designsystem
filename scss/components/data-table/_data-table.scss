@@ -168,16 +168,9 @@
         outline: 0.125rem solid var(--interactive_border);
       }
     }
+    
 
-    table &.#{$prefix}-data-table-zebra {
-      tbody {
-        tr.#{$prefix}-active-row {
-          td {
-            background-color: var(--active_bg);
-          }
-        }
-      }
-    }
+   
 
     &.#{$prefix}-data-table-zebra {
       tbody {
@@ -285,6 +278,16 @@
       }
       path {
         fill: var(--interactive_icon);
+      }
+    }
+  }
+
+  table.#{$prefix}-data-table.#{$prefix}-data-table-zebra  {
+    tbody {
+      tr.#{$prefix}-active-row {
+        td {
+          background-color: var(--active_bg);
+        }
       }
     }
   }
