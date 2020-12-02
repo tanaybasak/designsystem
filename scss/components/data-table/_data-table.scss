@@ -169,13 +169,18 @@
       }
     }
 
-    &.#{$prefix}-data-table-zebra {
+    table &.#{$prefix}-data-table-zebra {
       tbody {
         tr.#{$prefix}-active-row {
           td {
             background-color: var(--active_bg);
           }
         }
+      }
+    }
+
+    &.#{$prefix}-data-table-zebra {
+      tbody {
         tr {
           &:nth-child(even) {
             td {
