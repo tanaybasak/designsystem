@@ -1,4 +1,9 @@
 .#{$prefix}-progressbar-linear {
+  &-label-content {
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
   &-label-content,
   &-label-value,
   &-subtext {
@@ -9,12 +14,6 @@
   &-content {
     background-color: var(--default_bg_high);
     height: 0.25rem;
-    display: inline-block;
-    white-space: nowrap;
-    font-weight: 400;
-    color: var(--default_text);
-    text-overflow: ellipsis;
-    overflow: hidden;
     .#{$prefix}-progressbar-linear-style {
       background-color: var(--primary_bg);
     }
