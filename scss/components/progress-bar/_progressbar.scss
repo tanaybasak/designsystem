@@ -1,8 +1,11 @@
 .#{$prefix}-progressbar-linear {
   &-label-content {
-    width: 60%;
+    width: 10%;
     text-overflow: ellipsis;
     overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+}
   }
   &-label-content,
   &-label-value,
