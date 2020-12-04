@@ -35,10 +35,10 @@
     fill: none;
     stroke: var(--primary_bg);
   }
-  &-text {
-    font-size: 0.75rem;
-    fill: var(--default_text);
-  }
+  // &-text {
+  //   font-size: 0.75rem;
+  //   fill: var(--default_text);
+  // }
 }
 
 .#{$prefix}-progressbar-circle-container {
@@ -46,7 +46,6 @@
   display: inline-block;
   &-text {
     font-size: 0.75rem;
-    text-anchor: middle;
-    fill: var(--default_text_high);
+    color: var(--default_text);
   }
 }
