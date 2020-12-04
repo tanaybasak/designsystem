@@ -6,7 +6,7 @@
  *******************************************************************
  */
 
-.#{$prefix}-overlay-container {
+.#{$prefix}-overlay-container.#{$prefix}-overlay-container-show {
   box-shadow: none;
   background-color: transparent;
 }
