@@ -9,6 +9,7 @@
 .#{$prefix}-overlay-container.#{$prefix}-overlay-container-show {
   box-shadow: none;
   background-color: transparent;
+  top: 42px !important;
 }
 
 .#{$prefix}-inline {
@@ -43,7 +44,8 @@
     }
   }
 
-  &-close {
+  &-close,
+  &-custom-btn {
     border: 0.0625rem solid var(--default_border_xlow);
     background-color: white;
   }
