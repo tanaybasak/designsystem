@@ -6,13 +6,13 @@
  *******************************************************************
  */
 
-.#{$prefix}-overlay-container.#{$prefix}-overlay-container-show {
-  box-shadow: none;
-  background-color: transparent;
-  top: 42px !important;
-}
-
 .#{$prefix}-inline {
+  &-overlay {
+    box-shadow: none;
+    background-color: transparent;
+    top: 42px !important;
+  }
+
   &-error {
     box-shadow: 0 0.25rem 0.5rem 0.15rem var(--default_shadow);
     background-color: var(--default_bg);
