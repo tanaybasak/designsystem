@@ -38,10 +38,14 @@
   }
 
   &-btn {
-    margin: 0.25rem;
+    margin-right: 0.25rem;
     width: 2rem;
     height: 2rem;
     padding: 0;
+
+    &:first-child {
+      margin-left: 0.25rem;
+    }
 
     i {
       font-size: 1.5rem;
