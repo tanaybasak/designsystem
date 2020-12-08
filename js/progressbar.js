@@ -21,7 +21,7 @@ class ProgressBar {
 
   updateFinalValue = value => {
     this.state.value = value > 1 ? 1 : value;
-    const finalVal = value * 100 + '%';
+    const finalVal = this.state.value * 100 + '%';
     var linearStyleElement = this.element.querySelector(
       this.selectors.linearProgressbar
     );
