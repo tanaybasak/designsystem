@@ -11,7 +11,7 @@
     .#{$prefix}-overlay-container.#{$prefix}-overlay-container-show {
       box-shadow: none;
       background-color: transparent;
-      top: 42px !important;
+      top: 2.625rem !important;
     }
   }
 
@@ -41,31 +41,16 @@
     margin: 0.25rem;
     width: 2rem;
     height: 2rem;
-    cursor: pointer;
+    padding: 0;
 
     i {
-      font-size: 1.3125rem;
+      font-size: 1.5rem;
     }
 
     svg {
       width: 1.25rem;
       height: 1.25rem;
+      margin-left: 0;
     }
-    &:disabled {
-      opacity: var(--disabled_all);
-      cursor: not-allowed;
-    }
-  }
-
-  &-close,
-  &-custom-btn {
-    border: 0.0625rem solid var(--default_border_xlow);
-    background-color: white;
-  }
-
-  &-check {
-    background-color: var(--interactive_border);
-    fill: white;
-    margin-left: 0;
   }
 }
