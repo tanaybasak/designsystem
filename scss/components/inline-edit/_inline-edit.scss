@@ -8,9 +8,11 @@
 
 .#{$prefix}-inline {
   &-overlay {
-    box-shadow: none;
-    background-color: transparent;
-    top: 42px !important;
+    .#{$prefix}-overlay-container.#{$prefix}-overlay-container-show {
+      box-shadow: none;
+      background-color: transparent;
+      top: 42px !important;
+    }
   }
 
   &-error {
