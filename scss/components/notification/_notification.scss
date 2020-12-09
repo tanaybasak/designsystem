@@ -49,14 +49,11 @@ $colorMap: (
     }
 
     .#{$prefix}-notification-text-wrapper {
-      // display: flex;
-      // flex-wrap: wrap;
-      // align-items: center;
-      position: relative;
       padding: 0.75rem 0;
       margin-left: 1rem;
 
       .#{$prefix}-notification-title {
+        display: inline-block;
         font-size: 0.875rem;
         line-height: getLineHeight(0.875rem);
         letter-spacing: 0;
@@ -68,6 +65,7 @@ $colorMap: (
       }
 
       .#{$prefix}-notification-subtitle {
+        display: inline-block;
         font-size: 0.875rem;
         line-height: getLineHeight(0.875rem);
         @include getFontWeight('regular');
@@ -76,10 +74,8 @@ $colorMap: (
       }
 
       .#{$prefix}-notification-action {
-        position: absolute;
-        right: 0px;
-        top: 0;
-        padding: 0.75rem 0;
+        float: right;
+        margin-left: 0.25rem;
 
         &:focus {
           border: 0;
