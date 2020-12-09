@@ -49,9 +49,10 @@ $colorMap: (
     }
 
     .#{$prefix}-notification-text-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
+      // display: flex;
+      // flex-wrap: wrap;
+      // align-items: center;
+      position: relative;
       padding: 0.75rem 0;
       margin-left: 1rem;
 
@@ -73,15 +74,19 @@ $colorMap: (
         word-break: break-word;
         color: var(--default_text);
       }
-    }
-  }
-  &-action {
-    padding: 0.75rem 0.375rem;
-    height: 2.5rem;
-    &:focus {
-      border: 0;
-      outline: 0.0625rem solid var(--interactive_border);
-      outline-offset: 0;
+
+      &-action {
+        position: absolute;
+        right: 0px;
+        top: 0;
+        padding: 0.75rem 0;
+
+        &:focus {
+          border: 0;
+          outline: 0.0625rem solid var(--interactive_border);
+          outline-offset: 0;
+        }
+      }
     }
   }
 
