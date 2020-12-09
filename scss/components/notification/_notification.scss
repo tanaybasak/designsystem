@@ -75,7 +75,7 @@ $colorMap: (
         color: var(--default_text);
       }
 
-      &-action {
+      .#{$prefix}-notification-action {
         position: absolute;
         right: 0px;
         top: 0;
