@@ -14,7 +14,7 @@ $colorMap: (
 
   @each $key, $value in $colorMap {
     &.#{$prefix}-#{$key} {
-      border: 1px solid var(#{'--' + $value + '_border'});
+      border: 0.0625rem solid var(#{'--' + $value + '_border'});
       border-left: 0.3125rem solid var(#{'--' + $value + '_border'});
       background-color: var(#{'--' + $value + '_bg'});
 
@@ -57,9 +57,7 @@ $colorMap: (
         font-size: 0.875rem;
         line-height: getLineHeight(0.875rem);
         letter-spacing: 0;
-
         color: var(--default_text_high);
-
         margin-right: 0.5rem;
         font-weight: 600;
       }
