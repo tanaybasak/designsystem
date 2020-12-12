@@ -1,3 +1,100 @@
+@mixin indeter-pb($size) {
+  > svg {
+    @if ($size==default) {
+      height: $loader-width-medium;
+      width: $loader-width-medium;
+    } @else if ($size==small) {
+      height: $loader-width-small;
+      width: $loader-width-small;
+    } @else if ($size==large) {
+      height: $loader-width-large;
+      width: $loader-width-large;
+    }
+
+    > circle {
+      @if ($size== 'default') {
+        stroke-width: 4;
+      } @else if ($size== 'small') {
+        stroke-width: 6;
+      } @else if ($size== 'large') {
+        stroke-width: 3;
+      }
+      stroke: var(--primary_bg);
+      stroke-linecap: round;
+    }
+
+    > .dot {
+      stroke-dasharray: 0, 200;
+    }
+
+    > .#{$prefix}-pb-bgcircle {
+      stroke: var(--default_bg_high);
+    }
+
+    > .#{$prefix}-pb-maincircle {
+      @if ($size == 'large') {
+        animation: stroke-dash 2.5s ease-in-out infinite;
+      } @else {
+        animation: stroke-dash 2s ease-in-out infinite;
+      }
+    }
+
+    > .#{$prefix}-pb-dot1 {
+      @if ($size == 'large') {
+        animation: stroke-dot1 2.5s ease-in infinite;
+      } @else {
+        animation: stroke-dot1 2s ease-in infinite;
+      }
+    }
+    > .#{$prefix}-pb-dot2 {
+      @if ($size == 'large') {
+        animation: stroke-dot2 2.5s ease-in infinite;
+      } @else {
+        animation: stroke-dot2 2s ease-in infinite;
+      }
+    }
+    > .#{$prefix}-pb-dot3 {
+      @if ($size == 'large') {
+        animation: stroke-dot3 2.5s ease-in infinite;
+      } @else {
+        animation: stroke-dot3 2s ease-in infinite;
+      }
+    }
+
+    fill: none;
+    animation: spin 4.3s linear both infinite;
+  }
+}
+
+@mixin determ-pb($size) {
+  > svg {
+    @if ($size==default) {
+      height: $loader-width-medium;
+      width: $loader-width-medium;
+    } @else if ($size==small) {
+      height: $loader-width-small;
+      width: $loader-width-small;
+    } @else if ($size==large) {
+      height: $loader-width-large;
+      width: $loader-width-large;
+    }
+
+    > circle {
+      @if ($size== 'default') {
+        stroke-width: 4;
+      } @else if ($size== 'small') {
+        stroke-width: 2;
+      }
+      fill: none;
+    }
+  }
+  .#{$prefix}-progressbar-circle-text {
+    font-size: 0.75rem;
+    text-anchor: middle;
+    color: var(--default_text);
+  }
+}
+
 .#{$prefix}-progressbar-linear {
   &-label-content {
     width: 60%;
@@ -5,7 +102,7 @@
     overflow: hidden;
     display: inline-block;
     white-space: nowrap;
-}
+  }
   &-label-content,
   &-label-value,
   &-subtext {
@@ -42,12 +139,99 @@
   }
 }
 
-.#{$prefix}-progressbar-circle-container {
-  vertical-align: middle;
-  display: inline-block;
-  &-text {
-    font-size: 0.75rem;
-    text-anchor: middle;
-    color: var(--default_text);
+.#{$prefix}-determ-pb-circle {
+  @include determ-pb(default);
+}
+
+.#{$prefix}-determ-pb-circle-small {
+  @include determ-pb(small);
+}
+
+.#{$prefix}-determ-pb-circle-large {
+  @include determ-pb(large);
+}
+
+.#{$prefix}-indeterm-pb-circle {
+  @include indeter-pb(default);
+}
+
+.#{$prefix}-indeterm-pb-circle-small {
+  @include indeter-pb(small);
+}
+
+.#{$prefix}-indeterm-pb-circle-large {
+  @include indeter-pb(large);
+}
+
+@keyframes stroke-dash {
+  0% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 60, 200;
+  }
+
+  100% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: -125px;
+  }
+}
+
+@keyframes stroke-dot1 {
+  0% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+
+  25% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dasharray: 2, 200;
+    stroke-dashoffset: -125px;
+  }
+}
+
+@keyframes stroke-dot2 {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  25% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: -12px;
+  }
+
+  100% {
+    stroke-dasharray: 2, 200;
+    stroke-dashoffset: -150px;
+  }
+}
+
+@keyframes stroke-dot3 {
+  0% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+  25% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: -24px;
+  }
+
+  100% {
+    stroke-dasharray: 2, 200;
+    stroke-dashoffset: -175px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
   }
 }

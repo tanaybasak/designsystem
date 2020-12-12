@@ -14,19 +14,26 @@ class ProgressBar {
       innerCircle: `.${PREFIX}-progressbar-circle-inner`,
       outerCircle: `.${PREFIX}-progressbar-circle-outer`,
       progressCircle: `.${PREFIX}-progressbar-circle`,
-      circleText: `.${PREFIX}-progressbar-circle-text`
+      circleText: `.${PREFIX}-progressbar-circle-text`,
+      indetermCircle: `.${PREFIX}-circle-pb-svg`
     };
     this.progressStyle = {
       height: '100%',
       transition: 'width 1s ease-in-out'
     };
-    // this.state.linear ? this.updateLinearValue() : this.updateCircleValue();
-    console.log(this.state.linear);
-    this.state.linear ? null :
-    this.updateCircleValue() ;
+
+    if (this.state.linear && this.state.determinate) {
+      this.linearDeterminate();
+    } else if (!this.state.linear && this.state.determinate) {
+      this.circleDeterminate();
+    } else if (this.state.linear && !this.state.determinate) {
+      this.linearIndeterminate();
+    } else if (!this.state.linear && !this.state.determinate) {
+      this.circleIndeterminate();
+    }
   }
 
-  updateLinearValue() {
+  linearDeterminate() {
     let value = this.element.getAttribute('value');
     let computedValue = value > 1 ? 1 : value;
     let finalVal = computedValue * 100 + '%';
@@ -38,10 +45,10 @@ class ProgressBar {
     linearStyleElement.style.transition = this.progressStyle.transition;
   }
 
-  updateCircleValue() {
-
+  circleDeterminate() {
     let circleValue = this.element.getAttribute('value');
-    let size = this.element.querySelector(this.selectors.progressCircle).getAttribute('height');
+    let size = this.element.querySelector(this.selectors.progressCircle)
+      .clientHeight;
     let center = size / 2;
     let radius = size / 2 - 2.5;
     let circumference = 2 * Math.PI * radius;
@@ -49,34 +56,105 @@ class ProgressBar {
     let prg = circleValue * 100;
     let progressOffset = ((100 - prg) / 100) * circumference; //strokeDashOffset
 
-    console.log(progressOffset);
+    this.element.querySelector(this.selectors.outerCircle).style =
+      'transition: stroke-dashoffset 850ms ease-in-out';
+    setAttribute(
+      this.element.querySelector(this.selectors.innerCircle),
+      'cx',
+      center
+    );
+    setAttribute(
+      this.element.querySelector(this.selectors.innerCircle),
+      'cy',
+      center
+    );
+    setAttribute(
+      this.element.querySelector(this.selectors.innerCircle),
+      'r',
+      radius
+    );
 
-    this.element.querySelector(this.selectors.outerCircle).style = 'transition: stroke-dashoffset 850ms ease-in-out';
-    setAttribute(this.element.querySelector(this.selectors.innerCircle),'cx',center);
-    setAttribute(this.element.querySelector(this.selectors.innerCircle),'cy',center);
-    setAttribute(this.element.querySelector(this.selectors.innerCircle),'r',radius);
-
-
-    setAttribute(this.element.querySelector(this.selectors.outerCircle),'cx', center);
-    setAttribute(this.element.querySelector(this.selectors.outerCircle),'cy', center);
-    setAttribute(this.element.querySelector(this.selectors.outerCircle),'r', radius);
-    setAttribute(this.element.querySelector(this.selectors.outerCircle),'stroke-dasharray', circumference);
-    setAttribute(this.element.querySelector(this.selectors.outerCircle),'stroke-dashoffset', progressOffset);
+    setAttribute(
+      this.element.querySelector(this.selectors.outerCircle),
+      'cx',
+      center
+    );
+    setAttribute(
+      this.element.querySelector(this.selectors.outerCircle),
+      'cy',
+      center
+    );
+    setAttribute(
+      this.element.querySelector(this.selectors.outerCircle),
+      'r',
+      radius
+    );
+    setAttribute(
+      this.element.querySelector(this.selectors.outerCircle),
+      'stroke-dasharray',
+      circumference
+    );
+    setAttribute(
+      this.element.querySelector(this.selectors.outerCircle),
+      'stroke-dashoffset',
+      progressOffset
+    );
 
     let circleTextElem = this.element.querySelector(this.selectors.circleText);
 
-    if (size == 16) {
-      setAttribute(this.element.querySelector(this.selectors.innerCircle),'stroke-width',2);
-      setAttribute(this.element.querySelector(this.selectors.outerCircle),'stroke-width',2);
+    if (size == 19) {
+      setAttribute(
+        this.element.querySelector(this.selectors.innerCircle),
+        'stroke-width',
+        2
+      );
+      setAttribute(
+        this.element.querySelector(this.selectors.outerCircle),
+        'stroke-width',
+        2
+      );
       circleTextElem.style.display = 'none';
     } else {
-      setAttribute(this.element.querySelector(this.selectors.innerCircle),'stroke-width',4);
-      setAttribute(this.element.querySelector(this.selectors.outerCircle),'stroke-width',4);
+      setAttribute(
+        this.element.querySelector(this.selectors.innerCircle),
+        'stroke-width',
+        4
+      );
+      setAttribute(
+        this.element.querySelector(this.selectors.outerCircle),
+        'stroke-width',
+        4
+      );
       circleTextElem.style.display = 'block';
-      setAttribute(this.element.querySelector(this.selectors.circleText),'x',center);
-      setAttribute(this.element.querySelector(this.selectors.circleText),'y',center);
+      setAttribute(
+        this.element.querySelector(this.selectors.circleText),
+        'x',
+        center
+      );
+      setAttribute(
+        this.element.querySelector(this.selectors.circleText),
+        'y',
+        center
+      );
       circleTextElem.innerHTML = prg + '%';
     }
+  }
+
+  linearIndeterminate() {}
+
+  circleIndeterminate() {
+    // this.element.querySelector(this.selectors.indetermCircle)
+    let circleValue = this.element.getAttribute('width');
+    // setAttribute(
+    //   this.element.querySelector(this.selectors.indetermCircle),
+    //   'width',
+    //   circleValue
+    // );
+    // setAttribute(
+    //   this.element.querySelector(this.selectors.indetermCircle),
+    //   'height',
+    //   circleValue
+    // );
   }
 }
 
