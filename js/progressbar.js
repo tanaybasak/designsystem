@@ -103,28 +103,8 @@ class ProgressBar {
     let circleTextElem = this.element.querySelector(this.selectors.circleText);
 
     if (size == 19) {
-      setAttribute(
-        this.element.querySelector(this.selectors.innerCircle),
-        'stroke-width',
-        2
-      );
-      setAttribute(
-        this.element.querySelector(this.selectors.outerCircle),
-        'stroke-width',
-        2
-      );
       circleTextElem.style.display = 'none';
     } else {
-      setAttribute(
-        this.element.querySelector(this.selectors.innerCircle),
-        'stroke-width',
-        4
-      );
-      setAttribute(
-        this.element.querySelector(this.selectors.outerCircle),
-        'stroke-width',
-        4
-      );
       circleTextElem.style.display = 'block';
       setAttribute(
         this.element.querySelector(this.selectors.circleText),
