@@ -167,12 +167,11 @@
 .#{$prefix}-indeterm-pb-linear {
   position: relative;
   .#{$prefix}-linear {
-    width: 100%;
     height: 4px;
     fill: none;
     &-line {
       stroke: var(--primary_bg);
-      stroke-width: 4px;
+      stroke-width: 0.25rem;
     }
 
     &-bgline {
@@ -277,7 +276,6 @@
   }
 }
 
-
 @keyframes stroke-dash-linear {
   0% {
     stroke-dasharray: 0, 200;
@@ -358,8 +356,6 @@
  }
 }
 
-
-
 @keyframes stroke-dot-two-linear {
  0% {
    stroke-dashoffset: 4px;
@@ -379,8 +375,6 @@
    stroke-dashoffset: -150px;
  }
 }
-
-
 
 @keyframes stroke-dot-three-linear {
   0% {
