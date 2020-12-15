@@ -47,7 +47,7 @@ const ComponentList = {
   tile: Tile,
   toggle: Toggle,
   timePicker: TimePicker,
-  progressbar : ProgressBar,
+  progressbar: ProgressBar,
   overlay: Overlay
 };
 

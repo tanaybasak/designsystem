@@ -190,15 +190,15 @@
     }
 
     &-dot-one {
-      animation: stroke-dot-one-linear 4s ease-in  infinite;
+      animation: stroke-dot-one-linear 4s ease-in infinite;
     }
-    
+
     &-dot-two {
-      animation: stroke-dot-two-linear 4s ease-in  infinite;
+      animation: stroke-dot-two-linear 4s ease-in infinite;
     }
-    
+
     &-dot-three {
-      animation: stroke-dot-three-linear 4s ease-in  infinite;
+      animation: stroke-dot-three-linear 4s ease-in infinite;
     }
   }
 }
@@ -281,19 +281,15 @@
     stroke-dasharray: 0, 200;
     stroke-dashoffset: 0;
   }
-  
+
   20% {
     stroke-dasharray: 0, 200;
     stroke-dashoffset: 0;
   }
 
- 
-
   60% {
     stroke-dasharray: 60, 200;
   }
-
- 
 
   100% {
     stroke-dasharray: 0, 200;
@@ -307,29 +303,25 @@
     stroke-dashoffset: 0;
   }
 
- 
-
   20% {
     stroke-dasharray: 70, 200;
   }
-
- 
 
   40% {
     stroke-dasharray: 0, 200;
     stroke-dashoffset: -125px;
   }
-  
+
   80% {
     stroke-dasharray: 0, 200;
     stroke-dashoffset: -125px;
   }
-  
+
   80% {
     stroke-dasharray: 0, 200;
     stroke-dashoffset: 0;
   }
-  
+
   100% {
     stroke-dasharray: 20, 200;
     stroke-dashoffset: 0;
@@ -338,60 +330,54 @@
 
 @keyframes stroke-dot-one-linear {
   0% {
-   stroke-dashoffset: 4px;
- }
- 
- 60% {
-   stroke-dashoffset: 4px;
- }
- 
- 60% {
-   stroke-dashoffset: 0;
- }
+    stroke-dashoffset: 4px;
+  }
 
+  60% {
+    stroke-dashoffset: 4px;
+  }
 
+  60% {
+    stroke-dashoffset: 0;
+  }
 
- 100% {
-   stroke-dashoffset: -125px;
- }
+  100% {
+    stroke-dashoffset: -125px;
+  }
 }
 
 @keyframes stroke-dot-two-linear {
- 0% {
-   stroke-dashoffset: 4px;
- }
- 
- 62% {
-   stroke-dashoffset: 4px;
- }
- 
- 62% {
-   stroke-dashoffset: -12px;
- }
+  0% {
+    stroke-dashoffset: 4px;
+  }
 
+  62% {
+    stroke-dashoffset: 4px;
+  }
 
+  62% {
+    stroke-dashoffset: -12px;
+  }
 
- 100% {
-   stroke-dashoffset: -150px;
- }
+  100% {
+    stroke-dashoffset: -150px;
+  }
 }
 
 @keyframes stroke-dot-three-linear {
   0% {
-   stroke-dashoffset: 4px;
- }
- 
- 64% {
-   stroke-dashoffset: 4px;
- }
- 
- 64% {
-   stroke-dashoffset: -24px;
- }
+    stroke-dashoffset: 4px;
+  }
 
+  64% {
+    stroke-dashoffset: 4px;
+  }
 
+  64% {
+    stroke-dashoffset: -24px;
+  }
 
- 100% {
-   stroke-dashoffset: -175px;
- }
+  100% {
+    stroke-dashoffset: -175px;
+  }
 }

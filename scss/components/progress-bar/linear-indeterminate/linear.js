@@ -1,4 +1,4 @@
 window.patron.progressbar('#pbar-linear-indeterm', {
-    determinate: false,
-    linear : true
-  });
+  determinate: false,
+  linear: true
+});

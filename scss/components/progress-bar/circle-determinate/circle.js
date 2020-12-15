@@ -1,4 +1,4 @@
 window.patron.progressbar('#progressbar-circle', {
-    determinate: true,
-    linear : false
-  });
+  determinate: true,
+  linear: false
+});
