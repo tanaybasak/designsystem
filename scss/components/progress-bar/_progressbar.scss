@@ -92,10 +92,7 @@
   }
   .#{$prefix}-progressbar-circle-text {
     position: absolute;
-    top: 2.5rem;
-    left: 2.5rem;
     font-size: 0.75rem;
-    text-anchor: middle;
     color: var(--default_text);
   }
 }
@@ -145,8 +142,12 @@
 }
 
 .#{$prefix}-determ-pb-circle {
-  width: $loader-width-medium;
   @include determ-pb(default);
+  width: $loader-width-medium;
+  .#{$prefix}-progressbar-circle-text {
+    top: 1rem;
+    left: 0.9rem;
+  }
 }
 
 .#{$prefix}-determ-pb-circle-small {
@@ -157,6 +158,10 @@
 .#{$prefix}-determ-pb-circle-large {
   width: $loader-width-large;
   @include determ-pb(large);
+  .#{$prefix}-progressbar-circle-text {
+    top: 2.5rem;
+    left: 2.5rem;
+  }
 }
 
 .#{$prefix}-indeterm-pb-circle {
