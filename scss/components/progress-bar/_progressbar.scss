@@ -141,14 +141,17 @@
 }
 
 .#{$prefix}-determ-pb-circle {
+  width: $loader-width-medium;
   @include determ-pb(default);
 }
 
 .#{$prefix}-determ-pb-circle-small {
+  width: $loader-width-small;
   @include determ-pb(small);
 }
 
 .#{$prefix}-determ-pb-circle-large {
+  width: $loader-width-large;
   @include determ-pb(large);
 }
 
