@@ -176,44 +176,44 @@
   @include indeter-pb(large);
 }
 
-.#{$prefix}-indeterm-pb-linear {
-  position: relative;
-  .#{$prefix}-linear {
-    height: 4px;
-    fill: none;
-    &-line {
-      stroke: var(--primary_bg);
-      stroke-width: 0.25rem;
-    }
+  .#{$prefix}-indeterm-pb-linear {
+    position: relative;
+    .#{$prefix}-linear {
+      height: 4px;
+      fill: none;
+      &-line {
+        stroke: var(--primary_bg);
+        stroke-width: 0.25rem;
+      }
 
-    &-bgline {
-      stroke: var(--default_bg_high);
-    }
+      &-bgline {
+        stroke: var(--default_bg_high);
+      }
 
-    &-mainline-one {
-      animation: stroke-dash-linear 4s ease-in-out infinite;
-    }
-    &-mainline-two {
-      animation: stroke-dash-one-linear 4s ease-in-out infinite;
-    }
+      &-mainline-one {
+        animation: stroke-dash-linear 4s ease-in-out infinite;
+      }
+      &-mainline-two {
+        animation: stroke-dash-one-linear 4s ease-in-out infinite;
+      }
 
-    &-dot {
-      stroke-dasharray: 1, 200;
-    }
+      &-dot {
+        stroke-dasharray: 1, 200;
+      }
 
-    &-dot-one {
-      animation: stroke-dot-one-linear 4s ease-in infinite;
-    }
+      &-dot-one {
+        animation: stroke-dot-one-linear 4s ease-in infinite;
+      }
 
-    &-dot-two {
-      animation: stroke-dot-two-linear 4s ease-in infinite;
-    }
+      &-dot-two {
+        animation: stroke-dot-two-linear 4s ease-in infinite;
+      }
 
-    &-dot-three {
-      animation: stroke-dot-three-linear 4s ease-in infinite;
+      &-dot-three {
+        animation: stroke-dot-three-linear 4s ease-in infinite;
+      }
     }
   }
-}
 
 @keyframes stroke-dash {
   0% {
