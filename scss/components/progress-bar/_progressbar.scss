@@ -67,6 +67,7 @@
 }
 
 @mixin determ-pb($size) {
+  position: relative;
   > svg {
     @if ($size==default) {
       height: $loader-width-medium;
@@ -90,6 +91,9 @@
     }
   }
   .#{$prefix}-progressbar-circle-text {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
     font-size: 0.75rem;
     text-anchor: middle;
     color: var(--default_text);
