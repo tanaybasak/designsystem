@@ -68,8 +68,6 @@
 
 @mixin determ-pb($size) {
   position: relative;
-  display: flex;
-  justify-content: center;
   > svg {
     @if ($size==default) {
       height: $loader-width-medium;
@@ -145,7 +143,6 @@
 
 .#{$prefix}-determ-pb-circle {
   @include determ-pb(default);
-  width: $loader-width-medium;
   .#{$prefix}-progressbar-circle-text {
     top: 1rem;
     left: 0.9rem;
@@ -153,12 +150,10 @@
 }
 
 .#{$prefix}-determ-pb-circle-small {
-  width: $loader-width-small;
   @include determ-pb(small);
 }
 
 .#{$prefix}-determ-pb-circle-large {
-  width: $loader-width-large;
   @include determ-pb(large);
   .#{$prefix}-progressbar-circle-text {
     top: 2.5rem;
