@@ -179,8 +179,14 @@
   }
 }
 
+
+
 .#{$prefix}-determ-pb-circle {
-  @include indeter-pb(small);
+  @include determ-pb(default);
+}
+
+.#{$prefix}-determ-pb-circle-large {
+  @include determ-pb(large);
 }
 
 .#{$prefix}-indeterm-pb-circle {
