@@ -68,6 +68,8 @@
 
 @mixin determ-pb($size) {
   position: relative;
+  display: flex;
+  justify-content: center;
   > svg {
     @if ($size==default) {
       height: $loader-width-medium;
