@@ -67,6 +67,7 @@
 }
 
 @mixin determ-pb($size) {
+  position: relative;
   > svg {
     @if ($size==default) {
       height: $loader-width-medium;
@@ -137,6 +138,8 @@
     font-size: 0.75rem;
     text-anchor: middle;
     fill: var(--default_text);
+    position: absolute;
+    top: 0.625rem;
   }
 }
 
