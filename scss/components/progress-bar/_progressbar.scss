@@ -142,6 +142,9 @@
       transform-origin: center right;
     }
   }
+  .#{$prefix}-pb-circle-border {
+    border-color: var(--primary_bg);
+  }
   &-value {
     position: absolute;
     top: 2.3rem;
