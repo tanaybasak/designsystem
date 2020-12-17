@@ -130,8 +130,8 @@
   }
   .#{$prefix}-determ-pb-circle-value {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 2.3rem;
+    left: 2rem;
   }
 }
 
@@ -182,8 +182,8 @@
 
 
 .#{$prefix}-determ-pb-circle {
-  // @include determ-pb(default);
-box-shadow: none;
+  @include determ-pb(default);
+
 }
 
 .#{$prefix}-determ-pb-circle-large {
