@@ -208,6 +208,7 @@
   position: relative;
   .#{$prefix}-linear {
     height: 4px;
+    width: 100%;
     fill: none;
     &-line {
       stroke: var(--primary_bg);
