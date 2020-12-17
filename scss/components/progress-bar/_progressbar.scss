@@ -67,91 +67,32 @@
 }
 
 @mixin determ-pb($size) {
-  @if ($size==default) {
-    height: $loader-width-medium;
-    width: $loader-width-medium;
-  } @else if ($size==small) {
-    height: $loader-width-small;
-    width: $loader-width-small;
-  } @else if ($size==large) {
-    height: $loader-width-large;
-    width: $loader-width-large;
-  }
-  background: none;
-  position: relative;
-  &::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    // border: 6px solid var(--default_bg_high);
-    @if ($size== 'default') {
-      border: $loader-stroke-medium solid var(--default_bg_high);
-    } @else if ($size== 'small') {
-      border: $loader-stroke-small solid var(--default_bg_high);
-    } @else if ($size== 'large') {
-      border: $loader-stroke-large solid var(--default_bg_high);
+  > svg {
+    @if ($size==default) {
+      height: $loader-width-medium;
+      width: $loader-width-medium;
+    } @else if ($size==small) {
+      height: $loader-width-small;
+      width: $loader-width-small;
+    } @else if ($size==large) {
+      height: $loader-width-large;
+      width: $loader-width-large;
     }
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  > span {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-  }
-  .#{$prefix}-determ-pb-circle-left {
-    left: 0;
-    .progress-bar {
-      left: 100%;
-      border-top-right-radius: 80px;
-      border-bottom-right-radius: 80px;
-      border-left: 0;
-      -webkit-transform-origin: center left;
-      transform-origin: center left;
+    > circle {
+      @if ($size== 'default') {
+        stroke-width: 4;
+      } @else if ($size== 'small') {
+        stroke-width: 2;
+      } @else if ($size== 'large') {
+        stroke-width: 4;
+      }
+      fill: none;
     }
   }
-  .progress-bar {
-    width: 100%;
-    height: 100%;
-    background: none;
-
-    @if ($size== 'default') {
-      border-width: $loader-stroke-medium;
-    } @else if ($size== 'small') {
-      border-width: $loader-stroke-small;
-    } @else if ($size== 'large') {
-      border-width: $loader-stroke-large;
-    }
-    border-style: solid;
-    position: absolute;
-    top: 0;
-  }
-  .#{$prefix}-determ-pb-circle-right {
-    right: 0;
-    .progress-bar {
-      left: -100%;
-      border-top-left-radius: 80px;
-      border-bottom-left-radius: 80px;
-      border-right: 0;
-      -webkit-transform-origin: center right;
-      transform-origin: center right;
-    }
-  }
-  .#{$prefix}-pb-circle-border {
-    border-color: var(--primary_bg);
-  }
-  &-value {
-    position: absolute;
-    top: 2.3rem;
+  .#{$prefix}-progressbar-circle-text {
     font-size: 0.75rem;
     text-anchor: middle;
-    fill: var(--default_text);
-    left: 2rem;
+    color: var(--default_text);
   }
 }
 
