@@ -140,6 +140,7 @@
       border-right: 0;
       -webkit-transform-origin: center right;
       transform-origin: center right;
+      animation: mymove 5s infinite;
     }
   }
   .#{$prefix}-pb-circle-border {
@@ -260,6 +261,10 @@
       animation: stroke-dot-three-linear 4s ease-in infinite;
     }
   }
+}
+
+@keyframes mymove {
+  50% {transform: rotate(180deg);}
 }
 
 @keyframes stroke-dash {
