@@ -67,7 +67,6 @@
 }
 
 @mixin determ-pb($size) {
-  > svg {
     @if ($size==default) {
       height: $loader-width-medium;
       width: $loader-width-medium;
@@ -78,6 +77,11 @@
       height: $loader-width-large;
       width: $loader-width-large;
     }
+
+    > svg {
+      width: inherit;
+      height: inherit;
+    
     > circle {
       @if ($size== 'default') {
         stroke-width: 4;
