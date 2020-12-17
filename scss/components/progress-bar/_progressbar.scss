@@ -88,9 +88,9 @@
     @if ($size== 'default') {
       border: $loader-stroke-medium solid var(--default_bg_high);
     } @else if ($size== 'small') {
-      border-width: $loader-stroke-small solid var(--default_bg_high);
+      border: $loader-stroke-small solid var(--default_bg_high);
     } @else if ($size== 'large') {
-      border-width: $loader-stroke-large solid var(--default_bg_high);
+      border: $loader-stroke-large solid var(--default_bg_high);
     }
     position: absolute;
     top: 0;
