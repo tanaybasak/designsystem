@@ -97,7 +97,7 @@
     top: 0;
     z-index: 1;
   }
-  &-left {
+  .#{$prefix}-determ-pb-circle-left {
     left: 0;
     .progress-bar {
       left: 100%;
@@ -117,7 +117,7 @@
     position: absolute;
     top: 0;
   }
-  &-right {
+  .#{$prefix}-determ-pb-circle-right {
     right: 0;
     .progress-bar {
       left: -100%;
@@ -128,7 +128,7 @@
       transform-origin: center right;
     }
   }
-  &-value {
+  .#{$prefix}-determ-pb-circle-value {
     position: absolute;
     top: 0;
     left: 0;
@@ -182,7 +182,7 @@
 
 
 .#{$prefix}-determ-pb-circle {
-  @include determ-pb(default);
+  // @include determ-pb(default);
 }
 
 .#{$prefix}-determ-pb-circle-large {
