@@ -183,6 +183,7 @@
 
 .#{$prefix}-determ-pb-circle {
   // @include determ-pb(default);
+box-shadow: none;
 }
 
 .#{$prefix}-determ-pb-circle-large {
