@@ -95,14 +95,6 @@
     }
   }
 
-  .#{$prefix}-circle-pb {
-    display: flex;
-  }
-
-
-  .#{$prefix}-pb-displayLeft {
-    align-self: center;
-  }
 
   .#{$prefix}-progressbar-circle-customContent {
     position: absolute;
@@ -173,6 +165,16 @@
     text-anchor: middle;
     fill: var(--default_text);
   }
+}
+
+
+.#{$prefix}-circle-pb {
+  display: flex;
+}
+
+
+.#{$prefix}-pb-displayLeft {
+  align-self: center;
 }
 
 .#{$prefix}-determ-pb-circle {
