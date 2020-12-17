@@ -128,9 +128,12 @@
       transform-origin: center right;
     }
   }
-  .#{$prefix}-determ-pb-circle-value {
+  &-value {
     position: absolute;
     top: 2.3rem;
+    font-size: 0.75rem;
+    text-anchor: middle;
+    fill: var(--default_text);
     left: 2rem;
   }
 }
