@@ -67,6 +67,7 @@
 }
 
 @mixin determ-pb($size) {
+  position: relative;
     @if ($size==default) {
       height: $loader-width-medium;
       width: $loader-width-medium;
@@ -93,7 +94,13 @@
       fill: none;
     }
   }
-  .#{$prefix}-progressbar-circle-text {
+
+  .#{$prefix}-progressbar-circle-customContent {
+    position: absolute;
+    top: 0.5rem;
+    right: -1.3rem;
+  }
+  .#{$prefix}-progressbar-circle-text, .#{$prefix}-progressbar-circle-customContent  {
     font-size: 0.75rem;
     text-anchor: middle;
     color: var(--default_text);
