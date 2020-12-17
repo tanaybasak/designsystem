@@ -200,6 +200,10 @@
   @include determ-pb(default);
 }
 
+.#{$prefix}-determ-pb-circle-small {
+  @include determ-pb(small);
+}
+
 .#{$prefix}-determ-pb-circle-large {
   @include determ-pb(large);
 }
