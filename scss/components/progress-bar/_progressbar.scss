@@ -171,7 +171,12 @@
 .#{$prefix}-circle-pb {
   display: flex;
   align-items: center;
+  .#{$prefix}-pb-top-bottom {
+    align-items: unset;
+    flex-direction: row;
+  }
 }
+
 
 
 .#{$prefix}-determ-pb-circle {
