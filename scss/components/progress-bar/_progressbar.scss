@@ -113,6 +113,8 @@
       border-left: 0;
       -webkit-transform-origin: center left;
       transform-origin: center left;
+      animation: right 4s linear both;
+      animation-delay: 4s;
     }
   }
   .progress-bar {
@@ -140,7 +142,7 @@
       border-right: 0;
       -webkit-transform-origin: center right;
       transform-origin: center right;
-      animation: mymove 5s infinite;
+      animation: left 4s linear both;
     }
   }
   .#{$prefix}-pb-circle-border {
@@ -263,8 +265,16 @@
   }
 }
 
-@keyframes mymove {
-  50% {transform: rotate(180deg);}
+@keyframes left {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes right {
+  100%{
+    transform: rotate(180deg);
+  }
 }
 
 @keyframes stroke-dash {
