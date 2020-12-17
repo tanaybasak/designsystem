@@ -170,12 +170,9 @@
 
 .#{$prefix}-circle-pb {
   display: flex;
-}
-
-
-.#{$prefix}-pb-displayLeft {
   align-self: center;
 }
+
 
 .#{$prefix}-determ-pb-circle {
   @include determ-pb(default);
