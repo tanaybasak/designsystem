@@ -68,21 +68,21 @@
 
 @mixin determ-pb($size) {
   position: relative;
-    @if ($size==default) {
-      height: $loader-width-medium;
-      width: $loader-width-medium;
-    } @else if ($size==small) {
-      height: $loader-width-small;
-      width: $loader-width-small;
-    } @else if ($size==large) {
-      height: $loader-width-large;
-      width: $loader-width-large;
-    }
+  @if ($size==default) {
+    height: $loader-width-medium;
+    width: $loader-width-medium;
+  } @else if ($size==small) {
+    height: $loader-width-small;
+    width: $loader-width-small;
+  } @else if ($size==large) {
+    height: $loader-width-large;
+    width: $loader-width-large;
+  }
 
-    > svg {
-      width: inherit;
-      height: inherit;
-    
+  > svg {
+    width: inherit;
+    height: inherit;
+
     > circle {
       @if ($size== 'default') {
         stroke-width: 4;
@@ -102,6 +102,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     @if ($size== 'default') {
       width: $loader-width-medium + 0.125rem;
       height: $loader-width-medium + 0.125rem;
@@ -112,9 +113,9 @@
       width: $loader-width-large + 0.125rem;
       height: $loader-width-large + 0.125rem;
     }
-    
   }
-  .#{$prefix}-progressbar-circle-text, .#{$prefix}-progressbar-circle-customContent  {
+  .#{$prefix}-progressbar-circle-text,
+  .#{$prefix}-progressbar-circle-customContent {
     font-size: 0.75rem;
     text-anchor: middle;
     color: var(--default_text);
