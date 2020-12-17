@@ -95,6 +95,15 @@
     }
   }
 
+  .#{$prefix}-circle-pb {
+    display: flex;
+  }
+
+
+  .#{$prefix}-pb-displayLeft {
+    align-self: center;
+  }
+
   .#{$prefix}-progressbar-circle-customContent {
     position: absolute;
     top: -0.2rem;
