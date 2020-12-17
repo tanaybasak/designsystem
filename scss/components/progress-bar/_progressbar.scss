@@ -173,7 +173,7 @@
   align-items: center;
   .#{$prefix}-pb-top-bottom {
     align-items: unset;
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 
