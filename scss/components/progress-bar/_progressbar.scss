@@ -97,8 +97,22 @@
 
   .#{$prefix}-progressbar-circle-customContent {
     position: absolute;
-    top: 0.5rem;
-    right: -1.3rem;
+    top: -0.2rem;
+    right: -0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @if ($size== 'default') {
+      width: $loader-width-medium + 0.125rem;
+      height: $loader-width-medium + 0.125rem;
+    } @else if ($size== 'small') {
+      width: $loader-width-small + 0.125rem;
+      height: $loader-width-small + 0.125rem;
+    } @else if ($size== 'large') {
+      width: $loader-width-large + 0.125rem;
+      height: $loader-width-large + 0.125rem;
+    }
+    
   }
   .#{$prefix}-progressbar-circle-text, .#{$prefix}-progressbar-circle-customContent  {
     font-size: 0.75rem;
