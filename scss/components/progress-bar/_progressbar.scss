@@ -170,11 +170,12 @@
 
 .#{$prefix}-circle-pb {
   display: flex;
-  align-items: center;
-  .#{$prefix}-pb-top-bottom {
-    align-items: unset;
-    flex-direction: column;
-  }
+  align-items: center; 
+}
+
+.#{$prefix}-pb-top-bottom {
+  align-items: unset;
+  flex-direction: column;
 }
 
 
