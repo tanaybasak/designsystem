@@ -39,14 +39,17 @@
   &-panel {
     box-shadow: 0 0.25rem 0.5rem 0.15rem var(--default_shadow);
     background-color: var(--default_bg);
+    padding: 0.25rem;
 
-    &:first-child {
-      padding-left: 0.25rem;
+    button:last-child {
+      margin-right: 0;
     }
   }
 
   &-btn {
     margin-right: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
     width: 2rem;
     height: 2rem;
     padding: 0;
