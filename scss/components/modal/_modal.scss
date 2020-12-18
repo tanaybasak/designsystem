@@ -49,6 +49,16 @@
     }
   }
 
+  &-resize {
+    width: 10px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    cursor: se-resize;
+  }
+
   &-header {
     padding: 1rem 1.5rem;
     margin-top: 1.25rem;
