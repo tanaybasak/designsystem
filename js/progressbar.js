@@ -16,8 +16,8 @@ class ProgressBar {
       progressCircle: `.${PREFIX}-progressbar-circle`,
       customContent: `.${PREFIX}-progressbar-circle-customContent`,
       indetermCircle: `.${PREFIX}-circle-pb-svg`,
-      labelTop: `#${PREFIX}-pb-topLeft`,
-      labelBottom: `#${PREFIX}-pb-bottomRight`
+      labelTop: `.${PREFIX}-pb-topLeft`,
+      labelBottom: `.${PREFIX}-pb-bottomRight`
     };
     this.progressStyle = {
       height: '100%',
