@@ -1,4 +1,4 @@
-window.patron.progressbar('#progressbar-circle', {
+window.patron.progressbar('#pbar-circle-determ', {
   determinate: true,
   linear: false
 });

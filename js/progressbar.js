@@ -14,8 +14,10 @@ class ProgressBar {
       innerCircle: `.${PREFIX}-progressbar-circle-inner`,
       outerCircle: `.${PREFIX}-progressbar-circle-outer`,
       progressCircle: `.${PREFIX}-progressbar-circle`,
-      circleText: `.${PREFIX}-progressbar-circle-text`,
-      indetermCircle: `.${PREFIX}-circle-pb-svg`
+      customContent: `.${PREFIX}-progressbar-circle-customContent`,
+      indetermCircle: `.${PREFIX}-circle-pb-svg`,
+      labelTop: `#${PREFIX}-pb-topLeft`,
+      labelBottom: `#${PREFIX}-pb-bottomRight`
     };
     this.progressStyle = {
       height: '100%',
@@ -26,10 +28,6 @@ class ProgressBar {
       this.linearDeterminate();
     } else if (!this.state.linear && this.state.determinate) {
       this.circleDeterminate();
-    } else if (this.state.linear && !this.state.determinate) {
-      this.linearIndeterminate();
-    } else if (!this.state.linear && !this.state.determinate) {
-      this.circleIndeterminate();
     }
   }
 
@@ -47,6 +45,8 @@ class ProgressBar {
 
   circleDeterminate() {
     let circleValue = this.element.getAttribute('value');
+    console.log(circleValue);
+    let labelPosition = this.element.getAttribute('label-positon');
     let size = this.element.querySelector(this.selectors.progressCircle)
       .clientHeight;
     let center = size / 2;
@@ -58,6 +58,7 @@ class ProgressBar {
 
     this.element.querySelector(this.selectors.outerCircle).style =
       'transition: stroke-dashoffset 850ms ease-in-out';
+
     setAttribute(
       this.element.querySelector(this.selectors.innerCircle),
       'cx',
@@ -100,41 +101,48 @@ class ProgressBar {
       progressOffset
     );
 
-    let circleTextElem = this.element.querySelector(this.selectors.circleText);
+    let customContentElem = this.element.querySelector(
+      this.selectors.customContent
+    );
+    let topLeftElem = this.element.querySelector(this.selectors.labelTop);
+    let bottomleftElem = this.element.querySelector(this.selectors.labelBottom);
 
-    if (size == 19) {
-      circleTextElem.style.display = 'none';
+
+
+    console.log(topLeftElem);
+    if (size == 16) {
+      customContentElem.style.display = 'none';
     } else {
-      circleTextElem.style.display = 'block';
-      setAttribute(
-        this.element.querySelector(this.selectors.circleText),
-        'x',
-        center
-      );
-      setAttribute(
-        this.element.querySelector(this.selectors.circleText),
-        'y',
-        center
-      );
-      circleTextElem.innerHTML = prg + '%';
+      customContentElem.style.display = 'flex';
     }
-  }
 
-  linearIndeterminate() {}
-
-  circleIndeterminate() {
-    // this.element.querySelector(this.selectors.indetermCircle)
-    let circleValue = this.element.getAttribute('width');
-    // setAttribute(
-    //   this.element.querySelector(this.selectors.indetermCircle),
-    //   'width',
-    //   circleValue
-    // );
-    // setAttribute(
-    //   this.element.querySelector(this.selectors.indetermCircle),
-    //   'height',
-    //   circleValue
-    // );
+    if (labelPosition == 'left' && (size == 48 || size == 96)) {
+      bottomleftElem.style.display = 'none';
+      this.element.classList.remove(`${PREFIX}-pb-top-bottom`);
+    } else if (labelPosition == 'right' && (size == 48 || size == 96)) {
+      bottomleftElem.style.display = 'flex';
+      topLeftElem.style.display= 'none';
+      this.element.classList.remove(`${PREFIX}-pb-top-bottom`);
+    } else if (labelPosition == 'bottom' && (size == 48 || size == 96)) {
+      topLeftElem.style.display = 'none';
+      this.element.classList.add(`${PREFIX}-pb-top-bottom`);
+    } else if (labelPosition == 'top' && (size == 48 || size == 96)) {
+      topLeftElem.style.display = 'flex';
+      bottomleftElem.style.display = 'none';
+      this.element.classList.add(`${PREFIX}-pb-top-bottom`);
+    } else if (
+      (labelPosition == 'left' || labelPosition == 'bottom') &&
+      size == 16
+    ) {
+      bottomleftElem.style.display = 'none';
+      this.element.classList.remove(`${PREFIX}-pb-top-bottom`);
+    } else if (
+      (labelPosition == 'right' || labelPosition == 'top') &&
+      size == 16
+    ) {
+      bottomleftElem.style.display = 'none';
+      this.element.classList.remove(`${PREFIX}-pb-top-bottom`);
+    }
   }
 }
 
