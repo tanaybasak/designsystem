@@ -140,7 +140,7 @@ class ProgressBar {
       (labelPosition == 'right' || labelPosition == 'top') &&
       size == 16
     ) {
-      bottomleftElem.style.display = 'none';
+      topLeftElem.style.display = 'none';
       this.element.classList.remove(`${PREFIX}-pb-top-bottom`);
     }
   }
