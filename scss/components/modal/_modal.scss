@@ -24,6 +24,10 @@
       border-top: 0.25rem solid var(--warning_border);
     }
 
+    &-ghost {
+      border-top: 0.25rem solid transparent;
+    }
+
     position: relative;
 
     border-top: 0.25rem solid var(--secondary_border);
