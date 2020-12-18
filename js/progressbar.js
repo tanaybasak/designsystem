@@ -107,8 +107,6 @@ class ProgressBar {
     let topLeftElem = this.element.querySelector(this.selectors.labelTop);
     let bottomleftElem = this.element.querySelector(this.selectors.labelBottom);
 
-
-
     console.log(topLeftElem);
     if (size == 16) {
       customContentElem.style.display = 'none';
@@ -121,7 +119,7 @@ class ProgressBar {
       this.element.classList.remove(`${PREFIX}-pb-top-bottom`);
     } else if (labelPosition == 'right' && (size == 48 || size == 96)) {
       bottomleftElem.style.display = 'flex';
-      topLeftElem.style.display= 'none';
+      topLeftElem.style.display = 'none';
       this.element.classList.remove(`${PREFIX}-pb-top-bottom`);
     } else if (labelPosition == 'bottom' && (size == 48 || size == 96)) {
       topLeftElem.style.display = 'none';

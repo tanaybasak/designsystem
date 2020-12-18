@@ -95,7 +95,6 @@
     }
   }
 
-
   .#{$prefix}-progressbar-circle-customContent {
     position: absolute;
     top: -0.2rem;
@@ -167,18 +166,15 @@
   }
 }
 
-
 .#{$prefix}-circle-pb {
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 .#{$prefix}-pb-top-bottom {
   align-items: unset;
   flex-direction: column;
 }
-
-
 
 .#{$prefix}-determ-pb-circle {
   @include determ-pb(default);
