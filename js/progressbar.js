@@ -114,7 +114,7 @@ class ProgressBar {
       customContentElem.style.display = 'flex';
     }
 
-    if (labelPosition === 'left' && (size == 48 || size === 96)) {
+    if (labelPosition === 'left' && (size === 48 || size === 96)) {
       bottomleftElem.style.display = 'none';
       this.element.classList.remove(`${PREFIX}-pb-top-bottom`);
     } else if (labelPosition === 'right' && (size === 48 || size === 96)) {
