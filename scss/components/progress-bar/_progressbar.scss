@@ -1,4 +1,5 @@
-@mixin indeter-pb($size) {
+@mixin pb-utility($size) {
+  position: relative;
   > svg {
     @if ($size==default) {
       height: $loader-width-medium;
@@ -26,7 +27,31 @@
     > .dot {
       stroke-dasharray: 0, 200;
     }
+  }
 
+  > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    @if ($size== default) {
+      width: $loader-width-medium + 0.125rem;
+      height: $loader-width-medium + 0.125rem;
+    } @else if ($size== small) {
+      width: $loader-width-small + 0.125rem;
+      height: $loader-width-small + 0.125rem;
+    } @else if ($size== large) {
+      width: $loader-width-large + 0.125rem;
+      height: $loader-width-large + 0.125rem;
+    }
+  }
+}
+
+@mixin pb_circle($size) {
+  &-svg-indeterm {
     > .#{$prefix}-pb-bgcircle {
       stroke: var(--default_bg_high);
     }
@@ -64,160 +89,88 @@
     fill: none;
     animation: spin 4.3s linear both infinite;
   }
-}
 
-@mixin determ-pb($size) {
-  position: relative;
-  @if ($size==default) {
-    height: $loader-width-medium;
-    width: $loader-width-medium;
-  } @else if ($size==small) {
-    height: $loader-width-small;
-    width: $loader-width-small;
-  } @else if ($size==large) {
-    height: $loader-width-large;
-    width: $loader-width-large;
-  }
-
-  > svg {
-    width: inherit;
-    height: inherit;
-
-    > circle {
-      @if ($size== 'default') {
-        stroke-width: 4;
-      } @else if ($size== 'small') {
-        stroke-width: 2;
-      } @else if ($size== 'large') {
-        stroke-width: 4;
-      }
+  &-svg-determ {
+    > .#{$prefix}-pb-bgcircle {
       fill: none;
-    }
-  }
-
-  .#{$prefix}-progressbar-circle-customContent {
-    position: absolute;
-    top: -0.2rem;
-    right: -0.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    @if ($size== 'default') {
-      width: $loader-width-medium + 0.125rem;
-      height: $loader-width-medium + 0.125rem;
-    } @else if ($size== 'small') {
-      width: $loader-width-small + 0.125rem;
-      height: $loader-width-small + 0.125rem;
-    } @else if ($size== 'large') {
-      width: $loader-width-large + 0.125rem;
-      height: $loader-width-large + 0.125rem;
-    }
-  }
-  .#{$prefix}-progressbar-circle-text,
-  .#{$prefix}-progressbar-circle-customContent {
-    font-size: 0.75rem;
-    text-anchor: middle;
-    color: var(--default_text);
-  }
-}
-
-.#{$prefix}-progressbar-linear {
-  &-label-content {
-    width: 60%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: inline-block;
-    white-space: nowrap;
-  }
-  &-label-content,
-  &-label-value,
-  &-subtext {
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: var(--default_text);
-  }
-  &-content {
-    background-color: var(--default_bg_high);
-    height: 0.25rem;
-    .#{$prefix}-progressbar-linear-style {
-      background-color: var(--primary_bg);
-    }
-  }
-
-  &-label-value {
-    float: right;
-  }
-}
-
-.#{$prefix}-progressbar-circle {
-  .#{$prefix}-progressbar-circle-inner {
-    fill: none;
-    stroke: var(--default_bg_high);
-  }
-  &-outer {
-    fill: none;
-    stroke: var(--primary_bg);
-  }
-  &-text {
-    font-size: 0.75rem;
-    text-anchor: middle;
-    fill: var(--default_text);
-  }
-}
-
-.#{$prefix}-circle-pb {
-  display: flex;
-  align-items: center;
-}
-
-.#{$prefix}-pb-top-bottom {
-  align-items: unset;
-  flex-direction: column;
-}
-
-.#{$prefix}-determ-pb-circle {
-  @include determ-pb(default);
-}
-
-.#{$prefix}-determ-pb-circle-small {
-  @include determ-pb(small);
-}
-
-.#{$prefix}-determ-pb-circle-large {
-  @include determ-pb(large);
-}
-
-.#{$prefix}-indeterm-pb-circle {
-  @include indeter-pb(default);
-}
-
-.#{$prefix}-indeterm-pb-circle-small {
-  @include indeter-pb(small);
-}
-
-.#{$prefix}-indeterm-pb-circle-large {
-  @include indeter-pb(large);
-}
-
-.#{$prefix}-indeterm-pb-linear {
-  position: relative;
-  .#{$prefix}-linear {
-    height: 4px;
-    width: 100%;
-    fill: none;
-    &-line {
-      stroke: var(--primary_bg);
-      stroke-width: 0.25rem;
-    }
-
-    &-bgline {
       stroke: var(--default_bg_high);
     }
 
-    &-mainline-one {
-      animation: stroke-dash-linear 4s ease-in-out infinite;
+    > .pb-circle-outer {
+      transition: stroke-dashoffset 850ms ease-in-out 0s;
     }
+    fill: none;
+  }
+
+  &-text {
+    font-size: 0.75rem;
+    text-anchor: middle;
+    color: var(--default_text);
+  }
+}
+
+@mixin pb_linear() {
+  height: 4px;
+  width: 100%;
+  fill: none;
+  &-line {
+    stroke: var(--primary_bg);
+    stroke-width: 0.25rem;
+  }
+
+  &-bgline {
+    stroke: var(--default_bg_high);
+  }
+
+  &-mainline {
+    transition: width 1s ease-in-out 0s;
+  }
+
+  &-mainline-one {
+    animation: stroke-dash-linear 4s ease-in-out infinite;
+  }
+}
+
+.#{$prefix}-pb-label-leftRight {
+  display: flex;
+  .#{$prefix}-pb-label-content {
+    display: flex;
+    .#{$prefix}-pb-label-text {
+      align-self: center;
+    }
+  }
+}
+
+.#{$prefix}-pb-circle {
+  @include pb-utility(default);
+  @include pb_circle(default);
+}
+
+.#{$prefix}-pb-circle-small {
+  @include pb-utility(small);
+  @include pb_circle(small);
+}
+
+.#{$prefix}-pb-circle-large {
+  @include pb-utility(large);
+  @include pb_circle(large);
+}
+
+.#{$prefix}-pb-linear-wrapper {
+  position: relative;
+  .#{$prefix}-pb-linear {
+    @include pb_linear();
+
+    &-label,
+    &-subtext {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--default_text);
+      &-value {
+        float: right;
+      }
+    }
+
     &-mainline-two {
       animation: stroke-dash-one-linear 4s ease-in-out infinite;
     }
@@ -236,6 +189,16 @@
 
     &-dot-three {
       animation: stroke-dot-three-linear 4s ease-in infinite;
+    }
+  }
+}
+
+.#{$prefix}-pb-circle-wrapper {
+  .#{$prefix}-pb-label-content {
+    .#{$prefix}-pb-label-text {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--default_text);
     }
   }
 }

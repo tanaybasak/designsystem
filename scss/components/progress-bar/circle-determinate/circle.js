@@ -1,4 +1,5 @@
 window.patron.progressbar('#pbar-circle-determ', {
   determinate: true,
-  linear: false
+  linear: false,
+  value: 0.5
 });
