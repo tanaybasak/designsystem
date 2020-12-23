@@ -184,7 +184,7 @@
   &::before {
     transform: rotate(45deg);
   }
- 
+
   &::after {
     transform: rotate(-45deg);
   }
@@ -337,7 +337,6 @@ $inputColor-map: (
     }
   }
 }
-
 
 @mixin pb-utility($size) {
   position: relative;
