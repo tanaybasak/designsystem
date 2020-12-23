@@ -1,4 +1,4 @@
-window.patron.progressbar('#pbar-circle-indeterm', {
+window.patron.progressbar('#pbar-circle-indeterminate', {
   determinate: false,
   linear: false
 });

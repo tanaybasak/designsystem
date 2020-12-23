@@ -12,7 +12,7 @@ class ProgressBar {
     };
     this.selectors = {
       outerCircle: `.pb-circle-outer`,
-      progressCircle: `.${PREFIX}-pb-circle-svg-determ`,
+      progressCircle: `.${PREFIX}-pb-circle-determinate`,
       customContent: `.${PREFIX}-pb-circle-text`,
       linearProgressLine: `.${PREFIX}-pb-linear-mainline`
     };

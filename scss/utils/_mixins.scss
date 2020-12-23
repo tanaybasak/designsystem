@@ -392,7 +392,7 @@ $inputColor-map: (
 }
 
 @mixin pb_circle($size) {
-  &-svg-indeterm {
+  &-indeterminate {
     > .#{$prefix}-pb-bgcircle {
       stroke: var(--default_bg_high);
     }
@@ -431,7 +431,7 @@ $inputColor-map: (
     animation: spin 4.3s linear both infinite;
   }
 
-  &-svg-determ {
+  &-determinate {
     > .#{$prefix}-pb-bgcircle {
       fill: none;
       stroke: var(--default_bg_high);
