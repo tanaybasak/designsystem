@@ -6,7 +6,7 @@ class ProgressBar {
     this.element = element;
     this.state = {
       determinate: options.determinate || true,
-      progressValue: options.value || 0.5,
+      progressValue: options.value || 0,
       linear: options.linear || false,
       ...options
     };

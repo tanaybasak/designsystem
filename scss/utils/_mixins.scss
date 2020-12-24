@@ -459,7 +459,7 @@ $inputColor-map: (
 }
 
 @mixin pb_linear() {
-  height: 4px;
+  height: 0.25rem;
   width: 100%;
   fill: none;
   &-line {
