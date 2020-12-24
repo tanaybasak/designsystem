@@ -361,7 +361,7 @@ $inputColor-map: (
         stroke-width: 3;
       }
       stroke: var(--primary_bg);
-      stroke-linecap: round;
+      stroke-linecap: butt;
     }
 
     > .dot {
@@ -438,6 +438,8 @@ $inputColor-map: (
 
     > .pb-circle-outer {
       transition: stroke-dashoffset 850ms ease-in-out 0s;
+      transform: rotate(-90deg);
+      transform-origin: 100% 100%;
     }
     fill: none;
   }
@@ -463,7 +465,8 @@ $inputColor-map: (
   }
 
   &-mainline {
-    transition: pb-linear 1s ease-in-out 0s;
+    transition: pb-linear 300ms ease-in-out;
+    stroke-dasharray: 100;
   }
 
   &-mainline-one {

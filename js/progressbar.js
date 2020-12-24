@@ -36,10 +36,10 @@ class ProgressBar {
   linearDeterminate() {
     const value = this.state.progressValue;
     const computedValue = value > 1 ? 1 : value;
-    const finalVal = computedValue * 100 + '%';
+    const finalVal = 100 - computedValue * 100;
     setAttribute(
       this.element.querySelector(this.selectors.linearProgressLine),
-      'x2',
+      'stroke-dashoffset',
       finalVal
     );
   }
@@ -68,7 +68,7 @@ class ProgressBar {
     setAttribute(
       this.element.querySelector(this.selectors.outerCircle),
       'stroke-dashoffset',
-      progressOffset
+      -progressOffset
     );
 
     setAttribute(
