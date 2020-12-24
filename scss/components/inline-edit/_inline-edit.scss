@@ -7,6 +7,10 @@
  */
 
 .#{$prefix}-inline {
+  &-text {
+    padding-right: 2rem;
+  }
+
   &-overlay {
     .#{$prefix}-overlay-container.#{$prefix}-overlay-container-show {
       box-shadow: none;
@@ -20,14 +24,14 @@
     line-height: 1.125rem;
     box-shadow: 0 0.25rem 0.5rem 0.15rem var(--default_shadow);
     background-color: var(--default_bg);
-    padding: 0.75rem;
+    padding: 0.5rem 1rem;
     word-break: break-word;
     color: var(--danger_text);
   }
 
   &-loader {
     top: 0.75rem;
-    left: 9rem;
+    left: 10.5rem;
     position: absolute;
   }
 
