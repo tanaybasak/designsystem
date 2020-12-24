@@ -361,7 +361,6 @@ $inputColor-map: (
         stroke-width: 3;
       }
       stroke: var(--primary_bg);
-      stroke-linecap: butt;
     }
 
     > .dot {
@@ -394,6 +393,10 @@ $inputColor-map: (
   &-indeterminate {
     > .#{$prefix}-pb-bgcircle {
       stroke: var(--default_bg_high);
+    }
+
+    > circle {
+      stroke-linecap: round;
     }
 
     > .#{$prefix}-pb-maincircle {
@@ -434,6 +437,10 @@ $inputColor-map: (
     > .#{$prefix}-pb-bgcircle {
       fill: none;
       stroke: var(--default_bg_high);
+    }
+
+    > circle {
+      stroke-linecap: butt;
     }
 
     > .pb-circle-outer {
