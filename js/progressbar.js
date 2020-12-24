@@ -5,21 +5,30 @@ class ProgressBar {
   constructor(element, options) {
     this.element = element;
     this.state = {
-      determinate: options.determinate || false,
-      progressValue: options.value,
-      linear: options.linear,
+      determinate: options.determinate || true,
+      progressValue: options.value || 0.5,
+      linear: options.linear || false,
       ...options
     };
     this.selectors = {
       outerCircle: `.pb-circle-outer`,
       progressCircle: `.${PREFIX}-pb-circle-determinate`,
+      linearElement: `.${PREFIX}-pb-linear-determinate`,
       customContent: `.${PREFIX}-pb-circle-text`,
       linearProgressLine: `.${PREFIX}-pb-linear-mainline`
     };
 
-    if (this.state.linear && this.state.determinate) {
+    if (
+      this.state.linear &&
+      this.state.determinate &&
+      this.element.querySelector(this.selectors.linearElement)
+    ) {
       this.linearDeterminate();
-    } else if (!this.state.linear && this.state.determinate) {
+    } else if (
+      !this.state.linear &&
+      this.state.determinate &&
+      this.element.querySelector(this.selectors.progressCircle)
+    ) {
       this.circleDeterminate();
     }
   }
@@ -30,7 +39,7 @@ class ProgressBar {
     const finalVal = computedValue * 100 + '%';
     setAttribute(
       this.element.querySelector(this.selectors.linearProgressLine),
-      'x1',
+      'x2',
       finalVal
     );
   }
