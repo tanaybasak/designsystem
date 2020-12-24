@@ -465,7 +465,7 @@ $inputColor-map: (
   }
 
   &-mainline {
-    transition: pb-linear 300ms ease-in-out;
+    transition: stroke-dashoffset 300ms ease-in-out;
     stroke-dasharray: 100;
   }
 
