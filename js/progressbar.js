@@ -68,7 +68,7 @@ class ProgressBar {
     setAttribute(
       this.element.querySelector(this.selectors.outerCircle),
       'stroke-dashoffset',
-      -progressOffset
+      progressOffset
     );
 
     setAttribute(
