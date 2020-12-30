@@ -1,35 +1,34 @@
 .toc-affix {
-    position: fixed;
-    top: 400px;
-    right: 27px;
-    
+  position: fixed;
+  top: 400px;
+  right: 27px;
+}
+
+.toc {
+  list-style: none;
+  border-left: 1px solid var(--primary_bg);
+
+  a {
+    font-size: 1rem;
+    color: var(--default_text_high);
+    &:hover {
+      text-decoration: none;
+      color: var(--primary_bg);
+    }
   }
-  
-  .toc {
-    list-style: none;
-    border-left: 1px solid $primary-color;
-  
+
+  li {
+    padding: 10px 10px 8px;
+    border-left: 2px solid var(--primary_border);
+  }
+
+  li:hover,
+  .isActive {
+    border-left: 3px solid var(--primary_bg);
+    position: relative;
+    left: -2px;
     a {
-      font-size: 1rem;
-      color: $black-555;
-      &:hover {
-        text-decoration: none;
-        color: $primary-color;
-      }
-    }
-  
-    li {
-      padding: 10px 10px 8px;
-      border-left: 2px solid #fff;
-    }
-  
-    li:hover,
-    .isActive {
-      border-left: 3px solid $primary-color;
-      position: relative;
-      left: -2px;
-      a {
-        text-decoration: none;
-      }
+      text-decoration: none;
     }
   }
+}
