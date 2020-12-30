@@ -1,0 +1,35 @@
+.toc-affix {
+    position: fixed;
+    top: 400px;
+    right: 27px;
+    
+  }
+  
+  .toc {
+    list-style: none;
+    border-left: 1px solid $primary-color;
+  
+    a {
+      font-size: 1rem;
+      color: $black-555;
+      &:hover {
+        text-decoration: none;
+        color: $primary-color;
+      }
+    }
+  
+    li {
+      padding: 10px 10px 8px;
+      border-left: 2px solid #fff;
+    }
+  
+    li:hover,
+    .isActive {
+      border-left: 3px solid $primary-color;
+      position: relative;
+      left: -2px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
