@@ -1,9 +1,3 @@
-// .toc-affix {
-//   position: fixed;
-//   top: 400px;
-//   right: 27px;
-// }
-
 .toc {
   list-style: none;
   border-left: 1px solid var(--primary_bg);
@@ -22,8 +16,8 @@
     border-left: 2px solid var(--primary_border);
   }
 
-  li:hover,
-  .isActive {
+  .isActive,
+  li:hover {
     border-left: 3px solid var(--primary_bg);
     position: relative;
     left: -2px;
