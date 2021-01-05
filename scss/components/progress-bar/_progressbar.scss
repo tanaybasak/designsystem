@@ -2,9 +2,7 @@
   display: flex;
   .#{$prefix}-pb-label-content {
     display: flex;
-    .#{$prefix}-pb-label-text {
-      align-self: center;
-    }
+    align-items: center;
   }
 }
 

@@ -340,6 +340,16 @@ $inputColor-map: (
 
 @mixin pb-utility($size) {
   position: relative;
+  @if ($size==default) {
+    height: $loader-width-medium;
+    width: $loader-width-medium;
+  } @else if ($size==small) {
+    height: $loader-width-small;
+    width: $loader-width-small;
+  } @else if ($size==large) {
+    height: $loader-width-large;
+    width: $loader-width-large;
+  }
   > svg {
     @if ($size==default) {
       height: $loader-width-medium;
