@@ -3,7 +3,7 @@
   .#{$prefix}-pb-label-content {
     display: flex;
     align-items: center;
-    display: inline-block;
+    width: 70%;
   }
 }
 
@@ -31,11 +31,6 @@
     &-subtext {
       font-size: 0.75rem;
       font-weight: 400;
-      height: 16px;
-      width: 70%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       color: var(--default_text);
       &-value {
         float: right;
@@ -60,6 +55,12 @@
 
     &-dot-three {
       animation: stroke-dot-three-linear 4s ease-in infinite;
+    }
+  }
+
+  .#{$prefix}-pb-linear-label {
+    .#{$prefix}-pb-linear-label-content {
+      display: inline-block;
     }
   }
   .#{$prefix}-pb-linear-ellipsis {
@@ -87,7 +88,6 @@
     height: 16px;
   }
 }
-
 
 @keyframes stroke-dash {
   0% {
