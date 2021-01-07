@@ -455,7 +455,7 @@ $inputColor-map: (
 
     > .pb-circle-outer {
       transition: stroke-dashoffset 850ms ease-in-out 0s;
-      transform: rotate(-90deg);
+      // transform: rotate(-90deg);
       transform-origin: 100% 100%;
     }
     fill: none;
