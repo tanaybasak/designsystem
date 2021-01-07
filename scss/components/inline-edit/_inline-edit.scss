@@ -1,7 +1,7 @@
 /******************************************************************
- * #{$prefix} Confidential
+ * HCL Confidential
  *
- * Copyright #{$prefix} Technologies Ltd. 2019 All rights reserved.
+ * Copyright HCL Technologies Ltd. 2019 All rights reserved.
  *
  *******************************************************************
  */
@@ -58,10 +58,22 @@
     }
   }
 
-  .#{$prefix}-inline-editor-loader {
-    top: 0.75rem;
-    right: 0.75rem;
-    position: absolute;
-    background-color: var(--input_bg);
+  .#{$prefix}-inline-editor-component {
+    position: relative;
+
+    .#{$prefix}-inline-editor-component-dt-picker {
+      width: 9.4375rem;
+
+      .hcl-form-group {
+        margin-bottom: 0;
+      }
+    }
+
+    .#{$prefix}-inline-editor-loader {
+      top: 0.75rem;
+      right: 0.75rem;
+      position: absolute;
+      background-color: var(--input_bg);
+    }
   }
 }
