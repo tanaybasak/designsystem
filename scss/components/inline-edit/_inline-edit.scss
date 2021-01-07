@@ -61,7 +61,7 @@
   .#{$prefix}-inline-editor-component {
     position: relative;
 
-    .#{$prefix}-inline-editor-component-dt-picker {
+    &.#{$prefix}-inline-editor-component-dt-picker {
       width: 9.4375rem;
 
       .hcl-form-group {
