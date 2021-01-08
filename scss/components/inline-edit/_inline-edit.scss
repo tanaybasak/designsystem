@@ -68,6 +68,9 @@
         margin-bottom: 0;
       }
     }
+    &.#{$prefix}-inline-editor-component-text-input {
+      padding-bottom: 0.125rem;
+    }
 
     .#{$prefix}-inline-editor-loader {
       top: 0.75rem;
