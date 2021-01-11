@@ -1,5 +1,5 @@
 .#{$prefix}-pb-label-inline {
-  display: flex;
+  display: inline-flex;
   .#{$prefix}-pb-label-content {
     display: flex;
     align-items: center;
@@ -74,6 +74,7 @@
 
 .#{$prefix}-pb-circle-wrapper {
   .#{$prefix}-pb-label-content {
+    width: 70%;
     .#{$prefix}-pb-label-text {
       font-size: 0.75rem;
       font-weight: 400;
@@ -81,7 +82,6 @@
     }
   }
   .#{$prefix}-pb-circle-ellipsis {
-    width: 70%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
