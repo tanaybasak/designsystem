@@ -48,13 +48,6 @@
         height: auto;
       }
     }
-    @include media-breakpoint-between(xs, sm) {
-      &.#{$prefix}-modal-container {
-        &-ghost {
-          width: 50% !important;
-        }
-      }
-    }
   }
 
   &-header {
