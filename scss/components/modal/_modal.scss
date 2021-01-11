@@ -26,7 +26,9 @@
 
     &-ghost {
       border-top: 0.25rem solid transparent;
-      max-width: 80rem !important;
+      width: auto !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
     }
 
     position: relative;
