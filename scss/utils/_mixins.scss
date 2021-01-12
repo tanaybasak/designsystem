@@ -361,7 +361,7 @@ $inputColor-map: (
       height: $loader-width-large;
       width: $loader-width-large;
     }
-
+    transform: rotate(-90deg);
     > circle {
       @if ($size== 'default') {
         stroke-width: 4;
