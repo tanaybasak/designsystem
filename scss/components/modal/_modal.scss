@@ -41,11 +41,10 @@
         max-width: 48rem;
         max-height: 90%;
         height: auto;
-      }
-
-     &-ghost {
-        border-top: 0.25rem solid transparent;
-        width: auto;
+        &.#{$prefix}-modal-container-ghost {
+          border-top: 0.25rem solid transparent;
+          width: auto;
+        }
       }
     }
   }
