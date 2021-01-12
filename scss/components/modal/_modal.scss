@@ -23,10 +23,11 @@
     &-warning {
       border-top: 0.25rem solid var(--warning_border);
     }
-
-    &-ghost {
-      border-top: 0.25rem solid transparent;
-      width: auto !important;
+    &.#{$prefix}-modal-container-lg {
+      &-ghost {
+        border-top: 0.25rem solid transparent;
+        width: auto;
+      }
     }
 
     position: relative;
