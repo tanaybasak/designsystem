@@ -23,13 +23,10 @@
     &-warning {
       border-top: 0.25rem solid var(--warning_border);
     }
-
     position: relative;
-
     border-top: 0.25rem solid var(--secondary_border);
     background-color: var(--default_bg);
     box-shadow: 0 0.75rem 1.5rem 0 var(--default_shadow);
-
     width: 100%;
     height: 100%;
     display: flex;
