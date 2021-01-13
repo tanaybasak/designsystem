@@ -95,8 +95,8 @@ $animation-duration: 220ms;
       }
 
       &:focus {
-        outline-offset: -1px;
-        outline: 1px solid var(--default_border_xhigh);
+        outline-offset: -0.0625rem;
+        outline: 0.0625rem solid var(--default_border_xhigh);
       }
     }
   }
@@ -139,10 +139,10 @@ $animation-duration: 220ms;
         }
 
         &:focus {
-          outline-offset: -1px;
+          outline-offset: -0.0625rem;
           text-decoration: none;
           color: var(--default_text);
-          outline: 1px solid var(--default_border_xhigh);
+          outline: 0.0625rem solid var(--default_border_xhigh);
         }
 
         .#{$prefix}-sidebar-icon {
