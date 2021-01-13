@@ -340,6 +340,16 @@ $inputColor-map: (
 
 @mixin pb-utility($size) {
   position: relative;
+  @if ($size==default) {
+    height: $loader-width-medium;
+    width: $loader-width-medium;
+  } @else if ($size==small) {
+    height: $loader-width-small;
+    width: $loader-width-small;
+  } @else if ($size==large) {
+    height: $loader-width-large;
+    width: $loader-width-large;
+  }
   > svg {
     @if ($size==default) {
       height: $loader-width-medium;
@@ -351,7 +361,7 @@ $inputColor-map: (
       height: $loader-width-large;
       width: $loader-width-large;
     }
-
+    transform: rotate(-90deg);
     > circle {
       @if ($size== 'default') {
         stroke-width: 4;
@@ -445,7 +455,6 @@ $inputColor-map: (
 
     > .pb-circle-outer {
       transition: stroke-dashoffset 850ms ease-in-out 0s;
-      transform: rotate(-90deg);
       transform-origin: 100% 100%;
     }
     fill: none;
