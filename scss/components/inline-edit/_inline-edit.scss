@@ -68,13 +68,16 @@
         margin-bottom: 0;
       }
     }
+
     &.#{$prefix}-inline-editor-component-text-input {
       padding-bottom: 0.125rem;
     }
 
     .#{$prefix}-inline-editor-loader {
-      top: 0.75rem;
+      top: 0;
       right: 0.75rem;
+      align-items: center;
+      height: calc(100% - 0.125rem);
       position: absolute;
       background-color: var(--input_bg);
     }
