@@ -74,8 +74,10 @@
     }
 
     &.#{$prefix}-inline-editor-loader-active {
-      .hcl-dropdown .hcl-dropdown-toggle:after {
-        visibility: hidden;
+      .hcl-dropdown .hcl-dropdown-toggle {
+        &::after {
+          visibility: hidden;
+        }
       }
     }
 
