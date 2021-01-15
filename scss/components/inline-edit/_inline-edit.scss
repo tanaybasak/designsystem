@@ -68,15 +68,25 @@
         margin-bottom: 0;
       }
     }
+
     &.#{$prefix}-inline-editor-component-text-input {
       padding-bottom: 0.125rem;
     }
 
+    &.#{$prefix}-inline-editor-loader-active {
+      .hcl-dropdown .hcl-dropdown-toggle {
+        &::after {
+          visibility: hidden;
+        }
+      }
+    }
+
     .#{$prefix}-inline-editor-loader {
-      top: 0.75rem;
+      top: 0;
       right: 0.75rem;
+      align-items: center;
+      height: 100%;
       position: absolute;
-      background-color: var(--input_bg);
     }
   }
 }
