@@ -82,11 +82,12 @@ $animation-duration: 220ms;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: transform $animation-duration ease-in-out;
-
-      fill: var(--default_icon);
-
       display: flex;
+
+      svg {
+        transition: transform $animation-duration ease-in-out;
+        fill: var(--default_icon);
+      }
 
       &:hover {
         color: var(--default_icon_high);
@@ -94,7 +95,8 @@ $animation-duration: 220ms;
       }
 
       &:focus {
-        outline: none;
+        outline-offset: -0.0625rem;
+        outline: 0.0625rem solid var(--default_border_xhigh);
       }
     }
   }
@@ -137,10 +139,10 @@ $animation-duration: 220ms;
         }
 
         &:focus {
-          outline-offset: -1px;
+          outline-offset: -0.0625rem;
           text-decoration: none;
           color: var(--default_text);
-          outline: 1px solid var(--default_border_xhigh);
+          outline: 0.0625rem solid var(--default_border_xhigh);
         }
 
         .#{$prefix}-sidebar-icon {
@@ -240,7 +242,9 @@ $animation-duration: 220ms;
       }
 
       .#{$prefix}-sidebar-title-toggle {
-        transform: rotate(180deg);
+        svg {
+          transform: rotate(180deg);
+        }
       }
     }
 
