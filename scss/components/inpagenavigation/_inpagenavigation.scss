@@ -1,7 +1,10 @@
 .#{$prefix}-inpage-navigation {
   list-style: none;
-  border-left: 0.0625rem solid var(--primary_bg);
-
+  border-left: 0.0625rem solid var(--interactive_border);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 200px;
   a {
     font-size: 1rem;
     color: var(--default_text_high);
@@ -16,9 +19,16 @@
     border-left: 0.125rem solid var(--primary_border);
   }
 
-  .isActive,
+  .isActive {
+    border-left: 0.3125rem solid var(--active_border);
+    position: relative;
+    left: -0.125rem;
+    a {
+      text-decoration: none;
+    }
+  }
     li:hover {
-    border-left: 0.1875rem solid var(--primary_bg);
+    border-left: 0.3125rem solid var(--interactive_border);
     position: relative;
     left: -0.125rem;
     a {
