@@ -16,16 +16,16 @@
     border-left: 0.125rem solid var(--primary_border);
   }
 
-  .isActive {
-    border-left: 0.3125rem solid var(--active_border);
-    position: relative;
-    left: -0.188rem;
-    a {
-      text-decoration: none;
-    }
-  }
   li:hover {
     border-left: 0.3125rem solid var(--interactive_border);
+  }
+
+  .isActive {
+    border-left: 0.3125rem solid var(--active_border);
+  }
+
+  .isActive,
+  li:hover {
     position: relative;
     left: -0.188rem;
     a {
