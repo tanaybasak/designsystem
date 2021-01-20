@@ -1,6 +1,6 @@
 .#{$prefix}-inpage-navigation {
   list-style: none;
-  border-left: 0.0625rem solid var(--interactive_border);
+  border-left: 0.0625rem solid var(--primary_bg);
 
   a {
     font-size: 1rem;
@@ -13,20 +13,12 @@
 
   li {
     padding: 0.625rem 0.625rem 0.5rem;
-    border-left: 0.125rem solid var(--interactive_border);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 200px;
+    border-left: 0.125rem solid var(--primary_border);
   }
 
-  li .isActive {
-    border-left: 0.313rem solid var(--active_border);
-    position: relative;
-    left: -0.219rem;
-  }
+  .isActive,
   li:hover {
-    border-left: 0.313rem solid var(--primary_bg);
+    border-left: 0.1875rem solid var(--primary_bg);
     position: relative;
     left: -0.125rem;
     a {
