@@ -1,0 +1,50 @@
+.#{$prefix}-codesnippet {
+    font-family: 'Roboto Mono';
+    box-shadow: inset 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+  
+    &-wrapper {
+      position: relative;
+    }
+  
+    &-copy {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      background-color: transparent;
+      cursor: pointer;
+      padding: 10px;
+    }
+  
+    .container_editor_line_number {
+      counter-increment: line-counter;
+    }
+  
+    .container_editor_line_number:before {
+      content: counter(line-counter);
+      /* padding: 0 1rem; */
+      opacity: 0.5;
+      width: 2rem;
+      text-align: right;
+      margin-left: auto;
+      /* padding-left: unset; */
+      display: inline-block;
+      padding-right: 1rem;
+    }
+  
+    pre {
+      counter-reset: line-counter;
+    }
+  
+    .npm__react-simple-code-editor__textarea {
+      padding-left: 2.5em !important;
+      &:focus {
+        outline: none !important;
+      }
+    }
+  
+    .no-cursor {
+      color: transparent !important;
+    }
+  }
+  
