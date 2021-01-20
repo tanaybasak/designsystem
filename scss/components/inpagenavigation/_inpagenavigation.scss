@@ -14,10 +14,6 @@
   li {
     padding: 0.625rem 0.625rem 0.5rem;
     border-left: 0.125rem solid var(--primary_border);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 200px;
   }
 
   .isActive {
