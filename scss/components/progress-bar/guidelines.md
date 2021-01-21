@@ -1,14 +1,12 @@
 Depending upon the estimated time to complete the process, we should use different ways to indicate progress. 
 
--less than 1 second: Use a simple animation to pass the time, use skeleton screens to load, no need to show a progress indicator. 
+- less than 1 second: Use a simple animation to pass the time, use skeleton screens to load, no need to show a progress indicator. 
 
--1 to 5 seconds: It is okay to use a progress indicator without any other information, determinate if possible, or else indeterminate. 
+- 1 to 5 seconds: It is okay to use a progress indicator without any other information, determinate if possible, or else indeterminate. 
 
--5 to 10 seconds: Use a determinate progress indicator with progress percentage (20%) or value (2 of 5 items). If not possible, show an indeterminate indicator with a general estimate (“please wait up to ten seconds for X to happen”) 
+- 5 to 10 seconds: Use a determinate progress indicator with progress percentage (20%) or value (2 of 5 items). If not possible, show an indeterminate indicator with a general estimate (“please wait up to ten seconds for X to happen”) 
 
--More than 10 seconds: Try to break up the process into smaller stages. Provide extra content (more information about the process, tips or trivia) to pass time. Definitely provide an estimated time. Try to allow the user to perform other tasks while progress happens. 
-
- 
+- More than 10 seconds: Try to break up the process into smaller stages. Provide extra content (more information about the process, tips or trivia) to pass time. Definitely provide an estimated time. Try to allow the user to perform other tasks while progress happens. 
 
 ##### Types of Progress Bars:
 
@@ -21,10 +19,10 @@ Depending upon the estimated time to complete the process, we should use differe
  
 **Circular progress indicators:** Circular indicators come in 3 sizes:  
 
--Inline or small ones are to be used inside buttons, tags, text, etc.  
+- Inline or small ones are to be used inside buttons, tags, text, etc.  
 
--Component or medium ones can be used to show loading of small to medium content areas. 
+- Component or medium ones can be used to show loading of small to medium content areas. 
 
--Page or large ones are used to show the loading of a full page area. 
+- Page or large ones are used to show the loading of a full page area. 
 
 **Note:** Avoid filling the page with too many loading indicators, use skeleton states or loading states for that. 
