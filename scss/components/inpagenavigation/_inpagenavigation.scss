@@ -1,6 +1,6 @@
 .#{$prefix}-inpage-navigation {
   list-style: none;
-  border-left: 0.0625rem solid var(--primary_bg);
+  border-left: 0.0625rem solid var(--interactive_border);
 
   a {
     font-size: 1rem;
@@ -16,11 +16,18 @@
     border-left: 0.125rem solid var(--primary_border);
   }
 
+  li:hover {
+    border-left: 0.3125rem solid var(--interactive_border);
+  }
+
+  .isActive {
+    border-left: 0.3125rem solid var(--active_border);
+  }
+
   .isActive,
   li:hover {
-    border-left: 0.1875rem solid var(--primary_bg);
     position: relative;
-    left: -0.125rem;
+    left: -0.1875rem;
     a {
       text-decoration: none;
     }
