@@ -1,13 +1,13 @@
 .#{$prefix}-codesnippet {
   font-family: 'Roboto Mono';
-  box-shadow: inset 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0.125rem 0.125rem 0.3125rem 0.125rem rgba(0, 0, 0, 0.2);
   overflow: auto;
 
   &-wrapper {
     position: relative;
     box-shadow: inset 2rem 0 0 0 var(--default_bg_high);
     background-color: var(--default_bg);
-    border: 1px solid var(--default_border_xlow);
+    border: 0.0625rem solid var(--default_border_xlow);
   }
 
   &-copy {
@@ -16,7 +16,6 @@
     top: 0;
     background-color: transparent;
     cursor: pointer;
-    padding: 10;
   }
 
   .container_editor_line_number {
@@ -53,7 +52,7 @@
   }
 
   .hcl-btn {
-    padding: 10 12px !important;
+    padding: 0.625rem 0.75rem !important;
     margin: 1rem !important;
   }
 }
