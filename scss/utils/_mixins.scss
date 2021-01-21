@@ -390,8 +390,7 @@ $inputColor-map: (
 }
 
 @mixin inpage_navigation($type) {
-  list-style: none;
-  border-left: 0.0625rem solid var(--interactive_border);
+
 
   a {
     font-size: 1rem;
@@ -413,6 +412,8 @@ $inputColor-map: (
     }
   }
   @if ($type == 'default') {
+    list-style: none;
+    border-left: 0.0625rem solid var(--interactive_border);
     li {
       border-left: 0.125rem solid var(--primary_border);
     }
@@ -426,6 +427,8 @@ $inputColor-map: (
     }
   }
   @if ($type == 'inverted') {
+    list-style: none;
+    border-left: 0.0625rem solid var(--interactive_border);
     li {
       border-right: 0.125rem solid var(--primary_border);
     }
