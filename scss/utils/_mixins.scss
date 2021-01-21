@@ -428,7 +428,7 @@ $inputColor-map: (
   }
   @if ($type == 'inverted') {
     list-style: none;
-    border-left: 0.0625rem solid var(--interactive_border);
+    border-right: 0.0625rem solid var(--interactive_border);
     li {
       border-right: 0.125rem solid var(--primary_border);
     }
