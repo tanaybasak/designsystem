@@ -5,7 +5,9 @@
   
     &-wrapper {
       position: relative;
-      box-shadow: inset 32px 0px 0px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 2rem 0px 0px 0px var(--default_bg_high);
+      background-color: var(--default_bg);
+      border: 1px solid var(--default_border_xlow);
     }
   
     &-copy {
@@ -23,12 +25,10 @@
   
     .container_editor_line_number:before {
       content: counter(line-counter);
-      /* padding: 0 1rem; */
       opacity: 0.5;
       width: 2rem;
       text-align: right;
       margin-left: auto;
-      /* padding-left: unset; */
       display: inline-block;
       padding-right: 1rem;
     }
