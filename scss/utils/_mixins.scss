@@ -389,6 +389,57 @@ $inputColor-map: (
   }
 }
 
+@mixin inpage_navigation($type) {
+  list-style: none;
+  border-left: 0.0625rem solid var(--interactive_border);
+
+  a {
+    font-size: 1rem;
+    color: var(--default_text_high);
+    &:hover {
+      text-decoration: none;
+      color: var(--primary_bg);
+    }
+  }
+  li {
+    padding: 0.625rem 0.625rem 0.5rem;
+  }
+  .isActive,
+  li:hover {
+    position: relative;
+    left: -0.188rem;
+    a {
+      text-decoration: none;
+    }
+  }
+  @if ($type == 'default') {
+    li {
+      border-left: 0.125rem solid var(--primary_border);
+    }
+
+    li:hover {
+      border-left: 0.3125rem solid var(--interactive_border);
+    }
+
+    .isActive {
+      border-left: 0.3125rem solid var(--active_border);
+    }
+  }
+  @if ($type == 'inverted') {
+    li {
+      border-right: 0.125rem solid var(--primary_border);
+    }
+
+    li:hover {
+      border-right: 0.3125rem solid var(--interactive_border);
+    }
+
+    .isActive {
+      border-right: 0.3125rem solid var(--active_border);
+    }
+  }
+}
+
 @mixin pb_circle($size) {
   &-indeterminate {
     > .#{$prefix}-pb-bgcircle {
