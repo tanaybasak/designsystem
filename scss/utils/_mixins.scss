@@ -434,6 +434,7 @@ $inputColor-map: (
     border-right: 0.0625rem solid var(--interactive_border);
     li {
       border-right: 0.125rem solid var(--primary_border);
+      text-align: left;
     }
 
     li:hover {
