@@ -5,6 +5,7 @@
   
     &-wrapper {
       position: relative;
+      box-shadow: inset 32px 0px 0px 0px rgba(0, 0, 0, 0.2);
     }
   
     &-copy {
@@ -46,5 +47,17 @@
     .no-cursor {
       color: transparent !important;
     }
+
+    
+    .hcl-btn-icon{
+        margin-left: 0 !important;
+        
+    }
+    
+    .hcl-btn{
+        padding: 10px 12px !important;
+        margin: 1rem !important
+    }
+    
   }
   
