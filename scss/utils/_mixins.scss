@@ -400,13 +400,13 @@ $inputColor-map: (
       color: var(--primary_bg);
     }
   }
+  
   li {
-    padding: 0.625rem 0.625rem 0.5rem;
     a {
-      padding: 0.4375rem;
+      padding: 0.625rem 0.625rem 0.5rem;
     }
   }
- 
+
   @if ($type == 'default') {
     border-left: 0.0625rem solid var(--interactive_border);
     li {
