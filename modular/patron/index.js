@@ -22,7 +22,7 @@ import Tile from '../../js/tile';
 import Toggle from '../../js/toggle';
 import TimePicker from '../../js/timePicker';
 import Overlay from '../../js/overlay';
-import ProgressBar from '../../js/progressbar';
+import ProgressIndicator from '../../js/progressindicator';
 import { isElement } from '../../js/utils/dom';
 // Demo Scripts
 import '../../js/toast';
@@ -47,7 +47,7 @@ const ComponentList = {
   tile: Tile,
   toggle: Toggle,
   timePicker: TimePicker,
-  progressbar: ProgressBar,
+  progressindicator: ProgressIndicator,
   overlay: Overlay
 };
 
@@ -141,8 +141,8 @@ export const components = {
   timePicker: function (selector, options) {
     attachElements(selector, options, TimePicker);
   },
-  progressbar: function (selector, options) {
-    attachElements(selector, options, ProgressBar);
+  progressindicator: function (selector, options) {
+    attachElements(selector, options, ProgressIndicator);
   },
   overlay: function (selector, options) {
     attachElements(selector, options, Overlay);

@@ -8,7 +8,7 @@ Depending upon the estimated time to complete the process, we should use differe
 
 - More than 10 seconds: Try to break up the process into smaller stages. Provide extra content (more information about the process, tips or trivia) to pass time. Definitely provide an estimated time. Try to allow the user to perform other tasks while progress happens. 
 
-##### Types of Progress Bars:
+##### Types of Progress Indicators:
 
 **Determinate progress indicators:** They show the ratio or percentage of progress of a process, the amount and rate of completion gives the user an estimate of how much is done and how soon it might finish. Always use determinate progress indicators wherever the amount of progress is known. 
 

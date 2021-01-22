@@ -1,9 +1,9 @@
 import './index.scss';
 import { isElement } from '../../../js/utils/dom';
-import ProgressBar from '../../../js/progressbar';
+import ProgressIndicator from '../../../js/progressindicator';
 
 const ComponentList = {
-  progressbar: ProgressBar
+  progressindicator: ProgressIndicator
 };
 
 for (const componentName in ComponentList) {
@@ -30,8 +30,8 @@ const attachElements = (selector, options, Plugin) => {
 };
 
 export const components = {
-  progressbar: function (selector, options) {
-    attachElements(selector, options, ProgressBar);
+  progressindicator: function (selector, options) {
+    attachElements(selector, options, ProgressIndicator);
   }
 };
 
