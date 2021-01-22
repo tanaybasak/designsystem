@@ -1,63 +1,65 @@
 .#{$prefix}-codesnippet-wrapper {
-    position: relative;
-    box-shadow: inset 3rem 0 0 0 var(--default_bg_high);
-    background-color: var(--default_bg);
-    border: 0.0625rem solid var(--default_border_xlow);
+  position: relative;
+  box-shadow: inset 2.375rem 0 0 0 var(--default_bg_high);
+  background-color: var(--default_bg);
+  border: 0.0625rem solid var(--default_border_xlow);
 
-    .#{$prefix}-codesnippet {
-        box-shadow: inset 0.125rem 0.125rem 0.3125rem 0.125rem rgba(0, 0, 0, 0.2);
-        overflow: auto;
+  .#{$prefix}-codesnippet {
+    box-shadow: inset 0.125rem 0.125rem 0.3125rem 0.125rem rgba(0, 0, 0, 0.2);
+    overflow: auto;
 
-        .npm__react-simple-code-editor__textarea {
-            width: calc(100% - 2.5rem) !important;
-            left: 2.5rem !important;
+    .npm__react-simple-code-editor__textarea {
+      width: calc(100% - 2.375rem) !important;
+      left: 2.375rem !important;
+      padding: 0.625rem 0.3125rem !important;
 
-            &.no-cursor {
-                color: transparent !important;
-            }
+      &.no-cursor {
+        color: transparent !important;
+      }
 
-            &:focus {
-                outline: none !important;
-            }
-        }
-
-        pre {
-            counter-reset: line-counter;
-            left: 2.5rem !important;
-            width: calc(100% - 2.5rem) !important;
-
-            .container_editor_line_number {
-                counter-increment: line-counter;
-                position: relative;
-
-                &::before {
-                    content: counter(line-counter);
-                    opacity: 0.5;
-                    text-align: right;
-                    display: inline-block;
-                    position: absolute;
-                    left: -2.5rem;
-                    width: 2.5rem;
-                    padding-right: 10px;
-                }
-            }
-        }
-
-        .#{$prefix}-codesnippet-copy {
-            position: absolute;
-            right: 0;
-            top: 0;
-            background-color: transparent;
-            cursor: pointer;
-
-            &.#{$prefix}-btn {
-                padding: 0.625rem 0.75rem !important;
-                margin: 1rem !important;
-            }
-
-            .#{$prefix}-btn-icon {
-                margin-left: 0 !important;
-            }
-        }
+      &:focus {
+        outline: none !important;
+      }
     }
+
+    pre {
+      counter-reset: line-counter;
+      width: calc(100% - 2.375rem) !important;
+      left: 2.375rem !important;
+      padding: 0.625rem 0.3125rem !important;
+
+      .container_editor_line_number {
+        counter-increment: line-counter;
+        position: relative;
+
+        &::before {
+          content: counter(line-counter);
+          opacity: 0.5;
+          text-align: right;
+          display: inline-block;
+          position: absolute;
+          left: -3.125rem;
+          width: 2.375rem;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .#{$prefix}-codesnippet-copy {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: transparent;
+      cursor: pointer;
+
+      &.#{$prefix}-btn {
+        padding: 0.625rem 0.75rem !important;
+        margin: 1rem !important;
+      }
+
+      .#{$prefix}-btn-icon {
+        margin-left: 0 !important;
+      }
+    }
+  }
 }
