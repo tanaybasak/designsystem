@@ -1,7 +1,7 @@
 import { PREFIX } from './utils/config';
 import { setAttribute } from './utils/dom';
 
-class ProgressBar {
+class ProgressIndicator {
   constructor(element, options) {
     this.element = element;
     this.state = {
@@ -79,4 +79,4 @@ class ProgressBar {
   }
 }
 
-export default ProgressBar;
+export default ProgressIndicator;
