@@ -1,0 +1,58 @@
+.#{$prefix}-codesnippet {
+  font-family: 'Roboto Mono';
+  box-shadow: inset 0.125rem 0.125rem 0.3125rem 0.125rem rgba(0, 0, 0, 0.2);
+  overflow: auto;
+
+  &-wrapper {
+    position: relative;
+    box-shadow: inset 2rem 0 0 0 var(--default_bg_high);
+    background-color: var(--default_bg);
+    border: 0.0625rem solid var(--default_border_xlow);
+  }
+
+  &-copy {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .container_editor_line_number {
+    counter-increment: line-counter;
+  }
+
+  .container_editor_line_number::before {
+    content: counter(line-counter);
+    opacity: 0.5;
+    width: 2rem;
+    text-align: right;
+    margin-left: auto;
+    display: inline-block;
+    padding-right: 1rem;
+  }
+
+  pre {
+    counter-reset: line-counter;
+  }
+
+  .npm__react-simple-code-editor__textarea {
+    padding-left: 2.5rem !important;
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  .no-cursor {
+    color: transparent !important;
+  }
+
+  .hcl-btn-icon {
+    margin-left: 0 !important;
+  }
+
+  .hcl-btn {
+    padding: 0.625rem 0.75rem !important;
+    margin: 1rem !important;
+  }
+}
