@@ -361,6 +361,7 @@
   .#{$prefix}-data-table {
     .resizable.hovered {
       > span.hcl-data-table-resizable {
+        touch-action: none !important;
         span.resize-handle {
           user-select: none;
           display: inline-block;
