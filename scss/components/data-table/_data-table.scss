@@ -75,6 +75,7 @@
             z-index: 1;
             cursor: col-resize;
             background: transparent !important;
+            touch-action: none !important;
           }
 
           &:hover {
@@ -361,7 +362,6 @@
   .#{$prefix}-data-table {
     .resizable.hovered {
       > span.hcl-data-table-resizable {
-        touch-action: none !important;
         span.resize-handle {
           user-select: none;
           display: inline-block;
