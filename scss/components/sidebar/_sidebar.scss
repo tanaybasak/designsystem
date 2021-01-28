@@ -50,6 +50,8 @@ $animation-duration: 220ms;
     }
   }
 
+
+
   .#{$prefix}-sidebar-title {
     display: flex;
     justify-content: space-between;
@@ -59,7 +61,7 @@ $animation-duration: 220ms;
     width: 100%;
     border-bottom: var(--default_border_xlow);
 
-    &-primary {
+    .#{$prefix}-sidebar.expanded &-primary {
       background-color: var(--primary_bg);
       .#{$prefix}-sidebar-title-icon {
         color: var(--primary_icon);
