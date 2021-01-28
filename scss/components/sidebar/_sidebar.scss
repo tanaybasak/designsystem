@@ -61,7 +61,7 @@ $animation-duration: 220ms;
     width: 100%;
     border-bottom: var(--default_border_xlow);
 
-    .#{$prefix}-sidebar.expanded &-primary {
+   .#{$prefix}-sidebar &-primary {
       background-color: var(--primary_bg);
       .#{$prefix}-sidebar-title-icon {
         color: var(--primary_icon);
