@@ -170,10 +170,10 @@ $animation-duration: 220ms;
           color: var(--default_text);
 
           &.no-icon {
-            margin-left: 2.75rem;
+            margin-left: 1.75rem;
           }
           &.no-statusicon {
-            width: calc(100% - 4rem);;
+            width: calc(100% - 4rem);
           }
         }
 
