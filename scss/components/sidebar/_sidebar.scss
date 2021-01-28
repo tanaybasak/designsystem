@@ -64,7 +64,6 @@ $animation-duration: 220ms;
       font-size: 0;
       width: 0;
       margin: 0;
-
       color: var(--primary_icon);
     }
 
@@ -173,6 +172,11 @@ $animation-duration: 220ms;
             margin-left: 2.75rem;
           }
           &.no-statusicon {
+            width: calc(100% - 4rem);
+          }
+
+          &.no-sideicon {
+            margin-left: 1.75rem;
             width: calc(100% - 4rem);
           }
         }
