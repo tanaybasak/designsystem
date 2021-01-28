@@ -65,14 +65,14 @@ $animation-duration: 220ms;
       width: 0;
       margin: 0;
 
-      color: var(--default_icon);
+      color: var(--primary_icon);
     }
 
     .#{$prefix}-sidebar-title-text {
       display: block;
       font-size: 0.875rem;
 
-      color: var(--default_text);
+      color: var(--primary_text);
 
       line-height: 1.125rem;
       width: 0;
@@ -92,11 +92,11 @@ $animation-duration: 220ms;
 
       svg {
         transition: transform $animation-duration ease-in-out;
-        fill: var(--default_icon);
+        fill: var(--primary_icon);
       }
 
       &:hover {
-        color: var(--default_icon_high);
+        color: var(--primary_icon_high);
         outline: none;
       }
 
