@@ -172,6 +172,9 @@ $animation-duration: 220ms;
           &.no-icon {
             margin-left: 2.75rem;
           }
+          &.no-statusicon {
+            width: calc(100% - 4rem);;
+          }
         }
 
         .toggleIcon {
