@@ -50,8 +50,6 @@ $animation-duration: 220ms;
     }
   }
 
-
-
   .#{$prefix}-sidebar-title {
     display: flex;
     justify-content: space-between;
@@ -61,22 +59,8 @@ $animation-duration: 220ms;
     width: 100%;
     border-bottom: var(--default_border_xlow);
 
-   .#{$prefix}-sidebar &-primary {
+    &-primary {
       background-color: var(--primary_bg);
-      .#{$prefix}-sidebar-title-icon {
-        color: var(--primary_icon);
-      }
-      .#{$prefix}-sidebar-title-text {
-        color: var(--primary_text);
-      }
-      .#{$prefix}-sidebar-title-toggle {
-        svg {
-          fill: var(--primary_icon);
-        }
-        &:hover {
-          color: var(--primary_icon_high);
-        }
-      }
     }
 
     .#{$prefix}-sidebar-title-icon {
@@ -85,6 +69,10 @@ $animation-duration: 220ms;
       width: 0;
       margin: 0;
       color: var(--default_icon);
+    }
+
+    &-primary .#{$prefix}-sidebar-title-icon {
+      color: var(--primary_icon);
     }
 
     .#{$prefix}-sidebar-title-text {
@@ -96,6 +84,10 @@ $animation-duration: 220ms;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+    }
+
+    &-primary .#{$prefix}-sidebar-title-text {
+      color: var(--primary_text);
     }
 
     .#{$prefix}-sidebar-title-toggle {
@@ -120,6 +112,15 @@ $animation-duration: 220ms;
       &:focus {
         outline-offset: -0.0625rem;
         outline: 0.0625rem solid var(--default_border_xhigh);
+      }
+    }
+
+    &-primary .#{$prefix}-sidebar-title-toggle {
+      svg {
+        fill: var(--primary_icon);
+      }
+      &:hover {
+        color: var(--primary_icon_high);
       }
     }
   }
