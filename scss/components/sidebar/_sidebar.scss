@@ -58,7 +58,7 @@ $animation-duration: 220ms;
     position: relative;
     width: 100%;
     border-bottom: var(--default_border_xlow);
-
+    background-color: var(--primary_bg);
     .#{$prefix}-sidebar-title-icon {
       height: 1.875rem;
       font-size: 0;
@@ -170,7 +170,7 @@ $animation-duration: 220ms;
           color: var(--default_text);
 
           &.no-icon {
-            margin-left: 1.75rem;
+            margin-left: 2.75rem;
           }
           &.no-statusicon {
             width: calc(100% - 4rem);
