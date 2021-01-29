@@ -22,7 +22,7 @@ $animation-duration: 220ms;
   z-index: 9;
   background-color: var(--default_bg_low);
 
-  &-vertical {
+  nav &-vertical {
     position: relative;
     top: 0;
     z-index: unset;
