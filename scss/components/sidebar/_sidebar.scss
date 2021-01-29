@@ -8,6 +8,12 @@
 
 $animation-duration: 220ms;
 
+.#{$prefix}-vertical {
+  position: relative;
+  top: 0;
+  z-index: unset;
+}
+
 .#{$prefix}-sidebar {
   display: flex;
   flex-direction: column;
@@ -21,12 +27,6 @@ $animation-duration: 220ms;
   transition: width $animation-duration ease-in-out;
   z-index: 9;
   background-color: var(--default_bg_low);
-
-  nav &-vertical {
-    position: relative;
-    top: 0;
-    z-index: unset;
-  }
 
   .#{$prefix}-sidebar-hamburger {
     display: none;
