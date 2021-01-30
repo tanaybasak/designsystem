@@ -4,7 +4,6 @@ import getClosest from './utils/get-closest';
 class Sidebar {
   constructor(element, options) {
     this.element = element;
-
     this.state = {
       expanded: false,
       ...options
@@ -16,8 +15,84 @@ class Sidebar {
       `.${PREFIX}-sidebar-toggle-node`
     );
     this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
+    this.children = this.element.querySelectorAll(
+      `.${PREFIX}-sidebar-children`
+    );
+    this.licategory = this.element.querySelectorAll(
+      `.${PREFIX}-sidebar-list > .${PREFIX}-sidebar-category`
+    );
+    this.statusIcon = this.element.querySelector(`.statusicon`);
     this.activeItem = null;
+    this.toggleStatusIcon();
+    this.iconClass();
   }
+
+  iconClass = () => {
+    const nodeArray = Array.from(this.licategory);
+    const isIconExist = nodeArray.some(item => {
+      return (
+        item.querySelectorAll(`.hcl-sidebar-toggle-node i:first-child`)
+          .length >= 1
+      );
+    });
+    for (let i = 0; i < this.licategory.length; i++) {
+      if (!isIconExist) {
+        this.licategory[i]
+          .querySelectorAll(`.hcl-sidebar-link`)[0]
+          .classList.add('no-sideicon');
+        this.licategory[i]
+          .querySelectorAll(`.hcl-sidebar-link`)[0]
+          .classList.remove('no-icon');
+      }
+    }
+  };
+
+  toggleStatusIcon = () => {
+    for (let i = 0; i < this.licategory.length; i++) {
+      const list = this.licategory[i].children[1];
+      const icon = this.licategory[i].children[0];
+      const sideIcon = icon.querySelectorAll(
+        `.hcl-sidebar-toggle-node i:first-child`
+      );
+      const statusIcon = icon.querySelectorAll(
+        `.hcl-sidebar-toggle-node i:last-child`
+      );
+
+      statusIcon.forEach(icon => {
+        icon.style.display = 'none';
+      });
+
+      if (!this.licategory[i].contains(list)) {
+        icon.querySelectorAll('.toggleIcon')[0].style.display = 'none';
+        if (statusIcon.length) {
+          statusIcon[0].style.display = 'block';
+        }
+      }
+
+      this.setClasses(
+        this.licategory[i].querySelectorAll(`.hcl-sidebar-link`)[0],
+        icon.querySelectorAll(`.statusicon`),
+        sideIcon,
+        this.licategory[i].contains(list)
+      );
+    }
+  };
+
+  setClasses = (item, statusIcon, sideIcon, children) => {
+    if (children) {
+      if (sideIcon.length === 0) {
+        item.classList.add('no-icon');
+      }
+    } else {
+      if (sideIcon.length === 0 && statusIcon.length) {
+        item.classList.add('no-icon');
+      } else if (sideIcon.length && statusIcon.length === 0) {
+        item.classList.add('no-statusicon');
+      } else if (sideIcon.length === 0 && statusIcon.length === 0) {
+        item.classList.add('no-icon', 'no-statusicon');
+      }
+    }
+  };
 
   findNextSiblingAncestor = nodeElement => {
     const parentNodeElement = nodeElement.parentElement;
