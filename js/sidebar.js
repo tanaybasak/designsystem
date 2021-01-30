@@ -15,13 +15,9 @@ class Sidebar {
       `.${PREFIX}-sidebar-toggle-node`
     );
     this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
-    this.children = this.element.querySelectorAll(
-      `.${PREFIX}-sidebar-children`
-    );
     this.licategory = this.element.querySelectorAll(
       `.${PREFIX}-sidebar-list > .${PREFIX}-sidebar-category`
     );
-    this.statusIcon = this.element.querySelector(`.statusicon`);
     this.activeItem = null;
     this.toggleStatusIcon();
     this.iconClass();
@@ -31,17 +27,17 @@ class Sidebar {
     const nodeArray = Array.from(this.licategory);
     const isIconExist = nodeArray.some(item => {
       return (
-        item.querySelectorAll(`.hcl-sidebar-toggle-node i:first-child`)
+        item.querySelectorAll(`.${PREFIX}-sidebar-toggle-node i:first-child`)
           .length >= 1
       );
     });
     for (let i = 0; i < this.licategory.length; i++) {
       if (!isIconExist) {
         this.licategory[i]
-          .querySelectorAll(`.hcl-sidebar-link`)[0]
+          .querySelectorAll(`.${PREFIX}-sidebar-link`)[0]
           .classList.add('no-sideicon');
         this.licategory[i]
-          .querySelectorAll(`.hcl-sidebar-link`)[0]
+          .querySelectorAll(`.${PREFIX}-sidebar-link`)[0]
           .classList.remove('no-icon');
       }
     }
@@ -52,10 +48,10 @@ class Sidebar {
       const list = this.licategory[i].children[1];
       const icon = this.licategory[i].children[0];
       const sideIcon = icon.querySelectorAll(
-        `.hcl-sidebar-toggle-node i:first-child`
+        `.${PREFIX}-sidebar-toggle-node i:first-child`
       );
       const statusIcon = icon.querySelectorAll(
-        `.hcl-sidebar-toggle-node i:last-child`
+        `.${PREFIX}-sidebar-toggle-node i:last-child`
       );
 
       statusIcon.forEach(icon => {
@@ -70,8 +66,8 @@ class Sidebar {
       }
 
       this.setClasses(
-        this.licategory[i].querySelectorAll(`.hcl-sidebar-link`)[0],
-        icon.querySelectorAll(`.statusicon`),
+        this.licategory[i].querySelectorAll(`.${PREFIX}-sidebar-link`)[0],
+        statusIcon,
         sideIcon,
         this.licategory[i].contains(list)
       );
