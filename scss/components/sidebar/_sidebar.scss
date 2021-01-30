@@ -84,6 +84,10 @@ $animation-duration: 220ms;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+      &.no-sideicon {
+        margin-left: 1.75rem;
+        width: calc(100% - 4rem);
+      }
     }
 
     &-primary .#{$prefix}-sidebar-title-text {
@@ -271,6 +275,10 @@ $animation-duration: 220ms;
 
       .#{$prefix}-sidebar-title-text {
         width: calc(100% - 5.5rem);
+        &.no-sideicon {
+          margin-left: 1.75rem;
+          width: calc(100% - 4rem);
+        }
       }
 
       .#{$prefix}-sidebar-title-toggle {
@@ -378,6 +386,10 @@ $animation-duration: 220ms;
           line-height: 1.25rem;
           padding: 1.375rem 0;
           width: 100%;
+          &.no-sideicon {
+            margin-left: 1.75rem;
+            width: calc(100% - 4rem);
+          }
         }
 
         .#{$prefix}-sidebar-title-toggle {

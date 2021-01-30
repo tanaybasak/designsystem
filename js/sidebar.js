@@ -15,9 +15,14 @@ class Sidebar {
       `.${PREFIX}-sidebar-toggle-node`
     );
     this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
+    this.headerTitle = this.element.querySelectorAll(
+      `.${PREFIX}-sidebar-title`
+    );
     this.licategory = this.element.querySelectorAll(
       `.${PREFIX}-sidebar-list > .${PREFIX}-sidebar-category`
     );
+    this.headerIconExist =
+      this.headerTitle[0].querySelectorAll(`i:first-child`).length >= 1;
     this.activeItem = null;
     this.toggleStatusIcon();
     this.iconClass();
@@ -31,8 +36,9 @@ class Sidebar {
           .length >= 1
       );
     });
+
     for (let i = 0; i < this.licategory.length; i++) {
-      if (!isIconExist) {
+      if (!isIconExist && !this.headerIconExist) {
         this.licategory[i]
           .querySelectorAll(`.${PREFIX}-sidebar-link`)[0]
           .classList.add('no-sideicon');
@@ -174,6 +180,15 @@ class Sidebar {
     }
 
     this.state.expanded = !this.state.expanded;
+    if (this.state.expanded && !this.headerIconExist) {
+      this.headerTitle[0]
+        .querySelector(`.hcl-sidebar-title-text`)
+        .classList.add(`no-sideicon`);
+    } else {
+      this.headerTitle[0]
+        .querySelector(`.hcl-sidebar-title-text`)
+        .classList.remove(`no-sideicon`);
+    }
   };
 
   toggleSidebarOnEnter = e => {
