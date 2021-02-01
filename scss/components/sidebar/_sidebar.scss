@@ -386,14 +386,16 @@ $animation-duration: 220ms;
           line-height: 1.25rem;
           padding: 1.375rem 0;
           width: 100%;
-          &.no-sideicon {
-            margin-left: 1.75rem;
-            width: calc(100% - 4rem);
-          }
+         
         }
 
         .#{$prefix}-sidebar-title-toggle {
           display: none;
+        }
+
+        &.no-sideicon {
+          margin-left: 1.75rem;
+          width: calc(100% - 4rem);
         }
       }
 
