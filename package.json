@@ -6,6 +6,7 @@
   "scripts": {
     "build": "parcel build modular/*/index.js --no-source-maps -d .dist/ && parcel build modular/*/*/index.js --no-source-maps -d .dist/ ",
     "start": "node importHTML.js && parcel index.html -d output --port 8000",
+    "dev": "parcel portal/index.html -d output --port 8000",
     "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss';",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js .",
@@ -66,5 +67,8 @@
       "number-no-trailing-zeros": true,
       "length-zero-no-unit": true
     }
+  },
+  "dependencies": {
+    "prismjs": "^1.23.0"
   }
 }

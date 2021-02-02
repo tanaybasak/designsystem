@@ -1,0 +1,110 @@
+.hcl-vanilla {
+  min-height: 100vh;
+
+  .hcl-header-wrapper {
+    .hcl-header-icons {
+      .hcl-header-icon {
+        margin: auto 0.5rem;
+      }
+    }
+  }
+
+  .main-container {
+    left: 12.5rem;
+    position: relative;
+    width: calc(100% - 12.5rem);
+
+    .component-wrapper {
+      padding: 5.125rem 2rem 0 2rem;
+
+      .component-subtitle {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .component-demo {
+        margin-bottom: 1rem;
+      }
+
+      .documenation-title {
+        margin-top: 2rem;
+      }
+
+      .component-code-snippet-wrapper {
+        .code-wrapper {
+          position: relative;
+          box-shadow: inset 0.125rem 0.125rem 0.3125rem 0.125rem
+            rgba(0, 0, 0, 0.2);
+          border: 0.0625rem solid var(--default_border_xlow);
+          background-color: var(--default_bg);
+
+          .copy-snippet {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1;
+            font-family: 'Roboto Mono' !important;
+          }
+
+          .code-snippet-wrapper {
+            background-color: var(--default_bg);
+
+            min-height: 100px;
+            max-height: 500px;
+            overflow: auto;
+            box-shadow: inset 2.375rem 0 0 0 var(--default_bg_high);
+            background-color: var(--default_bg);
+
+            code[class*='language-'],
+            pre[class*='language-'] {
+              font-family: 'Roboto Mono' !important;
+              color: var(--default_text) !important;
+              text-shadow: unset !important;
+            }
+
+            .line-numbers {
+              background: transparent !important;
+              font-size: 14px !important;
+              font-family: 'Roboto Mono' !important;
+              position: relative;
+              padding-left: 3.8em;
+              //ounter-reset: linenumber;
+
+              .span-line-number {
+                position: absolute;
+                top: 15px;
+                width: 2.5rem;
+                text-align: right;
+                padding-right: 10px;
+                display: flex;
+                flex-direction: column;
+                left: 0;
+                counter-reset: linenumber;
+
+                span {
+                  counter-increment: linenumber;
+                  font-family: 'Roboto Mono' !important;
+
+                  &::before {
+                    content: counter(linenumber);
+                  }
+                }
+              }
+
+              code {
+                position: relative;
+                white-space: inherit;
+              }
+            }
+          }
+        }
+      }
+
+      .data-table-doc {
+        tbody tr td:last-child {
+          white-space: pre-line;
+        }
+      }
+    }
+  }
+}
