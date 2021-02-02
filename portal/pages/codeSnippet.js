@@ -25,9 +25,7 @@ export function render(code, type) {
   codeSnippetButton.innerHTML = `<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 16 16" class="hcl-btn-icon" style="fill: rgb(0, 102, 176);"><rect data-name="<Transparent Rectangle>" width="16" height="16" fill="none"></rect><path d="M11.5,3h-5A2.5,2.5,0,0,0,4,5.5v7A2.5,2.5,0,0,0,6.5,15h5A2.5,2.5,0,0,0,14,12.5v-7A2.5,2.5,0,0,0,11.5,3ZM13,12.5A1.5,1.5,0,0,1,11.5,14h-5A1.5,1.5,0,0,1,5,12.5v-7A1.5,1.5,0,0,1,6.5,4h5A1.5,1.5,0,0,1,13,5.5ZM6,7h6V8H6Zm0,3h5v1H6ZM4.5,2A1.5,1.5,0,0,0,3,3.5V9H2V3.5A2.5,2.5,0,0,1,4.5,1H9V2Z"></path></svg>`;
   codeSnippetButton.addEventListener('click', () => {
     navigator.clipboard.writeText(code).then(
-      function () {
-        console.log('success', 'copied to clipboard');
-      },
+      function () {},
       function (err) {
         console.error('Async: Could not copy text: ', err);
       }
