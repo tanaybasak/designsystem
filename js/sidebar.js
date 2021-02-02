@@ -16,8 +16,34 @@ class Sidebar {
       `.${PREFIX}-sidebar-toggle-node`
     );
     this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
+    this.listElement = this.element.querySelectorAll(
+      `.${PREFIX}-sidebar-toggle-node > .${PREFIX}-sidebar-link`
+    );
+    this.sideIcon = this.element.querySelectorAll(`.${PREFIX}-sidebar-icon`);
+    this.statusIcon = this.element.querySelectorAll(`.statusicon`);
+    this.toggleIcon = this.element.querySelectorAll(`.toggleIcon`);
     this.activeItem = null;
+    this.addsideIconClass();
   }
+
+  addsideIconClass = () => {
+    for (let i = 0; i < this.categories.length; i++) {
+      const parentElement = this.categories[i].parentElement;
+      this.childrenlist = parentElement.children[1];
+
+      if (
+        !parentElement.contains(this.childrenlist) &&
+        !this.categories[i].contains(this.statusIcon[i]) &&
+        !this.categories[i].contains(this.toggleIcon[i])
+      ) {
+        this.listElement[i].classList.add('no-statusicon');
+      }
+
+      if (!this.categories[i].contains(this.sideIcon[i])) {
+        this.listElement[i].classList.add('no-icon');
+      }
+    }
+  };
 
   findNextSiblingAncestor = nodeElement => {
     const parentNodeElement = nodeElement.parentElement;
