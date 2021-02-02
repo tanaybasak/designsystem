@@ -48,7 +48,7 @@ class Sidebar {
       }
     }
 
-    if (!this.sidebarHeader.contains(this.headerIcon)) {
+    if (!this.sidebarHeader.contains(this.headerIcon) && this.state.expanded) {
       this.sidebarHeader
         .querySelector(`.hcl-sidebar-title-text`)
         .classList.add('no-sideicon');
@@ -139,6 +139,16 @@ class Sidebar {
     }
 
     this.state.expanded = !this.state.expanded;
+
+    if (!this.sidebarHeader.contains(this.headerIcon) && this.state.expanded) {
+      this.sidebarHeader
+        .querySelector(`.hcl-sidebar-title-text`)
+        .classList.add('no-sideicon');
+    } else {
+      this.sidebarHeader
+        .querySelector(`.hcl-sidebar-title-text`)
+        .classList.remove('no-sideicon');
+    }
   };
 
   toggleSidebarOnEnter = e => {
