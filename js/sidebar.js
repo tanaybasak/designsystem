@@ -22,6 +22,10 @@ class Sidebar {
     this.sideIcon = this.element.querySelectorAll(`.${PREFIX}-sidebar-icon`);
     this.statusIcon = this.element.querySelectorAll(`.statusicon`);
     this.toggleIcon = this.element.querySelectorAll(`.toggleIcon`);
+    this.headerIcon = this.element.querySelector(
+      `.${PREFIX}-sidebar-title-icon`
+    );
+    this.sidebarHeader = this.element.querySelector(`.${PREFIX}-sidebar-title`);
     this.activeItem = null;
     this.addsideIconClass();
   }
@@ -42,6 +46,12 @@ class Sidebar {
       if (!this.categories[i].contains(this.sideIcon[i])) {
         this.listElement[i].classList.add('no-icon');
       }
+    }
+
+    if (!this.sidebarHeader.contains(this.headerIcon)) {
+      this.sidebarHeader
+        .querySelector(`.hcl-sidebar-title-text`)
+        .classList.add('no-sideicon');
     }
   };
 

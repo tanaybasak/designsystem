@@ -73,6 +73,10 @@ $animation-duration: 220ms;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+      &.no-sideicon {
+        margin-left: 1.75rem;
+        width: calc(100% - 4rem);
+      }
     }
 
     .#{$prefix}-sidebar-title-toggle {
