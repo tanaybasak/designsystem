@@ -5,12 +5,12 @@
   "main": "dist/patron-style.js",
   "scripts": {
     "build": "parcel build modular/*/index.js --no-source-maps -d .dist/ && parcel build modular/*/*/index.js --no-source-maps -d .dist/ ",
-    "start": "parcel portal/index.html -d output --port 8000",
+    "dev:start": "parcel portal/index.html -d output --port 8000",
     "dev:build": "parcel build portal/index.html --no-source-maps --no-minify -d dist/",
+    "start": "node server.js",
     "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss';",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js .",
-    "import-html": "node importHTML.js",
     "prettier:dev": "npx prettier --config prettier.config.js --ignore-path .gitignore --write \"./**/*.{js,html,scss}\""
   },
   "author": "HCL Software",
@@ -42,7 +42,9 @@
     "semver": "^7.3.4",
     "simple-git": "^2.31.0",
     "stylelint": "^13.7.2",
-    "prismjs": "^1.23.0"
+    "prismjs": "^1.23.0",
+    "express": "^4.17.1",
+    "ip": "^1.1.5"
   },
   "browserslist": [
     "> .1%",

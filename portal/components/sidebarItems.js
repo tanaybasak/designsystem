@@ -1,5 +1,5 @@
 const sidebarItems = [
-  { title: 'Accordion', link: 'accordion' },
+  { title: 'Accordion', link: 'accordion', default: true },
   { title: 'Actionbar', link: 'actionbar' },
   { title: 'Breadcrumb', link: 'breadcrumb' },
   { title: 'Button', link: 'button' },
