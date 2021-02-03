@@ -19,7 +19,7 @@
     left: 12.5rem;
     position: relative;
     width: calc(100% - 12.5rem);
-
+    overflow-x: hidden;
     .component-wrapper {
       padding: 5.125rem 2rem 0 2rem;
 
@@ -78,6 +78,7 @@
               font-family: 'Roboto Mono' !important;
               position: relative;
               padding-left: 3.5rem;
+              overflow: hidden;
               //ounter-reset: linenumber;
 
               .span-line-number {
@@ -104,6 +105,9 @@
               code {
                 position: relative;
                 white-space: inherit;
+                width: 100%;
+                overflow-x: auto;
+                display: inline-block;
               }
             }
           }
