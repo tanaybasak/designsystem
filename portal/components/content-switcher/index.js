@@ -11,7 +11,18 @@ const contentswitcher = {
         'Each tab must be in &lt;button&gt; tag with class .hcl-content-switcher-btn and role=&#34;tab&#34;'
     }
   ],
-  jsDocumentation: [],
+  jsDocumentation: [
+    {
+      name: 'data-content-switcher',
+      description:
+        'for wrapper Content switcher elements. Role can also be specified accepting value as "tablist".'
+    },
+    {
+      name: 'data-target',
+      description: `must be specified for each Tab with a selector as string.
+          Example: data-target=".filtered-items"`
+    }
+  ],
   methodDocumentation: [],
   variation: [
     {

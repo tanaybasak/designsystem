@@ -6,10 +6,13 @@
       .hcl-header-icon {
         margin: auto 0.5rem;
       }
-      .version{
-          font-size: 18px;
+      .version {
+        font-size: 18px;
       }
     }
+  }
+  > .hcl-sidebar {
+    height: 100%;
   }
 
   .main-container {
@@ -20,8 +23,8 @@
     .component-wrapper {
       padding: 5.125rem 2rem 0 2rem;
 
-      .component-variation{
-          margin-bottom: 3rem;
+      .component-variation {
+        margin-bottom: 3rem;
       }
 
       .component-subtitle {

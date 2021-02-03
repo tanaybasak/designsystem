@@ -17,9 +17,7 @@ const radio = {
         'Combined with .hcl-radio-group, acts as Wrapper Class for grouping radio vertically'
     }
   ],
-  jsDocumentation: [
-    { name: 'hcl-temporary', description: 'This is temporary description' }
-  ],
+  jsDocumentation: [],
   methodDocumentation: [],
   variation: [
     {

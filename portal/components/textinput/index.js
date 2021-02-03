@@ -4,7 +4,8 @@ const textinput = {
     {
       name: '.hcl-form-control',
       description:
-        'Input tag has class .hcl-form-control with a &lt;label&gt; text next to it. &lt;br/&gt; &lt;label&gt; tag must always be placed next to various &lt;input&gt; field’s(text, password, email..) This allows highlighting the label when focus is made on the respective Input field.'
+        `Input tag has class .hcl-form-control with a &lt;label&gt; text next to it. 
+        &lt;br/&gt; &lt;label&gt; tag must always be placed next to various &lt;input&gt; field’s(text, password, email..) This allows highlighting the label when focus is made on the respective Input field.`
     },
     {
       name: '.hcl-form-group',

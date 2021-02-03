@@ -3,7 +3,6 @@ import actionbar from './action-bar';
 import breadcrumb from './breadcrumb';
 import button from './button';
 import checkbox from './checkbox';
-import codesnippet from './code-snippet';
 import contentswitcher from './content-switcher';
 import datatable from './data-table';
 import datepicker from './date-picker';
@@ -12,8 +11,6 @@ import fileuploader from './file-uploader';
 import footer from './footer';
 import form from './form';
 import header from './header';
-import inlineedit from './inline-edit';
-import inpagenavigation from './inpagenavigation';
 import list from './list';
 import loadingstate from './loading-state';
 import modal from './modal';
@@ -47,7 +44,6 @@ export {
   breadcrumb,
   button,
   checkbox,
-  codesnippet,
   contentswitcher,
   datatable,
   datepicker,
@@ -56,8 +52,6 @@ export {
   footer,
   form,
   header,
-  inlineedit,
-  inpagenavigation,
   list,
   loadingstate,
   modal,

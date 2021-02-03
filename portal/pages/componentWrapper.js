@@ -93,7 +93,7 @@ const getJSDocumentationTpl = doc => {
   return `
     <tr>
         <td>${doc.name}</td>
-        <td>${doc.default}</td>
+        <td>${doc.default ? doc.default : '-'}</td>
         <td>${doc.description}</td>
     </tr>
 `;
