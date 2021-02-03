@@ -8,7 +8,7 @@ export const getComponentVariation = (item, index) => {
   return `
     <div class="component-variation">
         <div class="component-subtitle"><h6>${item.subHeading}</h6></div>
-        <div class="component-demo">${item.template}</div>
+        <div class="component-demo p-3">${item.template}</div>
         <div class="component-code-snippet-wrapper">
             <ul class="hcl-accordion" id="codeSnippet-${index}">
                 ${
@@ -97,4 +97,33 @@ const getJSDocumentationTpl = doc => {
         <td>${doc.description}</td>
     </tr>
 `;
+};
+
+export const getMethodDocumentation = doc => {
+  return `
+      <div>
+          <div class="component-subtitle"><h6>Method</h6></div>
+          <div class="hcl-data-table-wrapper data-table-sticky-header">
+              <table class="hcl-data-table data-table-doc">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Description</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      ${doc.map(getMethodDocumentationTpl).join('')}
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  `;
+};
+const getMethodDocumentationTpl = doc => {
+  return `
+      <tr>
+          <td>${doc.name}</td>
+          <td>${doc.description}</td>
+      </tr>
+  `;
 };

@@ -5,8 +5,8 @@
   "main": "dist/patron-style.js",
   "scripts": {
     "build": "parcel build modular/*/index.js --no-source-maps -d .dist/ && parcel build modular/*/*/index.js --no-source-maps -d .dist/ ",
-    "start": "node importHTML.js && parcel index.html -d output --port 8000",
-    "dev": "parcel portal/index.html -d output --port 8000",
+    "start": "parcel portal/index.html -d output --port 8000",
+    "dev:build": "parcel build portal/index.html --no-source-maps --no-minify -d dist/",
     "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss';",
     "pretest": "eslint --ignore-path .gitignore postcss.config.js .",
@@ -41,7 +41,8 @@
     "sass": "^1.27.1",
     "semver": "^7.3.4",
     "simple-git": "^2.31.0",
-    "stylelint": "^13.7.2"
+    "stylelint": "^13.7.2",
+    "prismjs": "^1.23.0"
   },
   "browserslist": [
     "> .1%",
@@ -68,7 +69,5 @@
       "length-zero-no-unit": true
     }
   },
-  "dependencies": {
-    "prismjs": "^1.23.0"
-  }
+  "dependencies": {}
 }

@@ -1,5 +1,8 @@
 const accordion = {
   heading: 'Accordion',
+  cssDocumentation: [],
+  jsDocumentation: [],
+  methodDocumentation: [],
   variation: [
     {
       subHeading: 'Controlled',
@@ -10,6 +13,7 @@ const accordion = {
         });
       }
     },
+
     {
       subHeading: 'Uncontrolled',
       template: require('./uncontrolled.html'),

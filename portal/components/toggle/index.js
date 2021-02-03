@@ -1,5 +1,11 @@
 const toggle = {
   heading: 'Toggle',
+  cssDocumentation: [
+    { name: '.hcl-toggle', description: 'This is temporary description' },
+    { name: '.hcl-toggle-small', description: 'This is temporary description' }
+  ],
+  jsDocumentation: [],
+  methodDocumentation: [],
   variation: [
     {
       subHeading: 'Default',
@@ -10,6 +16,7 @@ const toggle = {
         });
       }
     },
+
     {
       subHeading: 'Small',
       template: require('./small.html'),

@@ -46,6 +46,18 @@ export async function render(htmlName) {
           `
           : ''
       }
+
+      ${
+        componentInfo.methodDocumentation &&
+        componentInfo.methodDocumentation.length > 0
+          ? `
+          ${componentWrapper.getMethodDocumentation(
+            componentInfo.methodDocumentation
+          )}
+         
+          `
+          : ''
+      }
       
               
 </div>

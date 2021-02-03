@@ -2,6 +2,7 @@ import 'regenerator-runtime/runtime';
 import Router from './router/router';
 import Route from './router/route';
 import './index.scss';
+import './component.scss';
 const rootElement = document.getElementById('root');
 const loadData = async () => {
   const header = await import('./pages/header');

@@ -1,1 +1,0 @@
-Progress indicators inform users about the status of ongoing processes, such as loading a page, downloading or uploading, submitting a form, or updating information. They communicate an app’s state and indicate the extent of progress if available. Progress indicators can be shown with or without any accompanying text. 

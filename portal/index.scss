@@ -6,6 +6,9 @@
       .hcl-header-icon {
         margin: auto 0.5rem;
       }
+      .version{
+          font-size: 18px;
+      }
     }
   }
 
@@ -16,6 +19,10 @@
 
     .component-wrapper {
       padding: 5.125rem 2rem 0 2rem;
+
+      .component-variation{
+          margin-bottom: 3rem;
+      }
 
       .component-subtitle {
         margin-top: 2rem;

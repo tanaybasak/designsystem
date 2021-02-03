@@ -1,15 +1,18 @@
 export function render() {
+  const pdsLogo = require('../../asset/pds.png');
+  const version = 'v1.8';
   const template = `
     <header class="hcl-header" data-withsidenav="true">
         <a href="/" class="hcl-header-brand" tabindex="0">
             <img
                 alt="Logo"
                 width="109px"
-                src="https://designsystem.hclpnp.com/d65abc10d34368a9213bb26937dfee4a.png"
+                src="${pdsLogo}"
             />
         </a>
         <div class="hcl-header-wrapper">
             <ul class="hcl-header-icons">
+            <li class="hcl-header-icon"><span class="version">${version}<span></li>
                 <li class="hcl-header-icon">
                     <div class="hcl-overlay-wrapper hcl-dropdown" id="bottom-dropdown">
                         <button

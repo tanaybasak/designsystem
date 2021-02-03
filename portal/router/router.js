@@ -45,15 +45,19 @@ class Router {
 
   updateSidebarActiveLink = (previousRoute, currentRoute) => {
     if (previousRoute) {
-      document
+      const previousSidebarLink = document
         .getElementById('sidebar')
-        .querySelector(`[data-navigation="${previousRoute}"]`)
-        .classList.remove('active');
+        .querySelector(`[data-navigation="${previousRoute}"]`);
+      if (previousSidebarLink) {
+        previousSidebarLink.classList.remove('active');
+      }
     }
-    document
+    const currentSidebarLink = document
       .getElementById('sidebar')
-      .querySelector(`[data-navigation="${currentRoute}"]`)
-      .classList.add('active');
+      .querySelector(`[data-navigation="${currentRoute}"]`);
+    if (currentSidebarLink) {
+      currentSidebarLink.classList.add('active');
+    }
   };
 }
 export default Router;
