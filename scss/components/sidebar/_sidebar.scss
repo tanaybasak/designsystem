@@ -361,9 +361,9 @@ $animation-duration: 220ms;
     &.expanded {
       width: 12.5rem;
       height: 100%;
-
       left: 0;
-      top: 0;
+      top: 3.125rem;
+      position: fixed;
       display: flex;
       transition: width $animation-duration ease-in-out;
 
