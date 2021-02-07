@@ -360,7 +360,7 @@ $animation-duration: 220ms;
 
     &.expanded {
       width: 12.5rem;
-      height: calc(100vh - 4rem);
+      height: 100%;
       left: 0;
       top: 4rem;
       position: fixed;
