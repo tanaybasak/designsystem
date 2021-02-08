@@ -363,6 +363,9 @@ $animation-duration: 220ms;
         position: relative;
         z-index: unset;
       }
+      &.expanded {
+        top: 0rem;
+      }
     }
 
     &.expanded {
