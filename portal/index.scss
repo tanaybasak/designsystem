@@ -6,11 +6,13 @@
       .hcl-header-icon {
         margin: auto 0.5rem;
       }
+
       .version {
         font-size: 18px;
       }
     }
   }
+
   > .hcl-sidebar {
     height: 100%;
   }
@@ -20,6 +22,7 @@
     position: relative;
     width: calc(100% - 12.5rem);
     overflow-x: hidden;
+
     .component-wrapper {
       padding: 5.125rem 2rem 0 2rem;
 
@@ -54,11 +57,15 @@
             right: 1rem;
             z-index: 1;
             font-family: 'Roboto Mono' !important;
+
+            svg {
+              fill: var(--interactive_icon);
+              width: 1rem;
+              height: 1rem;
+            }
           }
 
           .code-snippet-wrapper {
-            background-color: var(--default_bg);
-
             min-height: 100px;
             max-height: 500px;
             overflow: auto;
@@ -79,6 +86,11 @@
               position: relative;
               padding-left: 3.5rem;
               overflow: hidden;
+
+              border: none;
+              border-radius: unset;
+              box-shadow: none;
+
               //ounter-reset: linenumber;
 
               .span-line-number {
