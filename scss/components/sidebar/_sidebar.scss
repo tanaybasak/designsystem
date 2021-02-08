@@ -358,6 +358,14 @@ $animation-duration: 220ms;
       opacity: 1;
     }
 
+    .#{$prefix}-sidebar { 
+      &-vertical {
+        position: relative;
+        top: 0;
+        z-index: unset;
+      }
+    }
+
     &.expanded {
       width: 12.5rem;
       height: 100vh;
