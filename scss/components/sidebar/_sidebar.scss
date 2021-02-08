@@ -380,6 +380,10 @@ $animation-duration: 220ms;
         display: none;
       }
 
+      :not(.#{$prefix}-sidebar-vertical) {
+        top: 0;
+      }
+
       .#{$prefix}-sidebar-title {
         display: flex;
         padding: 0 2.5rem;
