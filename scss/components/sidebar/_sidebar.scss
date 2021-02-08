@@ -361,7 +361,6 @@ $animation-duration: 220ms;
     .#{$prefix}-sidebar { 
       &-vertical {
         position: relative;
-        top: 0;
         z-index: unset;
       }
     }
