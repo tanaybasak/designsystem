@@ -332,7 +332,12 @@ $animation-duration: 220ms;
     }
   }
 
-  &:not(.#{$prefix}-sidebar-vertical) {
+  @include media-breakpoint-down(md) {
+        top: 4rem;    
+        height: 100%;
+  }
+
+  &:not(.#{$prefix}-sidebar-vertical, .#{$prefix}-sidebar-notresponsive) {
     @include media-breakpoint-down(md) {
       width: 4.5rem;
       height: 4rem;
@@ -358,12 +363,8 @@ $animation-duration: 220ms;
         position: fixed;
         opacity: 1;
       }
-
-      &.not-responsive &.expanded {
-        top: 4rem;
-      } 
   
-     &.expanded {
+      &.expanded {
         width: 75vw;
         height: 100vh;
         left: 0;
