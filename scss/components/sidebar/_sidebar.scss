@@ -332,6 +332,12 @@ $animation-duration: 220ms;
     }
   }
 
+  @include media-breakpoint-down(md) {
+    &-vertical {
+      left: 12rem;
+    }
+  }
+
   &:not(.#{$prefix}-sidebar-vertical) {
     @include media-breakpoint-down(md) {
       top: 4rem;
