@@ -337,7 +337,7 @@ $animation-duration: 220ms;
         height: 100%;
   }
 
-  &:not(.#{$prefix}-sidebar-vertical, .#{$prefix}-sidebar-notresponsive) {
+  &:not(.#{$prefix}-sidebar-vertical, .#{$prefix}-sidebar-nonresponsive) {
     @include media-breakpoint-down(md) {
       width: 4.5rem;
       height: 4rem;
