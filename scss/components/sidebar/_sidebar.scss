@@ -359,24 +359,11 @@ $animation-duration: 220ms;
         opacity: 1;
       }
   
-  
-      // .#{$prefix}-sidebar {
-      
-      //   &-vertical {
-      //     position: relative;
-      //     z-index: unset;
-      //   }
-      //   &.expanded {
-      //     top: 0rem;
-      //   }
-      // }
-      
-  
       &.expanded {
-        width: 12.5rem;
+        width: 75vw;
         height: 100vh;
         left: 0;
-        top: 4rem;
+        top: 0;
         display: flex;
         transition: width $animation-duration ease-in-out;
   
