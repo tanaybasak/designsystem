@@ -360,10 +360,10 @@ $animation-duration: 220ms;
       }
 
       &.not-responsive &.expanded {
-        top: 4rem
+        top: 4rem;
       } 
   
-      &.responsive &.expanded {
+     &.expanded {
         width: 75vw;
         height: 100vh;
         left: 0;
