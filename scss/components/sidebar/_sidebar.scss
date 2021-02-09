@@ -332,9 +332,11 @@ $animation-duration: 220ms;
     }
   }
 
-  @include media-breakpoint-down(md) {
-        top: 4rem;    
-        height: 100%;
+  &:not(.#{$prefix}-sidebar-vertical) {
+    @include media-breakpoint-down(md) {
+      top: 4rem;
+      height: 100%;
+    }
   }
 
   &:not(.#{$prefix}-sidebar-vertical, .#{$prefix}-sidebar-nonresponsive) {
@@ -347,15 +349,15 @@ $animation-duration: 220ms;
         height $animation-duration ease-in-out $animation-duration,
         background $animation-duration ease-in-out $animation-duration;
       position: fixed;
-  
+
       .#{$prefix}-sidebar-title {
         display: none;
       }
-  
+
       .#{$prefix}-sidebar-list {
         display: none;
       }
-  
+
       .#{$prefix}-sidebar-hamburger {
         left: 0;
         top: 0;
@@ -363,7 +365,7 @@ $animation-duration: 220ms;
         position: fixed;
         opacity: 1;
       }
-  
+
       &.expanded {
         width: 75vw;
         height: 100vh;
@@ -371,21 +373,21 @@ $animation-duration: 220ms;
         top: 0;
         display: flex;
         transition: width $animation-duration ease-in-out;
-  
+
         .#{$prefix}-sidebar-hamburger {
           display: none;
         }
-  
+
         .#{$prefix}-sidebar-title {
           display: flex;
           padding: 0 2.5rem;
           height: 4rem;
           border: none;
-  
+
           .#{$prefix}-sidebar-title-icon {
             display: none;
           }
-  
+
           .#{$prefix}-sidebar-title-text {
             font-size: 1.25rem;
             line-height: 1.25rem;
@@ -396,41 +398,41 @@ $animation-duration: 220ms;
               width: calc(100% - 4rem);
             }
           }
-  
+
           .#{$prefix}-sidebar-title-toggle {
             display: none;
           }
         }
-  
+
         .#{$prefix}-sidebar-list {
           display: block;
-  
+
           .#{$prefix}-sidebar-category {
             a {
               height: 3.75rem;
-  
+
               .#{$prefix}-sidebar-icon {
                 width: 1.125rem;
                 height: 1.125rem;
                 font-size: 1.125rem;
                 margin: 1.3125rem 0 1.3125rem 0.9375rem;
               }
-  
+
               .#{$prefix}-sidebar-link {
                 font-size: 1.125rem;
                 line-height: 1.125rem;
                 padding: 1.3125rem 1rem;
-  
+
                 &.no-icon {
                   margin-left: 2.0625rem;
                 }
               }
             }
-  
+
             .#{$prefix}-sidebar-children {
               a {
                 padding-left: 2rem;
-  
+
                 .#{$prefix}-sidebar-link {
                   &.no-icon {
                     margin-left: 0;
@@ -442,9 +444,7 @@ $animation-duration: 220ms;
         }
       }
     }
-  } 
-
-
+  }
 }
 
 .#{$prefix}-content[data-withsidenav] {
