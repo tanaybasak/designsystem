@@ -272,10 +272,16 @@ class Sidebar {
   };
 
   attachEvents = () => {
-    this.title.addEventListener('click', this.toggleSidebar);
-    this.title.addEventListener('keydown', this.toggleSidebarOnEnter);
-    this.hamburger.addEventListener('click', this.toggleSidebar);
-    this.hamburger.addEventListener('keydown', this.toggleSidebarOnEnter);
+    if (this.title) {
+      this.title.addEventListener('click', this.toggleSidebar);
+      this.title.addEventListener('keydown', this.toggleSidebarOnEnter);
+    }
+
+    if (this.hamburger) {
+      this.hamburger.addEventListener('click', this.toggleSidebar);
+      this.hamburger.addEventListener('keydown', this.toggleSidebarOnEnter);
+    }
+
     this.categories.forEach(category => {
       category.addEventListener('click', this.toggleCategory);
       category.addEventListener('keydown', this.keyDownOnTree);
