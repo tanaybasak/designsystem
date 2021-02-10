@@ -75,6 +75,7 @@
             z-index: 1;
             cursor: col-resize;
             background: transparent !important;
+            touch-action: none !important;
           }
 
           &:hover {
