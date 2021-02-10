@@ -22,6 +22,12 @@ $animation-duration: 220ms;
   z-index: 9;
   background-color: var(--default_bg_low);
 
+  &-vertical {
+    position: relative;
+    top: 0;
+    z-index: unset;
+  }
+
   .#{$prefix}-sidebar-hamburger {
     display: none;
     background-color: transparent;
@@ -53,26 +59,39 @@ $animation-duration: 220ms;
     width: 100%;
     border-bottom: var(--default_border_xlow);
 
+    &-primary {
+      background-color: var(--primary_bg);
+    }
+
     .#{$prefix}-sidebar-title-icon {
       height: 1.875rem;
       font-size: 0;
       width: 0;
       margin: 0;
-
       color: var(--default_icon);
+    }
+
+    &-primary .#{$prefix}-sidebar-title-icon {
+      color: var(--primary_icon);
     }
 
     .#{$prefix}-sidebar-title-text {
       display: block;
       font-size: 0.875rem;
-
       color: var(--default_text);
-
       line-height: 1.125rem;
       width: 0;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+      &.no-sideicon {
+        margin-left: 1.75rem;
+        width: calc(100% - 4rem);
+      }
+    }
+
+    &-primary .#{$prefix}-sidebar-title-text {
+      color: var(--primary_text);
     }
 
     .#{$prefix}-sidebar-title-toggle {
@@ -97,6 +116,15 @@ $animation-duration: 220ms;
       &:focus {
         outline-offset: -0.0625rem;
         outline: 0.0625rem solid var(--default_border_xhigh);
+      }
+    }
+
+    &-primary .#{$prefix}-sidebar-title-toggle {
+      svg {
+        fill: var(--primary_icon);
+      }
+      &:hover {
+        color: var(--primary_icon_high);
       }
     }
   }
@@ -165,6 +193,14 @@ $animation-duration: 220ms;
 
           &.no-icon {
             margin-left: 2.75rem;
+          }
+          &.no-statusicon {
+            width: calc(100% - 4rem);
+          }
+
+          &.no-sideicon {
+            margin-left: 1.75rem;
+            width: calc(100% - 4rem);
           }
         }
 
@@ -239,6 +275,10 @@ $animation-duration: 220ms;
 
       .#{$prefix}-sidebar-title-text {
         width: calc(100% - 5.5rem);
+        &.no-sideicon {
+          margin-left: 1.75rem;
+          width: calc(100% - 4rem);
+        }
       }
 
       .#{$prefix}-sidebar-title-toggle {
@@ -291,100 +331,111 @@ $animation-duration: 220ms;
       }
     }
   }
-
-  @include media-breakpoint-down(md) {
-    width: 4.5rem;
-    height: 4rem;
-    top: 0;
-    // background: transparent;
-    transition: width $animation-duration ease-in-out,
-      height $animation-duration ease-in-out $animation-duration,
-      background $animation-duration ease-in-out $animation-duration;
-    position: fixed;
-
-    .#{$prefix}-sidebar-title {
-      display: none;
+  &:not(.#{$prefix}-sidebar-vertical) {
+    @include media-breakpoint-down(md) {
+      top: 4rem;
+      height: 100%;
     }
+  }
 
-    .#{$prefix}-sidebar-list {
-      display: none;
-    }
-
-    .#{$prefix}-sidebar-hamburger {
-      left: 0;
+  &:not(.#{$prefix}-sidebar-vertical, .#{$prefix}-sidebar-nonresponsive) {
+    @include media-breakpoint-down(md) {
+      width: 4.5rem;
+      height: 4rem;
       top: 0;
-      display: block;
+      // background: transparent;
+      transition: width $animation-duration ease-in-out,
+        height $animation-duration ease-in-out $animation-duration,
+        background $animation-duration ease-in-out $animation-duration;
       position: fixed;
-      opacity: 1;
-    }
 
-    &.expanded {
-      width: 75vw;
-      height: 100vh;
-
-      left: 0;
-      top: 0;
-      display: flex;
-      transition: width $animation-duration ease-in-out;
-
-      .#{$prefix}-sidebar-hamburger {
+      .#{$prefix}-sidebar-title {
         display: none;
       }
 
-      .#{$prefix}-sidebar-title {
-        display: flex;
-        padding: 0 2.5rem;
-        height: 4rem;
-        border: none;
-
-        .#{$prefix}-sidebar-title-icon {
-          display: none;
-        }
-
-        .#{$prefix}-sidebar-title-text {
-          font-size: 1.25rem;
-          line-height: 1.25rem;
-          padding: 1.375rem 0;
-          width: 100%;
-        }
-
-        .#{$prefix}-sidebar-title-toggle {
-          display: none;
-        }
+      .#{$prefix}-sidebar-list {
+        display: none;
       }
 
-      .#{$prefix}-sidebar-list {
+      .#{$prefix}-sidebar-hamburger {
+        left: 0;
+        top: 0;
         display: block;
+        position: fixed;
+        opacity: 1;
+      }
 
-        .#{$prefix}-sidebar-category {
-          a {
-            height: 3.75rem;
+      &.expanded {
+        width: 75vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        display: flex;
+        transition: width $animation-duration ease-in-out;
 
-            .#{$prefix}-sidebar-icon {
-              width: 1.125rem;
-              height: 1.125rem;
-              font-size: 1.125rem;
-              margin: 1.3125rem 0 1.3125rem 0.9375rem;
-            }
+        .#{$prefix}-sidebar-hamburger {
+          display: none;
+        }
 
-            .#{$prefix}-sidebar-link {
-              font-size: 1.125rem;
-              line-height: 1.125rem;
-              padding: 1.3125rem 1rem;
+        .#{$prefix}-sidebar-title {
+          display: flex;
+          padding: 0 2.5rem;
+          height: 4rem;
+          border: none;
 
-              &.no-icon {
-                margin-left: 2.0625rem;
-              }
+          .#{$prefix}-sidebar-title-icon {
+            display: none;
+          }
+
+          .#{$prefix}-sidebar-title-text {
+            font-size: 1.25rem;
+            line-height: 1.25rem;
+            padding: 1.375rem 0;
+            width: 100%;
+            & .no-sideicon {
+              margin-left: 1.75rem;
+              width: calc(100% - 4rem);
             }
           }
 
-          .#{$prefix}-sidebar-children {
+          .#{$prefix}-sidebar-title-toggle {
+            display: none;
+          }
+        }
+
+        .#{$prefix}-sidebar-list {
+          display: block;
+
+          .#{$prefix}-sidebar-category {
             a {
-              padding-left: 2rem;
+              height: 3.75rem;
+
+              .#{$prefix}-sidebar-icon {
+                width: 1.125rem;
+                height: 1.125rem;
+                font-size: 1.125rem;
+                margin: 1.3125rem 0 1.3125rem 0.9375rem;
+              }
 
               .#{$prefix}-sidebar-link {
+                font-size: 1.125rem;
+                line-height: 1.125rem;
+                padding: 1.3125rem 1rem;
+
                 &.no-icon {
-                  margin-left: 0;
+                  margin-left: 2.0625rem;
+                }
+              }
+            }
+
+            .#{$prefix}-sidebar-children {
+              a {
+                padding-left: 2rem;
+
+                .#{$prefix}-sidebar-link {
+                  &.no-icon {
+                    margin-left: 0;
+                  }
                 }
               }
             }
