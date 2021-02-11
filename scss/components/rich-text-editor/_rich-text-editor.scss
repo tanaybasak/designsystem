@@ -43,6 +43,17 @@
           0 0.125rem 0 var(--interactive_border);
       }
 
+      .ql-clipboard {
+        left: -100000px;
+        height: 1px;
+        overflow-y: hidden;
+        position: absolute;
+        top: 50%;
+        &:focus {
+          outline: none;
+        }
+      }
+
       .ql-editor {
         ol,
         ul {
