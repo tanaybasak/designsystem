@@ -222,7 +222,7 @@
           &:last-child::after {
             background: #0066b0;
             height: 2px;
-            width: 100%;
+            width: calc(100% + 28px);
             transition: border-color 0.07s ease-in;
           }
           .hcl-wizard__user {
