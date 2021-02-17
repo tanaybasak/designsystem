@@ -29,7 +29,9 @@
       .wiz-item.completed:not(.active) + .completed:not(.active),
       .wiz-item.error:not(.active) + .error:not(.active),
       .wiz-item.error:not(.active) + .completed:not(.active),
-      .wiz-item.completed:not(.active) + .error:not(.active) {
+      .wiz-item.completed:not(.active) + .error:not(.active),
+      .wiz-item.completed:not(.active) + .wiz-item:not(.active),
+      .wiz-item.error:not(.active) + .wiz-item:not(.active) {
         &:hover {
           background: var(--interactive_bg_hover);
           cursor: pointer;
