@@ -14,22 +14,22 @@
         }
       }
       // adjacent element next to active + completed make as active.
-      .wiz-item.completed.active + .wiz-item,
-      .wiz-item.completed + .wiz-item.completed,
-      .wiz-item.completed + .wiz-item.error,
-      .wiz-item.error.active + .wiz-item,
-      .wiz-item.error.active + .wiz-item.error,
-      .wiz-item.error.active + .wiz-item.completed {
+      .wiz-item.completed.active + .wiz-item:not(.active),
+      .wiz-item.completed + .wiz-item.completed:not(.active),
+      .wiz-item.completed + .wiz-item.error:not(.active),
+      .wiz-item.error.active + .wiz-item:not(.active),
+      .wiz-item.error.active + .wiz-item.error:not(.active),
+      .wiz-item.error.active + .wiz-item.completed:not(.active) {
         &:hover {
           background: var(--interactive_bg_hover);
           cursor: pointer;
         }
       }
       //adjacent completed & error make as active
-      .wiz-item.completed:not(.active) + .completed,
-      .wiz-item.error:not(.active) + .error,
-      .wiz-item.error:not(.active) + .completed,
-      .wiz-item.completed:not(.active) + .error {
+      .wiz-item.completed:not(.active) + .completed:not(.active),
+      .wiz-item.error:not(.active) + .error:not(.active),
+      .wiz-item.error:not(.active) + .completed:not(.active),
+      .wiz-item.completed:not(.active) + .error:not(.active) {
         &:hover {
           background: var(--interactive_bg_hover);
           cursor: pointer;
