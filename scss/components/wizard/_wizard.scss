@@ -69,7 +69,7 @@
       &::before {
         content: '';
         position: absolute;
-        background: #e6e6e6;
+        background: var(--default_bg_high);
         display: block;
         width: calc(100% + 28px);
         height: 2px;
@@ -84,11 +84,11 @@
         width: 28px;
         top: 0;
         left: 0;
-        background: #e6e6e6;
+        background: var(--default_bg_high);
       }
       &.active {
         &:last-child::after {
-          background: #0066b0;
+          background: var(--primary_bg);
           height: 2px;
           width: 100%;
           transition: border-color 0.07s ease-in;
@@ -96,7 +96,7 @@
       }
       &.completed {
         &:last-child::after {
-          background: #0066b0;
+          background: var(--primary_bg);
           height: 2px;
           width: 100%;
           transition: border-color 0.07s ease-in;
@@ -104,7 +104,7 @@
       }
       &.error {
         &:last-child::after {
-          background: #0066b0;
+          background: var(--primary_bg);
           height: 2px;
           width: 100%;
           transition: border-color 0.07s ease-in;
@@ -127,11 +127,11 @@
         &.completed {
           &.active {
             &::before {
-              background: #0066b0;
+              background: var(--primary_bg);
             }
           }
           &::before {
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: calc(100% + 28px);
             transition: border-color 0.07s ease-in;
@@ -143,7 +143,7 @@
             top: 0;
             left: 28px;
             z-index: 1;
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: calc(100%);
           }
@@ -155,13 +155,13 @@
             top: 0;
             left: 28px;
             z-index: 1;
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: auto;
             // width: calc(100% / 2 - 28px);
           }
           &:last-child::after {
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: 100%;
             transition: border-color 0.07s ease-in;
@@ -173,7 +173,7 @@
         }
         &.error {
           &::before {
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: calc(100% + 28px);
             transition: border-color 0.07s ease-in;
@@ -185,7 +185,7 @@
             top: 0;
             left: 28px;
             z-index: 1;
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: calc(100%);
           }
@@ -197,13 +197,12 @@
             top: 0;
             left: 28px;
             z-index: 1;
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: auto;
-            // width: calc(100% / 2 - 28px);
           }
           &:last-child::after {
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: 100%;
             transition: border-color 0.07s ease-in;
@@ -215,12 +214,10 @@
         }
         &.active {
           &::before {
-            background: #e6e6e6;
-            // background: #0066b0;
-            // width: calc(100% / 2 - 28px);
+            background: var(--default_bg_high);
           }
           &:last-child::after {
-            background: #e6e6e6;
+            background: var(--default_bg_high);
             height: 2px;
             width: 100%;
             transition: border-color 0.07s ease-in;
@@ -236,16 +233,11 @@
         }
         &.active .ghost,
         &.completed .ghost {
-          background: #0066b0;
+          background: var(--primary_bg);
         }
         &.error .ghost {
-          background: #0066b0;
+          background: var(--primary_bg);
         }
-        // &.error {
-        //   .hcl-wizard__user {
-        //     border: none;
-        //   }
-        // }
       }
     }
     // Only desktop - Design 1
@@ -270,7 +262,7 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background-color: #0066b0;
+            background-color: var(--primary_bg);
           }
         }
         &.error {
@@ -284,8 +276,8 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background-color: red;
-            border: 1px solid red;
+            background-color: var(--danger_icon);
+            border: 1px solid var(--danger_icon);
           }
         }
         &.active {
@@ -295,8 +287,9 @@
             height: 16px;
             border-radius: 50%;
             border: none;
-            background-color: #0066b0;
-            box-shadow: 0 0 0 1px #0066b0, 0 0 0 3px #ffffff inset;
+            background-color: var(--primary_bg);
+            box-shadow: 0 0 0 1px var(--primary_bg),
+              0 0 0 3px var(--white) inset;
           }
         }
       }
@@ -307,7 +300,7 @@
       .wiz-item {
         &.active {
           ::before {
-            background: #0066b0;
+            background: var(--primary_bg);
           }
         }
       }
@@ -331,19 +324,19 @@
               top: 0;
               left: 28px;
               z-index: 1;
-              background: #0066b0;
+              background: var(--primary_bg);
               height: 2px;
               width: calc(100% / 2 - 28px);
             }
             .ghost {
-              background: #0066b0;
+              background: var(--primary_bg);
             }
           }
         }
         &::before {
           content: '';
           position: absolute;
-          background: #e6e6e6;
+          background: var(--default_bg_high);
           display: block;
           width: calc(100% + 28px);
           height: 2px;
@@ -355,7 +348,7 @@
           &::before {
             content: '';
             position: absolute;
-            background: #0066b0;
+            background: var(--primary_bg);
             display: block;
             width: calc(100% + 28px);
             height: 2px;
@@ -370,7 +363,7 @@
             top: 0;
             left: 28px;
             z-index: 1;
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: calc(100% / 2 - 28px);
           }
@@ -379,7 +372,7 @@
           &::before {
             content: '';
             position: absolute;
-            background: #0066b0;
+            background: var(--primary_bg);
             display: block;
             width: calc(100% + 28px);
             height: 2px;
@@ -394,21 +387,14 @@
             top: 0;
             left: 28px;
             z-index: 1;
-            background: #0066b0;
+            background: var(--primary_bg);
             height: 2px;
             width: calc(100% / 2 - 28px);
           }
         }
         &.active {
-          // &::before {
-          //   content: '';
-          //   position: absolute;
-          //   background: #0066b0;
-          //   display: block;
-          //   width: calc(100% / 2 + 28px);
-          // }
           .ghost {
-            background: #e6e6e6;
+            background: var(--default_bg_high);
           }
           .hcl-wizard__user {
             padding: 3px;
@@ -419,9 +405,6 @@
             border-color: transparent;
           }
         }
-        // .ghost {
-        //   background: #0066b0;
-        // }
         .hcl-wizard-left-pane {
           padding: 8px 0;
         }
@@ -435,6 +418,63 @@
       }
     }
     // Wizard with no title - Design 2
+    // Only desktop noicon - Design 2
+    &.hcl-wizard__no-title.no-icon {
+      .wiz-item {
+        .hcl-wizard__user {
+          width: 16px;
+          height: 16px;
+        }
+        &.completed {
+          &.active {
+            .hcl-wizard__user {
+              border: none;
+            }
+          }
+          .hcl-wizard__user {
+            box-sizing: border-box;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary_bg);
+          }
+          .ghost {
+            background: var(--primary_bg);
+          }
+        }
+        &.error {
+          &.active {
+            .hcl-wizard__user {
+              border: none;
+            }
+          }
+          .hcl-wizard__user {
+            box-sizing: border-box;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--danger_icon);
+            border: 1px solid var(--danger_icon);
+          }
+          .ghost {
+            background: var(--primary_bg);
+          }
+        }
+        &.active {
+          .hcl-wizard__user {
+            box-sizing: border-box;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--primary_bg);
+            box-shadow: 0 0 0 1px var(--primary_bg),
+              0 0 0 3px var(--white) inset;
+          }
+        }
+      }
+    }
+    // Only desktop noicon - Design 2
   }
   // For mobile Layout - Design 3
   &:not(.desktop) {
@@ -490,7 +530,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        border: 1px solid #0066b0;
+        border: 1px solid var(--primary_bg);
         width: 24px;
         height: 24px;
         top: 50%;
@@ -514,16 +554,14 @@
         width: 16px;
         height: 16px;
         display: inline-block;
-        border: 1px solid #0066b0;
+        border: 1px solid var(--primary_bg);
         border-radius: 50%;
         background: none;
       }
       .no-icon-child {
         position: relative;
         display: inline-block;
-        /* border:1px solid #0066B0; */
         border-radius: 50%;
-        /* background: #0066B0; */
         width: 84%;
         height: 84%;
         top: 0%;
@@ -540,23 +578,23 @@
         }
         &.active {
           .no-icon-container {
-            border: 1px solid #0066b0;
+            border: 1px solid var(--primary_bg);
           }
         }
       }
       &.completed {
         .no-icon-child {
-          background: #0066b0;
-          border: 1px solid #0066b0;
+          background: var(--primary_bg);
+          border: 1px solid var(--primary_bg);
         }
         .no-icon-container {
-          background: #0066b0;
+          background: var(--primary_bg);
         }
       }
       &.active {
         .no-icon-child {
-          background: #0066b0;
-          border: 1px solid #0066b0;
+          background: var(--primary_bg);
+          border: 1px solid var(--primary_bg);
         }
         .no-icon-container {
           background: none;
@@ -564,12 +602,8 @@
       }
     }
     .hcl-wizard-left-pane,
-    .hcl-wizard-right-pane {
-      display: none;
-    }
-    .wiz-title {
-      display: none;
-    }
+    .hcl-wizard-right-pane,
+    .wiz-title,
     .wiz-description {
       display: none;
     }
