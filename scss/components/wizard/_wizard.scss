@@ -5,6 +5,45 @@
   &.desktop {
     margin: 0;
     flex: 1 1 0;
+    &.linear {
+      .wiz-item.completed:not(.active):first-child,
+      .wiz-item.error:not(.active):first-child {
+        &:hover {
+          background: var(--interactive_bg_hover);
+          cursor: pointer;
+        }
+      }
+      // adjacent element next to active + completed make as active.
+      .wiz-item.completed.active + .wiz-item,
+      .wiz-item.completed + .wiz-item.completed,
+      .wiz-item.completed + .wiz-item.error,
+      .wiz-item.error.active + .wiz-item,
+      .wiz-item.error.active + .wiz-item.error,
+      .wiz-item.error.active + .wiz-item.completed {
+        &:hover {
+          background: var(--interactive_bg_hover);
+          cursor: pointer;
+        }
+      }
+      //adjacent completed & error make as active
+      .wiz-item.completed:not(.active) + .completed,
+      .wiz-item.error:not(.active) + .error,
+      .wiz-item.error:not(.active) + .completed,
+      .wiz-item.completed:not(.active) + .error {
+        &:hover {
+          background: var(--interactive_bg_hover);
+          cursor: pointer;
+        }
+      }
+    }
+    &.nonlinear {
+      .wiz-item {
+        &:hover {
+          background: var(--interactive_bg_hover);
+          cursor: pointer;
+        }
+      }
+    }
     .hcl-wizard__title {
       min-width: 10px;
       width: 100%;
@@ -63,9 +102,6 @@
       position: relative;
       padding: 8px 16px;
       display: flex;
-      &:hover {
-        cursor: pointer;
-      }
       &::before {
         content: '';
         position: absolute;
@@ -200,6 +236,7 @@
             background: var(--primary_bg);
             height: 2px;
             width: auto;
+            // width: calc(100% / 2 - 28px);
           }
           &:last-child::after {
             background: var(--primary_bg);
@@ -215,6 +252,8 @@
         &.active {
           &::before {
             background: var(--default_bg_high);
+            // background: var(--primary_bg);
+            // width: calc(100% / 2 - 28px);
           }
           &:last-child::after {
             background: var(--default_bg_high);
@@ -238,6 +277,11 @@
         &.error .ghost {
           background: var(--primary_bg);
         }
+        // &.error {
+        //   .hcl-wizard__user {
+        //     border: none;
+        //   }
+        // }
       }
     }
     // Only desktop - Design 1
@@ -332,6 +376,11 @@
               background: var(--primary_bg);
             }
           }
+          &.completed {
+            .ghost {
+              background: var(--primary_bg);
+            }
+          }
         }
         &::before {
           content: '';
@@ -393,6 +442,13 @@
           }
         }
         &.active {
+          // &::before {
+          //   content: '';
+          //   position: absolute;
+          //   background: var(--primary_bg);
+          //   display: block;
+          //   width: calc(100% / 2 + 28px);
+          // }
           .ghost {
             background: var(--default_bg_high);
           }
@@ -405,6 +461,9 @@
             border-color: transparent;
           }
         }
+        // .ghost {
+        //   background: var(--primary_bg);
+        // }
         .hcl-wizard-left-pane {
           padding: 8px 0;
         }
@@ -561,7 +620,9 @@
       .no-icon-child {
         position: relative;
         display: inline-block;
+        /* border:1px solid var(--primary_bg); */
         border-radius: 50%;
+        /* background: var(--primary_bg); */
         width: 84%;
         height: 84%;
         top: 0%;
@@ -602,8 +663,12 @@
       }
     }
     .hcl-wizard-left-pane,
-    .hcl-wizard-right-pane,
-    .wiz-title,
+    .hcl-wizard-right-pane {
+      display: none;
+    }
+    .wiz-title {
+      display: none;
+    }
     .wiz-description {
       display: none;
     }
