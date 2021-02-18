@@ -92,9 +92,13 @@
     .#{$prefix}-rte-flex {
       padding: 0.5rem 0.875rem;
       white-space: nowrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       input {
         width: 60%;
+        height: 2rem;
         margin-left: 0.5rem;
       }
 
