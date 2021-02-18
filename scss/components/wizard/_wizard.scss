@@ -46,7 +46,7 @@
         }
       }
     }
-    .#{prefix}-wizard__title {
+    .#{$prefix}-wizard__title {
       min-width: 0.625rem;
       width: 100%;
       height: 1.125rem;
@@ -59,7 +59,7 @@
       overflow: hidden;
       white-space: nowrap;
     }
-    .#{prefix}-wizard__description {
+    .#{$prefix}-wizard__description {
       min-width: 0.625rem;
       width: 100%;
       height: 1rem;
@@ -72,11 +72,11 @@
       overflow: hidden;
       white-space: nowrap;
     }
-    .#{prefix}-wizard-left-pane {
+    .#{$prefix}-wizard-left-pane {
       display: flex;
       align-items: center;
     }
-    .#{prefix}-wizard-right-pane {
+    .#{$prefix}-wizard-right-pane {
       padding-left: 0.5rem;
       display: flex;
       flex-direction: column;
@@ -149,7 +149,7 @@
         }
       }
     }
-    .#{prefix}-wizard__user {
+    .#{$prefix}-wizard__user {
       width: 1.5rem;
       height: 1.5rem;
       border-radius: 50%;
@@ -160,7 +160,7 @@
       align-items: center;
     }
     // Only desktop - Design 1
-    &:not(.#{prefix}-wizard__no-title) {
+    &:not(.#{$prefix}-wizard__no-title) {
       .wiz-item {
         &.completed {
           &.active {
@@ -204,7 +204,7 @@
             width: 100%;
             transition: border-color 0.07s ease-in;
           }
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             border: 0.0625rem solid var(--secondary_icon);
             padding: 0.1875rem;
           }
@@ -246,7 +246,7 @@
             width: 100%;
             transition: border-color 0.07s ease-in;
           }
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             border: 0.0625rem solid var(--secondary_icon);
             padding: 0.1875rem;
           }
@@ -263,7 +263,7 @@
             width: 100%;
             transition: border-color 0.07s ease-in;
           }
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             padding: 0.1875rem;
             color: var(--primary_icon);
             box-shadow: 0 0 0 0.0625rem var(--default_bg),
@@ -280,7 +280,7 @@
           background: var(--primary_bg);
         }
         // &.error {
-        //   .#{prefix}-wizard__user {
+        //   .#{$prefix}-wizard__user {
         //     border: none;
         //   }
         // }
@@ -288,9 +288,9 @@
     }
     // Only desktop - Design 1
     // Only desktop noicon - Design 1
-    &:not(.#{prefix}-wizard__no-title).no-icon {
+    &:not(.#{$prefix}-wizard__no-title).no-icon {
       .wiz-item {
-        .#{prefix}-wizard__user {
+        .#{$prefix}-wizard__user {
           box-sizing: border-box;
           width: 1rem;
           height: 1rem;
@@ -299,11 +299,11 @@
         }
         &.completed {
           &.active {
-            .#{prefix}-wizard__user {
+            .#{$prefix}-wizard__user {
               border: none;
             }
           }
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             box-sizing: border-box;
             width: 1rem;
             height: 1rem;
@@ -313,11 +313,11 @@
         }
         &.error {
           &.active {
-            .#{prefix}-wizard__user {
+            .#{$prefix}-wizard__user {
               border: none;
             }
           }
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             box-sizing: border-box;
             width: 1rem;
             height: 1rem;
@@ -327,7 +327,7 @@
           }
         }
         &.active {
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             box-sizing: border-box;
             width: 1rem;
             height: 1rem;
@@ -353,7 +353,7 @@
     }
     // Only desktop number - Design 1
     // Wizard with no desc - Design 2
-    &.#{prefix}-wizard__no-title {
+    &.#{$prefix}-wizard__no-title {
       .wiz-item {
         flex-direction: column;
         justify-content: center;
@@ -454,7 +454,7 @@
           .ghost {
             background: var(--default_bg_high);
           }
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             padding: 0.1875rem;
             color: var(--primary_icon);
             box-shadow: 0 0 0 0.0625rem var(--default_bg),
@@ -466,33 +466,33 @@
         // .ghost {
         //   background: var(--primary_bg);
         // }
-        .#{prefix}-wizard-left-pane {
+        .#{$prefix}-wizard-left-pane {
           padding: 0.5rem 0;
         }
-        .#{prefix}-wizard-right-pane {
+        .#{$prefix}-wizard-right-pane {
           justify-content: center;
           padding-left: 0;
         }
-        .#{prefix}-wizard__description {
+        .#{$prefix}-wizard__description {
           display: none !important;
         }
       }
     }
     // Wizard with no title - Design 2
     // Only desktop noicon - Design 2
-    &.#{prefix}-wizard__no-title.no-icon {
+    &.#{$prefix}-wizard__no-title.no-icon {
       .wiz-item {
-        .#{prefix}-wizard__user {
+        .#{$prefix}-wizard__user {
           width: 1rem;
           height: 1rem;
         }
         &.completed {
           &.active {
-            .#{prefix}-wizard__user {
+            .#{$prefix}-wizard__user {
               border: none;
             }
           }
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             box-sizing: border-box;
             width: 1rem;
             height: 1rem;
@@ -505,11 +505,11 @@
         }
         &.error {
           &.active {
-            .#{prefix}-wizard__user {
+            .#{$prefix}-wizard__user {
               border: none;
             }
           }
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             box-sizing: border-box;
             width: 1rem;
             height: 1rem;
@@ -522,7 +522,7 @@
           }
         }
         &.active {
-          .#{prefix}-wizard__user {
+          .#{$prefix}-wizard__user {
             box-sizing: border-box;
             width: 1rem;
             height: 1rem;
@@ -664,8 +664,8 @@
         }
       }
     }
-    .#{prefix}-wizard-left-pane,
-    .#{prefix}-wizard-right-pane {
+    .#{$prefix}-wizard-left-pane,
+    .#{$prefix}-wizard-right-pane {
       display: none;
     }
     .wiz-title {
