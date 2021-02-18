@@ -196,7 +196,6 @@
             background: var(--primary_bg);
             height: 0.125rem;
             width: auto;
-            // width: calc(100% / 2 - 20.5rem);
           }
           &:last-child::after {
             background: var(--primary_bg);
@@ -215,8 +214,6 @@
             height: 0.125rem;
             width: calc(100% + 20.5rem);
             transition: border-color 0.07s ease-in;
-
-            // a repeat ?
             content: '';
             position: absolute;
             display: block;
@@ -238,7 +235,6 @@
             background: var(--primary_bg);
             height: 0.125rem;
             width: auto;
-            // width: calc(100% / 2 - 20.5rem);
           }
           &:last-child::after {
             background: var(--primary_bg);
@@ -254,8 +250,6 @@
         &.active {
           &::before {
             background: var(--default_bg_high);
-            // background: var(--primary_bg);
-            // width: calc(100% / 2 - 20.5rem);
           }
           &:last-child::after {
             background: var(--default_bg_high);
@@ -279,11 +273,6 @@
         &.error .ghost {
           background: var(--primary_bg);
         }
-        // &.error {
-        //   .#{$prefix}-wizard__user {
-        //     border: none;
-        //   }
-        // }
       }
     }
     // Only desktop - Design 1
@@ -444,13 +433,6 @@
           }
         }
         &.active {
-          // &::before {
-          //   content: '';
-          //   position: absolute;
-          //   background: var(--primary_bg);
-          //   display: block;
-          //   width: calc(100% / 2 + 20.5rem);
-          // }
           .ghost {
             background: var(--default_bg_high);
           }
@@ -463,9 +445,6 @@
             border-color: transparent;
           }
         }
-        // .ghost {
-        //   background: var(--primary_bg);
-        // }
         .#{$prefix}-wizard-left-pane {
           padding: 0.5rem 0;
         }
@@ -622,9 +601,7 @@
       .no-icon-child {
         position: relative;
         display: inline-block;
-        /* border:0.0625rem solid var(--primary_bg); */
         border-radius: 50%;
-        /* background: var(--primary_bg); */
         width: 84%;
         height: 84%;
         top: 0%;
