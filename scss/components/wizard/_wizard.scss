@@ -109,17 +109,17 @@
         position: absolute;
         background: var(--default_bg_high);
         display: block;
-        width: calc(100% + 20.5rem);
+        width: calc(100% + 1.75rem);
         height: 0.125rem;
         top: 0;
-        left: 20.5rem;
+        left: 1.75rem;
         z-index: 1;
       }
       .ghost {
         height: 0.125rem;
         display: inline-block;
         position: absolute;
-        width: 20.5rem;
+        width: 1.75rem;
         top: 0;
         left: 0;
         background: var(--default_bg_high);
@@ -171,7 +171,7 @@
           &::before {
             background: var(--primary_bg);
             height: 0.125rem;
-            width: calc(100% + 20.5rem);
+            width: calc(100% + 1.75rem);
             transition: border-color 0.07s ease-in;
 
             // a repeat ?
@@ -179,7 +179,7 @@
             position: absolute;
             display: block;
             top: 0;
-            left: 20.5rem;
+            left: 1.75rem;
             z-index: 1;
             background: var(--primary_bg);
             height: 0.125rem;
@@ -191,7 +191,7 @@
             position: absolute;
             display: block;
             top: 0;
-            left: 20.5rem;
+            left: 1.75rem;
             z-index: 1;
             background: var(--primary_bg);
             height: 0.125rem;
@@ -212,13 +212,13 @@
           &::before {
             background: var(--primary_bg);
             height: 0.125rem;
-            width: calc(100% + 20.5rem);
+            width: calc(100% + 1.75rem);
             transition: border-color 0.07s ease-in;
             content: '';
             position: absolute;
             display: block;
             top: 0;
-            left: 20.5rem;
+            left: 1.75rem;
             z-index: 1;
             background: var(--primary_bg);
             height: 0.125rem;
@@ -230,7 +230,7 @@
             position: absolute;
             display: block;
             top: 0;
-            left: 20.5rem;
+            left: 1.75rem;
             z-index: 1;
             background: var(--primary_bg);
             height: 0.125rem;
@@ -357,11 +357,11 @@
               position: absolute;
               display: block;
               top: 0;
-              left: 20.5rem;
+              left: 1.75rem;
               z-index: 1;
               background: var(--primary_bg);
               height: 0.125rem;
-              width: calc(100% / 2 - 20.5rem);
+              width: calc(100% / 2 - 1.75rem);
             }
             .ghost {
               background: var(--primary_bg);
@@ -378,10 +378,10 @@
           position: absolute;
           background: var(--default_bg_high);
           display: block;
-          width: calc(100% + 20.5rem);
+          width: calc(100% + 1.75rem);
           height: 0.125rem;
           top: 0;
-          left: 20.5rem;
+          left: 1.75rem;
           z-index: 1;
         }
         &.completed {
@@ -390,10 +390,10 @@
             position: absolute;
             background: var(--primary_bg);
             display: block;
-            width: calc(100% + 20.5rem);
+            width: calc(100% + 1.75rem);
             height: 0.125rem;
             top: 0;
-            left: 20.5rem;
+            left: 1.75rem;
             z-index: 1;
           }
           & + .wiz-item::after {
@@ -401,11 +401,11 @@
             position: absolute;
             display: block;
             top: 0;
-            left: 20.5rem;
+            left: 1.75rem;
             z-index: 1;
             background: var(--primary_bg);
             height: 0.125rem;
-            width: calc(100% / 2 - 20.5rem);
+            width: calc(100% / 2 - 1.75rem);
           }
         }
         &.error {
@@ -414,10 +414,10 @@
             position: absolute;
             background: var(--primary_bg);
             display: block;
-            width: calc(100% + 20.5rem);
+            width: calc(100% + 1.75rem);
             height: 0.125rem;
             top: 0;
-            left: 20.5rem;
+            left: 1.75rem;
             z-index: 1;
           }
           & + .wiz-item::after {
@@ -425,11 +425,11 @@
             position: absolute;
             display: block;
             top: 0;
-            left: 20.5rem;
+            left: 1.75rem;
             z-index: 1;
             background: var(--primary_bg);
             height: 0.125rem;
-            width: calc(100% / 2 - 20.5rem);
+            width: calc(100% / 2 - 1.75rem);
           }
         }
         &.active {
