@@ -26,6 +26,7 @@ $animation-duration: 220ms;
     position: relative;
     top: 0;
     z-index: unset;
+    height: 100%;
   }
 
   .#{$prefix}-sidebar-hamburger {
