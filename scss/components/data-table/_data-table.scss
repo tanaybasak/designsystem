@@ -75,11 +75,14 @@
           padding: 0.625rem;
 
           .hcl-data-table-header {
-            white-space: nowrap;
             display: inline-block;
 
             overflow: hidden;
             text-overflow: ellipsis;
+
+            &:not(.nowrap) {
+              white-space: nowrap;
+            }
           }
         }
 
@@ -128,6 +131,7 @@
 
           .draggable-column {
             flex-shrink: 0;
+
             g {
               stroke: var(--default_icon_low);
             }
@@ -162,6 +166,10 @@
 
           &.desc {
             transform: rotate(180deg);
+          }
+
+          g {
+            stroke: var(--interactive_icon);
           }
         }
 
