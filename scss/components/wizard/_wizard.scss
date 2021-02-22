@@ -599,13 +599,13 @@
         background: none;
       }
       .no-icon-child {
-        position: relative;
+        position: absolute;
         display: inline-block;
         border-radius: 50%;
         width: 84%;
         height: 84%;
-        top: 0%;
-        left: 9%;
+        top: 8%;
+        margin: 8%;
       }
       &.error {
         .no-icon-child {
