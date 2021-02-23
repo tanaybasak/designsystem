@@ -631,10 +631,11 @@
         position: absolute;
         display: inline-block;
         border-radius: 50%;
-        width: 84%;
-        height: 84%;
-        top: 8%;
-        left: 8%;
+        width: 70%;
+        height: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
       &.error {
         .no-icon-child {
