@@ -6,32 +6,32 @@
     margin: 0;
     flex: 1 1 0;
     &.linear {
-      .wiz-item.completed:not(.active):first-child,
-      .wiz-item.error:not(.active):first-child {
+      .wiz-item.completed:not(.active):first-child button,
+      .wiz-item.error:not(.active):first-child button {
         &:hover {
           background: var(--interactive_bg_hover);
           cursor: pointer;
         }
       }
       // adjacent element next to active + completed make as active.
-      .wiz-item.completed.active + .wiz-item:not(.active),
-      .wiz-item.completed + .wiz-item.completed:not(.active),
-      .wiz-item.completed + .wiz-item.error:not(.active),
-      .wiz-item.error.active + .wiz-item:not(.active),
-      .wiz-item.error.active + .wiz-item.error:not(.active),
-      .wiz-item.error.active + .wiz-item.completed:not(.active) {
+      .wiz-item.completed.active + .wiz-item:not(.active) button,
+      .wiz-item.completed + .wiz-item.completed:not(.active) button,
+      .wiz-item.completed + .wiz-item.error:not(.active) button,
+      .wiz-item.error.active + .wiz-item:not(.active) button,
+      .wiz-item.error.active + .wiz-item.error:not(.active) button,
+      .wiz-item.error.active + .wiz-item.completed:not(.active) button {
         &:hover {
           background: var(--interactive_bg_hover);
           cursor: pointer;
         }
       }
       //adjacent completed & error make as active
-      .wiz-item.completed:not(.active) + .completed:not(.active),
-      .wiz-item.error:not(.active) + .error:not(.active),
-      .wiz-item.error:not(.active) + .completed:not(.active),
-      .wiz-item.completed:not(.active) + .error:not(.active),
-      .wiz-item.completed:not(.active) + .wiz-item:not(.active),
-      .wiz-item.error:not(.active) + .wiz-item:not(.active) {
+      .wiz-item.completed:not(.active) + .completed:not(.active) button,
+      .wiz-item.error:not(.active) + .error:not(.active) button,
+      .wiz-item.error:not(.active) + .completed:not(.active) button,
+      .wiz-item.completed:not(.active) + .error:not(.active) button,
+      .wiz-item.completed:not(.active) + .wiz-item:not(.active) button,
+      .wiz-item.error:not(.active) + .wiz-item:not(.active) button {
         &:hover {
           background: var(--interactive_bg_hover);
           cursor: pointer;
@@ -39,7 +39,7 @@
       }
     }
     &.nonlinear {
-      .wiz-item {
+      .wiz-item button {
         &:hover {
           background: var(--interactive_bg_hover);
           cursor: pointer;
@@ -102,8 +102,26 @@
     .wiz-item {
       flex: 1 1 0;
       position: relative;
-      padding: 0.5rem 1rem;
+      // padding: 0.5rem 1rem;
       display: flex;
+      button {
+        margin: 0;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex: 1 1 auto;
+        padding: 0.5rem 1rem;
+        &[tabindex='-1']:focus {
+          outline: 0 none;
+          outline-offset: 0;
+        }
+        &[tabindex='0']:focus {
+          outline: 0 none;
+          outline-offset: 0;
+          box-shadow: 0 0 0 0.05rem var(--interactive_border) inset;
+        }
+      }
       &::before {
         content: '';
         position: absolute;
@@ -344,12 +362,15 @@
     // Wizard with no desc - Design 2
     &.#{$prefix}-wizard__no-title {
       .wiz-item {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 0;
-        padding-bottom: 0;
-        text-align: center;
+        button {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-top: 0;
+          padding-bottom: 0;
+          text-align: center;
+          flex: 1 1 auto;
+        }
         &:first-child {
           &.active {
             &::after {
@@ -461,6 +482,12 @@
     // Only desktop noicon - Design 2
     &.#{$prefix}-wizard__no-title.no-icon {
       .wiz-item {
+        button {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          flex: 1 1 auto;
+        }
         .#{$prefix}-wizard__user {
           width: 1rem;
           height: 1rem;
@@ -605,7 +632,7 @@
         width: 84%;
         height: 84%;
         top: 8%;
-        margin: 8%;
+        left: 8%;
       }
       &.error {
         .no-icon-child {
