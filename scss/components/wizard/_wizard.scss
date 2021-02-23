@@ -121,7 +121,7 @@
         &[tabindex='0']:focus {
           outline: 0 none;
           outline-offset: 0;
-          box-shadow: 0 0.0625rem 0 0.1rem var (--interactive_border)  inset;
+          box-shadow: 0 0.0625rem 0 0.1rem var(--interactive_border) inset;
         }
       }
       &::before {
