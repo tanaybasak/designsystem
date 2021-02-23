@@ -80,6 +80,7 @@
       padding-left: 0.5rem;
       display: flex;
       flex-direction: column;
+      text-align: left;
     }
     .wiz-no-icon-container,
     .wiz-icon-container {
@@ -112,6 +113,7 @@
         display: flex;
         flex: 1 1 auto;
         padding: 0.5rem 1rem;
+        align-items: center;
         &[tabindex='-1']:focus {
           outline: 0 none;
           outline-offset: 0;
@@ -119,7 +121,7 @@
         &[tabindex='0']:focus {
           outline: 0 none;
           outline-offset: 0;
-          box-shadow: 0 0 0 0.05rem var(--interactive_border) inset;
+          box-shadow: 0 0.0625rem 0 0.1rem var (--interactive_border)  inset;
         }
       }
       &::before {
