@@ -236,6 +236,9 @@
             // width: 100%;
             transition: border-color 0.07s ease-in;
           }
+          &:last-child::before {
+            width: calc(100% - 1.75rem);
+          }
           .#{$prefix}-wizard__user {
             border: 0.0625rem solid var(--secondary_icon);
             padding: 0.1875rem;
