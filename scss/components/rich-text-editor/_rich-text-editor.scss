@@ -116,6 +116,10 @@
         }
       }
     }
+    .#{$prefix}-rte-text {
+      display: flex;
+      align-items: center;
+    }
 
     button.#{$prefix}-btn {
       margin: 0;
