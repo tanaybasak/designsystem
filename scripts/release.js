@@ -2,6 +2,7 @@
 const path = require('path');
 const replace = require('replace');
 const q = require('q');
+const shell = require('shelljs');
 const root = require('app-root-path').path;
 const git = require('simple-git')(root);
 const packageFile = path.join(__dirname, '../', 'package.json');
@@ -36,6 +37,24 @@ const bump = version => {
   });
   return q.when(version);
 };
+
+function installPackage(ver) {
+  var deferred = q.defer();
+
+  if (!ver) {
+    console.log(`No valid version!`);
+    return deferred.reject(new Error(`Problem in installing packages: ${ver}`));
+  }
+
+  shell.exec('npm i', function (code, stdout, stderr) {
+    if (code === 0) {
+      deferred.resolve(ver);
+    } else {
+      deferred.reject(new Error(`Reject Reason:${code}, ${stderr}`));
+    }
+  });
+  return deferred.promise;
+}
 
 function addAndCommit(version) {
   var deferred = q.defer();
@@ -102,11 +121,15 @@ getVersion()
     return bump(version);
   })
   .then(version => {
+    return installPackage(version);
+  })
+  .then(version => {
     return addAndCommit(version);
   })
   .then(version => {
     return pushToBranch(version);
   })
+  .catch(err => console.log(err))
   .done(() => {
     console.log('Tasks Completed');
   });
