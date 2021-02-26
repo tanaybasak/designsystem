@@ -138,7 +138,7 @@ $animation-duration: 220ms;
 
     .#{$prefix}-sidebar-category {
       position: relative;
-      .disable {
+      &.disable {
         a {
           pointer-events: none;
         }
