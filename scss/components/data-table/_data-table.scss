@@ -152,7 +152,7 @@
         }
 
         color: var(--default_text_high);
-        background-color: var(--default_bg_low);
+        background-color: var(--default_bg_high);
 
         .#{$prefix}-sorting {
           vertical-align: middle;
@@ -162,6 +162,11 @@
 
           &.desc {
             transform: rotate(180deg);
+          }
+
+          &.unsorted {
+            stroke: var(--interactive_icon);
+            font-size: 1rem;
           }
 
           g {
