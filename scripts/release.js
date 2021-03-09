@@ -5,8 +5,9 @@ const q = require('q');
 const root = require('app-root-path').path;
 const git = require('simple-git')(root);
 const packageFile = path.join(__dirname, '../', 'package.json');
+const argv = require('yargs/yargs')(process.argv.slice(2)).argv;
 
-const BRANCH_NAME = process.argv[2].split('=')[1] || 'feature-uicoe-865';
+const BRANCH_NAME = argv.BRANCH;
 let DESCRIPTION = `dev description`;
 
 let PROCESS_VER = '';
@@ -15,6 +16,8 @@ let PROCESS_DESC = '';
 PROCESS_VER = process.env.version;
 PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
 PROCESS_DESC = process.env.desc;
+
+console.log(`From Dev Repo: ${BRANCH_NAME}, ${PROCESS_VER}, ${PROCESS_DESC}`);
 
 const getVersion = () => {
   if (PROCESS_VER === '' || PROCESS_DESC === '' || BRANCH_NAME === '') {
@@ -97,16 +100,16 @@ function pushToBranch(version) {
 
 // getVersion()
 // dummy()
-getVersion()
-  .then(version => {
-    return bump(version);
-  })
-  .then(version => {
-    return addAndCommit(version);
-  })
-  .then(version => {
-    return pushToBranch(version);
-  })
-  .done(() => {
-    console.log('Tasks Completed');
-  });
+// getVersion()
+//   .then(version => {
+//     return bump(version);
+//   })
+//   .then(version => {
+//     return addAndCommit(version);
+//   })
+//   .then(version => {
+//     return pushToBranch(version);
+//   })
+//   .done(() => {
+//     console.log('Tasks Completed');
+//   });
