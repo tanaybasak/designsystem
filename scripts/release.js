@@ -18,10 +18,6 @@ PROCESS_VER = process.env.version;
 PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
 PROCESS_DESC = process.env.desc;
 
-console.log(
-  `From css-Dev Repo: ${BRANCH_NAME}, ${PROCESS_VER}, ${PROCESS_DESC}`
-);
-
 const getVersion = () => {
   if (PROCESS_VER === '' || PROCESS_DESC === '' || BRANCH_NAME === '') {
     process.exit(0);
@@ -121,17 +117,20 @@ function pushToBranch(version) {
 
 // getVersion()
 // dummy()
-// getVersion()
-//   .then(version => {
-//     return bump(version);
-//   })
-//   .then(version => {
-//     return addAndCommit(version);
-//   })
-//   .then(version => {
-//     return pushToBranch(version);
-//   })
-//   .done(() => {
-//     console.log('Tasks Completed');
-//   });
-//
+getVersion()
+  .then(version => {
+    return bump(version);
+  })
+  .then(version => {
+    return installPackage(version);
+  })
+  .then(version => {
+    return addAndCommit(version);
+  })
+  .then(version => {
+    return pushToBranch(version);
+  })
+  .done(() => {
+    console.log('Tasks Completed');
+  });
+
