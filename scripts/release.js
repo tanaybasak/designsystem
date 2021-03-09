@@ -115,8 +115,6 @@ function pushToBranch(version) {
   return deferred.promise;
 }
 
-// getVersion()
-// dummy()
 getVersion()
   .then(version => {
     return bump(version);
