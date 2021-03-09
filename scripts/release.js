@@ -130,7 +130,7 @@ getVersion()
   .then(version => {
     return pushToBranch(version);
   })
+  .catch(err => console.log(err))
   .done(() => {
     console.log('Tasks Completed');
   });
-
