@@ -41,7 +41,8 @@
     "semver": "^7.3.4",
     "shelljs": "^0.8.4",
     "simple-git": "^2.35.2",
-    "stylelint": "^13.7.2"
+    "stylelint": "^13.7.2",
+    "yargs": "^16.2.0"
   },
   "browserslist": [
     "> .1%",

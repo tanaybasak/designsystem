@@ -18,7 +18,7 @@ PROCESS_VER = process.env.version;
 PROCESS_VER = PROCESS_VER.replace(/\n/gi, '');
 PROCESS_DESC = process.env.desc;
 
-console.log(`From Dev Repo: ${BRANCH_NAME}, ${PROCESS_VER}, ${PROCESS_DESC}`);
+console.log(`From css-Dev Repo: ${BRANCH_NAME}, ${PROCESS_VER}, ${PROCESS_DESC}`);
 
 const getVersion = () => {
   if (PROCESS_VER === '' || PROCESS_DESC === '' || BRANCH_NAME === '') {
