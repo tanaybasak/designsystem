@@ -6,8 +6,9 @@ const shell = require('shelljs');
 const root = require('app-root-path').path;
 const git = require('simple-git')(root);
 const packageFile = path.join(__dirname, '../', 'package.json');
+const argv = require('yargs/yargs')(process.argv.slice(2)).argv;
 
-const BRANCH_NAME = process.argv[2].split('=')[1] || 'feature-uicoe-865';
+const BRANCH_NAME = argv.BRANCH;
 let DESCRIPTION = `dev description`;
 
 let PROCESS_VER = '';
@@ -114,8 +115,6 @@ function pushToBranch(version) {
   return deferred.promise;
 }
 
-// getVersion()
-// dummy()
 getVersion()
   .then(version => {
     return bump(version);
