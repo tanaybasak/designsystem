@@ -6,7 +6,7 @@
   "scripts": {
     "build": "parcel build modular/*/index.js --no-source-maps -d .dist/ && parcel build modular/*/*/index.js --no-source-maps -d .dist/ ",
     "dev": "parcel index.html -d output --port 8000",
-    "dev:build": "parcel build index.html --no-source-maps --no-minify -d dist/",
+    "dev:build": "parcel build index.html --no-source-maps --no-minify --public-url ./ -d dist/",
     "start": "node server.js",
     "clean": "rimraf dist",
     "stylelint": "stylelint '**/*.scss';",

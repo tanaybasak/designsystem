@@ -17,6 +17,9 @@ class Sidebar {
     );
     this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
     this.activeItem = null;
+    if (this.state.expanded) {
+      this.element.classList.add('expanded');
+    }
   }
 
   findNextSiblingAncestor = nodeElement => {

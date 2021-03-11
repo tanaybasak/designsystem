@@ -15,8 +15,10 @@ const loadData = async () => {
       ${await sidebar.render()}
       ${content.render()}
   `;
-  window.patron.sidebar('.hcl-sidebar', {});
-  window.patron.dropdown('#bottom-dropdown', {
+  window.patron.sidebar('.hcl-vanilla-sidebar', {
+    expanded: screen.width > 992
+  });
+  window.patron.dropdown('#theme-dropdown', {
     position: 'bottom',
     onChange: e => {
       document.body.classList.remove(

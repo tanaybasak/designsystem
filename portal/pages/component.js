@@ -1,3 +1,5 @@
+const prettier = require('prettier');
+const parser = require('prettier/parser-babel');
 export async function render(htmlName) {
   const contentEl = document.getElementById('main');
 
@@ -7,24 +9,26 @@ export async function render(htmlName) {
   const componentWrapper = await import('../pages/componentWrapper');
 
   const template = `
-<div class="component-wrapper">
-    ${componentWrapper.getTitle(componentInfo.heading)}
-
+<div class="hcl-container">
+<div class="hcl-row">
+    <div class="hcl-col-12">${componentWrapper.getTitle(
+      componentInfo.heading
+    )}</div>
+</div>
+    
     ${componentInfo.variation
       .map(componentWrapper.getComponentVariation)
       .join('')}
-
+      
       ${
         (componentInfo.cssDocumentation &&
           componentInfo.cssDocumentation.length > 0) ||
         (componentInfo.jsDocumentation &&
           componentInfo.jsDocumentation.length > 0)
-          ? `<div class="documenation-title"> <h4>Documentation</h4></div>`
+          ? `<div class="documenation-title mb-5"> <h4>Documentation</h4></div>`
           : ``
       }
-
      
-
       ${
         componentInfo.cssDocumentation &&
         componentInfo.cssDocumentation.length > 0
@@ -36,7 +40,6 @@ export async function render(htmlName) {
           `
           : ''
       }
-
       ${
         componentInfo.jsDocumentation &&
         componentInfo.jsDocumentation.length > 0
@@ -46,7 +49,6 @@ export async function render(htmlName) {
           `
           : ''
       }
-
       ${
         componentInfo.methodDocumentation &&
         componentInfo.methodDocumentation.length > 0
@@ -77,7 +79,15 @@ export async function render(htmlName) {
       str = str.substring(0, str.length - 1);
 
       str = str.replace(/  +/g, ' ');
-      jsCodeSnippet = codeSnippet.render(str, 'javascript');
+      jsCodeSnippet = codeSnippet.render(
+        prettier.format(str, {
+          semi: false,
+          parser: 'babel',
+          trailingComma: 'none',
+          plugins: [parser]
+        }),
+        'javascript'
+      );
     }
     codeSnippetWrapper
       .querySelector('.html-section')
