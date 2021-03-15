@@ -169,9 +169,11 @@
             transform: rotate(180deg);
           }
 
-          g,
-          path {
+          g {
             stroke: var(--interactive_icon);
+          }
+          path {
+            fill: var(--interactive_icon);
           }
         }
 
