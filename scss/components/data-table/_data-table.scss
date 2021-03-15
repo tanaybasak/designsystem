@@ -169,13 +169,10 @@
             transform: rotate(180deg);
           }
 
-          g {
+          g,
+          path {
             stroke: var(--interactive_icon);
           }
-        }
-
-        .#{$prefix}-unsorted-icon {
-          fill: var(--interactive_icon);
         }
 
         &.#{$prefix}-overlay-wrapper-active {
