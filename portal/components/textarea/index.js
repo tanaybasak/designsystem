@@ -8,16 +8,19 @@ const textarea = {
   variation: [
     {
       subHeading: 'Default',
+      className: 'hcl-col-12 hcl-col-md-6 hcl-col-lg-4',
       template: require('./default.html')
     },
 
     {
       subHeading: 'Textarea-with-error',
+      className: 'hcl-col-12 hcl-col-md-6 hcl-col-lg-4',
       template: require('./textarea-with-error.html')
     },
 
     {
       subHeading: 'Textarea-with-helpertext',
+      className: 'hcl-col-12 hcl-col-md-6 hcl-col-lg-4',
       template: require('./textarea-with-helpertext.html')
     }
   ]

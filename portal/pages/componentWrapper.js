@@ -10,7 +10,9 @@ export const getComponentVariation = (item, index) => {
       <div class="hcl-col-12">
           <h4 class="subtitle mb-3">${item.subHeading}</h4>
           <div class="hcl-row">
-            <div class="hcl-col-12 hcl-col-xl-8">
+            <div class="${
+              item.className ? item.className : 'hcl-col-12 hcl-col-xl-8'
+            }">
                 <div class="p-3 mb-5">${item.template}</div>
             </div>
           </div>

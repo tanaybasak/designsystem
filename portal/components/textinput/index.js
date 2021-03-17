@@ -17,16 +17,19 @@ const textinput = {
   variation: [
     {
       subHeading: 'Default',
+      className: 'hcl-col-12 hcl-col-md-6 hcl-col-lg-4',
       template: require('./default.html')
     },
 
     {
       subHeading: 'Textinput-with-error',
+      className: 'hcl-col-12 hcl-col-md-6 hcl-col-lg-4',
       template: require('./textinput-with-error.html')
     },
 
     {
       subHeading: 'Textinput-with-helpertext',
+      className: 'hcl-col-12 hcl-col-md-6 hcl-col-lg-4',
       template: require('./textinput-with-helpertext.html')
     }
   ]
