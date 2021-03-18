@@ -1,5 +1,5 @@
 const datatable = {
-  heading: 'Data-table',
+  heading: 'Data Table',
   cssDocumentation: [
     {
       name: '.hcl-data-table',

@@ -4,7 +4,7 @@ export async function render(htmlName) {
   const contentEl = document.getElementById('main');
 
   const imports = require('../components/imports');
-
+  htmlName = htmlName.replace(/-/g, '');
   const componentInfo = imports[htmlName];
   const componentWrapper = await import('../pages/componentWrapper');
 

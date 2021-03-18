@@ -1,5 +1,5 @@
 const contentswitcher = {
-  heading: 'Content-switcher',
+  heading: 'Content Switcher',
   cssDocumentation: [
     {
       name: '.hcl-content-switcher',

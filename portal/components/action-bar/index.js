@@ -1,5 +1,5 @@
 const actionbar = {
-  heading: 'Action-bar',
+  heading: 'Action Bar',
   cssDocumentation: [],
   jsDocumentation: [],
   methodDocumentation: [],

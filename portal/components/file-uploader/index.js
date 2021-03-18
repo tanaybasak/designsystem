@@ -1,5 +1,5 @@
 const fileuploader = {
-  heading: 'File-uploader',
+  heading: 'File Uploader',
   cssDocumentation: [],
   jsDocumentation: [],
   methodDocumentation: [],

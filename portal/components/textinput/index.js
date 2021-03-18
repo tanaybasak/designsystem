@@ -1,5 +1,5 @@
 const textinput = {
-  heading: 'Textinput',
+  heading: 'Text Input',
   cssDocumentation: [
     {
       name: '.hcl-form-control',

@@ -1,5 +1,5 @@
 const numberinput = {
-  heading: 'Number-input',
+  heading: 'Number Input',
   cssDocumentation: [],
   jsDocumentation: [],
   methodDocumentation: [],

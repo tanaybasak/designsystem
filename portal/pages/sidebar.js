@@ -18,14 +18,8 @@ export async function render() {
 
     sidebarItems.default.map(link => {
       links += `
-          <li class="hcl-sidebar-category" aria-expanded="false" data-navigation="${
-            link.link
-          }">
-              <a tabindex="0" title="${
-                link.title
-              }" class="hcl-sidebar-item" href="#${
-        link.name ? link.name : link.link
-      }">
+          <li class="hcl-sidebar-category" aria-expanded="false" data-navigation="${link.link}">
+              <a tabindex="0" title="${link.title}" class="hcl-sidebar-item" href="#${link.link}">
                   <span class="hcl-sidebar-link no-icon">${link.title}</span>
               </a>
           </li>`;

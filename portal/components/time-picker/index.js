@@ -1,5 +1,5 @@
 const timepicker = {
-  heading: 'Time-picker',
+  heading: 'Time picker',
   cssDocumentation: [],
   jsDocumentation: [],
   methodDocumentation: [],

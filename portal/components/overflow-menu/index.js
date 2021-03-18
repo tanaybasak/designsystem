@@ -1,5 +1,5 @@
 const overflowmenu = {
-  heading: 'Overflow-menu',
+  heading: 'Overflow Menu',
   cssDocumentation: [
     {
       name: '.hcl-overflow-option-disablebtn',

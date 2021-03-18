@@ -1,5 +1,5 @@
 const progressindicator = {
-  heading: 'Progress-indicator',
+  heading: 'Progress Indicator',
   cssDocumentation: [
     {
       name: '.hcl-pb-circle',

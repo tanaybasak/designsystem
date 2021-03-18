@@ -1,5 +1,5 @@
 const datepicker = {
-  heading: 'Date-picker',
+  heading: 'Date Picker',
   cssDocumentation: [],
   jsDocumentation: [],
   methodDocumentation: [],
