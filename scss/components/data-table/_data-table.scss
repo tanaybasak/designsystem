@@ -12,6 +12,13 @@
   border: 0.0625rem solid var(--default_border_xlow);
   color: var(--default_text);
 
+  &-resizer {
+    overflow-x: scroll;
+    .#{$prefix}-data-table {
+      height: 100%;
+    }
+  }
+
   .resize-line {
     display: none;
     position: absolute;
