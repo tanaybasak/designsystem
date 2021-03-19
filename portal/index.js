@@ -18,8 +18,7 @@ const loadData = async () => {
   window.patron.sidebar('.hcl-vanilla-sidebar', {
     expanded: screen.width > 992
   });
-  window.patron.dropdown('#theme-dropdown', {
-    position: 'bottom',
+  window.patron.overflow('#theme-overflow', {
     onChange: e => {
       document.body.classList.remove(
         'blue_active_blue_light',
@@ -28,6 +27,12 @@ const loadData = async () => {
         'blue_active_orange_dark'
       );
       document.body.classList.add(e.currentTarget.dataset.theme);
+      document
+        .querySelector('#theme-overflow')
+        .firstElementChild.querySelector(
+          'span'
+        ).innerHTML = `Theme : ${e.currentTarget.textContent.trim()}`;
+
       const theme = document.getElementById('prism-light');
       if (e.currentTarget.dataset.theme.endsWith('dark')) {
         theme.href = globalPrismDark;
