@@ -440,8 +440,8 @@ resize table from bottom
   border-top: 1px solid var(--interactive_border);
   height: 0.625rem;
   background-color: var(--interactive_bg);
-  cursor: 'row-resize';
   &:hover {
     background-color: var(--interactive_bg_hover);
+    cursor: 'row-resize';
   }
 }
