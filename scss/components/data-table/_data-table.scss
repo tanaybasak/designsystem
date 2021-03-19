@@ -13,7 +13,7 @@
   color: var(--default_text);
 
   &-resizer {
-    overflow-x: scroll;
+    overflow-y: scroll;
     .#{$prefix}-data-table {
       height: 100%;
     }
