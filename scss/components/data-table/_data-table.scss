@@ -442,6 +442,6 @@ resize table from bottom
   background-color: var(--interactive_bg);
   &:hover {
     background-color: var(--interactive_bg_hover);
-    cursor: 'row-resize';
+    cursor: row-resize;
   }
 }
