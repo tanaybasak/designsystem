@@ -68,8 +68,8 @@ export const getCSSDocumentation = doc => {
               <table class="hcl-data-table data-table-doc">
                   <thead>
                       <tr>
-                          <th>Name</th>
-                          <th>Description</th>
+                          <th><div class="hcl-data-table-header-wrapper">Name</div></th>
+                          <th><div class="hcl-data-table-header-wrapper">Description</div></th>
                       </tr>
                   </thead>
                   <tbody>
@@ -90,9 +90,9 @@ export const getJSDocumentation = doc => {
               <table class="hcl-data-table data-table-doc">
                   <thead>
                       <tr>
-                          <th>Name</th>
-                          <th>Default</th>
-                          <th>Description</th>
+                          <th><div class="hcl-data-table-header-wrapper">Name</div></th>
+                          <th><div class="hcl-data-table-header-wrapper">Default</div></th>
+                          <th><div class="hcl-data-table-header-wrapper">Description</div></th>
                       </tr>
                   </thead>
                   <tbody>
@@ -123,8 +123,8 @@ export const getMethodDocumentation = doc => {
                 <table class="hcl-data-table data-table-doc">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Description</th>
+                            <th><div class="hcl-data-table-header-wrapper">Name</div></th>
+                            <th><div class="hcl-data-table-header-wrapper">Description</div></th>
                         </tr>
                     </thead>
                     <tbody>

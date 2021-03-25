@@ -98,7 +98,13 @@ const modal = {
 
     {
       subHeading: 'Success-label-action',
-      template: require('./success-label-action.html')
+      template: require('./success-label-action.html'),
+      trigger: () => {
+        window.patron.modal('#hcl-modal-success-label-action', {
+          onChange: () => {},
+          keyboard: true
+        });
+      }
     },
 
     {

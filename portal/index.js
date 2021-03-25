@@ -33,13 +33,6 @@ const loadData = async () => {
         .firstElementChild.querySelector(
           'span'
         ).innerHTML = `Theme : ${e.currentTarget.textContent.trim()}`;
-
-      const theme = document.getElementById('prism-light');
-      if (e.currentTarget.dataset.theme.endsWith('dark')) {
-        theme.href = globalPrismDark;
-      } else {
-        theme.href = globalPrismLight;
-      }
     }
   });
   const routerArray = [];
@@ -50,9 +43,3 @@ const loadData = async () => {
   new Router(routerArray);
 };
 loadData();
-// Remove Dark Theme on Initial Load
-const prismDark = document.getElementById('prism-dark');
-const prismLight = document.getElementById('prism-light');
-const globalPrismLight = prismLight.href;
-const globalPrismDark = prismDark.href;
-prismDark.parentNode.removeChild(prismDark);
