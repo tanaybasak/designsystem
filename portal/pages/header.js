@@ -17,7 +17,7 @@ export function render() {
                   <div id="theme-overflow" class="hcl-overlay-wrapper">
   <button class="hcl-btn hcl-primary hcl-sm" aria-label="Left Overflow Menu" role="Overflow Menu">
   
-  <span>Theme : V1 Light</span>
+  <span>Theme : V2 Light</span>
             <svg
               class='hcl-btn-icon'
               viewBox='0 0 16 16'

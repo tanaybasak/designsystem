@@ -3,6 +3,7 @@ import Router from './router/router';
 import Route from './router/route';
 import './index.scss';
 import './component.scss';
+import './prism.scss';
 const rootElement = document.getElementById('root');
 
 const loadData = async () => {
