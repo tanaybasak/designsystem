@@ -37,7 +37,7 @@ const sidebarItems = [
   { title: 'Tab', link: 'tab' },
   { title: 'Tag', link: 'tag' },
   { title: 'Textarea', link: 'textarea' },
-  { title: 'Textinput', link: 'text-input' },
+  { title: 'Textinput', link: 'textinput' },
   { title: 'Tile', link: 'tile' },
   { title: 'Timepicker', link: 'time-picker' },
   { title: 'Toast', link: 'toast' },
