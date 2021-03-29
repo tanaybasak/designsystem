@@ -1,1 +1,0 @@
-Overlay panel is a powerful component which is used to build multiple other components (e.g. Overflow menu, search panel, Dropdown, Datepicker etc.) It is basically a tile that floats on top of content and can contain anything. It can open attached to any target element, then either stick to the screen or move with the target on scroll.

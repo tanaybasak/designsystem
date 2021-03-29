@@ -1,0 +1,172 @@
+.hcl-vanilla {
+  min-height: 100vh;
+
+  > .hcl-header {
+    .hcl-header-wrapper {
+      .hcl-header-icons {
+        .hcl-header-icon {
+          margin: auto 0.5rem;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+
+        .version {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .hcl-vanilla-sidebar:not(.expanded) {
+      background: transparent;
+
+      .hcl-sidebar-hamburger span {
+        background-color: white;
+      }
+    }
+  }
+
+  .main-container {
+    left: 2.5rem;
+    transition: left 220ms ease-in-out;
+    width: calc(100% - 2.5rem);
+    position: relative;
+    overflow-x: hidden;
+    padding-top: 50px;
+
+    @media screen and (max-width: 992px) {
+      left: 0;
+      width: 100%;
+      padding-top: 64px;
+    }
+
+    &.sidebar-expanded {
+      left: 12.5rem;
+      transition: left 220ms ease-in-out;
+      width: calc(100% - 12.5rem);
+
+      @media screen and (max-width: 992px) {
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    .hcl-container {
+      .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 0;
+        text-transform: capitalize;
+      }
+
+      .subtitle {
+        text-transform: capitalize;
+      }
+
+      .underline {
+        opacity: 0.9;
+        background: #0066b3;
+        width: 50px;
+        height: 2px;
+      }
+
+      .component-code-snippet-wrapper {
+        .code-wrapper {
+          position: relative;
+          box-shadow: inset 0.125rem 0.125rem 0.3125rem 0.125rem
+            rgba(0, 0, 0, 0.2);
+          border: 0.0625rem solid var(--default_border_xlow);
+          background-color: var(--default_bg);
+
+          .copy-snippet {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            z-index: 1;
+            font-family: 'Roboto Mono' !important;
+
+            svg {
+              fill: var(--interactive_icon);
+              width: 1rem;
+              height: 1rem;
+            }
+          }
+
+          .code-snippet-wrapper {
+            max-height: 500px;
+            overflow: auto;
+            box-shadow: inset 2.375rem 0 0 0 var(--default_bg_high);
+            background-color: var(--default_bg);
+
+            code[class*='language-'],
+            pre[class*='language-'] {
+              font-family: 'Roboto Mono' !important;
+              color: var(--default_text) !important;
+              text-shadow: unset !important;
+            }
+
+            pre[class*='language-'] {
+              margin: 0;
+            }
+
+            .line-numbers {
+              background: transparent !important;
+              font-size: 14px !important;
+              font-family: 'Roboto Mono' !important;
+              position: relative;
+              padding-left: 3.5rem;
+              overflow: hidden;
+
+              border: none;
+              border-radius: unset;
+              box-shadow: inset 0.125rem 0.125rem 0.3125rem 0.125rem
+                rgba(0, 0, 0, 0.2);
+
+              //ounter-reset: linenumber;
+
+              .span-line-number {
+                position: absolute;
+                top: 15px;
+                width: 2.5rem;
+                text-align: right;
+                padding-right: 10px;
+                display: flex;
+                flex-direction: column;
+                left: 0;
+                counter-reset: linenumber;
+
+                span {
+                  counter-increment: linenumber;
+                  font-family: 'Roboto Mono' !important;
+
+                  &::before {
+                    content: counter(linenumber);
+                  }
+                }
+              }
+
+              code {
+                position: relative;
+                white-space: inherit;
+                width: 100%;
+                overflow-x: auto;
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+
+      .data-table-doc {
+        tbody tr td:last-child {
+          white-space: pre-line;
+        }
+      }
+    }
+  }
+}

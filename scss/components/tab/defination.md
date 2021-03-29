@@ -1,1 +1,0 @@
-Tabs are used to quickly navigate between views within the same context.

@@ -27,6 +27,9 @@ class Sidebar {
     );
     this.sidebarHeader = this.element.querySelector(`.${PREFIX}-sidebar-title`);
     this.activeItem = null;
+    if (this.state.expanded) {
+      this.element.classList.add('expanded');
+    }
     this.addsideIconClass();
   }
 

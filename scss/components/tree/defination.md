@@ -1,1 +1,0 @@
-A tree view is used to display and manipulate hierarchical branching data, commonly used for folder structures, organizational charts or any topic-subtopic trees. 
