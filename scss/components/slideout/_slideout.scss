@@ -211,6 +211,8 @@
   }
   .#{$prefix}-slideout-content {
     margin-top: 24px;
+    overflow: auto;
+    height: 80%;
   }
   @media (max-width: 768px) {
     .#{$prefix}.hcl-slideout-layout {
