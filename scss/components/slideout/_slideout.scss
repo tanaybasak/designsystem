@@ -1,0 +1,222 @@
+.#{$prefix}-slideout {
+  position: fixed;
+  display: block;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  .#{$prefix}-slideout-mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  &.#{$prefix}-slideout__default-border {
+    .#{$prefix}-slideout-layout {
+      border-top: 4px solid var(--secondary_border);
+    }
+  }
+  &.#{$prefix}-slideout__danger-border {
+    .#{$prefix}-slideout-layout {
+      border-top: 4px solid var(--danger_border);
+    }
+  }
+  &.#{$prefix}-slideout__warning-border {
+    .#{$prefix}-slideout-layout {
+      border-top: 4px solid var(--warning_border);
+    }
+  }
+  &.#{$prefix}-slideout__ghost-border {
+    .#{$prefix}-slideout-layout {
+      border-top: 4px solid var(--ghost_border);
+    }
+  }
+  .slide-in {
+    animation: slide-in 0.25s ease-in;
+    -webkit-animation: slide-in 0.25s ease-in;
+  }
+  .slide-out {
+    animation: slide-out 0.25s ease-in;
+    -webkit-animation: slide-out 0.25s ease-in;
+  }
+
+  .slide-in-left {
+    animation: slide-in-left 0.25s ease-in;
+    -webkit-animation: slide-in-left 0.25s ease-in;
+  }
+  .slide-out-left {
+    animation: slide-out-left 0.25s ease-in;
+    -webkit-animation: slide-out-left 0.25s ease-in;
+  }
+  @keyframes slide-in {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @-webkit-keyframes slide-in {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(0%);
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @-webkit-keyframes slide-in-left {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(0%);
+    }
+  }
+
+  @keyframes slide-out {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @-webkit-keyframes slide-out {
+    0% {
+      -webkit-transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+
+    100% {
+      -webkit-transform: translateX(-100%);
+    }
+  }
+
+  @keyframes slide-out-left {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @-webkit-keyframes slide-out-left {
+    0% {
+      -webkit-transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+    }
+  }
+  .#{$prefix}-slideout-layout {
+    border-top: 4px solid var(--secondary_border);
+    position: absolute;
+    right: 0;
+    transition: width 0.15s linear;
+    width: 0;
+    height: 100%;
+    padding: 28px 24px 0;
+    max-height: 100%;
+    max-width: 100%;
+    background: #fff;
+    &.default {
+      transform: translateX(0%);
+      -webkit-transform: translateX(0%);
+    }
+    &.show {
+      width: 400px;
+    }
+    &.hide {
+      width: 0;
+    }
+    &.large {
+      transform: translateX(0%);
+      -webkit-transform: translateX(0%);
+      &.show {
+        width: 600px;
+      }
+    }
+    &.layout-left {
+      left: 0;
+    }
+    .#{$prefix}-slideout-header {
+      display: flex;
+      .#{$prefix}-slideout-header__text {
+        position: relative;
+        font-size: 24px;
+        line-height: 1.5;
+        height: 36px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 90%;
+      }
+    }
+    .#{$prefix}-slideout-close {
+      right: 9.25px;
+      top: 19.25px;
+      padding: 0.875rem;
+      background: transparent;
+      cursor: pointer;
+      position: absolute;
+      & > svg {
+        width: 0.75rem;
+        height: 0.75rem;
+        fill: var(--default_icon_high);
+      }
+    }
+    .#{$prefix}-slideout-footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      min-height: 88px;
+      background: #f2f2f2;
+      .#{$prefix}-action-bar {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        top: 15px;
+        right: 24px;
+      }
+    }
+  }
+  .#{$prefix}-slideout-content {
+    margin-top: 24px;
+  }
+  @media (max-width: 768px) {
+    .#{$prefix}.hcl-slideout-layout {
+      &.show {
+        width: 100%;
+      }
+    }
+  }
+}
