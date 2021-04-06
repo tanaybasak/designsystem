@@ -1,5 +1,5 @@
-import { PREFIX } from './utils/config';
-import getClosest from './utils/get-closest';
+// import { PREFIX } from './utils/config';
+// import getClosest from './utils/get-closest';
 
 class Slideout {
   constructor(element, options) {
