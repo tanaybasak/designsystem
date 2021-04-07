@@ -215,7 +215,7 @@
     height: 80%;
   }
   @media (max-width: 768px) {
-    .#{$prefix}.hcl-slideout-layout {
+    .#{$prefix}-slideout-layout {
       &.show {
         width: 100%;
       }
