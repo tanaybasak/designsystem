@@ -7,9 +7,14 @@ class Slideout {
 
     this.state = {
       expanded: false,
+      direction: 'right',
+      varient: 'default',
       ...options
     };
   }
+
+  show = () => {};
+  hide = () => {};
 }
 
 export default Slideout;
