@@ -8,7 +8,7 @@
   left: 0;
   z-index: 99;
   .#{$prefix}-slideout-mask {
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--overlay);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -17,22 +17,22 @@
   }
   &.#{$prefix}-slideout__default-border {
     .#{$prefix}-slideout-layout {
-      border-top: 4px solid var(--secondary_border);
+      border-top: 0.25rem solid var(--secondary_border);
     }
   }
   &.#{$prefix}-slideout__danger-border {
     .#{$prefix}-slideout-layout {
-      border-top: 4px solid var(--danger_border);
+      border-top: 0.25rem solid var(--danger_border);
     }
   }
   &.#{$prefix}-slideout__warning-border {
     .#{$prefix}-slideout-layout {
-      border-top: 4px solid var(--warning_border);
+      border-top: 0.25rem solid var(--warning_border);
     }
   }
   &.#{$prefix}-slideout__ghost-border {
     .#{$prefix}-slideout-layout {
-      border-top: 4px solid var(--ghost_border);
+      border-top: 0.25rem solid var(--ghost_border);
     }
   }
   .slide-in {
@@ -137,13 +137,13 @@
     }
   }
   .#{$prefix}-slideout-layout {
-    border-top: 4px solid var(--secondary_border);
+    border-top: 0.25rem solid var(--secondary_border);
     position: absolute;
     right: 0;
     transition: width 0.15s linear;
     width: 0;
     height: 100%;
-    padding: 28px 24px 0;
+    padding: 1.75rem 1.5rem 0;
     max-height: 100%;
     max-width: 100%;
     background: var(--default_bg);
@@ -152,7 +152,7 @@
       -webkit-transform: translateX(0%);
     }
     &.show {
-      width: 400px;
+      width: 25rem;
     }
     &.hide {
       width: 0;
@@ -161,7 +161,7 @@
       transform: translateX(0%);
       -webkit-transform: translateX(0%);
       &.show {
-        width: 600px;
+        width: 37.5rem;
       }
     }
     &.layout-left {
@@ -171,9 +171,9 @@
       display: flex;
       .#{$prefix}-slideout-header__text {
         position: relative;
-        font-size: 24px;
+        font-size: 1.5rem;
         line-height: 1.5;
-        height: 36px;
+        height: 2.25rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -181,8 +181,8 @@
       }
     }
     .#{$prefix}-slideout-close {
-      right: 9.25px;
-      top: 19.25px;
+      right: 0.578125rem;
+      top: 1.203125rem;
       padding: 0.875rem;
       background: transparent;
       cursor: pointer;
@@ -198,19 +198,19 @@
       left: 0;
       right: 0;
       bottom: 0;
-      min-height: 88px;
-      background: var(--default_bg_low);;
+      min-height: 5.5rem;
+      background: var(--default_bg_low);
       .#{$prefix}-action-bar {
         position: relative;
         display: flex;
         flex-direction: row-reverse;
-        top: 15px;
-        right: 24px;
+        top: 0.9375rem;
+        right: 1.5rem;
       }
     }
   }
   .#{$prefix}-slideout-content {
-    margin-top: 24px;
+    margin-top: 1.5rem;
     overflow: auto;
     height: 80%;
   }
