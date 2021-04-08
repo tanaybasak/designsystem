@@ -1,6 +1,6 @@
 .#{$prefix}-logic-builder {
-  --paddingLeft: 1rem;
-  --paddingRight: 0.75rem;
+  --paddingLeft: 0.5rem;
+  --paddingRight: 0rem;
   --headerHeight: 2.5rem;
   --borderWidth: 0.125rem;
   --tileTitleHeight: 1.5rem;
@@ -9,6 +9,11 @@
   --borderRadiusAdj: var(--borderRadius);
   --emptyValue: 0px;
   width: 100%;
+
+  @include media-breakpoint-between(sm, xxl) {
+    --paddingLeft: 1rem;
+    --paddingRight: 0.75rem;
+  }
 
   &.logic-builder-round {
     --borderRadius: 0.3125rem;
