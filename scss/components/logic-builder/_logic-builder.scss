@@ -5,7 +5,7 @@
   --borderWidth: 0.125rem;
   --tileTitleHeight: 1.5rem;
   --tileBorderWidth: 0.0625rem;
-  --borderRadius: 0px;
+  --borderRadius: 0;
   --borderRadiusAdj: var(--borderRadius);
 
   width: 100%;
@@ -144,7 +144,7 @@
         border-width: 0 0 var(--borderWidth) var(--borderWidth);
         border-color: var(--default_border_low);
         top: 0;
-        left: calc(0rem - (var(--paddingLeft) + var(--borderWidth)));
+        left: calc((var(--paddingLeft) + var(--borderWidth)) * -1);
         border-radius: 0 0 0 var(--borderRadius);
       }
 
@@ -175,7 +175,7 @@
           var(--tileTitleHeight) + calc(var(--headerHeight) / 2) +
             var(--borderWidth) + var(--tileBorderWidth) - var(--borderRadiusAdj)
         );
-        left: calc(0rem - (var(--paddingLeft) + var(--borderWidth)));
+        left: calc((var(--paddingLeft) + var(--borderWidth)) * -1);
       }
 
       .child.no-title::after {
@@ -212,7 +212,7 @@
           border-width: 0 0 var(--borderWidth) var(--borderWidth);
           border-color: var(--default_border_low);
           top: var(--borderWidth);
-          left: calc(0rem - (var(--paddingLeft) + var(--borderWidth)));
+          left: calc((var(--paddingLeft) + var(--borderWidth)) * -1);
           border-radius: 0 0 0 var(--borderRadius);
         }
 
@@ -237,7 +237,7 @@
         border-width: var(--borderWidth) var(--borderWidth) 0 0;
         border-color: var(--default_border_low);
         top: calc(var(--headerHeight) / 2);
-        left: calc(0rem - var(--paddingLeft) - 1px);
+        left: calc((var(--paddingLeft) - 1px) * -1);
         border-radius: 0 var(--borderRadius) 0 0;
       }
 
