@@ -139,7 +139,7 @@
                 border-width: 0 0 var(--borderWidth) var(--borderWidth);
                 border-color: var(--default_border_low);
                 top: 0;
-                left: calc(var(--emptyValue) - (var(--paddingLeft) + var(--borderWidth)));
+                left: calc(var(--emptyValue) - var(--paddingLeft) - var(--borderWidth));
                 border-radius: 0 0 0 var(--borderRadius);
             }
 
@@ -158,7 +158,7 @@
                 border-width: 0 0 0 var(--borderWidth);
                 border-color: var(--default_border_low);
                 top: calc(var(--tileTitleHeight) + calc(var(--headerHeight) / 2) + var(--borderWidth) + var(--tileBorderWidth) - var(--borderRadiusAdj));
-                left: calc(var(--emptyValue) - (var(--paddingLeft) + var(--borderWidth)));
+                left: calc(var(--emptyValue) - var(--paddingLeft) - var(--borderWidth));
             }
 
             .child.no-title::after {
@@ -186,7 +186,7 @@
                     border-width: 0 0 var(--borderWidth) var(--borderWidth);
                     border-color: var(--default_border_low);
                     top: var(--borderWidth);
-                    left: calc(var(--emptyValue) - (var(--paddingLeft) + var(--borderWidth)));
+                    left: calc(var(--emptyValue) - var(--paddingLeft) - var(--borderWidth));
                     border-radius: 0 0 0 var(--borderRadius);
                 }
 
