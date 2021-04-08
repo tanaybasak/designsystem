@@ -58,7 +58,8 @@
 
       &:focus {
         border: 0.0625rem solid var(--primary_border);
-
+        color: var(--primary_text);
+        background-color: var(--primary_bg);
         outline: none;
       }
     }
