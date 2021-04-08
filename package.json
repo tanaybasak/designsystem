@@ -69,8 +69,7 @@
       "no-descending-specificity": true,
       "no-duplicate-at-import-rules": true,
       "no-duplicate-selectors": true,
-      "number-no-trailing-zeros": true,
-      "length-zero-no-unit": true
+      "number-no-trailing-zeros": true
     }
   },
   "dependencies": {}

@@ -5,9 +5,9 @@
   --borderWidth: 0.125rem;
   --tileTitleHeight: 1.5rem;
   --tileBorderWidth: 0.0625rem;
-  --borderRadius: 0;
+  --borderRadius: 0px;
   --borderRadiusAdj: var(--borderRadius);
-  --emptyValue: 0;
+  --emptyValue: 0px;
   width: 100%;
 
   &.logic-builder-round {
