@@ -131,6 +131,13 @@
                     transition: transform 0.3s ease-in-out;
                     fill: var(--interactive_icon);
                   }
+
+                  &.collapsed {
+                    svg {
+                      transform: rotate(180deg);
+                      transition: transform 0.3s ease-in-out;
+                    }
+                  }
                 }
               }
             }
@@ -280,15 +287,6 @@
         border-color: var(--default_border_low);
         top: calc(var(--headerHeight) / 2);
         left: -1px;
-      }
-    }
-
-    .collapsed-tile {
-      .toggle-icon {
-        svg {
-          transform: rotate(180deg);
-          transition: transform 0.3s ease-in-out;
-        }
       }
     }
 
