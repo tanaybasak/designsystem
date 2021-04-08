@@ -144,7 +144,7 @@
         border-width: 0 0 var(--borderWidth) var(--borderWidth);
         border-color: var(--default_border_low);
         top: 0;
-        left: calc(0px - (var(--paddingLeft) + var(--borderWidth)));
+        left: calc(0 - (var(--paddingLeft) + var(--borderWidth)));
         border-radius: 0 0 0 var(--borderRadius);
       }
 
@@ -175,7 +175,7 @@
           var(--tileTitleHeight) + calc(var(--headerHeight) / 2) +
             var(--borderWidth) + var(--tileBorderWidth) - var(--borderRadiusAdj)
         );
-        left: calc(0px - (var(--paddingLeft) + var(--borderWidth)));
+        left: calc(0 - (var(--paddingLeft) + var(--borderWidth)));
       }
 
       .child.no-title::after {
@@ -212,7 +212,7 @@
           border-width: 0 0 var(--borderWidth) var(--borderWidth);
           border-color: var(--default_border_low);
           top: var(--borderWidth);
-          left: calc(0px - (var(--paddingLeft) + var(--borderWidth)));
+          left: calc(0 - (var(--paddingLeft) + var(--borderWidth)));
           border-radius: 0 0 0 var(--borderRadius);
         }
 
@@ -237,7 +237,7 @@
         border-width: var(--borderWidth) var(--borderWidth) 0 0;
         border-color: var(--default_border_low);
         top: calc(var(--headerHeight) / 2);
-        left: calc(0px - var(--paddingLeft) - 1px);
+        left: calc(0 - var(--paddingLeft) - 1px);
         border-radius: 0 var(--borderRadius) 0 0;
       }
 
