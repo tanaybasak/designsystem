@@ -48,7 +48,7 @@
 
     &.active {
       background-color: var(--active_bg_high);
-      color: var(--active_text);
+      color: var(--default_text_xhight);
 
       .#{$prefix}-thumbnail {
         border: 1px solid var(--active_icon);
