@@ -15,7 +15,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run prettier:dev && npm run stylelint"
+      "pre-push": "npm run prettier:dev && npm run stylelint && npm run pretest"
     }
   },
   "author": "HCL Software",
