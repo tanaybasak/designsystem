@@ -159,7 +159,7 @@
         }
 
         color: var(--default_text_high);
-        background-color: var(--default_bg_low);
+        background-color: var(--default_bg_high);
 
         .#{$prefix}-sorting {
           vertical-align: middle;
@@ -173,6 +173,9 @@
 
           g {
             stroke: var(--interactive_icon);
+          }
+          path {
+            fill: var(--interactive_icon);
           }
         }
 
