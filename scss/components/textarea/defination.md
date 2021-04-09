@@ -1,1 +1,0 @@
-Text Area enable the user to input more than one sentence of information. This component can be used for long and short form text entries.

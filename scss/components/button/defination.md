@@ -1,1 +1,0 @@
-Buttons are used to initialize an action. Button labels express what action will occur when the user interacts with it. 

@@ -1,1 +1,0 @@
-Tags, also called Chips, are a data representation component particularly used to display entities such as people, metatags, search filters, etc. Additionally, they can be used to perform actions on those entities. 

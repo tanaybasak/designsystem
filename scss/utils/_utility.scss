@@ -225,3 +225,7 @@ $displayProperties: none inline inline-block block table inline-table table-cell
     background-color: var(--interactive_bg_hover_high);
   }
 }
+
+.#{$prefix}-default-icon {
+  fill: var(--default_text_high);
+}

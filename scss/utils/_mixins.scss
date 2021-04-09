@@ -337,3 +337,155 @@ $inputColor-map: (
     }
   }
 }
+
+@mixin pb-utility($size) {
+  position: relative;
+  @if ($size==default) {
+    height: $loader-width-medium;
+    width: $loader-width-medium;
+  } @else if ($size==small) {
+    height: $loader-width-small;
+    width: $loader-width-small;
+  } @else if ($size==large) {
+    height: $loader-width-large;
+    width: $loader-width-large;
+  }
+  > svg {
+    @if ($size==default) {
+      height: $loader-width-medium;
+      width: $loader-width-medium;
+    } @else if ($size==small) {
+      height: $loader-width-small;
+      width: $loader-width-small;
+    } @else if ($size==large) {
+      height: $loader-width-large;
+      width: $loader-width-large;
+    }
+    transform: rotate(-90deg);
+    > circle {
+      @if ($size== 'default') {
+        stroke-width: 4;
+      } @else if ($size== 'small') {
+        stroke-width: 6;
+      } @else if ($size== 'large') {
+        stroke-width: 3;
+      }
+      stroke: var(--primary_bg);
+    }
+
+    > .dot {
+      stroke-dasharray: 0, 200;
+    }
+  }
+
+  > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    @if ($size== default) {
+      width: $loader-width-medium + 0.125rem;
+      height: $loader-width-medium + 0.125rem;
+    } @else if ($size== small) {
+      width: $loader-width-small + 0.125rem;
+      height: $loader-width-small + 0.125rem;
+    } @else if ($size== large) {
+      width: $loader-width-large + 0.125rem;
+      height: $loader-width-large + 0.125rem;
+    }
+  }
+}
+
+@mixin pb_circle($size) {
+  &-indeterminate {
+    > .#{$prefix}-pb-bgcircle {
+      stroke: var(--default_bg_high);
+    }
+
+    > circle {
+      stroke-linecap: round;
+    }
+
+    > .#{$prefix}-pb-maincircle {
+      @if ($size == 'large') {
+        animation: stroke-dash 2.5s ease-in-out infinite;
+      } @else {
+        animation: stroke-dash 2s ease-in-out infinite;
+      }
+    }
+
+    > .#{$prefix}-pb-dot1 {
+      @if ($size == 'large') {
+        animation: stroke-dot1 2.5s ease-in infinite;
+      } @else {
+        animation: stroke-dot1 2s ease-in infinite;
+      }
+    }
+    > .#{$prefix}-pb-dot2 {
+      @if ($size == 'large') {
+        animation: stroke-dot2 2.5s ease-in infinite;
+      } @else {
+        animation: stroke-dot2 2s ease-in infinite;
+      }
+    }
+    > .#{$prefix}-pb-dot3 {
+      @if ($size == 'large') {
+        animation: stroke-dot3 2.5s ease-in infinite;
+      } @else {
+        animation: stroke-dot3 2s ease-in infinite;
+      }
+    }
+
+    fill: none;
+    animation: spin 4.3s linear both infinite;
+  }
+
+  &-determinate {
+    > .#{$prefix}-pb-bgcircle {
+      fill: none;
+      stroke: var(--default_bg_high);
+    }
+
+    > circle {
+      stroke-linecap: butt;
+    }
+
+    > .pb-circle-outer {
+      transition: stroke-dashoffset 850ms ease-in-out 0s;
+      transform-origin: 100% 100%;
+    }
+    fill: none;
+  }
+
+  &-text {
+    font-size: 0.75rem;
+    text-anchor: middle;
+    color: var(--default_text);
+  }
+}
+
+@mixin pb_linear() {
+  height: 0.25rem;
+  width: 100%;
+  fill: none;
+  &-line {
+    stroke: var(--primary_bg);
+    stroke-width: 0.25rem;
+  }
+
+  &-bgline {
+    stroke: var(--default_bg_high);
+  }
+
+  &-mainline {
+    transition: stroke-dashoffset 300ms ease-in-out;
+    stroke-dasharray: 100;
+  }
+
+  &-mainline-one {
+    animation: stroke-dash-linear 4s ease-in-out infinite;
+  }
+}

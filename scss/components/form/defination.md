@@ -1,1 +1,0 @@
-A form is a group of related input controls that allows users to provide data or configure options. 

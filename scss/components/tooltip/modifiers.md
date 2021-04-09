@@ -1,6 +1,0 @@
-| Name                | default    | Description                                                                                                                                                                             |
-| ------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| data-tooltip        |            | Tooltip title. Can pass string or html                                                                                                                                                  |
-| data-direction      | bottom     | Position of the tooltip. top , bottom , left , right                                                                                                                                    |
-| data-type           | definition | Icon – An icon tooltip is used to clarify the action or name of an interactive icon button.<br> definition – The definition tooltip provides additional help or defines an item or term |
-| data-focus-on-click |            | Interactive tooltips may contain rich text and other interactive elements like buttons or links                                                                                         |

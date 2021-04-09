@@ -1,1 +1,0 @@
-Number input are similar to text inputs, but contain controls used to increase or decrease an incremental value.

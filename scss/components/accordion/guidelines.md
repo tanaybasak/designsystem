@@ -1,5 +1,0 @@
-- Use accordions when you need to consume specific areas of content within a page or when vertical space is limited.
-- Use accordions when there is enough content to condense. Avoid nested accordions because it increases the cognitive load for users.
-- Avoid allowing multiple open panes if there is more content above and below the accordion.
-- Users may have multiple accordions open at the same time.
-- The entire header area of each title is clickable which helps them expand or collapse the content below it.

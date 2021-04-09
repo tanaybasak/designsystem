@@ -1,0 +1,35 @@
+.#{$prefix}-inpage-navigation {
+  list-style: none;
+  border-left: 0.0625rem solid var(--interactive_border);
+
+  a {
+    font-size: 1rem;
+    color: var(--default_text_high);
+    &:hover {
+      text-decoration: none;
+      color: var(--primary_bg);
+    }
+  }
+
+  li {
+    padding: 0.625rem 0.625rem 0.5rem;
+    border-left: 0.125rem solid var(--primary_border);
+  }
+
+  li:hover {
+    border-left: 0.3125rem solid var(--interactive_border);
+  }
+
+  .isActive {
+    border-left: 0.3125rem solid var(--active_border);
+  }
+
+  .isActive,
+  li:hover {
+    position: relative;
+    left: -0.1875rem;
+    a {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,269 @@
+.#{$prefix}-pb-label-inline {
+  display: inline-flex;
+  .#{$prefix}-pb-label-content {
+    display: flex;
+    align-items: center;
+    width: 70%;
+  }
+}
+
+.#{$prefix}-pb-circle {
+  @include pb-utility(default);
+  @include pb_circle(default);
+}
+
+.#{$prefix}-pb-circle-small {
+  @include pb-utility(small);
+  @include pb_circle(small);
+}
+
+.#{$prefix}-pb-circle-large {
+  @include pb-utility(large);
+  @include pb_circle(large);
+}
+
+.#{$prefix}-pb-linear-wrapper {
+  position: relative;
+  .#{$prefix}-pb-linear {
+    @include pb_linear();
+
+    &-label,
+    &-subtext {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--default_text);
+      &-value {
+        float: right;
+      }
+    }
+
+    &-mainline-two {
+      animation: stroke-dash-one-linear 4s ease-in-out infinite;
+    }
+
+    &-dot {
+      stroke-dasharray: 1, 200;
+    }
+
+    &-dot-one {
+      animation: stroke-dot-one-linear 4s ease-in infinite;
+    }
+
+    &-dot-two {
+      animation: stroke-dot-two-linear 4s ease-in infinite;
+    }
+
+    &-dot-three {
+      animation: stroke-dot-three-linear 4s ease-in infinite;
+    }
+  }
+
+  .#{$prefix}-pb-linear-label {
+    .#{$prefix}-pb-linear-label-content {
+      display: inline-block;
+    }
+  }
+  .#{$prefix}-pb-linear-ellipsis {
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 1rem;
+  }
+}
+
+.#{$prefix}-pb-circle-wrapper {
+  .#{$prefix}-pb-label-content {
+    width: 70%;
+    .#{$prefix}-pb-label-text {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--default_text);
+    }
+  }
+  .#{$prefix}-pb-circle-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 1rem;
+  }
+}
+
+@keyframes stroke-dash {
+  0% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 60, 200;
+  }
+
+  100% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: -7.8125rem;
+  }
+}
+
+@keyframes stroke-dot1 {
+  0% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+
+  25% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dasharray: 2, 200;
+    stroke-dashoffset: -7.8125rem;
+  }
+}
+
+@keyframes stroke-dot2 {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  25% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: -0.75rem;
+  }
+
+  100% {
+    stroke-dasharray: 2, 200;
+    stroke-dashoffset: -9.375rem;
+  }
+}
+
+@keyframes stroke-dot3 {
+  0% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+  25% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: -1.5rem;
+  }
+
+  100% {
+    stroke-dasharray: 2, 200;
+    stroke-dashoffset: -10.9375rem;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes stroke-dash-linear {
+  0% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+
+  20% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+
+  60% {
+    stroke-dasharray: 60, 200;
+  }
+
+  100% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: -7.8125rem;
+  }
+}
+
+@keyframes stroke-dash-one-linear {
+  0% {
+    stroke-dasharray: 20, 200;
+    stroke-dashoffset: 0;
+  }
+
+  20% {
+    stroke-dasharray: 70, 200;
+  }
+
+  40% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: -7.8125rem;
+  }
+
+  80% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: -7.8125rem;
+  }
+
+  80% {
+    stroke-dasharray: 0, 200;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dasharray: 20, 200;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes stroke-dot-one-linear {
+  0% {
+    stroke-dashoffset: 0.25rem;
+  }
+
+  60% {
+    stroke-dashoffset: 0.25rem;
+  }
+
+  60% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -7.8125rem;
+  }
+}
+
+@keyframes stroke-dot-two-linear {
+  0% {
+    stroke-dashoffset: 0.25rem;
+  }
+
+  62% {
+    stroke-dashoffset: 0.25rem;
+  }
+
+  62% {
+    stroke-dashoffset: -0.75rem;
+  }
+
+  100% {
+    stroke-dashoffset: -9.375rem;
+  }
+}
+
+@keyframes stroke-dot-three-linear {
+  0% {
+    stroke-dashoffset: 0.25rem;
+  }
+
+  64% {
+    stroke-dashoffset: 0.25rem;
+  }
+
+  64% {
+    stroke-dashoffset: -1.5rem;
+  }
+
+  100% {
+    stroke-dashoffset: -10.9375rem;
+  }
+}

@@ -1,1 +1,0 @@
-A toolbar provides a set of icon based action buttons for content below it. 

@@ -1,1 +1,0 @@
-Content switcher manipulates the content shown based on an exclusive or “either/or” pattern. 

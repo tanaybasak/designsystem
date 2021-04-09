@@ -1,1 +1,0 @@
-Action bars are used to perform batch actions on selected items. This component is generally used in conjunction with a data table, list of checkboxes or other multi-selectable components. To see an example of such usage please go to the relevant section of the pattern library.
