@@ -12,6 +12,13 @@
   border: 0.0625rem solid var(--default_border_xlow);
   color: var(--default_text);
 
+  &-resizer {
+    overflow-y: scroll;
+    .#{$prefix}-data-table {
+      height: 100%;
+    }
+  }
+
   .resize-line {
     display: none;
     position: absolute;
@@ -312,7 +319,7 @@
     th.sticky-left-div,
     td.sticky-left-div {
       &::after {
-        right: -1px;
+        right: -0.0625rem;
         transform: translateX(100%);
         box-shadow: inset 0.625rem 0 0.5rem -0.5rem var(--default_shadow);
       }
@@ -321,7 +328,7 @@
     th.sticky-right-div,
     td.sticky-right-div {
       &::after {
-        left: -1px;
+        left: -0.0625rem;
         transform: translateX(-100%);
         box-shadow: inset -0.625rem 0 0.5rem -0.5rem var(--default_shadow);
       }
@@ -396,7 +403,7 @@
 
   .dragged-col {
     opacity: 0.5;
-    border: 1px dotted;
+    border:  0.0625rem dotted;
   }
 }
 
@@ -423,5 +430,18 @@
         }
       }
     }
+  }
+}
+
+/*
+resize table from bottom
+*/
+.hcl-data-table-resizer {
+  border-top: 0.0625rem solid var(--interactive_border);
+  cursor: row-resize;
+  height: 0.625rem;
+  background-color: var(--interactive_bg);
+  &:hover {
+    background-color: var(--interactive_bg_hover);
   }
 }
