@@ -1,1 +1,0 @@
-window.patron.password('#disabledpassword');

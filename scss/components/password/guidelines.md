@@ -1,5 +1,0 @@
-- The password field inherits all the features and guidelines of the input field.
-- In case of a username + password screen, make sure the error text in case of validation fail does provide a hint as to which is wrong.(to avoid brute force efforts)
-- If there is a limited number of tries allowed, please allow the user to know how many tries they have left before they are locked out.
-- The field can be used to enter passwords for validation or to create a new password, in case of the latter, password rules should be provided as help text and a separate interface should ensure the compliance with password rules.
-- Older interfaces did not allow passwords to be pasted or autocompleted due to security reasons, with the advent of password managers and keychain apps, it has become a moot issue.

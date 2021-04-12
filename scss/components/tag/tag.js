@@ -1,9 +1,0 @@
-window.patron.tag('#hcl-primary');
-window.patron.tag('#primary-disabled');
-window.patron.tag('#hcl-primary-closeable');
-window.patron.tag('#hcl-primary-thumbnail-closeable');
-window.patron.tag('#hcl-secondary');
-window.patron.tag('#hcl-secondary-disabled');
-window.patron.tag('#hcl-secondary-thumbnail-closeable-disabled');
-window.patron.tag('#hcl-secondary-closeable');
-window.patron.tag('#hcl-secondary-thumbnail-closeable');

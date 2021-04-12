@@ -25,12 +25,19 @@
   }
 
   .#{$prefix}-file-uploader {
+    position: relative;
     .#{$prefix}-file-btn {
       display: inline-flex;
     }
 
     .#{$prefix}-file-input {
-      display: none;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      outline: 0;
+      position: absolute;
+      top: 0;
+      display: inline-block;
 
       &:disabled ~ .#{$prefix}-file-btn {
         @extend %disable;

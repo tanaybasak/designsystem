@@ -2,11 +2,13 @@
 const path = require('path');
 const replace = require('replace');
 const q = require('q');
+const shell = require('shelljs');
 const root = require('app-root-path').path;
 const git = require('simple-git')(root);
 const packageFile = path.join(__dirname, '../', 'package.json');
+const argv = require('yargs/yargs')(process.argv.slice(2)).argv;
 
-const BRANCH_NAME = process.argv[2].split('=')[1] || 'feature-uicoe-865';
+const BRANCH_NAME = argv.BRANCH;
 let DESCRIPTION = `dev description`;
 
 let PROCESS_VER = '';
@@ -36,6 +38,24 @@ const bump = version => {
   });
   return q.when(version);
 };
+
+function installPackage(ver) {
+  var deferred = q.defer();
+
+  if (!ver) {
+    console.log(`No valid version!`);
+    return deferred.reject(new Error(`Problem in installing packages: ${ver}`));
+  }
+
+  shell.exec('npm i', function (code, stdout, stderr) {
+    if (code === 0) {
+      deferred.resolve(ver);
+    } else {
+      deferred.reject(new Error(`Reject Reason:${code}, ${stderr}`));
+    }
+  });
+  return deferred.promise;
+}
 
 function addAndCommit(version) {
   var deferred = q.defer();
@@ -95,11 +115,12 @@ function pushToBranch(version) {
   return deferred.promise;
 }
 
-// getVersion()
-// dummy()
 getVersion()
   .then(version => {
     return bump(version);
+  })
+  .then(version => {
+    return installPackage(version);
   })
   .then(version => {
     return addAndCommit(version);
@@ -107,6 +128,7 @@ getVersion()
   .then(version => {
     return pushToBranch(version);
   })
+  .catch(err => console.log(err))
   .done(() => {
     console.log('Tasks Completed');
   });

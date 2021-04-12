@@ -1,1 +1,0 @@
-Text Input enable the user to input a few words. If you expect the user to input more than a sentence, use the Textarea component.

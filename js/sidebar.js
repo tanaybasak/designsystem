@@ -16,8 +16,47 @@ class Sidebar {
       `.${PREFIX}-sidebar-toggle-node`
     );
     this.items = this.element.querySelectorAll(`.${PREFIX}-sidebar-item`);
+    this.listElement = this.element.querySelectorAll(
+      `.${PREFIX}-sidebar-toggle-node > .${PREFIX}-sidebar-link`
+    );
+    this.sideIcon = this.element.querySelectorAll(`.${PREFIX}-sidebar-icon`);
+    this.statusIcon = this.element.querySelectorAll(`.statusicon`);
+    this.toggleIcon = this.element.querySelectorAll(`.toggleIcon`);
+    this.headerIcon = this.element.querySelector(
+      `.${PREFIX}-sidebar-title-icon`
+    );
+    this.sidebarHeader = this.element.querySelector(`.${PREFIX}-sidebar-title`);
     this.activeItem = null;
+    if (this.state.expanded) {
+      this.element.classList.add('expanded');
+    }
+    this.addsideIconClass();
   }
+
+  addsideIconClass = () => {
+    for (let i = 0; i < this.categories.length; i++) {
+      const parentElement = this.categories[i].parentElement;
+      this.childrenlist = parentElement.children[1];
+
+      if (
+        !parentElement.contains(this.childrenlist) &&
+        !this.categories[i].contains(this.statusIcon[i]) &&
+        !this.categories[i].contains(this.toggleIcon[i])
+      ) {
+        this.listElement[i].classList.add('no-statusicon');
+      }
+
+      if (!this.categories[i].contains(this.sideIcon[i])) {
+        this.listElement[i].classList.add('no-icon');
+      }
+    }
+
+    if (!this.sidebarHeader.contains(this.headerIcon) && this.state.expanded) {
+      this.sidebarHeader
+        .querySelector(`.hcl-sidebar-title-text`)
+        .classList.add('no-sideicon');
+    }
+  };
 
   findNextSiblingAncestor = nodeElement => {
     const parentNodeElement = nodeElement.parentElement;
@@ -103,6 +142,16 @@ class Sidebar {
     }
 
     this.state.expanded = !this.state.expanded;
+
+    if (!this.sidebarHeader.contains(this.headerIcon) && this.state.expanded) {
+      this.sidebarHeader
+        .querySelector(`.hcl-sidebar-title-text`)
+        .classList.add('no-sideicon');
+    } else {
+      this.sidebarHeader
+        .querySelector(`.hcl-sidebar-title-text`)
+        .classList.remove('no-sideicon');
+    }
   };
 
   toggleSidebarOnEnter = e => {
@@ -226,10 +275,16 @@ class Sidebar {
   };
 
   attachEvents = () => {
-    this.title.addEventListener('click', this.toggleSidebar);
-    this.title.addEventListener('keydown', this.toggleSidebarOnEnter);
-    this.hamburger.addEventListener('click', this.toggleSidebar);
-    this.hamburger.addEventListener('keydown', this.toggleSidebarOnEnter);
+    if (this.title) {
+      this.title.addEventListener('click', this.toggleSidebar);
+      this.title.addEventListener('keydown', this.toggleSidebarOnEnter);
+    }
+
+    if (this.hamburger) {
+      this.hamburger.addEventListener('click', this.toggleSidebar);
+      this.hamburger.addEventListener('keydown', this.toggleSidebarOnEnter);
+    }
+
     this.categories.forEach(category => {
       category.addEventListener('click', this.toggleCategory);
       category.addEventListener('keydown', this.keyDownOnTree);

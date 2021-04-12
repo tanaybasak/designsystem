@@ -1,1 +1,0 @@
-Overflow Menu is used when additional options are available to the user and when there is a space constraint.

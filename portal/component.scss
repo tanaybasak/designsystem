@@ -1,0 +1,16 @@
+.hcl-vanilla {
+  .main-container {
+    .component-demo {
+      .hcl-header {
+        position: relative;
+        width: 100%;
+      }
+
+      .hcl-sidebar {
+        position: relative;
+        height: 400px;
+        top: 0;
+      }
+    }
+  }
+}
