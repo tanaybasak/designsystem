@@ -47,9 +47,9 @@
     max-width: 100%;
     box-shadow: 0.75rem 1.5rem 0 var(--default_shadow);
     background: var(--default_bg);
-    transition: right var(--transition-seconds) ease-in-out 0s,
-      left var(--transition-seconds) ease-in-out 0s,
-      width var(--transition-seconds) ease-in-out 0s;
+    // transition: right var(--transition-seconds) ease-in-out 0s,
+    //   left var(--transition-seconds) ease-in-out 0s,
+    //   width var(--transition-seconds) ease-in-out 0s;
     &.default:not(.layout-left) {
       &.show {
         right: 0;
@@ -78,6 +78,19 @@
         }
       }
     }
+    &.default:not(.layout-left),
+    &.large:not(.layout-left) {
+      &.show {
+        transition: right var(--transition-seconds) ease-out 0s,
+          left var(--transition-seconds) ease-out 0s,
+          width var(--transition-seconds) ease-out 0s;
+      }
+      &.hide {
+        transition: right var(--transition-seconds) ease-in 0s,
+          left var(--transition-seconds) ease-in 0s,
+          width var(--transition-seconds) ease-in 0s;
+      }
+    }
     &.layout-left {
       left: 0;
       &.show {
@@ -103,6 +116,18 @@
             display: none;
           }
         }
+      }
+    }
+    &.layout-left {
+      &.show {
+        transition: right var(--transition-seconds) ease-out 0s,
+          left var(--transition-seconds) ease-out 0s,
+          width var(--transition-seconds) ease-out 0s;
+      }
+      &.hide {
+        transition: right var(--transition-seconds) ease-in 0s,
+          left var(--transition-seconds) ease-in 0s,
+          width var(--transition-seconds) ease-in 0s;
       }
     }
     .#{$prefix}-slideout-header {
