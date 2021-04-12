@@ -97,9 +97,15 @@
         left: 0;
         width: 25rem;
         padding: 1.75rem 1.5rem 0;
+        transition: right var(--transition-seconds) ease-out 0s,
+          left var(--transition-seconds) ease-out 0s,
+          width var(--transition-seconds) ease-out 0s;
       }
       &.hide {
         left: -25rem;
+        transition: right var(--transition-seconds) ease-in 0s,
+          left var(--transition-seconds) ease-in 0s,
+          width var(--transition-seconds) ease-in 0s;
         .#{$prefix}-slideout-footer {
           display: none;
         }
@@ -109,25 +115,19 @@
           left: 0;
           width: 37.5rem;
           padding: 1.75rem 1.5rem 0;
+          transition: right var(--transition-seconds) ease-out 0s,
+            left var(--transition-seconds) ease-out 0s,
+            width var(--transition-seconds) ease-out 0s;
         }
         &.hide {
           left: -37.5rem;
+          transition: right var(--transition-seconds) ease-in 0s,
+            left var(--transition-seconds) ease-in 0s,
+            width var(--transition-seconds) ease-in 0s;
           .#{$prefix}-slideout-footer {
             display: none;
           }
         }
-      }
-    }
-    &.layout-left {
-      &.show {
-        transition: right var(--transition-seconds) ease-out 0s,
-          left var(--transition-seconds) ease-out 0s,
-          width var(--transition-seconds) ease-out 0s;
-      }
-      &.hide {
-        transition: right var(--transition-seconds) ease-in 0s,
-          left var(--transition-seconds) ease-in 0s,
-          width var(--transition-seconds) ease-in 0s;
       }
     }
     .#{$prefix}-slideout-header {
