@@ -20,45 +20,45 @@
     --borderRadiusAdj: var(--borderRadius);
   }
 
-  .logic-builder-group {
+  .#{$prefix}-logic-builder-group {
     padding: 0;
     list-style: none;
     margin: 0;
 
-    .logic-builder-list {
+    .#{$prefix}-logic-builder-list {
       list-style: none;
       margin: 0;
       position: relative;
 
-      .tile-header {
+      .#{$prefix}-tile-header {
         font-size: 0.875rem;
         font-weight: 500;
       }
 
-      .hcl-tile {
+      .#{$prefix}-tile {
         width: 100%;
         padding: 0 var(--paddingRight) 0 var(--paddingLeft);
         margin-bottom: 0.5rem;
 
-        .logic-builder-item-wrapper {
-          .logic-builder-item {
+        .#{$prefix}-logic-builder-item-wrapper {
+          .#{$prefix}-logic-builder-item {
             position: relative;
 
-            .logic-builder-item-header {
+            .#{$prefix}-logic-builder-item-header {
               position: relative;
               display: flex;
               flex-direction: row;
               align-items: center;
               justify-content: space-between;
 
-              .logic-builder-item-header-left {
+              .#{$prefix}-logic-builder-item-header-left {
                 display: flex;
                 flex-direction: row;
 
                 flex: 1;
                 min-width: 0;
 
-                .logic-builder-query {
+                .#{$prefix}-logic-builder-query {
                   min-height: var(--headerHeight);
                   vertical-align: middle;
                   display: flex;
@@ -69,7 +69,7 @@
                   flex: 1;
                   min-width: 0;
 
-                  .logic-builder-query-rule {
+                  .#{$prefix}-logic-builder-query-rule {
                     width: 100%;
                     height: 100%;
                     align-items: center;
@@ -111,12 +111,12 @@
                   }
                 }
 
-                .logic-builder-inline-edit-wrapper {
+                .#{$prefix}-logic-builder-inline-edit-wrapper {
                   width: 100%;
                 }
               }
 
-              .logic-builder-item-header-right {
+              .#{$prefix}-logic-builder-item-header-right {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -127,7 +127,7 @@
                   margin: 0;
                 }
 
-                .toggle-icon {
+                .#{$prefix}-logic-builder-toggle-icon {
                   padding: 0;
 
                   svg {
@@ -137,7 +137,7 @@
                     fill: var(--interactive_icon);
                   }
 
-                  &.collapsed {
+                  &.#{$prefix}-logic-builder-toggle-icon-collapsed {
                     svg {
                       transform: rotate(180deg);
                       transition: transform 0.3s ease-in-out;
@@ -150,7 +150,7 @@
         }
       }
 
-      .child::before {
+      .#{$prefix}-tile-wrapper::before {
         content: '';
         position: absolute;
         width: calc(var(--paddingLeft) + var(--borderWidth));
@@ -167,7 +167,7 @@
         border-radius: 0 0 0 var(--borderRadius);
       }
 
-      .child.no-title::before {
+      .#{$prefix}-tile-wrapper.#{$prefix}-no-tile-header::before {
         content: '';
         height: calc(
           calc(var(--headerHeight) / 2) + var(--borderWidth) +
@@ -175,7 +175,7 @@
         );
       }
 
-      .child::after {
+      .#{$prefix}-tile-wrapper::after {
         content: '';
         position: absolute;
         width: calc(var(--paddingLeft) + var(--borderWidth));
@@ -194,7 +194,7 @@
         left: calc(var(--emptyValue) - var(--paddingLeft) - var(--borderWidth));
       }
 
-      .child.no-title::after {
+      .#{$prefix}-tile-wrapper.#{$prefix}-no-tile-header::after {
         content: '';
         height: calc(
           100% -
@@ -209,15 +209,16 @@
         );
       }
 
-      &.last-element > .child::after {
+      &.#{$prefix}-logic-builder-last-list-item
+        > .#{$prefix}-tile-wrapper::after {
         border-style: dotted;
       }
 
-      &:last-child > .child::after {
+      &:last-child > .#{$prefix}-tile-wrapper::after {
         content: none;
       }
 
-      &.add-more-element {
+      &.#{$prefix}-add-more-element {
         &::before {
           content: '';
           position: absolute;
@@ -248,10 +249,10 @@
         }
       }
 
-      .expanded-tile
-        > .hcl-tile
-        > .logic-builder-item-wrapper
-        > .logic-builder-item::before {
+      .#{$prefix}-tile-wrapper-expanded
+        > .#{$prefix}-tile
+        > .#{$prefix}-logic-builder-item-wrapper
+        > .#{$prefix}-logic-builder-item::before {
         content: '';
         position: absolute;
         width: calc(var(--paddingLeft) + 1px);
@@ -265,7 +266,7 @@
         border-radius: 0 var(--borderRadius) 0 0;
       }
 
-      .collapsed-tile > .hcl-tile::before {
+      .#{$prefix}-tile-wrapper-collapsed > .#{$prefix}-tile::before {
         content: '';
         position: absolute;
         width: var(--paddingLeft);
@@ -279,7 +280,8 @@
         left: -1px;
       }
 
-      .children-exist.collapsed-tile > .hcl-tile::before {
+      .#{$prefix}-children-exist.#{$prefix}-tile-wrapper-collapsed
+        > .#{$prefix}-tile::before {
         content: '';
         position: absolute;
         width: var(--paddingLeft);
@@ -295,11 +297,13 @@
       }
     }
 
-    &.main-parent > .logic-builder-list > .child::before {
+    &.#{$prefix}-main-parent
+      > .#{$prefix}-logic-builder-list
+      > .#{$prefix}-tile-wrapper::before {
       content: none;
     }
 
-    &.subItem {
+    &.#{$prefix}-logic-builder-sub-list {
       padding-left: var(--paddingLeft) !important;
     }
   }
