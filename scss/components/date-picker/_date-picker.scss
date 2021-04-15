@@ -435,7 +435,7 @@
         color: var(--default_text_xhigh);
         outline: none;
       }
-      &:focus{
+      &:focus {
         outline: 0.125rem solid var(--interactive_border);
       }
     }
@@ -560,7 +560,6 @@
   }
 }
 
-
 .#{$prefix}-dot {
   background-color: var(--black);
   border-radius: 50%;
@@ -568,13 +567,13 @@
   margin: 0.0625rem;
 }
 
-.#{$prefix}-dot-parent{
+.#{$prefix}-dot-parent {
   position: absolute;
   bottom: 0.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:var(--white);
+  background-color: var(--white);
   padding: 0.0625rem;
 }
 
@@ -585,14 +584,14 @@
   align-items: center;
 }
 
-.#{$prefix}-calendar-border{
+.#{$prefix}-calendar-border {
   width: 2.375rem;
   height: 2.375rem;
   position: absolute;
   outline-offset: -0.0625rem;
 }
 
-.#{$prefix}-calendar-wrapper{
+.#{$prefix}-calendar-wrapper {
   border: 0.0625rem solid var(--default_border_xlow);
   box-shadow: 0 0.0625rem 0.125rem var(----default_shadow);
 }
