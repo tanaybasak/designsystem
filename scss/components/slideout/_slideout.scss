@@ -1,0 +1,193 @@
+.#{$prefix}-slideout {
+  --transition-seconds: 200ms;
+  position: fixed;
+  display: block;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  .#{$prefix}-slideout-mask {
+    background: var(--overlay);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: all 200ms ease-out;
+  }
+  &.#{$prefix}-slideout__default-border {
+    .#{$prefix}-slideout-layout {
+      border-top: 0.25rem solid var(--secondary_border);
+    }
+  }
+  &.#{$prefix}-slideout__danger-border {
+    .#{$prefix}-slideout-layout {
+      border-top: 0.25rem solid var(--danger_border);
+    }
+  }
+  &.#{$prefix}-slideout__warning-border {
+    .#{$prefix}-slideout-layout {
+      border-top: 0.25rem solid var(--warning_border);
+    }
+  }
+  &.#{$prefix}-slideout__ghost-border {
+    .#{$prefix}-slideout-layout {
+      border-top: 0.25rem solid var(--ghost_border);
+    }
+  }
+  .#{$prefix}-slideout-layout {
+    border-top: 0.25rem solid var(--secondary_border);
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    box-shadow: 0.75rem 1.5rem 0 var(--default_shadow);
+    background: var(--default_bg);
+    // transition: right var(--transition-seconds) ease-in-out 0s,
+    //   left var(--transition-seconds) ease-in-out 0s,
+    //   width var(--transition-seconds) ease-in-out 0s;
+    &.default:not(.layout-left) {
+      &.show {
+        right: 0;
+        width: 25rem;
+        padding: 1.75rem 1.5rem 0;
+      }
+      &.hide {
+        right: -25rem;
+        width: 0;
+        .#{$prefix}-slideout-footer {
+          display: none;
+        }
+      }
+    }
+    &.large:not(.layout-left) {
+      &.show {
+        right: 0;
+        width: 37.5rem;
+        padding: 1.75rem 1.5rem 0;
+      }
+      &.hide {
+        right: -37.5rem;
+        width: 0;
+        .#{$prefix}-slideout-footer {
+          display: none;
+        }
+      }
+    }
+    &.default:not(.layout-left),
+    &.large:not(.layout-left) {
+      &.show {
+        transition: right var(--transition-seconds) ease-out 0s,
+          left var(--transition-seconds) ease-out 0s,
+          width var(--transition-seconds) ease-out 0s;
+      }
+      &.hide {
+        transition: right var(--transition-seconds) ease-in 0s,
+          left var(--transition-seconds) ease-in 0s,
+          width var(--transition-seconds) ease-in 0s;
+      }
+    }
+    &.layout-left {
+      left: 0;
+      &.show {
+        left: 0;
+        width: 25rem;
+        padding: 1.75rem 1.5rem 0;
+        transition: right var(--transition-seconds) ease-out 0s,
+          left var(--transition-seconds) ease-out 0s,
+          width var(--transition-seconds) ease-out 0s;
+      }
+      &.hide {
+        left: -25rem;
+        transition: right var(--transition-seconds) ease-in 0s,
+          left var(--transition-seconds) ease-in 0s,
+          width var(--transition-seconds) ease-in 0s;
+        .#{$prefix}-slideout-footer {
+          display: none;
+        }
+      }
+      &.large {
+        &.show {
+          left: 0;
+          width: 37.5rem;
+          padding: 1.75rem 1.5rem 0;
+          transition: right var(--transition-seconds) ease-out 0s,
+            left var(--transition-seconds) ease-out 0s,
+            width var(--transition-seconds) ease-out 0s;
+        }
+        &.hide {
+          left: -37.5rem;
+          transition: right var(--transition-seconds) ease-in 0s,
+            left var(--transition-seconds) ease-in 0s,
+            width var(--transition-seconds) ease-in 0s;
+          .#{$prefix}-slideout-footer {
+            display: none;
+          }
+        }
+      }
+    }
+    .#{$prefix}-slideout-header {
+      display: flex;
+      color: var(--default_text_high);
+      .#{$prefix}-slideout-header__text {
+        position: relative;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        height: 2.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 90%;
+        // left: 0.9375rem;
+      }
+    }
+    .#{$prefix}-slideout-close {
+      right: 0.578125rem;
+      top: 1.203125rem;
+      padding: 0.875rem;
+      background: transparent;
+      cursor: pointer;
+      position: absolute;
+      & > svg {
+        width: 0.75rem;
+        height: 0.75rem;
+        fill: var(--default_icon_high);
+      }
+    }
+    .#{$prefix}-slideout-footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      min-height: 5.5rem;
+      background: var(--default_bg_low);
+      .#{$prefix}-action-bar {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        top: 0.9375rem;
+        right: 1.5rem;
+      }
+    }
+  }
+  .#{$prefix}-slideout-content {
+    margin-top: 1.5rem;
+    overflow: auto;
+    height: calc(100% - 10.3125rem);
+  }
+  @media (max-width: 768px) {
+    .#{$prefix}-slideout-layout {
+      &.show {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.overflow-slideout {
+  overflow: hidden;
+}
