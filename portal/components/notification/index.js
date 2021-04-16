@@ -5,6 +5,10 @@ const notification = {
   methodDocumentation: [],
   variation: [
     {
+      subHeading: 'Inline',
+      template: require('./inline.html')
+    },
+    {
       subHeading: 'Danger',
       template: require('./danger.html')
     },
