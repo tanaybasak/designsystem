@@ -579,15 +579,15 @@
     justify-content: center;
     align-items: center;
   }
+}
 
-  .#{$prefix}-dot {
-    background-color: var(--black);
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0.0625rem;
-  }
+.#{$prefix}-dot {
+  background-color: var(--black);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.0625rem;
 
-  .#{$prefix}-dot-parent {
+  &-parent {
     position: absolute;
     bottom: 0.125rem;
     display: flex;
