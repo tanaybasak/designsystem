@@ -68,7 +68,7 @@
     &:hover:not(:disabled) {
       background-color: var(--interactive_bg_hover);
       color: var(--interactive_text);
-      
+
       .#{$prefix}-thumbnail {
         border: 1px solid var(--interactive_icon);
       }
@@ -101,8 +101,7 @@
     display: none;
   }
   &-btn.active::before,
-  &-btn.active
-    + &-btn::before {
+  &-btn.active + &-btn::before {
     background-color: transparent;
   }
 
