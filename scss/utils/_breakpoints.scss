@@ -10,7 +10,7 @@
 //
 // Breakpoints are defined as a map of (name: minimum width), order from small to large:
 //
-//    (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, , xxl: 1600px)
+//    (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, , xxl: 1600px, xxxl: 1920px)
 //
 // The map defined in the `$grid-breakpoints` global variable is used as the `$breakpoints` argument by default.
 //
