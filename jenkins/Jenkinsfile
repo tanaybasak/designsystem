@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    tools {nodejs "nodejs-path"}
+    stages {
+        stage('Clean') {
+            steps {
+                sh 'npm run clean'
+            }
+        }
+        stage('Install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'JENKINS_NODE_COOKIE=dontKillMe BUILD_ID=dontKillMe nohup bash jenkins/deploy.sh'
+            }
+        }
+    }
+}
