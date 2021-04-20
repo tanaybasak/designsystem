@@ -62,8 +62,14 @@
   &-expandable {
     @include tile(expandable);
 
+    padding: 0;
+
     &:not(.arrow-top-left) {
-      padding-right: 3.125rem;
+      // padding-right: 3.125rem;
+      padding-right: 0;
+      .#{$prefix}-tile-content {
+        padding-right: 3.125rem;
+      }
     }
 
     &.arrow-top-left {
@@ -73,6 +79,42 @@
         left: 0;
         bottom: unset;
         right: unset;
+      }
+      .#{$prefix}-tile-content,
+      .#{$prefix}-tile-hide {
+        padding: 0.9375rem 2.5rem 1.125rem 0;
+      }
+    }
+    .#{$prefix}-tile-hide,
+    .#{$prefix}-tile-content {
+      padding: 0.9375rem 2.5rem 1.125rem 2.5rem;
+    }
+    .#{$prefix}-tile-content {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &.arrow-top-right {
+      .#{$prefix}-tile-arrow {
+        top: 0;
+        right: 0;
+        bottom: unset;
+        left: unset;
+      }
+    }
+
+    &.arrow-bottom-left {
+      padding-left: 3.125rem;
+      .#{$prefix}-tile-arrow {
+        bottom: 0;
+        left: 0;
+        right: unset;
+        top: unset;
+      }
+      .#{$prefix}-tile-hide,
+      .#{$prefix}-tile-content {
+        padding-left: 0;
       }
     }
   }
