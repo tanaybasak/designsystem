@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
+                sh "npm install rimraf"
                 sh 'npm run clean'
             }
         }
