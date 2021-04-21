@@ -47,9 +47,6 @@
     max-width: 100%;
     box-shadow: 0 0 1.5rem 0 var(--default_shadow);
     background: var(--default_bg);
-    // transition: right var(--transition-seconds) ease-in-out 0s,
-    //   left var(--transition-seconds) ease-in-out 0s,
-    //   width var(--transition-seconds) ease-in-out 0s;
     &.default:not(.layout-left) {
       &.show {
         right: 0;
@@ -142,7 +139,6 @@
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 90%;
-        // left: 0.9375rem;
       }
     }
     .#{$prefix}-slideout-close {
