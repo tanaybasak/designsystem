@@ -41,6 +41,10 @@
     &.hcl-btn {
       justify-content: flex-start;
       text-align: left;
+      white-space: nowrap;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     &::after {
