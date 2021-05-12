@@ -275,6 +275,11 @@
     position: absolute;
     left: 16.5rem;
     top: 2.5rem;
+
+    &-disabled{
+      cursor: not-allowed;
+      fill: var(--input_icon);
+    }
   }
 
   &-date-icon {
@@ -323,7 +328,7 @@
 
         & ~ svg {
           cursor: not-allowed;
-
+          
           fill: var(--input_icon);
         }
       }
