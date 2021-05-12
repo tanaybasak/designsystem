@@ -10,7 +10,7 @@
   --emptyValue: 0px;
   width: 100%;
 
-  @include media-breakpoint-between(sm, xxl) {
+  @include media-breakpoint-between(sm, xxxl) {
     --paddingLeft: 1rem;
     --paddingRight: 0.75rem;
   }
