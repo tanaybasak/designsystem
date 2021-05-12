@@ -563,6 +563,10 @@
   .#{$prefix}-flex-row {
     display: flex;
   }
+
+  .#{$prefix}-flex-col {
+    margin-bottom: 0px !important;
+  }
 }
 
 // Calendar Component CSS
