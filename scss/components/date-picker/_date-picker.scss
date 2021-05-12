@@ -276,7 +276,7 @@
     left: 16.5rem;
     top: 2.5rem;
 
-    &-disabled{
+    &-disabled {
       cursor: not-allowed;
       fill: var(--input_icon);
     }
@@ -328,7 +328,7 @@
 
         & ~ svg {
           cursor: not-allowed;
-          
+
           fill: var(--input_icon);
         }
       }
