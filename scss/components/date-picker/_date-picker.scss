@@ -45,7 +45,7 @@
       &[disabled] {
         cursor: not-allowed;
 
-        opacity: var(--disabled_all);
+        background-color: var(--disabled_all);
 
         & ~ svg {
           cursor: not-allowed;
@@ -319,7 +319,7 @@
       &[disabled] {
         cursor: not-allowed;
 
-        background-color: var(--disabled_all);
+        opacity: var(--disabled_all);
 
         & ~ svg {
           cursor: not-allowed;
