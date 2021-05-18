@@ -74,8 +74,11 @@ $search-reset-size: 0.759rem;
     height: $search-height;
     outline: none;
     padding: 0 $search-height;
+    // border-bottom: 0.0625rem solid var(--input_border);
+    border-width: var(--input_border_width); 
+    border-style: solid;
+    border-color: var(--input_border);
 
-    border-bottom: 0.0625rem solid var(--input_border);
     color: var(--input_text);
     background-color: var(--input_bg);
 
@@ -84,8 +87,10 @@ $search-reset-size: 0.759rem;
     transition: width 0.15s ease-out;
 
     &:focus {
-      border-bottom: 2px solid var(--interactive_border);
-
+      // border-bottom: 2px solid var(--interactive_border);
+      border-width : var(--input_border_focus_width);
+      border-style: solid;
+      border-color: var(--input_border_focus_color);
       outline-offset: -1px;
     }
 

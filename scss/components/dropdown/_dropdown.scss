@@ -36,7 +36,10 @@
     padding-right: 2.5rem;
     background-color: var(--input_bg);
     color: var(--input_text);
-    border-bottom: 0.0625rem solid var(--input_border);
+    // border-bottom: 0.0625rem solid var(--input_border);
+    border-width: var(--input_border_width);
+    border-style: solid;
+    border-color: var(--input_border);
 
     &.hcl-btn {
       justify-content: flex-start;
@@ -65,7 +68,10 @@
 
     &:focus {
       outline-offset: -0.0625rem;
-      border-bottom: 0.125rem solid var(--interactive_border);
+      // border-bottom: 0.125rem solid var(--interactive_border);
+      border-width : var(--input_border_focus_width);
+      border-style: solid;
+      border-color: var(--input_border_focus_color);
     }
 
     .#{$prefix}-tag-primary {

@@ -1,0 +1,28 @@
+.filled,
+:root {
+  --input_border_width: 0 0 0.0625rem 0;
+  --input_border_focus_width: 0 0 0.125rem 0;
+  --input_border_radius: 0;
+  --input_border_focus_color: var(--interactive_border);
+  --input_focus: inset -0.0625rem 0 0 transparent,
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0.125rem 0 var(--interactive_border);
+
+  --input_focus_error: inset -0.0625rem 0 0 transparent,
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0.125rem 0 var(--danger_border);
+}
+
+.outline {
+  --input_border_width: 0.0625rem;
+  --input_border_focus_width: 0.125rem;
+  --input_border_radius: 0;
+  --input_border_focus_color: var(--input_border);
+  --input_focus: inset -0.0625rem 0 0 transparent,
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0 0 0.125rem var(--input_border);
+  --input_bg: transparent;
+  --input_focus_error: inset -0.0625rem 0 0 transparent,
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0 0 0.125rem var(--danger_border);
+}
