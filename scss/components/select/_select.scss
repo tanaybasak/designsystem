@@ -61,6 +61,8 @@
     width: 100%;
     &:focus {
       outline: none;
+      border: none;
+      box-shadow: 0 0.125rem 0 var(--interactive_border);
     }
     &:hover {
       background-color: var(--input_bg);
