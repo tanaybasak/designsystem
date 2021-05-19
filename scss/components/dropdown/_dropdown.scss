@@ -69,7 +69,7 @@
     &:focus {
       outline-offset: -0.0625rem;
       // border-bottom: 0.125rem solid var(--interactive_border);
-      border-width : var(--input_border_focus_width);
+      border-width: var(--input_border_focus_width);
       border-style: solid;
       border-color: var(--input_border_focus_color);
     }

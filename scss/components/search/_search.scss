@@ -75,7 +75,7 @@ $search-reset-size: 0.759rem;
     outline: none;
     padding: 0 $search-height;
     // border-bottom: 0.0625rem solid var(--input_border);
-    border-width: var(--input_border_width); 
+    border-width: var(--input_border_width);
     border-style: solid;
     border-color: var(--input_border);
 
@@ -88,7 +88,7 @@ $search-reset-size: 0.759rem;
 
     &:focus {
       // border-bottom: 2px solid var(--interactive_border);
-      border-width : var(--input_border_focus_width);
+      border-width: var(--input_border_focus_width);
       border-style: solid;
       border-color: var(--input_border_focus_color);
       outline-offset: -1px;
