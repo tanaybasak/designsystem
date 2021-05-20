@@ -58,7 +58,6 @@
       ),
       linear-gradient(135deg, var(--input_icon) 50%, transparent 50%);
     border-bottom: 0.0625rem solid var(--input_border);
-    width: 100%;
     &:focus {
       outline: none;
       border: none;
