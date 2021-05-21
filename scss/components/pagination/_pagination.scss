@@ -234,6 +234,7 @@ $pagination-line-height: 1.125rem;
   .#{$prefix}-pagination-label {
     color: var(--default_text);
     margin-left: 1rem;
+    padding-right: 0.25rem;
     @include media-breakpoint-down(sm) {
       font-size: 0.75rem;
       white-space: nowrap;
