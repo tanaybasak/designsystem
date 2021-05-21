@@ -276,6 +276,11 @@
     position: absolute;
     left: 16.5rem;
     top: 2.5rem;
+
+    &-disabled {
+      cursor: not-allowed;
+      opacity: var(--disabled_all);
+    }
   }
 
   &-date-icon {
