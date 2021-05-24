@@ -38,13 +38,16 @@
     color: var(--input_text);
     border-bottom: 0.0625rem solid var(--input_border);
 
-    &.hcl-btn {
+    &.#{$prefix}-btn {
       justify-content: flex-start;
       text-align: left;
-      white-space: nowrap;
-      display: block;
-      overflow: hidden;
-      text-overflow: ellipsis;
+
+      &.#{$prefix}-dropown-btn {
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
 
     &::after {
