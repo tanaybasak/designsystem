@@ -32,7 +32,7 @@
     display: flex;
     flex-direction: column;
 
-    @include media-breakpoint-between(md, xxl) {
+    @include media-breakpoint-between(md, xxxl) {
       &.#{$prefix}-modal-container-lg {
         width: 50%;
         max-width: 48rem;
@@ -52,7 +52,7 @@
     word-wrap: break-word;
   }
 
-  @include media-breakpoint-between(md, xxl) {
+  @include media-breakpoint-between(md, xxxl) {
     &-header-lg {
       padding: 1rem 3rem;
       color: var(--default_text_high);
@@ -103,7 +103,7 @@
     max-height: 15rem;
   }
 
-  @include media-breakpoint-between(md, xxl) {
+  @include media-breakpoint-between(md, xxxl) {
     &-content-lg {
       padding: 1rem 3rem;
       color: var(--default_text_high);
@@ -126,7 +126,7 @@
     }
   }
 
-  @include media-breakpoint-between(md, xxl) {
+  @include media-breakpoint-between(md, xxxl) {
     &-footer-lg {
       padding: 1rem 3rem;
       position: static;

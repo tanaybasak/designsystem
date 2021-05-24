@@ -269,12 +269,18 @@
     top: 0.75rem;
     z-index: 1;
     cursor: pointer;
+    fill: var(--input_icon);
   }
 
   &-range-icon {
     position: absolute;
     left: 16.5rem;
     top: 2.5rem;
+
+    &-disabled {
+      cursor: not-allowed;
+      opacity: var(--disabled_all);
+    }
   }
 
   &-date-icon {
@@ -319,12 +325,11 @@
       &[disabled] {
         cursor: not-allowed;
 
-        background-color: var(--disabled_all);
+        opacity: var(--disabled_all);
 
         & ~ svg {
           cursor: not-allowed;
-
-          fill: var(--input_icon);
+          opacity: var(--disabled_all);
         }
       }
     }
@@ -447,8 +452,8 @@
     }
 
     &-today {
-      box-shadow: inset 0 0 0 0.125rem var(--default_bg),
-        inset 0 0 0 0.1875rem var(--active_border);
+      box-shadow: inset 0 0 0 0.1875rem var(--default_bg),
+        inset 0 0 0 0.25rem var(--active_border);
       border-radius: 50%;
     }
 
@@ -558,6 +563,10 @@
   .#{$prefix}-flex-row {
     display: flex;
   }
+
+  .#{$prefix}-flex-col {
+    margin-bottom: 0px !important;
+  }
 }
 
 // Calendar Component CSS
@@ -589,7 +598,7 @@
 
   &-parent {
     position: absolute;
-    bottom: 0.125rem;
+    bottom: 0.1875rem;
     display: flex;
     justify-content: center;
     align-items: center;
