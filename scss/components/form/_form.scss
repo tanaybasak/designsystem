@@ -187,17 +187,17 @@ label.#{$prefix}-label {
       outline: 2px solid var(--interactive_border);
     }
 
-    &:hover:not(:checked):not(:indeterminate)
+    &:not(:disabled):hover:not(:checked):not(:indeterminate)
       + .#{$prefix}-checkbox-label::before {
       background-color: var(--interactive_bg_hover);
       box-shadow: inset 0 0px 0px var(--interactive_bg_hover),
         0 0 0 8px var(--interactive_bg_hover);
     }
-    &:checked:hover + .#{$prefix}-checkbox-label::before {
+    &:not(:disabled):checked:hover + .#{$prefix}-checkbox-label::before {
       box-shadow: inset 0 0px 0px var(--interactive_bg_hover),
         0 0 0 8px var(--interactive_bg_hover);
     }
-    &:indeterminate:hover + .#{$prefix}-checkbox-label::before {
+    &:not(:disabled):indeterminate:hover + .#{$prefix}-checkbox-label::before {
       box-shadow: inset 0 0px 0px var(--interactive_bg_hover),
         0 0 0 8px var(--interactive_bg_hover);
     }
