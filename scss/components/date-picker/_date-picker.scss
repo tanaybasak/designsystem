@@ -269,6 +269,7 @@
     top: 0.75rem;
     z-index: 1;
     cursor: pointer;
+    fill: var(--input_icon);
   }
 
   &-range-icon {
@@ -278,7 +279,7 @@
 
     &-disabled {
       cursor: not-allowed;
-      fill: var(--input_icon);
+      opacity: var(--disabled_all);
     }
   }
 
@@ -328,8 +329,7 @@
 
         & ~ svg {
           cursor: not-allowed;
-
-          fill: var(--input_icon);
+          opacity: var(--disabled_all);
         }
       }
     }
