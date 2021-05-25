@@ -37,16 +37,35 @@
     background-color: var(--input_bg);
     color: var(--input_text);
     border-bottom: 0.0625rem solid var(--input_border);
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &.#{$prefix}-btn {
       justify-content: flex-start;
       text-align: left;
 
-      &.#{$prefix}-dropdown-btn {
-        white-space: nowrap;
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
+      &.#{$prefix}-multiselect-btn {
+        display: flex;
+
+        + .#{$prefix}-overlay-container {
+          .#{$prefix}-dropdown-item {
+            display: flex;
+            align-items: center;
+
+            .#{$prefix}-checkbox-item {
+              min-width: 0;
+              
+              .#{$prefix}-checkbox-label {
+                white-space: nowrap;
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
       }
     }
 
