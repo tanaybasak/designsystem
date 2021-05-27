@@ -9,7 +9,7 @@ const packageFile = path.join(__dirname, '../', 'package.json');
 const argv = require('yargs/yargs')(process.argv.slice(2)).argv;
 
 const BRANCH_NAME = argv.BRANCH;
-let DESCRIPTION = `dev description`;
+// let DESCRIPTION = `dev description`;
 
 let PROCESS_VER = '';
 let PROCESS_DESC = '';
