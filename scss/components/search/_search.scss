@@ -70,17 +70,17 @@ $search-reset-size: 0.759rem;
   .#{$prefix}-search-input {
     -webkit-appearance: none;
     font-size: var(--body-font-size);
-    width: 100%;
-    height: $search-height;
+    // width: 100%;
+    // height: $search-height;
     outline: none;
     padding: 0 $search-height;
-    // border-bottom: 0.0625rem solid var(--input_border);
-    border-width: var(--input_border_width);
-    border-style: solid;
-    border-color: var(--input_border);
+    //border-bottom: 0.0625rem solid var(--input_border);
+    // border-width: var(--input_border_width);
+    // border-style: solid;
+    // border-color: var(--input_border);
 
-    color: var(--input_text);
-    background-color: var(--input_bg);
+    // color: var(--input_text);
+    // background-color: var(--input_bg);
 
     right: 0;
     position: unset;

@@ -288,8 +288,13 @@ $inputColor-map: (
     &:focus {
       outline: none;
 
-      box-shadow: var(--input_focus);
+      // box-shadow: var(--input_focus);
       // border-bottom: 1px solid transparent;
+
+      border-width: var(--input_border_focus_width);
+      border-style: solid;
+      border-color: var(--input_border_focus_color);
+  
 
       & ~ label.#{$prefix}-label {
         color: var(--default_text);
