@@ -38,8 +38,9 @@ $breadcrumb-margin: 1rem;
         @include getTextDecorationLine('underline');
       }
       &:focus {
-        outline: 0.0625rem solid var(--interactive_border);
-        border: 0;
+        // outline: 0.0625rem solid var(--interactive_border);
+        border: 0.0625rem solid var(--interactive_border);
+        border-radius: var(--border_corner_all_small);
         @include getTextDecorationLine('none');
       }
     }

@@ -1,0 +1,34 @@
+.outline {
+  --input_border_width: 0.0625rem;
+  --input_border_focus_width: 0.125rem;
+
+  --input_border_radius_small: var(--corner_all_rounded_small);
+  --border_corner_all_medium: var(--corner_all_rounded_medium);
+  --border_corner_all_small: var(--corner_all_rounded_small);
+
+  --input_border_focus_color: var(--interactive_border);
+  --input_focus: inset -0.0625rem 0 0 transparent,
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0 0 0.125rem var(--input_border);
+  --input_back: transparent;
+  --input_focus_error: inset -0.0625rem 0 0 transparent,
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0 0 0.125rem var(--danger_border);
+}
+
+.filled, :root {
+  --input_border_width: 0 0 0.0625rem 0;
+  --input_border_focus_width: 0 0 0.125rem 0;
+  --input_back : var(--input_bg);
+  --input_border_radius_small: var(--corner_top_rounded_small);
+  --border_corner_all_medium: var(--corner_all_rounded_medium);
+  --border_corner_all_small: var(--corner_all_rounded_small);
+  --input_border_focus_color: var(--interactive_border);
+  --input_focus: inset -0.0625rem 0 0 transparent,
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0.125rem 0 var(--interactive_border);
+
+  --input_focus_error: inset -0.0625rem 0 0 transparent,
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0.125rem 0 var(--danger_border);
+}

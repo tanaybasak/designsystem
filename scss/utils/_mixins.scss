@@ -279,8 +279,12 @@ $inputColor-map: (
     height: $input-height;
     padding: $input-padding-y $input-padding-x;
     color: var(--input_text);
-    background-color: var(--input_bg);
-    border-bottom: 0.0625rem solid var(--input_border);
+    background-color: var(--input_back);
+    // border-bottom: 0.0625rem solid var(--input_border);
+    border-width: var(--input_border_width);
+    border-style: solid;
+    border-color: var(--input_border);
+    border-radius: var(--input_border_radius_small);
 
     &:focus {
       outline: none;

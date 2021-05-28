@@ -5,7 +5,7 @@
   max-height: 12rem;
   overflow: auto;
   background-color: var(--default_bg);
-
+  
   .#{$prefix}-overflow-option {
     font-size: 0.875rem;
 
@@ -93,6 +93,7 @@
     outline-offset: -1px;
 
     outline: 0.125rem solid var(--interactive_border);
+    border-radius: var(--border_corner_all_small);
   }
 }
 

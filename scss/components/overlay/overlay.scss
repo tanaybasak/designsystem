@@ -14,10 +14,12 @@
   z-index: 999;
   transition: opacity 0.3s ease-in-out;
 
+
   &.#{$prefix}-overlay-container-show {
     visibility: visible;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
+    border-radius: var(--border_corner_all_medium);
   }
 
   &.#{$prefix}-overlay-container-scroll {
