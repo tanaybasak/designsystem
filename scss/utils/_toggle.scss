@@ -4,6 +4,7 @@
   --input_border_focus_width: 0 0 0.125rem 0;
   --input_border_radius: 0;
   --input_border_focus_color: var(--interactive_border);
+  --input_background: var(--input_bg);
   --input_focus: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
     0 0.125rem 0 var(--interactive_border);
@@ -20,8 +21,8 @@
   --input_border_focus_color: var(--interactive_border);
   --input_focus: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
-    0 0 0 0.125rem var(--input_border);
-  --input_bg: transparent;
+    0 0 0 0.125rem var(--interactive_border);
+  --input_background: transparent;
   --input_focus_error: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
     0 0 0 0.125rem var(--danger_border);

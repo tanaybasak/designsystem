@@ -279,7 +279,7 @@ $inputColor-map: (
     height: $input-height;
     padding: $input-padding-y $input-padding-x;
     color: var(--input_text);
-    background-color: var(--input_bg);
+    background-color: var(--input_background);
     // border-bottom: 0.0625rem solid var(--input_border);
     border-width: var(--input_border_width);
     border-style: solid;
@@ -288,12 +288,12 @@ $inputColor-map: (
     &:focus {
       outline: none;
 
-      // box-shadow: var(--input_focus);
+      box-shadow: var(--input_focus);
       // border-bottom: 1px solid transparent;
 
-      border-width: var(--input_border_focus_width);
-      border-style: solid;
-      border-color: var(--input_border_focus_color);
+      // border-width: var(--input_border_focus_width);
+      // border-style: solid;
+      // border-color: var(--input_border_focus_color);
   
 
       & ~ label.#{$prefix}-label {
