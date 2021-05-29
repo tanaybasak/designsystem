@@ -2,7 +2,8 @@
 *Input components(form controls)
 */
 
-.outline-sharp, .outline-rounded {
+.outline-sharp,
+.outline-rounded {
   --input_border_width: 0.0625rem;
   --input_border_focus_width: 0.125rem;
   --input_border_focus_color: var(--interactive_border);
@@ -25,7 +26,6 @@
   // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
 }
 
-
 .filled-sharp,
 .sharp,
 .filled-rounded,
@@ -33,7 +33,7 @@
 :root {
   --input_border_width: 0 0 0.0625rem 0;
   --input_border_focus_width: 0 0 0.125rem 0;
-  --input_back: var(--input_bg); 
+  --input_back: var(--input_bg);
   --input_border_focus_color: var(--interactive_border);
   --input_focus: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
@@ -51,11 +51,11 @@
 }
 
 .filled-sharp,
-.sharp, :root {
+.sharp,
+:root {
   --input_border_radius: var(--sharp_corner);
   // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
 }
-
 
 /** 
 Components like action bar, Tile, 
@@ -71,8 +71,8 @@ Components like action bar, Tile,
   --border_corner_right_big: var(--sharp_corner);
   --border_corner_all_full: var(--sharp_corner);
   --shadow_focus: inset -0.0625rem 0 0 transparent,
-  inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
-  0 0 0 0.125rem var(--interactive_border);
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0 0 0.125rem var(--interactive_border);
 }
 
 .rounded {
@@ -85,6 +85,6 @@ Components like action bar, Tile,
   --border_corner_all_full: var(--rounded_corner_all_rounded_full);
 
   --shadow_focus: inset -0.0625rem 0 0 transparent,
-  inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
-  0 0 0 0.125rem var(--interactive_border);
+    inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+    0 0 0 0.125rem var(--interactive_border);
 }
