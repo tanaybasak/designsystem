@@ -15,6 +15,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  border-radius: var(--border_corner_all_small);
 
   &-icon {
     width: 1rem;

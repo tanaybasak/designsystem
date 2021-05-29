@@ -1,111 +1,114 @@
-.rounded {
-  --corner_top_rounded_xsmall: 0.125rem 0125rem 0 0;
-  --corner_top_rounded_small: 0.188rem 0.188rem 0 0;
-  --corner_top_rounded_medium: 0.313rem 0.313rem 0 0;
-  --corner_top_rounded_big: 0.5rem 0.5rem 0 0;
-  --corner_top_rounded_full: 6.25rem 6.25rem 0 0;
+:root {
+  --rounded_corner_top_rounded_xsmall: 0.125rem 0125rem 0 0;
+  --rounded_corner_top_rounded_small: 0.188rem 0.188rem 0 0;
+  --rounded_corner_top_rounded_medium: 0.313rem 0.313rem 0 0;
+  --rounded_corner_top_rounded_big: 0.5rem 0.5rem 0 0;
+  --rounded_corner_top_rounded_full: 6.25rem 6.25rem 0 0;
 
-  --corner_bottom_rounded_xsmall: 0 0 0.125rem 0.125rem;
-  --corner_bottom_rounded_small: 0 0 0.188rem 0.188rem;
-  --corner_bottom_rounded_medium: 0 0 0.313rem 0.313rem;
-  --corner_bottom_rounded_big: 0 0 0.5rem 0.5rem;
-  --corner_bottom_rounded_full: 0 0 6.25rem 6.25rem;
+  --rounded_corner_bottom_rounded_xsmall: 0 0 0.125rem 0.125rem;
+  --rounded_corner_bottom_rounded_small: 0 0 0.188rem 0.188rem;
+  --rounded_corner_bottom_rounded_medium: 0 0 0.313rem 0.313rem;
+  --rounded_corner_bottom_rounded_big: 0 0 0.5rem 0.5rem;
+  --rounded_corner_bottom_rounded_full: 0 0 6.25rem 6.25rem;
 
-  --corner_left_rounded_xsmall: 0.125rem 0 0 0125rem;
-  --corner_left_rounded_small: 0.188rem 0 0 0.188rem;
-  --corner_left_rounded_medium: 0.313rem 0 0 0.313rem;
-  --corner_left_rounded_big: 0.5rem 0 0 0.5rem;
-  --corner_left_rounded_full: 6.25rem 0 0 6.25rem;
+  --rounded_corner_left_rounded_xsmall: 0.125rem 0 0 0125rem;
+  --rounded_corner_left_rounded_small: 0.188rem 0 0 0.188rem;
+  --rounded_corner_left_rounded_medium: 0.313rem 0 0 0.313rem;
+  --rounded_corner_left_rounded_big: 0.5rem 0 0 0.5rem;
+  --rounded_corner_left_rounded_full: 6.25rem 0 0 6.25rem;
 
-  --corner_right_rounded_xsmall: 0 0.125rem 0125rem 0;
-  --corner_right_rounded_small: 0 0.188rem 0.188rem 0;
-  --corner_right_rounded_medium: 0 0.313rem 0.313rem 0;
-  --corner_right_rounded_big: 0 0.5rem 0.5rem 0;
-  --corner_right_rounded_full: 0 6.25rem 6.25rem 0;
+  --rounded_corner_right_rounded_xsmall: 0 0.125rem 0125rem 0;
+  --rounded_corner_right_rounded_small: 0 0.188rem 0.188rem 0;
+  --rounded_corner_right_rounded_medium: 0 0.313rem 0.313rem 0;
+  --rounded_corner_right_rounded_big: 0 0.5rem 0.5rem 0;
+  --rounded_corner_right_rounded_full: 0 6.25rem 6.25rem 0;
 
-  --corner_tl_rounded_xsmall: 0.125rem 0 0 0;
-  --corner_tl_rounded_small: 0.188rem 0 0 0;
-  --corner_tl_rounded_medium: 0.313rem 0 0 0;
-  --corner_tl_rounded_big: 0.5rem 0 0 0;
-  --corner_tl_rounded_full: 6.25rem 0 0 0;
+  --rounded_corner_tl_rounded_xsmall: 0.125rem 0 0 0;
+  --rounded_corner_tl_rounded_small: 0.188rem 0 0 0;
+  --rounded_corner_tl_rounded_medium: 0.313rem 0 0 0;
+  --rounded_corner_tl_rounded_big: 0.5rem 0 0 0;
+  --rounded_corner_tl_rounded_full: 6.25rem 0 0 0;
 
-  --corner_tr_rounded_xsmall: 0 0.125rem 0 0;
-  --corner_tr_rounded_small: 0 0.188rem 0 0;
-  --corner_tr_rounded_medium: 0 0.313rem 0 0;
-  --corner_tr_rounded_big: 0 0.5rem 0 0;
-  --corner_tr_rounded_full: 0 6.25rem 0 0;
+  --rounded_corner_tr_rounded_xsmall: 0 0.125rem 0 0;
+  --rounded_corner_tr_rounded_small: 0 0.188rem 0 0;
+  --rounded_corner_tr_rounded_medium: 0 0.313rem 0 0;
+  --rounded_corner_tr_rounded_big: 0 0.5rem 0 0;
+  --rounded_corner_tr_rounded_full: 0 6.25rem 0 0;
 
-  --corner_bl_rounded_xsmall: 0 0 0 0.125rem;
-  --corner_bl_rounded_small: 0 0 0 0.188rem;
-  --corner_bl_rounded_medium: 0 0 0 0.188rem;
-  --corner_bl_rounded_big: 0 0 0 0.5rem;
-  --corner_bl_rounded_full: 0 0 0 6.25rem;
+  --rounded_corner_bl_rounded_xsmall: 0 0 0 0.125rem;
+  --rounded_corner_bl_rounded_small: 0 0 0 0.188rem;
+  --rounded_corner_bl_rounded_medium: 0 0 0 0.188rem;
+  --rounded_corner_bl_rounded_big: 0 0 0 0.5rem;
+  --rounded_corner_bl_rounded_full: 0 0 0 6.25rem;
 
-  --corner_br_rounded_xsmall: 0 0 0.125rem 0;
-  --corner_br_rounded_small: 0 0 0.188rem 0;
-  --corner_br_rounded_medium: 0 0 0.313rem 0;
-  --corner_br_rounded_big: 0 0 0.5rem 0;
-  --corner_br_rounded_full: 0 0 6.25rem 0;
+  --rounded_corner_br_rounded_xsmall: 0 0 0.125rem 0;
+  --rounded_corner_br_rounded_small: 0 0 0.188rem 0;
+  --rounded_corner_br_rounded_medium: 0 0 0.313rem 0;
+  --rounded_corner_br_rounded_big: 0 0 0.5rem 0;
+  --rounded_corner_br_rounded_full: 0 0 6.25rem 0;
 
-  --corner_all_rounded_xsmall: 0.125rem;
-  --corner_all_rounded_small: 0.188rem;
-  --corner_all_rounded_medium: 0.313rem;
-  --corner_all_rounded_big: 0.5rem;
-  --corner_all_rounded_full: 6.25rem;
-}
+  --rounded_corner_all_rounded_xsmall: 0.125rem;
+  --rounded_corner_all_rounded_small: 0.188rem;
+  --rounded_corner_all_rounded_medium: 0.313rem;
+  --rounded_corner_all_rounded_big: 0.5rem;
+  --rounded_corner_all_rounded_full: 6.25rem;
 
-.sharp {
-  --corner_top_rounded_xsmall: 0;
-  --corner_top_rounded_small: 0;
-  --corner_top_rounded_medium: 0;
-  --corner_top_rounded_big: 0;
-  --corner_top_rounded_full: 0;
+  // --sharp_corner_top_rounded_xsmall: 0;
+  // --sharp_corner_top_rounded_small: 0;
+  // --sharp_corner_top_rounded_medium: 0;
+  // --sharp_corner_top_rounded_big: 0;
+  // --sharp_corner_top_rounded_full: 0;
 
-  --corner_bottom_rounded_small: 0;
-  --corner_bottom_rounded_xsmall: 0;
-  --corner_bottom_rounded_medium: 0;
-  --corner_bottom_rounded_big: 0;
-  --corner_bottom_rounded_full: 0;
+  // --sharp_corner_bottom_rounded_small: 0;
+  // --sharp_corner_bottom_rounded_xsmall: 0;
+  // --sharp_corner_bottom_rounded_medium: 0;
+  // --sharp_corner_bottom_rounded_big: 0;
+  // --sharp_corner_bottom_rounded_full: 0;
 
-  --corner_left_rounded_xsmall: 0;
-  --corner_left_rounded_small: 0;
-  --corner_left_rounded_medium: 0;
-  --corner_left_rounded_big: 0;
-  --corner_left_rounded_full: 0;
+  // --sharp_corner_left_rounded_xsmall: 0;
+  // --sharp_corner_left_rounded_small: 0;
+  // --sharp_corner_left_rounded_medium: 0;
+  // --sharp_corner_left_rounded_big: 0;
+  // --sharp_corner_left_rounded_full: 0;
 
-  --corner_right_rounded_xsmall: 0;
-  --corner_right_rounded_small: 0;
-  --corner_right_rounded_medium: 0;
-  --corner_right_rounded_big: 0;
-  --corner_right_rounded_full: 0;
+  // --sharp_corner_right_rounded_xsmall: 0;
+  // --sharp_corner_right_rounded_small: 0;
+  // --sharp_corner_right_rounded_medium: 0;
+  // --sharp_corner_right_rounded_big: 0;
+  // --sharp_corner_right_rounded_full: 0;
 
-  --corner_tl_rounded_xsmall: 0;
-  --corner_tl_rounded_small: 0;
-  --corner_tl_rounded_medium: 0;
-  --corner_tl_rounded_big: 0;
-  --corner_tl_rounded_full: 0;
+  // --sharp_corner_tl_rounded_xsmall: 0;
+  // --sharp_corner_tl_rounded_small: 0;
+  // --sharp_corner_tl_rounded_medium: 0;
+  // --sharp_corner_tl_rounded_big: 0;
+  // --sharp_corner_tl_rounded_full: 0;
 
-  --corner_tr_rounded_xsmall: 0;
-  --corner_tr_rounded_small: 0;
-  --corner_tr_rounded_medium: 0;
-  --corner_tr_rounded_big: 0;
-  --corner_tr_rounded_full: 0;
+  // --sharp_corner_tr_rounded_xsmall: 0;
+  // --sharp_corner_tr_rounded_small: 0;
+  // --sharp_corner_tr_rounded_medium: 0;
+  // --sharp_corner_tr_rounded_big: 0;
+  // --sharp_corner_tr_rounded_full: 0;
 
-  --corner_bl_rounded_xsmall: 0;
-  --corner_bl_rounded_small: 0;
-  --corner_bl_rounded_medium: 0;
-  --corner_bl_rounded_big: 0;
-  --corner_bl_rounded_full: 0;
+  // --sharp_corner_bl_rounded_xsmall: 0;
+  // --sharp_corner_bl_rounded_small: 0;
+  // --sharp_corner_bl_rounded_medium: 0;
+  // --sharp_corner_bl_rounded_big: 0;
+  // --sharp_corner_bl_rounded_full: 0;
 
-  --corner_br_rounded_xsmall: 0;
-  --corner_br_rounded_small: 0;
-  --corner_br_rounded_medium: 0;
-  --corner_br_rounded_big: 0;
-  --corner_br_rounded_full: 0;
+  // --sharp_corner_br_rounded_xsmall: 0;
+  // --sharp_corner_br_rounded_small: 0;
+  // --sharp_corner_br_rounded_medium: 0;
+  // --sharp_corner_br_rounded_big: 0;
+  // --sharp_corner_br_rounded_full: 0;
 
-  --corner_all_rounded_xsmall: 0;
-  --corner_all_rounded_small: 0;
-  --corner_all_rounded_medium: 0;
-  --corner_all_rounded_big: 0;
-  --corner_all_rounded_full: 0;
+  // --sharp_corner_all_rounded_xsmall: 0;
+  // --sharp_corner_all_rounded_small: 0;
+  // --sharp_corner_all_rounded_medium: 0;
+  // --sharp_corner_all_rounded_big: 0;
+  // --sharp_corner_all_rounded_full: 0;
+
+
+
+
+  --sharp_corner : 0
 }

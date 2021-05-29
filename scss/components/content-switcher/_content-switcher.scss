@@ -106,14 +106,17 @@
   }
 
   &-btn:first-of-type {
-    border-top-left-radius: hcl-rem(4px);
-    border-bottom-left-radius: hcl-rem(4px);
+    // border-top-left-radius: hcl-rem(4px);
+    // border-bottom-left-radius: hcl-rem(4px);
+    border-radius: var(--border_corner_left_big);
   }
 
   &-btn:last-of-type {
-    border-top-right-radius: hcl-rem(4px);
-    border-bottom-right-radius: hcl-rem(4px);
+    // border-top-right-radius: hcl-rem(4px);
+    // border-bottom-right-radius: hcl-rem(4px);
+    border-radius: var(--border_corner_right_big);
   }
+
 }
 
 .#{$prefix}-content-switcher-content {

@@ -23,6 +23,7 @@
     &-warning {
       border-top: 0.25rem solid var(--warning_border);
     }
+    border-radius: var(--border_corner_all_big);
     position: relative;
     border-top: 0.25rem solid var(--secondary_border);
     background-color: var(--default_bg);

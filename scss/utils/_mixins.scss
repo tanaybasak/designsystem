@@ -284,7 +284,7 @@ $inputColor-map: (
     border-width: var(--input_border_width);
     border-style: solid;
     border-color: var(--input_border);
-    border-radius: var(--input_border_radius_small);
+    border-radius: var(--input_border_radius);
 
     &:focus {
       outline: none;

@@ -225,6 +225,7 @@ label.#{$prefix}-label {
       width: 1.125rem;
       height: 1.125rem;
       border: 1px solid var(--default_icon_high);
+      border-radius: var(--border_corner_all_xsmall);
       background-color: var(--white);
     }
 

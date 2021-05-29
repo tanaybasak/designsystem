@@ -1,11 +1,10 @@
-.outline {
+/*
+*Input components(form controls)
+*/
+
+.outline-sharp, .outline-rounded {
   --input_border_width: 0.0625rem;
   --input_border_focus_width: 0.125rem;
-
-  --input_border_radius_small: var(--corner_all_rounded_small);
-  --border_corner_all_medium: var(--corner_all_rounded_medium);
-  --border_corner_all_small: var(--corner_all_rounded_small);
-
   --input_border_focus_color: var(--interactive_border);
   --input_focus: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
@@ -16,20 +15,76 @@
     0 0 0 0.125rem var(--danger_border);
 }
 
-.filled,
+.outline-rounded {
+  --input_border_radius: var(--rounded_corner_all_rounded_small);
+  // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
+}
+
+.outline-sharp {
+  --input_border_radius: var(--sharp_corner);
+  // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
+}
+
+
+.filled-sharp,
+.sharp,
+.filled-rounded,
+.rounded,
 :root {
   --input_border_width: 0 0 0.0625rem 0;
   --input_border_focus_width: 0 0 0.125rem 0;
-  --input_back: var(--input_bg);
-  --input_border_radius_small: var(--corner_top_rounded_small);
-  --border_corner_all_medium: var(--corner_all_rounded_medium);
-  --border_corner_all_small: var(--corner_all_rounded_small);
+  --input_back: var(--input_bg); 
   --input_border_focus_color: var(--interactive_border);
   --input_focus: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
-    0 0.125rem 0 var(--interactive_border);
+    0 0 0 0.125rem var(--input_border);
 
   --input_focus_error: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
     0 0.125rem 0 var(--danger_border);
+}
+
+.filled-rounded,
+.rounded {
+  --input_border_radius: var(--rounded_corner_top_rounded_small);
+  // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
+}
+
+.filled-sharp,
+.sharp, :root {
+  --input_border_radius: var(--sharp_corner);
+  // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
+}
+
+
+/** 
+Components like action bar, Tile, 
+*/
+
+.sharp,
+:root {
+  --border_corner_all_medium: var(--sharp_corner);
+  --border_corner_all_small: var(--sharp_corner);
+  --border_corner_all_xsmall: var(--sharp_corner);
+  --border_corner_all_big: var(--sharp_corner);
+  --border_corner_left_big: var(--sharp_corner);
+  --border_corner_right_big: var(--sharp_corner);
+  --border_corner_all_full: var(--sharp_corner);
+  --shadow_focus: inset -0.0625rem 0 0 transparent,
+  inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+  0 0 0 0.125rem var(--interactive_border);
+}
+
+.rounded {
+  --border_corner_all_medium: var(--rounded_corner_all_rounded_medium);
+  --border_corner_all_small: var(--rounded_corner_all_rounded_small);
+  --border_corner_all_xsmall: var(--rounded_corner_all_rounded_xsmall);
+  --border_corner_left_big: var(--rounded_corner_left_rounded_big);
+  --border_corner_right_big: var(--rounded_corner_right_rounded_big);
+  --border_corner_all_big: var(--rounded_corner_all_rounded_big);
+  --border_corner_all_full: var(--rounded_corner_all_rounded_full);
+
+  --shadow_focus: inset -0.0625rem 0 0 transparent,
+  inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+  0 0 0 0.125rem var(--interactive_border);
 }

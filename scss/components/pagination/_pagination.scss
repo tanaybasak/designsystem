@@ -14,7 +14,7 @@ $pagination-line-height: 1.125rem;
   @include getFontWeight('regular');
   line-height: $pagination-line-height;
   width: 100%;
-
+  border-radius: var(--border_corner_all_medium);
   background-color: var(--default_bg);
   border: 1px solid var(--default_border_xlow);
 

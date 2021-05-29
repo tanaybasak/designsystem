@@ -2,6 +2,7 @@
   display: inline-block;
 
   border: 0.0625rem solid var(--default_border_xlow);
+  border-radius: var(--rounded_corner_all_rounded_medium);
   background-color: var(--default_bg);
 
   position: relative;
@@ -15,6 +16,8 @@
     &:focus {
       border: 0.0625rem solid var(--interactive_border);
       box-shadow: 0 0 0 0.0625rem var(--interactive_border);
+      border-radius: var(--rounded_corner_all_rounded_medium);
+
     }
 
     &:hover {

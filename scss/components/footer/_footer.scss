@@ -89,7 +89,9 @@
           border: unset;
           text-decoration: none;
           border-bottom: none !important;
-          outline: 2px solid var(--interactive_border) !important;
+          // outline: 2px solid var(--interactive_border) !important;
+          box-shadow: var(--shadow_focus);
+          border-radius: var(--border_corner_all_small);
         }
 
         &[disabled] {

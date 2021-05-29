@@ -82,6 +82,7 @@
       width: 3rem;
 
       background-color: var(--default_border);
+      border-radius: var(--border_corner_all_full);
     }
 
     .#{$prefix}-switch {
@@ -167,12 +168,12 @@
   .#{$prefix}-toggle-label {
     height: 1rem;
     width: 2rem;
-    border-radius: 6.25rem;
+    // border-radius: 6.25rem;
 
     &::before {
       height: 1rem;
       width: 2rem;
-      border-radius: 6.25rem;
+      border-radius: var(--border_corner_all_full);
 
       background-color: var(--default_bg_high);
       border: 0.0625rem solid var(--default_border);
