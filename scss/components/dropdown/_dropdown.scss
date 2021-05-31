@@ -27,16 +27,16 @@
   }
 
   .#{$prefix}-dropdown-toggle {
-    font-size: 0.875rem;
+    // font-size: 0.875rem;
     line-height: 1.125rem;
     outline: none;
     // width: 100%;
     justify-content: left;
     margin: 0;
     padding-right: 2.5rem;
-    background-color: var(--input_bg);
-    color: var(--input_text);
-    border-bottom: 0.0625rem solid var(--input_border);
+    // background-color: var(--input_bg);
+    // color: var(--input_text);
+    // border-bottom: 0.0625rem solid var(--input_border);
     white-space: nowrap;
     display: block;
     overflow: hidden;
@@ -90,11 +90,11 @@
     }
 
     &:focus {
-      outline-offset: -0.0625rem;
+      // outline-offset: -0.0625rem;
       // border-bottom: 0.125rem solid var(--interactive_border);
-      // border-width: var(--input_border_focus_width);
-      // border-style: solid;
-      // border-color: var(--input_border_focus_color);
+      border-width: var(--input_border_focus_width);
+      border-style: solid;
+      border-color: var(--interactive_border);
     }
 
     .#{$prefix}-tag-primary {

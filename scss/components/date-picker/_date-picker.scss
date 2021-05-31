@@ -40,10 +40,10 @@
       line-height: 1.125rem;
       cursor: pointer;
 
-      &:focus {
-        // border-bottom: 0.125rem solid var(--interactive_border);
-        color: var(--input_text);
-      }
+      // &:focus {
+      //   // border-bottom: 0.125rem solid var(--interactive_border);
+      //   color: var(--input_text);
+      // }
 
       &[disabled] {
         cursor: not-allowed;

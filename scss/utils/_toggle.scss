@@ -6,10 +6,10 @@
 .outline-rounded {
   --input_border_width: 0.0625rem;
   --input_border_focus_width: 0.125rem;
-  --input_border_focus_color: var(--interactive_border);
+  --input_border_color: var(--input_border);
   --input_focus: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
-    0 0 0 0.125rem var(--input_border);
+    0 0 0 0.125rem var(--interactive_border);
   --input_back: transparent;
   --input_focus_error: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
@@ -34,10 +34,10 @@
   --input_border_width: 0 0 0.0625rem 0;
   --input_border_focus_width: 0 0 0.125rem 0;
   --input_back: var(--input_bg);
-  --input_border_focus_color: var(--interactive_border);
+  --input_border_color: var(--interactive_border);
   --input_focus: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
-    0 0 0 0.125rem var(--input_border);
+    0 0 0 0.125rem var(--interactive_border);
 
   --input_focus_error: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
@@ -69,7 +69,7 @@ Components like action bar, Tile,
   --border_corner_all_big: var(--sharp_corner);
   --border_corner_left_big: var(--sharp_corner);
   --border_corner_right_big: var(--sharp_corner);
-  --border_corner_all_full: var(--sharp_corner);
+  --border_corner_all_full: var(--rounded_corner_all_rounded_full);
   --shadow_focus: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
     0 0 0 0.125rem var(--interactive_border);

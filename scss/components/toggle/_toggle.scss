@@ -173,10 +173,9 @@
     &::before {
       height: 1rem;
       width: 2rem;
-      border-radius: var(--border_corner_all_full);
-
       background-color: var(--default_bg_high);
       border: 0.0625rem solid var(--default_border);
+      border-radius: var(--border_corner_all_full);
     }
 
     .#{$prefix}-switch {

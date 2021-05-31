@@ -283,18 +283,18 @@ $inputColor-map: (
     // border-bottom: 0.0625rem solid var(--input_border);
     border-width: var(--input_border_width);
     border-style: solid;
-    border-color: var(--input_border);
+    border-color: var(--input_border_color);
     border-radius: var(--input_border_radius);
 
     &:focus {
       outline: none;
 
-      box-shadow: var(--input_focus);
+      // box-shadow: var(--input_focus);
       // border-bottom: 1px solid transparent;
 
-      // border-width: var(--input_border_focus_width);
-      // border-style: solid;
-      // border-color: var(--input_border_focus_color);
+      border-width: var(--input_border_focus_width);
+      border-style: solid;
+      border-color: var(--interactive_border);
 
       & ~ label.#{$prefix}-label {
         color: var(--default_text);
