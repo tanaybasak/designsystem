@@ -153,3 +153,178 @@ $writingModes-map: (
     @warn '#{$writingMode} is not defined in HCL design system!';
   }
 }
+
+// Typography utility classes
+$typoThemeMaps: (
+  'text-page-heading': (
+    --page-heading --typeface-heading --weight-regular --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-page-heading-small': (
+    --page-heading-small --typeface-heading --weight-regular --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-page-nav': (
+    --fontsize-small --typeface-regular --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-page-subnav': (
+    --fontsize-small --typeface-regular --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-page-descriptive': (
+    --fontsize-small --typeface-regular --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-page-action': (
+    --fontsize-small --typeface-regular --weight-medium --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-page-body': (
+    --fontsize-large --typeface-regular --weight-regular --leading-default
+      --kerning-default --capitalization-sentence
+  ),
+  'text-section-heading': (
+    --fontsize-huge --typeface-heading --weight-regular --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-section-heading-small': (
+    --fontsize-xlarge --typeface-heading --weight-regular --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-section-nav': (
+    --fontsize-small --typeface-regular --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-section-subnav': (
+    --fontsize-small --typeface-regular --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-section-body-short': (
+    --fontsize-medium --typeface-regular --weight-regular --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-section-body-long': (
+    --fontsize-medium --typeface-regular --weight-regular --leading-default
+      --kerning-default --capitalization-sentence
+  ),
+  'text-section-descriptive': (
+    --fontsize-small --typeface-regular --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-content-heading': (
+    --fontsize-large --typeface-heading --weight-regular --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-content-heading-small': (
+    --fontsize-medium --typeface-heading --weight-regular --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-content-nav': (
+    --fontsize-small --typeface-regular --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-content-body-short': (
+    --fontsize-default --typeface-regular --weight-regular --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-content-body-long': (
+    --fontsize-default --typeface-regular --weight-regular --leading-default
+      --kerning-default --capitalization-sentence
+  ),
+  'text-content-descriptive': (
+    --fontsize-smaller --typeface-regular --weight-regular --leading-short
+      --kerning-roomy --capitalization-sentence
+  ),
+  'text-content-meta': (
+    --fontsize-smaller --typeface-regular --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-content-numeric': (
+    --fontsize-large --typeface-special --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-content-action': (
+    --fontsize-small --typeface-regular --weight-medium --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-component-heading': (
+    --fontsize-default --typeface-heading --weight-medium --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-component-heading-small': (
+    --fontsize-small --typeface-heading --weight-medium --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-component-body-short': (
+    --fontsize-small --typeface-regular --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-component-body-long': (
+    --fontsize-small --typeface-regular --weight-regular --leading-default
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-component-descriptive': (
+    --fontsize-smallest --typeface-regular --weight-regular --leading-short
+      --kerning-roomy --capitalization-sentence
+  ),
+  'text-component-nav': (
+    --fontsize-small --typeface-regular --weight-regular --leading-default
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-component-meta': (
+    --fontsize-smallest --typeface-regular --weight-regular --leading-short
+      --kerning-roomy --capitalization-sentence
+  ),
+  'text-component-numeric': (
+    --fontsize-large --typeface-special --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-additional-code-small': (
+    --fontsize-smallest --typeface-mono --weight-regular --leading-short
+      --kerning-roomy --capitalization-sentence
+  ),
+  'text-additional-code-large': (
+    --fontsize-small --typeface-mono --weight-regular --leading-default
+      --kerning-roomy --capitalization-sentence
+  ),
+  'text-additional-quote': (
+    --fontsize-large --typeface-regular --weight-regular --leading-short
+      --kerning-default --capitalization-sentence
+  ),
+  'text-additional-active': (
+    --fontsize-small --typeface-regular --weight-medium --leading-short
+      --kerning-comfortable --capitalization-sentence
+  ),
+  'text-additional-label': (
+    --fontsize-smaller --typeface-regular --weight-regular --leading-short
+      --kerning-roomy --capitalization-sentence
+  ),
+  'text-additional-overline': (
+    --fontsize-tiny --typeface-regular --weight-medium --leading-short
+      --kerning-xxwide --capitalization-all-caps
+  ),
+  'text-additional-legal': (
+    --fontsize-tiny --typeface-regular --weight-regular --leading-default
+      --kerning-roomy --capitalization-sentence
+  ),
+  'text-additional-numeric': (
+    --fontsize-large --typeface-special --weight-regular --leading-short
+      --kerning-comfortable --capitalization-sentence
+  )
+);
+
+@mixin getTypographyStyle($which) {
+  font-size: var(nth($which, 1));
+  font-family: var(nth($which, 2));
+  font-weight: var(nth($which, 3));
+  line-height: var(nth($which, 4));
+  letter-spacing: var(nth($which, 5));
+  text-transform: var(nth($which, 6));
+}
+
+@each $key, $value in $typoThemeMaps {
+  .#{$key} {
+    @include getTypographyStyle($value);
+  }
+}

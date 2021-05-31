@@ -1,0 +1,10 @@
+:root,
+.#{$prefix}-productive {
+  --page-heading: var(--fontsize-huge);
+  --page-heading-small: var(--fontsize-xlarge);
+}
+
+.#{$prefix}-expressive {
+  --page-heading: var(--fontsize-xxhuge);
+  --page-heading-small: var(--fontsize-xhuge);
+}
