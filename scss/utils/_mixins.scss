@@ -296,6 +296,7 @@ $inputColor-map: (
       border-style: solid;
       border-color: var(--interactive_border);
 
+
       & ~ label.#{$prefix}-label {
         color: var(--default_text);
       }
@@ -495,4 +496,12 @@ $inputColor-map: (
   &-mainline-one {
     animation: stroke-dash-linear 4s ease-in-out infinite;
   }
+}
+
+
+@mixin border_focus() {
+  outline: none;
+  box-shadow: var(--shadow_focus);
+  border: 0.0625rem solid var(--default_bg);
+  outline: none;
 }

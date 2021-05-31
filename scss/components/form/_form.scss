@@ -187,9 +187,10 @@ label.#{$prefix}-label {
     }
 
     &:focus + .#{$prefix}-checkbox-label::before {
-      outline-offset: 2px;
-      outline: 2px solid var(--interactive_border);
-      // border-radius: var(--border_corner_all_xsmall);
+      // outline-offset: 2px;
+      // outline: 2px solid var(--interactive_border);
+      @include border_focus();
+      border-radius: var(--border_corner_all_xsmall);
     }
 
     &:not(:disabled):hover:not(:checked):not(:indeterminate)
