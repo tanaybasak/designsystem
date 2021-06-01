@@ -295,7 +295,6 @@ $inputColor-map: (
       border-width: var(--input_border_focus_width);
       border-style: solid;
       border-color: var(--interactive_border);
-
       & ~ label.#{$prefix}-label {
         color: var(--default_text);
       }
