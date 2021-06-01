@@ -54,7 +54,7 @@
     }
 
     &:focus {
-     @include border_focus();
+      @include border_focus();
     }
 
     .#{$prefix}-tag-icon,
