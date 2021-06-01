@@ -157,128 +157,128 @@ $writingModes-map: (
 // Typography utility classes
 $typoThemeMaps: (
   'text-page-heading': (
-    --page-heading --typeface-heading --weight-regular --leading-short
-      --kerning-default --capitalization-sentence
+    --page-heading-font-size --page-heading-typeface --page-heading-weight --page-heading-leading
+      --page-heading-kerning --page-heading-capitalization
   ),
   'text-page-heading-small': (
-    --page-heading-small --typeface-heading --weight-regular --leading-short
-      --kerning-default --capitalization-sentence
+    --page-heading-small-font-size --page-heading-small-typeface --page-heading-small-weight --page-heading-small-leading
+      --page-heading-small-kerning --page-heading-small-capitalization
   ),
   'text-page-nav': (
-    --fontsize-small --typeface-regular --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --page-nav-font-size --page-nav-typeface --page-nav-weight --page-nav-leading
+      --page-nav-kerning --page-nav-capitalization
   ),
   'text-page-subnav': (
-    --fontsize-small --typeface-regular --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --page-subnav-font-size --page-subnav-typeface --page-subnav-weight --page-subnav-leading
+      --page-subnav-kerning --page-subnav-capitalization
   ),
   'text-page-descriptive': (
-    --fontsize-small --typeface-regular --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --page-descriptive-font-size --page-descriptive-typeface --page-descriptive-weight --page-descriptive-leading
+      --page-descriptive-kerning --page-descriptive-capitalization
   ),
   'text-page-action': (
-    --fontsize-small --typeface-regular --weight-medium --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --page-action-font-size --page-action-typeface --page-action-weight --page-action-leading
+      --page-action-kerning --page-action-capitalization
   ),
   'text-page-body': (
-    --fontsize-large --typeface-regular --weight-regular --leading-default
-      --kerning-default --capitalization-sentence
+    --page-body-font-size --page-body-typeface --page-body-weight --page-body-leading
+      --page-body-kerning --page-body-capitalization
   ),
   'text-section-heading': (
-    --fontsize-huge --typeface-heading --weight-regular --leading-short
-      --kerning-default --capitalization-sentence
+    --section-heading-font-size --section-heading-typeface --section-heading-weight --section-heading-leading
+      --section-heading-kerning --section-heading-capitalization
   ),
   'text-section-heading-small': (
-    --fontsize-xlarge --typeface-heading --weight-regular --leading-short
-      --kerning-default --capitalization-sentence
+    --section-heading-small-font-size --section-heading-small-typeface --section-heading-small-weight --section-heading-small-leading
+      --section-heading-small-kerning --section-heading-small-capitalization
   ),
   'text-section-nav': (
-    --fontsize-small --typeface-regular --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --section-nav-font-size --section-nav-typeface --section-nav-weight --section-nav-leading
+      --section-nav-kerning --section-nav-capitalization
   ),
   'text-section-subnav': (
-    --fontsize-small --typeface-regular --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --section-subnav-font-size --section-subnav-typeface --section-subnav-weight --section-subnav-leading
+      --section-subnav-kerning --section-subnav-capitalization
   ),
   'text-section-body-short': (
-    --fontsize-medium --typeface-regular --weight-regular --leading-short
-      --kerning-default --capitalization-sentence
+    --section-body-short-font-size --section-body-short-typeface --section-body-short-weight --section-body-short-leading
+      --section-body-short-kerning --section-body-short-capitalization
   ),
   'text-section-body-long': (
-    --fontsize-medium --typeface-regular --weight-regular --leading-default
-      --kerning-default --capitalization-sentence
+    --section-body-long-font-size --section-body-long-typeface --section-body-long-weight --section-body-long-leading
+      --section-body-long-kerning --section-body-long-capitalization
   ),
   'text-section-descriptive': (
-    --fontsize-small --typeface-regular --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --section-descriptive-font-size --section-descriptive-typeface --section-descriptive-weight --section-descriptive-leading
+      --section-descriptive-kerning --section-descriptive-capitalization
   ),
   'text-content-heading': (
-    --fontsize-large --typeface-heading --weight-regular --leading-short
-      --kerning-default --capitalization-sentence
+    --content-heading-font-size --content-heading-typeface --content-heading-weight --content-heading-leading
+      --content-heading-kerning --content-heading-capitalization
   ),
   'text-content-heading-small': (
-    --fontsize-medium --typeface-heading --weight-regular --leading-short
-      --kerning-default --capitalization-sentence
+    --content-heading-small-font-size --content-heading-small-typeface --content-heading-small-weight --content-heading-small-leading
+      --content-heading-small-kerning --content-heading-small-capitalization
   ),
   'text-content-nav': (
-    --fontsize-small --typeface-regular --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --content-nav-font-size --content-nav-typeface --content-nav-weight --content-nav-leading
+      --content-nav-kerning --content-nav-capitalization
   ),
   'text-content-body-short': (
-    --fontsize-default --typeface-regular --weight-regular --leading-short
-      --kerning-default --capitalization-sentence
+    --content-body-short-font-size --content-body-short-typeface --content-body-short-weight --content-body-short-leading
+      --content-body-short-kerning --content-body-short-capitalization
   ),
   'text-content-body-long': (
-    --fontsize-default --typeface-regular --weight-regular --leading-default
-      --kerning-default --capitalization-sentence
+    --content-body-long-font-size --content-body-long-typeface --content-body-long-weight --content-body-long-leading
+      --content-body-long-kerning --content-body-long-capitalization
   ),
   'text-content-descriptive': (
-    --fontsize-smaller --typeface-regular --weight-regular --leading-short
-      --kerning-roomy --capitalization-sentence
+    --content-descriptive-font-size --content-descriptive-typeface --content-descriptive-weight --content-descriptive-leading
+      --content-descriptive-kerning --content-descriptive-capitalization
   ),
   'text-content-meta': (
-    --fontsize-smaller --typeface-regular --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --content-meta-font-size --content-meta-typeface --content-meta-weight --content-meta-leading
+      --content-meta-kerning --content-meta-capitalization
   ),
   'text-content-numeric': (
-    --fontsize-large --typeface-special --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --content-numeric-font-size --content-numeric-typeface --content-numeric-weight --content-numeric-leading
+      --content-numeric-kerning --content-numeric-capitalization
   ),
   'text-content-action': (
-    --fontsize-small --typeface-regular --weight-medium --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --content-action-font-size --content-action-typeface --content-action-weight --content-action-leading
+      --content-action-kerning --content-action-capitalization
   ),
   'text-component-heading': (
-    --fontsize-default --typeface-heading --weight-medium --leading-short
-      --kerning-default --capitalization-sentence
+    --component-heading-font-size --component-heading-typeface --component-heading-weight --component-heading-leading
+      --component-heading-kerning --component-heading-capitalization
   ),
   'text-component-heading-small': (
-    --fontsize-small --typeface-heading --weight-medium --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --component-heading-small-font-size --component-heading-small-typeface --component-heading-small-weight --component-heading-small-leading
+      --component-heading-small-kerning --component-heading-small-capitalization
   ),
   'text-component-body-short': (
-    --fontsize-small --typeface-regular --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --component-body-short-font-size --component-body-short-typeface --component-body-short-weight --component-body-short-leading
+      --component-body-short-kerning --component-body-short-capitalization
   ),
   'text-component-body-long': (
-    --fontsize-small --typeface-regular --weight-regular --leading-default
-      --kerning-comfortable --capitalization-sentence
+    --component-body-long-font-size --component-body-long-typeface --component-body-long-weight --component-body-long-leading
+      --component-body-long-kerning --component-body-long-capitalization
   ),
   'text-component-descriptive': (
-    --fontsize-smallest --typeface-regular --weight-regular --leading-short
-      --kerning-roomy --capitalization-sentence
+    --component-descriptive-font-size --component-descriptive-typeface --component-descriptive-weight --component-descriptive-leading
+      --component-descriptive-kerning --component-descriptive-capitalization
   ),
   'text-component-nav': (
-    --fontsize-small --typeface-regular --weight-regular --leading-default
-      --kerning-comfortable --capitalization-sentence
+    --component-nav-font-size --component-nav-typeface --component-nav-weight --component-nav-leading
+      --component-nav-kerning --component-nav-kerning-capitalization
   ),
   'text-component-meta': (
-    --fontsize-smallest --typeface-regular --weight-regular --leading-short
-      --kerning-roomy --capitalization-sentence
+    --component-meta-font-size --component-meta-typeface --component-meta-weight --component-meta-leading
+      --component-meta-kerning --component-meta-capitalization
   ),
   'text-component-numeric': (
-    --fontsize-large --typeface-special --weight-regular --leading-short
-      --kerning-comfortable --capitalization-sentence
+    --component-numeric-font-size --component-numeric-typeface --component-numeric-weight --component-numeric-leading
+      --component-numeric-kerning --component-numeric-capitalization
   ),
   'text-additional-code-small': (
     --fontsize-smallest --typeface-mono --weight-regular --leading-short

@@ -36,9 +36,9 @@
   --typeface-unicode: 'Noto';
   --typeface-heading: 'Roboto';
   --typeface-special: 'Roboto';
-  --capitalization-sentence: capitalize;
+  --capitalization-sentence: initial;
   --capitalization-all-caps: uppercase;
-  --capitalization-headline: uppercase;
-  --capitalization-lowercase: none;
-  --capitalization-small-caps: lowercase;
+  --capitalization-headline: capitalize;
+  --capitalization-lowercase: lowercase;
+  --capitalization-small-caps: uppercase;
 }
