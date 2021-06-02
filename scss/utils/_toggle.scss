@@ -27,7 +27,7 @@
 }
 
 .filled-sharp,
-.filled-rounded
+.filled-rounded,
 :root {
   --input_border_width: 0 0 0.0625rem 0;
   --input_border_focus_width: 0 0 0.125rem 0;
@@ -47,7 +47,7 @@
   // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
 }
 
-.filled-sharp
+.filled-sharp,
 :root {
   --input_border_radius: var(--sharp_corner);
   // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
