@@ -45,7 +45,6 @@ a.#{$prefix}-primary {
 
     // outline: 0.0625rem solid var(--primary_bg_hover);
     @include border_focus();
-    border-radius: var(--border_corner_all_small);
   }
 
   &:disabled,
@@ -78,7 +77,6 @@ a.#{$prefix}-primary {
 
       // box-shadow: var(--shadow_focus);
       @include border_focus();
-      border-radius: var(--border_corner_all_small);
 
       > .#{$prefix}-btn-icon {
         fill: var(--primary_icon);
@@ -119,7 +117,6 @@ a.#{$prefix}-primary {
   &:focus {
     // border: 0.0625rem solid var(--interactive_border);
     @include border_focus();
-    border-radius: var(--border_corner_all_small);
 
     > .#{$prefix}-btn-icon {
       fill: var(--secondary_icon);
@@ -162,9 +159,7 @@ a.#{$prefix}-primary {
       background: transparent;
       color: var(--danger_text);
       // border: 0.0625rem solid var(--interactive_border);
-      // border-radius: var(--border_corner_all_small);
       @include border_focus();
-      border-radius: var(--border_corner_all_small);
 
       > .#{$prefix}-btn-icon {
         fill: var(--danger_icon);
@@ -216,7 +211,6 @@ a.#{$prefix}-primary {
     background-color: var(--interactive_bg_hover);
     color: var(--interactive_text);
     border: 0.0625rem solid var(--interactive_border);
-    border-radius: var(--border_corner_all_small);
 
     > .#{$prefix}-btn-icon {
       fill: var(--interactive_icon);
@@ -250,7 +244,6 @@ a.#{$prefix}-primary {
   &:focus {
     // outline-offset: 0.125rem;
     @include border_focus();
-    border-radius: var(--border_corner_all_small);
     > .#{$prefix}-btn-icon {
       fill: var(--default_icon_high);
     }
@@ -284,7 +277,6 @@ a.#{$prefix}-primary {
     // outline: 0.0625rem solid var(--interactive_border);
 
     @include border_focus();
-    border-radius: var(--border_corner_all_small);
 
     > .#{$prefix}-btn-icon {
       fill: var(--default_icon_high);
