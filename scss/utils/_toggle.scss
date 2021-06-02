@@ -18,12 +18,10 @@
 
 .outline-rounded {
   --input_border_radius: var(--rounded_corner_all_rounded_small);
-  // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
 }
 
 .outline-sharp {
   --input_border_radius: var(--sharp_corner);
-  // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
 }
 
 .filled-sharp,
@@ -50,7 +48,6 @@
 .filled-sharp,
 :root {
   --input_border_radius: var(--sharp_corner);
-  // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
 }
 
 /** 
