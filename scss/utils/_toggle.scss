@@ -27,9 +27,7 @@
 }
 
 .filled-sharp,
-.sharp,
-.filled-rounded,
-.rounded,
+.filled-rounded
 :root {
   --input_border_width: 0 0 0.0625rem 0;
   --input_border_focus_width: 0 0 0.125rem 0;
@@ -44,14 +42,12 @@
     0 0.125rem 0 var(--danger_border);
 }
 
-.filled-rounded,
-.rounded {
+.filled-rounded {
   --input_border_radius: var(--rounded_corner_top_rounded_small);
   // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
 }
 
-.filled-sharp,
-.sharp,
+.filled-sharp
 :root {
   --input_border_radius: var(--sharp_corner);
   // --border_radius_medium: var(--rounded_corner_all_rounded_medium);
