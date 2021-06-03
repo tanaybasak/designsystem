@@ -471,137 +471,123 @@ $typoThemeMaps: (
 );
 
 // re-usable typography mixins
-@mixin getTypoMixinProperties($map, $mixin-name) {
-  $mixinName: if(
-    map-has-key($map, $mixin-name),
-    map-get($map, $mixin-name),
-    (null)
-  );
-  $font-family: if(
-    map-has-key($mixinName, 'font-family'),
-    map-get($mixinName, 'font-family'),
-    (null)
-  );
-  $font-size: if(
-    map-has-key($mixinName, 'font-size'),
-    map-get($mixinName, 'font-size'),
-    (null)
-  );
-  $font-weight: if(
-    map-has-key($mixinName, 'font-weight'),
-    map-get($mixinName, 'font-weight'),
-    (null)
-  );
-  $line-height: if(
-    map-has-key($mixinName, 'line-height'),
-    map-get($mixinName, 'line-height'),
-    (null)
-  );
-  $letter-spacing: if(
-    map-has-key($mixinName, 'letter-spacing'),
-    map-get($mixinName, 'letter-spacing'),
-    (null)
-  );
-  $capitalization: if(
-    map-has-key($mixinName, 'capitalization'),
-    map-get($mixinName, 'capitalization'),
-    (null)
-  );
-  @if $mixinName != null {
-    @if ($font-family) {
+@mixin getTypoMixinProperties($map, $mixin-name, $list: ()) {
+  $newList: $list;
+  $newListlen: length($newList);
+  $isListPresent: $newListlen > 0;
+  @debug 'Length: #{$newListlen}';
+
+  @if (map-has-key($map, $mixin-name)) {
+    $mixinName: map-get($map, $mixin-name);
+    $font-family: if(
+      map-has-key($mixinName, 'font-family'),
+      map-get($mixinName, 'font-family'),
+      (null)
+    );
+    $font-size: if(
+      map-has-key($mixinName, 'font-size'),
+      map-get($mixinName, 'font-size'),
+      (null)
+    );
+    $font-weight: if(
+      map-has-key($mixinName, 'font-weight'),
+      map-get($mixinName, 'font-weight'),
+      (null)
+    );
+    $line-height: if(
+      map-has-key($mixinName, 'line-height'),
+      map-get($mixinName, 'line-height'),
+      (null)
+    );
+    $letter-spacing: if(
+      map-has-key($mixinName, 'letter-spacing'),
+      map-get($mixinName, 'letter-spacing'),
+      (null)
+    );
+    $capitalization: if(
+      map-has-key($mixinName, 'capitalization'),
+      map-get($mixinName, 'capitalization'),
+      (null)
+    );
+
+    @if ($newListlen == 0) {
       font-family: var($font-family, sans-serif);
-    }
-    @if ($font-size) {
       font-size: var($font-size);
-    }
-    @if ($font-weight) {
       font-weight: var($font-weight);
-    }
-    @if ($line-height) {
       line-height: var($line-height);
-    }
-    @if ($letter-spacing) {
       letter-spacing: var($letter-spacing);
-    }
-    @if ($capitalization) {
       text-transform: var($capitalization);
+    } @else if($newListlen > 0) {
+      @if (
+        $font-family and
+          $isListPresent and
+          index($newList, 'font-family') !=
+          null and
+          nth($newList, index($newList, 'font-family')) ==
+          'font-family'
+      ) {
+        font-family: var($font-family, sans-serif);
+      }
+      @if (
+        $font-size and
+          $isListPresent and
+          index($newList, 'font-size') !=
+          null and
+          nth($newList, index($newList, 'font-size')) ==
+          'font-size'
+      ) {
+        font-size: var($font-size);
+      }
+      @if (
+        $font-weight and
+          $isListPresent and
+          index($newList, 'font-weight') !=
+          null and
+          nth($newList, index($newList, 'font-weight')) ==
+          'font-weight'
+      ) {
+        font-weight: var($font-weight);
+      }
+      @if (
+        $line-height and
+          $isListPresent and
+          index($newList, 'line-height') !=
+          null and
+          nth($newList, index($newList, 'line-height')) ==
+          'line-height'
+      ) {
+        line-height: var($line-height);
+      }
+      @if (
+        $letter-spacing and
+          $isListPresent and
+          index($newList, 'letter-spacing') !=
+          null and
+          nth($newList, index($newList, 'letter-spacing')) ==
+          'letter-spacing'
+      ) {
+        letter-spacing: var($letter-spacing);
+      }
+      @if (
+        $isListPresent and
+          index($newList, 'text-transform') !=
+          null and
+          nth($newList, index($newList, 'text-transform')) ==
+          'text-transform'
+      ) {
+        text-transform: var($capitalization);
+      }
     }
-    @debug 'Value of the mixin #{$font-family} #{$font-size} #{$font-weight} #{$line-height} #{$letter-spacing} #{$capitalization}';
+    // @debug 'Value of the mixin #{$font-family} #{$font-size} #{$font-weight} #{$line-height} #{$letter-spacing} #{$capitalization}';
   } @else {
-    @warn 'Mixin Name not found #{$mixinName} or one of the key-value pair entry has been modified.';
+    @warn "Error in mixin getTypoMixinProperties - #{$mixin-name}";
   }
 }
 
-@each $key, $value in $typoThemeMaps {
-  .#{$key} {
-    @include getTypoMixinProperties($typoThemeMaps, $key);
-  }
+.accordion-title {
+  @include getTypoMixinProperties(
+    $typoThemeMaps,
+    'text-additional-numeric',
+    ('text-transform', 'font-weight')
+  );
 }
-
-// @mixin text_page_heading_small(
-//   $font-family,
-//   $size,
-//   $weight,
-//   $line-height,
-//   $letter-spacing,
-//   $text-transform
-// ) {
-//   font-family: var($font-family);
-//   font-size: var($size);
-//   font-weight: var($weight);
-//   line-height: var($line-height);
-//   letter-spacing: var($letter-spacing);
-//   text-transform: var($text-transform);
-// }
-
-// @mixin text_page_nav(
-//   $font-family,
-//   $size,
-//   $weight,
-//   $line-height,
-//   $letter-spacing,
-//   $text-transform
-// ) {
-//   font-family: var($font-family);
-//   font-size: var($size);
-//   font-weight: var($weight);
-//   line-height: var($line-height);
-//   letter-spacing: var($letter-spacing);
-//   text-transform: var($text-transform);
-// }
-
-// .x {
-//   @include text-page-heading(
-//     nth(map-get($typoThemeMaps, 'text_page_heading'), ''),
-//     nth(map-get($typoThemeMaps, 'text_page_heading'), 2),
-//     nth(map-get($typoThemeMaps, 'text_page_heading'), 3),
-//     nth(map-get($typoThemeMaps, 'text_page_heading'), 4),
-//     nth(map-get($typoThemeMaps, 'text_page_heading'), 5),
-//     nth(map-get($typoThemeMaps, 'text_page_heading'), 6)
-//   );
-// }
-
-// @mixin typeface-ff($var) {
-//   font: {
-//     family: var($var);
-//   }
-// }
-
-// @mixin getTypographyStyles($which) {
-//   @include typeface-ff(nth($which, 1));
-//   font-size: var(nth($which, 2));
-//   font-weight: var(nth($which, 3));
-//   line-height: var(nth($which, 4));
-//   letter-spacing: var(nth($which, 5));
-//   text-transform: var(nth($which, 6));
-// }
-
-// @each $key, $value in $typoThemeMaps {
-//   .#{$key} {
-//     @if type-of($value) == 'list' {
-//       @include getTypographyStyles($value);
-//     } @else {
-//       @warn '#{$value} has error in processing with HCL design system!';
-//     }
-//   }
-// }
