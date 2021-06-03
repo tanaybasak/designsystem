@@ -15,10 +15,11 @@ $breadcrumb-margin: 1rem;
 
   &-item {
     margin-right: $breadcrumb-margin;
-
     color: var(--default_text_high);
-
-    font-size: 0.875rem;
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-section-nav'
+    );    
 
     &:not(:last-child)::after {
       content: '/';
