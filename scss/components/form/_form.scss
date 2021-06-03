@@ -204,10 +204,11 @@ label.#{$prefix}-label {
   }
 
   .#{$prefix}-checkbox-label {
-    @include getFontWeight('regular');
-    font-size: 0.875rem;
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-body-short'
+    );
     display: inline-block;
-    line-height: 1.6rem;
     cursor: pointer;
     margin-bottom: 0;
     padding-left: 2rem;
