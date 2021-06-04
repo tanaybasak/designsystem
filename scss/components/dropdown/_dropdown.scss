@@ -1,6 +1,6 @@
 .#{$prefix}-dropdown {
   width: 100%;
-
+  // @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
   button::-moz-focus-inner {
     border: 0;
   }
@@ -27,8 +27,12 @@
   }
 
   .#{$prefix}-dropdown-toggle {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-body-short'
+    );
+    // font-size: 0.875rem;
+    // line-height: 1.125rem;
     outline: none;
     width: 100%;
     justify-content: left;
@@ -56,7 +60,7 @@
 
             .#{$prefix}-checkbox-item {
               min-width: 0;
-              
+
               .#{$prefix}-checkbox-label {
                 white-space: nowrap;
                 display: block;
@@ -74,9 +78,9 @@
       width: 0;
       height: 0;
       border-bottom: 0;
-      border-top: 0.3rem solid var(--input_icon);
-      border-right: 0.3rem solid transparent;
-      border-left: 0.3rem solid transparent;
+      border-top: 0.3125rem solid var(--input_icon);
+      border-right: 0.3125rem solid transparent;
+      border-left: 0.3125rem solid transparent;
       position: absolute;
       top: 50%;
       right: 0.875rem;
@@ -119,7 +123,7 @@
 }
 
 .#{$prefix}-dropdown-menu {
-  font-size: 1rem;
+  // font-size: 1rem;
   text-align: left;
   list-style: none;
   background-clip: padding-box;
@@ -128,17 +132,19 @@
   overflow: auto;
   background-color: var(--default_bg);
   color: var(--default_text);
+  @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
 
   .#{$prefix}-dropdown-item {
     height: 2.5rem;
-    @include getFontWeight('regular');
+    // @include getFontWeight('regular');
     white-space: nowrap;
-    font-size: 0.875rem;
+    // font-size: 0.875rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 0 1rem;
-    line-height: 2.5rem;
+    // padding: 0 1rem;
+    padding: 11px 16px;
+    // line-height: 2.5rem;
     cursor: pointer;
 
     &:hover {
@@ -159,11 +165,11 @@
     }
   }
 
-  &.#{$prefix}-dropdown-top {
-    border-top: 0.0625rem solid var(--input_border);
-  }
+  // &.#{$prefix}-dropdown-top {
+  //   border-top: 0.0625rem solid var(--input_border);
+  // }
 
-  &:not(.#{$prefix}-dropdown-top) {
-    border-bottom: 0.0625rem solid var(--input_border);
-  }
+  // &:not(.#{$prefix}-dropdown-top) {
+  //   border-bottom: 0.0625rem solid var(--input_border);
+  // }
 }
