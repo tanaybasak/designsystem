@@ -54,7 +54,7 @@
 
     &:focus {
       // outline: 2px solid var(--interactive_border);
-      
+
       @include border_focus();
       border-radius: var(--border_corner_all_small);
     }
