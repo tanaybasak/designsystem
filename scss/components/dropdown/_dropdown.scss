@@ -136,15 +136,11 @@
 
   .#{$prefix}-dropdown-item {
     height: 2.5rem;
-    // @include getFontWeight('regular');
     white-space: nowrap;
-    // font-size: 0.875rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    // padding: 0 1rem;
     padding: 11px 16px;
-    // line-height: 2.5rem;
     cursor: pointer;
 
     &:hover {
