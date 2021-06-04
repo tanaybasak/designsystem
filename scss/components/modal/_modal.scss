@@ -121,6 +121,7 @@
     padding: 1rem 1.5rem;
     align-items: center;
     background-color: var(--default_bg_low);
+    border-radius: var(--border_corner_bottom_big);
 
     &-hide {
       display: none;
