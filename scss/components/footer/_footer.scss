@@ -25,15 +25,14 @@
 
   &-caption {
     display: inline-flex;
-    font-size: 0.75rem;
-
     color: var(--default_text_low);
-
-    letter-spacing: 0;
     align-self: center;
     padding: 0 1rem;
     text-align: center;
-
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-descriptive'
+    );
     @include media-breakpoint-down(sm) {
       padding: 0.25rem 0.5rem 0 0.5rem;
     }
@@ -52,10 +51,9 @@
 
     .#{$prefix}-navigation-item {
       margin-right: 0.5rem;
-      font-size: 0.75rem;
-      letter-spacing: 0;
       align-self: flex-end;
       cursor: pointer;
+      @include getTypoMixinProperties($typoThemeMaps, 'text-component-nav');
       &:hover {
         text-decoration: underline;
       }
