@@ -3,7 +3,6 @@
   border-left: 0.0625rem solid var(--interactive_border);
 
   a {
-    font-size: 1rem;
     color: var(--default_text_high);
     &:hover {
       text-decoration: none;
@@ -12,6 +11,7 @@
   }
 
   li {
+    @include getTypoMixinProperties($typoThemeMaps, 'text-content-nav');
     padding: 0.625rem 0.625rem 0.5rem;
     border-left: 0.125rem solid var(--primary_border);
   }
@@ -21,6 +21,7 @@
   }
 
   .isActive {
+    @include getTypoMixinProperties($typoThemeMaps, 'text-additional-active');
     border-left: 0.3125rem solid var(--active_border);
   }
 
