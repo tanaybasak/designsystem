@@ -47,10 +47,8 @@ a.#{$prefix}-primary {
     // @include border_focus();
 
     outline: none;
-    
-    
 
-    animation-duration: .3s;
+    animation-duration: 0.3s;
     animation-name: slidein;
   }
 
@@ -62,23 +60,23 @@ a.#{$prefix}-primary {
 
     outline: none;
     border: 0.0625rem solid var(--default_bg);
-        box-shadow: var(--shadow_focus);
+    box-shadow: var(--shadow_focus);
   }
 
-//   p {
-//     animation-duration: 3s;
-//     animation-name: slidein;
-//   }
-  
+  //   p {
+  //     animation-duration: 3s;
+  //     animation-name: slidein;
+  //   }
+
   @keyframes slidein {
     from {
-        border: 0.0625rem solid var(--default_bg);
-        box-shadow: var(--shadow_focus);
+      border: 0.0625rem solid var(--default_bg);
+      box-shadow: var(--shadow_focus);
     }
-  
+
     to {
-        border: 1px solid transparent;
-        box-shadow: none;
+      border: 1px solid transparent;
+      box-shadow: none;
     }
   }
 
@@ -231,7 +229,7 @@ a.#{$prefix}-primary {
   background-color: var(--interactive_bg);
   color: var(--interactive_text);
 
-//   border: none;
+  //   border: none;
 
   &:hover {
     background-color: var(--interactive_bg_hover);
@@ -337,7 +335,6 @@ a.#{$prefix}-primary {
   height: 2rem;
 }
 
-
-.#{$prefix}-btn-no-margin{
-    margin: 0 !important;
+.#{$prefix}-btn-no-margin {
+  margin: 0 !important;
 }

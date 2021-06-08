@@ -6,7 +6,6 @@
   position: relative;
   padding-left: 0.0625rem;
 
-
   button::-moz-focus-inner {
     border: 0;
   }
@@ -22,7 +21,7 @@
     // border-top: 0.0625rem solid var(--default_border_xlow);
     // border-bottom: 0.0625rem solid var(--default_border_xlow);
 
-    border : 0.0625rem solid var(--default_border_xlow);
+    border: 0.0625rem solid var(--default_border_xlow);
     // border-right: 0.0625rem solid transparent;
     // border-left: 0.0625rem solid transparent;
     color: var(--interactive_text);
@@ -66,18 +65,17 @@
     &.active {
       background-color: var(--active_bg_high);
       color: var(--default_text_xhight);
-    //   z-index: 1;
+      //   z-index: 1;
 
-    //   .#{$prefix}-thumbnail {
-    //     border: 1px solid var(--active_icon);
-    //   }
+      //   .#{$prefix}-thumbnail {
+      //     border: 1px solid var(--active_icon);
+      //   }
     }
 
     &:focus {
-        @include border_focus();
-        z-index: 1;
-        // border: none;
-        
+      @include border_focus();
+      z-index: 1;
+      // border: none;
     }
 
     &:hover {
@@ -88,9 +86,9 @@
       background-color: var(--interactive_bg_hover);
       color: var(--interactive_text);
 
-    //   .#{$prefix}-thumbnail {
-    //     border: 1px solid var(--interactive_icon);
-    //   }
+      //   .#{$prefix}-thumbnail {
+      //     border: 1px solid var(--interactive_icon);
+      //   }
     }
 
     &:disabled {
@@ -110,9 +108,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    //   border-radius: 50%;
+      //   border-radius: 50%;
 
-    //   border: 1px solid var(--interactive_icon);
+      //   border: 1px solid var(--interactive_icon);
     }
   }
 
@@ -124,10 +122,10 @@
     content: none;
   }
 
-//   &-btn.active::before,
-//   &-btn.active + &-btn::before {
-//     background-color: transparent;
-//   }
+  //   &-btn.active::before,
+  //   &-btn.active + &-btn::before {
+  //     background-color: transparent;
+  //   }
 
   &-btn:first-of-type {
     // border-top-left-radius: hcl-rem(4px);
