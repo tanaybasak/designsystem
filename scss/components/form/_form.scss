@@ -56,8 +56,11 @@ textarea.#{$prefix}-textarea[data-invalid='true'] ~ .#{$prefix}-error-msg {
 
 label.#{$prefix}-label {
   color: var(--default_text);
-
-  font-weight: $input-label-weight;
+  @include getTypoMixinProperties(
+    $typoThemeMaps,
+    'text-additional-label'
+  );
+  // font-weight: $input-label-weight;
   margin-bottom: $label-margin-bottom;
 }
 
