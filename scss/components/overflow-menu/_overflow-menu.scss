@@ -80,22 +80,22 @@
 
 .#{$prefix}-overflow-btn {
   width: 2rem;
-  height: 2rem;
-  background: transparent;
+//   height: 2rem;
+//   background: transparent;
 
-  &:hover {
-    color: var(--interactive_icon_hover);
-    background-color: var(--interactive_bg_hover);
-    text-decoration: none;
-    cursor: pointer;
-  }
+//   &:hover {
+//     color: var(--interactive_icon_hover);
+//     background-color: var(--interactive_bg_hover);
+//     text-decoration: none;
+//     cursor: pointer;
+//   }
 
-  &:focus {
-    outline-offset: -1px;
+//   &:focus {
+//     outline-offset: -1px;
 
-    outline: 0.125rem solid var(--interactive_border);
-    border-radius: var(--border_corner_all_small);
-  }
+//     outline: 0.125rem solid var(--interactive_border);
+//     border-radius: var(--border_corner_all_small);
+//   }
 }
 
 .#{$prefix}-overlay-wrapper-active {

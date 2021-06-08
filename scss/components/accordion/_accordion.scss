@@ -46,8 +46,9 @@
 
       &:focus,
       &:active {
-        outline: 1px solid var(--interactive_border);
-        outline-offset: 0;
+        // outline: 1px solid var(--interactive_border);
+        // outline-offset: 0;
+        @include border_focus();
       }
     }
 

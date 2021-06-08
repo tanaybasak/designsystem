@@ -35,6 +35,82 @@ const loadData = async () => {
         ).innerHTML = `Theme : ${e.currentTarget.textContent.trim()}`;
     }
   });
+
+  function clearstyle() {
+    document
+      .querySelector('.main-container')
+      .classList.remove('outline-rounded');
+    document.querySelector('.main-container').classList.remove('outline-sharp');
+    document.querySelector('.main-container').classList.remove('rounded');
+    document.querySelector('.main-container').classList.remove('sharp');
+    document
+      .querySelector('.main-container')
+      .classList.remove('filled-rounded');
+    document.querySelector('.main-container').classList.remove('filled-sharp');
+  }
+
+  document.querySelector('#rounded-toggle').addEventListener('change', e => {
+    clearstyle();
+    if (e.target.checked) {
+      document.querySelector('.main-container').classList.add('rounded');
+      if (document.querySelector('#outline-toggle').checked) {
+        document
+          .querySelector('.main-container')
+          .classList.add('outline-rounded');
+      } else {
+        document
+          .querySelector('.main-container')
+          .classList.add('filled-rounded');
+      }
+    } else {
+      document.querySelector('.main-container').classList.add('sharp');
+      if (document.querySelector('#outline-toggle').checked) {
+        document
+          .querySelector('.main-container')
+          .classList.add('outline-sharp');
+      } else {
+        document.querySelector('.main-container').classList.add('filled-sharp');
+      }
+    }
+  });
+
+  document.querySelector('#outline-toggle').addEventListener('change', e => {
+    clearstyle();
+    if (e.target.checked) {
+      document.querySelector('.main-container').classList.add('outline');
+      if (document.querySelector('#rounded-toggle').checked) {
+        document
+          .querySelector('.main-container')
+          .classList.add('outline-rounded');
+      } else {
+        document
+          .querySelector('.main-container')
+          .classList.add('outline-sharp');
+      }
+    } else {
+      document.querySelector('.main-container').classList.add('filled');
+      if (document.querySelector('#rounded-toggle').checked) {
+        document
+          .querySelector('.main-container')
+          .classList.add('filled-rounded');
+      } else {
+        document.querySelector('.main-container').classList.add('filled-sharp');
+      }
+    }
+  });
+
+  //   window.patron.toggle('.outline-toggle', {
+  //     onChange: e => {
+  //       console.log('e');
+  //     }
+  //   });
+
+  //   window.patron.toggle('.rounded-toggle', {
+  //     onChange: e => {
+  //       console.log('e');
+  //     }
+  //   });
+
   const routerArray = [];
   sidebarItems.default.map(item => {
     routerArray.push(new Route(item.link, item.default));

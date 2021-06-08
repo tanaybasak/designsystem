@@ -69,7 +69,7 @@ label.#{$prefix}-label {
 
 .#{$prefix}-form-control {
   @include getFormControl('inputcontrol');
-
+  
   & ~ label.#{$prefix}-label {
     order: 1;
   }

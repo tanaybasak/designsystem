@@ -1,57 +1,130 @@
-:root {
-  --rounded_corner_top_rounded_xsmall: 0.125rem 0.125rem 0 0;
-  --rounded_corner_top_rounded_small: 0.188rem 0.188rem 0 0;
-  --rounded_corner_top_rounded_medium: 0.313rem 0.313rem 0 0;
-  --rounded_corner_top_rounded_big: 0.5rem 0.5rem 0 0;
-  --rounded_corner_top_rounded_full: 6.25rem 6.25rem 0 0;
+// :root {
+//     --corner_xsmall: 0.125rem;
+//     --corner_small: 0.188rem;
+//     --corner_medium: 0.313rem;
+//     --corner_big: 0.5rem;
+//     --corner_full: 6.25rem;
+//     --sharp_corner: 0;
+//     --rounded_corner_top_rounded_xsmall: var(--corner_xsmall) var(--corner_xsmall) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_top_rounded_small: var(--corner_small) var(--corner_small) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_top_rounded_medium: var(--corner_medium) var(--corner_medium) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_top_rounded_big: var(--corner_big) var(--corner_big) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_top_rounded_full: var(--corner_full) var(--corner_full) var(--sharp_corner) var(--sharp_corner);
 
-  --rounded_corner_bottom_rounded_xsmall: 0 0 0.125rem 0.125rem;
-  --rounded_corner_bottom_rounded_small: 0 0 0.188rem 0.188rem;
-  --rounded_corner_bottom_rounded_medium: 0 0 0.313rem 0.313rem;
-  --rounded_corner_bottom_rounded_big: 0 0 0.5rem 0.5rem;
-  --rounded_corner_bottom_rounded_full: 0 0 6.25rem 6.25rem;
+//     --rounded_corner_bottom_rounded_xsmall: var(--sharp_corner) var(--sharp_corner) var(--corner_xsmall) var(--corner_xsmall);
+//     --rounded_corner_bottom_rounded_small: var(--sharp_corner) var(--sharp_corner) var(--corner_small) var(--corner_small);
+//     --rounded_corner_bottom_rounded_medium: var(--sharp_corner) var(--sharp_corner) var(--corner_medium) var(--corner_medium);
+//     --rounded_corner_bottom_rounded_big: var(--sharp_corner) var(--sharp_corner) var(--corner_big) var(--corner_big);
+//     --rounded_corner_bottom_rounded_full: var(--sharp_corner) var(--sharp_corner) var(--corner_full) var(--corner_full);
 
-  --rounded_corner_left_rounded_xsmall: 0.125rem 0 0 0125rem;
-  --rounded_corner_left_rounded_small: 0.188rem 0 0 0.188rem;
-  --rounded_corner_left_rounded_medium: 0.313rem 0 0 0.313rem;
-  --rounded_corner_left_rounded_big: 0.5rem 0 0 0.5rem;
-  --rounded_corner_left_rounded_full: 6.25rem 0 0 6.25rem;
+//     --rounded_corner_left_rounded_xsmall: var(--corner_xsmall) var(--sharp_corner) var(--sharp_corner) var(--corner_xsmall);
+//     --rounded_corner_left_rounded_small: var(--corner_small) var(--sharp_corner) var(--sharp_corner) var(--corner_small);
+//     --rounded_corner_left_rounded_medium: var(--corner_medium) var(--sharp_corner) var(--sharp_corner) var(--corner_medium);
+//     --rounded_corner_left_rounded_big: var(--corner_big) var(--sharp_corner) var(--sharp_corner) var(--corner_big);
+//     --rounded_corner_left_rounded_full: var(--corner_full) var(--sharp_corner) var(--sharp_corner) var(--corner_full);
 
-  --rounded_corner_right_rounded_xsmall: 0 0.125rem 0125rem 0;
-  --rounded_corner_right_rounded_small: 0 0.188rem 0.188rem 0;
-  --rounded_corner_right_rounded_medium: 0 0.313rem 0.313rem 0;
-  --rounded_corner_right_rounded_big: 0 0.5rem 0.5rem 0;
-  --rounded_corner_right_rounded_full: 0 6.25rem 6.25rem 0;
+//     --rounded_corner_right_rounded_xsmall: var(--sharp_corner) var(--corner_xsmall) var(--corner_xsmall) var(--sharp_corner);
+//     --rounded_corner_right_rounded_small: var(--sharp_corner) var(--corner_small) var(--corner_small) var(--sharp_corner);
+//     --rounded_corner_right_rounded_medium: var(--sharp_corner) var(--corner_medium) var(--corner_medium) var(--sharp_corner);
+//     --rounded_corner_right_rounded_big: var(--sharp_corner) var(--corner_big) var(--corner_big) var(--sharp_corner);
+//     --rounded_corner_right_rounded_full: var(--sharp_corner) var(--corner_full) var(--corner_full) var(--sharp_corner);
 
-  --rounded_corner_tl_rounded_xsmall: 0.125rem 0 0 0;
-  --rounded_corner_tl_rounded_small: 0.188rem 0 0 0;
-  --rounded_corner_tl_rounded_medium: 0.313rem 0 0 0;
-  --rounded_corner_tl_rounded_big: 0.5rem 0 0 0;
-  --rounded_corner_tl_rounded_full: 6.25rem 0 0 0;
+//     --rounded_corner_tl_rounded_xsmall: var(--corner_xsmall) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_tl_rounded_small: var(--corner_small) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_tl_rounded_medium: var(--corner_medium) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_tl_rounded_big: var(--corner_big) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_tl_rounded_full: var(--corner_full) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
 
-  --rounded_corner_tr_rounded_xsmall: 0 0.125rem 0 0;
-  --rounded_corner_tr_rounded_small: 0 0.188rem 0 0;
-  --rounded_corner_tr_rounded_medium: 0 0.313rem 0 0;
-  --rounded_corner_tr_rounded_big: 0 0.5rem 0 0;
-  --rounded_corner_tr_rounded_full: 0 6.25rem 0 0;
+//     --rounded_corner_tr_rounded_xsmall: var(--sharp_corner) var(--corner_xsmall) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_tr_rounded_small: var(--sharp_corner) var(--corner_small) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_tr_rounded_medium: var(--sharp_corner) var(--corner_medium) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_tr_rounded_big: var(--sharp_corner) var(--corner_big) var(--sharp_corner) var(--sharp_corner);
+//     --rounded_corner_tr_rounded_full: var(--sharp_corner) var(--corner_full) var(--sharp_corner) var(--sharp_corner);
 
-  --rounded_corner_bl_rounded_xsmall: 0 0 0 0.125rem;
-  --rounded_corner_bl_rounded_small: 0 0 0 0.188rem;
-  --rounded_corner_bl_rounded_medium: 0 0 0 0.188rem;
-  --rounded_corner_bl_rounded_big: 0 0 0 0.5rem;
-  --rounded_corner_bl_rounded_full: 0 0 0 6.25rem;
+//     --rounded_corner_bl_rounded_xsmall: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_xsmall);
+//     --rounded_corner_bl_rounded_small: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_small);
+//     --rounded_corner_bl_rounded_medium: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_small);
+//     --rounded_corner_bl_rounded_big: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_big);
+//     --rounded_corner_bl_rounded_full: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_full);
 
-  --rounded_corner_br_rounded_xsmall: 0 0 0.125rem 0;
-  --rounded_corner_br_rounded_small: 0 0 0.188rem 0;
-  --rounded_corner_br_rounded_medium: 0 0 0.313rem 0;
-  --rounded_corner_br_rounded_big: 0 0 0.5rem 0;
-  --rounded_corner_br_rounded_full: 0 0 6.25rem 0;
+//     --rounded_corner_br_rounded_xsmall: var(--sharp_corner) var(--sharp_corner) var(--corner_xsmall) var(--sharp_corner);
+//     --rounded_corner_br_rounded_small: var(--sharp_corner) var(--sharp_corner) var(--corner_small) var(--sharp_corner);
+//     --rounded_corner_br_rounded_medium: var(--sharp_corner) var(--sharp_corner) var(--corner_medium) var(--sharp_corner);
+//     --rounded_corner_br_rounded_big: var(--sharp_corner) var(--sharp_corner) var(--corner_big) var(--sharp_corner);
+//     --rounded_corner_br_rounded_full: var(--sharp_corner) var(--sharp_corner) var(--corner_full) var(--sharp_corner);
 
-  --rounded_corner_all_rounded_xsmall: 0.125rem;
-  --rounded_corner_all_rounded_small: 0.188rem;
-  --rounded_corner_all_rounded_medium: 0.313rem;
-  --rounded_corner_all_rounded_big: 0.5rem;
-  --rounded_corner_all_rounded_full: 6.25rem;
+//     --rounded_corner_all_rounded_xsmall: var(--corner_xsmall);
+//     --rounded_corner_all_rounded_small: var(--corner_small);
+//     --rounded_corner_all_rounded_medium: var(--corner_medium);
+//     --rounded_corner_all_rounded_big: var(--corner_big);
+//     --rounded_corner_all_rounded_full: var(--corner_full);
 
-  --sharp_corner: 0;
-}
+
+// }
+
+
+// // .new-theme {
+// //     --corner_xsmall: 0.125rem;
+// //     --corner_small: 40px;
+// //     --corner_medium: 0.313rem;
+// //     --corner_big: 0.5rem;
+// //     --corner_full: 6.25rem;
+// //     --sharp_corner: 0;
+// //     --rounded_corner_top_rounded_xsmall: var(--corner_xsmall) var(--corner_xsmall) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_top_rounded_small: var(--corner_small) var(--corner_small) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_top_rounded_medium: var(--corner_medium) var(--corner_medium) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_top_rounded_big: var(--corner_big) var(--corner_big) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_top_rounded_full: var(--corner_full) var(--corner_full) var(--sharp_corner) var(--sharp_corner);
+
+// //     --rounded_corner_bottom_rounded_xsmall: var(--sharp_corner) var(--sharp_corner) var(--corner_xsmall) var(--corner_xsmall);
+// //     --rounded_corner_bottom_rounded_small: var(--sharp_corner) var(--sharp_corner) var(--corner_small) var(--corner_small);
+// //     --rounded_corner_bottom_rounded_medium: var(--sharp_corner) var(--sharp_corner) var(--corner_medium) var(--corner_medium);
+// //     --rounded_corner_bottom_rounded_big: var(--sharp_corner) var(--sharp_corner) var(--corner_big) var(--corner_big);
+// //     --rounded_corner_bottom_rounded_full: var(--sharp_corner) var(--sharp_corner) var(--corner_full) var(--corner_full);
+
+// //     --rounded_corner_left_rounded_xsmall: var(--corner_xsmall) var(--sharp_corner) var(--sharp_corner) var(--corner_xsmall);
+// //     --rounded_corner_left_rounded_small: var(--corner_small) var(--sharp_corner) var(--sharp_corner) var(--corner_small);
+// //     --rounded_corner_left_rounded_medium: var(--corner_medium) var(--sharp_corner) var(--sharp_corner) var(--corner_medium);
+// //     --rounded_corner_left_rounded_big: var(--corner_big) var(--sharp_corner) var(--sharp_corner) var(--corner_big);
+// //     --rounded_corner_left_rounded_full: var(--corner_full) var(--sharp_corner) var(--sharp_corner) var(--corner_full);
+
+// //     --rounded_corner_right_rounded_xsmall: var(--sharp_corner) var(--corner_xsmall) var(--corner_xsmall) var(--sharp_corner);
+// //     --rounded_corner_right_rounded_small: var(--sharp_corner) var(--corner_small) var(--corner_small) var(--sharp_corner);
+// //     --rounded_corner_right_rounded_medium: var(--sharp_corner) var(--corner_medium) var(--corner_medium) var(--sharp_corner);
+// //     --rounded_corner_right_rounded_big: var(--sharp_corner) var(--corner_big) var(--corner_big) var(--sharp_corner);
+// //     --rounded_corner_right_rounded_full: var(--sharp_corner) var(--corner_full) var(--corner_full) var(--sharp_corner);
+
+// //     --rounded_corner_tl_rounded_xsmall: var(--corner_xsmall) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_tl_rounded_small: var(--corner_small) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_tl_rounded_medium: var(--corner_medium) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_tl_rounded_big: var(--corner_big) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_tl_rounded_full: var(--corner_full) var(--sharp_corner) var(--sharp_corner) var(--sharp_corner);
+
+// //     --rounded_corner_tr_rounded_xsmall: var(--sharp_corner) var(--corner_xsmall) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_tr_rounded_small: var(--sharp_corner) var(--corner_small) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_tr_rounded_medium: var(--sharp_corner) var(--corner_medium) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_tr_rounded_big: var(--sharp_corner) var(--corner_big) var(--sharp_corner) var(--sharp_corner);
+// //     --rounded_corner_tr_rounded_full: var(--sharp_corner) var(--corner_full) var(--sharp_corner) var(--sharp_corner);
+
+// //     --rounded_corner_bl_rounded_xsmall: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_xsmall);
+// //     --rounded_corner_bl_rounded_small: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_small);
+// //     --rounded_corner_bl_rounded_medium: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_small);
+// //     --rounded_corner_bl_rounded_big: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_big);
+// //     --rounded_corner_bl_rounded_full: var(--sharp_corner) var(--sharp_corner) var(--sharp_corner) var(--corner_full);
+
+// //     --rounded_corner_br_rounded_xsmall: var(--sharp_corner) var(--sharp_corner) var(--corner_xsmall) var(--sharp_corner);
+// //     --rounded_corner_br_rounded_small: var(--sharp_corner) var(--sharp_corner) var(--corner_small) var(--sharp_corner);
+// //     --rounded_corner_br_rounded_medium: var(--sharp_corner) var(--sharp_corner) var(--corner_medium) var(--sharp_corner);
+// //     --rounded_corner_br_rounded_big: var(--sharp_corner) var(--sharp_corner) var(--corner_big) var(--sharp_corner);
+// //     --rounded_corner_br_rounded_full: var(--sharp_corner) var(--sharp_corner) var(--corner_full) var(--sharp_corner);
+
+// //     --rounded_corner_all_rounded_xsmall: var(--corner_xsmall);
+// //     --rounded_corner_all_rounded_small: var(--corner_small);
+// //     --rounded_corner_all_rounded_medium: var(--corner_medium);
+// //     --rounded_corner_all_rounded_big: var(--corner_big);
+// //     --rounded_corner_all_rounded_full: var(--corner_full);
+
+// //     --border_corner_all_small: var(--rounded_corner_all_rounded_small);
+
+
+// // }
