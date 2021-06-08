@@ -54,19 +54,15 @@ $colorMap: (
 
       .#{$prefix}-notification-title {
         display: inline-block;
-        font-size: 0.875rem;
-        line-height: getLineHeight(0.875rem);
         letter-spacing: 0;
         color: var(--default_text_high);
         margin-right: 0.5rem;
-        font-weight: 600;
+        @include getTypoMixinProperties($typoThemeMaps, 'text-component-heading-small');
       }
 
       .#{$prefix}-notification-subtitle {
         display: inline-block;
-        font-size: 0.875rem;
-        line-height: getLineHeight(0.875rem);
-        @include getFontWeight('regular');
+        @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
         word-break: break-word;
         color: var(--default_text);
       }
@@ -74,7 +70,7 @@ $colorMap: (
       .#{$prefix}-notification-action {
         float: right;
         margin-left: 1rem;
-
+        @include getTypoMixinProperties($typoThemeMaps, 'text-page-nav');
         &:focus {
           border: 0;
           outline: 0.0625rem solid var(--interactive_border);
