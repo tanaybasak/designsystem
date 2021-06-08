@@ -53,26 +53,16 @@ $colorMap: (
   }
 
   &-title {
-    font-size: 0.875rem;
-    line-height: 1rem;
-
+    @include getTypoMixinProperties($typoThemeMaps, 'text-component-heading-small');
     color: var(--default_text_high);
-
-    letter-spacing: 0;
     word-break: break-word;
-    @include getFontWeight('semibold');
   }
 
   &-subtitle,
   &-caption {
-    line-height: 0.875rem;
-    font-size: 0.75rem;
-
+    @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
     color: var(--default_text);
-
-    letter-spacing: 0;
     word-break: break-word;
-    @include getFontWeight('regular');
   }
 
   &-caption {
