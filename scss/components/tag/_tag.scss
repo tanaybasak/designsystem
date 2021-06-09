@@ -1,8 +1,5 @@
 .#{$prefix}-tag {
-  font-size: 0.75rem;
-  @include getFontWeight(regular);
-  line-height: 1rem;
-  letter-spacing: 0.02rem;
+  @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
   display: inline-flex;
   align-items: center;
   height: 2rem;
