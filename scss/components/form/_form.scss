@@ -50,8 +50,9 @@ textarea.#{$prefix}-textarea[data-invalid='true'] ~ .#{$prefix}-error-msg {
   color: var(--default_text_low);
 
   margin-bottom: 0.5rem;
-  font-size: 0.75rem;
-  line-height: getLineHeight(0.75rem);
+  @include getTypoMixinProperties($typoThemeMaps, 'text-component-descriptive');
+  // font-size: 0.75rem;
+  // line-height: getLineHeight(0.75rem);
 }
 
 label.#{$prefix}-label {

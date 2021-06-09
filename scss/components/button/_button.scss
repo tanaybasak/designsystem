@@ -1,8 +1,6 @@
 %button {
   text-align: center;
   cursor: pointer;
-  // line-height: 1rem;
-  // font-size: 0.875rem;
   @include getTypoMixinProperties($typoThemeMaps, 'text-content-action');
   border: 0.0625rem solid transparent;
   margin-top: 0.5rem;

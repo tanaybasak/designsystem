@@ -274,7 +274,8 @@ $inputColor-map: (
 // getFormControl(<control>)
 @mixin getFormControl($which) {
   @if ($which== 'inputcontrol') {
-    font-size: 0.875rem;
+    // font-size: 0.875rem;
+    @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
     width: 100%;
     height: $input-height;
     padding: $input-padding-y $input-padding-x;
@@ -315,9 +316,7 @@ $inputColor-map: (
 @mixin getErrorMarkup($which) {
   @if ($which== 'inputcontrol') {
     .#{$prefix}-error-msg {
-      @include getFontWeight('regular');
-      font-size: 0.75rem;
-      line-height: getLineHeight(0.75rem);
+      @include getTypoMixinProperties($typoThemeMaps, 'text-component-descriptive');
       color: var(--danger_text);
       margin-top: 0.25rem;
     }
