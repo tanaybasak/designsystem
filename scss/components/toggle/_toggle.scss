@@ -152,9 +152,10 @@
 
   .#{$prefix}-toggle-off,
   .#{$prefix}-toggle-on {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    letter-spacing: 0.01rem;
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-body-short'
+    );
 
     color: var(--default_text_high);
   }
