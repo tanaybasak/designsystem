@@ -523,5 +523,6 @@ $inputColor-map: (
 @mixin boxShadow_focus() {
   outline: none;
   box-shadow: var(--shadow_focus);
+  border : 0;
   // border: 0.0625rem solid var(--default_bg);
 }

@@ -33,7 +33,7 @@ $tooltip-box-shadow: rgba(var(--black), 0.1);
   background-color: var(--default_bg_low);
   box-shadow: 0 0.25rem 0.5rem 0 var(--default_shadow);
 
-  border-radius: var(--border_corner_all_medium);
+  border-radius: var(--rounded_corner_all_rounded_medium);
   padding: 0.5rem;
 
   z-index: $tooltip-zindex;

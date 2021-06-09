@@ -5,7 +5,7 @@
   max-height: 12rem;
   overflow: auto;
   background-color: var(--default_bg);
-  border-radius: var(--border_corner_all_medium);
+  border-radius: var(--rounded_corner_all_rounded_medium);
 
   .#{$prefix}-overflow-option {
     font-size: 0.875rem;

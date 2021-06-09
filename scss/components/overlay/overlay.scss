@@ -18,7 +18,7 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
-    border-radius: var(--border_corner_all_medium);
+    border-radius: var(--rounded_corner_all_rounded_medium);
   }
 
   &.#{$prefix}-overlay-container-scroll {

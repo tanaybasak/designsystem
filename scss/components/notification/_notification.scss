@@ -11,7 +11,7 @@ $colorMap: (
   max-width: 52rem;
   margin: 1rem 0;
   z-index: 999;
-  border-radius: var(--border_corner_all_medium);
+  border-radius: var(--rounded_corner_all_rounded_medium);
 
   @each $key, $value in $colorMap {
     &.#{$prefix}-#{$key} {

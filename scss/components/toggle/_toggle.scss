@@ -82,7 +82,7 @@
       width: 3rem;
 
       background-color: var(--default_border);
-      border-radius: var(--border_corner_all_full);
+      border-radius: var(--rounded_corner_all_rounded_full);
     }
 
     .#{$prefix}-switch {
@@ -175,7 +175,7 @@
       width: 2rem;
       background-color: var(--default_bg_high);
       border: 0.0625rem solid var(--default_border);
-      border-radius: var(--border_corner_all_full);
+      border-radius: var(--rounded_corner_all_rounded_full);
     }
 
     .#{$prefix}-switch {

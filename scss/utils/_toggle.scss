@@ -221,9 +221,9 @@ Components like action bar, Tile,
   //   --border_corner_right_big: var(--sharp_corner);
   //   --border_corner_bottom_big: var(--sharp_corner);
   //   --border_corner_all_full: var(--rounded_corner_all_rounded_full);
-  //   --shadow_focus: inset -0.0625rem 0 0 transparent,
-  //     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
-  //     0 0 0 0.125rem var(--interactive_border);
+    --shadow_focus: inset -0.0625rem 0 0 transparent,
+      inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+      0 0 0 0.125rem var(--interactive_border);
 }
 
 .rounded {
@@ -298,9 +298,9 @@ Components like action bar, Tile,
   //   --border_corner_bottom_big: var(--rounded_corner_bottom_rounded_big);
   //   --border_corner_all_big: var(--rounded_corner_all_rounded_big);
   //   --border_corner_all_full: var(--rounded_corner_all_rounded_full);
-  //   --shadow_focus: inset -0.0625rem 0 0 transparent,
-  //     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
-  //     0 0 0 0.125rem var(--interactive_border);
+    --shadow_focus: inset -0.0625rem 0 0 transparent,
+      inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
+      0 0 0 0.125rem var(--interactive_border);
 }
 
 // .new-theme,
