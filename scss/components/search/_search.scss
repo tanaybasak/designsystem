@@ -70,7 +70,7 @@ $search-reset-size: 0.759rem;
   .#{$prefix}-search-input {
     -webkit-appearance: none;
     // font-size: var(--body-font-size);
-  @include getTypoMixinProperties($typoThemeMaps, 'text-content-body-short');
+    @include getTypoMixinProperties($typoThemeMaps, 'text-content-body-short');
     width: 100%;
     height: $search-height;
     outline: none;
@@ -135,16 +135,14 @@ $search-reset-size: 0.759rem;
 
   &.#{$prefix}-search-sm {
     height: $search-height-sm;
-    .#{$prefix}-search-input {
-      @include getTypoMixinProperties(
-        $typoThemeMaps,
-        'text-component-body-short'
-      );
-    }
 
     .#{$prefix}-search-input {
       height: $search-height-sm;
       padding: 0 $search-height-sm;
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-body-short'
+      );
     }
 
     .#{$prefix}-search-btn {

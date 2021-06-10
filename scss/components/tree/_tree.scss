@@ -295,7 +295,10 @@ $default-node-height: 2rem;
 
     .#{$prefix}-tree-nested {
       margin-left: 1.25rem;
-      @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-body-short'
+      );
     }
   }
 }

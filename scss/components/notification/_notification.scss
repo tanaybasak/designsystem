@@ -57,12 +57,18 @@ $colorMap: (
         letter-spacing: 0;
         color: var(--default_text_high);
         margin-right: 0.5rem;
-        @include getTypoMixinProperties($typoThemeMaps, 'text-component-heading-small');
+        @include getTypoMixinProperties(
+          $typoThemeMaps,
+          'text-component-heading-small'
+        );
       }
 
       .#{$prefix}-notification-subtitle {
         display: inline-block;
-        @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
+        @include getTypoMixinProperties(
+          $typoThemeMaps,
+          'text-component-body-short'
+        );
         word-break: break-word;
         color: var(--default_text);
       }

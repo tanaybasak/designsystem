@@ -580,7 +580,7 @@ $typoThemeMaps: (
     }
     // @debug 'Value of the mixin #{$font-family} #{$font-size} #{$font-weight} #{$line-height} #{$letter-spacing} #{$capitalization}';
   } @else {
-    @warn "Error in mixin getTypoMixinProperties - #{$mixin-name}";
+    @warn 'Error in mixin getTypoMixinProperties - #{$mixin-name}';
   }
 }
 

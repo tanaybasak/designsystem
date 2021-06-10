@@ -53,14 +53,20 @@ $colorMap: (
   }
 
   &-title {
-    @include getTypoMixinProperties($typoThemeMaps, 'text-component-heading-small');
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-heading-small'
+    );
     color: var(--default_text_high);
     word-break: break-word;
   }
 
   &-subtitle,
   &-caption {
-    @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-body-short'
+    );
     color: var(--default_text);
     word-break: break-word;
   }
