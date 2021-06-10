@@ -10,6 +10,10 @@
   --emptyValue: 0px;
   width: 100%;
 
+  label.#{$prefix}-label {
+    @include getTypoMixinProperties($typoThemeMaps, 'text-additional-label');
+  }
+
   @include media-breakpoint-between(sm, xxxl) {
     --paddingLeft: 1rem;
     --paddingRight: 0.75rem;
@@ -31,8 +35,10 @@
       position: relative;
 
       .#{$prefix}-tile-header {
-        font-size: 0.875rem;
-        font-weight: 500;
+        @include getTypoMixinProperties(
+          $typoThemeMaps,
+          'text-additional-label'
+        );
       }
 
       .#{$prefix}-tile {
@@ -77,9 +83,11 @@
                     padding: 0.625rem;
 
                     span {
-                      font-size: 0.875rem;
                       color: var(--default_text_low);
-                      letter-spacing: 0.16px;
+                      @include getTypoMixinProperties(
+                        $typoThemeMaps,
+                        'text-component-body-long'
+                      );
                       display: inline-block;
                       overflow: hidden;
                       text-overflow: ellipsis;
