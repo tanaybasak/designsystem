@@ -74,6 +74,12 @@
       background-color: var(--input_bg);
     }
   }
+
+  &.hcl-form-control.hcl-ghost-dropdown {
+    border-width: 0;
+    background-color: transparent;
+    color: var(--interactive_text);
+  }
 }
 
 select::-ms-expand {

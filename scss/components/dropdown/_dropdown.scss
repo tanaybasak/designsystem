@@ -106,7 +106,17 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    
+  &.hcl-form-control.hcl-ghost-dropdown {
+    border-width: 0;
+    background-color: transparent;
   }
+  
+  
+  }
+
+
 
   &.#{$prefix}-overlay-wrapper-active {
     & > .#{$prefix}-dropdown-toggle::after {
