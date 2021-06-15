@@ -4,7 +4,10 @@
 
 .outline-sharp,
 .outline-rounded {
-  --input_border_width: 0.0625rem;
+  --input_border_left_width: 0.0625rem;
+  --input_border_top_width: 0.0625rem;
+  --input_border_right_width: 0.0625rem;
+  --input_border_bottom_width: 0.0625rem;
   --input_border_focus_width: 0.125rem;
   --input_border_color: var(--input_border);
   --input_focus: inset -0.0625rem 0 0 transparent,
@@ -27,7 +30,10 @@
 .filled-sharp,
 .filled-rounded,
 :root {
-  --input_border_width: 0 0 0.0625rem 0;
+  --input_border_left_width: 0;
+  --input_border_top_width: 0;
+  --input_border_right_width: 0;
+  --input_border_bottom_width: 0.0625rem;
   --input_border_focus_width: 0 0 0.125rem 0;
   --input_background: var(--input_bg);
   --input_border_color: var(--interactive_border);

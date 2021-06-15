@@ -308,25 +308,25 @@
 
     input {
       padding: 0 1rem 0.0625rem 3rem;
-      border: none;
-      height: 2.5rem;
+      //   border: none;
+      //   height: 2.5rem;
       width: 9.4375rem;
 
-      color: var(--input_text);
-      background-color: var(--input_bg);
+      //   color: var(--input_text);
+      //   background-color: var(--input_bg);
 
-      outline: none;
-      font-size: 0.875rem;
-      line-height: 1.125rem;
+      //   outline: none;
+      //   font-size: 0.875rem;
+      //   line-height: 1.125rem;
       cursor: pointer;
 
-      border-bottom: 0.0625rem solid var(--input_border);
+      //   border-bottom: 0.0625rem solid var(--input_border);
 
-      &:focus {
-        border-bottom: 0.125rem solid var(--interactive_border);
+      //   &:focus {
+      //     border-bottom: 0.125rem solid var(--interactive_border);
 
-        color: var(--input_text);
-      }
+      //     color: var(--input_text);
+      //   }
 
       &[disabled] {
         cursor: not-allowed;
@@ -579,7 +579,7 @@
 
 .#{$prefix}-calendar {
   border: 0.0625rem solid var(--default_border_xlow);
-  box-shadow: 0 0.0625rem 0.125rem var(----default_shadow);
+  box-shadow: 0 0.0625rem 0.125rem var(--default_shadow);
 
   &-border {
     width: 2.375rem;
