@@ -31,13 +31,12 @@
       $typoThemeMaps,
       'text-component-body-short'
     );
-    // font-size: 0.875rem;
-    // line-height: 1.125rem;
     outline: none;
     width: 100%;
     justify-content: left;
     margin: 0;
     padding-right: 2.5rem;
+    padding-top: 0.6875rem;
     background-color: var(--input_bg);
     color: var(--input_text);
     border-bottom: 0.0625rem solid var(--input_border);
