@@ -165,12 +165,12 @@ Components like action bar, Tile,
 }
 :root,
 .sharp {
-  --corner_xsmall: 0;
-  --corner_small: 0;
-  --corner_medium: 0;
-  --corner_big: 0;
+  --corner_xsmall: 0rem;
+  --corner_small: 0rem;
+  --corner_medium: 0rem;
+  --corner_big: 0rem;
   --corner_full: 6.25rem;
-  --sharp_corner: 0;
+  --sharp_corner: 0rem;
 
   // --rounded_corner_top_rounded_xsmall: var(--corner_xsmall) var(--corner_xsmall) var(--sharp_corner) var(--sharp_corner);
   // --rounded_corner_top_rounded_small: var(--corner_small) var(--corner_small) var(--sharp_corner) var(--sharp_corner);
@@ -245,7 +245,7 @@ Components like action bar, Tile,
   --corner_medium: 0.313rem;
   --corner_big: 0.5rem;
   --corner_full: 6.25rem;
-  --sharp_corner: 0;
+  --sharp_corner: 0rem;
 
   //--rounded_corner_all_rounded_small: var(--corner_big);
 
