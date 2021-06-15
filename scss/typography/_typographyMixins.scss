@@ -475,7 +475,6 @@ $typoThemeMaps: (
   $newList: $list;
   $newListlen: length($newList);
   $isListPresent: $newListlen > 0;
-  @debug 'Length: #{$newListlen}';
 
   @if (map-has-key($map, $mixin-name)) {
     $mixinName: map-get($map, $mixin-name);

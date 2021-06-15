@@ -73,8 +73,7 @@ $default_bg: white;
         -webkit-transform: translate(-50%, 0);
         transform: translate(-50%, 0);
         border-radius: 0.375rem;
-        padding: 0 0.625rem;
-
+        padding: 5px 0.625rem 0;
         color: var(--default_text_high);
         background: var(--default_bg_low);
       }
