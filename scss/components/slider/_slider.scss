@@ -215,7 +215,7 @@ $default_bg: white;
 
     > input.#{$prefix}-slider-text-input {
       // font-size: 0.875rem;
-      @include getTypoMixinProperties($typoThemeMaps, 'text-component-mono');
+      // @include getTypoMixinProperties($typoThemeMaps, 'text-component-mono');
       max-width: 4rem;
       min-width: 2rem;
       height: 100%;

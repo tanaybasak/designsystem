@@ -583,10 +583,8 @@ $typoThemeMaps: (
   }
 }
 
-// .accordion-title {
-//   @include getTypoMixinProperties(
-//     $typoThemeMaps,
-//     'text-additional-numeric',
-//     ('text-transform', 'font-weight')
-//   );
-// }
+@each $key, $value in $typoThemeMaps {
+  .#{$key} {
+    @include getTypoMixinProperties($typoThemeMaps, $key);
+  }
+}
