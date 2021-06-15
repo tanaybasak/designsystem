@@ -4,9 +4,9 @@
   background-image: linear-gradient(
       45deg,
       transparent 50%,
-      var(--interactive_icon) 50%
+      var(--input_icon) 50%
     ),
-    linear-gradient(135deg, var(--interactive_icon) 50%, transparent 50%);
+    linear-gradient(135deg, var(--input_icon) 50%, transparent 50%);
 
   font-weight: 600;
   // height: 2.5rem;
@@ -34,10 +34,6 @@
   //   outline: 2px solid var(--interactive_border);
   // }
 
-  &:hover {
-    background-color: var(--interactive_bg_hover);
-  }
-
   &-label {
     color: var(--default_text);
   }
@@ -52,6 +48,7 @@
     background-color: var(--interactive_bg);
     opacity: var(--disabled_all);
   }
+
   &.filled {
     font-size: 0.875rem;
     font-weight: normal;
@@ -65,11 +62,13 @@
       ),
       linear-gradient(135deg, var(--input_icon) 50%, transparent 50%);
     border-bottom: 0.0625rem solid var(--input_border);
+
     &:focus {
       outline: none;
       border: none;
       box-shadow: 0 0.125rem 0 var(--interactive_border);
     }
+
     &:hover {
       background-color: var(--input_bg);
     }
@@ -79,6 +78,20 @@
     border-width: 0;
     background-color: transparent;
     color: var(--interactive_text);
+    background-image: linear-gradient(
+        45deg,
+        transparent 50%,
+        var(--interactive_icon) 50%
+      ),
+      linear-gradient(135deg, var(--interactive_icon) 50%, transparent 50%);
+
+    &:focus {
+      @include boxShadow_only_focus();
+    }
+
+    &:hover {
+      background-color: var(--interactive_bg_hover);
+    }
   }
 }
 

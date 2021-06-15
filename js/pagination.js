@@ -8,8 +8,8 @@ class Pagination {
     this.selectors = {
       next: `.${PREFIX}-pagination-button-next`,
       previous: `.${PREFIX}-pagination-button-previous`,
-      PageNumber: `.${PREFIX}-pagination-select.${PREFIX}-page-number`,
-      PageItems: `.${PREFIX}-pagination-select.${PREFIX}-page-items`,
+      PageNumber: `.${PREFIX}-page-number`,
+      PageItems: `.${PREFIX}-page-items`,
       pageStart: `.${PREFIX}-page-start`,
       pageEnd: `.${PREFIX}-page-end`,
       rangeStart: `.${PREFIX}-range-start`,
@@ -345,7 +345,12 @@ class Pagination {
 
     // Create select and append options
     const select = document.createElement('select');
-    select.classList.add(`${PREFIX}-pagination-select`, `${PREFIX}-page-items`);
+    select.classList.add(
+      `${PREFIX}-select`,
+      `${PREFIX}-form-control`,
+      `${PREFIX}-ghost-dropdown`,
+      `${PREFIX}-page-items`
+    );
     select.setAttribute('aria-label', 'page-items');
 
     for (let i = 0; i < arrayItems.length; i++) {
@@ -355,7 +360,7 @@ class Pagination {
       select.appendChild(option);
     }
     wrapper.appendChild(select);
-    wrapper.insertAdjacentHTML('beforeend', this.string.dropdownsvg);
+    // wrapper.insertAdjacentHTML('beforeend', this.string.dropdownsvg);
     this.createPageNumberOptions(
       this.selectors.PageNumber,
       this.state.totalItems,
@@ -376,12 +381,14 @@ class Pagination {
       );
       const select = document.createElement('select');
       select.classList.add(
-        `${PREFIX}-pagination-select`,
+        `${PREFIX}-select`,
+        `${PREFIX}-form-control`,
+        `${PREFIX}-ghost-dropdown`,
         `${PREFIX}-page-number`
       );
       select.setAttribute('aria-label', 'page-number');
       wrapper.appendChild(select);
-      wrapper.insertAdjacentHTML('beforeend', this.string.dropdownsvg);
+      //   wrapper.insertAdjacentHTML('beforeend', this.string.dropdownsvg);
     }
     const pageNumberDropdown = this.element.querySelector(selector);
 

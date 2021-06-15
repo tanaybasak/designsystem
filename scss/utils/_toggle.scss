@@ -8,7 +8,10 @@
   --input_border_top_width: 0.0625rem;
   --input_border_right_width: 0.0625rem;
   --input_border_bottom_width: 0.0625rem;
-  --input_border_focus_width: 0.125rem;
+  --input_border_focus_left_width: 0.125rem;
+  --input_border_focus_top_width: 0.125rem;
+  --input_border_focus_right_width: 0.125rem;
+  --input_border_focus_bottom_width: 0.125rem;
   --input_border_color: var(--input_border);
   --input_focus: inset -0.0625rem 0 0 transparent,
     inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
@@ -34,7 +37,11 @@
   --input_border_top_width: 0;
   --input_border_right_width: 0;
   --input_border_bottom_width: 0.0625rem;
-  --input_border_focus_width: 0 0 0.125rem 0;
+
+  --input_border_focus_left_width: 0;
+  --input_border_focus_top_width: 0;
+  --input_border_focus_right_width: 0;
+  --input_border_focus_bottom_width: 0.125rem;
   --input_background: var(--input_bg);
   --input_border_color: var(--interactive_border);
   --input_focus: inset -0.0625rem 0 0 transparent,
@@ -133,7 +140,7 @@ Components like action bar, Tile,
   --rounded_corner_bl_rounded_small: var(--sharp_corner) var(--sharp_corner)
     var(--sharp_corner) var(--corner_small);
   --rounded_corner_bl_rounded_medium: var(--sharp_corner) var(--sharp_corner)
-    var(--sharp_corner) var(--corner_small);
+    var(--sharp_corner) var(--corner_medium);
   --rounded_corner_bl_rounded_big: var(--sharp_corner) var(--sharp_corner)
     var(--sharp_corner) var(--corner_big);
   --rounded_corner_bl_rounded_full: var(--sharp_corner) var(--sharp_corner)

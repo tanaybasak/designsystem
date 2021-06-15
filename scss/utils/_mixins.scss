@@ -295,7 +295,10 @@ $inputColor-map: (
       // box-shadow: var(--input_focus);
       // border-bottom: 1px solid transparent;
 
-      border-width: var(--input_border_focus_width);
+      border-left-width: var(--input_border_focus_left_width);
+      border-top-width: var(--input_border_focus_top_width);
+      border-right-width: var(--input_border_focus_right_width);
+      border-bottom-width: var(--input_border_focus_bottom_width);
       border-style: solid;
       border-color: var(--interactive_border);
 
@@ -528,4 +531,8 @@ $inputColor-map: (
   box-shadow: var(--shadow_focus);
   border: 0;
   // border: 0.0625rem solid var(--default_bg);
+}
+@mixin boxShadow_only_focus() {
+  outline: none;
+  box-shadow: var(--shadow_focus);
 }

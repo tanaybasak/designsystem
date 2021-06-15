@@ -86,13 +86,13 @@ $search-reset-size: 0.759rem;
     position: unset;
     transition: width 0.15s ease-out;
 
-    &:focus {
-      // border-bottom: 2px solid var(--interactive_border);
-      border-width: var(--input_border_focus_width);
-      border-style: solid;
-      border-color: var(--interactive_border);
-      outline-offset: -1px;
-    }
+    // &:focus {
+    //   // border-bottom: 2px solid var(--interactive_border);
+    //   border-width: var(--input_border_focus_width);
+    //   border-style: solid;
+    //   border-color: var(--interactive_border);
+    //   outline-offset: -1px;
+    // }
 
     &::-ms-clear,
     &::-ms-reveal {
