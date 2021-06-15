@@ -10,9 +10,6 @@ $pagination-font-size: var(--body-font-size);
 $pagination-line-height: 1.125rem;
 
 .#{$prefix}-pagination {
-  font-size: $pagination-font-size;
-  @include getFontWeight('regular');
-  line-height: $pagination-line-height;
   width: 100%;
 
   background-color: var(--default_bg);
