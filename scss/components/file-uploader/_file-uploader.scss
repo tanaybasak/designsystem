@@ -100,7 +100,7 @@
         @include getTypoMixinProperties(
           $typoThemeMaps,
           'text-component-body-short'
-        );        
+        );
         &:hover {
           cursor: pointer;
         }
@@ -111,7 +111,10 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding: 0.5rem;
+        display: inline-block;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        padding-left: 16px;
         @include getTypoMixinProperties(
           $typoThemeMaps,
           'text-component-body-short'
