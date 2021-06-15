@@ -584,10 +584,10 @@ $typoThemeMaps: (
   }
 }
 
-.accordion-title {
-  @include getTypoMixinProperties(
-    $typoThemeMaps,
-    'text-additional-numeric',
-    ('text-transform', 'font-weight')
-  );
-}
+// .accordion-title {
+//   @include getTypoMixinProperties(
+//     $typoThemeMaps,
+//     'text-additional-numeric',
+//     ('text-transform', 'font-weight')
+//   );
+// }
