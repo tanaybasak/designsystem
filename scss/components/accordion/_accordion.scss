@@ -44,22 +44,20 @@
         transition: all 0.2s ease-in-out;
       }
 
-    //   @include primary_focus();
-    &:focus,
+      //   @include primary_focus();
+      &:focus,
       &:active {
         // outline: 1px solid var(--interactive_border);
         // outline-offset: 0;
         @include primary-focus();
       }
 
-      
-
-    //   &:focus,
-    //   &:active {
-    //     // outline: 1px solid var(--interactive_border);
-    //     // outline-offset: 0;
-    //     @include border_focus();
-    //   }
+      //   &:focus,
+      //   &:active {
+      //     // outline: 1px solid var(--interactive_border);
+      //     // outline-offset: 0;
+      //     @include border_focus();
+      //   }
     }
 
     .#{$prefix}-accordion-content-wrapper {

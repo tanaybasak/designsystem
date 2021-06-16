@@ -25,20 +25,20 @@
       }
 
       &:focus {
-        @include ghost_focus(var(--primary_bg) , var(--primary_border));
+        @include ghost_focus(var(--primary_bg), var(--primary_border));
       }
       //@include ghost_focus(var(--primary_bg) , var(--primary_border));
 
-    //   &:focus {
-    //     // border: 0.0625rem solid var(--primary_border);
-    //     background-color: var(--primary_bg);
+      //   &:focus {
+      //     // border: 0.0625rem solid var(--primary_border);
+      //     background-color: var(--primary_bg);
 
-    //     // outline: none;
+      //     // outline: none;
 
-    //     // > .#{$prefix}-btn-icon {
-    //     //   fill: var(--primary_icon);
-    //     // }
-    //   }
+      //     // > .#{$prefix}-btn-icon {
+      //     //   fill: var(--primary_icon);
+      //     // }
+      //   }
       &:hover {
         background-color: var(--primary_bg_hover);
       }
@@ -52,7 +52,7 @@
     flex-wrap: wrap;
     color: var(--primary_text);
     button {
-    //   padding: 10;
+      //   padding: 10;
       margin: 0;
       border-bottom: 0.0625rem solid transparent;
       color: var(--primary_text);
@@ -63,16 +63,16 @@
       }
 
       &:focus {
-        @include ghost_focus(var(--primary_bg) , var(--primary_border));
+        @include ghost_focus(var(--primary_bg), var(--primary_border));
       }
       //@include ghost_focus(var(--primary_bg) , var(--primary_border));
 
-    //   &:focus {
-    //     border: 0.0625rem solid var(--primary_border);
-    //     color: var(--primary_text);
-    //     background-color: var(--primary_bg);
-    //     outline: none;
-    //   }
+      //   &:focus {
+      //     border: 0.0625rem solid var(--primary_border);
+      //     color: var(--primary_text);
+      //     background-color: var(--primary_bg);
+      //     outline: none;
+      //   }
     }
   }
 

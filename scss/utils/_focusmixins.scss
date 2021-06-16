@@ -13,52 +13,51 @@
 $animation-duration: 4s;
 $border-thick: 2px;
 
-
 @mixin primary-focus() {
-    outline: none;
-    box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
 }
 
 @mixin secondary-focus() {
-    outline: none;
-    box-shadow: 0 0 0 1px var(--interactive_border);
-    border: 1px solid var(--interactive_border);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--interactive_border);
+  border: 1px solid var(--interactive_border);
 }
 
-@mixin ghost-focus($background:var(--interactive_bg_hover), $border:var(--interactive_border)){
-    outline: none;
-    background-color: $background;
-    box-shadow: 0 0 0 1px $border;
+@mixin ghost-focus(
+  $background: var(--interactive_bg_hover),
+  $border: var(--interactive_border)
+) {
+  outline: none;
+  background-color: $background;
+  box-shadow: 0 0 0 1px $border;
 }
 
 @mixin outline-focus() {
-    outline-offset: -1px;
-    outline: 1px solid var(--interactive_border);
+  outline-offset: -1px;
+  outline: 1px solid var(--interactive_border);
 }
 
-
-
-
-
 @mixin focus-default() {
-    box-shadow: 0 0 0 1px var(--interactive_border), inset 0.25rem 0 0 var(--active_border);
+  box-shadow: 0 0 0 1px var(--interactive_border),
+    inset 0.25rem 0 0 var(--active_border);
 }
 
 @mixin focus-primary() {
-    box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border)
+  box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
 }
 
 @mixin focus-secondary() {
-    box-shadow: 0 0 0 1px var(--interactive_border);
-    border: 1px solid var(--interactive_border);
+  box-shadow: 0 0 0 1px var(--interactive_border);
+  border: 1px solid var(--interactive_border);
 }
 
 @mixin border_focus() {
-    outline: none;
-    box-shadow: inset -0.0625rem 0 0 transparent, inset 0 -0.25rem 0 transparent,
-        inset 0.0625rem 0 0 transparent, 0 0 0 0.125rem var(--interactive_border);
-    border: 0.0625rem solid var(--default_bg);
-    outline: none;
+  outline: none;
+  box-shadow: inset -0.0625rem 0 0 transparent, inset 0 -0.25rem 0 transparent,
+    inset 0.0625rem 0 0 transparent, 0 0 0 0.125rem var(--interactive_border);
+  border: 0.0625rem solid var(--default_bg);
+  outline: none;
 }
 
 /**
@@ -66,160 +65,161 @@ Table,
 Dropdown
 */
 @mixin outline_focus() {
-    outline-offset: -1px;
-    outline: 1px solid var(--interactive_border);
+  outline-offset: -1px;
+  outline: 1px solid var(--interactive_border);
 }
 
 /**
 Dropdown
 */
 @mixin remove_outline_focus() {
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 /**
 Breadcrumb
 **/
 @mixin boxShadow_focus() {
-    outline: none;
-    box-shadow: inset -0.0625rem 0 0 transparent, inset 0 -0.25rem 0 transparent,
-        inset 0.0625rem 0 0 transparent, 0 0 0 0.125rem var(--interactive_border);
-    border: 0;
+  outline: none;
+  box-shadow: inset -0.0625rem 0 0 transparent, inset 0 -0.25rem 0 transparent,
+    inset 0.0625rem 0 0 transparent, 0 0 0 0.125rem var(--interactive_border);
+  border: 0;
 }
-
 
 /**
 Dropdown
 **/
 @mixin boxShadow_only_focus() {
-    outline: none;
-    box-shadow: var(--shadow_focus);
+  outline: none;
+  box-shadow: var(--shadow_focus);
 }
-
 
 /**
 Accordion,Button,Content Swicher
 
 **/
 @mixin primary_focus() {
-    //   &:focus {
-    //     outline: none;
-    //     animation-duration: $animation-duration;
-    //     animation-name: focus-animation-primary;
-    //   }
+  //   &:focus {
+  //     outline: none;
+  //     animation-duration: $animation-duration;
+  //     animation-name: focus-animation-primary;
+  //   }
 
-    //   &:focus-visible {
-    //     outline: none;
-    //     animation-name: none;
-    //     box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
-    //   }
+  //   &:focus-visible {
+  //     outline: none;
+  //     animation-name: none;
+  //     box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
+  //   }
 
-    &:focus,
-    &:active {
-        outline: none;
-        // animation-name: none;
-        box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
-    }
+  &:focus,
+  &:active {
+    outline: none;
+    // animation-name: none;
+    box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
+  }
 }
 
 /**
 Button
 **/
-@mixin secondary_focus($border_color:var(--interactive_border)) {
-    //   &:focus {
-    //     outline: none;
-    //     @include focus_animation_loader($border_color);
-    //   }
+@mixin secondary_focus($border_color: var(--interactive_border)) {
+  //   &:focus {
+  //     outline: none;
+  //     @include focus_animation_loader($border_color);
+  //   }
 
-    //   &:focus-visible {
-    //     outline: none;
-    //     animation-name: none;
-    //     box-shadow: 0 0 0 1px var(--interactive_border);
-    //     border: 1px solid var(--interactive_border);
-    //   }
+  //   &:focus-visible {
+  //     outline: none;
+  //     animation-name: none;
+  //     box-shadow: 0 0 0 1px var(--interactive_border);
+  //     border: 1px solid var(--interactive_border);
+  //   }
 
-    &:focus,
-    &:active {
-        outline: none;
-        // animation-name: none;
-        box-shadow: 0 0 0 1px var(--interactive_border);
-        border: 1px solid var(--interactive_border);
-    }
+  &:focus,
+  &:active {
+    outline: none;
+    // animation-name: none;
+    box-shadow: 0 0 0 1px var(--interactive_border);
+    border: 1px solid var(--interactive_border);
+  }
 }
 
 /**  
 Action Bar
 Button
 **/
-@mixin ghost_focus($background:var(--interactive_bg_hover), $border:var(--interactive_border)) {
-    //   &:focus {
-    //     outline: none;
-    //     animation-duration: $animation-duration;
-    //     animation-name: focus-animation-ghost;
-    //   }
+@mixin ghost_focus(
+  $background: var(--interactive_bg_hover),
+  $border: var(--interactive_border)
+) {
+  //   &:focus {
+  //     outline: none;
+  //     animation-duration: $animation-duration;
+  //     animation-name: focus-animation-ghost;
+  //   }
 
-    // &:focus-visible {
-    //     outline: none;
-    //     animation-name: none;
-    //     background-color: var(--interactive_bg_hover);
-    //     box-shadow: 0 0 0 1px var(--interactive_border);
-    // }
+  // &:focus-visible {
+  //     outline: none;
+  //     animation-name: none;
+  //     background-color: var(--interactive_bg_hover);
+  //     box-shadow: 0 0 0 1px var(--interactive_border);
+  // }
 
-    &:focus,
-    &:active {
-        outline: none;
-        // animation-name: none;
-        background-color: $background;
-        box-shadow: 0 0 0 1px $border;
-    }
+  &:focus,
+  &:active {
+    outline: none;
+    // animation-name: none;
+    background-color: $background;
+    box-shadow: 0 0 0 1px $border;
+  }
 }
 
 @mixin link_focus() {
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 0 1px var(--interactive_border);
-        border-radius: var(--rounded_corner_all_rounded_small);
-        text-decoration: none !important;
-    }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--interactive_border);
+    border-radius: var(--rounded_corner_all_rounded_small);
+    text-decoration: none !important;
+  }
 }
 
 @keyframes focus-animation-primary {
-    from {
-        box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
-    }
+  from {
+    box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
+  }
 
-    to {
-        box-shadow: none;
-    }
+  to {
+    box-shadow: none;
+  }
 }
 
 @keyframes focus-animation-ghost {
-    from {
-        box-shadow: 0 0 0 1px var(--interactive_border);
-        background-color: var(--interactive_bg_hover);
-    }
+  from {
+    box-shadow: 0 0 0 1px var(--interactive_border);
+    background-color: var(--interactive_bg_hover);
+  }
 
-    to {
-        box-shadow: none;
-        background-color: transparent;
-    }
+  to {
+    box-shadow: none;
+    background-color: transparent;
+  }
 }
 
 @mixin focus_animation_loader($border_color) {
-    animation-duration: $animation-duration;
-    animation-name: focus-animation-secondary-danger;
+  animation-duration: $animation-duration;
+  animation-name: focus-animation-secondary-danger;
 
-    @keyframes focus-animation-secondary-danger {
-        from {
-            box-shadow: 0 0 0 1px var(--interactive_border);
-            border: 1px solid var(--interactive_border);
-        }
-
-        to {
-            box-shadow: none;
-            border: 1px solid $border_color;
-        }
+  @keyframes focus-animation-secondary-danger {
+    from {
+      box-shadow: 0 0 0 1px var(--interactive_border);
+      border: 1px solid var(--interactive_border);
     }
+
+    to {
+      box-shadow: none;
+      border: 1px solid $border_color;
+    }
+  }
 }
