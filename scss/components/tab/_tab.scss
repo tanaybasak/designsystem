@@ -55,7 +55,7 @@
     &:focus {
       // outline: 2px solid var(--interactive_border);
 
-      @include boxShadow_focus();
+      @include primary_boxshadow_focus();
       border-radius: var(--rounded_corner_all_rounded_small);
     }
 

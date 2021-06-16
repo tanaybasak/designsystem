@@ -49,7 +49,7 @@
       &:active {
         // outline: 1px solid var(--interactive_border);
         // outline-offset: 0;
-        @include primary-focus();
+        @include primary_focus();
       }
 
       //   &:focus,

@@ -10,11 +10,11 @@ $search-reset-size: 0.759rem;
   padding: 0;
   height: $search-height;
 
-  &:focus {
-    outline: 0;
+  //   &:focus {
+  //     outline: 0;
 
-    border-bottom: 1px solid var(--interactive_border);
-  }
+  //     border-bottom: 1px solid var(--interactive_border);
+  //   }
 
   > * {
     &:disabled {

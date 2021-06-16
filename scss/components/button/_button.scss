@@ -41,7 +41,7 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    @include primary-focus();
+    @include primary_focus();
   }
 
   &:disabled,
@@ -111,7 +111,7 @@ a.#{$prefix}-primary {
     }
   }
   &:focus {
-    @include secondary-focus();
+    @include secondary_focus();
   }
   //   &:focus {
   //     // border: 0.0625rem solid var(--interactive_border);
@@ -211,7 +211,7 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    @include ghost-focus();
+    @include ghost_focus();
   }
 
   //   &:focus {
@@ -249,7 +249,7 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    @include primary-focus();
+    @include primary_focus();
   }
 
   //   @include primary_focus();
@@ -284,7 +284,7 @@ a.#{$prefix}-primary {
     background-color: var(--secondary_bg_hover);
   }
   &:focus {
-    @include secondary-focus();
+    @include secondary_focus();
   }
 
   //   &:focus {

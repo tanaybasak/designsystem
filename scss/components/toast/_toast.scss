@@ -90,7 +90,7 @@ $colorMap: (
     border: none;
     cursor: pointer;
     transition: outline 0.11s, background-color 0.11s;
-
+    border-radius: var(--rounded_corner_tr_rounded_medium);
     svg {
       width: 0.75rem;
       height: 0.75rem;
@@ -103,9 +103,7 @@ $colorMap: (
       }
     }
     &:focus {
-      outline: 0 none;
-      outline-offset: 0;
-      box-shadow: 0 0 0 0.05rem var(--interactive_border);
+      @include primary_boxshadow_focus();
     }
   }
 

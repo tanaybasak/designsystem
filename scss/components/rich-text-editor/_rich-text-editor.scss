@@ -41,11 +41,7 @@
         0 0.125rem 0 var(--input_border);
 
       &:focus {
-        outline: none;
-        border-bottom: transparent;
-        box-shadow: inset -0.0625rem 0 0 transparent,
-          inset 0 -0.0625rem 0 transparent, inset 0.0625rem 0 0 transparent,
-          0 0.125rem 0 var(--interactive_border);
+        @include bottom_boxshodow_focus();
       }
 
       .ql-clipboard {

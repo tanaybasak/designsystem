@@ -117,7 +117,7 @@
         border-top: 0.3rem solid var(--interactive_icon);
       }
       &:focus {
-        @include boxShadow_only_focus();
+        @include ghost_focus();
       }
       &:hover {
         background-color: var(--interactive_bg_hover);
@@ -132,9 +132,9 @@
       transition: all 0.3s ease-in-out;
     }
 
-    .#{$prefix}-dropdown-toggle {
-      border-bottom: 0.125rem solid var(--interactive_border);
-    }
+    // .#{$prefix}-dropdown-toggle {
+    //   border-bottom: 0.125rem solid var(--interactive_border);
+    // }
   }
 }
 
@@ -148,6 +148,7 @@
   overflow: auto;
   background-color: var(--default_bg);
   color: var(--default_text);
+  border-radius: var(--rounded_corner_all_rounded_medium);
 
   .#{$prefix}-dropdown-item {
     height: 2.5rem;
@@ -167,7 +168,7 @@
 
     &:focus {
       text-decoration: none;
-      @include outline-focus();
+      @include outline_focus;
     }
 
     .#{$prefix}-checkbox-label {

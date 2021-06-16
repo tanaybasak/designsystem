@@ -31,8 +31,8 @@
       }
 
       &:focus {
-        outline-offset: -0.0625rem;
-        outline: 0.0625rem solid var(--interactive_border);
+        @include outline_focus();
+        box-shadow: none;
       }
 
       &.#{$prefix}-overflow-option-separator {
@@ -46,8 +46,7 @@
         }
 
         &:focus {
-          outline-offset: -0.0625rem;
-          outline: 0.0625rem solid var(--interactive_border);
+          @include outline_focus();
           background-color: var(--danger_bg_inverse);
           color: var(--default_text_inverse);
         }

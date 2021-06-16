@@ -168,8 +168,10 @@ a {
   }
 
   &:focus {
-    border: 1px solid var(--interactive_border);
-    outline-offset: 3px;
+    // border: 1px solid var(--interactive_border);
+    // outline-offset: 3px;
+    @include primary_focus();
+    border-radius: var(--rounded_corner_all_rounded_small);
   }
 
   &.disable {

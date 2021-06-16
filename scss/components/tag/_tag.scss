@@ -54,15 +54,16 @@
     }
 
     &:focus {
-      @include border_focus();
+      @include primary_focus();
     }
 
     .#{$prefix}-tag-icon,
     .#{$prefix}-tag-close {
       &:focus {
-        border-radius: 1rem;
-        border: 0.125rem solid var(--primary_border);
-        outline: none;
+        // border-radius: 1rem;
+        // border: 0.125rem solid var(--primary_border);
+        // outline: none;
+        @include primary_boxshadow_focus(var(--primary_border));
       }
 
       &:hover {
@@ -82,8 +83,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0 0.0625rem var(--secondary_border);
-      outline: none;
+      @include secondary_focus();
     }
 
     .#{$prefix}-tag-close,
@@ -94,9 +94,10 @@
       }
 
       &:focus {
-        border-radius: 1rem;
-        border: 0.125rem solid var(--interactive_border);
-        outline: none;
+        @include primary_boxshadow_focus();
+        // border-radius: 1rem;
+        // border: 0.125rem solid var(--interactive_border);
+        // outline: none;
       }
     }
 

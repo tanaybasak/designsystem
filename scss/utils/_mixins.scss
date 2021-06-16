@@ -291,14 +291,22 @@ $inputColor-map: (
 
     &:focus {
       outline: none;
+      //   box-shadow: 0 0 0 1px var(--interactive_border);
+      // box-shadow: 0 2px 0px 0px var(--interactive_border);
+
+      box-shadow: var(--input_border_focus_left_width)
+        var(--input_border_focus_bottom_width)
+        var(--input_border_focus_right_width)
+        var(--input_border_focus_top_width)
+        var(--interactive_border);
 
       // box-shadow: var(--input_focus);
       // border-bottom: 1px solid transparent;
 
-      border-left-width: var(--input_border_focus_left_width);
-      border-top-width: var(--input_border_focus_top_width);
-      border-right-width: var(--input_border_focus_right_width);
-      border-bottom-width: var(--input_border_focus_bottom_width);
+      //   border-left-width: var(--input_border_focus_left_width);
+      //   border-top-width: var(--input_border_focus_top_width);
+      //   border-right-width: var(--input_border_focus_right_width);
+      //   border-bottom-width: var(--input_border_focus_bottom_width);
       border-style: solid;
       border-color: var(--interactive_border);
 
