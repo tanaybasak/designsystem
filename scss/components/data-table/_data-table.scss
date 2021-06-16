@@ -57,8 +57,7 @@
         height: 3.125rem;
 
         &:focus {
-          outline-offset: -0.0625rem;
-          outline: 0.0625rem solid var(--interactive_border);
+            @include outline-focus()
         }
       }
 
@@ -232,8 +231,7 @@
       }
 
       tr:focus {
-        outline-offset: -0.125rem;
-        outline: 0.125rem solid var(--interactive_border);
+        @include outline-focus();
       }
     }
 

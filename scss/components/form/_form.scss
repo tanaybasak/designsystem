@@ -33,7 +33,10 @@
 input.#{$prefix}-form-control[data-invalid='true'],
 textarea.#{$prefix}-textarea[data-invalid='true'] {
   // border-bottom: 1px solid var(--danger_border);
-  border-width: var(--input_border_width);
+  border-left-width: var(--input_border_left_width);
+  border-top-width: var(--input_border_top_width);
+  border-right-width: var(--input_border_right_width);
+  border-bottom-width: var(--input_border_bottom_width);
   border-style: solid;
   border-color: var(--danger_border);
 }

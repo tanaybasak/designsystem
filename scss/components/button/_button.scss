@@ -40,44 +40,8 @@ a.#{$prefix}-primary {
     background-color: var(--primary_bg_hover);
   }
 
-  &:focus {
-    // outline-offset: 0.125rem;
-
-    // outline: 0.0625rem solid var(--primary_bg_hover);
-    // @include border_focus();
-
-    outline: none;
-
-    animation-duration: 0.3s;
-    animation-name: slidein;
-  }
-
-  &:focus-visible {
-    // outline-offset: 0.125rem;
-
-    // outline: 0.0625rem solid var(--primary_bg_hover);
-    // @include border_focus();
-
-    outline: none;
-    border: 0.0625rem solid var(--default_bg);
-    box-shadow: var(--shadow_focus);
-  }
-
-  //   p {
-  //     animation-duration: 3s;
-  //     animation-name: slidein;
-  //   }
-
-  @keyframes slidein {
-    from {
-      border: 0.0625rem solid var(--default_bg);
-      box-shadow: var(--shadow_focus);
-    }
-
-    to {
-      border: 1px solid transparent;
-      box-shadow: none;
-    }
+  &:focus{
+      @include primary-focus();
   }
 
   &:disabled,
@@ -103,18 +67,18 @@ a.#{$prefix}-primary {
       }
     }
 
-    &:focus {
-      // outline-offset: 0.125rem;
+    // &:focus {
+    //   // outline-offset: 0.125rem;
 
-      // outline: 0.0625rem solid var(--interactive_border);
+    //   // outline: 0.0625rem solid var(--interactive_border);
 
-      // box-shadow: var(--shadow_focus);
-      @include border_focus();
+    //   // box-shadow: var(--shadow_focus);
+    // //   @include border_focus();
 
-      > .#{$prefix}-btn-icon {
-        fill: var(--primary_icon);
-      }
-    }
+    //   > .#{$prefix}-btn-icon {
+    //     fill: var(--primary_icon);
+    //   }
+    // }
 
     &:disabled,
     &[disabled='disabled'] {
@@ -134,8 +98,7 @@ a.#{$prefix}-primary {
   color: var(--secondary_text);
   border: 0.0625rem solid var(--secondary_border);
 
-  &:hover,
-  &:focus {
+  &:hover {
     outline-offset: 0.125rem;
 
     background-color: var(--secondary_bg_hover);
@@ -147,14 +110,17 @@ a.#{$prefix}-primary {
       fill: var(--secondary_icon);
     }
   }
-  &:focus {
-    // border: 0.0625rem solid var(--interactive_border);
-    @include border_focus();
-
-    > .#{$prefix}-btn-icon {
-      fill: var(--secondary_icon);
+  &:focus{
+    @include secondary-focus();
     }
-  }
+  //   &:focus {
+  //     // border: 0.0625rem solid var(--interactive_border);
+  //     //@include border_focus();
+
+  //     > .#{$prefix}-btn-icon {
+  //       fill: var(--secondary_icon);
+  //     }
+  //   }
 
   &:disabled,
   &[disabled='disabled'] {
@@ -188,16 +154,20 @@ a.#{$prefix}-primary {
       border: 0.0625rem solid var(--danger_border);
     }
 
-    &:focus {
-      background: transparent;
-      color: var(--danger_text);
-      // border: 0.0625rem solid var(--interactive_border);
-      @include border_focus();
+    // @include secondary_focus(var(--danger_border));
+    // &:focus {
+    //     border:1px solid transparent;
+    // }
+    // &:focus {
+    //   background: transparent;
+    //   color: var(--danger_text);
+    //   // border: 0.0625rem solid var(--interactive_border);
+    //   @include border_focus();
 
-      > .#{$prefix}-btn-icon {
-        fill: var(--danger_icon);
-      }
-    }
+    //   > .#{$prefix}-btn-icon {
+    //     fill: var(--danger_icon);
+    //   }
+    // }
 
     &:disabled,
     &[disabled='disabled'] {
@@ -241,14 +211,20 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    background-color: var(--interactive_bg_hover);
-    color: var(--interactive_text);
-    border: 0.0625rem solid var(--interactive_border);
-
-    > .#{$prefix}-btn-icon {
-      fill: var(--interactive_icon);
-    }
+    @include ghost-focus();
   }
+
+  //   &:focus {
+  //     background-color: var(--interactive_bg_hover);
+  //     // color: var(--interactive_text);
+  //     // border: 0.0625rem solid var(--interactive_border);
+
+  //     // > .#{$prefix}-btn-icon {
+  //     //   fill: var(--interactive_icon);
+  //     // }
+  //   }
+
+  
 
   &:disabled,
   &[disabled] {
@@ -274,13 +250,18 @@ a.#{$prefix}-primary {
     background-color: var(--warning_bg_inverse_hover);
   }
 
-  &:focus {
-    // outline-offset: 0.125rem;
-    @include border_focus();
-    > .#{$prefix}-btn-icon {
-      fill: var(--default_icon_high);
-    }
-  }
+  &:focus{
+    @include primary-focus();
+}
+
+//   @include primary_focus();
+  //   &:focus {
+  //     // outline-offset: 0.125rem;
+  //     @include border_focus();
+  //     > .#{$prefix}-btn-icon {
+  //       fill: var(--default_icon_high);
+  //     }
+  //   }
 
   &:disabled,
   &[disabled='disabled'] {
@@ -304,17 +285,20 @@ a.#{$prefix}-primary {
   &:hover {
     background-color: var(--secondary_bg_hover);
   }
-
-  &:focus {
-    // outline-offset: 0.125rem;
-    // outline: 0.0625rem solid var(--interactive_border);
-
-    @include border_focus();
-
-    > .#{$prefix}-btn-icon {
-      fill: var(--default_icon_high);
+  &:focus{
+    @include secondary-focus();
     }
-  }
+
+  //   &:focus {
+  //     // outline-offset: 0.125rem;
+  //     // outline: 0.0625rem solid var(--interactive_border);
+
+  //     @include secondary_danger_focus(var(--default_border_low));
+
+  //     > .#{$prefix}-btn-icon {
+  //       fill: var(--default_icon_high);
+  //     }
+  //   }
 
   &:disabled,
   &[disabled='disabled'] {

@@ -167,9 +167,7 @@
 
     &:focus {
       text-decoration: none;
-      outline-offset: -0.0625rem;
-
-      outline: 0.0625rem solid var(--interactive_border);
+      @include outline-focus();
     }
 
     .#{$prefix}-checkbox-label {

@@ -119,7 +119,7 @@
       line-height: 1.125rem;
 
       &:focus {
-        outline: 1px solid var(--interactive_border);
+        @include outline-focus();
       }
     }
 
@@ -444,11 +444,11 @@
       &:hover,
       &:focus {
         color: var(--default_text_xhigh);
-        outline: none;
+        // outline: none;
       }
-      &:focus {
-        outline: 0.125rem solid var(--interactive_border);
-      }
+    //   &:focus {
+    //     outline: 0.125rem solid var(--interactive_border);
+    //   }
     }
   }
 

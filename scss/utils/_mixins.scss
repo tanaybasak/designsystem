@@ -512,27 +512,3 @@ $inputColor-map: (
     animation: stroke-dash-linear 4s ease-in-out infinite;
   }
 }
-
-@mixin border_focus() {
-  outline: none;
-  box-shadow: var(--shadow_focus);
-  border: 0.0625rem solid var(--default_bg);
-  outline: none;
-}
-
-@mixin outline_focus() {
-  outline-offset: -1px;
-  z-index: 1;
-  outline: 2px solid var(--interactive_border);
-}
-
-@mixin boxShadow_focus() {
-  outline: none;
-  box-shadow: var(--shadow_focus);
-  border: 0;
-  // border: 0.0625rem solid var(--default_bg);
-}
-@mixin boxShadow_only_focus() {
-  outline: none;
-  box-shadow: var(--shadow_focus);
-}
