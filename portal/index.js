@@ -37,41 +37,48 @@ const loadData = async () => {
   });
 
   function clearstyle() {
-    document
-      .querySelector('.main-container')
-      .classList.remove('outline-rounded');
-    document.querySelector('.main-container').classList.remove('outline-sharp');
-    document.querySelector('.main-container').classList.remove('rounded');
-    document.querySelector('.main-container').classList.remove('sharp');
-    document
-      .querySelector('.main-container')
-      .classList.remove('filled-rounded');
-    document.querySelector('.main-container').classList.remove('filled-sharp');
+    document.body.classList.remove('outline-rounded');
+    document.body.classList.remove('outline-sharp');
+    document.body.classList.remove('rounded');
+    document.body.classList.remove('sharp');
+    document.body.classList.remove('filled-rounded');
+    document.body.classList.remove('filled-sharp');
+  }
+
+  function addStyleClass(outline, rounded) {
+    if (outline) {
+      if (rounded) {
+        document.body.classList.add('outline-rounded');
+        document.body.classList.add('rounded');
+      } else {
+        document.body.classList.add('outline-sharp');
+        document.body.classList.add('sharp');
+      }
+    } else {
+      if (rounded) {
+        document.body.classList.add('filled-rounded');
+        document.body.classList.add('rounded');
+      } else {
+        document.body.classList.add('filled-sharp');
+        document.body.classList.add('sharp');
+      }
+    }
   }
 
   document.querySelector('#rounded-toggle').addEventListener('change', e => {
     clearstyle();
-    if (e.target.checked) {
-      document.querySelector('.main-container').classList.add('rounded');
-      if (document.querySelector('#outline-toggle').checked) {
-        document
-          .querySelector('.main-container')
-          .classList.add('outline-rounded');
-      } else {
-        document
-          .querySelector('.main-container')
-          .classList.add('filled-rounded');
-      }
-    } else {
-      document.querySelector('.main-container').classList.add('sharp');
-      if (document.querySelector('#outline-toggle').checked) {
-        document
-          .querySelector('.main-container')
-          .classList.add('outline-sharp');
-      } else {
-        document.querySelector('.main-container').classList.add('filled-sharp');
-      }
-    }
+    addStyleClass(
+      document.querySelector('#outline-toggle').checked,
+      e.target.checked
+    );
+  });
+
+  document.querySelector('#outline-toggle').addEventListener('change', e => {
+    clearstyle();
+    addStyleClass(
+      e.target.checked,
+      document.querySelector('#rounded-toggle').checked
+    );
   });
 
   document.querySelector('#typo-toggle').addEventListener('change', e => {
@@ -83,43 +90,6 @@ const loadData = async () => {
       document.body.classList.add('hcl-productive');
     }
   });
-
-  document.querySelector('#outline-toggle').addEventListener('change', e => {
-    clearstyle();
-    if (e.target.checked) {
-      document.querySelector('.main-container').classList.add('outline');
-      if (document.querySelector('#rounded-toggle').checked) {
-        document
-          .querySelector('.main-container')
-          .classList.add('outline-rounded');
-      } else {
-        document
-          .querySelector('.main-container')
-          .classList.add('outline-sharp');
-      }
-    } else {
-      document.querySelector('.main-container').classList.add('filled');
-      if (document.querySelector('#rounded-toggle').checked) {
-        document
-          .querySelector('.main-container')
-          .classList.add('filled-rounded');
-      } else {
-        document.querySelector('.main-container').classList.add('filled-sharp');
-      }
-    }
-  });
-
-  //   window.patron.toggle('.outline-toggle', {
-  //     onChange: e => {
-  //       console.log('e');
-  //     }
-  //   });
-
-  //   window.patron.toggle('.rounded-toggle', {
-  //     onChange: e => {
-  //       console.log('e');
-  //     }
-  //   });
 
   const routerArray = [];
   sidebarItems.default.map(item => {
