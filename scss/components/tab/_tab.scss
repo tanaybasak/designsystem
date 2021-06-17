@@ -13,6 +13,8 @@
     padding: 0.4rem 0;
     border-bottom: 2px solid transparent;
 
+    @include getTypoMixinProperties($typoThemeMaps, 'text-section-nav');
+
     &.#{$prefix}-tabs-disabled {
       cursor: not-allowed;
       > a {
@@ -36,6 +38,7 @@
     }
 
     &.active {
+      @include getTypoMixinProperties($typoThemeMaps, 'text-additional-active');
       > a {
         outline: none;
 

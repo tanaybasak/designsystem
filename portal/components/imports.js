@@ -38,6 +38,7 @@ import toggle from './toggle';
 import toolbar from './toolbar';
 import tooltip from './tooltip';
 import tree from './tree';
+import typography from './typography';
 export {
   accordion,
   actionbar,
@@ -78,5 +79,6 @@ export {
   toggle,
   toolbar,
   tooltip,
-  tree
+  tree,
+  typography
 };

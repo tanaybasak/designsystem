@@ -74,6 +74,16 @@ const loadData = async () => {
     }
   });
 
+  document.querySelector('#typo-toggle').addEventListener('change', e => {
+    if (e.target.checked) {
+      document.body.classList.remove('hcl-productive');
+      document.body.classList.add('hcl-expressive');
+    } else {
+      document.body.classList.remove('hcl-expressive');
+      document.body.classList.add('hcl-productive');
+    }
+  });
+
   document.querySelector('#outline-toggle').addEventListener('change', e => {
     clearstyle();
     if (e.target.checked) {

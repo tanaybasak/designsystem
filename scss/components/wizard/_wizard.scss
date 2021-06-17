@@ -50,10 +50,14 @@
       min-width: 0.625rem;
       width: 100%;
       height: 1.125rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      line-height: 1.125rem;
-      letter-spacing: 0.1rem;
+      // font-size: 0.875rem;
+      // font-weight: 500;
+      // line-height: 1.125rem;
+      // letter-spacing: 0.1rem;
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-heading-small'
+      );
       color: var(--default_text_high);
       text-overflow: ellipsis;
       overflow: hidden;
@@ -63,10 +67,14 @@
       min-width: 0.625rem;
       width: 100%;
       height: 1rem;
-      font-size: 0.75rem;
-      font-weight: normal;
-      line-height: 1rem;
-      letter-spacing: 0.02rem;
+      // font-size: 0.75rem;
+      // font-weight: normal;
+      // line-height: 1rem;
+      // letter-spacing: 0.02rem;
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-content-descriptive'
+      );
       color: var(--default_text_low);
       text-overflow: ellipsis;
       overflow: hidden;
@@ -189,8 +197,8 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      font-weight: 300;
-      line-height: 1.2;
+      // font-weight: 300;
+      // line-height: 1.2;
     }
     // Only desktop - Design 1
     &:not(.#{$prefix}-wizard__no-title) {
@@ -610,18 +618,19 @@
       justify-content: center;
       align-items: center;
     }
-    .step-name,
-    .step-description {
-      font-size: 0.875rem;
-      line-height: 1.125rem;
-      letter-spacing: 0.1rem;
-    }
     .step-name {
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-descriptive'
+      );
       color: var(--default_text_low);
     }
     .step-description {
       margin-top: 0.375rem;
-      font-weight: 500;
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-heading-small'
+      );
       color: var(--default_text_high);
     }
     .wiz-item {

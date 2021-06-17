@@ -51,6 +51,9 @@
     padding: 1rem 1.5rem;
     margin-top: 1.25rem;
     word-wrap: break-word;
+    h5 {
+      @include getTypoMixinProperties($typoThemeMaps, 'text-content-heading');
+    }
   }
 
   @include media-breakpoint-between(md, xxxl) {
@@ -61,6 +64,7 @@
   }
 
   &-label {
+    @include getTypoMixinProperties($typoThemeMaps, 'text-content-descriptive');
     color: var(--default_text);
 
     &-hide {
@@ -101,6 +105,7 @@
     width: 100%;
     padding: 1rem 1.5rem;
     max-height: 15rem;
+    @include getTypoMixinProperties($typoThemeMaps, 'text-content-body-long');
   }
 
   @include media-breakpoint-between(md, xxxl) {

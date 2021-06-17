@@ -15,6 +15,18 @@ export function render() {
               <li class="hcl-header-icon"><span class="">Patronus Vanilla Version ${version}<span></li>
               <li class="hcl-header-icon">
               
+              <span class="hcl-toggle-small typography-toggle">
+  <input type="checkbox" id="typo-toggle">
+  <label class="hcl-toggle-label" aria-label="simple small toggle" for="typo-toggle">
+    <span class="hcl-switch"></span>
+  </label>
+  <label class="hcl-toggle-off">Productive</label>
+  <label class="hcl-toggle-on">Expressive</label>
+</span>
+
+              </li>
+              <li class="hcl-header-icon">
+              
               <span class="hcl-toggle-small outline-toggle">
   <input type="checkbox" id="outline-toggle">
   <label class="hcl-toggle-label" aria-label="simple small toggle" for="outline-toggle">

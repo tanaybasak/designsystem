@@ -1,8 +1,7 @@
 %button {
   text-align: center;
   cursor: pointer;
-  line-height: 1rem;
-  font-size: 0.875rem;
+  @include getTypoMixinProperties($typoThemeMaps, 'text-content-action');
   border: 0.0625rem solid transparent;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -130,7 +129,6 @@ a.#{$prefix}-primary {
     }
 
     opacity: var(--disabled_all);
-
     cursor: not-allowed;
 
     > .#{$prefix}-btn-icon {
@@ -144,7 +142,6 @@ a.#{$prefix}-primary {
 
   &.#{$prefix}-danger {
     background: transparent;
-
     border: 0.0625rem solid var(--danger_border);
     color: var(--danger_text);
 
@@ -182,7 +179,6 @@ a.#{$prefix}-primary {
       // @extend %disable;
 
       opacity: var(--disabled_all);
-
       cursor: not-allowed;
       > .#{$prefix}-btn-icon {
         fill: var(--danger_icon);
@@ -227,7 +223,6 @@ a.#{$prefix}-primary {
   &:disabled,
   &[disabled] {
     opacity: var(--disabled_all);
-
     cursor: not-allowed;
 
     &:hover {

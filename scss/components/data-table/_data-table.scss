@@ -50,9 +50,7 @@
       td {
         display: table-cell;
         //padding: 0.625rem 0.625rem;
-        font-size: 0.875rem;
         text-align: left;
-        font-weight: 400;
         vertical-align: inherit;
         height: 3.125rem;
 
@@ -60,6 +58,19 @@
           @include outline_focus();
         }
       }
+
+      // td {
+      //   @include getTypoMixinProperties(
+      //     $typoThemeMaps,
+      //     'text-component-body-short'
+      //   );
+      // }
+      // th {
+      //   @include getTypoMixinProperties(
+      //     $typoThemeMaps,
+      //     'text-component-heading-small'
+      //   );
+      // }
 
       td:first-child {
         border-left: 0.0625rem solid transparent;
@@ -70,6 +81,10 @@
       }
 
       th {
+        @include getTypoMixinProperties(
+          $typoThemeMaps,
+          'text-component-heading-small'
+        );
         .#{$prefix}-data-table-header-wrapper {
           width: 100%;
           height: 100%;
@@ -193,6 +208,10 @@
         padding: 0.625rem 0.625rem;
         border-bottom: 0.0625rem solid var(--default_border_xlow);
         background-color: var(--default_bg);
+        @include getTypoMixinProperties(
+          $typoThemeMaps,
+          'text-component-body-short'
+        );
 
         .overflow-onhover {
           visibility: hidden;
