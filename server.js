@@ -36,13 +36,13 @@ const serverConfig = {
 };
 
 if (ip !== '10.134.37.8') {
-  http.createServer(app).listen(8000, function (err) {
+  http.createServer(app).listen(8062, function (err) {
     if (err) {
       console.error(err);
     }
   });
 } else {
-  https.createServer(serverConfig, app).listen(8000, function (err) {
+  https.createServer(serverConfig, app).listen(8062, function (err) {
     if (err) {
       console.error(err);
     }
