@@ -11,6 +11,7 @@ $colorMap: (
   max-width: 52rem;
   margin: 1rem 0;
   z-index: 999;
+  border-radius: var(--rounded_corner_all_rounded_medium);
 
   @each $key, $value in $colorMap {
     &.#{$prefix}-#{$key} {
@@ -75,11 +76,11 @@ $colorMap: (
         float: right;
         margin-left: 1rem;
 
-        &:focus {
-          border: 0;
-          outline: 0.0625rem solid var(--interactive_border);
-          outline-offset: 0;
-        }
+        // &:focus {
+        //   border: 0;
+        //   outline: 0.0625rem solid var(--interactive_border);
+        //   outline-offset: 0;
+        // }
       }
     }
   }
@@ -89,6 +90,7 @@ $colorMap: (
     cursor: pointer;
     height: 2.5rem;
     width: 2.5rem;
+    border-radius: var(--rounded_corner_tr_rounded_medium);
 
     svg {
       width: 0.75rem;
@@ -102,9 +104,7 @@ $colorMap: (
       }
     }
     &:focus {
-      outline: 0 none;
-      outline-offset: 0;
-      box-shadow: 0 0 0 0.05rem var(--interactive_border);
+      @include primary_boxshadow_focus();
     }
   }
 }

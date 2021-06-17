@@ -53,7 +53,10 @@
     }
 
     &:focus {
-      outline: 2px solid var(--interactive_border);
+      // outline: 2px solid var(--interactive_border);
+
+      @include primary_boxshadow_focus();
+      border-radius: var(--rounded_corner_all_rounded_small);
     }
 
     &:hover {

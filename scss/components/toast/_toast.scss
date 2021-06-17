@@ -37,6 +37,7 @@ $colorMap: (
   top: 0;
   right: 0;
   box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: var(--rounded_corner_all_rounded_medium);
 
   background-color: var(--default_bg);
   color: var(--default_text);
@@ -89,7 +90,7 @@ $colorMap: (
     border: none;
     cursor: pointer;
     transition: outline 0.11s, background-color 0.11s;
-
+    border-radius: var(--rounded_corner_tr_rounded_medium);
     svg {
       width: 0.75rem;
       height: 0.75rem;
@@ -102,9 +103,7 @@ $colorMap: (
       }
     }
     &:focus {
-      outline: 0 none;
-      outline-offset: 0;
-      box-shadow: 0 0 0 0.05rem var(--interactive_border);
+      @include primary_boxshadow_focus();
     }
   }
 

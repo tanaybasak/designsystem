@@ -13,6 +13,7 @@
   width: 100%;
   padding: 0.5rem 1.5rem;
   background-color: var(--primary_bg);
+  border-radius: var(--rounded_corner_all_rounded_medium);
 
   &-list {
     > .#{$prefix}-btn {
@@ -24,15 +25,20 @@
       }
 
       &:focus {
-        border: 0.0625rem solid var(--primary_border);
-        background-color: var(--primary_bg);
-
-        outline: none;
-
-        > .#{$prefix}-btn-icon {
-          fill: var(--primary_icon);
-        }
+        @include ghost_focus(var(--primary_bg), var(--primary_border));
       }
+      //@include ghost_focus(var(--primary_bg) , var(--primary_border));
+
+      //   &:focus {
+      //     // border: 0.0625rem solid var(--primary_border);
+      //     background-color: var(--primary_bg);
+
+      //     // outline: none;
+
+      //     // > .#{$prefix}-btn-icon {
+      //     //   fill: var(--primary_icon);
+      //     // }
+      //   }
       &:hover {
         background-color: var(--primary_bg_hover);
       }
@@ -46,7 +52,7 @@
     flex-wrap: wrap;
     color: var(--primary_text);
     button {
-      padding: 10;
+      //   padding: 10;
       margin: 0;
       border-bottom: 0.0625rem solid transparent;
       color: var(--primary_text);
@@ -57,11 +63,16 @@
       }
 
       &:focus {
-        border: 0.0625rem solid var(--primary_border);
-        color: var(--primary_text);
-        background-color: var(--primary_bg);
-        outline: none;
+        @include ghost_focus(var(--primary_bg), var(--primary_border));
       }
+      //@include ghost_focus(var(--primary_bg) , var(--primary_border));
+
+      //   &:focus {
+      //     border: 0.0625rem solid var(--primary_border);
+      //     color: var(--primary_text);
+      //     background-color: var(--primary_bg);
+      //     outline: none;
+      //   }
     }
   }
 

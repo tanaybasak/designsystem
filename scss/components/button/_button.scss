@@ -15,6 +15,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  border-radius: var(--rounded_corner_all_rounded_small);
 
   &-icon {
     width: 1rem;
@@ -40,9 +41,7 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    outline-offset: 0.125rem;
-
-    outline: 0.0625rem solid var(--primary_bg_hover);
+    @include primary_focus();
   }
 
   &:disabled,
@@ -68,15 +67,18 @@ a.#{$prefix}-primary {
       }
     }
 
-    &:focus {
-      outline-offset: 0.125rem;
+    // &:focus {
+    //   // outline-offset: 0.125rem;
 
-      outline: 0.0625rem solid var(--interactive_border);
+    //   // outline: 0.0625rem solid var(--interactive_border);
 
-      > .#{$prefix}-btn-icon {
-        fill: var(--primary_icon);
-      }
-    }
+    //   // box-shadow: var(--shadow_focus);
+    // //   @include border_focus();
+
+    //   > .#{$prefix}-btn-icon {
+    //     fill: var(--primary_icon);
+    //   }
+    // }
 
     &:disabled,
     &[disabled='disabled'] {
@@ -96,26 +98,29 @@ a.#{$prefix}-primary {
   color: var(--secondary_text);
   border: 0.0625rem solid var(--secondary_border);
 
-  &:hover,
-  &:focus {
+  &:hover {
     outline-offset: 0.125rem;
 
     background-color: var(--secondary_bg_hover);
     color: var(--secondary_text);
     border: 0.0625rem solid var(--secondary_border);
-    outline: 0.0625rem solid var(--interactive_border);
+    // outline: 0.0625rem solid var(--interactive_border);
 
     > .#{$prefix}-btn-icon {
       fill: var(--secondary_icon);
     }
   }
   &:focus {
-    border: 0.0625rem solid var(--interactive_border);
-
-    > .#{$prefix}-btn-icon {
-      fill: var(--secondary_icon);
-    }
+    @include secondary_focus();
   }
+  //   &:focus {
+  //     // border: 0.0625rem solid var(--interactive_border);
+  //     //@include border_focus();
+
+  //     > .#{$prefix}-btn-icon {
+  //       fill: var(--secondary_icon);
+  //     }
+  //   }
 
   &:disabled,
   &[disabled='disabled'] {
@@ -149,15 +154,20 @@ a.#{$prefix}-primary {
       border: 0.0625rem solid var(--danger_border);
     }
 
-    &:focus {
-      background: transparent;
-      color: var(--danger_text);
-      border: 0.0625rem solid var(--interactive_border);
+    // @include secondary_focus(var(--danger_border));
+    // &:focus {
+    //     border:1px solid transparent;
+    // }
+    // &:focus {
+    //   background: transparent;
+    //   color: var(--danger_text);
+    //   // border: 0.0625rem solid var(--interactive_border);
+    //   @include border_focus();
 
-      > .#{$prefix}-btn-icon {
-        fill: var(--danger_icon);
-      }
-    }
+    //   > .#{$prefix}-btn-icon {
+    //     fill: var(--danger_icon);
+    //   }
+    // }
 
     &:disabled,
     &[disabled='disabled'] {
@@ -189,7 +199,7 @@ a.#{$prefix}-primary {
   background-color: var(--interactive_bg);
   color: var(--interactive_text);
 
-  border: none;
+  //   border: none;
 
   &:hover {
     background-color: var(--interactive_bg_hover);
@@ -201,14 +211,18 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    background-color: var(--interactive_bg_hover);
-    color: var(--interactive_text);
-    outline: 0.0625rem solid var(--interactive_border);
-
-    > .#{$prefix}-btn-icon {
-      fill: var(--interactive_icon);
-    }
+    @include ghost_focus();
   }
+
+  //   &:focus {
+  //     background-color: var(--interactive_bg_hover);
+  //     // color: var(--interactive_text);
+  //     // border: 0.0625rem solid var(--interactive_border);
+
+  //     // > .#{$prefix}-btn-icon {
+  //     //   fill: var(--interactive_icon);
+  //     // }
+  //   }
 
   &:disabled,
   &[disabled] {
@@ -235,12 +249,17 @@ a.#{$prefix}-primary {
   }
 
   &:focus {
-    outline-offset: 0.125rem;
-    outline: 0.0625rem solid var(--interactive_border);
-    > .#{$prefix}-btn-icon {
-      fill: var(--default_icon_high);
-    }
+    @include primary_focus();
   }
+
+  //   @include primary_focus();
+  //   &:focus {
+  //     // outline-offset: 0.125rem;
+  //     @include border_focus();
+  //     > .#{$prefix}-btn-icon {
+  //       fill: var(--default_icon_high);
+  //     }
+  //   }
 
   &:disabled,
   &[disabled='disabled'] {
@@ -264,14 +283,20 @@ a.#{$prefix}-primary {
   &:hover {
     background-color: var(--secondary_bg_hover);
   }
-
   &:focus {
-    outline-offset: 0.125rem;
-    outline: 0.0625rem solid var(--interactive_border);
-    > .#{$prefix}-btn-icon {
-      fill: var(--default_icon_high);
-    }
+    @include secondary_focus();
   }
+
+  //   &:focus {
+  //     // outline-offset: 0.125rem;
+  //     // outline: 0.0625rem solid var(--interactive_border);
+
+  //     @include secondary_danger_focus(var(--default_border_low));
+
+  //     > .#{$prefix}-btn-icon {
+  //       fill: var(--default_icon_high);
+  //     }
+  //   }
 
   &:disabled,
   &[disabled='disabled'] {
@@ -290,4 +315,8 @@ a.#{$prefix}-primary {
 .#{$prefix}-sm {
   padding: 0.4375rem 1rem;
   height: 2rem;
+}
+
+.#{$prefix}-btn-no-margin {
+  margin: 0 !important;
 }

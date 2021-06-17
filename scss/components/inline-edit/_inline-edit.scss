@@ -31,6 +31,7 @@
         box-shadow: 0 0.25rem 0.5rem 0.15rem var(--default_shadow);
         background-color: var(--default_bg);
         padding: 0.25rem;
+        border-radius: var(--rounded_corner_all_rounded_medium);
 
         button {
           margin-right: 0.25rem;

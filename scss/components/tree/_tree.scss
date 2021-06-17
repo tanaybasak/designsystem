@@ -157,6 +157,7 @@ $default-node-height: 2rem;
         position: absolute;
         right: 0;
         background: transparent;
+        border-radius: var(--rounded_corner_all_rounded_small);
       }
 
       &.#{$prefix}-node-highlight {
@@ -228,7 +229,7 @@ $default-node-height: 2rem;
         outline: none;
 
         .#{$prefix}-node-highlight-wrapper {
-          outline: 0.0625rem solid var(--interactive_border);
+          @include primary_border_focus();
         }
 
         .action-on-hover {

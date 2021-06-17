@@ -56,9 +56,9 @@
       letter-spacing: 0;
       align-self: flex-end;
       cursor: pointer;
-      &:hover {
-        text-decoration: underline;
-      }
+      //   &:hover {
+      //     //text-decoration: underline;
+      //   }
 
       &:not(:last-child)::after {
         content: '|';
@@ -70,7 +70,7 @@
       .#{$prefix}-link {
         white-space: nowrap;
         @include getTextDecorationLine('none');
-        border-bottom: 0.0625rem solid transparent;
+        //border-bottom: 0.0625rem solid transparent;
         transition: 0.25s;
         font-size: 0.75rem;
 
@@ -85,12 +85,14 @@
           color: var(--default_text_high);
         }
 
-        &:focus {
-          border: unset;
-          text-decoration: none;
-          border-bottom: none !important;
-          outline: 2px solid var(--interactive_border) !important;
-        }
+        // &:focus {
+        //   border: unset;
+        //   text-decoration: none;
+        //   //border-bottom: none !important;
+        //   // outline: 2px solid var(--interactive_border) !important;
+        //   @include border_focus();
+        //   border-radius: var(--rounded_corner_all_rounded_small);
+        // }
 
         &[disabled] {
           cursor: not-allowed;

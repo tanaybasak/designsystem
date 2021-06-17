@@ -5,6 +5,7 @@
   max-height: 12rem;
   overflow: auto;
   background-color: var(--default_bg);
+  border-radius: var(--rounded_corner_all_rounded_medium);
 
   .#{$prefix}-overflow-option {
     font-size: 0.875rem;
@@ -30,8 +31,8 @@
       }
 
       &:focus {
-        outline-offset: -0.0625rem;
-        outline: 0.0625rem solid var(--interactive_border);
+        @include outline_focus();
+        box-shadow: none;
       }
 
       &.#{$prefix}-overflow-option-separator {
@@ -45,8 +46,7 @@
         }
 
         &:focus {
-          outline-offset: -0.0625rem;
-          outline: 0.0625rem solid var(--interactive_border);
+          @include outline_focus();
           background-color: var(--danger_bg_inverse);
           color: var(--default_text_inverse);
         }
@@ -79,21 +79,22 @@
 
 .#{$prefix}-overflow-btn {
   width: 2rem;
-  height: 2rem;
-  background: transparent;
+  //   height: 2rem;
+  //   background: transparent;
 
-  &:hover {
-    color: var(--interactive_icon_hover);
-    background-color: var(--interactive_bg_hover);
-    text-decoration: none;
-    cursor: pointer;
-  }
+  //   &:hover {
+  //     color: var(--interactive_icon_hover);
+  //     background-color: var(--interactive_bg_hover);
+  //     text-decoration: none;
+  //     cursor: pointer;
+  //   }
 
-  &:focus {
-    outline-offset: -1px;
+  //   &:focus {
+  //     outline-offset: -1px;
 
-    outline: 0.125rem solid var(--interactive_border);
-  }
+  //     outline: 0.125rem solid var(--interactive_border);
+  //     border-radius: var(--border_corner_all_small);
+  //   }
 }
 
 .#{$prefix}-overlay-wrapper-active {

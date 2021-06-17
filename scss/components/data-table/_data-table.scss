@@ -10,6 +10,7 @@
   width: 100%;
   border-bottom: transparent;
   border: 0.0625rem solid var(--default_border_xlow);
+  border-radius: var(--rounded_corner_all_rounded_medium);
   color: var(--default_text);
 
   &-resizer {
@@ -56,8 +57,7 @@
         height: 3.125rem;
 
         &:focus {
-          outline-offset: -0.0625rem;
-          outline: 0.0625rem solid var(--interactive_border);
+          @include outline_focus();
         }
       }
 
@@ -231,8 +231,7 @@
       }
 
       tr:focus {
-        outline-offset: -0.125rem;
-        outline: 0.125rem solid var(--interactive_border);
+        @include outline_focus();
       }
     }
 

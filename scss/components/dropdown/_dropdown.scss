@@ -27,16 +27,16 @@
   }
 
   .#{$prefix}-dropdown-toggle {
-    font-size: 0.875rem;
+    // font-size: 0.875rem;
     line-height: 1.125rem;
     outline: none;
-    width: 100%;
+    // width: 100%;
     justify-content: left;
     margin: 0;
     padding-right: 2.5rem;
-    background-color: var(--input_bg);
-    color: var(--input_text);
-    border-bottom: 0.0625rem solid var(--input_border);
+    // background-color: var(--input_bg);
+    // color: var(--input_text);
+    // border-bottom: 0.0625rem solid var(--input_border);
     white-space: nowrap;
     display: block;
     overflow: hidden;
@@ -89,10 +89,13 @@
       cursor: not-allowed;
     }
 
-    &:focus {
-      outline-offset: -0.0625rem;
-      border-bottom: 0.125rem solid var(--interactive_border);
-    }
+    // &:focus {
+    //   // outline-offset: -0.0625rem;
+    //   // border-bottom: 0.125rem solid var(--interactive_border);
+    //   border-width: var(--input_border_focus_width);
+    //   border-style: solid;
+    //   border-color: var(--interactive_border);
+    // }
 
     .#{$prefix}-tag-primary {
       margin-right: 1rem;
@@ -103,6 +106,23 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    &.hcl-form-control.hcl-ghost-dropdown {
+      border-width: 0;
+      background-color: transparent;
+      color: var(--interactive_text);
+
+      &::after {
+        content: '';
+        border-top: 0.3rem solid var(--interactive_icon);
+      }
+      &:focus {
+        @include ghost_focus();
+      }
+      &:hover {
+        background-color: var(--interactive_bg_hover);
+      }
+    }
   }
 
   &.#{$prefix}-overlay-wrapper-active {
@@ -112,9 +132,9 @@
       transition: all 0.3s ease-in-out;
     }
 
-    .#{$prefix}-dropdown-toggle {
-      border-bottom: 0.125rem solid var(--interactive_border);
-    }
+    // .#{$prefix}-dropdown-toggle {
+    //   border-bottom: 0.125rem solid var(--interactive_border);
+    // }
   }
 }
 
@@ -128,6 +148,7 @@
   overflow: auto;
   background-color: var(--default_bg);
   color: var(--default_text);
+  border-radius: var(--rounded_corner_all_rounded_medium);
 
   .#{$prefix}-dropdown-item {
     height: 2.5rem;
@@ -147,9 +168,7 @@
 
     &:focus {
       text-decoration: none;
-      outline-offset: -0.0625rem;
-
-      outline: 0.0625rem solid var(--interactive_border);
+      @include outline_focus;
     }
 
     .#{$prefix}-checkbox-label {

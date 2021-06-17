@@ -23,6 +23,7 @@
     &-warning {
       border-top: 0.25rem solid var(--warning_border);
     }
+    border-radius: var(--rounded_corner_all_rounded_big);
     position: relative;
     border-top: 0.25rem solid var(--secondary_border);
     background-color: var(--default_bg);
@@ -75,6 +76,7 @@
     padding: 0.875rem;
     background: transparent;
     cursor: pointer;
+    border-radius: var(--rounded_corner_tr_rounded_medium);
 
     svg {
       width: 0.75rem;
@@ -88,9 +90,7 @@
       }
     }
     &:focus {
-      outline: 0 none;
-      outline-offset: 0;
-      box-shadow: 0 0 0 0.05rem var(--interactive_border);
+      @include primary_boxshadow_focus();
     }
     position: absolute;
   }
@@ -120,6 +120,7 @@
     padding: 1rem 1.5rem;
     align-items: center;
     background-color: var(--default_bg_low);
+    border-radius: var(--rounded_corner_bottom_rounded_big);
 
     &-hide {
       display: none;

@@ -2,7 +2,7 @@ export function render() {
   const pdsLogo = require('../../asset/pds.png');
   const version = require('../../package.json').version;
   const template = `
-      <header class="hcl-header" data-withsidenav="true">
+      <header class="hcl-header blue_active_blue_dark" data-withsidenav="true">
           <a href="/" class="hcl-header-brand" tabindex="0">
               <img
                   alt="Logo"
@@ -13,6 +13,30 @@ export function render() {
           <div class="hcl-header-wrapper">
               <ul class="hcl-header-icons">
               <li class="hcl-header-icon"><span class="">Patronus Vanilla Version ${version}<span></li>
+              <li class="hcl-header-icon">
+              
+              <span class="hcl-toggle-small outline-toggle">
+  <input type="checkbox" id="outline-toggle">
+  <label class="hcl-toggle-label" aria-label="simple small toggle" for="outline-toggle">
+    <span class="hcl-switch"></span>
+  </label>
+  <label class="hcl-toggle-off">Filled</label>
+  <label class="hcl-toggle-on">Outline</label>
+</span>
+
+              </li>
+              <li class="hcl-header-icon">
+              
+              <span class="hcl-toggle-small rounded-toggle">
+  <input type="checkbox" id="rounded-toggle">
+  <label class="hcl-toggle-label" aria-label="disabled checked small toggle" for="rounded-toggle">
+    <span class="hcl-switch"></span>
+  </label>
+  <label class="hcl-toggle-off">Sharp</label>
+  <label class="hcl-toggle-on">Rounded</label>
+</span>
+              
+              </li>
                   <li class="hcl-header-icon">
                   <div id="theme-overflow" class="hcl-overlay-wrapper">
   <button class="hcl-btn hcl-primary hcl-sm" aria-label="Left Overflow Menu" role="Overflow Menu">

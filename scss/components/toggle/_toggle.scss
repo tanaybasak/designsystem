@@ -82,6 +82,7 @@
       width: 3rem;
 
       background-color: var(--default_border);
+      border-radius: var(--rounded_corner_all_rounded_full);
     }
 
     .#{$prefix}-switch {
@@ -144,8 +145,7 @@
 
     &:focus ~ .#{$prefix}-toggle-label {
       .#{$prefix}-switch {
-        box-shadow: 0 0 0 0.125rem var(--interactive_border);
-        border: 0.0625rem solid var(--default_bg);
+        @include toggle_focus();
       }
     }
   }
@@ -167,15 +167,14 @@
   .#{$prefix}-toggle-label {
     height: 1rem;
     width: 2rem;
-    border-radius: 6.25rem;
+    // border-radius: 6.25rem;
 
     &::before {
       height: 1rem;
       width: 2rem;
-      border-radius: 6.25rem;
-
       background-color: var(--default_bg_high);
       border: 0.0625rem solid var(--default_border);
+      border-radius: var(--rounded_corner_all_rounded_full);
     }
 
     .#{$prefix}-switch {
@@ -244,8 +243,7 @@
 
     &:focus ~ .#{$prefix}-toggle-label {
       &::before {
-        box-shadow: 0 0 0 0.125rem var(--interactive_border);
-        border: 0.0625rem solid var(--default_bg);
+        @include toggle_focus();
       }
     }
   }
