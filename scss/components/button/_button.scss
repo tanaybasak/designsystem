@@ -151,6 +151,10 @@ a.#{$prefix}-primary {
       border: 0.0625rem solid var(--danger_border);
     }
 
+    &:focus {
+      @include secondary_focus();
+    }
+
     // @include secondary_focus(var(--danger_border));
     // &:focus {
     //     border:1px solid transparent;

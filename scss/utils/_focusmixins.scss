@@ -15,17 +15,17 @@ $border-thick: 2px;
 
 @mixin primary_focus() {
   outline: none;
-  box-shadow: 0 0 0 1px var(--default_bg), 0 0 0 2px var(--interactive_border);
+  box-shadow: 0 0 0 2px var(--default_bg), 0 0 0 4px var(--interactive_border);
 }
 
 @mixin primary_boxshadow_focus($border: var(--interactive_border)) {
   outline: none;
-  box-shadow: 0 0 0 1px $border;
+  box-shadow: 0 0 0 2px $border;
 }
 
 @mixin primary_border_focus() {
   outline: none;
-  border: 0.0625rem solid var(--interactive_border);
+  border: 2px solid var(--interactive_border);
 }
 
 @mixin secondary_focus() {
@@ -40,11 +40,11 @@ $border-thick: 2px;
 ) {
   outline: none;
   background-color: $background;
-  box-shadow: 0 0 0 1px $border;
+  box-shadow: 0 0 0 2px $border;
 }
 @mixin outline_focus($border: var(--interactive_border)) {
-  outline-offset: -1px;
-  outline: 1px solid $border;
+  outline-offset: -2px;
+  outline: 2px solid $border;
 }
 
 @mixin slider_focus() {
