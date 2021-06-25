@@ -86,7 +86,7 @@ $colorMap: (
     border: none;
     cursor: pointer;
     transition: outline 0.11s, background-color 0.11s;
-    border-radius: var(--rounded_corner_tr_rounded_medium);
+    border-radius: var(--rounded_corner_all_rounded_medium);
     svg {
       width: 0.75rem;
       height: 0.75rem;
@@ -105,6 +105,6 @@ $colorMap: (
 
   .#{$prefix}-toast-icon-container {
     display: flex;
-    align-items: center;
+    // align-items: center;
   }
 }

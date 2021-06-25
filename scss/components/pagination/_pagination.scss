@@ -14,7 +14,7 @@ $pagination-line-height: 1.125rem;
   border-radius: var(--rounded_corner_all_rounded_medium);
   background-color: var(--default_bg);
   border: 1px solid var(--default_border_xlow);
-  padding: 0 0.125rem;
+  padding: 0 var(--corner_medium);
 
   display: flex;
   align-items: center;

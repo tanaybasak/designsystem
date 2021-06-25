@@ -249,3 +249,10 @@ Button
     }
   }
 }
+@mixin input_control_focus() {
+  box-shadow: var(--input_border_focus_left_width)
+    var(--input_border_focus_bottom_width) var(--input_border_focus_right_width)
+    var(--input_border_focus_top_width) var(--interactive_border);
+  border-style: solid;
+  border-color: var(--interactive_border);
+}

@@ -118,6 +118,8 @@ $default_bg: white;
         &::-webkit-slider-runnable-track {
           height: 0.25rem;
 
+          border-radius: var(--rounded_corner_all_rounded_small);
+
           background: linear-gradient(
             90deg,
             var(--secondary_border) var(--progressPercent),
@@ -145,7 +147,7 @@ $default_bg: white;
 
         &::-moz-range-track {
           height: 0.25rem;
-
+          border-radius: var(--rounded_corner_all_rounded_small);
           background-color: var(--secondary_border);
           background: linear-gradient(
             90deg,

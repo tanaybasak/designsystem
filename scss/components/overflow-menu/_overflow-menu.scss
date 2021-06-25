@@ -22,6 +22,7 @@
       text-overflow: ellipsis;
       color: var(--default_text);
       border: 1px solid transparent;
+      line-height: 1.875rem;
 
       &:hover {
         background-color: var(--interactive_bg_hover);

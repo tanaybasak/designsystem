@@ -58,6 +58,7 @@ $search-reset-size: 0.759rem;
     display: flex;
     flex-direction: column;
     background: none;
+    border-radius: var(--rounded_corner_all_rounded_small);
 
     .#{$prefix}-search-icon {
       margin-left: ($search-height - $search-icon-size)/2;

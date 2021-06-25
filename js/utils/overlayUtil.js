@@ -47,55 +47,51 @@ export const getPositions = (
 
     return {
       left: left + window.pageXOffset + 'px',
-      top: top + window.pageYOffset + 'px',
+      top: top + 2 + window.pageYOffset + 'px',
       direction
     };
   } else {
     switch (direction) {
       case 'bottom-left': {
-        left = '0px';
+        left = 0;
         top =
           parentElementPosition.height +
           (parentElementPosition.top -
-            targetEl.parentElement.getBoundingClientRect().top) +
-          'px';
+            targetEl.parentElement.getBoundingClientRect().top);
         break;
       }
       case 'bottom-right': {
-        left = parentElementPosition.width - width + 'px';
+        left = parentElementPosition.width - width;
         top =
           parentElementPosition.height +
           (parentElementPosition.top -
-            targetEl.parentElement.getBoundingClientRect().top) +
-          'px';
+            targetEl.parentElement.getBoundingClientRect().top);
 
         break;
       }
       case 'top-left': {
-        left = '0px';
+        left = 0;
         top =
           -height +
           (parentElementPosition.top -
-            targetEl.parentElement.getBoundingClientRect().top) +
-          'px';
+            targetEl.parentElement.getBoundingClientRect().top);
 
         break;
       }
       case 'top-right': {
-        left = parentElementPosition.width - width + 'px';
+        left = parentElementPosition.width - width;
         top =
           -height +
           (parentElementPosition.top -
-            targetEl.parentElement.getBoundingClientRect().top) +
-          'px';
+            targetEl.parentElement.getBoundingClientRect().top);
 
         break;
       }
     }
 
     return {
-      left: left,
-      top: top,
+      left: left + 'px',
+      top: top + 2 + 'px',
       direction
     };
   }

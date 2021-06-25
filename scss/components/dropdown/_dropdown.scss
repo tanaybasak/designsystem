@@ -111,6 +111,7 @@
       border-width: 0;
       background-color: transparent;
       color: var(--interactive_text);
+      border-radius: var(--rounded_corner_all_rounded_small);
 
       &::after {
         content: '';
@@ -132,9 +133,9 @@
       transition: all 0.3s ease-in-out;
     }
 
-    // .#{$prefix}-dropdown-toggle {
-    //   border-bottom: 0.125rem solid var(--interactive_border);
-    // }
+    .#{$prefix}-dropdown-toggle {
+      @include input_control_focus();
+    }
   }
 }
 
@@ -149,6 +150,7 @@
   background-color: var(--default_bg);
   color: var(--default_text);
   border-radius: var(--rounded_corner_all_rounded_medium);
+  padding: 0.375rem 0;
   @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
 
   .#{$prefix}-dropdown-item {

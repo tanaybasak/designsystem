@@ -26,13 +26,18 @@
     // border-left: 0.0625rem solid transparent;
     color: var(--interactive_text);
 
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     height: 2.5rem;
     @include getTypoMixinProperties($typoThemeMaps, 'text-additional-active');
     margin: 0 0 0.3125rem -0.0625rem;
     padding: 0 2rem;
     position: relative;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
 
     // &::before {
     //   position: absolute;
@@ -106,9 +111,8 @@
       width: 1.125rem;
       height: 1.125rem;
       margin-right: 0.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: inline-block;
+      vertical-align: middle;
       //   border-radius: 50%;
 
       //   border: 1px solid var(--interactive_icon);

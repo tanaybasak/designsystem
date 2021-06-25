@@ -384,6 +384,27 @@
     }
   }
 
+  thead {
+    tr:first-child {
+      th:first-child {
+        border-radius: var(--rounded_corner_tl_rounded_medium);
+      }
+      th:last-child {
+        border-radius: var(--rounded_corner_tr_rounded_medium);
+      }
+    }
+  }
+  tbody {
+    tr:last-child {
+      td:first-child {
+        border-radius: var(--rounded_corner_bl_rounded_medium);
+      }
+      td:last-child {
+        border-radius: var(--rounded_corner_br_rounded_medium);
+      }
+    }
+  }
+
   &.data-table-header {
     overflow-x: auto;
 
