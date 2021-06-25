@@ -650,6 +650,12 @@
   .#{$prefix}-flex-col {
     margin-bottom: 0px !important;
   }
+
+  .#{$prefix}-overlay-wrapper-active {
+    .#{$prefix}-dateSelector-input {
+      @include input_control_focus();
+    }
+  }
 }
 
 // Calendar Component CSS
