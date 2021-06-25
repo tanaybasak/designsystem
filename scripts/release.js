@@ -81,7 +81,7 @@ function pushToBranch(version) {
   const deferred = q.defer();
 
   console.log(`GIT:Push --> ${BRANCH_NAME}`);
-  git.push(['origin', `HEAD`], err => {
+  git.push(["origin", `HEAD:refs/heads/${BRANCH_NAME}`], err => {
     if (!err) {
       console.log(`GIT:Push:Tags`);
       git.pushTags(`origin`, () => {

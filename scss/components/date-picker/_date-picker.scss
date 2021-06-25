@@ -193,10 +193,13 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 0 1.75rem;
-    @include getTypoMixinProperties(
-      $typoThemeMaps,
-      'text-component-body-short'
-    );
+    button,
+    span {
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-body-short'
+      );
+    }
 
     &-today {
       color: var(--active_text);
@@ -472,11 +475,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    // font-size: 0.875rem;
-    @include getTypoMixinProperties(
-      $typoThemeMaps,
-      'text-component-body-short'
-    );
+    button,
+    span {
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-body-short'
+      );
+    }
 
     button {
       margin: 0.0625rem;
