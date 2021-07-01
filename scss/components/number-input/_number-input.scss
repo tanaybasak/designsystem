@@ -3,6 +3,7 @@
     display: flex;
     padding: 0;
     position: relative;
+    // @include getTypoMixinProperties($typoThemeMaps, 'text-component-mono');
 
     &-control {
       position: absolute;
@@ -49,6 +50,10 @@
       -moz-appearance: textfield;
       padding-right: 2.625rem;
     }
+  }
+
+  label {
+    @include getTypoMixinProperties($typoThemeMaps, 'text-additional-label');
   }
 
   &[disabled] {

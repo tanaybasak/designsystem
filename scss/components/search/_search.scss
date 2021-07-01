@@ -10,11 +10,11 @@ $search-reset-size: 0.759rem;
   padding: 0;
   height: $search-height;
 
-  &:focus {
-    outline: 0;
+  //   &:focus {
+  //     outline: 0;
 
-    border-bottom: 1px solid var(--interactive_border);
-  }
+  //     border-bottom: 1px solid var(--interactive_border);
+  //   }
 
   > * {
     &:disabled {
@@ -58,6 +58,7 @@ $search-reset-size: 0.759rem;
     display: flex;
     flex-direction: column;
     background: none;
+    border-radius: var(--rounded_corner_all_rounded_small);
 
     .#{$prefix}-search-icon {
       margin-left: ($search-height - $search-icon-size)/2;
@@ -69,25 +70,31 @@ $search-reset-size: 0.759rem;
 
   .#{$prefix}-search-input {
     -webkit-appearance: none;
-    font-size: var(--body-font-size);
-    width: 100%;
+    // font-size: var(--body-font-size);
+    @include getTypoMixinProperties($typoThemeMaps, 'text-content-body-short');
+    // width: 100%;
     height: $search-height;
     outline: none;
     padding: 0 $search-height;
+    //border-bottom: 0.0625rem solid var(--input_border);
+    // border-width: var(--input_border_width);
+    // border-style: solid;
+    // border-color: var(--input_border);
 
-    border-bottom: 0.0625rem solid var(--input_border);
-    color: var(--input_text);
-    background-color: var(--input_bg);
+    // color: var(--input_text);
+    // background-color: var(--input_bg);
 
     right: 0;
     position: unset;
     transition: width 0.15s ease-out;
 
-    &:focus {
-      border-bottom: 2px solid var(--interactive_border);
-
-      outline-offset: -1px;
-    }
+    // &:focus {
+    //   // border-bottom: 2px solid var(--interactive_border);
+    //   border-width: var(--input_border_focus_width);
+    //   border-style: solid;
+    //   border-color: var(--interactive_border);
+    //   outline-offset: -1px;
+    // }
 
     &::-ms-clear,
     &::-ms-reveal {
@@ -138,6 +145,10 @@ $search-reset-size: 0.759rem;
     .#{$prefix}-search-input {
       height: $search-height-sm;
       padding: 0 $search-height-sm;
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-body-short'
+      );
     }
 
     .#{$prefix}-search-btn {

@@ -1,13 +1,10 @@
 .#{$prefix}-tag {
-  font-size: 0.75rem;
-  @include getFontWeight(regular);
-  line-height: 1rem;
-  letter-spacing: 0.02rem;
+  @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
   display: inline-flex;
   align-items: center;
   height: 2rem;
   margin: 0.25rem;
-  border-radius: 1rem;
+  border-radius: var(--rounded_corner_all_rounded_full);
   justify-content: center;
   cursor: pointer;
   position: relative;
@@ -54,17 +51,16 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0 0.125rem var(--interactive_border);
-      border: 0.0625rem solid var(--default_bg);
-      outline: none;
+      @include primary_focus();
     }
 
     .#{$prefix}-tag-icon,
     .#{$prefix}-tag-close {
       &:focus {
-        border-radius: 1rem;
-        border: 0.125rem solid var(--primary_border);
-        outline: none;
+        // border-radius: 1rem;
+        // border: 0.125rem solid var(--primary_border);
+        // outline: none;
+        @include primary_boxshadow_focus(var(--primary_border));
       }
 
       &:hover {
@@ -84,8 +80,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0 0.0625rem var(--secondary_border);
-      outline: none;
+      @include secondary_focus();
     }
 
     .#{$prefix}-tag-close,
@@ -96,9 +91,10 @@
       }
 
       &:focus {
-        border-radius: 1rem;
-        border: 0.125rem solid var(--interactive_border);
-        outline: none;
+        @include primary_boxshadow_focus();
+        // border-radius: 1rem;
+        // border: 0.125rem solid var(--interactive_border);
+        // outline: none;
       }
     }
 

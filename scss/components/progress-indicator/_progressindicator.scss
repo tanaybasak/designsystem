@@ -29,8 +29,10 @@
 
     &-label,
     &-subtext {
-      font-size: 0.75rem;
-      font-weight: 400;
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-descriptive'
+      );
       color: var(--default_text);
       &-value {
         float: right;
@@ -76,8 +78,10 @@
   .#{$prefix}-pb-label-content {
     width: 70%;
     .#{$prefix}-pb-label-text {
-      font-size: 0.75rem;
-      font-weight: 400;
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-descriptive'
+      );
       color: var(--default_text);
     }
   }

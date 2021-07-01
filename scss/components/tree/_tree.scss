@@ -1,11 +1,8 @@
 $default-node-height: 2rem;
 
 .#{$prefix}-tree {
-  font-size: 0.875rem;
-  @include getFontWeight(regular);
-  line-height: 1.5rem;
-  letter-spacing: 0.16px;
   position: relative;
+  @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
 
   .#{$prefix}-tree-item {
     width: 100%;
@@ -16,7 +13,7 @@ $default-node-height: 2rem;
 
     .#{$prefix}-tree-node {
       cursor: pointer;
-      line-height: unset;
+      // line-height: unset;
       display: flex;
       flex-direction: row;
       min-height: $default-node-height;
@@ -157,6 +154,7 @@ $default-node-height: 2rem;
         position: absolute;
         right: 0;
         background: transparent;
+        border-radius: var(--rounded_corner_all_rounded_small);
       }
 
       &.#{$prefix}-node-highlight {
@@ -228,7 +226,7 @@ $default-node-height: 2rem;
         outline: none;
 
         .#{$prefix}-node-highlight-wrapper {
-          outline: 0.0625rem solid var(--interactive_border);
+          @include primary_border_focus();
         }
 
         .action-on-hover {
@@ -298,7 +296,10 @@ $default-node-height: 2rem;
 
     .#{$prefix}-tree-nested {
       margin-left: 1.25rem;
-      font-size: 0.875rem;
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-body-short'
+      );
     }
   }
 }

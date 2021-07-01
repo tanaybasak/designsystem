@@ -78,9 +78,10 @@ $animation-duration: 220ms;
 
     .#{$prefix}-sidebar-title-text {
       display: block;
-      font-size: 0.875rem;
+      // font-size: 0.875rem;
       color: var(--default_text);
-      line-height: 1.125rem;
+      // line-height: 1.125rem;
+      @include getTypoMixinProperties($typoThemeMaps, 'text-section-nav');
       width: 0;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -115,8 +116,9 @@ $animation-duration: 220ms;
       }
 
       &:focus {
-        outline-offset: -0.0625rem;
-        outline: 0.0625rem solid var(--default_border_xhigh);
+        @include outline_focus(var(--default_border_xhigh));
+        // outline-offset: -0.0625rem;
+        // outline: 0.0625rem solid var(--default_border_xhigh);
       }
     }
 
@@ -135,6 +137,7 @@ $animation-duration: 220ms;
     overflow-x: hidden;
     width: 100%;
     height: calc(100% - 3.125rem);
+    @include getTypoMixinProperties($typoThemeMaps, 'text-section-nav');
 
     .#{$prefix}-sidebar-category {
       position: relative;
@@ -172,10 +175,11 @@ $animation-duration: 220ms;
         }
 
         &:focus {
-          outline-offset: -0.0625rem;
+          box-shadow: none;
+          @include outline_focus(var(--default_border_xhigh));
           text-decoration: none;
           color: var(--default_text);
-          outline: 0.0625rem solid var(--default_border_xhigh);
+          //   outline: 0.0625rem solid var(--default_border_xhigh);
         }
 
         .#{$prefix}-sidebar-icon {
@@ -418,7 +422,7 @@ $animation-duration: 220ms;
               .#{$prefix}-sidebar-icon {
                 width: 1.125rem;
                 height: 1.125rem;
-                font-size: 1.125rem;
+                // font-size: 1.125rem;
                 margin: 1.3125rem 0 1.3125rem 0.9375rem;
               }
 

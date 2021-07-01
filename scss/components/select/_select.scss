@@ -1,15 +1,15 @@
 .#{$prefix}-select {
-  color: var(--interactive_text);
-  background-color: var(--interactive_bg);
+  // color: var(--interactive_text);
+  // background-color: var(--interactive_bg);
   background-image: linear-gradient(
       45deg,
       transparent 50%,
-      var(--interactive_icon) 50%
+      var(--input_icon) 50%
     ),
-    linear-gradient(135deg, var(--interactive_icon) 50%, transparent 50%);
+    linear-gradient(135deg, var(--input_icon) 50%, transparent 50%);
 
-  font-weight: 600;
-  height: 2.5rem;
+  //   font-weight: 600;
+  // height: 2.5rem;
   max-width: 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -23,18 +23,16 @@
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
+  // border: 0;
+  width: auto;
 
   &-option {
     color: var(--input_text_low);
   }
 
-  &:focus {
-    outline: 2px solid var(--interactive_border);
-  }
-
-  &:hover {
-    background-color: var(--interactive_bg_hover);
-  }
+  // &:focus {
+  //   outline: 2px solid var(--interactive_border);
+  // }
 
   &-label {
     color: var(--default_text);
@@ -50,26 +48,50 @@
     background-color: var(--interactive_bg);
     opacity: var(--disabled_all);
   }
-  &.filled {
-    font-size: 0.875rem;
-    font-weight: normal;
-    line-height: 1.125rem;
-    background-color: var(--input_bg);
-    color: var(--input_text);
+
+  //   &.filled {
+  //     font-size: 0.875rem;
+  //     font-weight: normal;
+  //     line-height: 1.125rem;
+  //     background-color: var(--input_bg);
+  //     color: var(--input_text);
+  //     background-image: linear-gradient(
+  //         45deg,
+  //         transparent 50%,
+  //         var(--input_icon) 50%
+  //       ),
+  //       linear-gradient(135deg, var(--input_icon) 50%, transparent 50%);
+  //     border-bottom: 0.0625rem solid var(--input_border);
+
+  //     &:focus {
+  //       outline: none;
+  //       border: none;
+  //       box-shadow: 0 0.125rem 0 var(--interactive_border);
+  //     }
+
+  //     &:hover {
+  //       background-color: var(--input_bg);
+  //     }
+  //   }
+
+  &.hcl-form-control.hcl-ghost-dropdown {
+    border-width: 0;
+    background-color: transparent;
+    color: var(--interactive_text);
+    border-radius: var(--rounded_corner_all_rounded_small);
     background-image: linear-gradient(
         45deg,
         transparent 50%,
-        var(--input_icon) 50%
+        var(--interactive_icon) 50%
       ),
-      linear-gradient(135deg, var(--input_icon) 50%, transparent 50%);
-    border-bottom: 0.0625rem solid var(--input_border);
+      linear-gradient(135deg, var(--interactive_icon) 50%, transparent 50%);
+
     &:focus {
-      outline: none;
-      border: none;
-      box-shadow: 0 0.125rem 0 var(--interactive_border);
+      @include ghost_focus();
     }
+
     &:hover {
-      background-color: var(--input_bg);
+      background-color: var(--interactive_bg_hover);
     }
   }
 }

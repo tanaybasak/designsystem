@@ -153,3 +153,438 @@ $writingModes-map: (
     @warn '#{$writingMode} is not defined in HCL design system!';
   }
 }
+
+// Typography utility classes
+$typoThemeMaps: (
+  'text-page-heading': (
+    'font-family': --page-heading-typeface,
+    'font-size': --page-heading-font-size,
+    'font-weight': --page-heading-weight,
+    'line-height': --page-heading-leading,
+    'letter-spacing': --page-heading-kerning,
+    'capitalization': --page-heading-capitalization
+  ),
+  'text-page-heading-small': (
+    'font-family': --page-heading-small-typeface,
+    'font-size': --page-heading-small-font-size,
+    'font-weight': --page-heading-small-weight,
+    'line-height': --page-heading-small-leading,
+    'letter-spacing': --page-heading-small-kerning,
+    'capitalization': --page-heading-small-capitalization
+  ),
+  'text-page-nav': (
+    'font-family': --page-nav-typeface,
+    'font-size': --page-nav-font-size,
+    'font-weight': --page-nav-weight,
+    'line-height': --page-nav-leading,
+    'letter-spacing': --page-nav-kerning,
+    'capitalization': --page-nav-capitalization
+  ),
+  'text-page-subnav': (
+    'font-family': --page-subnav-typeface,
+    'font-size': --page-subnav-font-size,
+    'font-weight': --page-subnav-weight,
+    'line-height': --page-subnav-leading,
+    'letter-spacing': --page-subnav-kerning,
+    'capitalization': --page-subnav-capitalization
+  ),
+  'text-page-descriptive': (
+    'font-family': --page-descriptive-typeface,
+    'font-size': --page-descriptive-font-size,
+    'font-weight': --page-descriptive-weight,
+    'line-height': --page-descriptive-leading,
+    'letter-spacing': --page-descriptive-kerning,
+    'capitalization': --page-descriptive-capitalization
+  ),
+  'text-page-action': (
+    'font-family': --page-action-typeface,
+    'font-size': --page-action-font-size,
+    'font-weight': --page-action-weight,
+    'line-height': --page-action-leading,
+    'letter-spacing': --page-action-kerning,
+    'capitalization': --page-action-capitalization
+  ),
+  'text-page-body': (
+    'font-family': --page-body-typeface,
+    'font-size': --page-body-font-size,
+    'font-weight': --page-body-weight,
+    'line-height': --page-body-leading,
+    'letter-spacing': --page-body-kerning,
+    'capitalization': --page-body-capitalization
+  ),
+  'text-section-heading': (
+    'font-family': --section-heading-typeface,
+    'font-size': --section-heading-font-size,
+    'font-weight': --section-heading-weight,
+    'line-height': --section-heading-leading,
+    'letter-spacing': --section-heading-kerning,
+    'capitalization': --section-heading-capitalization
+  ),
+  'text-section-heading-small': (
+    'font-family': --section-heading-small-typeface,
+    'font-size': --section-heading-small-font-size,
+    'font-weight': --section-heading-small-weight,
+    'line-height': --section-heading-small-leading,
+    'letter-spacing': --section-heading-small-kerning,
+    'capitalization': --section-heading-small-capitalization
+  ),
+  'text-section-nav': (
+    'font-family': --section-nav-typeface,
+    'font-size': --section-nav-font-size,
+    'font-weight': --section-nav-weight,
+    'line-height': --section-nav-leading,
+    'letter-spacing': --section-nav-kerning,
+    'capitalization': --section-nav-capitalization
+  ),
+  'text-section-subnav': (
+    'font-family': --section-subnav-typeface,
+    'font-size': --section-subnav-font-size,
+    'font-weight': --section-subnav-weight,
+    'line-height': --section-subnav-leading,
+    'letter-spacing': --section-subnav-kerning,
+    'capitalization': --section-subnav-capitalization
+  ),
+  'text-section-body-short': (
+    'font-family': --section-body-short-typeface,
+    'font-size': --section-body-short-font-size,
+    'font-weight': --section-body-short-weight,
+    'line-height': --section-body-short-leading,
+    'letter-spacing': --section-body-short-kerning,
+    'capitalization': --section-body-short-capitalization
+  ),
+  'text-section-body-long': (
+    'font-family': --section-body-long-typeface,
+    'font-size': --section-body-long-font-size,
+    'font-weight': --section-body-long-weight,
+    'line-height': --section-body-long-leading,
+    'letter-spacing': --section-body-long-kerning,
+    'capitalization': --section-body-long-capitalization
+  ),
+  'text-section-descriptive': (
+    'font-family': --section-descriptive-typeface,
+    'font-size': --section-descriptive-font-size,
+    'font-weight': --section-descriptive-weight,
+    'line-height': --section-descriptive-leading,
+    'letter-spacing': --section-descriptive-kerning,
+    'capitalization': --section-descriptive-capitalization
+  ),
+  'text-content-heading': (
+    'font-family': --content-heading-typeface,
+    'font-size': --content-heading-font-size,
+    'font-weight': --content-heading-weight,
+    'line-height': --content-heading-leading,
+    'letter-spacing': --content-heading-kerning,
+    'capitalization': --content-heading-capitalization
+  ),
+  'text-content-heading-small': (
+    'font-family': --content-heading-small-typeface,
+    'font-size': --content-heading-small-font-size,
+    'font-weight': --content-heading-small-weight,
+    'line-height': --content-heading-small-leading,
+    'letter-spacing': --content-heading-small-kerning,
+    'capitalization': --content-heading-small-capitalization
+  ),
+  'text-content-nav': (
+    'font-family': --content-nav-typeface,
+    'font-size': --content-nav-font-size,
+    'font-weight': --content-nav-weight,
+    'line-height': --content-nav-leading,
+    'letter-spacing': --content-nav-kerning,
+    'capitalization': --content-nav-capitalization
+  ),
+  'text-content-body-short': (
+    'font-family': --content-body-short-typeface,
+    'font-size': --content-body-short-font-size,
+    'font-weight': --content-body-short-weight,
+    'line-height': --content-body-short-leading,
+    'letter-spacing': --content-body-short-kerning,
+    'capitalization': --content-body-short-capitalization
+  ),
+  'text-content-body-long': (
+    'font-family': --content-body-long-typeface,
+    'font-size': --content-body-long-font-size,
+    'font-weight': --content-body-long-weight,
+    'line-height': --content-body-long-leading,
+    'letter-spacing': --content-body-long-kerning,
+    'capitalization': --content-body-long-capitalization
+  ),
+  'text-content-descriptive': (
+    'font-family': --content-descriptive-typeface,
+    'font-size': --content-descriptive-font-size,
+    'font-weight': --content-descriptive-weight,
+    'line-height': --content-descriptive-leading,
+    'letter-spacing': --content-descriptive-kerning,
+    'capitalization': --content-descriptive-capitalization
+  ),
+  'text-content-meta': (
+    'font-family': --content-meta-typeface,
+    'font-size': --content-meta-font-size,
+    'font-weight': --content-meta-weight,
+    'line-height': --content-meta-leading,
+    'letter-spacing': --content-meta-kerning,
+    'capitalization': --content-meta-capitalization
+  ),
+  'text-content-numeric': (
+    'font-family': --content-numeric-typeface,
+    'font-size': --content-numeric-font-size,
+    'font-weight': --content-numeric-weight,
+    'line-height': --content-numeric-leading,
+    'letter-spacing': --content-numeric-kerning,
+    'capitalization': --content-numeric-capitalization
+  ),
+  'text-content-action': (
+    'font-family': --content-action-typeface,
+    'font-size': --content-action-font-size,
+    'font-weight': --content-action-weight,
+    'line-height': --content-action-leading,
+    'letter-spacing': --content-action-kerning,
+    'capitalization': --content-action-capitalization
+  ),
+  'text-component-heading': (
+    'font-family': --component-heading-typeface,
+    'font-size': --component-heading-font-size,
+    'font-weight': --component-heading-weight,
+    'line-height': --component-heading-leading,
+    'letter-spacing': --component-heading-kerning,
+    'capitalization': --component-heading-capitalization
+  ),
+  'text-component-heading-small': (
+    'font-family': --component-heading-small-typeface,
+    'font-size': --component-heading-small-font-size,
+    'font-weight': --component-heading-small-weight,
+    'line-height': --component-heading-small-leading,
+    'letter-spacing': --component-heading-small-kerning,
+    'capitalization': --component-heading-small-capitalization
+  ),
+  'text-component-body-short': (
+    'font-family': --component-body-short-typeface,
+    'font-size': --component-body-short-font-size,
+    'font-weight': --component-body-short-weight,
+    'line-height': --component-body-short-leading,
+    'letter-spacing': --component-body-short-kerning,
+    'capitalization': --component-body-short-capitalization
+  ),
+  'text-component-body-long': (
+    'font-family': --component-body-long-typeface,
+    'font-size': --component-body-long-font-size,
+    'font-weight': --component-body-long-weight,
+    'line-height': --component-body-long-leading,
+    'letter-spacing': --component-body-long-kerning,
+    'capitalization': --component-body-long-capitalization
+  ),
+  'text-component-descriptive': (
+    'font-family': --component-descriptive-typeface,
+    'font-size': --component-descriptive-font-size,
+    'font-weight': --component-descriptive-weight,
+    'line-height': --component-descriptive-leading,
+    'letter-spacing': --component-descriptive-kerning,
+    'capitalization': --component-descriptive-capitalization
+  ),
+  'text-component-nav': (
+    'font-family': --component-nav-typeface,
+    'font-size': --component-nav-font-size,
+    'font-weight': --component-nav-weight,
+    'line-height': --component-nav-leading,
+    'letter-spacing': --component-nav-kerning,
+    'capitalization': --component-nav-capitalization
+  ),
+  'text-component-meta': (
+    'font-family': --component-meta-typeface,
+    'font-size': --component-meta-font-size,
+    'font-weight': --component-meta-weight,
+    'line-height': --component-meta-leading,
+    'letter-spacing': --component-meta-kerning,
+    'capitalization': --component-meta-capitalization
+  ),
+  'text-component-numeric': (
+    'font-family': --component-numeric-typeface,
+    'font-size': --component-numeric-font-size,
+    'font-weight': --component-numeric-weight,
+    'line-height': --component-numeric-leading,
+    'letter-spacing': --component-numeric-kerning,
+    'capitalization': --component-numeric-capitalization
+  ),
+  'text-additional-code-small': (
+    'font-family': --additional-code-small-typeface,
+    'font-size': --additional-code-small-font-size,
+    'font-weight': --additional-code-small-weight,
+    'line-height': --additional-code-small-leading,
+    'letter-spacing': --additional-code-small-kerning,
+    'capitalization': --additional-code-small-capitalization
+  ),
+  'text-additional-code-large': (
+    'font-family': --additional-code-large-typeface,
+    'font-size': --additional-code-large-font-size,
+    'font-weight': --additional-code-large-weight,
+    'line-height': --additional-code-large-leading,
+    'letter-spacing': --additional-code-large-kerning,
+    'capitalization': --additional-code-large-capitalization
+  ),
+  'text-additional-quote': (
+    'font-family': --additional-quote-typeface,
+    'font-size': --additional-quote-font-size,
+    'font-weight': --additional-quote-weight,
+    'line-height': --additional-quote-leading,
+    'letter-spacing': --additional-quote-kerning,
+    'capitalization': --additional-quote-capitalization
+  ),
+  'text-additional-active': (
+    'font-family': --additional-active-typeface,
+    'font-size': --additional-active-font-size,
+    'font-weight': --additional-active-weight,
+    'line-height': --additional-active-leading,
+    'letter-spacing': --additional-active-kerning,
+    'capitalization': --additional-active-capitalization
+  ),
+  'text-additional-label': (
+    'font-family': --additional-label-typeface,
+    'font-size': --additional-label-font-size,
+    'font-weight': --additional-label-weight,
+    'line-height': --additional-label-leading,
+    'letter-spacing': --additional-label-kerning,
+    'capitalization': --additional-label-capitalization
+  ),
+  'text-additional-overline': (
+    'font-family': --additional-overline-typeface,
+    'font-size': --additional-overline-font-size,
+    'font-weight': --additional-overline-weight,
+    'line-height': --additional-overline-leading,
+    'letter-spacing': --additional-overline-kerning,
+    'capitalization': --additional-overline-capitalization
+  ),
+  'text-additional-legal': (
+    'font-family': --additional-legal-typeface,
+    'font-size': --additional-legal-font-size,
+    'font-weight': --additional-legal-weight,
+    'line-height': --additional-legal-leading,
+    'letter-spacing': --additional-legal-kerning,
+    'capitalization': --additional-legal-capitalization
+  ),
+  'text-additional-numeric': (
+    'font-family': --additional-numeric-typeface,
+    'font-size': --additional-numeric-font-size,
+    'font-weight': --additional-numeric-weight,
+    'line-height': --additional-numeric-leading,
+    'letter-spacing': --additional-numeric-kerning,
+    'capitalization': --additional-numeric-capitalization
+  )
+);
+
+// re-usable typography mixins
+@mixin getTypoMixinProperties($map, $mixin-name, $list: ()) {
+  $newList: $list;
+  $newListlen: length($newList);
+  $isListPresent: $newListlen > 0;
+
+  @if (map-has-key($map, $mixin-name)) {
+    $mixinName: map-get($map, $mixin-name);
+    $font-family: if(
+      map-has-key($mixinName, 'font-family'),
+      map-get($mixinName, 'font-family'),
+      (null)
+    );
+    $font-size: if(
+      map-has-key($mixinName, 'font-size'),
+      map-get($mixinName, 'font-size'),
+      (null)
+    );
+    $font-weight: if(
+      map-has-key($mixinName, 'font-weight'),
+      map-get($mixinName, 'font-weight'),
+      (null)
+    );
+    $line-height: if(
+      map-has-key($mixinName, 'line-height'),
+      map-get($mixinName, 'line-height'),
+      (null)
+    );
+    $letter-spacing: if(
+      map-has-key($mixinName, 'letter-spacing'),
+      map-get($mixinName, 'letter-spacing'),
+      (null)
+    );
+    $capitalization: if(
+      map-has-key($mixinName, 'capitalization'),
+      map-get($mixinName, 'capitalization'),
+      (null)
+    );
+
+    @if ($newListlen == 0) {
+      font-family: var($font-family, sans-serif);
+      font-size: var($font-size);
+      font-weight: var($font-weight);
+      line-height: var($line-height);
+      letter-spacing: var($letter-spacing);
+      text-transform: var($capitalization);
+    } @else if($newListlen > 0) {
+      @if (
+        $font-family and
+          $isListPresent and
+          index($newList, 'font-family') !=
+          null and
+          nth($newList, index($newList, 'font-family')) ==
+          'font-family'
+      ) {
+        font-family: var($font-family, sans-serif);
+      }
+      @if (
+        $font-size and
+          $isListPresent and
+          index($newList, 'font-size') !=
+          null and
+          nth($newList, index($newList, 'font-size')) ==
+          'font-size'
+      ) {
+        font-size: var($font-size);
+      }
+      @if (
+        $font-weight and
+          $isListPresent and
+          index($newList, 'font-weight') !=
+          null and
+          nth($newList, index($newList, 'font-weight')) ==
+          'font-weight'
+      ) {
+        font-weight: var($font-weight);
+      }
+      @if (
+        $line-height and
+          $isListPresent and
+          index($newList, 'line-height') !=
+          null and
+          nth($newList, index($newList, 'line-height')) ==
+          'line-height'
+      ) {
+        line-height: var($line-height);
+      }
+      @if (
+        $letter-spacing and
+          $isListPresent and
+          index($newList, 'letter-spacing') !=
+          null and
+          nth($newList, index($newList, 'letter-spacing')) ==
+          'letter-spacing'
+      ) {
+        letter-spacing: var($letter-spacing);
+      }
+      @if (
+        $isListPresent and
+          index($newList, 'text-transform') !=
+          null and
+          nth($newList, index($newList, 'text-transform')) ==
+          'text-transform'
+      ) {
+        text-transform: var($capitalization);
+      }
+    }
+    // @debug 'Value of the mixin #{$font-family} #{$font-size} #{$font-weight} #{$line-height} #{$letter-spacing} #{$capitalization}';
+  } @else {
+    @warn 'Error in mixin getTypoMixinProperties - #{$mixin-name}';
+  }
+}
+
+@each $key, $value in $typoThemeMaps {
+  .#{$key} {
+    @include getTypoMixinProperties($typoThemeMaps, $key);
+  }
+}

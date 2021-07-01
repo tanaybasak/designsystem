@@ -5,19 +5,17 @@
   --borderWidth: 0.125rem;
   --tileTitleHeight: 1.5rem;
   --tileBorderWidth: 0.0625rem;
-  --borderRadius: 0px;
-  --borderRadiusAdj: var(--borderRadius);
+  --borderRadiusAdj: var(--corner_medium);
   --emptyValue: 0px;
   width: 100%;
+
+  label.#{$prefix}-label {
+    @include getTypoMixinProperties($typoThemeMaps, 'text-additional-label');
+  }
 
   @include media-breakpoint-between(sm, xxxl) {
     --paddingLeft: 1rem;
     --paddingRight: 0.75rem;
-  }
-
-  &.logic-builder-round {
-    --borderRadius: 0.3125rem;
-    --borderRadiusAdj: var(--borderRadius);
   }
 
   .#{$prefix}-logic-builder-group {
@@ -31,8 +29,11 @@
       position: relative;
 
       .#{$prefix}-tile-header {
-        font-size: 0.875rem;
-        font-weight: 500;
+        @include getTypoMixinProperties(
+          $typoThemeMaps,
+          'text-additional-label'
+        );
+        height: var(--tileTitleHeight);
       }
 
       .#{$prefix}-tile {
@@ -77,9 +78,11 @@
                     padding: 0.625rem;
 
                     span {
-                      font-size: 0.875rem;
                       color: var(--default_text_low);
-                      letter-spacing: 0.16px;
+                      @include getTypoMixinProperties(
+                        $typoThemeMaps,
+                        'text-component-body-long'
+                      );
                       display: inline-block;
                       overflow: hidden;
                       text-overflow: ellipsis;
@@ -164,7 +167,7 @@
         border-color: var(--default_border_low);
         top: 0;
         left: calc(var(--emptyValue) - var(--paddingLeft) - var(--borderWidth));
-        border-radius: 0 0 0 var(--borderRadius);
+        border-radius: var(--rounded_corner_bl_rounded_medium);
       }
 
       .#{$prefix}-tile-wrapper.#{$prefix}-no-tile-header::before {
@@ -232,7 +235,7 @@
           left: calc(
             var(--emptyValue) - var(--paddingLeft) - var(--borderWidth)
           );
-          border-radius: 0 0 0 var(--borderRadius);
+          border-radius: var(--rounded_corner_bl_rounded_medium);
         }
 
         button {
@@ -255,15 +258,15 @@
         > .#{$prefix}-logic-builder-item::before {
         content: '';
         position: absolute;
-        width: calc(var(--paddingLeft) + 1px);
+        width: calc(var(--paddingLeft) + 0.0625rem);
         height: 100%;
         display: block;
         border-style: solid;
         border-width: var(--borderWidth) var(--borderWidth) 0 0;
         border-color: var(--default_border_low);
         top: calc(var(--headerHeight) / 2);
-        left: calc(var(--emptyValue) - var(--paddingLeft) - 1px);
-        border-radius: 0 var(--borderRadius) 0 0;
+        left: calc(var(--emptyValue) - var(--paddingLeft) - 0.0625rem);
+        border-radius: var(--rounded_corner_tr_rounded_medium);
       }
 
       .#{$prefix}-tile-wrapper-collapsed > .#{$prefix}-tile::before {
@@ -277,7 +280,7 @@
         border-width: var(--borderWidth) 0 0 0;
         border-color: var(--default_border_low);
         top: calc(var(--headerHeight) / 2);
-        left: -1px;
+        left: -0.0625rem;
       }
 
       .#{$prefix}-children-exist.#{$prefix}-tile-wrapper-collapsed
@@ -293,7 +296,7 @@
         border-width: var(--borderWidth) var(--borderWidth) 0 0;
         border-color: var(--default_border_low);
         top: calc(var(--headerHeight) / 2);
-        left: -1px;
+        left: -0.0625rem;
       }
     }
 

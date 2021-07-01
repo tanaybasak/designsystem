@@ -35,6 +35,62 @@ const loadData = async () => {
         ).innerHTML = `Theme : ${e.currentTarget.textContent.trim()}`;
     }
   });
+
+  function clearstyle() {
+    document.body.classList.remove('outline-rounded');
+    document.body.classList.remove('outline-sharp');
+    document.body.classList.remove('rounded');
+    document.body.classList.remove('sharp');
+    document.body.classList.remove('filled-rounded');
+    document.body.classList.remove('filled-sharp');
+  }
+
+  function addStyleClass(outline, rounded) {
+    if (outline) {
+      if (rounded) {
+        document.body.classList.add('outline-rounded');
+        document.body.classList.add('rounded');
+      } else {
+        document.body.classList.add('outline-sharp');
+        document.body.classList.add('sharp');
+      }
+    } else {
+      if (rounded) {
+        document.body.classList.add('filled-rounded');
+        document.body.classList.add('rounded');
+      } else {
+        document.body.classList.add('filled-sharp');
+        document.body.classList.add('sharp');
+      }
+    }
+  }
+
+  document.querySelector('#rounded-toggle').addEventListener('change', e => {
+    clearstyle();
+    addStyleClass(
+      document.querySelector('#outline-toggle').checked,
+      e.target.checked
+    );
+  });
+
+  document.querySelector('#outline-toggle').addEventListener('change', e => {
+    clearstyle();
+    addStyleClass(
+      e.target.checked,
+      document.querySelector('#rounded-toggle').checked
+    );
+  });
+
+  document.querySelector('#typo-toggle').addEventListener('change', e => {
+    if (e.target.checked) {
+      document.body.classList.remove('hcl-productive');
+      document.body.classList.add('hcl-expressive');
+    } else {
+      document.body.classList.remove('hcl-expressive');
+      document.body.classList.add('hcl-productive');
+    }
+  });
+
   const routerArray = [];
   sidebarItems.default.map(item => {
     routerArray.push(new Route(item.link, item.default));

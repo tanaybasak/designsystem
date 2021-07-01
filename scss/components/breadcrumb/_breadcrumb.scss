@@ -15,10 +15,8 @@ $breadcrumb-margin: 1rem;
 
   &-item {
     margin-right: $breadcrumb-margin;
-
     color: var(--default_text_high);
-
-    font-size: 0.875rem;
+    @include getTypoMixinProperties($typoThemeMaps, 'text-section-nav');
 
     &:not(:last-child)::after {
       content: '/';
@@ -38,8 +36,9 @@ $breadcrumb-margin: 1rem;
         @include getTextDecorationLine('underline');
       }
       &:focus {
-        outline: 0.0625rem solid var(--interactive_border);
-        border: 0;
+        // outline: 0.0625rem solid var(--interactive_border);
+        @include boxShadow_focus();
+        border-radius: var(--rounded_corner_all_rounded_small);
         @include getTextDecorationLine('none');
       }
     }

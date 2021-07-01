@@ -274,20 +274,45 @@ $inputColor-map: (
 // getFormControl(<control>)
 @mixin getFormControl($which) {
   @if ($which== 'inputcontrol') {
-    font-size: 0.875rem;
+    // font-size: 0.875rem;
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-body-short'
+    );
     width: 100%;
     height: $input-height;
     padding: $input-padding-y $input-padding-x;
     color: var(--input_text);
-    background-color: var(--input_bg);
-    border-bottom: 0.0625rem solid var(--input_border);
+    background-color: var(--input_background);
+    // border-bottom: 0.0625rem solid var(--input_border);
+    border-left-width: var(--input_border_left_width);
+    border-top-width: var(--input_border_top_width);
+    border-right-width: var(--input_border_right_width);
+    border-bottom-width: var(--input_border_bottom_width);
+    border-style: solid;
+    border-color: var(--input_border_color);
+    border-radius: var(--input_border_radius);
 
     &:focus {
       outline: none;
-      box-shadow: inset -0.0625rem 0 0 transparent,
-        inset 0 -0.25rem 0 transparent, inset 0.0625rem 0 0 transparent,
-        0 0.125rem 0 var(--interactive_border);
-      border-bottom: 1px solid transparent;
+      //   box-shadow: 0 0 0 1px var(--interactive_border);
+      // box-shadow: 0 2px 0px 0px var(--interactive_border);
+
+      box-shadow: var(--input_border_focus_left_width)
+        var(--input_border_focus_bottom_width)
+        var(--input_border_focus_right_width)
+        var(--input_border_focus_top_width)
+        var(--interactive_border);
+
+      // box-shadow: var(--input_focus);
+      // border-bottom: 1px solid transparent;
+
+      //   border-left-width: var(--input_border_focus_left_width);
+      //   border-top-width: var(--input_border_focus_top_width);
+      //   border-right-width: var(--input_border_focus_right_width);
+      //   border-bottom-width: var(--input_border_focus_bottom_width);
+      border-style: solid;
+      border-color: var(--interactive_border);
 
       & ~ label.#{$prefix}-label {
         color: var(--default_text);
@@ -315,9 +340,10 @@ $inputColor-map: (
 @mixin getErrorMarkup($which) {
   @if ($which== 'inputcontrol') {
     .#{$prefix}-error-msg {
-      @include getFontWeight('regular');
-      font-size: 0.75rem;
-      line-height: getLineHeight(0.75rem);
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-descriptive'
+      );
       color: var(--danger_text);
       margin-top: 0.25rem;
     }
@@ -340,6 +366,7 @@ $inputColor-map: (
 
 @mixin pb-utility($size) {
   position: relative;
+
   @if ($size==default) {
     height: $loader-width-medium;
     width: $loader-width-medium;
@@ -350,6 +377,7 @@ $inputColor-map: (
     height: $loader-width-large;
     width: $loader-width-large;
   }
+
   > svg {
     @if ($size==default) {
       height: $loader-width-medium;
@@ -361,7 +389,9 @@ $inputColor-map: (
       height: $loader-width-large;
       width: $loader-width-large;
     }
+
     transform: rotate(-90deg);
+
     > circle {
       @if ($size== 'default') {
         stroke-width: 4;
@@ -370,6 +400,7 @@ $inputColor-map: (
       } @else if ($size== 'large') {
         stroke-width: 3;
       }
+
       stroke: var(--primary_bg);
     }
 
@@ -386,13 +417,14 @@ $inputColor-map: (
     align-items: center;
     justify-content: center;
     text-align: center;
-    @if ($size== default) {
+
+    @if ($size==default) {
       width: $loader-width-medium + 0.125rem;
       height: $loader-width-medium + 0.125rem;
-    } @else if ($size== small) {
+    } @else if ($size==small) {
       width: $loader-width-small + 0.125rem;
       height: $loader-width-small + 0.125rem;
-    } @else if ($size== large) {
+    } @else if ($size==large) {
       width: $loader-width-large + 0.125rem;
       height: $loader-width-large + 0.125rem;
     }
@@ -410,7 +442,7 @@ $inputColor-map: (
     }
 
     > .#{$prefix}-pb-maincircle {
-      @if ($size == 'large') {
+      @if ($size== 'large') {
         animation: stroke-dash 2.5s ease-in-out infinite;
       } @else {
         animation: stroke-dash 2s ease-in-out infinite;
@@ -418,21 +450,23 @@ $inputColor-map: (
     }
 
     > .#{$prefix}-pb-dot1 {
-      @if ($size == 'large') {
+      @if ($size== 'large') {
         animation: stroke-dot1 2.5s ease-in infinite;
       } @else {
         animation: stroke-dot1 2s ease-in infinite;
       }
     }
+
     > .#{$prefix}-pb-dot2 {
-      @if ($size == 'large') {
+      @if ($size== 'large') {
         animation: stroke-dot2 2.5s ease-in infinite;
       } @else {
         animation: stroke-dot2 2s ease-in infinite;
       }
     }
+
     > .#{$prefix}-pb-dot3 {
-      @if ($size == 'large') {
+      @if ($size== 'large') {
         animation: stroke-dot3 2.5s ease-in infinite;
       } @else {
         animation: stroke-dot3 2s ease-in infinite;
@@ -457,6 +491,7 @@ $inputColor-map: (
       transition: stroke-dashoffset 850ms ease-in-out 0s;
       transform-origin: 100% 100%;
     }
+
     fill: none;
   }
 
@@ -471,6 +506,7 @@ $inputColor-map: (
   height: 0.25rem;
   width: 100%;
   fill: none;
+
   &-line {
     stroke: var(--primary_bg);
     stroke-width: 0.25rem;

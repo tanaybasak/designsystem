@@ -8,6 +8,8 @@
 // @import '../../utils/variables';
 // @import '../../utils/colors';
 // @import '../../utils/themes';
+@import 'rootTokens';
+@import 'themeTokens';
 @import 'typographyMixins';
 // @import '../../utils/mixins';
 
@@ -158,7 +160,7 @@ h6,
 // Anchor link
 a {
   color: var(--interactive_text);
-  font-size: 0.875rem;
+  font-size: var(--fontsize-small);
   line-height: getLineHeight(0.875rem);
   text-decoration: none;
 
@@ -168,8 +170,10 @@ a {
   }
 
   &:focus {
-    border: 1px solid var(--interactive_border);
-    outline-offset: 3px;
+    // border: 1px solid var(--interactive_border);
+    // outline-offset: 3px;
+    @include primary_focus();
+    border-radius: var(--rounded_corner_all_rounded_small);
   }
 
   &.disable {
@@ -180,7 +184,7 @@ a {
 
 p,
 .#{$prefix}-p {
-  font-size: 1rem;
+  font-size: var(--fontsize-default);
   line-height: getLineHeight(1rem);
   color: inherit;
   @include getFontWeight(regular);

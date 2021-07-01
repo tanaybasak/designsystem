@@ -13,6 +13,8 @@
     padding: 0.4rem 0;
     border-bottom: 2px solid transparent;
 
+    @include getTypoMixinProperties($typoThemeMaps, 'text-section-nav');
+
     &.#{$prefix}-tabs-disabled {
       cursor: not-allowed;
       > a {
@@ -36,6 +38,7 @@
     }
 
     &.active {
+      @include getTypoMixinProperties($typoThemeMaps, 'text-additional-active');
       > a {
         outline: none;
 
@@ -53,7 +56,10 @@
     }
 
     &:focus {
-      outline: 2px solid var(--interactive_border);
+      // outline: 2px solid var(--interactive_border);
+
+      @include primary_boxshadow_focus();
+      border-radius: var(--rounded_corner_all_rounded_small);
     }
 
     &:hover {
