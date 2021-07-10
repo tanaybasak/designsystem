@@ -35,12 +35,13 @@
 
     &:focus,
     &:active {
-      outline: none;
+      box-shadow: none;
 
       img {
-        outline: 1px solid var(--primary_icon);
+        @include outline_focus(var(--primary_icon));
+        // outline: 1px solid var(--primary_icon);
 
-        outline-offset: 0.5rem;
+        // outline-offset: 0.5rem;
       }
     }
   }
@@ -60,14 +61,17 @@
 
       .#{$prefix}-search {
         width: 100%;
+
         .#{$prefix}-search-icon {
           fill: var(--primary_icon) !important;
         }
+
         .#{$prefix}-search-btn {
           &.disabled {
             opacity: var(--disabled_all);
           }
         }
+
         .#{$prefix}-search-btn:focus :enabled {
           outline: 1px solid var(--primary_icon);
         }
@@ -79,9 +83,13 @@
         button.#{$prefix}-search-btn:hover:enabled {
           background-color: var(--primary_bg_hover);
           cursor: pointer;
+
           .#{$prefix}-search-icon {
             fill: var(--primary_icon);
           }
+        }
+        .#{$prefix}-search-input {
+          background: var(--default_bg);
         }
       }
 
@@ -102,24 +110,25 @@
 
       .#{$prefix}-header-icon {
         display: inline-flex;
-        margin: 1rem 0.5rem;
+        align-items: center;
+        // margin: 1rem 0.5rem;
 
         > input,
         > button {
           background: transparent;
-
+          min-width: 2rem;
+          min-height: 2rem;
           color: var(--primary_icon);
 
           &:focus,
           &:active {
-            outline: 1px solid var(--primary_border);
-
-            outline-offset: 0.125rem;
+            @include outline_focus(var(--primary_border));
           }
-        }
 
-        &:hover {
-          background-color: var(--primary_bg_hover);
+          &:hover {
+            background-color: var(--primary_bg_hover);
+            cursor: pointer;
+          }
         }
       }
 

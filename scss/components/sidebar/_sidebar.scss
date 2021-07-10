@@ -115,8 +115,9 @@ $animation-duration: 220ms;
       }
 
       &:focus {
-        outline-offset: -0.0625rem;
-        outline: 0.0625rem solid var(--default_border_xhigh);
+        @include outline_focus(var(--default_border_xhigh));
+        // outline-offset: -0.0625rem;
+        // outline: 0.0625rem solid var(--default_border_xhigh);
       }
     }
 
@@ -172,10 +173,11 @@ $animation-duration: 220ms;
         }
 
         &:focus {
-          outline-offset: -0.0625rem;
+          box-shadow: none;
+          @include outline_focus(var(--default_border_xhigh));
           text-decoration: none;
           color: var(--default_text);
-          outline: 0.0625rem solid var(--default_border_xhigh);
+          //   outline: 0.0625rem solid var(--default_border_xhigh);
         }
 
         .#{$prefix}-sidebar-icon {

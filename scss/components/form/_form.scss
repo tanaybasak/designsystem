@@ -106,7 +106,7 @@ label.#{$prefix}-label {
     outline: none;
 
     &:focus {
-      outline: 1px solid var(--interactive_border);
+      @include outline_focus();
     }
 
     &:disabled {
@@ -190,10 +190,7 @@ label.#{$prefix}-label {
     }
 
     &:focus + .#{$prefix}-checkbox-label::before {
-      // outline-offset: 2px;
-      // outline: 2px solid var(--interactive_border);
-      @include border_focus();
-      border-radius: var(--border_corner_all_xsmall);
+      @include primary_focus();
     }
 
     &:not(:disabled):hover:not(:checked):not(:indeterminate)
@@ -234,7 +231,7 @@ label.#{$prefix}-label {
       width: 1.125rem;
       height: 1.125rem;
       border: 1px solid var(--default_icon_high);
-      border-radius: var(--border_corner_all_xsmall);
+      border-radius: var(--rounded_corner_all_rounded_xsmall);
       background-color: var(--white);
     }
 
@@ -285,9 +282,7 @@ label.#{$prefix}-label {
   position: absolute;
 
   &:focus + .#{$prefix}-radio-label::before {
-    outline: 1px solid transparent;
-
-    box-shadow: 0 0 0 2px var(--interactive_border);
+    @include primary_focus();
   }
 
   &:disabled + .#{$prefix}-radio-label {

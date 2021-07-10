@@ -17,6 +17,7 @@ $pagination-line-height: 1.125rem;
   border-radius: var(--rounded_corner_all_rounded_medium);
   background-color: var(--default_bg);
   border: 1px solid var(--default_border_xlow);
+  padding: 0 0.125rem;
 
   display: flex;
   align-items: center;
@@ -136,13 +137,12 @@ $pagination-line-height: 1.125rem;
       cursor: pointer;
 
       &:focus {
-        outline-offset: -1px;
-
-        outline: 1px solid var(--interactive_border);
+        @include outline_focus();
       }
 
       &:hover {
         background-color: var(--interactive_bg_hover);
+        cursor: pointer;
       }
 
       &:disabled {

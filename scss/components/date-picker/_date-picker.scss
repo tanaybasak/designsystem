@@ -119,7 +119,7 @@
       line-height: 1.125rem;
 
       &:focus {
-        @include outline-focus();
+        @include outline_focus();
       }
     }
 
@@ -517,6 +517,7 @@
     justify-content: center;
     align-items: flex-start;
     background-color: var(--default_bg);
+    border-radius: var(--rounded_corner_all_rounded_medium);
   }
 
   &-panel {

@@ -145,8 +145,7 @@
 
     &:focus ~ .#{$prefix}-toggle-label {
       .#{$prefix}-switch {
-        box-shadow: 0 0 0 0.125rem var(--interactive_border);
-        border: 0.0625rem solid var(--default_bg);
+        @include toggle_focus();
       }
     }
   }
@@ -244,8 +243,7 @@
 
     &:focus ~ .#{$prefix}-toggle-label {
       &::before {
-        box-shadow: 0 0 0 0.125rem var(--interactive_border);
-        border: 0.0625rem solid var(--default_bg);
+        @include toggle_focus();
       }
     }
   }
