@@ -68,6 +68,7 @@ Components like action bar, Tile,
 */
 .sharp,
 .rounded,
+.small-rounded,
 :root {
   --rounded_corner_top_rounded_xsmall: var(--corner_xsmall) var(--corner_xsmall)
     var(--sharp_corner) var(--sharp_corner);
@@ -239,7 +240,7 @@ Components like action bar, Tile,
   //     0 0 0 0.125rem var(--interactive_border);
 }
 
-.rounded {
+.small-rounded {
   --corner_xsmall: 0.125rem;
   --corner_small: 0.188rem;
   --corner_medium: 0.313rem;
@@ -452,3 +453,14 @@ Components like action bar, Tile,
 //   :root{
 //     --rounded_corner_all_rounded_small :  var(--corner_small);
 // }
+
+
+
+.rounded {
+  --corner_xsmall: 0.188rem; 
+  --corner_small: 0.313rem; 
+  --corner_medium: 0.438rem; 
+  --corner_big: 0.625rem; 
+  --corner_full: 6.25rem; 
+  --sharp_corner: 0rem;
+}

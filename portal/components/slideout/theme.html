@@ -1,0 +1,93 @@
+<button
+  id="hcl-btn-slideout-theme"
+  data-toast-type="1"
+  class="hcl-btn hcl-ghost"
+  data-target="#hcl-slideout-theme"
+>
+  Default
+</button>
+<div
+  class="hcl-slideout hcl-slideout__default-border hcl-slideout-hide"
+  tabindex="0"
+  id="hcl-slideout-theme"
+>
+  <div class="hcl-slideout-mask"></div>
+  <div class="hcl-slideout-layout default">
+    <header class="hcl-slideout-header">
+      <!-- {header ? (
+        <div class="{`hcl-slideout-header__text`}" title="{header}">
+          {header}
+        </div>
+        ) : null} -->
+
+      <!-- onClick="{handleonClose.bind(this)}" -->
+
+      <div class="hcl-slideout-header__text" title="header">Header</div>
+      <button class="hcl-slideout-close">
+        <svg
+          version="1.1"
+          xmlns="https://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+        >
+          <polygon
+            points="15.393,2.021 13.979,0.607 8,6.586 2.021,0.607 0.607,2.021 6.586,8 0.607,13.979 2.021,15.393 8,9.414  13.979,15.393 15.393,13.979 9.414,8 "
+          />
+        </svg>
+      </button>
+    </header>
+    <section class="hcl-slideout-content">
+      <div class="hcl-row">
+        <div class="hcl-col-12">
+            <div class="hcl-overlay-wrapper hcl-dropdown" id="dropdown-color">
+                <button class="hcl-btn hcl-dropdown-toggle hcl-form-control" id="bottom-dropdown-btn" aria-haspopup="true" aria-controls="bottom-container" data-toggle="dropdown">
+                    Color
+                </button>
+                <div class="hcl-overlay-container">
+                  <ul class="hcl-dropdown-menu" role="menu" aria-labelledby="dropdown-color">
+                    <li class="hcl-dropdown-item" tabindex="0">A</li>
+                    <li class="hcl-dropdown-item" tabindex="0">B</li>
+                    <li class="hcl-dropdown-item" tabindex="0">C</li>
+                  </ul>
+                </div>
+              </div>
+        </div>
+        <div class="hcl-col-12 mt-10">
+          <div class="hcl-form-group">
+            <div class="hcl-overlay-wrapper hcl-dropdown" id="bottom-dropdown">
+                <button class="hcl-btn hcl-dropdown-toggle hcl-form-control" id="bottom-dropdown-btn" aria-haspopup="true" aria-controls="bottom-container" data-toggle="dropdown">
+                    Color
+                </button>
+                <div class="hcl-overlay-container">
+                  <ul class="hcl-dropdown-menu" role="menu" aria-labelledby="bottom-dropdown-btn">
+                    <li class="hcl-dropdown-item" tabindex="0">A</li>
+                    <li class="hcl-dropdown-item" tabindex="0">B</li>
+                    <li class="hcl-dropdown-item" tabindex="0">C</li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="hcl-col-12">
+          <div class="hcl-form-group">
+            <TextInput aria-label="text input" placeholder="Placeholder Text" />
+            <label class="hcl-label" htmlFor="labeltext"> FGT number </label>
+            <div class="hcl-helper-text">Device config including area code</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="hcl-slideout-footer">
+      <div class="hcl-action-bar">
+        <button type="button" class="hcl-btn hcl-modal-btn hcl-secondary">
+          Save</button
+        ><button
+          type="button"
+          class="hcl-btn hcl-modal-btn hcl-secondary hcl-danger"
+        >
+          Close
+        </button>
+      </div>
+    </footer>
+  </div>
+</div>
+

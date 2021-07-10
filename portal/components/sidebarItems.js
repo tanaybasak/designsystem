@@ -32,6 +32,7 @@ const sidebarItems = [
   { title: 'Search', link: 'search' },
   { title: 'Select', link: 'select' },
   { title: 'Sidebar', link: 'sidebar' },
+  { title: 'Slideout', link: 'slideout' },
   { title: 'Slider', link: 'slider' },
   { title: 'Spinner', link: 'spinner' },
   { title: 'Tab', link: 'tab' },

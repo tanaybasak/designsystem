@@ -164,6 +164,7 @@ class Dropdown {
 
   selectDropdownItem = event => {
     const dropdownItem = getClosest(event.target, `.${PREFIX}-dropdown-item`);
+
     if (this.state.type === 'multi') {
       const input = dropdownItem.querySelector('input');
       input.checked = !input.checked;

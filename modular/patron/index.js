@@ -2,6 +2,7 @@ import './index.scss';
 import ContentSwitcher from '../../js/content-switcher';
 import Dropdown from '../../js/dropdown';
 import Sidebar from '../../js/sidebar';
+import Slideout from '../../js/slideout';
 import Search from '../../js/search';
 import Tabs from '../../js/tabs';
 import Tooltip from '../../js/tooltip';
@@ -30,6 +31,7 @@ const ComponentList = {
   dropdow: Dropdown,
   overflow: Overflow,
   sidebar: Sidebar,
+  slideout: Slideout,
   search: Search,
   datepicker: DatePicker,
   tabs: Tabs,
@@ -89,6 +91,9 @@ export const components = {
   },
   sidebar: function (selector, options) {
     attachElements(selector, options, Sidebar);
+  },
+  slideout: function (selector, options) {
+    attachElements(selector, options, Slideout);
   },
   search: function (selector, options) {
     attachElements(selector, options, Search);

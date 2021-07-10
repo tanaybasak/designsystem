@@ -25,6 +25,7 @@ import radio from './radio';
 import search from './search';
 import select from './select';
 import sidebar from './sidebar';
+import slideout from './slideout';
 import slider from './slider';
 import spinner from './spinner';
 import tab from './tab';
@@ -66,6 +67,7 @@ export {
   search,
   select,
   sidebar,
+  slideout,
   slider,
   spinner,
   tab,
