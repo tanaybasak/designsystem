@@ -125,7 +125,6 @@ const loadData = async () => {
     }
   });
 
-
   const routerArray = [];
   sidebarItems.default.map(item => {
     routerArray.push(new Route(item.link, item.default));
