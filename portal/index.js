@@ -125,17 +125,6 @@ const loadData = async () => {
     }
   });
 
-  //   window.patron.toggle('.outline-toggle', {
-  //     onChange: e => {
-  //       console.log('e');
-  //     }
-  //   });
-
-  //   window.patron.toggle('.rounded-toggle', {
-  //     onChange: e => {
-  //       console.log('e');
-  //     }
-  //   });
 
   const routerArray = [];
   sidebarItems.default.map(item => {
