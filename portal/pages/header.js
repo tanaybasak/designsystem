@@ -23,7 +23,7 @@ export function render() {
       <div class="hcl-slideout-mask hcl-slideout-mask-noback"></div>
       <div class="hcl-slideout-layout default">
         <header class="hcl-slideout-header">
-          <div class="hcl-slideout-header__text" title="header">Header</div>
+          <div class="hcl-slideout-header__text" title="header">Themeing</div>
           <button class="hcl-slideout-close">
             <svg version="1.1" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 16 16">
               <polygon
