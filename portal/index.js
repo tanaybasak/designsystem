@@ -22,22 +22,6 @@ const loadData = async () => {
   window.patron.sidebar('.hcl-vanilla-sidebar', {
     expanded: screen.width > 992
   });
-  window.patron.overflow('#theme-overflow', {
-    onChange: e => {
-      document.body.classList.remove(
-        'blue_active_blue_light',
-        'blue_active_orange_light',
-        'blue_active_blue_dark',
-        'blue_active_orange_dark'
-      );
-      document.body.classList.add(e.currentTarget.dataset.theme);
-      document
-        .querySelector('#theme-overflow')
-        .firstElementChild.querySelector(
-          'span'
-        ).innerHTML = `Theme : ${e.currentTarget.textContent.trim()}`;
-    }
-  });
 
   function clearstyle() {
     document
@@ -50,26 +34,6 @@ const loadData = async () => {
       .querySelector('.main-container')
       .classList.remove('filled-rounded');
     document.querySelector('.main-container').classList.remove('filled-sharp');
-  }
-
-  function addStyleClass(outline, rounded) {
-    if (outline) {
-      if (rounded) {
-        document.body.classList.add('outline-rounded');
-        document.body.classList.add('rounded');
-      } else {
-        document.body.classList.add('outline-sharp');
-        document.body.classList.add('sharp');
-      }
-    } else {
-      if (rounded) {
-        document.body.classList.add('filled-rounded');
-        document.body.classList.add('rounded');
-      } else {
-        document.body.classList.add('filled-sharp');
-        document.body.classList.add('sharp');
-      }
-    }
   }
 
   document.querySelector('#toggleSlideout').addEventListener('click', () => {
@@ -118,8 +82,6 @@ const loadData = async () => {
       document.querySelector('.corner-class-name').innerText = cornerStyle;
     }
   });
-
- 
 
   window.patron.dropdown('#dropdown-typography', {
     position: 'bottom',

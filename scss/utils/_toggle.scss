@@ -454,13 +454,11 @@ Components like action bar, Tile,
 //     --rounded_corner_all_rounded_small :  var(--corner_small);
 // }
 
-
-
 .rounded {
-  --corner_xsmall: 0.188rem; 
-  --corner_small: 0.313rem; 
-  --corner_medium: 0.438rem; 
-  --corner_big: 0.625rem; 
-  --corner_full: 6.25rem; 
+  --corner_xsmall: 0.188rem;
+  --corner_small: 0.313rem;
+  --corner_medium: 0.438rem;
+  --corner_big: 0.625rem;
+  --corner_full: 6.25rem;
   --sharp_corner: 0rem;
 }
