@@ -58,6 +58,7 @@ $search-reset-size: 0.759rem;
     display: flex;
     flex-direction: column;
     background: none;
+    border-radius: var(--rounded_corner_all_rounded_small);
 
     .#{$prefix}-search-icon {
       margin-left: ($search-height - $search-icon-size)/2;
@@ -69,9 +70,10 @@ $search-reset-size: 0.759rem;
 
   .#{$prefix}-search-input {
     -webkit-appearance: none;
-    font-size: var(--body-font-size);
+    // font-size: var(--body-font-size);
+    @include getTypoMixinProperties($typoThemeMaps, 'text-content-body-short');
     // width: 100%;
-    // height: $search-height;
+    height: $search-height;
     outline: none;
     padding: 0 $search-height;
     //border-bottom: 0.0625rem solid var(--input_border);
@@ -143,6 +145,10 @@ $search-reset-size: 0.759rem;
     .#{$prefix}-search-input {
       height: $search-height-sm;
       padding: 0 $search-height-sm;
+      @include getTypoMixinProperties(
+        $typoThemeMaps,
+        'text-component-body-short'
+      );
     }
 
     .#{$prefix}-search-btn {

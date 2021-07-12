@@ -8,20 +8,16 @@
 
 .#{$prefix}-form-item {
   .#{$prefix}-label {
-    font-size: 0.875rem;
-
+    @include getTypoMixinProperties($typoThemeMaps, 'text-additional-label');
     color: var(--default_text_high);
-
-    letter-spacing: 0;
-    line-height: 1.125rem;
   }
 
   .#{$prefix}-label-description {
-    font-size: 0.875rem;
-
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-body-short'
+    );
     color: var(--default_text);
-
-    line-height: 1.313rem;
   }
 
   .#{$prefix}-file-uploader {
@@ -92,6 +88,7 @@
       width: 100%;
       height: 2.5rem;
       display: flex;
+      padding: 0 var(--corner_small);
 
       border: 1px solid var(--default_border_xlow);
       background-color: var(--default_bg);
@@ -102,6 +99,13 @@
       .#{$prefix}-file-selected-file {
         width: calc(100% - 2.5rem);
         height: inherit;
+        @include getTypoMixinProperties(
+          $typoThemeMaps,
+          'text-component-body-short'
+        );
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .#{$prefix}-file-filename {
@@ -109,8 +113,14 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding: 0.5rem;
-
+        display: inline-block;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        padding-left: 16px;
+        @include getTypoMixinProperties(
+          $typoThemeMaps,
+          'text-component-body-short'
+        );
         color: var(--default_text_high);
       }
 

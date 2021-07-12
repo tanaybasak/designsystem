@@ -57,14 +57,15 @@ textarea.#{$prefix}-textarea[data-invalid='true'] ~ .#{$prefix}-error-msg {
   color: var(--default_text_low);
 
   margin-bottom: 0.5rem;
-  font-size: 0.75rem;
-  line-height: getLineHeight(0.75rem);
+  @include getTypoMixinProperties($typoThemeMaps, 'text-component-descriptive');
+  // font-size: 0.75rem;
+  // line-height: getLineHeight(0.75rem);
 }
 
 label.#{$prefix}-label {
   color: var(--default_text);
-
-  font-weight: $input-label-weight;
+  @include getTypoMixinProperties($typoThemeMaps, 'text-additional-label');
+  // font-weight: $input-label-weight;
   margin-bottom: $label-margin-bottom;
 }
 
@@ -210,15 +211,16 @@ label.#{$prefix}-label {
   }
 
   .#{$prefix}-checkbox-label {
-    @include getFontWeight('regular');
-    font-size: 0.875rem;
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-body-short'
+    );
     display: inline-block;
-    line-height: 1.6rem;
     cursor: pointer;
     margin-bottom: 0;
     padding-left: 2rem;
+    padding-top: 1px;
     position: relative;
-    height: 1.625rem;
     color: var(--default_text_high);
 
     &::before {
@@ -295,7 +297,7 @@ label.#{$prefix}-label {
     content: '';
     display: inline-block;
     position: absolute;
-    top: 0.5625rem;
+    top: 0.3125rem;
     left: 0.5625rem;
     width: 0.5rem;
     height: 0.5rem;
@@ -310,11 +312,8 @@ label.#{$prefix}-label {
 }
 
 .#{$prefix}-radio-label {
-  @include getFontWeight('regular');
-  font-size: 0.875rem;
+  @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
   display: inline-block;
-  height: 1.625rem;
-  line-height: 1.6rem;
   cursor: pointer;
   margin-bottom: 0;
   position: relative;

@@ -6,10 +6,9 @@
   overflow: auto;
   background-color: var(--default_bg);
   border-radius: var(--rounded_corner_all_rounded_medium);
+  @include getTypoMixinProperties($typoThemeMaps, 'text-component-body-short');
 
   .#{$prefix}-overflow-option {
-    font-size: 0.875rem;
-
     &-item {
       display: inline-block;
       width: 100%;
@@ -21,9 +20,9 @@
       background: transparent;
       white-space: nowrap;
       text-overflow: ellipsis;
-      line-height: 1.875rem;
       color: var(--default_text);
       border: 1px solid transparent;
+      line-height: 1.875rem;
 
       &:hover {
         background-color: var(--interactive_bg_hover);

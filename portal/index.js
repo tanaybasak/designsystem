@@ -79,64 +79,6 @@ const loadData = async () => {
     });
   });
 
-  document.querySelector('#rounded-toggle').addEventListener('change', e => {
-    clearstyle();
-    if (e.target.checked) {
-      document.querySelector('.main-container').classList.add('rounded');
-      if (document.querySelector('#outline-toggle').checked) {
-        document
-          .querySelector('.main-container')
-          .classList.add('outline-rounded');
-      } else {
-        document
-          .querySelector('.main-container')
-          .classList.add('filled-rounded');
-      }
-    } else {
-      document.querySelector('.main-container').classList.add('sharp');
-      if (document.querySelector('#outline-toggle').checked) {
-        document
-          .querySelector('.main-container')
-          .classList.add('outline-sharp');
-      } else {
-        document.querySelector('.main-container').classList.add('filled-sharp');
-      }
-    }
-  });
-
-  document.querySelector('#rounded-toggle').addEventListener('change', e => {
-    clearstyle();
-    addStyleClass(
-      document.querySelector('#outline-toggle').checked,
-      e.target.checked
-    );
-  });
-
-  document.querySelector('#outline-toggle').addEventListener('change', e => {
-    clearstyle();
-    if (e.target.checked) {
-      document.querySelector('.main-container').classList.add('outline');
-      if (document.querySelector('#rounded-toggle').checked) {
-        document
-          .querySelector('.main-container')
-          .classList.add('outline-rounded');
-      } else {
-        document
-          .querySelector('.main-container')
-          .classList.add('outline-sharp');
-      }
-    } else {
-      document.querySelector('.main-container').classList.add('filled');
-      if (document.querySelector('#rounded-toggle').checked) {
-        document
-          .querySelector('.main-container')
-          .classList.add('filled-rounded');
-      } else {
-        document.querySelector('.main-container').classList.add('filled-sharp');
-      }
-    }
-  });
-
   window.patron.dropdown('#dropdown-color', {
     position: 'bottom',
     onChange: e => {
@@ -176,6 +118,8 @@ const loadData = async () => {
       document.querySelector('.corner-class-name').innerText = cornerStyle;
     }
   });
+
+ 
 
   window.patron.dropdown('#dropdown-typography', {
     position: 'bottom',

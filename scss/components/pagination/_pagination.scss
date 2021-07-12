@@ -10,14 +10,11 @@ $pagination-font-size: var(--body-font-size);
 $pagination-line-height: 1.125rem;
 
 .#{$prefix}-pagination {
-  font-size: $pagination-font-size;
-  @include getFontWeight('regular');
-  line-height: $pagination-line-height;
   width: 100%;
   border-radius: var(--rounded_corner_all_rounded_medium);
   background-color: var(--default_bg);
   border: 1px solid var(--default_border_xlow);
-  padding: 0 0.125rem;
+  padding: 0 var(--corner_medium);
 
   display: flex;
   align-items: center;
@@ -213,6 +210,15 @@ $pagination-line-height: 1.125rem;
     }
   }
 
+  label,
+  &-text,
+  &-range {
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-descriptive'
+    );
+  }
+
   .#{$prefix}-pagination-range {
     color: var(--default_text);
 
@@ -225,8 +231,12 @@ $pagination-line-height: 1.125rem;
     color: var(--default_text);
     margin-left: 1rem;
     padding-right: 0.25rem;
+    @include getTypoMixinProperties(
+      $typoThemeMaps,
+      'text-component-descriptive'
+    );
     @include media-breakpoint-down(sm) {
-      font-size: 0.75rem;
+      font-size: var(--fontsize-smaller);
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;

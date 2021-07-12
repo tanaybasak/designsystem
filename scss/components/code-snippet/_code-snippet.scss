@@ -3,10 +3,11 @@
   box-shadow: inset 2.375rem 0 0 0 var(--default_bg_high);
   background-color: var(--default_bg);
   border: 0.0625rem solid var(--default_border_xlow);
-
+  border-radius: var(--rounded_corner_all_rounded_medium);
   .#{$prefix}-codesnippet {
     box-shadow: inset 0.125rem 0.125rem 0.3125rem 0.125rem rgba(0, 0, 0, 0.2);
     overflow: auto;
+    border-radius: var(--rounded_corner_all_rounded_medium);
 
     .npm__react-simple-code-editor__textarea {
       width: calc(100% - 2.375rem) !important;

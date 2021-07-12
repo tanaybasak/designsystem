@@ -9,7 +9,7 @@ const packageFile = path.join(__dirname, '../', 'package.json');
 const argv = require('yargs/yargs')(process.argv.slice(2)).argv;
 
 const BRANCH_NAME = argv.BRANCH;
-let DESCRIPTION = `dev description`;
+// let DESCRIPTION = `dev description`;
 
 let PROCESS_VER = '';
 let PROCESS_DESC = '';
@@ -67,25 +67,8 @@ function addAndCommit(version) {
   git.pull('origin', `${BRANCH_NAME}`, err1 => {
     if (!err1) {
       console.log(`GIT:Adding...`);
-      git.add('./*', err2 => {
-        if (!err2) {
-          console.log(`GIT:Committing...`);
-          git.commit(`chore(release): ${version}`, [packageFile], err3 => {
-            if (!err3) {
-              console.log('Tagging...');
-              if (PROCESS_DESC !== '') {
-                DESCRIPTION = PROCESS_DESC;
-              }
-              git.addAnnotatedTag(`v${version}`, `${DESCRIPTION}`, () =>
-                deferred.resolve(version)
-              );
-            } else {
-              return deferred.reject(new Error(`GIT:Commit: Issue`));
-            }
-          });
-        } else {
-          return deferred.reject(new Error(`GIT:Add: Issue`));
-        }
+      git.add('./*').commit(`chore(release): ${version}`, () => {
+        return deferred.resolve(version);
       });
     } else {
       return deferred.reject(new Error(`GIT:Pull Issue`));

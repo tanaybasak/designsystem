@@ -16,7 +16,7 @@
     &:focus {
       // border: 0.0625rem solid var(--interactive_border);
       // box-shadow: 0 0 0 0.0625rem var(--interactive_border);
-      // border-radius: var(--rounded_corner_all_rounded_medium);
+      //border-radius: var(--rounded_corner_all_rounded_medium);
       @include secondary_focus();
     }
 
@@ -159,6 +159,7 @@
     height: 2.75rem;
 
     &:focus {
+      border-radius: var(--rounded_corner_all_rounded_medium);
       @include primary_boxshadow_focus();
     }
 

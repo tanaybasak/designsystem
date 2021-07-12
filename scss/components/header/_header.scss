@@ -35,14 +35,14 @@
 
     &:focus,
     &:active {
-      box-shadow: none;
+      //box-shadow: none;
+      @include primary_boxshadow_focus(var(--primary_icon));
+      //   img {
 
-      img {
-        @include outline_focus(var(--primary_icon));
-        // outline: 1px solid var(--primary_icon);
+      //     // outline: 1px solid var(--primary_icon);
 
-        // outline-offset: 0.5rem;
-      }
+      //     // outline-offset: 0.5rem;
+      //   }
     }
   }
 
@@ -115,14 +115,15 @@
 
         > input,
         > button {
-          background: transparent;
-          min-width: 2rem;
-          min-height: 2rem;
+          //   background: transparent;
+          width: 2rem;
+          //   min-height: 2rem;
           color: var(--primary_icon);
 
           &:focus,
           &:active {
-            @include outline_focus(var(--primary_border));
+            @include primary_boxshadow_focus(var(--primary_border));
+            background: transparent;
           }
 
           &:hover {

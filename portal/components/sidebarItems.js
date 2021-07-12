@@ -45,7 +45,8 @@ const sidebarItems = [
   { title: 'Toggle', link: 'toggle' },
   { title: 'Toolbar', link: 'toolbar' },
   { title: 'Tooltip', link: 'tooltip' },
-  { title: 'Tree', link: 'tree' }
+  { title: 'Tree', link: 'tree' },
+  { title: 'Typography', link: 'typography' }
 ];
 
 export default sidebarItems;
