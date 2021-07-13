@@ -25,16 +25,12 @@ const loadData = async () => {
   });
 
   function clearstyle() {
-    document
-      .querySelector('.main-container')
-      .classList.remove('outline-rounded');
-    document.querySelector('.main-container').classList.remove('outline-sharp');
-    document.querySelector('.main-container').classList.remove('rounded');
-    document.querySelector('.main-container').classList.remove('sharp');
-    document
-      .querySelector('.main-container')
-      .classList.remove('filled-rounded');
-    document.querySelector('.main-container').classList.remove('filled-sharp');
+    document.body.classList.remove('outline-rounded');
+    document.body.classList.remove('outline-sharp');
+    document.body.classList.remove('rounded');
+    document.body.classList.remove('sharp');
+    document.body.classList.remove('filled-rounded');
+    document.body.classList.remove('filled-sharp');
   }
 
   document.querySelector('#toggleSlideout').addEventListener('click', () => {
@@ -47,6 +43,7 @@ const loadData = async () => {
   window.patron.dropdown('#dropdown-color', {
     position: 'bottom',
     onChange: e => {
+      const style = `${inputStyle}-${cornerStyle}`;
       document.body.classList.remove(
         'blue_active_blue_light',
         'blue_active_orange_light',
@@ -54,6 +51,8 @@ const loadData = async () => {
         'blue_active_orange_dark'
       );
       document.body.classList.add(e.currentTarget.dataset.theme);
+      document.body.classList.add(style);
+
       document.querySelector('.color-class-name').innerText =
         e.currentTarget.dataset.theme;
     }
@@ -66,19 +65,17 @@ const loadData = async () => {
       if (e.currentTarget.textContent.trim() === 'Rounded') {
         cornerStyle = 'rounded';
         const style = `${inputStyle}-${cornerStyle}`;
-        document.querySelector('.main-container').classList.add(cornerStyle);
-        document.querySelector('.main-container').classList.add(style);
+        document.body.classList.add(cornerStyle);
+        document.body.classList.add(style);
       } else if (e.currentTarget.textContent.trim() === 'Small Rounded') {
         cornerStyle = 'small-rounded';
-        document
-          .querySelector('.main-container')
-          .classList.add(`${inputStyle}-rounded`);
-        document.querySelector('.main-container').classList.add(cornerStyle);
+        document.body.classList.add(`${inputStyle}-rounded`);
+        document.body.classList.add(cornerStyle);
       } else {
         cornerStyle = 'sharp';
         const style = `${inputStyle}-${cornerStyle}`;
-        document.querySelector('.main-container').classList.add(style);
-        document.querySelector('.main-container').classList.add(cornerStyle);
+        document.body.classList.add(style);
+        document.body.classList.add(cornerStyle);
       }
       document.querySelector('.corner-class-name').innerText = cornerStyle;
     }
@@ -112,17 +109,15 @@ const loadData = async () => {
         .trim()}-${roundedcorner}`;
       if (e.currentTarget.textContent.trim() === 'Outline') {
         inputStyle = 'outline';
-        document.querySelector('.main-container').classList.add(inputStyle);
-        document.querySelector('.main-container').classList.add(style);
-        document.querySelector('.main-container').classList.add(cornerStyle);
+        document.body.classList.add(inputStyle);
+        document.body.classList.add(style);
+        document.body.classList.add(cornerStyle);
       } else {
         inputStyle = 'filled';
-        document
-          .querySelector('.main-container')
-          .classList.remove('outline-sharp');
-        document.querySelector('.main-container').classList.add(inputStyle);
-        document.querySelector('.main-container').classList.add(style);
-        document.querySelector('.main-container').classList.add(cornerStyle);
+        document.body.classList.remove('outline-sharp');
+        document.body.classList.add(inputStyle);
+        document.body.classList.add(style);
+        document.body.classList.add(cornerStyle);
       }
 
       document.querySelector('.input-class-name').innerText = inputStyle;

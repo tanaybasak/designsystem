@@ -2,7 +2,7 @@ export function render() {
   const pdsLogo = require('../../asset/pds.png');
   const version = require('../../package.json').version;
   const template = `
-  <header class="hcl-header blue_active_blue_light" data-withsidenav="true">
+  <header class="hcl-header" data-withsidenav="true">
   <a href="/" class="hcl-header-brand" tabindex="0">
     <img alt="Logo" width="109px" src="${pdsLogo}" />
   </a>
@@ -50,7 +50,7 @@ export function render() {
                     </ul>
                   </div>
                 </div>
-                <span class="hcl-helper-text"> Class: <span class="color-class-name hcl-helper-text">blue_active_orange_light</span></span>
+                <span class="hcl-helper-text"> Class: <span class="color-class-name hcl-helper-text">blue_active_orange_light</span> </span>
               </div>
             </div>
             <div class="hcl-col-12">
