@@ -13,6 +13,7 @@ const loadData = async () => {
   const sidebarItems = await import('./components/sidebarItems');
   let inputStyle = 'filled';
   let cornerStyle = 'sharp';
+  let typoStyle = `hcl-productive`;
 
   rootElement.innerHTML = `
       ${header.render()}
@@ -87,12 +88,15 @@ const loadData = async () => {
     position: 'bottom',
     onChange: e => {
       if (e.currentTarget.textContent.trim() === 'Expressive') {
-        document.body.classList.remove('hcl-productive');
-        document.body.classList.add('hcl-expressive');
+        typoStyle = `hcl-expressive`;
+        document.body.classList.remove(`hcl-productive`);
+        document.body.classList.add(typoStyle);
       } else {
-        document.body.classList.remove('hcl-expressive');
-        document.body.classList.add('hcl-productive');
+        typoStyle = `hcl-productive`;
+        document.body.classList.remove(`hcl-expressive`);
+        document.body.classList.add(typoStyle);
       }
+      document.querySelector('.typo-class-name').innerText = typoStyle;
     }
   });
 

@@ -50,7 +50,7 @@ export function render() {
                     </ul>
                   </div>
                 </div>
-                <span class="hcl-helper-text"> Class: <span class="color-class-name hcl-helper-text">blue_active_orange_light</span> </span>
+                <span class="hcl-helper-text"> Class: <span class="color-class-name hcl-helper-text">blue_active_orange_light</span></span>
               </div>
             </div>
             <div class="hcl-col-12">
