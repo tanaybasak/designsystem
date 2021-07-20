@@ -1,4 +1,7 @@
 .#{$prefix}-slideout {
+  &-hide {
+    display: none;
+  }
   --transition-seconds: 200ms;
   position: fixed;
   display: block;
@@ -16,6 +19,9 @@
     right: 0;
     left: 0;
     transition: all 200ms ease-out;
+    &-noback {
+      background: transparent;
+    }
   }
   &.#{$prefix}-slideout__default-border {
     .#{$prefix}-slideout-layout {
