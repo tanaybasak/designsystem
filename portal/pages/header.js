@@ -36,7 +36,7 @@ export function render() {
             <div class="hcl-col-12">
                <label class="hcl-label">Color </label>
               <div class="hcl-form-group">
-                <div class="hcl-overlay-wrapper hcl-dropdown" id="dropdown-color">
+                <div class="hcl-overlay-wrapper hcl-dropdown mb-2" id="dropdown-color">
                   <button class="hcl-btn hcl-dropdown-toggle hcl-form-control" id="bottom-dropdown-btn"
                     aria-haspopup="true" aria-controls="bottom-container" data-toggle="dropdown">
                     V1 Light
@@ -56,7 +56,7 @@ export function render() {
             <div class="hcl-col-12">
             <label class="hcl-label">Typography</label>
               <div class="hcl-form-group">
-                <div class="hcl-overlay-wrapper hcl-dropdown" id="dropdown-typography">
+                <div class="hcl-overlay-wrapper hcl-dropdown mb-2" id="dropdown-typography">
                   <button class="hcl-btn hcl-dropdown-toggle hcl-form-control" id="bottom-dropdown-btn"
                     aria-haspopup="true" aria-controls="bottom-container" data-toggle="dropdown">
                     Productive
@@ -74,7 +74,7 @@ export function render() {
             <div class="hcl-col-12">
            <label class="hcl-label"> Input </label>
               <div class="hcl-form-group">
-                <div class="hcl-overlay-wrapper hcl-dropdown" id="dropdown-input">
+                <div class="hcl-overlay-wrapper hcl-dropdown mb-2" id="dropdown-input">
                   <button class="hcl-btn hcl-dropdown-toggle hcl-form-control" id="bottom-dropdown-btn"
                     aria-haspopup="true" aria-controls="bottom-container" data-toggle="dropdown">
                     Filled
@@ -92,7 +92,7 @@ export function render() {
             <div class="hcl-col-12">
            <label class="hcl-label"> Corner</label>
               <div class="hcl-form-group">
-                <div class="hcl-overlay-wrapper hcl-dropdown" id="dropdown-corner">
+                <div class="hcl-overlay-wrapper hcl-dropdown mb-2" id="dropdown-corner">
                   <button class="hcl-btn hcl-dropdown-toggle hcl-form-control" id="bottom-dropdown-btn"
                     aria-haspopup="true" aria-controls="bottom-container" data-toggle="dropdown">
                     Sharp
